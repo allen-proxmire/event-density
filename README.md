@@ -11,17 +11,24 @@ From this primitive ontology, we construct a compositional rule that simulates a
 
 Contents:
 
-ED Foundations (01-12, Core Ontology Series and Compositional Rule).
-ED Testing (Empirical Interface, Open Note for Experiments, SPARC Test).
-ED Interpretations (Re-Interpretations of Physical Phenomenon).
-ED Physical Computation (Computational Primitives Implied by the ED Rule).
+ED Foundations (01-12, Core Ontology Series and Compositional Rule)
+
+ED Testing (Empirical Interface, Open Note for Experiments, SPARC Test)
+
+ED Interpretations (Re-Interpretations of Physical Phenomenon)
+
+ED Physical Computation (Computational Primitives Implied by the ED Rule)
 
 ---
 
 How to Use This Repository:
 
-Read the Foundations to understand the ontology and rule.
-Explore Interpretations to see how ED reframes existing results.
-Test predictions in the ED Testing folder.
-Build models using the ED Compositional Rule.
+Read the Foundations to understand the ontology and rule
+
+Explore Interpretations to see how ED reframes existing results
+
+Test predictions in the ED Testing folder
+
+Build models using the ED Compositional Rule
+
 Build computational models using the Physical Computation Rule.
