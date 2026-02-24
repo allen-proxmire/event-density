@@ -29,6 +29,6 @@ Explore Interpretations to see how ED reframes existing results
 
 Test predictions in the ED Testing folder
 
-Build models using the ED Compositional Rule
+Build cosmological models using the ED Compositional Rule
 
-Build computational models using the Physical Computation Rule.
+Build computational models using the Physical Computation Rule
