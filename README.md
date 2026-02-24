@@ -5,7 +5,7 @@
 
 We propose that the universe is first and foremost a relational consequence. Before it is made of things, it is made of its own updating process—what we call becoming. The smallest unit of this activity is the micro‑event: a primitive update of one unit of reality. The rate at which a region updates is its Event Density (ED). Differences in ED—its gradients—are the first structural contrasts in the universe, and every physical process can be understood as a flow along or a response to these gradients.
 
-From this primitive ontology, we construct a compositional rule that simulates a model universe. Spacetime, gravity, quantum behavior, information, and the arrow of time emerge as consequences of how ED accumulates, propagates, and equilibrates. The ED framework does not introduce new substances or hidden variables; it identifies the generative rule that makes the familiar structures of physics inevitable.
+From this primitive ontology, we construct a compositional rule that simulates a model universe. Spacetime, matter, gravity, quantum behavior, information, and the arrow of time emerge as consequences of how ED accumulates, propagates, and equilibrates. The ED framework does not introduce new substances or hidden variables; it identifies the generative rule that makes the familiar structures of physics inevitable.
 
 ---
 
