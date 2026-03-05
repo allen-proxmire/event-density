@@ -1,0 +1,7 @@
+mobility_exp: 4.0
+noise_amp: 0.05
+phase_exit_step: None
+final_p_hat: 0.1086
+final_G: 0.00546
+final_L: 183.03
+structures: 1249
