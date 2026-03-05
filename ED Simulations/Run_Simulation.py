@@ -55,6 +55,7 @@ Scenario C: alpha=0.02, beta=0.25, gamma=0.4, dt=0.05, size=64, steps=300
 Scenario D: alpha=0.03, beta=0.20, gamma=0.5, dt=0.05, size=64, steps=500
             noise_scale=0.02 (Langevin fluctuations seed structure), periodic boundary
             mobility mode  --  M(rho)^n weights diffusion; --mobility-exp controls n
+            --noise-amp overrides noise_scale (default 0.02)
 """
 
 from __future__ import annotations
@@ -355,6 +356,7 @@ def run_scenario_D(
     save_gif:     bool  = False,
     show:         bool  = True,
     mobility_exp: float = 1.0,
+    noise_amp:    float = 0.02,
 ) -> EDLattice:
     """
     Scenario D: stochastic Langevin ED — the noisy universe.
@@ -377,8 +379,9 @@ def run_scenario_D(
     the clean heat-death seen in Scenarios A and B.
 
     Uses:
-        init_random_noise(lo=0.3, hi=0.7)  ->  ed_step_mobility with noise_scale=0.02
+        init_random_noise(lo=0.3, hi=0.7)  ->  ed_step_mobility with noise_scale=noise_amp
         mobility mode  ->  periodic BC  ->  seed=77
+        noise_amp (default 0.02) is overridden by --noise-amp CLI flag
     """
     _print_header("SCENARIO D -- Noisy Universe (Langevin / stochastic ED)")
 
@@ -389,7 +392,7 @@ def run_scenario_D(
         dt=0.05,
         boundary="periodic",
         mode="mobility",
-        noise_scale=0.02,
+        noise_scale=noise_amp,
         mobility_exp=mobility_exp,
     )
     lat = EDLattice(rows=size, cols=size, params=params, seed=77)
@@ -538,6 +541,15 @@ def _parse_args(argv=None) -> argparse.Namespace:
         ),
     )
     p.add_argument(
+        "--noise-amp", type=float, default=0.02,
+        dest="noise_amp",
+        help=(
+            "Std-dev of per-site Langevin noise eta ~ N(0, noise_amp) added to "
+            "delta_p at each step in Scenario D.  Default: 0.02.  "
+            "Larger values seed structure more aggressively."
+        ),
+    )
+    p.add_argument(
         "--gif", action="store_true",
         help="Also save an animated GIF for each scenario (requires Pillow).",
     )
@@ -576,7 +588,8 @@ def main(argv=None) -> None:
         run_scenario_C(steps=min(args.steps, 300), mobility_exp=args.mobility_exp, **common)
 
     if scenario in ("d", "all", "compare"):
-        run_scenario_D(steps=min(args.steps, 500), mobility_exp=args.mobility_exp, **common)
+        run_scenario_D(steps=min(args.steps, 500), mobility_exp=args.mobility_exp,
+                       noise_amp=args.noise_amp, **common)
 
     if scenario == "compare":
         run_comparative_summary(
