@@ -54,6 +54,7 @@ Scenario C: alpha=0.02, beta=0.25, gamma=0.4, dt=0.05, size=64, steps=300
             (mobility-weighted, absorbing boundary; --mobility-exp controls M(rho)^n)
 Scenario D: alpha=0.03, beta=0.20, gamma=0.5, dt=0.05, size=64, steps=500
             noise_scale=0.02 (Langevin fluctuations seed structure), periodic boundary
+            mobility mode  --  M(rho)^n weights diffusion; --mobility-exp controls n
 """
 
 from __future__ import annotations
@@ -376,8 +377,8 @@ def run_scenario_D(
     the clean heat-death seen in Scenarios A and B.
 
     Uses:
-        init_random_noise(lo=0.3, hi=0.7)  ->  ed_step with noise_scale=0.02
-        standard mode  ->  periodic BC  ->  seed=77
+        init_random_noise(lo=0.3, hi=0.7)  ->  ed_step_mobility with noise_scale=0.02
+        mobility mode  ->  periodic BC  ->  seed=77
     """
     _print_header("SCENARIO D -- Noisy Universe (Langevin / stochastic ED)")
 
@@ -387,7 +388,7 @@ def run_scenario_D(
         gamma=0.5,
         dt=0.05,
         boundary="periodic",
-        mode="standard",
+        mode="mobility",
         noise_scale=0.02,
         mobility_exp=mobility_exp,
     )
