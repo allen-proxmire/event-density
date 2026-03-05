@@ -90,23 +90,31 @@ class EDParams:
 
     Attributes
     ----------
-    alpha    : Relational penalty strength (competition / structure drain).
-    beta     : Gradient smoothing strength (diffusion coefficient).
-    gamma    : Concavity exponent for relational term, strictly 0 < gamma < 1.
-    dt       : Time step.  Stability requires  dt * 4 * beta <= 1.
-    p_min    : Hard floor on ED density (vacuum level).
-    p_max    : Hard ceiling on ED density (saturation / rho_max).
-    boundary : "periodic" | "absorbing" | "reflecting"
-    mode     : "standard" uses ed_step; "mobility" uses ed_step_mobility.
+    alpha        : Relational penalty strength (competition / structure drain).
+    beta         : Gradient smoothing strength (diffusion coefficient).
+    gamma        : Concavity exponent for relational term, strictly 0 < gamma < 1.
+    dt           : Time step.  Stability requires  dt * 4 * beta <= 1.
+    p_min        : Hard floor on ED density (vacuum level).
+    p_max        : Hard ceiling on ED density (saturation / rho_max).
+    boundary     : "periodic" | "absorbing" | "reflecting"
+    mode         : "standard" uses ed_step; "mobility" uses ed_step_mobility.
+    noise_scale  : Std dev of per-site Gaussian noise added each step.
+                   0.0 (default) = fully deterministic.
+                   > 0 = Langevin dynamics (Scenario D: noisy universe).
+    mobility_exp : Exponent n in M(rho) = ((rho_max-rho)/rho_max)^n.
+                   Only used in mode="mobility".  Default 1.0 (linear, ED-12.5).
+                   Larger values give a sharper horizon freeze.
     """
-    alpha:    float = 0.05
-    beta:     float = 0.25
-    gamma:    float = 0.5
-    dt:       float = 0.1
-    p_min:    float = 0.01
-    p_max:    float = 1.0
-    boundary: str   = "periodic"
-    mode:     str   = "standard"   # "standard" | "mobility"
+    alpha:        float = 0.05
+    beta:         float = 0.25
+    gamma:        float = 0.5
+    dt:           float = 0.1
+    p_min:        float = 0.01
+    p_max:        float = 1.0
+    boundary:     str   = "periodic"
+    mode:         str   = "standard"   # "standard" | "mobility"
+    noise_scale:  float = 0.0
+    mobility_exp: float = 1.0
 
     def __post_init__(self) -> None:
         if not (0.0 < self.gamma < 1.0):
@@ -122,6 +130,10 @@ class EDParams:
             raise ValueError(f"mode must be 'standard' or 'mobility', got '{self.mode}'")
         if self.boundary not in ("periodic", "absorbing", "reflecting"):
             raise ValueError(f"boundary must be 'periodic', 'absorbing', or 'reflecting'")
+        if self.noise_scale < 0.0:
+            raise ValueError(f"noise_scale must be >= 0, got {self.noise_scale}")
+        if self.mobility_exp <= 0.0:
+            raise ValueError(f"mobility_exp must be > 0, got {self.mobility_exp}")
 
 
 # ---------------------------------------------------------------------------
@@ -448,6 +460,8 @@ class EDLattice:
                 p_min=pr.p_min,
                 p_max=pr.p_max,
                 boundary=pr.boundary,
+                noise_scale=pr.noise_scale,
+                rng=self.rng,
             )
         else:  # "mobility"
             self.p = ed_step_mobility(
@@ -458,6 +472,9 @@ class EDLattice:
                 p_min=pr.p_min,
                 p_max=pr.p_max,
                 boundary=pr.boundary,
+                mobility_exp=pr.mobility_exp,
+                noise_scale=pr.noise_scale,
+                rng=self.rng,
             )
 
         self.step_count += 1

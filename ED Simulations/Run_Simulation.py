@@ -10,6 +10,7 @@ phases described in ED-05.5:
     SCENARIO A – ED Inflation → Structure Formation  (standard regime)
     SCENARIO B – Two-Body Interaction                (competition / merger)
     SCENARIO C – Black-Hole Saturation               (mobility-weighted)
+    SCENARIO D – Noisy Universe                      (Langevin / stochastic ED)
 
 HOW TO RUN
 ----------
@@ -47,10 +48,12 @@ For each scenario the following are written to --outdir (default: "output/"):
 
 PARAMETER DEFAULTS
 ------------------
-Scenario A: alpha=0.05, beta=0.25, gamma=0.5, dt=0.1, size=64, steps=600
-Scenario B: alpha=0.05, beta=0.25, gamma=0.5, dt=0.1, size=64, steps=400
+Scenario A: alpha=0.05, beta=0.25, gamma=0.5, dt=0.1,  size=64, steps=600
+Scenario B: alpha=0.05, beta=0.25, gamma=0.5, dt=0.1,  size=64, steps=400
 Scenario C: alpha=0.02, beta=0.25, gamma=0.4, dt=0.05, size=64, steps=300
-            (mobility-weighted, absorbing boundary)
+            (mobility-weighted, absorbing boundary; --mobility-exp controls M(rho)^n)
+Scenario D: alpha=0.03, beta=0.20, gamma=0.5, dt=0.05, size=64, steps=500
+            noise_scale=0.02 (Langevin fluctuations seed structure), periodic boundary
 """
 
 from __future__ import annotations
@@ -268,11 +271,12 @@ def run_scenario_B(
 # ---------------------------------------------------------------------------
 
 def run_scenario_C(
-    size:     int  = 64,
-    steps:    int  = 300,
-    outdir:   str  = "output",
-    save_gif: bool = False,
-    show:     bool = True,
+    size:         int   = 64,
+    steps:        int   = 300,
+    outdir:       str   = "output",
+    save_gif:     bool  = False,
+    show:         bool  = True,
+    mobility_exp: float = 1.0,
 ) -> EDLattice:
     """
     Scenario C: saturated central patch (black-hole analogue).
@@ -287,6 +291,7 @@ def run_scenario_C(
     """
     _print_header("SCENARIO C -- Black-Hole Saturation (mobility-weighted)")
 
+    print(f"  mobility_exp={mobility_exp}")
     lat = make_black_hole_lattice(
         size=size,
         radius=0.14,
@@ -295,6 +300,7 @@ def run_scenario_C(
         beta=0.25,
         gamma=0.4,
         dt=0.05,
+        mobility_exp=mobility_exp,
     )
 
     print(f"  Initial state: {lat}")
@@ -338,30 +344,125 @@ def run_scenario_C(
 
 
 # ---------------------------------------------------------------------------
+# SCENARIO D – Noisy Universe  (Langevin / stochastic ED)
+# ---------------------------------------------------------------------------
+
+def run_scenario_D(
+    size:         int   = 64,
+    steps:        int   = 500,
+    outdir:       str   = "output",
+    save_gif:     bool  = False,
+    show:         bool  = True,
+    mobility_exp: float = 1.0,
+) -> EDLattice:
+    """
+    Scenario D: stochastic Langevin ED — the noisy universe.
+
+    Adds per-site Gaussian noise eta ~ N(0, noise_scale) to delta_p at every
+    step, implementing the Langevin extension of the ED update rule:
+
+        delta_p = beta * L  -  alpha * p^gamma  +  eta(x, t)
+
+    Physical interpretation:
+      - eta models thermal / quantum fluctuations in the ED field.
+      - Noise continuously seeds new overdensities that compete via the
+        relational term — producing a richer, more spatially diverse set
+        of structures than the deterministic scenarios.
+      - Directly analogous to the role of inflation-era quantum fluctuations
+        in seeding large-scale cosmic structure.
+
+    Starting from a disordered mid-ED state (init_random_noise), the noise
+    sustains structure formation well into the late-thinning phase, preventing
+    the clean heat-death seen in Scenarios A and B.
+
+    Uses:
+        init_random_noise(lo=0.3, hi=0.7)  ->  ed_step with noise_scale=0.02
+        standard mode  ->  periodic BC  ->  seed=77
+    """
+    _print_header("SCENARIO D -- Noisy Universe (Langevin / stochastic ED)")
+
+    params = EDParams(
+        alpha=0.03,
+        beta=0.20,
+        gamma=0.5,
+        dt=0.05,
+        boundary="periodic",
+        mode="standard",
+        noise_scale=0.02,
+        mobility_exp=mobility_exp,
+    )
+    lat = EDLattice(rows=size, cols=size, params=params, seed=77)
+    lat.init_random_noise(lo=0.3, hi=0.7)
+
+    print(f"  Initial state: {lat}")
+    print(f"  noise_scale={params.noise_scale}  mobility_exp={params.mobility_exp}")
+    print(f"  Running {steps} steps ...")
+
+    snap_interval = max(1, steps // 5)
+    lat.run(
+        steps=steps,
+        record_every=5,
+        snapshot_every=snap_interval,
+        verbose=True,
+        verbose_every=max(1, steps // 6),
+    )
+    print(f"  Final state:   {lat}")
+    print(f"  Structures detected: {lat.structure_count()}")
+
+    d = _ensure_dir(outdir)
+
+    fig = plot_overview(lat, suptitle="Scenario D: Noisy Universe")
+    save_figure(fig, str(d / "D_overview_final.png"))
+
+    fig = plot_history(lat.history, title="Scenario D: Coarse-grained History")
+    save_figure(fig, str(d / "D_history.png"))
+
+    fig = plot_phase_diagram(lat.history, title="Scenario D: Phase-Space Trajectory")
+    save_figure(fig, str(d / "D_phase_diagram.png"))
+
+    fig = plot_snapshot_strip(lat, title="Scenario D: Noisy Universe Snapshots")
+    save_figure(fig, str(d / "D_snapshots.png"))
+
+    if save_gif:
+        anim = animate_field(lat, title="Scenario D: Noisy Universe", interval=110)
+        gif_path = str(d / "D_animation.gif")
+        anim.save(gif_path, writer="pillow", fps=9)
+        print(f"Saved: {gif_path}")
+
+    if show:
+        import matplotlib.pyplot as plt
+        plt.show()
+
+    return lat
+
+
+# ---------------------------------------------------------------------------
 # Comparative summary
 # ---------------------------------------------------------------------------
 
 def run_comparative_summary(
-    size:   int = 64,
-    steps:  int = 400,
-    outdir: str = "output",
-    show:   bool = True,
+    size:         int   = 64,
+    steps:        int   = 400,
+    outdir:       str   = "output",
+    show:         bool  = True,
+    mobility_exp: float = 1.0,
 ) -> None:
     """
-    Run all three scenarios and print a side-by-side summary table.
+    Run all four scenarios and print a side-by-side summary table.
 
     Useful for quickly comparing final-state observables across scenarios.
     """
     import matplotlib.pyplot as plt
 
-    _print_header("COMPARATIVE SUMMARY -- All Three Scenarios")
+    _print_header("COMPARATIVE SUMMARY -- All Four Scenarios")
 
     results: dict[str, dict] = {}
 
     for label, fn, kw in [
         ("A", run_scenario_A, dict(size=size, steps=steps, outdir=outdir, show=False)),
         ("B", run_scenario_B, dict(size=size, steps=steps, outdir=outdir, show=False)),
-        ("C", run_scenario_C, dict(size=size, steps=min(steps, 300), outdir=outdir, show=False)),
+        ("C", run_scenario_C, dict(size=size, steps=min(steps, 300), outdir=outdir, show=False, mobility_exp=mobility_exp)),
+        ("D", run_scenario_D, dict(size=size, steps=min(steps, 500), outdir=outdir, show=False, mobility_exp=mobility_exp)),
     ]:
         lat = fn(**kw)
         s   = lat.stats
@@ -403,12 +504,13 @@ def _parse_args(argv=None) -> argparse.Namespace:
     )
     p.add_argument(
         "--scenario", "-s",
-        choices=["A", "B", "C", "all", "compare"],
+        choices=["A", "B", "C", "D", "all", "compare"],
         default="all",
         help=(
             "Which scenario to run: "
             "A (inflation->structure), B (two-body), C (black-hole), "
-            "all (A+B+C sequentially), compare (all + summary table). "
+            "D (noisy universe), "
+            "all (A+B+C+D sequentially), compare (all + summary table). "
             "Default: all."
         ),
     )
@@ -423,6 +525,16 @@ def _parse_args(argv=None) -> argparse.Namespace:
     p.add_argument(
         "--outdir", type=str, default="output",
         help="Directory for saved PNG / GIF files.  Default: output/.",
+    )
+    p.add_argument(
+        "--mobility-exp", type=float, default=1.0,
+        dest="mobility_exp",
+        help=(
+            "Exponent n for mobility M(rho) = ((rho_max-rho)/rho_max)^n "
+            "used in Scenario C (mode=mobility) and Scenario D.  "
+            "Default: 1.0 (linear, standard ED-12.5).  "
+            "Larger values give a sharper horizon freeze near saturation."
+        ),
     )
     p.add_argument(
         "--gif", action="store_true",
@@ -460,7 +572,10 @@ def main(argv=None) -> None:
         run_scenario_B(steps=args.steps, **common)
 
     if scenario in ("c", "all", "compare"):
-        run_scenario_C(steps=min(args.steps, 300), **common)
+        run_scenario_C(steps=min(args.steps, 300), mobility_exp=args.mobility_exp, **common)
+
+    if scenario in ("d", "all", "compare"):
+        run_scenario_D(steps=min(args.steps, 500), mobility_exp=args.mobility_exp, **common)
 
     if scenario == "compare":
         run_comparative_summary(
@@ -468,6 +583,7 @@ def main(argv=None) -> None:
             steps=args.steps,
             outdir=args.outdir,
             show=args.show,
+            mobility_exp=args.mobility_exp,
         )
 
 

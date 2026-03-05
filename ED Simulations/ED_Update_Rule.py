@@ -46,10 +46,17 @@ THE MINIMAL UPDATE RULE  (Standard regime):
 THE MOBILITY-WEIGHTED UPDATE RULE  (Saturation-aware regime):
     Flux from neighbour k → (i,j):
         J_k = M( (p[i,j] + p[k]) / 2 ) · (p[k] − p[i,j])
-    where  M(ρ) = (ρ_max − ρ) / ρ_max   (stiffens as ρ → ρ_max)
+    where  M(ρ) = ((ρ_max − ρ) / ρ_max)^n   (n = mobility_exp; stiffens as ρ → ρ_max)
 
     Δp[i,j] = Σ_{k ∈ neighbours} J_k  −  α · p[i,j]^γ
     p_new[i,j] = clamp(p[i,j] + dt · Δp[i,j], p_min, p_max)
+
+STOCHASTIC (LANGEVIN) EXTENSION:
+    Both update rules accept an optional noise term drawn from N(0, noise_scale):
+        Δp[i,j] += η[i,j],   η ~ N(0, noise_scale)
+    This models thermal / quantum fluctuations in the ED field and is the basis
+    for Scenario D (noisy universe).  Pass noise_scale=0.0 (default) to recover
+    the fully deterministic dynamics.
 
 BOUNDARY CONDITIONS
 -------------------
@@ -182,15 +189,17 @@ def _relational(p: np.ndarray, gamma: float) -> np.ndarray:
 # Mobility function M(rho) for the saturation-aware variant
 # ---------------------------------------------------------------------------
 
-def _mobility(p: np.ndarray, p_max: float) -> np.ndarray:
+def _mobility(p: np.ndarray, p_max: float, mobility_exp: float = 1.0) -> np.ndarray:
     """
-    Mobility M(rho) = (rho_max - rho) / rho_max.
+    Mobility M(rho) = ((rho_max - rho) / rho_max) ** mobility_exp.
 
-    Approaches 1 at low ED (free diffusion).
-    Approaches 0 at rho_max (stiff; horizon-like freezing).
-    Implements the black-hole saturation case from ED-12.5.
+    mobility_exp = 1.0 (default): linear falloff — standard ED-12.5 case.
+    mobility_exp > 1.0: faster freeze near saturation (sharper horizon).
+    mobility_exp < 1.0: slower freeze — mobility persists longer at high rho.
+
+    Approaches 1 at low ED (free diffusion) and 0 at rho_max (frozen horizon).
     """
-    return np.clip((p_max - p) / p_max, 0.0, 1.0)
+    return np.clip((p_max - p) / p_max, 0.0, 1.0) ** mobility_exp
 
 
 # ---------------------------------------------------------------------------
@@ -199,31 +208,39 @@ def _mobility(p: np.ndarray, p_max: float) -> np.ndarray:
 
 def ed_step(
     p: np.ndarray,
-    alpha: float = 0.05,
-    beta: float  = 0.25,
-    gamma: float = 0.5,
-    dt:    float = 0.1,
-    p_min: float = 0.01,
-    p_max: float = 1.0,
-    boundary: str = "periodic",
+    alpha:       float = 0.05,
+    beta:        float = 0.25,
+    gamma:       float = 0.5,
+    dt:          float = 0.1,
+    p_min:       float = 0.01,
+    p_max:       float = 1.0,
+    boundary:    str   = "periodic",
+    noise_scale: float = 0.0,
+    rng: "np.random.Generator | None" = None,
 ) -> np.ndarray:
     """
     One time step of the minimal 2D ED update rule.
 
     Implements:
         delta_p[i,j] = beta * L[i,j]  -  alpha * p[i,j]^gamma
+                       [+ N(0, noise_scale)  if noise_scale > 0]
         p_new        = clamp(p + dt * delta_p, p_min, p_max)
 
     Parameters
     ----------
-    p        : Current ED density field, 2D array.
-    alpha    : Relational penalty coefficient (competition strength).
-    beta     : Gradient penalty coefficient (diffusion strength).
-    gamma    : Concavity exponent for relational term, 0 < gamma < 1.
-    dt       : Time step size.
-    p_min    : Minimum allowed density (floor).
-    p_max    : Maximum allowed density (ceiling / saturation).
-    boundary : Boundary condition: "periodic" | "absorbing" | "reflecting".
+    p           : Current ED density field, 2D array.
+    alpha       : Relational penalty coefficient (competition strength).
+    beta        : Gradient penalty coefficient (diffusion strength).
+    gamma       : Concavity exponent for relational term, 0 < gamma < 1.
+    dt          : Time step size.
+    p_min       : Minimum allowed density (floor).
+    p_max       : Maximum allowed density (ceiling / saturation).
+    boundary    : Boundary condition: "periodic" | "absorbing" | "reflecting".
+    noise_scale : Std dev of per-site Gaussian noise added to delta_p each step.
+                  0.0 (default) gives fully deterministic dynamics.
+                  > 0 gives Langevin / stochastic ED (Scenario D: noisy universe).
+    rng         : numpy Generator for reproducible noise.  If None and
+                  noise_scale > 0, a fresh Generator is used each call.
 
     Returns
     -------
@@ -238,9 +255,12 @@ def ed_step(
     R  = _relational(p, gamma)
 
     delta_p = beta * L - alpha * R
-    p_new   = p + dt * delta_p
 
-    return np.clip(p_new, p_min, p_max)
+    if noise_scale > 0.0:
+        _rng = rng if rng is not None else np.random.default_rng()
+        delta_p = delta_p + _rng.normal(0.0, noise_scale, p.shape)
+
+    return np.clip(p + dt * delta_p, p_min, p_max)
 
 
 # ---------------------------------------------------------------------------
@@ -249,12 +269,15 @@ def ed_step(
 
 def ed_step_mobility(
     p: np.ndarray,
-    alpha: float = 0.05,
-    gamma: float = 0.5,
-    dt:    float = 0.1,
-    p_min: float = 0.01,
-    p_max: float = 1.0,
-    boundary: str = "periodic",
+    alpha:        float = 0.05,
+    gamma:        float = 0.5,
+    dt:           float = 0.1,
+    p_min:        float = 0.01,
+    p_max:        float = 1.0,
+    boundary:     str   = "periodic",
+    mobility_exp: float = 1.0,
+    noise_scale:  float = 0.0,
+    rng: "np.random.Generator | None" = None,
 ) -> np.ndarray:
     """
     One time step using the mobility-weighted diffusion form.
@@ -266,19 +289,28 @@ def ed_step_mobility(
         J_k = M( (p[i,j] + p_k) / 2 ) * (p_k - p[i,j])
         delta_p = sum_k J_k  -  alpha * p^gamma
 
+    Mobility: M(rho) = ((rho_max - rho) / rho_max) ** mobility_exp
+      mobility_exp=1.0 (default): linear — standard ED-12.5 case.
+      mobility_exp>1.0: sharper horizon freeze near saturation.
+
     This naturally recovers:
       - Free diffusion at low ED  (M ~ 1)
       - Frozen / horizon-like behaviour at ED saturation  (M -> 0)
 
     Parameters
     ----------
-    p        : Current ED density field, 2D array.
-    alpha    : Relational penalty coefficient.
-    gamma    : Concavity exponent, 0 < gamma < 1.
-    dt       : Time step size.
-    p_min    : Density floor.
-    p_max    : Density ceiling (saturation point rho_max).
-    boundary : "periodic" | "absorbing" | "reflecting".
+    p            : Current ED density field, 2D array.
+    alpha        : Relational penalty coefficient.
+    gamma        : Concavity exponent, 0 < gamma < 1.
+    dt           : Time step size.
+    p_min        : Density floor.
+    p_max        : Density ceiling (saturation point rho_max).
+    boundary     : "periodic" | "absorbing" | "reflecting".
+    mobility_exp : Exponent n in M(rho) = ((rho_max-rho)/rho_max)^n.
+                   Default 1.0 (linear).  Increase for sharper horizon freezing.
+    noise_scale  : Std dev of per-site Gaussian noise added to delta_p.
+                   0.0 (default) = deterministic.
+    rng          : numpy Generator for reproducible noise.
 
     Returns
     -------
@@ -301,18 +333,21 @@ def ed_step_mobility(
         raise ValueError(f"Unknown boundary condition: '{boundary}'")
 
     # Edge-centred mobility: M evaluated at the average of the two endpoints
-    flux_up    = _mobility(0.5 * (p + p_up),    p_max) * (p_up    - p)
-    flux_down  = _mobility(0.5 * (p + p_down),  p_max) * (p_down  - p)
-    flux_right = _mobility(0.5 * (p + p_right), p_max) * (p_right - p)
-    flux_left  = _mobility(0.5 * (p + p_left),  p_max) * (p_left  - p)
+    flux_up    = _mobility(0.5 * (p + p_up),    p_max, mobility_exp) * (p_up    - p)
+    flux_down  = _mobility(0.5 * (p + p_down),  p_max, mobility_exp) * (p_down  - p)
+    flux_right = _mobility(0.5 * (p + p_right), p_max, mobility_exp) * (p_right - p)
+    flux_left  = _mobility(0.5 * (p + p_left),  p_max, mobility_exp) * (p_left  - p)
 
     diffusion  = flux_up + flux_down + flux_right + flux_left
     relational = _relational(p, gamma)
 
     delta_p = diffusion - alpha * relational
-    p_new   = p + dt * delta_p
 
-    return np.clip(p_new, p_min, p_max)
+    if noise_scale > 0.0:
+        _rng = rng if rng is not None else np.random.default_rng()
+        delta_p = delta_p + _rng.normal(0.0, noise_scale, p.shape)
+
+    return np.clip(p + dt * delta_p, p_min, p_max)
 
 
 # ---------------------------------------------------------------------------
