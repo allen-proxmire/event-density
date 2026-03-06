@@ -514,7 +514,150 @@ def run_two_core(d: int, alpha: float, mobility_exp: float, outdir: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# 5.  Parameter sweep
+# 5.  Phase diagram builder
+# ---------------------------------------------------------------------------
+
+def build_phase_diagram(
+    alpha_values:    list,
+    mobility_values: list,
+    separations:     list,
+    results_dict:    dict,
+    outdir:          str,
+) -> None:
+    """
+    Collapse the (alpha, m, d) sweep results into a 2D (alpha, m) phase diagram
+    and save it as a PNG.
+
+    Collapse rule (applied in priority order for each (alpha, m) pair):
+      HOVER      — any separation d yields "HOVER/ORBIT"
+      MERGE      — else, any separation d yields "MERGE"
+      ANNIHILATE — all separations yield "ANNIHILATE"
+
+    Parameters
+    ----------
+    alpha_values    : list of alpha values (rows, top = first element).
+    mobility_values : list of mobility exponents (columns, left = first).
+    separations     : list of d values used to collapse over d.
+    results_dict    : dict keyed by (alpha, m, d) → outcome string.
+    outdir          : directory in which to save phase_diagram_alpha_m.png.
+    """
+    from matplotlib.colors import ListedColormap, BoundaryNorm
+    from matplotlib.patches import Patch
+
+    os.makedirs(outdir, exist_ok=True)
+
+    # ------------------------------------------------------------------ #
+    # Regime encoding
+    # ------------------------------------------------------------------ #
+    ANNIHILATE_CODE, MERGE_CODE, HOVER_CODE = 0, 1, 2
+
+    _COLORS = {
+        ANNIHILATE_CODE: "#9ca3af",   # grey
+        MERGE_CODE:      "#2563eb",   # blue
+        HOVER_CODE:      "#16a34a",   # green
+    }
+    _LABELS = {
+        ANNIHILATE_CODE: "ANNIHILATE",
+        MERGE_CODE:      "MERGE",
+        HOVER_CODE:      "HOVER/ORBIT",
+    }
+    _SHORT = {
+        ANNIHILATE_CODE: "ANNH",
+        MERGE_CODE:      "MERGE",
+        HOVER_CODE:      "HOVER",
+    }
+
+    # ------------------------------------------------------------------ #
+    # Build 2D matrix  (rows = alpha index, cols = m index)
+    # ------------------------------------------------------------------ #
+    n_alpha = len(alpha_values)
+    n_mob   = len(mobility_values)
+    matrix  = np.zeros((n_alpha, n_mob), dtype=int)
+
+    for i, alpha in enumerate(alpha_values):
+        for j, m in enumerate(mobility_values):
+            outcomes = [results_dict[(alpha, m, d)] for d in separations]
+            if "HOVER/ORBIT" in outcomes:
+                matrix[i, j] = HOVER_CODE
+            elif "MERGE" in outcomes:
+                matrix[i, j] = MERGE_CODE
+            else:
+                matrix[i, j] = ANNIHILATE_CODE
+
+    # ------------------------------------------------------------------ #
+    # Plot
+    # ------------------------------------------------------------------ #
+    cmap = ListedColormap([_COLORS[0], _COLORS[1], _COLORS[2]])
+    norm = BoundaryNorm([-0.5, 0.5, 1.5, 2.5], cmap.N)
+
+    fig, ax = plt.subplots(figsize=(7, 5), constrained_layout=True)
+
+    ax.imshow(
+        matrix,
+        cmap=cmap, norm=norm,
+        origin="upper",       # row 0 (alpha_values[0]) at top
+        aspect="auto",
+        interpolation="nearest",
+    )
+
+    # Axis ticks — alpha on y, m on x
+    ax.set_xticks(range(n_mob))
+    ax.set_xticklabels([str(m) for m in mobility_values], fontsize=11)
+    ax.set_yticks(range(n_alpha))
+    ax.set_yticklabels([str(a) for a in alpha_values], fontsize=11)
+
+    ax.set_xlabel("Mobility exponent  m", fontsize=12)
+    ax.set_ylabel("Drain strength  alpha", fontsize=12)
+    ax.set_title(
+        "ED Two-Core Interaction Phase Diagram\n(alpha vs mobility exponent)",
+        fontsize=13, fontweight="bold",
+    )
+
+    # Cell annotations
+    for i in range(n_alpha):
+        for j in range(n_mob):
+            ax.text(
+                j, i, _SHORT[matrix[i, j]],
+                ha="center", va="center",
+                fontsize=9, fontweight="bold", color="white",
+            )
+
+    # Legend (patches, more reliable than colorbar for 3-class discrete maps)
+    legend_handles = [
+        Patch(facecolor=_COLORS[code], label=_LABELS[code])
+        for code in (ANNIHILATE_CODE, MERGE_CODE, HOVER_CODE)
+    ]
+    ax.legend(
+        handles=legend_handles,
+        loc="upper right", fontsize=9,
+        framealpha=0.85, edgecolor="0.6",
+    )
+
+    outpath = os.path.join(outdir, "phase_diagram_alpha_m.png")
+    fig.savefig(outpath, dpi=150)
+    plt.close(fig)
+    print(f"\nPhase diagram saved to: {outpath}")
+
+    # ------------------------------------------------------------------ #
+    # Console printout of the collapsed 2D table
+    # ------------------------------------------------------------------ #
+    col_w = 12
+    print("\n" + "=" * 76)
+    print("PHASE DIAGRAM  (alpha vs m,  collapsed over all separations d)")
+    print("-" * 76)
+    header = f"  {'alpha':<10}" + "".join(f"  m={m:<{col_w-3}}" for m in mobility_values)
+    print(header)
+    print("  " + "-" * 72)
+    for i, alpha in enumerate(alpha_values):
+        row = f"  {alpha:<10}"
+        for j in range(n_mob):
+            row += f"  {_LABELS[matrix[i, j]]:<{col_w-2}}"
+        print(row)
+    print("=" * 76)
+
+
+# ---------------------------------------------------------------------------
+# 6.  Parameter sweep
 # ---------------------------------------------------------------------------
 
 def main() -> None:
@@ -570,6 +713,17 @@ def main() -> None:
             print(row)
     print("=" * 76)
     print(f"\nFigures saved under: {OUTDIR_BASE}/")
+
+    # ------------------------------------------------------------------ #
+    # Phase diagram — collapse (alpha, m, d) → (alpha, m) and plot
+    # ------------------------------------------------------------------ #
+    build_phase_diagram(
+        alpha_values    = ALPHA_VALUES,
+        mobility_values = MOBILITY_EXPONENTS,
+        separations     = SEPARATIONS,
+        results_dict    = results,
+        outdir          = OUTDIR_BASE,
+    )
 
 
 # ---------------------------------------------------------------------------
