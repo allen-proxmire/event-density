@@ -149,9 +149,10 @@ PARAMS = EDParams(
 )
 
 # Sweep values
-SEPARATIONS = [20, 40, 60, 80]   # centre-to-centre separation in pixels
+SEPARATIONS  = [20, 40, 60, 80]           # centre-to-centre separation in pixels
+ALPHA_VALUES = [0.05, 0.02, 0.01, 0.005, 0.001]  # relational drain strengths to sweep
 
-OUTDIR = os.path.join(_HERE, "results", "two_core")
+OUTDIR_BASE = os.path.join(_HERE, "results", "two_core")
 
 
 # ---------------------------------------------------------------------------
@@ -323,13 +324,13 @@ def classify_outcome(
 # 4.  Single-run driver
 # ---------------------------------------------------------------------------
 
-def run_two_core(d: int, outdir: str) -> str:
+def run_two_core(d: int, alpha: float, outdir: str) -> str:
     """
-    Run the two-core experiment for pixel separation *d*.
+    Run the two-core experiment for pixel separation *d* and drain strength *alpha*.
 
     Steps
     -----
-    1. Build lattice; place two saturated cores at separation d.
+    1. Build lattice with the given alpha; place two saturated cores at separation d.
     2. Evolve for STEPS steps, detecting cores at every step.
     3. Classify outcome.
     4. Save field-snapshot figure and centroid-distance figure.
@@ -338,6 +339,7 @@ def run_two_core(d: int, outdir: str) -> str:
     Parameters
     ----------
     d      : Centre-to-centre core separation in pixels.
+    alpha  : Relational drain strength (overrides PARAMS.alpha for this run).
     outdir : Directory for output figures (created if absent).
 
     Returns
@@ -347,9 +349,21 @@ def run_two_core(d: int, outdir: str) -> str:
     os.makedirs(outdir, exist_ok=True)
 
     # ------------------------------------------------------------------ #
-    # Build and initialise lattice
+    # Build and initialise lattice  (alpha is the only parameter that varies)
     # ------------------------------------------------------------------ #
-    lat = EDLattice(rows=GRID_SIZE, cols=GRID_SIZE, params=PARAMS, seed=SEED)
+    run_params = EDParams(
+        alpha        = alpha,
+        beta         = PARAMS.beta,
+        gamma        = PARAMS.gamma,
+        dt           = PARAMS.dt,
+        p_min        = PARAMS.p_min,
+        p_max        = PARAMS.p_max,
+        boundary     = PARAMS.boundary,
+        mode         = PARAMS.mode,
+        noise_scale  = PARAMS.noise_scale,
+        mobility_exp = PARAMS.mobility_exp,
+    )
+    lat = EDLattice(rows=GRID_SIZE, cols=GRID_SIZE, params=run_params, seed=SEED)
     init_two_saturated_cores(lat, d)
 
     mid_step = STEPS // 2          # step at which to capture mid snapshot
@@ -369,7 +383,7 @@ def run_two_core(d: int, outdir: str) -> str:
     for s in range(STEPS):
 
         # --- core detection at current state (after s steps) ---
-        cores = detect_cores(lat.p, PARAMS.p_max)
+        cores = detect_cores(lat.p, run_params.p_max)
         n     = len(cores)
         n_cores_list.append(n)
 
@@ -412,7 +426,7 @@ def run_two_core(d: int, outdir: str) -> str:
     init_note = f"  [WARNING: initial n_cores={n_init}, cores may overlap]" \
                 if n_init != 2 else ""
     print(
-        f"  d={d:3d} px | outcome={outcome:<12s} | "
+        f"  alpha={alpha:<6}  d={d:3d} px | outcome={outcome:<12s} | "
         f"n_cores: {n_init} -> {int(n_cores_series[-1])} | "
         f"dist_init={d_init_str}  dist_final={d_final_str}{init_note}"
     )
@@ -433,7 +447,7 @@ def run_two_core(d: int, outdir: str) -> str:
     for ax, (field, title) in zip(axes, panels):
         im = ax.imshow(
             field, origin="lower", cmap="viridis",
-            vmin=PARAMS.p_min, vmax=PARAMS.p_max,
+            vmin=run_params.p_min, vmax=run_params.p_max,
             interpolation="nearest",
         )
         ax.set_title(title, fontsize=11)
@@ -443,11 +457,11 @@ def run_two_core(d: int, outdir: str) -> str:
     fig1.colorbar(im, ax=axes, label="ED density  rho", shrink=0.82)
     fig1.suptitle(
         f"Scenario E — Two-Core Interaction   "
-        f"d = {d} px,   outcome = {outcome}",
+        f"alpha = {alpha},   d = {d} px,   outcome = {outcome}",
         fontsize=13, fontweight="bold",
     )
 
-    out1 = os.path.join(outdir, f"field_d{d:02d}.png")
+    out1 = os.path.join(outdir, f"field_d{d:02d}_a{alpha}.png")
     fig1.savefig(out1, dpi=150)
     plt.close(fig1)
 
@@ -480,13 +494,13 @@ def run_two_core(d: int, outdir: str) -> str:
     ax2.set_ylabel("centroid distance (px)", fontsize=11)
     ax2.set_title(
         f"Scenario E — Centroid Distance vs Time   "
-        f"d = {d} px,   outcome = {outcome}",
+        f"alpha = {alpha},   d = {d} px,   outcome = {outcome}",
         fontsize=11,
     )
     ax2.legend(fontsize=9)
     ax2.grid(True, alpha=0.3)
 
-    out2 = os.path.join(outdir, f"dist_d{d:02d}.png")
+    out2 = os.path.join(outdir, f"dist_d{d:02d}_a{alpha}.png")
     fig2.savefig(out2, dpi=150)
     plt.close(fig2)
 
@@ -498,39 +512,52 @@ def run_two_core(d: int, outdir: str) -> str:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    """Run two-core interaction for each separation in SEPARATIONS."""
+    """Sweep over ALPHA_VALUES × SEPARATIONS and classify each run."""
 
-    print("=" * 65)
-    print("Scenario E: Two-Core Interaction Sweep")
-    print(f"  Grid      : {GRID_SIZE} x {GRID_SIZE}   Seed : {SEED}")
-    print(f"  Steps     : {STEPS}")
-    print(f"  Core shape: Gaussian  amplitude={CORE_AMPLITUDE}*p_max  "
-          f"sigma={CORE_WIDTH_FRAC}*{GRID_SIZE}={CORE_WIDTH_FRAC*GRID_SIZE:.0f} px  "
+    print("=" * 72)
+    print("Scenario E: Two-Core Interaction — alpha × separation sweep")
+    print(f"  Grid        : {GRID_SIZE} x {GRID_SIZE}   Seed : {SEED}")
+    print(f"  Steps       : {STEPS}")
+    print(f"  Core shape  : Gaussian  amplitude={CORE_AMPLITUDE}*p_max  "
+          f"sigma={CORE_WIDTH_FRAC*GRID_SIZE:.0f} px  "
           f"bg={CORE_BACKGROUND}*p_max")
-    print(f"  Threshold : {DETECT_THRESH} * p_max")
-    print(f"  Params    : alpha={PARAMS.alpha}  beta={PARAMS.beta}  "
-          f"gamma={PARAMS.gamma}  dt={PARAMS.dt}  mode={PARAMS.mode}")
-    print(f"  Output    : {OUTDIR}")
-    print("=" * 65)
+    print(f"  Threshold   : {DETECT_THRESH} * p_max")
+    print(f"  alpha values: {ALPHA_VALUES}")
+    print(f"  separations : {SEPARATIONS} px")
+    print(f"  beta={PARAMS.beta}  gamma={PARAMS.gamma}  "
+          f"dt={PARAMS.dt}  mode={PARAMS.mode}")
+    print(f"  Output base : {OUTDIR_BASE}")
+    print("=" * 72)
 
-    results: dict[int, str] = {}
-    for d in SEPARATIONS:
-        print(f"\nRunning  d = {d} px ...")
-        outcome = run_two_core(d, OUTDIR)
-        results[d] = outcome
+    # results[(alpha, d)] = outcome string
+    results: dict[tuple, str] = {}
+
+    for alpha in ALPHA_VALUES:
+        outdir = os.path.join(OUTDIR_BASE, f"alpha_{alpha}")
+        print(f"\n--- alpha = {alpha} ---")
+        for d in SEPARATIONS:
+            outcome = run_two_core(d, alpha, outdir)
+            results[(alpha, d)] = outcome
+            print(f"  alpha={alpha}, d={d} => {outcome}")
 
     # ------------------------------------------------------------------ #
     # Final summary table
     # ------------------------------------------------------------------ #
-    print("\n" + "=" * 65)
-    print("SWEEP SUMMARY")
-    print("-" * 65)
-    print(f"  {'Separation (px)':<20} {'Outcome'}")
-    print("-" * 65)
-    for d, outcome in results.items():
-        print(f"  {d:<20} {outcome}")
-    print("=" * 65)
-    print(f"\nFigures saved to: {OUTDIR}")
+    col_w = 14   # column width for each separation
+    print("\n" + "=" * 72)
+    print("FULL SWEEP SUMMARY")
+    print("-" * 72)
+    header = f"  {'alpha':<10}" + "".join(f"  d={d:<{col_w-3}}" for d in SEPARATIONS)
+    print(header)
+    print("-" * 72)
+    for alpha in ALPHA_VALUES:
+        row = f"  {alpha:<10}"
+        for d in SEPARATIONS:
+            outcome = results[(alpha, d)]
+            row += f"  {outcome:<{col_w-2}}"
+        print(row)
+    print("=" * 72)
+    print(f"\nFigures saved under: {OUTDIR_BASE}/")
 
 
 # ---------------------------------------------------------------------------
