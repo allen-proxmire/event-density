@@ -149,8 +149,9 @@ PARAMS = EDParams(
 )
 
 # Sweep values
-SEPARATIONS  = [20, 40, 60, 80]           # centre-to-centre separation in pixels
-ALPHA_VALUES = [0.05, 0.02, 0.01, 0.005, 0.001]  # relational drain strengths to sweep
+SEPARATIONS        = [20, 40, 60, 80]              # centre-to-centre separation in pixels
+ALPHA_VALUES       = [0.05, 0.02, 0.01, 0.005, 0.001]  # relational drain strengths to sweep
+MOBILITY_EXPONENTS = [1.0, 2.0, 3.0, 4.0]         # M(rho)=((rho_max-rho)/rho_max)^m exponents
 
 OUTDIR_BASE = os.path.join(_HERE, "results", "two_core")
 
@@ -324,13 +325,14 @@ def classify_outcome(
 # 4.  Single-run driver
 # ---------------------------------------------------------------------------
 
-def run_two_core(d: int, alpha: float, outdir: str) -> str:
+def run_two_core(d: int, alpha: float, mobility_exp: float, outdir: str) -> str:
     """
-    Run the two-core experiment for pixel separation *d* and drain strength *alpha*.
+    Run the two-core experiment for pixel separation *d*, drain strength *alpha*,
+    and mobility exponent *mobility_exp*.
 
     Steps
     -----
-    1. Build lattice with the given alpha; place two saturated cores at separation d.
+    1. Build lattice with the given alpha and mobility_exp; place two cores at d.
     2. Evolve for STEPS steps, detecting cores at every step.
     3. Classify outcome.
     4. Save field-snapshot figure and centroid-distance figure.
@@ -338,9 +340,13 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
 
     Parameters
     ----------
-    d      : Centre-to-centre core separation in pixels.
-    alpha  : Relational drain strength (overrides PARAMS.alpha for this run).
-    outdir : Directory for output figures (created if absent).
+    d            : Centre-to-centre core separation in pixels.
+    alpha        : Relational drain strength (overrides PARAMS.alpha).
+    mobility_exp : Mobility exponent m in M(rho)=((rho_max-rho)/rho_max)^m
+                   (overrides PARAMS.mobility_exp).  Only takes effect when
+                   mode="mobility"; mode is set to "mobility" here so that
+                   varying m produces observable differences.
+    outdir       : Directory for output figures (created if absent).
 
     Returns
     -------
@@ -349,7 +355,7 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
     os.makedirs(outdir, exist_ok=True)
 
     # ------------------------------------------------------------------ #
-    # Build and initialise lattice  (alpha is the only parameter that varies)
+    # Build and initialise lattice  (alpha and mobility_exp vary per run)
     # ------------------------------------------------------------------ #
     run_params = EDParams(
         alpha        = alpha,
@@ -359,9 +365,9 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
         p_min        = PARAMS.p_min,
         p_max        = PARAMS.p_max,
         boundary     = PARAMS.boundary,
-        mode         = PARAMS.mode,
+        mode         = "mobility",      # mobility_exp only acts in this mode
         noise_scale  = PARAMS.noise_scale,
-        mobility_exp = PARAMS.mobility_exp,
+        mobility_exp = mobility_exp,    # ← the new swept parameter
     )
     lat = EDLattice(rows=GRID_SIZE, cols=GRID_SIZE, params=run_params, seed=SEED)
     init_two_saturated_cores(lat, d)
@@ -426,7 +432,7 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
     init_note = f"  [WARNING: initial n_cores={n_init}, cores may overlap]" \
                 if n_init != 2 else ""
     print(
-        f"  alpha={alpha:<6}  d={d:3d} px | outcome={outcome:<12s} | "
+        f"  alpha={alpha:<6}  m={mobility_exp:<4}  d={d:3d} px | outcome={outcome:<12s} | "
         f"n_cores: {n_init} -> {int(n_cores_series[-1])} | "
         f"dist_init={d_init_str}  dist_final={d_final_str}{init_note}"
     )
@@ -457,11 +463,11 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
     fig1.colorbar(im, ax=axes, label="ED density  rho", shrink=0.82)
     fig1.suptitle(
         f"Scenario E — Two-Core Interaction   "
-        f"alpha = {alpha},   d = {d} px,   outcome = {outcome}",
+        f"alpha = {alpha},   m = {mobility_exp},   d = {d} px,   outcome = {outcome}",
         fontsize=13, fontweight="bold",
     )
 
-    out1 = os.path.join(outdir, f"field_d{d:02d}_a{alpha}.png")
+    out1 = os.path.join(outdir, f"field_d{d:02d}_a{alpha}_m{mobility_exp}.png")
     fig1.savefig(out1, dpi=150)
     plt.close(fig1)
 
@@ -494,13 +500,13 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
     ax2.set_ylabel("centroid distance (px)", fontsize=11)
     ax2.set_title(
         f"Scenario E — Centroid Distance vs Time   "
-        f"alpha = {alpha},   d = {d} px,   outcome = {outcome}",
+        f"alpha = {alpha},   m = {mobility_exp},   d = {d} px,   outcome = {outcome}",
         fontsize=11,
     )
     ax2.legend(fontsize=9)
     ax2.grid(True, alpha=0.3)
 
-    out2 = os.path.join(outdir, f"dist_d{d:02d}_a{alpha}.png")
+    out2 = os.path.join(outdir, f"dist_d{d:02d}_a{alpha}_m{mobility_exp}.png")
     fig2.savefig(out2, dpi=150)
     plt.close(fig2)
 
@@ -512,51 +518,57 @@ def run_two_core(d: int, alpha: float, outdir: str) -> str:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    """Sweep over ALPHA_VALUES × SEPARATIONS and classify each run."""
+    """Sweep over ALPHA_VALUES × MOBILITY_EXPONENTS × SEPARATIONS."""
 
-    print("=" * 72)
-    print("Scenario E: Two-Core Interaction — alpha × separation sweep")
-    print(f"  Grid        : {GRID_SIZE} x {GRID_SIZE}   Seed : {SEED}")
-    print(f"  Steps       : {STEPS}")
-    print(f"  Core shape  : Gaussian  amplitude={CORE_AMPLITUDE}*p_max  "
+    n_runs = len(ALPHA_VALUES) * len(MOBILITY_EXPONENTS) * len(SEPARATIONS)
+    print("=" * 76)
+    print("Scenario E: Two-Core Interaction — alpha × m × separation sweep")
+    print(f"  Grid             : {GRID_SIZE} x {GRID_SIZE}   Seed : {SEED}")
+    print(f"  Steps            : {STEPS}")
+    print(f"  Core shape       : Gaussian  amplitude={CORE_AMPLITUDE}*p_max  "
           f"sigma={CORE_WIDTH_FRAC*GRID_SIZE:.0f} px  "
           f"bg={CORE_BACKGROUND}*p_max")
-    print(f"  Threshold   : {DETECT_THRESH} * p_max")
-    print(f"  alpha values: {ALPHA_VALUES}")
-    print(f"  separations : {SEPARATIONS} px")
-    print(f"  beta={PARAMS.beta}  gamma={PARAMS.gamma}  "
-          f"dt={PARAMS.dt}  mode={PARAMS.mode}")
-    print(f"  Output base : {OUTDIR_BASE}")
-    print("=" * 72)
+    print(f"  Threshold        : {DETECT_THRESH} * p_max")
+    print(f"  alpha values     : {ALPHA_VALUES}")
+    print(f"  mobility exp (m) : {MOBILITY_EXPONENTS}")
+    print(f"  separations      : {SEPARATIONS} px")
+    print(f"  beta={PARAMS.beta}  gamma={PARAMS.gamma}  dt={PARAMS.dt}  "
+          f"mode=mobility  (set per run so m takes effect)")
+    print(f"  Total runs       : {n_runs}")
+    print(f"  Output base      : {OUTDIR_BASE}")
+    print("=" * 76)
 
-    # results[(alpha, d)] = outcome string
+    # results[(alpha, m, d)] = outcome string
     results: dict[tuple, str] = {}
 
     for alpha in ALPHA_VALUES:
-        outdir = os.path.join(OUTDIR_BASE, f"alpha_{alpha}")
-        print(f"\n--- alpha = {alpha} ---")
-        for d in SEPARATIONS:
-            outcome = run_two_core(d, alpha, outdir)
-            results[(alpha, d)] = outcome
-            print(f"  alpha={alpha}, d={d} => {outcome}")
+        for m in MOBILITY_EXPONENTS:
+            outdir = os.path.join(OUTDIR_BASE, f"a{alpha}_m{m}")
+            print(f"\n--- alpha = {alpha},  m = {m} ---")
+            for d in SEPARATIONS:
+                outcome = run_two_core(d, alpha, m, outdir)
+                results[(alpha, m, d)] = outcome
+                print(f"  alpha={alpha}, m={m}, d={d} => {outcome}")
 
     # ------------------------------------------------------------------ #
-    # Final summary table
+    # Final summary table — one sub-table per alpha, rows = m, cols = d
     # ------------------------------------------------------------------ #
-    col_w = 14   # column width for each separation
-    print("\n" + "=" * 72)
-    print("FULL SWEEP SUMMARY")
-    print("-" * 72)
-    header = f"  {'alpha':<10}" + "".join(f"  d={d:<{col_w-3}}" for d in SEPARATIONS)
-    print(header)
-    print("-" * 72)
+    col_w = 14
+    print("\n" + "=" * 76)
+    print("FULL SWEEP SUMMARY  (rows = mobility exp m,  cols = separation d)")
     for alpha in ALPHA_VALUES:
-        row = f"  {alpha:<10}"
-        for d in SEPARATIONS:
-            outcome = results[(alpha, d)]
-            row += f"  {outcome:<{col_w-2}}"
-        print(row)
-    print("=" * 72)
+        print("\n" + "-" * 76)
+        print(f"  alpha = {alpha}")
+        header = f"  {'m':<8}" + "".join(f"  d={d:<{col_w-3}}" for d in SEPARATIONS)
+        print(header)
+        print("  " + "-" * 72)
+        for m in MOBILITY_EXPONENTS:
+            row = f"  {m:<8}"
+            for d in SEPARATIONS:
+                outcome = results[(alpha, m, d)]
+                row += f"  {outcome:<{col_w-2}}"
+            print(row)
+    print("=" * 76)
     print(f"\nFigures saved under: {OUTDIR_BASE}/")
 
 
