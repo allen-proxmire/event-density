@@ -7,6 +7,8 @@ We propose that the universe is first and foremost a relational consequence. Bef
 
 From this primitive ontology, we construct a compositional rule that simulates a model universe. Spacetime, matter, gravity, quantum behavior, information, and the arrow of time emerge as consequences of how ED accumulates, propagates, and equilibrates. The ED framework does not introduce new substances or hidden variables; it identifies the generative rule that makes the familiar structures of physics inevitable.
 
+To develop this program, the repository includes the ED‑Arch series, which extracts architectural laws and regime structures implied by the rule, and the ED Testing framework, which validates these predictions through open‑notebook experiments.
+
 ---
 
 Contents:
@@ -15,20 +17,29 @@ ED Foundations (01-12, Core Ontology Series and Compositional Rule)
 
 ED Testing (Empirical Interface, Open Note for Experiments, SPARC Test)
 
+ED Architecture (Architectural Laws and Regime Structure)
+
 ED Interpretations (Re-Interpretations of Physical Phenomenon)
 
 ED Physical Computation (Computational Primitives Implied by the ED Rule)
 
 ---
 
-How to Use This Repository:
+How to Use This Repository
+1. Start with ED Foundations
+Understand the ontology, the saddle–gradient–boundary–horizon structure, and the compositional rule that defines all ED dynamics.
 
-Read the Foundations to understand the ontology and rule
+2. Explore ED Interpretations
+See how ED reframes existing physical results by mapping them onto architectural invariants and regime structures.
 
-Explore Interpretations to see how ED reframes existing results
+3. Use ED Testing to Validate Behavior
+Run empirical checks, open‑notebook experiments, and SPARC‑style tests to confirm that simulations match architectural predictions.
 
-Test predictions in the ED Testing folder
+4. Build Architectureal Models Using the ED-Arch Series
+Follow the ED‑Arch papers to extract architectural laws, regime boundaries, interaction rules, and large‑scale structures implied by the ED rule.
 
-Build cosmological models using the ED Compositional Rule
+5. Build Cosmological Models Using the Compositional Rule
+Use the ED cosmology documents to assemble universe‑scale models from the same architectural primitives.
 
-Build computational models using the Physical Computation Rule
+6. Build Computational Models Using the Physical Computation Rule
+Explore the computational primitives implied by ED and construct ED‑native computational systems.
