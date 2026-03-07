@@ -855,7 +855,333 @@ def build_interaction_surface(
 
 
 # ---------------------------------------------------------------------------
-# 7.  Parameter sweep
+# 7.  Boundary point extraction
+# ---------------------------------------------------------------------------
+
+def extract_boundary_points(
+    alpha_values:    list,
+    mobility_values: list,
+    separations:     list,
+    results_dict:    dict,
+) -> list:
+    """
+    Scan the full (alpha, m, d) parameter grid and collect every grid-point
+    that sits on a regime boundary — i.e., at least one axis-aligned neighbour
+    (in the alpha-, m-, or d-direction) carries a different outcome label.
+
+    Neighbours are 6-connected in index space (±1 step along each of the
+    three parameter axes).  Points on the grid boundary naturally have fewer
+    than 6 neighbours; only existing grid points are considered.
+
+    Parameters
+    ----------
+    alpha_values    : list of alpha values (order must match results_dict).
+    mobility_values : list of mobility exponents.
+    separations     : list of separation values d.
+    results_dict    : dict keyed by (alpha, m, d) → outcome string.
+
+    Returns
+    -------
+    boundary : list of dicts, one per boundary grid-point, each containing:
+        "alpha"     : float  — alpha at this point
+        "m"         : float  — mobility exponent at this point
+        "d"         : int    — separation at this point
+        "regime"    : str    — outcome label AT this grid-point
+        "neighbors" : set    — distinct outcome labels found among the
+                               6-connected neighbours that differ from "regime"
+    """
+    a_list = list(alpha_values)
+    m_list = list(mobility_values)
+    d_list = list(separations)
+
+    boundary: list = []
+
+    for i, alpha in enumerate(a_list):
+        for j, m in enumerate(m_list):
+            for k, d in enumerate(d_list):
+                regime = results_dict[(alpha, m, d)]
+
+                # Regimes of all 6 axis-aligned neighbours that differ from own
+                different: set = set()
+                for di, dj, dk in [
+                    (-1, 0, 0), (1, 0, 0),
+                    (0, -1, 0), (0, 1, 0),
+                    (0, 0, -1), (0, 0, 1),
+                ]:
+                    ni, nj, nk = i + di, j + dj, k + dk
+                    if (0 <= ni < len(a_list) and
+                            0 <= nj < len(m_list) and
+                            0 <= nk < len(d_list)):
+                        nbr = results_dict[(a_list[ni], m_list[nj], d_list[nk])]
+                        if nbr != regime:
+                            different.add(nbr)
+
+                if different:
+                    boundary.append({
+                        "alpha":     alpha,
+                        "m":         m,
+                        "d":         d,
+                        "regime":    regime,
+                        "neighbors": different,
+                    })
+
+    # ------------------------------------------------------------------ #
+    # Console summary — tally each unique (regime_A, regime_B) transition
+    # ------------------------------------------------------------------ #
+    from collections import Counter
+    trans_counter: Counter = Counter()
+    for bp in boundary:
+        for nr in bp["neighbors"]:
+            pair = tuple(sorted([bp["regime"], nr]))
+            trans_counter[pair] += 1
+
+    print(f"\n[extract_boundary_points]  Found {len(boundary)} boundary grid-point(s).")
+    for (r1, r2), cnt in sorted(trans_counter.items()):
+        print(f"  {r1:<14}  <->  {r2:<14}: {cnt} point(s)")
+
+    return boundary
+
+
+# ---------------------------------------------------------------------------
+# 8.  Boundary surface fitting
+# ---------------------------------------------------------------------------
+
+def fit_boundary_surface(boundary_points: list) -> dict:
+    """
+    Fit a bilinear plane in log-alpha space that separates the ANNIHILATE
+    regime from the non-ANNIHILATE regime across the (alpha, m, d) grid.
+
+    Model
+    -----
+        ln(alpha) = a0 + a1*m + a2*d + a3*(m*d)
+
+    Only points that are on an ANNIHILATE ↔ non-ANNIHILATE interface are
+    used: either the grid-point itself is classified ANNIHILATE, or at
+    least one of its differently-labelled neighbours is ANNIHILATE.
+
+    Parameters
+    ----------
+    boundary_points : list of dicts from extract_boundary_points().
+
+    Returns
+    -------
+    fit_params : dict with keys:
+        "has_fit"  : bool   — False when too few points for a meaningful fit
+        "coeffs"   : ndarray [a0, a1, a2, a3]  (only when has_fit=True)
+        "model"    : str    — human-readable model equation
+        "r2"       : float  — R² on the fitted points
+        "n_points" : int    — number of ANNIHILATE-boundary points used
+    """
+    # Filter to ANNIHILATE-boundary points only
+    ann_pts = [
+        bp for bp in boundary_points
+        if bp["regime"] == "ANNIHILATE" or "ANNIHILATE" in bp["neighbors"]
+    ]
+    n = len(ann_pts)
+    print(f"\n[fit_boundary_surface]  {n} ANNIHILATE-boundary point(s) available.")
+
+    # Need at least as many points as free parameters (4)
+    if n < 4:
+        print("  Too few points to fit — skipping.")
+        return {"has_fit": False, "n_points": n}
+
+    m_arr     = np.array([bp["m"]     for bp in ann_pts], dtype=float)
+    d_arr     = np.array([bp["d"]     for bp in ann_pts], dtype=float)
+    alpha_arr = np.array([bp["alpha"] for bp in ann_pts], dtype=float)
+
+    log_alpha = np.log(alpha_arr)          # natural log
+
+    # Design matrix: [1,  m,  d,  m*d]
+    X = np.column_stack([
+        np.ones(n),
+        m_arr,
+        d_arr,
+        m_arr * d_arr,
+    ])
+
+    coeffs, _res, _rank, _sv = np.linalg.lstsq(X, log_alpha, rcond=None)
+    a0, a1, a2, a3 = coeffs
+
+    # R² on fitted points
+    log_pred = X @ coeffs
+    ss_res   = float(np.sum((log_alpha - log_pred) ** 2))
+    ss_tot   = float(np.sum((log_alpha - log_alpha.mean()) ** 2))
+    r2       = 1.0 - ss_res / ss_tot if ss_tot > 0 else 1.0
+
+    model_str = (
+        f"ln(\u03b1) = {a0:+.4f}  {a1:+.4f}\u00b7m  "
+        f"{a2:+.6f}\u00b7d  {a3:+.6f}\u00b7m\u00b7d"
+    )
+    print(f"  Fitted model : {model_str}")
+    print(f"  R\u00b2           : {r2:.4f}   (n = {n} points)")
+
+    return {
+        "has_fit":  True,
+        "coeffs":   coeffs,
+        "model":    model_str,
+        "r2":       r2,
+        "n_points": n,
+    }
+
+
+# ---------------------------------------------------------------------------
+# 9.  Boundary surface visualisation
+# ---------------------------------------------------------------------------
+
+def plot_boundary_surface_fit(
+    boundary_points: list,
+    fit_params:      dict,
+    outdir:          str,
+) -> None:
+    """
+    3D scatter of all boundary grid-points coloured by transition type,
+    overlaid with the fitted ANNIHILATE boundary surface (wireframe).
+
+    Axes
+    ----
+        x = mobility exponent  m
+        y = separation         d  (pixels)
+        z = ln(alpha)
+
+    Output
+    ------
+        <outdir>/boundary_surface_fit.png
+
+    Parameters
+    ----------
+    boundary_points : list of dicts from extract_boundary_points().
+    fit_params      : dict from fit_boundary_surface().
+    outdir          : directory in which to save the figure.
+    """
+    from mpl_toolkits.mplot3d import Axes3D   # noqa: F401 — registers 3D projection
+    from matplotlib.lines import Line2D
+
+    os.makedirs(outdir, exist_ok=True)
+
+    if not boundary_points:
+        print("\n[plot_boundary_surface_fit]  No boundary points — nothing to plot.")
+        return
+
+    # ------------------------------------------------------------------ #
+    # Colour coding — keyed by the pair of regimes sharing this boundary
+    # ------------------------------------------------------------------ #
+    _TC = {
+        "ANN_MERGE":  "#f97316",   # orange  — ANNIHILATE ↔ MERGE
+        "ANN_HOVER":  "#dc2626",   # red     — ANNIHILATE ↔ HOVER/ORBIT
+        "MRG_HOVER":  "#7c3aed",   # purple  — MERGE ↔ HOVER/ORBIT
+        "MULTI":      "#db2777",   # pink    — triple-point / multi-regime
+        "OTHER":      "#6b7280",   # grey    — any other combination
+    }
+    _LABEL = {
+        "ANN_MERGE":  "ANNIHILATE \u2194 MERGE",
+        "ANN_HOVER":  "ANNIHILATE \u2194 HOVER/ORBIT",
+        "MRG_HOVER":  "MERGE \u2194 HOVER/ORBIT",
+        "MULTI":      "Triple-point",
+        "OTHER":      "Other",
+    }
+
+    def _tc_key(bp: dict) -> str:
+        all_r = {bp["regime"]} | bp["neighbors"]
+        has_a = "ANNIHILATE"  in all_r
+        has_m = "MERGE"       in all_r
+        has_h = "HOVER/ORBIT" in all_r
+        if sum([has_a, has_m, has_h]) >= 3:
+            return "MULTI"
+        if has_a and has_m:
+            return "ANN_MERGE"
+        if has_a and has_h:
+            return "ANN_HOVER"
+        if has_m and has_h:
+            return "MRG_HOVER"
+        return "OTHER"
+
+    tc_keys = [_tc_key(bp) for bp in boundary_points]
+    colors  = [_TC[k]      for k  in tc_keys]
+
+    m_pts = np.array([bp["m"]     for bp in boundary_points], dtype=float)
+    d_pts = np.array([bp["d"]     for bp in boundary_points], dtype=float)
+    z_pts = np.log(np.array([bp["alpha"] for bp in boundary_points], dtype=float))
+
+    # ------------------------------------------------------------------ #
+    # Figure + 3D axes
+    # ------------------------------------------------------------------ #
+    fig = plt.figure(figsize=(10, 7))
+    ax  = fig.add_subplot(111, projection="3d")
+
+    ax.scatter(
+        m_pts, d_pts, z_pts,
+        c=colors, s=70,
+        edgecolors="k", linewidths=0.4,
+        depthshade=True, zorder=5,
+    )
+
+    # ------------------------------------------------------------------ #
+    # Fitted ANNIHILATE boundary surface — wireframe overlay
+    # ------------------------------------------------------------------ #
+    if fit_params.get("has_fit"):
+        a0, a1, a2, a3 = fit_params["coeffs"]
+
+        m_lo, m_hi = m_pts.min() - 0.3, m_pts.max() + 0.3
+        d_lo, d_hi = d_pts.min() - 3.0, d_pts.max() + 3.0
+
+        mg = np.linspace(m_lo, m_hi, 22)
+        dg = np.linspace(d_lo, d_hi, 22)
+        MG, DG = np.meshgrid(mg, dg)
+        ZG = a0 + a1 * MG + a2 * DG + a3 * MG * DG
+
+        ax.plot_wireframe(
+            MG, DG, ZG,
+            color="#2563eb", alpha=0.30, linewidth=0.8,
+        )
+
+    # ------------------------------------------------------------------ #
+    # Axis labels + title
+    # ------------------------------------------------------------------ #
+    ax.set_xlabel("Mobility exponent  m",  fontsize=10, labelpad=8)
+    ax.set_ylabel("Separation  d  (px)",   fontsize=10, labelpad=8)
+    ax.set_zlabel("ln(\u03b1)",            fontsize=10, labelpad=8)
+    ax.set_title(
+        "ED Two-Core Interaction \u2014 Boundary Surface\n"
+        "(boundary grid-points + fitted ANNIHILATE surface)",
+        fontsize=12, fontweight="bold", pad=12,
+    )
+
+    # ------------------------------------------------------------------ #
+    # Legend — one entry per transition type actually present in the data
+    # ------------------------------------------------------------------ #
+    present = set(tc_keys)
+    legend_elems = [
+        Line2D([0], [0], marker="o", color="w",
+               markerfacecolor=_TC[key], markersize=9,
+               label=_LABEL[key])
+        for key in ("ANN_MERGE", "ANN_HOVER", "MRG_HOVER", "MULTI", "OTHER")
+        if key in present
+    ]
+    if fit_params.get("has_fit"):
+        legend_elems.append(
+            Line2D([0], [0], color="#2563eb", linewidth=1.5,
+                   label="Fitted boundary surface")
+        )
+    ax.legend(handles=legend_elems, fontsize=9, loc="upper right")
+
+    # ------------------------------------------------------------------ #
+    # Footnote: model equation + R²
+    # ------------------------------------------------------------------ #
+    if fit_params.get("has_fit"):
+        fig.text(
+            0.02, 0.02,
+            f"Model: {fit_params['model']}    R\u00b2 = {fit_params['r2']:.4f}",
+            fontsize=8, color="#374151",
+        )
+
+    outpath = os.path.join(outdir, "boundary_surface_fit.png")
+    fig.savefig(outpath, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"\nBoundary surface fit plot saved to: {outpath}")
+
+
+# ---------------------------------------------------------------------------
+# 10.  Parameter sweep
 # ---------------------------------------------------------------------------
 
 def main() -> None:
@@ -933,6 +1259,18 @@ def main() -> None:
         results_dict    = results,
         outdir          = OUTDIR_BASE,
     )
+
+    # ------------------------------------------------------------------ #
+    # Boundary extraction, surface fitting, and 3-D visualisation
+    # ------------------------------------------------------------------ #
+    boundary_pts = extract_boundary_points(
+        alpha_values    = ALPHA_VALUES,
+        mobility_values = MOBILITY_EXPONENTS,
+        separations     = SEPARATIONS,
+        results_dict    = results,
+    )
+    fit_params = fit_boundary_surface(boundary_pts)
+    plot_boundary_surface_fit(boundary_pts, fit_params, outdir=OUTDIR_BASE)
 
 
 # ---------------------------------------------------------------------------
