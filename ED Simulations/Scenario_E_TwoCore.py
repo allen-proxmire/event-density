@@ -657,7 +657,205 @@ def build_phase_diagram(
 
 
 # ---------------------------------------------------------------------------
-# 6.  Parameter sweep
+# 6.  Interaction surface builder
+# ---------------------------------------------------------------------------
+
+def build_interaction_surface(
+    alpha_values:    list,
+    mobility_values: list,
+    separations:     list,
+    results_dict:    dict,
+    outdir:          str,
+) -> None:
+    """
+    Build the full (alpha, m, d) interaction surface from already-computed results.
+
+    For each separation d:
+      - Build a raw 2D (alpha × m) matrix (no collapse across d).
+      - Save a colour-coded figure: interaction_surface_d{d:02d}.png
+
+    Also produces:
+      - interaction_surface_all_d.png — all d-slices in a single grid figure.
+      - Console 3D table: for each alpha, rows = m, cols = d.
+
+    Parameters
+    ----------
+    alpha_values    : list of alpha values (rows).
+    mobility_values : list of mobility exponents (columns).
+    separations     : list of d values (one slice per d value).
+    results_dict    : dict keyed by (alpha, m, d) → outcome string.
+    outdir          : directory in which to save all figures.
+    """
+    import math
+    from matplotlib.colors import ListedColormap, BoundaryNorm
+    from matplotlib.patches import Patch
+
+    os.makedirs(outdir, exist_ok=True)
+
+    # ------------------------------------------------------------------ #
+    # Shared encoding (identical to build_phase_diagram)
+    # ------------------------------------------------------------------ #
+    ANNIHILATE_CODE, MERGE_CODE, HOVER_CODE = 0, 1, 2
+
+    _STR_TO_CODE = {
+        "ANNIHILATE":  ANNIHILATE_CODE,
+        "MERGE":       MERGE_CODE,
+        "HOVER/ORBIT": HOVER_CODE,
+    }
+    _COLORS = {
+        ANNIHILATE_CODE: "#9ca3af",   # grey
+        MERGE_CODE:      "#2563eb",   # blue
+        HOVER_CODE:      "#16a34a",   # green
+    }
+    _LABELS = {
+        ANNIHILATE_CODE: "ANNIHILATE",
+        MERGE_CODE:      "MERGE",
+        HOVER_CODE:      "HOVER/ORBIT",
+    }
+    _SHORT = {
+        ANNIHILATE_CODE: "ANNH",
+        MERGE_CODE:      "MERGE",
+        HOVER_CODE:      "HOVER",
+    }
+
+    cmap = ListedColormap([_COLORS[0], _COLORS[1], _COLORS[2]])
+    norm = BoundaryNorm([-0.5, 0.5, 1.5, 2.5], cmap.N)
+
+    legend_handles = [
+        Patch(facecolor=_COLORS[code], label=_LABELS[code])
+        for code in (ANNIHILATE_CODE, MERGE_CODE, HOVER_CODE)
+    ]
+
+    n_alpha = len(alpha_values)
+    n_mob   = len(mobility_values)
+    n_sep   = len(separations)
+
+    # ------------------------------------------------------------------ #
+    # Build one 2D matrix per d — raw, no collapse
+    # ------------------------------------------------------------------ #
+    matrices = {}
+    for d in separations:
+        mat = np.zeros((n_alpha, n_mob), dtype=int)
+        for i, alpha in enumerate(alpha_values):
+            for j, m in enumerate(mobility_values):
+                mat[i, j] = _STR_TO_CODE[results_dict[(alpha, m, d)]]
+        matrices[d] = mat
+
+    # ------------------------------------------------------------------ #
+    # Helper: draw one slice onto an existing Axes object
+    # ------------------------------------------------------------------ #
+    def _draw_slice(ax, mat, d, show_xlabel=True, show_ylabel=True):
+        ax.imshow(
+            mat,
+            cmap=cmap, norm=norm,
+            origin="upper",
+            aspect="auto",
+            interpolation="nearest",
+        )
+        ax.set_xticks(range(n_mob))
+        ax.set_xticklabels([str(m) for m in mobility_values], fontsize=9)
+        ax.set_yticks(range(n_alpha))
+        ax.set_yticklabels([str(a) for a in alpha_values], fontsize=9)
+        if show_xlabel:
+            ax.set_xlabel("Mobility exponent  m", fontsize=10)
+        if show_ylabel:
+            ax.set_ylabel("Drain  alpha", fontsize=10)
+        ax.set_title(
+            f"Interaction Surface Slice at d = {d}",
+            fontsize=11, fontweight="bold",
+        )
+        for i in range(n_alpha):
+            for j in range(n_mob):
+                ax.text(
+                    j, i, _SHORT[mat[i, j]],
+                    ha="center", va="center",
+                    fontsize=8, fontweight="bold", color="white",
+                )
+
+    # ------------------------------------------------------------------ #
+    # Per-d individual figures
+    # ------------------------------------------------------------------ #
+    print(f"\nBuilding interaction surface slices in: {outdir}")
+    for d in separations:
+        fig, ax = plt.subplots(figsize=(7, 5), constrained_layout=True)
+        _draw_slice(ax, matrices[d], d)
+        ax.legend(
+            handles=legend_handles, loc="upper right",
+            fontsize=9, framealpha=0.85, edgecolor="0.6",
+        )
+        outpath = os.path.join(outdir, f"interaction_surface_d{d:02d}.png")
+        fig.savefig(outpath, dpi=150)
+        plt.close(fig)
+        print(f"  Saved: interaction_surface_d{d:02d}.png")
+
+    # ------------------------------------------------------------------ #
+    # Combined figure — all d-slices in one grid (at most 2 columns)
+    # ------------------------------------------------------------------ #
+    n_cols  = min(n_sep, 2)
+    n_rows  = math.ceil(n_sep / n_cols)
+
+    fig_all, axes_all = plt.subplots(
+        n_rows, n_cols,
+        figsize=(7 * n_cols, 5 * n_rows),
+        constrained_layout=True,
+        squeeze=False,
+    )
+
+    for idx, d in enumerate(separations):
+        r, c = divmod(idx, n_cols)
+        _draw_slice(
+            axes_all[r][c], matrices[d], d,
+            show_xlabel = (r == n_rows - 1),
+            show_ylabel = (c == 0),
+        )
+
+    # Hide any unfilled panel (odd total count)
+    for idx in range(n_sep, n_rows * n_cols):
+        r, c = divmod(idx, n_cols)
+        axes_all[r][c].set_visible(False)
+
+    # Shared legend on the first panel
+    axes_all[0][0].legend(
+        handles=legend_handles, loc="upper right",
+        fontsize=8, framealpha=0.85, edgecolor="0.6",
+    )
+
+    fig_all.suptitle(
+        "ED Two-Core Interaction Surface — All Separation Slices\n"
+        "(alpha vs mobility exponent, per separation d)",
+        fontsize=13, fontweight="bold",
+    )
+
+    out_all = os.path.join(outdir, "interaction_surface_all_d.png")
+    fig_all.savefig(out_all, dpi=150)
+    plt.close(fig_all)
+    print(f"  Saved: interaction_surface_all_d.png")
+
+    # ------------------------------------------------------------------ #
+    # 3D console table — for each alpha: rows = m, cols = d
+    # ------------------------------------------------------------------ #
+    col_w = 13
+    print("\n" + "=" * 76)
+    print("INTERACTION SURFACE TABLE  (per alpha: rows = m,  cols = d)")
+    for alpha in alpha_values:
+        print("\n" + "-" * 76)
+        print(f"  alpha = {alpha}")
+        header = f"  {'m':<8}" + "".join(
+            f"  d={d:<{col_w - 3}}" for d in separations
+        )
+        print(header)
+        print("  " + "-" * 70)
+        for m in mobility_values:
+            row = f"  {m:<8}"
+            for d in separations:
+                label = _LABELS[_STR_TO_CODE[results_dict[(alpha, m, d)]]]
+                row += f"  {label:<{col_w - 2}}"
+            print(row)
+    print("=" * 76)
+
+
+# ---------------------------------------------------------------------------
+# 7.  Parameter sweep
 # ---------------------------------------------------------------------------
 
 def main() -> None:
@@ -718,6 +916,17 @@ def main() -> None:
     # Phase diagram — collapse (alpha, m, d) → (alpha, m) and plot
     # ------------------------------------------------------------------ #
     build_phase_diagram(
+        alpha_values    = ALPHA_VALUES,
+        mobility_values = MOBILITY_EXPONENTS,
+        separations     = SEPARATIONS,
+        results_dict    = results,
+        outdir          = OUTDIR_BASE,
+    )
+
+    # ------------------------------------------------------------------ #
+    # Interaction surface — raw (alpha, m, d) slices per d, no collapse
+    # ------------------------------------------------------------------ #
+    build_interaction_surface(
         alpha_values    = ALPHA_VALUES,
         mobility_values = MOBILITY_EXPONENTS,
         separations     = SEPARATIONS,
