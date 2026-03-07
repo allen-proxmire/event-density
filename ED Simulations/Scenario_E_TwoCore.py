@@ -1696,6 +1696,399 @@ def main() -> None:
     print("=" * 76)
     print(f"\nAll figures saved under: {OUTDIR_BASE}/")
 
+    # ------------------------------------------------------------------ #
+    # Section 14: Radius Spectra vs Gamma                                 #
+    # ------------------------------------------------------------------ #
+    build_radius_spectra(ALPHA_VALUES, MOBILITY_EXPONENTS, GAMMA_VALUES, OUTDIR_BASE)
+
+    # ------------------------------------------------------------------ #
+    # Section 15: Orbit Distance vs Gamma                                 #
+    # ------------------------------------------------------------------ #
+    build_orbit_distance_summary(
+        ALPHA_VALUES, MOBILITY_EXPONENTS, GAMMA_VALUES, SEPARATIONS, results, OUTDIR_BASE
+    )
+
+    # ------------------------------------------------------------------ #
+    # Section 16: High-gamma Scattering Grid                              #
+    # ------------------------------------------------------------------ #
+    build_scattering_grid(
+        alpha=0.05, m=1.0, gamma=2.0, d=40,
+        offsets=[-15, -10, -5, 0, 5, 10, 15],
+        outdir=OUTDIR_BASE,
+    )
+
+    print("=" * 76)
+    print(f"\nAll figures saved under: {OUTDIR_BASE}/")
+
+
+# ---------------------------------------------------------------------------
+# Section 14 -- RADIUS SPECTRA VS GAMMA
+# ---------------------------------------------------------------------------
+
+def run_single_core(alpha: float, m: float, gamma: float, outdir: str) -> "np.ndarray":
+    """Run a single Gaussian core for STEPS timesteps.
+
+    Returns the effective-radius time series as a 1-D float array.
+    Effective radius: first radial bin from grid centre where the
+    azimuthal-mean density profile drops below 0.5 * p_max.
+    """
+    p_max = PARAMS.p_max
+    p_min = PARAMS.p_min
+    sigma = CORE_WIDTH_FRAC * GRID_SIZE
+    cy, cx = GRID_SIZE // 2, GRID_SIZE // 2
+
+    run_params = EDParams(
+        alpha        = alpha,
+        beta         = PARAMS.beta,
+        gamma        = gamma,
+        dt           = PARAMS.dt,
+        p_min        = p_min,
+        p_max        = p_max,
+        boundary     = PARAMS.boundary,
+        mode         = "mobility",
+        noise_scale  = PARAMS.noise_scale,
+        mobility_exp = m,
+    )
+    lat = EDLattice(rows=GRID_SIZE, cols=GRID_SIZE, params=run_params, seed=SEED)
+
+    # Single Gaussian at grid centre (bypass init_two_body)
+    r_idx = np.arange(GRID_SIZE).reshape(-1, 1)
+    c_idx = np.arange(GRID_SIZE).reshape(1, -1)
+    dist2 = (r_idx - cy) ** 2 + (c_idx - cx) ** 2
+    lat.p[:] = np.clip(
+        CORE_BACKGROUND * p_max + CORE_AMPLITUDE * p_max * np.exp(
+            -dist2 / (2.0 * sigma ** 2)
+        ),
+        p_min,
+        p_max,
+    )
+
+    # Pre-compute integer radial bins from centre (vectorised -- once per call)
+    max_r = int(np.ceil(np.sqrt(2.0) * GRID_SIZE / 2.0)) + 1
+    r_dist_flat = np.clip(np.sqrt(dist2).ravel().astype(int), 0, max_r)
+    bin_counts = np.bincount(r_dist_flat, minlength=max_r + 1).astype(float)
+
+    half_thresh = 0.5 * p_max
+    radii: list = []
+
+    for _s in range(STEPS):
+        p_flat   = lat.p.ravel()
+        bin_sums = np.bincount(r_dist_flat, weights=p_flat, minlength=max_r + 1)
+        profile  = np.divide(bin_sums, bin_counts, where=bin_counts > 0,
+                             out=np.zeros(max_r + 1))
+        crossings = np.where(profile < half_thresh)[0]
+        eff_r     = float(crossings[0]) if len(crossings) > 0 else float(max_r)
+        radii.append(eff_r)
+        lat.step()
+
+    return np.array(radii, dtype=float)
+
+
+def build_radius_spectra(
+    alpha_values: list,
+    m_values:     list,
+    gamma_values: list,
+    outdir:       str,
+) -> None:
+    """Histogram steady-state effective radii per gamma and save figures.
+
+    For each gamma, runs run_single_core for every (alpha, m) combo.
+    Steady state defined as the last 20 % of the time series.
+    Saves: radius_spectrum_gamma{gamma}.png
+    """
+    print("\n" + "=" * 76)
+    print("SECTION 14 -- Radius Spectra vs Gamma")
+    print("=" * 76)
+
+    os.makedirs(outdir, exist_ok=True)
+    steady_start = int(STEPS * 0.80)
+
+    for gamma in gamma_values:
+        all_radii: list = []
+        for alpha in alpha_values:
+            for m in m_values:
+                sub_dir = os.path.join(outdir, f"gamma{gamma}", f"a{alpha}_m{m}")
+                os.makedirs(sub_dir, exist_ok=True)
+                radii  = run_single_core(alpha, m, gamma, sub_dir)
+                steady = radii[steady_start:]
+                all_radii.extend(steady.tolist())
+                print(
+                    f"  [gamma={gamma}  alpha={alpha}  m={m}]"
+                    f"  mean_r={steady.mean():.2f}  var_r={steady.var():.2f}"
+                )
+
+        arr = np.array(all_radii, dtype=float)
+        if len(arr) > 0:
+            arr_int  = np.clip(arr.astype(int), 0, 9999)
+            peak_bin = int(np.argmax(np.bincount(arr_int)))
+            print(
+                f"\n  [gamma={gamma}]  n_samples={len(arr)}"
+                f"  mean={arr.mean():.2f}  var={arr.var():.2f}"
+                f"  peak_bin={peak_bin} px"
+            )
+        else:
+            print(f"\n  [gamma={gamma}]  No samples collected.")
+
+        fig, ax = plt.subplots(figsize=(7, 4))
+        if len(arr) > 0:
+            ax.hist(arr, bins=30, color="#4878d0", edgecolor="white", linewidth=0.4)
+            ax.axvline(arr.mean(), color="red", linestyle="--", linewidth=1.2,
+                       label=f"mean={arr.mean():.1f} px")
+            ax.legend(fontsize=9)
+        else:
+            ax.text(0.5, 0.5, "No data", ha="center", va="center",
+                    transform=ax.transAxes, fontsize=12)
+        ax.set_title(f"Radius Spectrum  \u03b3={gamma}")
+        ax.set_xlabel("Effective radius (px)")
+        ax.set_ylabel("Count")
+        fig.tight_layout()
+        fpath = os.path.join(outdir, f"radius_spectrum_gamma{gamma}.png")
+        fig.savefig(fpath, dpi=120)
+        plt.close(fig)
+        print(f"  Saved: {fpath}")
+
+    print("=" * 76)
+
+
+# ---------------------------------------------------------------------------
+# Section 15 -- ORBIT DISTANCE VS GAMMA
+# ---------------------------------------------------------------------------
+
+def run_two_core_orbit(
+    alpha: float, m: float, gamma: float, d: int, outdir: str,
+) -> "np.ndarray":
+    """Like run_two_core but only records centroid-to-centroid distance per step.
+
+    No classification, no field snapshots.
+    Returns the full distance time series as a 1-D float array.
+    """
+    p_max = PARAMS.p_max
+
+    run_params = EDParams(
+        alpha        = alpha,
+        beta         = PARAMS.beta,
+        gamma        = gamma,
+        dt           = PARAMS.dt,
+        p_min        = PARAMS.p_min,
+        p_max        = p_max,
+        boundary     = PARAMS.boundary,
+        mode         = "mobility",
+        noise_scale  = PARAMS.noise_scale,
+        mobility_exp = m,
+    )
+    lat = EDLattice(rows=GRID_SIZE, cols=GRID_SIZE, params=run_params, seed=SEED)
+    init_two_saturated_cores(lat, d)
+
+    dist_series: list = []
+    for _s in range(STEPS):
+        cores = detect_cores(lat.p, p_max)
+        if len(cores) >= 2:
+            c0 = np.array(cores[0]["centroid"])
+            c1 = np.array(cores[1]["centroid"])
+            dist_series.append(float(np.linalg.norm(c1 - c0)))
+        elif len(cores) == 1:
+            dist_series.append(0.0)
+        else:
+            dist_series.append(float("nan"))
+        lat.step()
+
+    return np.array(dist_series, dtype=float)
+
+
+def build_orbit_distance_summary(
+    alpha_values: list,
+    m_values:     list,
+    gamma_values: list,
+    d_values:     list,
+    results_dict: dict,
+    outdir:       str,
+) -> None:
+    """For each gamma pick HOVER/ORBIT runs from results_dict and plot distance vs time.
+
+    Keys in results_dict are (alpha, m, d, gamma) 4-tuples (ED-Arch-08 format).
+    Saves: orbit_distance_gamma{gamma}.png
+    """
+    print("\n" + "=" * 76)
+    print("SECTION 15 -- Orbit Distance vs Gamma")
+    print("=" * 76)
+
+    os.makedirs(outdir, exist_ok=True)
+
+    for gamma in gamma_values:
+        fig, ax = plt.subplots(figsize=(8, 4))
+        n_plotted = 0
+        for alpha in alpha_values:
+            for m in m_values:
+                for d in d_values:
+                    outcome = results_dict.get((alpha, m, d, gamma))
+                    if outcome != "HOVER/ORBIT":
+                        continue
+                    sub_dir = os.path.join(outdir, f"gamma{gamma}", f"a{alpha}_m{m}")
+                    os.makedirs(sub_dir, exist_ok=True)
+                    dist_ts = run_two_core_orbit(alpha, m, gamma, d, sub_dir)
+                    ax.plot(dist_ts, linewidth=0.8, label=f"a={alpha} m={m} d={d}")
+                    n_plotted += 1
+                    tail   = dist_ts[int(STEPS * 0.5):]
+                    mean_d = float(np.nanmean(tail))
+                    std_d  = float(np.nanstd(tail))
+                    print(
+                        f"  [gamma={gamma}  alpha={alpha}  m={m}  d={d}]"
+                        f"  mean_dist(last50%)={mean_d:.2f}  std={std_d:.2f}"
+                    )
+
+        if n_plotted == 0:
+            ax.text(0.5, 0.5,
+                    f"No HOVER/ORBIT runs found for gamma={gamma}",
+                    ha="center", va="center", transform=ax.transAxes, fontsize=11)
+            print(
+                f"  [gamma={gamma}]  No HOVER/ORBIT runs found"
+                f" -- blank figure saved."
+            )
+        else:
+            ax.legend(fontsize=7, loc="upper right", ncol=2)
+        ax.set_title(f"Orbit Distance vs Time  \u03b3={gamma}")
+        ax.set_xlabel("Step")
+        ax.set_ylabel("Centroid distance (px)")
+        fig.tight_layout()
+        fpath = os.path.join(outdir, f"orbit_distance_gamma{gamma}.png")
+        fig.savefig(fpath, dpi=120)
+        plt.close(fig)
+        print(f"  Saved: {fpath}")
+
+    print("=" * 76)
+
+
+# ---------------------------------------------------------------------------
+# Section 16 -- HIGH-GAMMA SCATTERING GRID
+# ---------------------------------------------------------------------------
+
+def run_scattering(
+    alpha:  float,
+    m:      float,
+    gamma:  float,
+    d:      int,
+    offset: int,
+    outdir: str,
+) -> str:
+    """Two-core run with a vertical impact parameter (lateral offset).
+
+    Core A centre: (cy, cx - d//2)
+    Core B centre: (cy + offset, cx + d//2)
+
+    Returns the classified outcome string.
+    """
+    p_max = PARAMS.p_max
+    p_min = PARAMS.p_min
+    sigma = CORE_WIDTH_FRAC * GRID_SIZE
+    cy, cx = GRID_SIZE // 2, GRID_SIZE // 2
+
+    run_params = EDParams(
+        alpha        = alpha,
+        beta         = PARAMS.beta,
+        gamma        = gamma,
+        dt           = PARAMS.dt,
+        p_min        = p_min,
+        p_max        = p_max,
+        boundary     = PARAMS.boundary,
+        mode         = "mobility",
+        noise_scale  = PARAMS.noise_scale,
+        mobility_exp = m,
+    )
+    lat = EDLattice(rows=GRID_SIZE, cols=GRID_SIZE, params=run_params, seed=SEED)
+
+    r_idx = np.arange(GRID_SIZE).reshape(-1, 1)
+    c_idx = np.arange(GRID_SIZE).reshape(1, -1)
+    dA = np.sqrt((r_idx - cy) ** 2 + (c_idx - (cx - d // 2)) ** 2)
+    gA = CORE_AMPLITUDE * p_max * np.exp(-dA ** 2 / (2.0 * sigma ** 2))
+    dB = np.sqrt((r_idx - (cy + offset)) ** 2 + (c_idx - (cx + d // 2)) ** 2)
+    gB = CORE_AMPLITUDE * p_max * np.exp(-dB ** 2 / (2.0 * sigma ** 2))
+    lat.p[:] = np.clip(CORE_BACKGROUND * p_max + gA + gB, p_min, p_max)
+
+    n_cores_series: list = []
+    dist_series:    list = []
+    for _s in range(STEPS):
+        cores = detect_cores(lat.p, p_max)
+        n_cores_series.append(len(cores))
+        if len(cores) >= 2:
+            c0 = np.array(cores[0]["centroid"])
+            c1 = np.array(cores[1]["centroid"])
+            dist_series.append(float(np.linalg.norm(c1 - c0)))
+        elif len(cores) == 1:
+            dist_series.append(0.0)
+        else:
+            dist_series.append(float("nan"))
+        lat.step()
+
+    return classify_outcome(n_cores_series, dist_series)
+
+
+def build_scattering_grid(
+    alpha:   float,
+    m:       float,
+    gamma:   float,
+    d:       int,
+    offsets: list,
+    outdir:  str,
+) -> None:
+    """Sweep lateral offsets and produce a 1-D colour-coded outcome bar chart.
+
+    Saves: scattering_gamma{gamma}.png
+    """
+    _OUTCOME_COLORS = {
+        "ANNIHILATE":  "#d62728",
+        "MERGE":       "#ff7f0e",
+        "HOVER/ORBIT": "#2ca02c",
+        "REPEL":       "#1f77b4",
+    }
+
+    print("\n" + "=" * 76)
+    print("SECTION 16 -- High-gamma Scattering Grid")
+    print(f"  alpha={alpha}  m={m}  gamma={gamma}  d={d}  offsets={offsets}")
+    print("=" * 76)
+
+    sub_dir = os.path.join(outdir, f"gamma{gamma}", f"a{alpha}_m{m}")
+    os.makedirs(sub_dir, exist_ok=True)
+
+    outcomes: list = []
+    for offset in offsets:
+        oc = run_scattering(alpha, m, gamma, d, offset, sub_dir)
+        outcomes.append(oc)
+        print(f"  offset={offset:+4d} px | outcome={oc}")
+
+    # 1-D colour-coded bar chart
+    fig, ax = plt.subplots(figsize=(max(6, len(offsets) * 0.9), 3))
+    for i, (off, oc) in enumerate(zip(offsets, outcomes)):
+        color = _OUTCOME_COLORS.get(oc, "#888888")
+        ax.bar(i, 1.0, color=color, edgecolor="white", linewidth=0.5)
+        ax.text(i, 0.5, oc, ha="center", va="center",
+                fontsize=7, color="white", fontweight="bold", rotation=90)
+
+    ax.set_xticks(range(len(offsets)))
+    ax.set_xticklabels([str(o) for o in offsets], fontsize=9)
+    ax.set_xlabel("Lateral offset (px)")
+    ax.set_yticks([])
+    ax.set_title(
+        f"Scattering Grid  \u03b3={gamma}  \u03b1={alpha}  m={m}  d={d} px"
+    )
+    from matplotlib.patches import Patch
+    legend_elements = [
+        Patch(facecolor=c, label=lbl)
+        for lbl, c in _OUTCOME_COLORS.items()
+    ]
+    ax.legend(handles=legend_elements, loc="upper right",
+              fontsize=8, bbox_to_anchor=(1.22, 1.02))
+
+    fig.tight_layout()
+    fpath = os.path.join(outdir, f"scattering_gamma{gamma}.png")
+    fig.savefig(fpath, dpi=120, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {fpath}")
+
+    print("\n  Transition summary (offset -> outcome):")
+    for off, oc in zip(offsets, outcomes):
+        print(f"    offset={off:+4d} px -> {oc}")
+    print("=" * 76)
+
 
 # ---------------------------------------------------------------------------
 
