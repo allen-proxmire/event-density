@@ -153,7 +153,7 @@ PARAMS = EDParams(
 SEPARATIONS        = [20, 40, 60, 80]              # centre-to-centre separation in pixels
 ALPHA_VALUES       = [0.05, 0.02, 0.01, 0.005, 0.001]  # relational drain strengths to sweep
 MOBILITY_EXPONENTS = [1.0, 2.0, 3.0, 4.0]         # M(rho)=((rho_max-rho)/rho_max)^m exponents
-GAMMA_VALUES       = [0.25, 0.5, 1.0, 2.0]        # suppression (drain) exponent γ to sweep
+GAMMA_VALUES       = [0.10, 0.25, 0.5, 0.75]      # suppression exponent γ; EDParams requires 0<γ<1
 
 OUTDIR_BASE = os.path.join(_HERE, "results", "two_core")
 
@@ -1023,8 +1023,13 @@ def fit_boundary_surface(boundary_points: list) -> dict:
         f"ln(\u03b1) = {a0:+.4f}  {a1:+.4f}\u00b7m  "
         f"{a2:+.6f}\u00b7d  {a3:+.6f}\u00b7m\u00b7d"
     )
-    print(f"  Fitted model : {model_str}")
-    print(f"  R\u00b2           : {r2:.4f}   (n = {n} points)")
+    # ASCII-only print (Windows CP1252 terminal cannot encode Greek/middle-dot)
+    ascii_model = (
+        f"ln(alpha) = {a0:+.4f}  {a1:+.4f}*m  "
+        f"{a2:+.6f}*d  {a3:+.6f}*m*d"
+    )
+    print(f"  Fitted model : {ascii_model}")
+    print(f"  R^2          : {r2:.4f}   (n = {n} points)")
 
     return {
         "has_fit":  True,
@@ -1533,7 +1538,7 @@ def main() -> None:
         cached = _load_cached_outcomes(gamma)
         if cached:
             print(f"\n[gamma={gamma}]  Loaded {len(cached)} cached outcome(s) "
-                  f"— skipping those runs.")
+                  f"-- skipping those runs.")
 
         newly_computed: dict = {}
 
@@ -1643,7 +1648,7 @@ def main() -> None:
         plot_boundary_surface_fit(boundary_pts, fit_params, outdir=OUTDIR_BASE)
     else:
         print(
-            f"\n[Boundary analysis skipped — gamma={ref_gamma} "
+            f"\n[Boundary analysis skipped -- gamma={ref_gamma} "
             f"not in GAMMA_VALUES]"
         )
 
@@ -1686,7 +1691,7 @@ def main() -> None:
             dm = fracs["MERGE"]       - prev_fracs["MERGE"]
             dh = fracs["HOVER/ORBIT"] - prev_fracs["HOVER/ORBIT"]
             row += (
-                f"   \u0394: ANN {da * 100:+.1f}%"
+                f"   d: ANN {da * 100:+.1f}%"
                 f"  MRG {dm * 100:+.1f}%"
                 f"  HOV {dh * 100:+.1f}%"
             )
@@ -1712,7 +1717,7 @@ def main() -> None:
     # Section 16: High-gamma Scattering Grid                              #
     # ------------------------------------------------------------------ #
     build_scattering_grid(
-        alpha=0.05, m=1.0, gamma=2.0, d=40,
+        alpha=0.05, m=1.0, gamma=0.75, d=40,
         offsets=[-15, -10, -5, 0, 5, 10, 15],
         outdir=OUTDIR_BASE,
     )
