@@ -1,0 +1,482 @@
+[
+  {
+    "alpha": 0.05,
+    "m": 1.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 1.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 1.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 1.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 2.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 2.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 2.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 2.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 3.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 3.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 3.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 3.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 4.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 4.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 4.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.05,
+    "m": 4.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 1.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 1.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 1.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 1.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 2.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 2.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 2.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 2.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 3.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 3.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 3.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 3.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 4.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 4.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 4.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.02,
+    "m": 4.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 1.0,
+    "d": 20,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 1.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 1.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 1.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 2.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 2.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 2.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 2.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 3.0,
+    "d": 20,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.01,
+    "m": 3.0,
+    "d": 40,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 3.0,
+    "d": 60,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 3.0,
+    "d": 80,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 4.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.01,
+    "m": 4.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.01,
+    "m": 4.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.01,
+    "m": 4.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 1.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 1.0,
+    "d": 40,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 1.0,
+    "d": 60,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 1.0,
+    "d": 80,
+    "outcome": "ANNIHILATE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 2.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 2.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 2.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 2.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 3.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 3.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 3.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 3.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 4.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.005,
+    "m": 4.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 4.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.005,
+    "m": 4.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 1.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.001,
+    "m": 1.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 1.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 1.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 2.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.001,
+    "m": 2.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 2.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 2.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 3.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.001,
+    "m": 3.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 3.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 3.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 4.0,
+    "d": 20,
+    "outcome": "MERGE"
+  },
+  {
+    "alpha": 0.001,
+    "m": 4.0,
+    "d": 40,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 4.0,
+    "d": 60,
+    "outcome": "HOVER/ORBIT"
+  },
+  {
+    "alpha": 0.001,
+    "m": 4.0,
+    "d": 80,
+    "outcome": "HOVER/ORBIT"
+  }
+]
