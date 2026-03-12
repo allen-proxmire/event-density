@@ -12,6 +12,9 @@ This repository contains the complete, self-contained simulation infrastructure 
 the ED-Arch experimental series (ED-Arch-01 through ED-Arch-21), a reproducibility
 harness, four analysis notebooks, and full documentation.
 
+The **ED‑Arch Series** is the official, reproducible simulation system folder.
+All other folders are supporting research, drafts, interpretations, and historical development
+New users should start in ED Architecture/
 ---
 
 ## Quick start
