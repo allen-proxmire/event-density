@@ -54,15 +54,17 @@ ED is not the simulation. The simulation is the microscope; ED is the thing unde
 
 This repository provides:
 
-1. The complete ED simulation pipeline.
- 1. a fully reproducible workflow for regenerating every figure, invariant, and law surface.
-2. The ED‑Arch series (ED‑Arch‑00 through ED‑Arch‑21).
-3. The ED Research series.
-   1. ED Foundations (ED‑01 through ED‑12.5).
-   2. ED Interpretations (ED‑I‑01 through ED‑I‑31).
-   3.ED Testing (open note for experimental predictions).
-   4. ED Physical Computation (computational consequences).
-   5. ED Simulations (historical simulation code).
+The complete ED simulation pipeline.
+- a fully reproducible workflow for regenerating every figure, invariant, and law surface.
+
+The ED‑Arch series (ED‑Arch‑00 through ED‑Arch‑21).
+
+The ED Research series.
+- ED Foundations (ED‑01 through ED‑12.5).
+- ED Interpretations (ED‑I‑01 through ED‑I‑31).
+- ED Testing (open note for experimental predictions).
+- ED Physical Computation (computational consequences).
+- ED Simulations (historical simulation code).
 
 ---
 
