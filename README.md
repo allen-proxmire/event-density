@@ -29,8 +29,8 @@ It shows that geometry and discrete gates can generate stable, predictive laws â
 ED is an architectural account of the structural possibilities for any universe.
 
 The culmination of the ED program is the discovery of:
-three law surfaces governing all collapse behavior
-seven architectural invariants that hold across all tested configurations
+three law surfaces governing all collapse behavior.
+seven architectural invariants that hold across all tested configurations.
 These and other findings can be reproduced through the simulations described below.
 
 ---
