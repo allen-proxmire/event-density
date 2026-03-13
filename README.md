@@ -29,9 +29,9 @@ It shows that geometry and discrete gates can generate stable, predictive laws �
 ED is an architectural account of the structural possibilities for any universe.
 
 The culmination of the ED program is the discovery of:
-three law surfaces governing all collapse behavior.
-seven architectural invariants that hold across all tested configurations.
-These and other findings can be reproduced through the simulations described below.
+- three law surfaces governing all collapse behavior.
+- seven architectural invariants that hold across all tested configurations.
+- These and other findings can be reproduced through the simulations described below.
 
 ---
 
@@ -40,11 +40,11 @@ These and other findings can be reproduced through the simulations described bel
 The ED simulation in this repository is the minimal laboratory where the ontology becomes measurable.
 The simulation uses particles moving ballistically on a ring — not because ED is about particles, but because this is the simplest substrate that exposes:
 
-exact closed‑form collapse laws.
-seven architectural invariants.
-compositionality.
-regime boundaries.
-the geometry of becoming.
+- exact closed‑form collapse laws.
+- seven architectural invariants.
+- compositionality.
+- regime boundaries.
+- the geometry of becoming.
 
 ED is not the simulation. The simulation is the microscope; ED is the thing under the lens.
 
@@ -54,15 +54,15 @@ ED is not the simulation. The simulation is the microscope; ED is the thing unde
 
 This repository provides:
 
-•The complete ED simulation pipeline.
-      •a fully reproducible workflow for regenerating every figure, invariant, and law surface.
-•The ED‑Arch series (ED‑Arch‑00 through ED‑Arch‑21).
-•The ED Research series.
-      •ED Foundations (ED‑01 through ED‑12.5).
-      •ED Interpretations (ED‑I‑01 through ED‑I‑31).
-      •ED Testing (open note for experimental predictions).
-      •ED Physical Computation (computational consequences).
-      •ED Simulations (historical simulation code).
+1. The complete ED simulation pipeline.
+ 1. a fully reproducible workflow for regenerating every figure, invariant, and law surface.
+2. The ED‑Arch series (ED‑Arch‑00 through ED‑Arch‑21).
+3. The ED Research series.
+   1. ED Foundations (ED‑01 through ED‑12.5).
+   2. ED Interpretations (ED‑I‑01 through ED‑I‑31).
+   3.ED Testing (open note for experimental predictions).
+   4. ED Physical Computation (computational consequences).
+   5. ED Simulations (historical simulation code).
 
 ---
 
