@@ -2,7 +2,8 @@
 
 ## What is Event Density?
 
-Event Density (ED) is an ontology — a way of describing reality — not in terms of particles, fields, or forces, but in terms of updating, or becoming.
+Event Density (ED) is an ontology — a way of describing reality — not in terms of particles, fields, or forces, but in terms of updating, or — becoming.
+
 At the smallest scales, reality is continuously differentiating itself in what ED calls a micro‑event.
 The event‑density of a region is the local rate at which these micro‑events occur.
 Different regions update at different rates, producing ED gradients.
