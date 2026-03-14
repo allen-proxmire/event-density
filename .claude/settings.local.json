@@ -13,7 +13,9 @@
       "Bash(python -c \"import fitz; print\\(''pymupdf available''\\)\")",
       "Bash(python -c \"import pdfplumber; print\\(''pdfplumber available''\\)\")",
       "Bash(python -c \"import PyPDF2; print\\(''PyPDF2 available''\\)\")",
-      "Bash(python -X utf8 -c \":*)"
+      "Bash(python -X utf8 -c \":*)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\(''run_arch_harness.py'', doraise=True\\); print\\(''Syntax OK''\\)\")",
+      "Bash(MPLBACKEND=Agg python run_arch_harness.py --suite all --no-show --outdir arch_harness_output)"
     ]
   }
 }

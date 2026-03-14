@@ -1,9 +1,9 @@
 [
   {
-    "id": null,
+    "id": "INV-21-1",
     "title": "3\u00d73 Sheet Compositionality",
     "passed": true,
-    "max_deviation": 0.0,
+    "max_deviation": 0.00500000000000006,
     "details": [
       {
         "Dcc": 120.0,
@@ -296,7 +296,7 @@
     ]
   },
   {
-    "id": null,
+    "id": "INV-21-2",
     "title": "Memoryless Law-Surface Jumps",
     "passed": true,
     "max_deviation": 0.0,
@@ -412,10 +412,10 @@
     ]
   },
   {
-    "id": null,
+    "id": "INV-21-3",
     "title": "Pythagorean Tangential Drift",
     "passed": true,
-    "max_deviation": 0.0,
+    "max_deviation": 3.197442310920451e-13,
     "details": [
       {
         "t": 5,
@@ -455,10 +455,10 @@
     ]
   },
   {
-    "id": null,
+    "id": "INV-21-4",
     "title": "Geometry-Aware Programmed Collapse",
     "passed": true,
-    "max_deviation": 0.0,
+    "max_deviation": 0.0018871125850725146,
     "details": [
       {
         "gamma_program": [
@@ -484,7 +484,7 @@
     ]
   },
   {
-    "id": null,
+    "id": "INV-21-5",
     "title": "Perturbation Hardness Hierarchy",
     "passed": true,
     "max_deviation": 0.0,
@@ -516,7 +516,7 @@
     ]
   },
   {
-    "id": null,
+    "id": "INV-21-6",
     "title": "DECAY Angular Sub-Regime",
     "passed": true,
     "max_deviation": 0.0,
@@ -608,10 +608,10 @@
     ]
   },
   {
-    "id": null,
+    "id": "INV-21-7",
     "title": "Ghost Compositionality",
     "passed": true,
-    "max_deviation": 0.0,
+    "max_deviation": 0.0050000000000000044,
     "details": [
       {
         "cluster": "A",

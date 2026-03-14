@@ -1,108 +1,303 @@
 # Event Density — Ontology, Architecture, and Reproducible Simulation
 
-## What is Event Density?
+Event Density (ED) is an ontology — a way of describing reality — not in terms of particles, fields, or forces, but in terms of **updating**, or **becoming**.
 
-Event Density (ED) is an ontology — a way of describing reality — not in terms of particles, fields, or forces, but in terms of updating, or — becoming.
-
-At the smallest scales, reality is continuously differentiating itself in what ED calls a micro‑event.
-The event‑density of a region is the local rate at which these micro‑events occur.
-Different regions update at different rates, producing ED gradients.
+At the smallest scales, reality is continuously differentiating itself in what ED calls a **micro‑event**.  
+The **event‑density** of a region is the local rate at which these micro‑events occur.  
+Different regions update at different rates, producing **ED gradients**.  
 As in all systems with gradients, these differences drive flows that redistribute, synchronize, and reshape the underlying becoming.
+
 From this interplay of becoming, gradients, and flow, ED derives the emergence of structure across all scales.
+
+---
+
+# 1. The ED Ontology
 
 ## Core primitives
 
-**Becoming**: The continuous generative activity from which all distinctions, changes, and structures arise. Becoming is the substrate of reality; ED models how it distributes itself.
+**Becoming**  
+The continuous generative activity from which all distinctions, changes, and structures arise.
 
-**Micro‑Event**: The smallest undirected differentiation within becoming — a minimal flicker of generative activity before any form, direction, or flow emerges.
+**Micro‑Event**  
+The smallest undirected differentiation within becoming — a minimal flicker of generative activity before any form, direction, or flow emerges.
 
-**Gradient**: A directional difference in event‑density or flow across a region. Gradients drive movement, reorientation, and structural change.
+**Gradient**  
+A directional difference in event‑density or flow across a region. Gradients drive movement, reorientation, and structural change.
 
-**Flow**: The directed propagation of becoming through a region. Flow expresses how event‑density moves, redistributes, or reorganizes.
+**Flow**  
+The directed propagation of becoming through a region. Flow expresses how event‑density moves, redistributes, or reorganizes.
 
-From these primitives, ED derives the familiar features of both cosmology and microphysics — the emergence of space and time, the formation of structure, and the architectural analogues of entanglement, spin, and baryogenesis.
-ED defines a compositional rule that determines how regions combine, how gradients evolve, and how structures emerge. Saddles, boundaries, horizons, collapse, and compositionality are not assumptions — they are consequences of how becoming distributes itself.
+From these primitives, ED derives:
 
-ED is not a physical theory. It is an architectural and predictive one.
-It shows that geometry and discrete gates can generate stable, predictive laws — and that these laws can be discovered, formalized, and reproduced.
+- saddles  
+- boundaries  
+- horizons  
+- collapse  
+- compositionality  
+- architectural invariants  
 
-ED is an architectural account of the structural possibilities for any universe.
+These are not assumptions — they are consequences of how becoming distributes itself.
 
-The culmination of the ED program is the discovery of:
-- three law surfaces governing all collapse behavior.
-- seven architectural invariants that hold across all tested configurations.
-- These and other findings can be reproduced through the simulations described below.
-
----
-
-## Why this simulation?
-
-The ED simulation in this repository is the minimal laboratory where the ontology becomes measurable.
-The simulation uses particles moving ballistically on a ring — not because ED is about particles, but because this is the simplest substrate that exposes:
-
-- exact closed‑form collapse laws.
-- seven architectural invariants.
-- compositionality.
-- regime boundaries.
-- the geometry of becoming.
-
-ED is not the simulation. The simulation is the microscope; ED is the thing under the lens.
+ED is not a physical theory.  
+It is an **architectural and predictive** one.
 
 ---
 
-## What does this repository contain?
+# 2. Why This Simulation Exists
 
-This repository provides:
+The ED simulation in this repository is the **minimal laboratory** where the ontology becomes measurable.
 
-The complete ED simulation pipeline.
-- a fully reproducible workflow for regenerating every figure, invariant, and law surface.
+It uses particles moving ballistically on a ring — not because ED is about particles, but because this is the simplest substrate that exposes:
 
-The ED‑Arch series (ED‑Arch‑00 through ED‑Arch‑21).
+- exact closed‑form collapse laws  
+- seven architectural invariants  
+- compositionality  
+- regime boundaries  
+- the geometry of becoming  
 
-The ED Research series.
-- ED Foundations (ED‑01 through ED‑12.5).
-- ED Interpretations (ED‑I‑01 through ED‑I‑31).
-- ED Testing (open note for experimental predictions).
-- ED Physical Computation (computational consequences).
-- ED Simulations (historical simulation code).
+**ED is not the simulation.**  
+The simulation is the microscope; ED is the thing under the lens.
 
 ---
 
-## How to Reproduce the ED‑Arch Simulations? (Step‑by‑Step)
+# 3. The ED‑Arch Architecture Stack
 
-1. Clone this repository  
-Use Git (git clone …) or download the ZIP from GitHub and unzip it.
+ED‑Arch is the computational backbone of the ED program.  
+It consists of four layers:
 
-2. Open a terminal window  
-Command Prompt, PowerShell, or Anaconda Prompt all work.
+```
+ED‑Arch‑00  →  MicroEvent Engine
+ED‑Arch‑20  →  Analytic Law‑Surface Oracle
+ED‑Arch‑21  →  Invariant Harness
+ED‑Arch‑22  →  Physics Analogs (coming next)
+```
 
-3. Navigate into the repo folder  
-Example: cd "C:\Users\allen\GitHub\Event Density"  
-Make sure you see files like environment.yml and run_all.py.
+### **ED‑Arch‑00 — MicroEvent Engine**
+Deterministic microscopic dynamics:
 
-4. Create the ED environment  
-Run: conda env create -f environment.yml  
-This installs the exact versions of Python, NumPy, Matplotlib, etc.
+- ballistic motion  
+- γ‑gated interaction laws  
+- mechanism classification  
+- PBC geometry  
+- collapse detection  
 
-5. Activate the environment  
-Run: conda activate ed-arch  
-Your prompt should now begin with (ed-arch).
+### **ED‑Arch‑20 — Analytic Oracle**
+Closed‑form predictions for:
 
-6. Run the golden experiment  
-Run: python run_all.py --scenario H  
-You should see: chi_ref = 0.4000, chi_emp = 0.4000, dev = 0.0000.
+- collapse time χ  
+- angular‑rate law  
+- DECAY windows  
+- Pythagorean drift  
 
-7. Run all ED‑Arch scenarios  
-Run: python run_all.py --all  
-This regenerates all figures, verifies all invariants, and writes results/summary.json.
+### **ED‑Arch‑21 — Invariant Harness**
+Seven architectural invariants:
 
-8. (Optional) Regenerate everything from scratch  
-Delete old outputs: rm -rf figures/* results/summary.json  
-Then run: python run_all.py --all.
+1. 3×3 Sheet Compositionality  
+2. Memoryless Law‑Surface Switching  
+3. Pythagorean Tangential Drift  
+4. Programmed Collapse  
+5. Perturbation Hardness  
+6. DECAY Angular Sub‑Regime  
+7. Ghost Compositionality  
 
-9. (Optional) Reproduce the Jupyter notebooks  
-Run: jupyter notebook experiments/  
-Then choose: Kernel → Restart & Run All.
+All seven pass.
 
-10. You’re done  
-You have reproduced all ED‑Arch law surfaces, invariants, canonical scenarios, and figures.
+### **ED‑Arch‑22 — Physics Analogs (coming next)**
+
+- optics analogs  
+- cosmology analogs  
+- quantum‑like analogs  
+
+---
+
+# 4. 📘 ED‑Arch Orientation Map
+
+ED‑Arch is a **computational testbed** for the ED ontology — a controlled “toy universe” that:
+
+- simulates collapse dynamics  
+- generates law surfaces  
+- identifies mechanism regimes  
+- validates structural invariants  
+- produces falsifiable predictions  
+
+ED‑Arch is the **instrument** that tests ED.
+
+---
+
+# 5. 🧭 What This System Tests
+
+When you run the ED‑Arch harness, it evaluates six core predictions of the ED ontology.
+
+## **1. Law‑Surface Geometry**
+Predicts collapse behavior across `(d, ncl, γ)` and classifies mechanisms:
+
+- inward‑collapse  
+- outward‑PBC  
+- DECAY  
+
+**Results:**  
+- 56 analytic points sampled  
+- `max_deviation = 0.0`  
+- `all_passed = true`
+
+---
+
+## **2. DECAY Window Boundaries**
+Identifies the forbidden band where collapse cannot occur.
+
+**Results:**  
+- clean `(d_lower, d_upper)` windows for ncl = 3–6  
+- `boundary_accuracy = 1.0`  
+- `all_passed = true`
+
+---
+
+## **3. Angular Rate Law**
+
+
+
+\[
+K = 2 \sin(\pi / ncl)
+\]
+
+
+
+**Results:**  
+- `k_pred == k_emp` for all ncl  
+- `max_deviation = 0.0`
+
+---
+
+## **4. Invariant Suite (Arch‑21)**
+
+| ID | Name | Status | Max Dev |
+|----|------|--------|---------|
+| INV‑21‑1 | 3×3 Sheet Compositionality | PASS | 0.0050 |
+| INV‑21‑2 | Memoryless Law‑Surface Jumps | PASS | 0.0000 |
+| INV‑21‑3 | Pythagorean Tangential Drift | PASS | ~3e‑13 |
+| INV‑21‑4 | Geometry‑Aware Programmed Collapse | PASS | 0.0019 |
+| INV‑21‑5 | Perturbation Hardness Hierarchy | PASS | 0.0000 |
+| INV‑21‑6 | DECAY Angular Sub‑Regime | PASS | 0.0000 |
+| INV‑21‑7 | Ghost Compositionality | PASS | 0.0050 |
+
+All invariants passed.
+
+---
+
+# 6. 🔗 How ED‑Arch Connects to ED
+
+- **ED is the ontology** — the deep structure of micro‑events.  
+- **ED‑Arch is the architecture** — a computational universe that instantiates ED’s predictions.  
+- ED‑Arch tests ED by comparing empirical collapse behavior to analytic law surfaces.  
+- ED‑Arch validates ED by confirming invariants and mechanism boundaries.  
+- ED‑Arch extends ED by revealing new commensurability classes and scaling laws.
+
+---
+
+# 7. ▶️ Quickstart: Reproduce the Canonical Results
+
+```bash
+python run_arch_harness.py --suite all
+```
+
+This command:
+
+- runs all analytic law‑surface tests  
+- runs all engine‑integrated tests  
+- runs all Arch‑21 invariants  
+- generates all figures  
+- writes JSON + TXT reports  
+- saves everything into `arch_harness_output/`
+
+---
+
+# 8. Installation & Environment Setup
+
+1. Clone the repository  
+2. Open a terminal  
+3. Navigate into the repo  
+4. Create the ED environment:  
+   ```bash
+   conda env create -f environment.yml
+   ```
+5. Activate it:  
+   ```bash
+   conda activate ed-arch
+   ```
+6. Run the harness (see Quickstart)
+
+---
+
+# 9. 📚 Reproduce the ED‑Arch Papers
+
+Each law has a folder:
+
+```
+Reproduce_This_Paper/
+    01_Law_I_Geometry/
+    02_Law_II_Timing/
+    03_Law_III_Resonance/
+    04_Law_IV_Recurrence/
+    05_Law_V_Scaling/
+    06_Law_Vb_Commensurability/
+```
+
+Each contains:
+
+- figures  
+- code  
+- a short README explaining:
+  - what the law says  
+  - what the experiment tests  
+  - how to run it  
+  - expected output  
+
+---
+
+# 10. 🗂️ Repository Structure
+
+```
+ED‑Arch/
+    src/                     # core engine + law modules
+    harness/                 # reproducibility harness
+    arch_harness_output/     # generated results
+    Reproduce_This_Paper/    # law-by-law reproducibility folders
+    docs/                    # ED‑Arch papers
+    run_arch_harness.py      # entry point
+```
+
+---
+
+# 11. 🧪 What You Get After Running the Harness
+
+- **law_surface_results.json**  
+- **decay_window_results.json**  
+- **angular_rate_results.json**  
+- **invariant_results.json**  
+- **arch_harness_report.txt**  
+- **canonical figures** (PNG)  
+- **mechanism maps**  
+- **summary plots**  
+
+This is the complete empirical signature of ED‑Arch‑21.
+
+---
+
+# 12. The ED Ontology (One‑Sentence Summary)
+
+> **The saddle is the geometry; the gradients are the calculus; the boundaries are the topology; the horizons are the dynamics.**
+
+---
+
+# 13. Why This Repo Matters
+
+This is the first time ED has been:
+
+- executable  
+- testable  
+- reproducible  
+- validated  
+- architecturally complete  
+
+It is now a **scientific instrument**, not just a set of papers.
+
