@@ -39,7 +39,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.4,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.20499999999999988
   },
   {
     "collapse_step": 11883,
@@ -81,7 +84,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": 1.8829999999988534
   },
   {
     "collapse_step": 372,
@@ -123,6 +129,9 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.628
   }
 ]

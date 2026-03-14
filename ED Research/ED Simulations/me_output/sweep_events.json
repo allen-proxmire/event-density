@@ -39,7 +39,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.049406666666666675,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.004406666666666642
   },
   {
     "collapse_step": 95,
@@ -81,7 +84,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.09881333333333335,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.0038133333333332797
   },
   {
     "collapse_step": 145,
@@ -123,7 +129,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.14822000000000005,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.003219999999999945
   },
   {
     "collapse_step": 195,
@@ -165,7 +174,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.1976266666666667,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.002626666666666555
   },
   {
     "collapse_step": 245,
@@ -207,7 +219,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.24703333333333335,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.002033333333333165
   },
   {
     "collapse_step": 295,
@@ -249,7 +264,10 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.29644000000000004,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.0014399999999998303
   },
   {
     "collapse_step": 345,
@@ -291,7 +309,10 @@
         0.5000000000000004,
         0.8660254037844385
       ]
-    ]
+    ],
+    "chi_pred": 0.34584666666666675,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.0008466666666664957
   },
   {
     "collapse_step": 395,
@@ -333,7 +354,10 @@
         0.5000000000000004,
         0.8660254037844385
       ]
-    ]
+    ],
+    "chi_pred": 0.3952533333333334,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.0002533333333331056
   },
   {
     "collapse_step": 445,
@@ -375,7 +399,10 @@
         0.5000000000000003,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.44466000000000006,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": 0.0003400000000002845
   },
   {
     "collapse_step": -1,
@@ -417,7 +444,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": 4.999999999997126
   },
   {
     "collapse_step": 5938,
@@ -459,7 +489,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": -4.061999999999682
   },
   {
     "collapse_step": 2574,
@@ -501,7 +534,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": -7.4260000000001725
   },
   {
     "collapse_step": 11883,
@@ -543,7 +579,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": 1.8829999999988534
   },
   {
     "collapse_step": 8516,
@@ -585,7 +624,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": -1.4839999999992806
   },
   {
     "collapse_step": 12172,
@@ -627,7 +669,10 @@
         0.8660254037844384,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": 2.171999999998693
   },
   {
     "collapse_step": 2863,
@@ -669,7 +714,10 @@
         0.8660254037844385,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": -7.137000000000205
   },
   {
     "collapse_step": 6227,
@@ -711,7 +759,10 @@
         0.8660254037844385,
         -0.5000000000000004
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": -3.772999999999586
   },
   {
     "collapse_step": -1,
@@ -753,7 +804,10 @@
         0.8660254037844384,
         -0.5000000000000003
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "DECAY",
+    "chi_delta_pred_emp": 4.999999999997126
   },
   {
     "collapse_step": 522,
@@ -795,7 +849,10 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.478
   },
   {
     "collapse_step": 472,
@@ -837,7 +894,10 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.528
   },
   {
     "collapse_step": 422,
@@ -879,7 +939,10 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.578
   },
   {
     "collapse_step": 372,
@@ -921,7 +984,10 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.628
   },
   {
     "collapse_step": 322,
@@ -963,7 +1029,10 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.677999999999999
   },
   {
     "collapse_step": 272,
@@ -1005,7 +1074,10 @@
         -0.5000000000000004,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.728
   },
   {
     "collapse_step": 222,
@@ -1047,7 +1119,10 @@
         -0.5000000000000004,
         -0.8660254037844385
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.778
   },
   {
     "collapse_step": 172,
@@ -1089,7 +1164,10 @@
         -0.5000000000000004,
         -0.8660254037844385
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.828
   },
   {
     "collapse_step": 122,
@@ -1131,6 +1209,9 @@
         -0.5000000000000003,
         -0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 10.0,
+    "mechanism_pred": "outward-PBC",
+    "chi_delta_pred_emp": -9.878
   }
 ]

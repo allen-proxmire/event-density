@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python run_micro_event_sim.py --scenario H --no-show)",
+      "Bash(python run_micro_event_sim.py --no-show)",
+      "Bash(python -c \":*)",
+      "Bash(python3 -c \":*)",
+      "Bash(pip install:*)",
+      "Bash(python -c \"from ED_Arch_Harness.arch20_law_surfaces import *; print\\(''All imports OK''\\)\")",
+      "Bash(python -c \"from ED_Arch_Harness.arch21_invariants import *; print\\(''All imports OK''\\)\")",
+      "Bash(PYTHONIOENCODING=utf-8 python -c \":*)",
+      "Bash(PYTHONIOENCODING=utf-8 python << 'PYEOF':*)",
+      "Bash(python -c \"import fitz; print\\(''pymupdf available''\\)\")",
+      "Bash(python -c \"import pdfplumber; print\\(''pdfplumber available''\\)\")",
+      "Bash(python -c \"import PyPDF2; print\\(''PyPDF2 available''\\)\")",
+      "Bash(python -X utf8 -c \":*)"
+    ]
+  }
+}

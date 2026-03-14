@@ -39,6 +39,9 @@
         0.5000000000000004,
         0.8660254037844384
       ]
-    ]
+    ],
+    "chi_pred": 0.2,
+    "mechanism_pred": "inward-collapse",
+    "chi_delta_pred_emp": -0.004999999999999866
   }
 ]

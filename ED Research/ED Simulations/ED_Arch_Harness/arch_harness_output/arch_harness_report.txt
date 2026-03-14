@@ -1,0 +1,29 @@
+ED-Arch Validation Harness Report
+================================
+
+Law-Surface Validation
+----------------------
+  Max deviation: 0.0
+  All passed:    True
+
+Engine-Integrated Law-Surface Validation
+----------------------------------------
+  Max deviation: inf
+  All passed:    False
+
+Law-Surface Validation
+----------------------
+  Max deviation: 0.0
+  All passed:    True
+
+Invariant Suite
+---------------
+Invariant Suite
+---------------
+            PASS  max_dev=0.000  3×3 Sheet Compositionality
+            PASS  max_dev=0.000  Memoryless Law-Surface Jumps
+            PASS  max_dev=0.000  Pythagorean Tangential Drift
+            PASS  max_dev=0.000  Geometry-Aware Programmed Collapse
+            PASS  max_dev=0.000  Perturbation Hardness Hierarchy
+            PASS  max_dev=0.000  DECAY Angular Sub-Regime
+            PASS  max_dev=0.000  Ghost Compositionality

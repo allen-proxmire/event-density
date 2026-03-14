@@ -47,7 +47,6 @@ from pathlib import Path
 from typing import List, Optional, Tuple
 
 import numpy as np
-
 from event_update import circumradius, d_min, delta_R, pbc_proximity
 from event_lattice import RingState
 
@@ -106,6 +105,9 @@ class MicroEvent:
     pbc_corner_dist:     float
     positions:           list   # serializable as nested list
     velocities:          list   # serializable as nested list
+    chi_pred:            float = 0.0
+    mechanism_pred:      str   = ""
+    chi_delta_pred_emp:  float = 0.0
 
 
 # ---------------------------------------------------------------------------
@@ -218,6 +220,24 @@ def detect_micro_event(ring: RingState) -> MicroEvent:
         box_size=ring.params.box_size,
     )
 
+
+    # --- Analytic predictions ---
+    from ed_analytic_law import analytic_chi, analytic_mechanism
+
+    chi_pred = analytic_chi(
+        N=ring.params.N,
+        d=ring.params.diameter,
+        gamma=ring.params.gamma_gate,
+    )
+
+    mechanism_pred = analytic_mechanism(
+        N=ring.params.N,
+        d=ring.params.diameter,
+        gamma=ring.params.gamma_gate,
+    )
+
+    chi_delta_pred_emp = ring.time - chi_pred
+
     return MicroEvent(
         collapse_step=ring.collapse_step,
         chi_emp=ring.time,
@@ -233,6 +253,9 @@ def detect_micro_event(ring: RingState) -> MicroEvent:
         pbc_corner_dist=obs["pbc_corner_dist"],
         positions=ring.positions.tolist(),
         velocities=ring.velocities.tolist(),
+        chi_pred=chi_pred,
+        mechanism_pred=mechanism_pred,
+        chi_delta_pred_emp=chi_delta_pred_emp,
     )
 
 
