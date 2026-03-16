@@ -1,303 +1,155 @@
-# Event Density — Ontology, Architecture, and Reproducible Simulation
+# Event Density Ontology
 
-Event Density (ED) is an ontology — a way of describing reality — not in terms of particles, fields, or forces, but in terms of **updating**, or **becoming**.
+## Overview
 
-At the smallest scales, reality is continuously differentiating itself in what ED calls a **micro‑event**.  
-The **event‑density** of a region is the local rate at which these micro‑events occur.  
-Different regions update at different rates, producing **ED gradients**.  
-As in all systems with gradients, these differences drive flows that redistribute, synchronize, and reshape the underlying becoming.
+Event Density (ED) is a foundational framework for physics built on a minimal ontology of **events**, **becoming**, and **event density**.  
+It does **not** assume spacetime, fields, curvature, or geometric structure.  
+Instead, ED begins with the idea that the universe is a finite configuration of events whose density of becoming evolves according to a single **compositional rule**.
 
-From this interplay of becoming, gradients, and flow, ED derives the emergence of structure across all scales.
+From this rule alone, ED derives large‑scale cosmological behavior — early exponential smoothing, residual gradients, structure formation, expansion, and late‑time flattening — without invoking geometry or external dynamical laws.
 
----
+ED is not a simulation or a toy model.  
+It is a **candidate ontology for this universe**.
 
-# 1. The ED Ontology
-
-## Core primitives
-
-**Becoming**  
-The continuous generative activity from which all distinctions, changes, and structures arise.
-
-**Micro‑Event**  
-The smallest undirected differentiation within becoming — a minimal flicker of generative activity before any form, direction, or flow emerges.
-
-**Gradient**  
-A directional difference in event‑density or flow across a region. Gradients drive movement, reorientation, and structural change.
-
-**Flow**  
-The directed propagation of becoming through a region. Flow expresses how event‑density moves, redistributes, or reorganizes.
-
-From these primitives, ED derives:
-
-- saddles  
-- boundaries  
-- horizons  
-- collapse  
-- compositionality  
-- architectural invariants  
-
-These are not assumptions — they are consequences of how becoming distributes itself.
-
-ED is not a physical theory.  
-It is an **architectural and predictive** one.
+This repository contains the ED ontology, the compositional rule, and the cosmological consequences derived from it.
 
 ---
 
-# 2. Why This Simulation Exists
+## Primitives
 
-The ED simulation in this repository is the **minimal laboratory** where the ontology becomes measurable.
+ED is defined by three irreducible primitives:
 
-It uses particles moving ballistically on a ring — not because ED is about particles, but because this is the simplest substrate that exposes:
+### 1. **Events**  
+The fundamental units of becoming.  
+Events are not embedded in spacetime; spacetime is an emergent description of relations among events.
 
-- exact closed‑form collapse laws  
-- seven architectural invariants  
-- compositionality  
-- regime boundaries  
-- the geometry of becoming  
+### 2. **Event Density (p)**  
+A measure of “how much becoming” is present in a finite configuration.  
+High ED corresponds to rich, active regions; low ED corresponds to thin, quiescent ones.
 
-**ED is not the simulation.**  
-The simulation is the microscope; ED is the thing under the lens.
+### 3. **Finite Configurations**  
+ED is always defined on finite sets of events.  
+There is no continuum, no background manifold, and no geometric structure assumed.
 
----
-
-# 3. The ED‑Arch Architecture Stack
-
-ED‑Arch is the computational backbone of the ED program.  
-It consists of four layers:
-
-```
-ED‑Arch‑00  →  MicroEvent Engine
-ED‑Arch‑20  →  Analytic Law‑Surface Oracle
-ED‑Arch‑21  →  Invariant Harness
-ED‑Arch‑22  →  Physics Analogs (coming next)
-```
-
-### **ED‑Arch‑00 — MicroEvent Engine**
-Deterministic microscopic dynamics:
-
-- ballistic motion  
-- γ‑gated interaction laws  
-- mechanism classification  
-- PBC geometry  
-- collapse detection  
-
-### **ED‑Arch‑20 — Analytic Oracle**
-Closed‑form predictions for:
-
-- collapse time χ  
-- angular‑rate law  
-- DECAY windows  
-- Pythagorean drift  
-
-### **ED‑Arch‑21 — Invariant Harness**
-Seven architectural invariants:
-
-1. 3×3 Sheet Compositionality  
-2. Memoryless Law‑Surface Switching  
-3. Pythagorean Tangential Drift  
-4. Programmed Collapse  
-5. Perturbation Hardness  
-6. DECAY Angular Sub‑Regime  
-7. Ghost Compositionality  
-
-All seven pass.
-
-### **ED‑Arch‑22 — Physics Analogs (coming next)**
-
-- optics analogs  
-- cosmology analogs  
-- quantum‑like analogs  
+Everything else — gradients, boundaries, horizons, structure, expansion — emerges from how ED behaves across these finite configurations.
 
 ---
 
-# 4. 📘 ED‑Arch Orientation Map
+## The Compositional Rule
 
-ED‑Arch is a **computational testbed** for the ED ontology — a controlled “toy universe” that:
+The core of ED is a universal rule that determines the ED of a union of configurations:
 
-- simulates collapse dynamics  
-- generates law surfaces  
-- identifies mechanism regimes  
-- validates structural invariants  
-- produces falsifiable predictions  
+p(A ∪ B)
+= p(A) + p(B)
+− α ∫_{A∩B} f(p) du
+− β ∫_{A∪B} g(|∇p|) du
+− γ ∫_{∂(A∪B)} h(|∇p|) dS.
 
-ED‑Arch is the **instrument** that tests ED.
+This rule contains three competing contributions:
 
----
+### **Relational Penalty**  
+Concave in p.  
+Suppresses overlap of high‑ED regions.  
+Drives competition and structure formation.
 
-# 5. 🧭 What This System Tests
+### **Gradient Penalty**  
+Quadratic in |∇p|.  
+Penalizes inhomogeneity.  
+Drives exponential smoothing (ED‑inflation).
 
-When you run the ED‑Arch harness, it evaluates six core predictions of the ED ontology.
+### **Boundary Term**  
+Saturating in |∇p|.  
+Dominates in extreme regimes.  
+Generates horizon‑like behavior and late‑time flattening.
 
-## **1. Law‑Surface Geometry**
-Predicts collapse behavior across `(d, ncl, γ)` and classifies mechanisms:
-
-- inward‑collapse  
-- outward‑PBC  
-- DECAY  
-
-**Results:**  
-- 56 analytic points sampled  
-- `max_deviation = 0.0`  
-- `all_passed = true`
-
----
-
-## **2. DECAY Window Boundaries**
-Identifies the forbidden band where collapse cannot occur.
-
-**Results:**  
-- clean `(d_lower, d_upper)` windows for ncl = 3–6  
-- `boundary_accuracy = 1.0`  
-- `all_passed = true`
+These three terms — competition, smoothing, and boundary dominance — are the engines of ED cosmology.
 
 ---
 
-## **3. Angular Rate Law**
+## Cosmology from ED
 
+When applied to the universe as a whole, the compositional rule produces a coherent cosmological history:
 
+### **Early Universe: Exponential Smoothing**  
+The gradient penalty dominates, forcing rapid decay of gradients.  
+This yields an inflation‑like phase without geometry or fields.
 
-\[
-K = 2 \sin(\pi / ncl)
-\]
+### **Residual Gradients: Seeds of Structure**  
+Smoothing weakens as gradients shrink.  
+Small variations survive and become the seeds of structure.
 
+### **Structure Formation**  
+The concave relational penalty amplifies residual gradients and stabilizes high‑ED pockets — the ED analogues of galaxies, stars, and clusters.
 
+### **Expansion via Thinning**  
+ED flows outward from high‑ED pockets, reducing the global average ED density.  
+The coarse‑grained homogeneity scale grows.  
+This is the ED analogue of cosmic expansion.
 
-**Results:**  
-- `k_pred == k_emp` for all ncl  
-- `max_deviation = 0.0`
+### **Late‑Time Flattening and Horizons**  
+As gradients vanish, the boundary term dominates.  
+The universe approaches a thin, nearly uniform state with horizon‑like behavior.
 
----
-
-## **4. Invariant Suite (Arch‑21)**
-
-| ID | Name | Status | Max Dev |
-|----|------|--------|---------|
-| INV‑21‑1 | 3×3 Sheet Compositionality | PASS | 0.0050 |
-| INV‑21‑2 | Memoryless Law‑Surface Jumps | PASS | 0.0000 |
-| INV‑21‑3 | Pythagorean Tangential Drift | PASS | ~3e‑13 |
-| INV‑21‑4 | Geometry‑Aware Programmed Collapse | PASS | 0.0019 |
-| INV‑21‑5 | Perturbation Hardness Hierarchy | PASS | 0.0000 |
-| INV‑21‑6 | DECAY Angular Sub‑Regime | PASS | 0.0000 |
-| INV‑21‑7 | Ghost Compositionality | PASS | 0.0050 |
-
-All invariants passed.
+All of this arises from the compositional rule alone — no metric, no curvature, no fields.
 
 ---
 
-# 6. 🔗 How ED‑Arch Connects to ED
+## Repository Structure
 
-- **ED is the ontology** — the deep structure of micro‑events.  
-- **ED‑Arch is the architecture** — a computational universe that instantiates ED’s predictions.  
-- ED‑Arch tests ED by comparing empirical collapse behavior to analytic law surfaces.  
-- ED‑Arch validates ED by confirming invariants and mechanism boundaries.  
-- ED‑Arch extends ED by revealing new commensurability classes and scaling laws.
-
----
-
-# 7. ▶️ Quickstart: Reproduce the Canonical Results
-
-```bash
-python run_arch_harness.py --suite all
-```
-
-This command:
-
-- runs all analytic law‑surface tests  
-- runs all engine‑integrated tests  
-- runs all Arch‑21 invariants  
-- generates all figures  
-- writes JSON + TXT reports  
-- saves everything into `arch_harness_output/`
+ED/
+│
+├── ED-Foundations/
+│   ├── ED_Foundations.pdf
+│   ├── ED_Interpretations.pdf
+│   └── ontology_notes/
+│
+├── ED-Compositional-Rule/
+│   ├── ED_Compositional_Rule.pdf
+│   ├── Cosmology_from_ED_Compositional_Rule.pdf
+│   └── derivations/
+│
+├── ED-Cosmology/
+│   ├── coarse_graining/
+│   ├── inflation/
+│   ├── structure_formation/
+│   ├── expansion/
+│   └── late_time_flattening/
+│
+└── README.md
 
 ---
 
-# 8. Installation & Environment Setup
+## What ED Is Not
 
-1. Clone the repository  
-2. Open a terminal  
-3. Navigate into the repo  
-4. Create the ED environment:  
-   ```bash
-   conda env create -f environment.yml
-   ```
-5. Activate it:  
-   ```bash
-   conda activate ed-arch
-   ```
-6. Run the harness (see Quickstart)
+- Not a simulation  
+- Not a discretization of GR or QM  
+- Not a cellular automaton  
+- Not a toy model  
+- Not a geometric theory  
+
+ED is a **non‑geometric ontology** that aims to explain why the universe has the laws it does.
 
 ---
 
-# 9. 📚 Reproduce the ED‑Arch Papers
+## What ED Aims to Explain
 
-Each law has a folder:
+- Why laws exist  
+- Why they are stable  
+- Why they are finite  
+- Why structure forms  
+- Why the universe smooths  
+- Why expansion occurs  
+- Why horizons appear  
+- Why late‑time flattening is universal  
 
-```
-Reproduce_This_Paper/
-    01_Law_I_Geometry/
-    02_Law_II_Timing/
-    03_Law_III_Resonance/
-    04_Law_IV_Recurrence/
-    05_Law_V_Scaling/
-    06_Law_Vb_Commensurability/
-```
-
-Each contains:
-
-- figures  
-- code  
-- a short README explaining:
-  - what the law says  
-  - what the experiment tests  
-  - how to run it  
-  - expected output  
+These are testable consequences of the compositional rule.
 
 ---
 
-# 10. 🗂️ Repository Structure
+## Status
 
-```
-ED‑Arch/
-    src/                     # core engine + law modules
-    harness/                 # reproducibility harness
-    arch_harness_output/     # generated results
-    Reproduce_This_Paper/    # law-by-law reproducibility folders
-    docs/                    # ED‑Arch papers
-    run_arch_harness.py      # entry point
-```
-
----
-
-# 11. 🧪 What You Get After Running the Harness
-
-- **law_surface_results.json**  
-- **decay_window_results.json**  
-- **angular_rate_results.json**  
-- **invariant_results.json**  
-- **arch_harness_report.txt**  
-- **canonical figures** (PNG)  
-- **mechanism maps**  
-- **summary plots**  
-
-This is the complete empirical signature of ED‑Arch‑21.
-
----
-
-# 12. The ED Ontology (One‑Sentence Summary)
-
-> **The saddle is the geometry; the gradients are the calculus; the boundaries are the topology; the horizons are the dynamics.**
-
----
-
-# 13. Why This Repo Matters
-
-This is the first time ED has been:
-
-- executable  
-- testable  
-- reproducible  
-- validated  
-- architecturally complete  
-
-It is now a **scientific instrument**, not just a set of papers.
-
+ED is an active research program.  
+The ontology is defined.  
+The compositional rule is specified.  
+The cosmological consequences are derived.  
+Mathematical formalization and empirical mapping are ongoing.
