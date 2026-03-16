@@ -1,0 +1,93 @@
+produced by NotebookLM.
+
+Audio Explainers for:
+
+ED-I-001_ED Superconductivity  
+--
+
+ED-I-002_ED and Entanglement  
+--
+
+ED-I-003_ED and Spin  
+--
+
+ED-I-004_ED and Quantum–Classical Boundary  
+https://youtu.be/7Kttfir8IlE
+
+ED-I-005_ED and Magnetism  
+https://youtu.be/lVKfQmSWDvc
+
+ED-I-006_Fields and Forces in Event Density  
+--
+
+ED-I-007_ED and The Double-Slit Experiment  
+--
+
+ED-I-008_ED and the Higgs Boson  
+--
+
+ED-I-009_ED and Neutrinos  
+--
+
+ED-I-010_ED and Gravity Waves  
+--
+
+ED-I-011_ED and Baryogenesis  
+https://youtu.be/_C2btS3faxg
+
+ED-I-012_ED and Photonics_YPC  
+https://youtu.be/G18HQ1yb-OA
+
+ED-I-013_ED and Quantum Information_BBDJS  
+https://youtu.be/uF87WaH94j8
+
+ED-I-014_ED and Topological Effects_ABBCT  
+https://youtu.be/oURtNW2s7j8
+
+ED-I-015_ED and Microresonators  
+--
+
+ED-I-016_ED and Casimir Self-Assembly  
+https://youtu.be/XZQ6UNE5fik
+
+ED-I-017_ED and Time Duration Symmetry-Dependent Participation Rule  
+https://youtu.be/WVITI6VKKQg
+
+ED-I-018_ED and Photonics_02  
+--
+
+ED-I-019_ED and the Mass-Gap  
+https://youtu.be/p0f2x74xIzQ
+
+ED-I-020_ED and Geometry of Spin–Momentum Locked Electrons  
+--
+
+ED-I-021_ED and Chiral Phonons  
+https://youtu.be/Kis5EK9h7Cw
+
+ED-I-022_ED and Anisotropic Mass Structure of the Local Group  
+https://youtu.be/HTmDg0RrzMw
+
+ED-I-023_ED and Josephson Junction Physics  
+--
+
+ED-I-024_ED Channels and Calabi–Yau Periods  
+--
+
+ED-I-026_ED Channels and Black-Hole Scattering WQFT  
+--
+
+ED-I-027_ED and Temporal Tension in Galaxy-Scale Weak Lensing  
+--
+
+ED-I-028_ED and Photonic Chern Channels–Quantized Hall Drift  
+--
+
+ED-I-029_ED and Tunneling  
+--
+
+ED-I-030_ED and Gamma Rays  
+--
+
+ED-I-031_ED and Photons  
+https://youtu.be/Kis5EK9h7Cw
