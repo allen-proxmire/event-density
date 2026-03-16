@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python -c \":*)",
+      "Bash(python3 -c \":*)",
+      "Bash(python ed_phys_run.py --dim 1 --N 128 --n_steps 1000 --record_interval 200)",
+      "Bash(python ed_phys_emergent.py)",
+      "Bash(findstr /n \".\")",
+      "Bash(findstr /b \"[1-9]\")",
+      "Bash(findstr /v \"^$\")",
+      "Bash(PYTHONUNBUFFERED=1 python -u ed_phys_emergent.py)",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(PYTHONUNBUFFERED=1 python -u ed_phys_multifield.py)",
+      "Bash(cmd /c \"set PYTHONIOENCODING=utf-8 && python -u ed_phys_multifield.py\")",
+      "Bash(python -u ed_phys_multifield.py)",
+      "Bash(python -u ed_phys_penalty.py)",
+      "Bash(python ed_phys_hyperbolic.py)",
+      "Bash(python ed_phys_oscillator.py)"
+    ]
+  }
+}
