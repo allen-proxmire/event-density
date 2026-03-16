@@ -3,6 +3,7 @@
 ## Overview
 
 Event Density (ED) is a foundational framework for physics built on a minimal ontology of **events**, **becoming**, and **event density**.  
+
 It does **not** assume spacetime, fields, curvature, or geometric structure.  
 Instead, ED begins with the idea that the universe is a finite configuration of events whose density of becoming evolves according to a single **compositional rule**.
 
