@@ -15,23 +15,28 @@ This repository contains the ED ontology, the compositional rule, and the cosmol
 
 ---
 
-## Primitives
+## Core primitives
 
-ED is defined by three irreducible primitives:
+**Becoming**: The continuous generative activity from which all distinctions, changes, and structures arise. Becoming is the substrate of reality; ED models how it distributes itself.
 
-### 1. **Events**  
-The fundamental units of becoming.  
-Events are not embedded in spacetime; spacetime is an emergent description of relations among events.
+**Micro‑Event**: The smallest undirected differentiation within becoming — a minimal flicker of generative activity before any form, direction, or flow emerges.
 
-### 2. **Event Density (p)**  
-A measure of “how much becoming” is present in a finite configuration.  
-High ED corresponds to rich, active regions; low ED corresponds to thin, quiescent ones.
+**Gradient**: A directional difference in event‑density or flow across a region. Gradients drive movement, reorientation, and structural change.
 
-### 3. **Finite Configurations**  
-ED is always defined on finite sets of events.  
-There is no continuum, no background manifold, and no geometric structure assumed.
+**Flow**: The directed propagation of becoming through a region. Flow expresses how event‑density moves, redistributes, or reorganizes.
+
+**Finite Configurations**  ED is always defined on finite sets of events.  There is no continuum, no background manifold, and no geometric structure assumed.
 
 Everything else — gradients, boundaries, horizons, structure, expansion — emerges from how ED behaves across these finite configurations.
+
+From these primitives, ED derives the familiar features of both cosmology and microphysics — the emergence of space and time, the formation of structure, and the architectural analogues of entanglement, spin, and baryogenesis.
+
+ED defines a compositional rule that determines how regions combine, how gradients evolve, and how structures emerge. Saddles, boundaries, horizons, collapse, and compositionality are not assumptions — they are consequences of how becoming distributes itself.
+
+ED is not a physical theory. It is an architectural and predictive ontology.
+
+ED is an architectural account of the structural possibilities for any universe.
+
 
 ---
 
@@ -91,31 +96,6 @@ As gradients vanish, the boundary term dominates.
 The universe approaches a thin, nearly uniform state with horizon‑like behavior.
 
 All of this arises from the compositional rule alone — no metric, no curvature, no fields.
-
----
-
-## Repository Structure
-
-ED/
-│
-├── ED-Foundations/
-│   ├── ED_Foundations.pdf
-│   ├── ED_Interpretations.pdf
-│   └── ontology_notes/
-│
-├── ED-Compositional-Rule/
-│   ├── ED_Compositional_Rule.pdf
-│   ├── Cosmology_from_ED_Compositional_Rule.pdf
-│   └── derivations/
-│
-├── ED-Cosmology/
-│   ├── coarse_graining/
-│   ├── inflation/
-│   ├── structure_formation/
-│   ├── expansion/
-│   └── late_time_flattening/
-│
-└── README.md
 
 ---
 
