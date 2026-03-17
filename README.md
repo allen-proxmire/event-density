@@ -22,6 +22,8 @@ This repository contains the ED ontology, the compositional rule, and the cosmol
 
 **Micro‑Event**: The smallest undirected differentiation within becoming — a minimal flicker of generative activity before any form, direction, or flow emerges.
 
+**Event‑Density** The distribution of events across a region, expressing how intensely becoming is manifesting there. Higher event‑density means more generative activity per unit area.
+
 **Gradient**: A directional difference in event‑density or flow across a region. Gradients drive movement, reorientation, and structural change.
 
 **Flow**: The directed propagation of becoming through a region. Flow expresses how event‑density moves, redistributes, or reorganizes.
