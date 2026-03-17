@@ -1,0 +1,192 @@
+{
+  "experiment": "ED-Phys-27_ParticipationRobustness",
+  "parameters": {
+    "NX": 256,
+    "N_STEPS": 80000,
+    "SAMPLE": 40,
+    "D": 0.5,
+    "H": 0.5,
+    "TAU": 100.0,
+    "ZETA": 0.5,
+    "EPSILON": 0.05,
+    "AMP_IC": 40.0,
+    "SIGMA_IC": 20.0,
+    "RHO_STAR": 50.0,
+    "RHO_MAX": 100.0
+  },
+  "analysis": [
+    {
+      "name": "canonical",
+      "D": 0.5,
+      "n_cycles": 1,
+      "undershoot": 2.121459316872439,
+      "overshoot": 0.059086433717354225,
+      "relax_time": 688.1999999311898,
+      "early_diffusion_rate": -0.03474737679667727,
+      "peak_v_first_cycle": 0.14822317066657137,
+      "k3_max": 6.441466473401173,
+      "eq_drift": 1.4210854715202004e-14,
+      "total_clips": 0,
+      "final_std": 8.669640537499696e-14,
+      "amplitudes": [
+        2.121459316872439
+      ]
+    },
+    {
+      "name": "stronger",
+      "D": 0.5,
+      "n_cycles": 1,
+      "undershoot": 2.0872674531661843,
+      "overshoot": 0.06311668630984713,
+      "relax_time": 672.1999999327869,
+      "early_diffusion_rate": -0.03512721540387451,
+      "peak_v_first_cycle": 0.15004137749329657,
+      "k3_max": 6.441466473401173,
+      "eq_drift": 7.105427357601002e-15,
+      "total_clips": 0,
+      "final_std": 8.601011774167237e-14,
+      "amplitudes": [
+        2.0872674531661843
+      ]
+    },
+    {
+      "name": "weaker",
+      "D": 0.5,
+      "n_cycles": 1,
+      "undershoot": 2.153445994302217,
+      "overshoot": 0.05411150771024609,
+      "relax_time": 696.1999999303913,
+      "early_diffusion_rate": -0.034363450831346655,
+      "peak_v_first_cycle": 0.14640149789566828,
+      "k3_max": 6.441466473401173,
+      "eq_drift": 0.0,
+      "total_clips": 0,
+      "final_std": 8.712980501180068e-14,
+      "amplitudes": [
+        2.153445994302217
+      ]
+    },
+    {
+      "name": "asymmetric",
+      "D": 0.5,
+      "n_cycles": 1,
+      "undershoot": 2.0161658288157582,
+      "overshoot": 0.05971993078635052,
+      "relax_time": 680.1999999319884,
+      "early_diffusion_rate": -0.034363450831346655,
+      "peak_v_first_cycle": 0.14639542458309887,
+      "k3_max": 6.441466473401173,
+      "eq_drift": 2.842170943040401e-14,
+      "total_clips": 0,
+      "final_std": 8.808204699510935e-14,
+      "amplitudes": [
+        2.0161658288157582
+      ]
+    },
+    {
+      "name": "nonsmooth",
+      "D": 0.5,
+      "n_cycles": 9,
+      "undershoot": 12.23823061571624,
+      "overshoot": 4.139257266103726,
+      "relax_time": 384.19999996157054,
+      "early_diffusion_rate": -0.07762527094551717,
+      "peak_v_first_cycle": 0.6337374542985738,
+      "k3_max": 6.441466473401173,
+      "eq_drift": 0.0,
+      "total_clips": 0,
+      "final_std": 9.035878689445466e-15,
+      "amplitudes": [
+        12.23823061571624,
+        4.139257266103726,
+        1.2201924427903421,
+        0.268290785486343,
+        0.044134817124259484,
+        0.00719273405128007,
+        0.0011957857252440363,
+        0.00019888719415206424,
+        3.3120333391423173e-05,
+        5.639140759683414e-06,
+        9.78345042312867e-07,
+        1.6902622945735857e-07,
+        2.9095332365614013e-08,
+        4.991250079910969e-09,
+        8.668266104905342e-10,
+        1.5339196579589043e-10,
+        2.6972202249453403e-11
+      ]
+    }
+  ],
+  "boundary_sweep": {
+    "canonical": [
+      {
+        "D": 0.44,
+        "n_cycles": 3
+      },
+      {
+        "D": 0.46,
+        "n_cycles": 2
+      },
+      {
+        "D": 0.48,
+        "n_cycles": 1
+      }
+    ],
+    "stronger": [
+      {
+        "D": 0.44,
+        "n_cycles": 3
+      },
+      {
+        "D": 0.46,
+        "n_cycles": 3
+      },
+      {
+        "D": 0.48,
+        "n_cycles": 1
+      }
+    ],
+    "weaker": [
+      {
+        "D": 0.44,
+        "n_cycles": 3
+      },
+      {
+        "D": 0.46,
+        "n_cycles": 2
+      },
+      {
+        "D": 0.48,
+        "n_cycles": 1
+      }
+    ],
+    "asymmetric": [
+      {
+        "D": 0.44,
+        "n_cycles": 3
+      },
+      {
+        "D": 0.46,
+        "n_cycles": 2
+      },
+      {
+        "D": 0.48,
+        "n_cycles": 1
+      }
+    ],
+    "nonsmooth": [
+      {
+        "D": 0.44,
+        "n_cycles": 11
+      },
+      {
+        "D": 0.46,
+        "n_cycles": 11
+      },
+      {
+        "D": 0.48,
+        "n_cycles": 10
+      }
+    ]
+  }
+}

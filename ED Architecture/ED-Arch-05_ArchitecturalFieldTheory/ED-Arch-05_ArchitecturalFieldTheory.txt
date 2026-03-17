@@ -1,0 +1,1141 @@
+ED-Arch-05: Architectural Field Theory of the Unified ED Cosmology PDE
+=======================================================================
+
+Series:    ED Architecture
+Document:  ED-Arch-05
+Title:     Architectural Field Theory
+Author:    Allen Proxmire
+Date:      2026-03-17
+Scope:     Field-theoretic unification of ED laws, motifs, and geometry
+Sources:   ED-Phys-01 through ED-Phys-34, ED-Arch-01 through ED-Arch-04
+
+
+========================================================================
+1. PURPOSE OF ARCHITECTURAL FIELD THEORY
+========================================================================
+
+The first four chapters of the ED-Arch series decomposed the unified
+ED cosmology PDE into its structural components: motifs (the recurring
+patterns), laws (the invariant constraints), and geometry (the shapes
+in state space). This fifth chapter reassembles them into a single
+field-theoretic description: a continuous, law-governed structure that
+assigns dynamical content to every point in state space simultaneously.
+
+An architectural field theory, in the ED context, is:
+
+  (i)   A CONTINUOUS RULE assigning structure to every point.
+        At every spatial point x and every instant t, the field theory
+        specifies the local density, the local velocity, the local
+        operator output, the local mobility, the local curvature, the
+        local restoring force, and the local memory state. Nothing is
+        left unspecified. The field theory is a complete local
+        description.
+
+  (ii)  A UNIFICATION of laws, motifs, and geometry.
+        The laws are the field's global constraints. The motifs are the
+        field's characteristic local patterns. The geometry is the
+        field's shape in state space. The field theory contains all
+        three, not as separate layers but as aspects of a single
+        object.
+
+  (iii) A GENERATIVE DESCRIPTION of how ED evolves.
+        The field theory does not merely classify the architecture's
+        behavior. It generates that behavior. Given the field state at
+        time t, the field theory determines the field state at time
+        t + dt, everywhere, simultaneously. It is the architecture's
+        engine.
+
+FIELD THEORY VS. PDE MECHANICS
+
+The unified ED cosmology PDE is a set of coupled partial differential
+equations. The Architectural Field Theory is a reinterpretation of
+those equations as a field structure. The distinction is one of
+perspective:
+
+  PDE MECHANICS asks: given these equations and these initial
+  conditions, what is the solution?
+
+  FIELD THEORY asks: what is the continuous structure that the
+  equations define at every point, and how does that structure
+  determine the system's behavior?
+
+The PDE is a computation. The field theory is an understanding. Both
+describe the same system, but the field theory reveals the
+architecture that the PDE implements.
+
+
+========================================================================
+2. THE ARCHITECTURAL FIELD
+========================================================================
+
+The ED architecture is built on three coupled fields. Together, they
+form the architectural field: a composite object that encodes the
+complete dynamical state and the complete dynamical rule at every
+point in space and time.
+
+------------------------------------------------------------------------
+2.1 THE DENSITY FIELD rho(x,t)
+------------------------------------------------------------------------
+
+The density field is the primary state variable. It assigns a non-
+negative real number to every spatial point x at every time t. The
+density field is the architecture's substance: it is what evolves,
+what has structure, and what the other fields act upon.
+
+The density field carries several local quantities:
+
+  LOCAL VALUE:     rho(x,t) — the density at point x.
+  LOCAL GRADIENT:  nabla(rho) — the rate of spatial change.
+  LOCAL CURVATURE: nabla^2(rho) — the concavity of the profile.
+
+These three quantities (value, gradient, curvature) are the density
+field's local geometry. They determine how every other component of
+the architecture acts at that point.
+
+------------------------------------------------------------------------
+2.2 THE PARTICIPATION FIELD v(x,t)
+------------------------------------------------------------------------
+
+The participation field is the secondary state variable. It records
+the integrated history of the operator's output at each spatial point,
+filtered through the damping coefficient zeta and the time scale tau.
+The participation field is the architecture's memory: it retains
+information about past forcing and feeds it back into the density
+evolution.
+
+The participation field evolves according to:
+
+  dv/dt = (1/tau) * (F[rho] - zeta * v)
+
+This equation says: v integrates F[rho] with exponential decay at
+rate zeta/tau. The participation field is a leaky integrator of the
+operator field. Its local value at any point represents a damped,
+time-averaged summary of what the operator has been doing at that
+point.
+
+------------------------------------------------------------------------
+2.3 THE OPERATOR FIELD F[rho]
+------------------------------------------------------------------------
+
+The operator field is not an independent state variable. It is a
+derived field: a functional of the density field that encodes the
+architecture's local update rule. At every point x, the operator
+field combines three contributions:
+
+  F[rho](x) = M(rho) * nabla^2(rho)     [curvature-driven diffusion]
+             + M'(rho) * |nabla(rho)|^2  [nonlinear gradient coupling]
+             - P_SY2(rho)                [penalty restoring force]
+
+The operator field is the architecture's engine: it computes, at every
+point, the net forcing that acts on both the density (through the D
+channel) and the participation (through the v-equation). It is the
+single object through which all architectural laws, motifs, and
+geometry are expressed.
+
+------------------------------------------------------------------------
+2.4 THE COUPLED ARCHITECTURAL FIELD
+------------------------------------------------------------------------
+
+The three fields form a coupled system:
+
+  drho/dt = D * F[rho] + H * v
+  dv/dt   = (1/tau) * (F[rho] - zeta * v)
+
+with D + H = 1.
+
+The coupling structure is:
+
+  rho  -->  F[rho]  -->  v  -->  rho
+  (state)  (operator)  (memory)  (state)
+
+This is the Memory Loop motif expressed as a field coupling. The
+density field determines the operator field (through M, nabla, and P).
+The operator field drives the participation field (through the
+v-equation). The participation field modifies the density field
+(through the H*v term). The loop closes.
+
+The architectural field is the composite object (rho, v, F[rho])
+considered as a single entity. It is defined at every spatial point
+and evolves according to the coupled equations. The field is not merely
+three separate fields that happen to interact. It is a single
+dynamical structure with three aspects: substance (rho), memory (v),
+and rule (F).
+
+------------------------------------------------------------------------
+2.5 THE FIELD'S LOCAL ENCODING
+------------------------------------------------------------------------
+
+At every point x, the architectural field encodes four local quantities
+that determine the architecture's behavior at that point:
+
+  LOCAL CURVATURE: nabla^2(rho).
+    The concavity of the density profile. Positive curvature (troughs)
+    attracts density. Negative curvature (peaks) repels density. This
+    is the diffusion channel's local driving force.
+
+  LOCAL MOBILITY: M(rho) = M0 * (1 - rho/rho_max)^2.
+    The density-dependent diffusion coefficient. High mobility (low
+    density) permits rapid redistribution. Low mobility (high density)
+    restricts transport. This is the field's local kinetic capacity.
+
+  LOCAL RESTORING FORCE: P_SY2(rho).
+    The penalty function that pulls density toward rho*. Positive for
+    rho > rho* (pushes density down), negative for rho < rho* (pushes
+    density up). Zero at equilibrium. This is the field's local
+    regulatory mechanism.
+
+  LOCAL MEMORY: v(x,t).
+    The integrated operator history, damped by zeta. Positive v
+    indicates recent positive forcing. Negative v indicates recent
+    negative forcing. This is the field's local temporal context.
+
+These four quantities — curvature, mobility, restoring force, and
+memory — are the architectural field's complete local content. Every
+motif, every law, and every geometric object can be expressed in
+terms of these four local encodings and their interactions.
+
+
+========================================================================
+3. FIELD-LAW CORRESPONDENCE
+========================================================================
+
+Each architectural law from ED-Arch-03 has a precise expression in
+the language of the architectural field. The laws are not external
+constraints imposed on the field; they are properties of the field
+itself.
+
+------------------------------------------------------------------------
+(a) LAW OF UNIQUE ATTRACTION -> GLOBAL POTENTIAL FIELD
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  The operator field F[rho] has the structure of a gradient flow with
+  respect to a global potential. Define the spatial-mean density
+  rho_bar = (1/L) * integral(rho dx). The penalty P_SY2 acts as a
+  restoring force on rho_bar, pulling it toward rho*. The diffusion
+  terms redistribute density without changing rho_bar (they are
+  conservative in the spatial mean). The combined effect is a
+  potential landscape in the space of density profiles with a single
+  minimum at the homogeneous state rho = rho* everywhere.
+
+  The potential is not a simple function of a single variable. It is
+  a functional of the entire density profile:
+
+    V[rho] = integral [ Phi(rho(x)) + (1/2) * M(rho) * |nabla(rho)|^2 ] dx
+
+  where Phi(rho) is the antiderivative of P_SY2(rho). This functional
+  has a unique minimizer: the homogeneous profile rho(x) = rho* for
+  all x, at which V = 0. All other profiles have V > 0.
+
+  The participation field v does not create new minima. It introduces
+  oscillatory approach to the minimum (through the Memory Loop) but
+  cannot create secondary minima, because v itself decays to zero at
+  the density equilibrium.
+
+  The field-theoretic statement of Unique Attraction is: the
+  architectural field possesses a global Lyapunov-like functional
+  with a unique zero, and the field dynamics decrease this functional
+  at every step.
+
+------------------------------------------------------------------------
+(b) LAW OF ONE-DIMENSIONAL RELAXATION -> DOMINANT EIGENFIELD
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  Linearize the operator field F[rho] around the equilibrium. The
+  linearized operator has a spectrum of eigenfields (spatial modes)
+  with eigenvalues (decay rates). The eigenfields are approximately
+  the Fourier modes sin(k*pi*x/L), and the eigenvalues are
+  approximately -k^2 * M(rho*) * (pi/L)^2 - alpha*gamma/rho_0
+  (combining diffusion and penalty contributions).
+
+  The dominant eigenfield is the k = 1 mode: the slowest-decaying
+  spatial pattern. Its eigenvalue lambda_1 sets the system's
+  fundamental relaxation rate. All other eigenfields have eigenvalues
+  lambda_k with |lambda_k| >= 4 * |lambda_1| (since k^2 >= 4 for
+  k >= 2).
+
+  The field-theoretic statement of One-Dimensional Relaxation is:
+  the linearized operator field has a spectral gap of at least
+  factor 4 between its dominant eigenvalue and the next. This gap
+  ensures that the dominant eigenfield controls the late-time
+  evolution, and all other eigenfields are enslaved to it.
+
+  The dominant eigenfield, combined with its associated participation
+  component, defines a two-variable reduced system. The Manifold
+  Curve in phase space is the trajectory of this reduced system. The
+  Law of One-Dimensional Relaxation is the statement that the
+  dominant eigenfield pair captures the full dynamics after transient
+  decay.
+
+------------------------------------------------------------------------
+(c) LAW OF PROPORTIONAL STABILITY -> MULTIPLICATIVE INVARIANCE
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  Consider the architectural field as a tensor-like object with
+  components: the mobility tensor M(rho), the penalty field P(rho),
+  and the participation coupling. A multiplicative perturbation acts
+  as a conformal rescaling of these components:
+
+    M(rho) -> M(rho) * g(rho)
+    P(rho) -> P(rho) * h(rho)
+    v_coupling -> v_coupling * f(rho)
+
+  where g, h, f are smooth positive functions.
+
+  Under such a rescaling:
+  - The zero structure of M is preserved (M vanishes where it did
+    before, because g > 0 does not create new zeros).
+  - The zero structure of P is preserved (P vanishes at rho* because
+    h(rho*) * 0 = 0).
+  - The coupling topology is preserved (v still feeds back to rho,
+    F still drives v).
+
+  The field-theoretic statement of Proportional Stability is: the
+  architectural field's qualitative structure is invariant under
+  positive conformal rescaling of its component tensors. This defines
+  a gauge-like equivalence class of field theories that share the
+  same architecture.
+
+  Additive perturbations (adding a source term s(rho) to the
+  v-equation) break this invariance because they introduce a field
+  component that is not modulated by the existing coupling structure.
+  The source term s(rho) acts regardless of the system's state,
+  injecting energy into the Memory Loop from outside the
+  architectural field.
+
+------------------------------------------------------------------------
+(d) LAW OF CRITICAL DAMPING BOUNDARY -> DAMPING TENSOR
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  Define the damping tensor of the architectural field as the
+  2x2 matrix governing the linearized (rho_peak, v_peak) dynamics:
+
+    d/dt [delta_rho]   [ -D*lambda_1    H         ] [delta_rho]
+         [delta_v  ] = [ lambda_1/tau   -zeta/tau  ] [delta_v  ]
+
+  where lambda_1 is the dominant eigenvalue of the spatial operator
+  and delta_rho, delta_v are deviations from equilibrium projected
+  onto the dominant eigenfield.
+
+  The eigenvalues of this damping tensor determine the flow type:
+  - Complex eigenvalues: spiral (oscillatory decay).
+  - Real eigenvalues: node (monotonic decay).
+
+  The discriminant of the characteristic polynomial is:
+
+    Delta = (D*lambda_1 - zeta/tau)^2 - 4*(D*lambda_1*zeta/tau
+            - H*lambda_1/tau)
+
+  Setting Delta = 0 and using H = 1 - D gives the critical damping
+  condition. For the canonical parameter scaling, this simplifies to
+  the observed boundary D + 2*zeta approximately equal to 1.
+
+  The field-theoretic statement of the Critical Damping Boundary is:
+  the damping tensor's discriminant vanishes on a codimension-1
+  surface in parameter space, separating complex-eigenvalue (spiral)
+  from real-eigenvalue (monotonic) dynamics. The boundary is a
+  property of the field's linearized damping structure, not of any
+  particular trajectory.
+
+------------------------------------------------------------------------
+(e) LAW OF FINITE CAPACITY -> MOBILITY FIELD COLLAPSE
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  The mobility field M(rho(x,t)) is a non-negative scalar field
+  defined at every spatial point. It has the property:
+
+    M(rho) -> 0 as rho -> rho_max
+
+  The mobility field's zero set {x : M(rho(x,t)) approximately 0}
+  defines the Horizon Surface in physical space. At any point in this
+  zero set, the diffusive component of the operator field vanishes:
+
+    M * nabla^2(rho) = 0  (because M = 0)
+    M' * |nabla(rho)|^2 -> 0  (because M' remains finite but the
+    dynamics driving rho higher require M > 0)
+
+  The field-theoretic statement of Finite Capacity is: the mobility
+  field possesses a zero set at the boundary of the physical state
+  space, and the operator field degenerates on this zero set. The
+  penalty field P_SY2 does not degenerate (it depends on rho, not
+  on M), so the restoring force remains active at the mobility
+  boundary, guaranteeing reflection.
+
+  The mobility field collapse is the field-theoretic mechanism of
+  saturation. Where M vanishes, the field cannot redistribute
+  density through diffusion. Transport ceases locally. The penalty
+  provides the only remaining dynamical channel, and it always
+  points inward.
+
+------------------------------------------------------------------------
+(f) LAW OF HARMONIC PROTECTION -> NONLINEAR COUPLING TENSOR
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  The operator field F[rho] contains a nonlinear coupling term
+  M'(rho) * |nabla(rho)|^2. This term can be expressed as a
+  bilinear form on the gradient field:
+
+    N(rho, nabla(rho)) = M'(rho) * <nabla(rho), nabla(rho)>
+
+  where <.,.> is the spatial inner product. This is a rank-2
+  tensor contracted against the gradient field twice.
+
+  In Fourier space, the contraction <nabla(rho), nabla(rho)>
+  produces mode-mode coupling:
+
+    |nabla(rho)|^2 = sum_{k,j} k*j * a_k * a_j * cos((k-j)*x)
+
+  The dominant coupling at late times is between the k=1 mode and
+  itself, producing k=0 and k=2 content. When this is multiplied
+  by M'(rho), which itself has Fourier content from the density
+  field, the result includes k=3 generation.
+
+  The field-theoretic statement of Harmonic Protection is: the
+  nonlinear coupling tensor's selection rules are determined by
+  the algebraic structure of the bilinear form, not by the specific
+  functional form of M or P. Any admissible mobility function
+  (smooth, positive on the interior, vanishing at rho_max) produces
+  the same harmonic selection rule. The k=3 amplitude is a
+  topological invariant of the coupling tensor.
+
+------------------------------------------------------------------------
+(g) LAW OF MODAL HIERARCHY -> SPECTRAL FIELD STRUCTURE
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  The linearized operator field can be decomposed into a sum of
+  eigenfield contributions:
+
+    F_lin[rho] = sum_k lambda_k * a_k * phi_k(x)
+
+  where phi_k are the spatial eigenfields (approximately Fourier
+  modes), a_k are the mode amplitudes, and lambda_k are the
+  eigenvalues satisfying |lambda_k| proportional to k^2.
+
+  The spectral field structure is the distribution of eigenvalues
+  in the complex plane. For the ED architecture:
+  - All eigenvalues have negative real part (all modes decay).
+  - The decay rates scale as k^2 (quadratic spectral scaling).
+  - The spectral gap between k=1 and k=2 is a factor of 4.
+
+  The field-theoretic statement of Modal Hierarchy is: the
+  operator field's spectral decomposition has a quadratic
+  eigenvalue scaling with a large spectral gap, ensuring rapid
+  dimensional reduction and dominance of the fundamental
+  eigenfield.
+
+------------------------------------------------------------------------
+(h) LAW OF TRANSIENT STRUCTURE -> FIELD DISSIPATION OPERATOR
+------------------------------------------------------------------------
+
+Field-theoretic expression:
+  Define the total field energy as:
+
+    E(t) = integral [ (rho - rho*)^2 + tau * v^2 ] dx
+
+  This quantity measures the total deviation from equilibrium in
+  both the density and participation fields.
+
+  The time derivative of E is:
+
+    dE/dt = 2 * integral [ (rho - rho*) * drho/dt
+                          + tau * v * dv/dt ] dx
+
+  Substituting the evolution equations and using the structure of
+  F[rho]:
+
+    dE/dt = 2 * integral [ (rho - rho*) * (D*F + H*v)
+                          + v * (F - zeta*v) ] dx
+
+  The diffusion terms contribute non-positively (they reduce
+  gradients). The penalty terms contribute non-positively (they
+  reduce density deviations). The damping term -zeta*v^2 contributes
+  strictly negatively wherever v is nonzero.
+
+  The field-theoretic statement of Transient Structure is: the
+  architectural field possesses a dissipation operator that
+  strictly decreases the total field energy at every time step.
+  The field energy is a Lyapunov-like functional: E >= 0 everywhere,
+  E = 0 only at equilibrium, and dE/dt <= 0 always. This guarantees
+  that all field structure is transient and all trajectories converge.
+
+
+========================================================================
+4. FIELD-MOTIF CORRESPONDENCE
+========================================================================
+
+Each motif from ED-Arch-02 is a characteristic pattern of the
+architectural field. The field theory provides a precise specification
+of each motif as a local or global field configuration.
+
+------------------------------------------------------------------------
+THE SADDLE: SIGN STRUCTURE OF THE DIFFERENTIAL FIELDS
+------------------------------------------------------------------------
+
+The Saddle motif occurs wherever the gradient field nabla(rho) changes
+sign and the curvature field nabla^2(rho) is nonzero. At a density
+peak:
+
+  nabla(rho) passes through zero (gradient reversal)
+  nabla^2(rho) < 0 (negative curvature, concave down)
+
+The operator field F[rho] at a saddle point receives competing
+contributions: the curvature term M*nabla^2(rho) < 0 (diffusion
+pushes density away from the peak) while the penalty P_SY2 may be
+positive or negative depending on whether rho > rho* or rho < rho*.
+The saddle is the field-theoretic locus where the diffusive and
+regulatory components of the operator field compete.
+
+The nonlinear term M'*|nabla(rho)|^2 vanishes exactly at the
+saddle point (where nabla(rho) = 0) but is maximal on either side.
+The saddle is therefore a zero of the nonlinear field flanked by
+maxima — the characteristic geometry of a saddle in the operator
+field.
+
+------------------------------------------------------------------------
+THE SPIRAL: UNDERDAMPED EIGENFIELD PAIR
+------------------------------------------------------------------------
+
+The Spiral motif arises when the damping tensor (Section 3d) has
+complex eigenvalues. In field-theoretic terms, the dominant eigenfield
+pair consists of two modes with complex conjugate decay rates:
+
+  lambda = -sigma +/- i*omega
+
+where sigma > 0 is the decay rate and omega > 0 is the oscillation
+frequency. The ratio omega/sigma determines the spiral's tightness.
+
+The eigenfield pair generates a rotating flow in the (rho_peak,
+v_peak) plane. The density component and the velocity component
+oscillate 90 degrees out of phase, creating the characteristic
+spiral winding. The field-theoretic content of the spiral is: the
+dominant eigenfield pair of the linearized damping tensor is complex,
+and the field evolves by rotation combined with contraction in the
+plane spanned by these eigenfields.
+
+The spiral's curvature (up to 505,631 in ED-Phys-32) measures the
+eigenfield pair's rotation rate relative to its contraction rate.
+High curvature means many rotations per e-folding of amplitude decay.
+
+------------------------------------------------------------------------
+THE HORIZON: MOBILITY FIELD ZERO SET
+------------------------------------------------------------------------
+
+The Horizon motif is the physical manifestation of the mobility
+field's zero set. In field-theoretic terms, define:
+
+  Z(t) = { x : M(rho(x,t)) < epsilon }
+
+for some small threshold epsilon. The set Z(t) is the Horizon at
+time t: the spatial region where the mobility field has collapsed
+and diffusive transport has ceased.
+
+Inside Z(t):
+  - The operator field's diffusive component vanishes: M*nabla^2 = 0.
+  - The penalty field remains active: P_SY2(rho) > 0 (since rho
+    is near rho_max, far above rho*).
+  - The participation field continues to evolve (v is not coupled
+    to M).
+
+The Horizon is the region of the architectural field where the
+diffusive channel has been silenced but the regulatory and
+participatory channels remain active. It is a partial degeneration
+of the field: one component shuts down while the others continue.
+
+------------------------------------------------------------------------
+THE MANIFOLD: DOMINANT EIGENFIELD TRAJECTORY
+------------------------------------------------------------------------
+
+The Manifold motif is the trajectory of the dominant eigenfield
+pair in the (rho_peak, v_peak) phase plane. In field terms, define
+the dominant eigenfield projection:
+
+  rho_dom(t) = <rho(x,t) - rho*, phi_1(x)>
+  v_dom(t)   = <v(x,t), phi_1(x)>
+
+where phi_1 is the k=1 eigenfield and <.,.> is the spatial inner
+product. The Manifold Curve is the trajectory (rho_dom(t), v_dom(t))
+in the two-dimensional reduced field space.
+
+After the Modal Funnel has collapsed the higher modes, the full
+field dynamics are captured by this projection. The Manifold is the
+field's effective state after dimensional reduction: a one-parameter
+curve parameterized by the dominant eigenfield amplitude, along
+which the field slides toward equilibrium.
+
+------------------------------------------------------------------------
+THE BOUNDARY: DAMPING TENSOR CRITICAL SURFACE
+------------------------------------------------------------------------
+
+The Boundary motif is the surface in parameter space where the
+damping tensor's eigenvalues transition from complex to real. In
+field terms, it is the locus where:
+
+  discriminant(damping tensor) = 0
+
+This is a property of the field's linearized structure, not of any
+particular field configuration. The Boundary exists in parameter
+space, not in state space. It tells us where the field's dominant
+eigenfield pair changes character from oscillatory to monotonic.
+
+The field-theoretic content is: the architectural field has two
+qualitatively different linearized behaviors (focus and node), and
+the Boundary is the codimension-1 surface separating them.
+
+------------------------------------------------------------------------
+THE MEMORY LOOP: CLOSED FIELD COUPLING
+------------------------------------------------------------------------
+
+The Memory Loop motif is the closed coupling cycle of the
+architectural field:
+
+  rho(x,t) --> F[rho](x,t) --> v(x,t) --> rho(x,t)
+
+In field-theoretic terms, this is a functional feedback loop. The
+density field determines the operator field at every point. The
+operator field drives the participation field at every point. The
+participation field modifies the density field at every point. The
+loop operates simultaneously at all spatial locations.
+
+The loop's field-theoretic content is:
+  - Loop gain: proportional to H/tau at each point. When H = 0
+    (D = 1), the loop is broken and the field is purely dissipative.
+  - Loop damping: zeta/tau at each point. This is the rate at which
+    the participation field forgets its history.
+  - Loop delay: tau sets the time scale over which v integrates
+    F[rho]. Larger tau means slower integration and weaker coupling.
+
+The Memory Loop is the architectural field's self-referential
+structure. It is what makes the field participatory rather than
+merely diffusive.
+
+------------------------------------------------------------------------
+THE DISSIPATOR: PARABOLIC FIELD FLOW
+------------------------------------------------------------------------
+
+The Dissipator motif corresponds to the D-channel of the
+architectural field operating alone (H = 0, or more generally,
+D dominating H). In field-theoretic terms, when D = 1:
+
+  drho/dt = F[rho]
+
+This is a pure nonlinear parabolic flow. The field evolves by
+local diffusion and penalty regulation, without memory. The
+operator field acts directly on the density field without passing
+through the participation field.
+
+The field-theoretic content of the Dissipator is: the architectural
+field reduces to a gradient flow on the potential functional V[rho].
+The flow is strictly downhill in V, monotonic, and non-oscillatory.
+Every spatial mode decays independently (no coupling through v),
+and the decay is exponential at rate k^2*lambda_eff.
+
+The Dissipator is the architectural field's memoryless limit. It
+retains all laws except the Memory Loop, which requires H > 0.
+
+------------------------------------------------------------------------
+THE NONLINEAR TRIAD: CUBIC FIELD INTERACTION
+------------------------------------------------------------------------
+
+The Nonlinear Triad motif corresponds to the M'(rho)*|nabla(rho)|^2
+term in the operator field. In field-theoretic terms, this is a
+cubic interaction: it involves the product of one power of M'(rho)
+(which depends on rho) and two powers of nabla(rho) (the squared
+gradient). The interaction is:
+
+  N[rho] = M'(rho) * nabla(rho) . nabla(rho)
+
+This is a self-interaction of the density field: the field couples
+to its own gradient through a density-dependent coefficient. The
+cubic character (one rho-dependent factor times two gradient factors)
+is what generates the k=3 harmonic from a k=1 input.
+
+The field-theoretic content is: the operator field contains a cubic
+self-interaction tensor whose contraction with the gradient field
+produces specific harmonic output determined by the interaction's
+algebraic structure. The output (k=3 from k=1) is a selection rule
+of the tensor, analogous to selection rules in quantum field theory.
+
+
+========================================================================
+5. FIELD GEOMETRY
+========================================================================
+
+The architectural field can be decomposed into five component fields,
+each with its own geometry. Their intersection produces the geometric
+objects catalogued in ED-Arch-04.
+
+------------------------------------------------------------------------
+5.1 THE POTENTIAL LANDSCAPE
+------------------------------------------------------------------------
+
+The potential functional V[rho] defines a landscape in the space of
+density profiles. Every density profile rho(x) corresponds to a point
+in this landscape, and V[rho] assigns a height to that point.
+
+Shape:
+  - Global minimum at rho(x) = rho* for all x: V = 0.
+  - The landscape rises in all directions from this minimum.
+  - Along the k=1 eigenfield direction, V rises quadratically
+    (harmonic potential near the minimum).
+  - Along higher eigenfield directions, V rises more steeply
+    (steeper walls for higher modes).
+  - The landscape is bounded below (V >= 0) and unbounded above.
+
+The potential landscape's geometry determines the Attractor Point
+(the minimum) and the Modal Funnel (the differential steepness in
+different eigenfield directions). Trajectories roll downhill on
+this landscape, with the Memory Loop adding inertia (through v)
+that allows overshooting of the minimum.
+
+------------------------------------------------------------------------
+5.2 THE FLOW FIELD
+------------------------------------------------------------------------
+
+The flow field is the vector field in (rho_peak, v_peak) space
+defined by the right-hand side of the reduced equations:
+
+  drho_peak/dt = D * F_peak + H * v_peak
+  dv_peak/dt   = (1/tau) * (F_peak - zeta * v_peak)
+
+where F_peak is the operator field evaluated at the density peak.
+
+Shape:
+  Below the Critical Damping Boundary: the flow field spirals inward.
+    Flow vectors have both radial (inward) and tangential (rotational)
+    components. The tangential component creates the spiral. The
+    radial component creates the contraction.
+  Above the Critical Damping Boundary: the flow field points
+    directly inward. No tangential component. Trajectories follow
+    straight or nearly straight paths to the attractor.
+
+The flow field's geometry produces the Spiral Sheet (the integral
+curves below the boundary) and the Monotonic Cone (the integral
+curves above the boundary). The Boundary Surface is the locus where
+the tangential component of the flow field vanishes.
+
+------------------------------------------------------------------------
+5.3 THE DAMPING FIELD
+------------------------------------------------------------------------
+
+The damping field is the scalar field defined at every point in
+(D, zeta, tau) parameter space that quantifies the effective damping:
+
+  Gamma(D, zeta) = D + 2*zeta
+
+This is a linear field over the parameter space. Its level sets are
+straight lines (or planes if tau is included).
+
+Shape:
+  - Gamma = 0 at the origin (D=0, zeta=0): zero damping, maximum
+    oscillation.
+  - Gamma = 1 along the Boundary Surface: critical damping.
+  - Gamma > 1 above the Boundary Surface: overdamping.
+
+The damping field's geometry is trivially simple (it is a linear
+function), but its consequences are profound. The Boundary Surface
+is a level set of the damping field. The spiral-monotonic transition
+is controlled by whether the local value of the damping field
+exceeds the critical threshold.
+
+------------------------------------------------------------------------
+5.4 THE MOBILITY FIELD
+------------------------------------------------------------------------
+
+The mobility field M(rho(x,t)) is a non-negative scalar field
+defined at every spatial point. Unlike the damping field (which
+lives in parameter space), the mobility field lives in physical
+space and changes with the density configuration.
+
+Shape:
+  - Maximum at rho = 0: M = M0.
+  - Decreases quadratically as rho increases.
+  - Zero at rho = rho_max: M = 0.
+  - At equilibrium (rho = rho*): M = M0 * (1 - rho*/rho_max)^2
+    = M0 * (1 - 0.5)^2 = 0.25 * M0.
+
+The mobility field's geometry creates the Horizon Surface (where
+M collapses to near-zero) and modulates the strength of the
+diffusion channel everywhere. The mobility field is the architecture's
+local kinetic capacity: it determines how rapidly density can be
+redistributed at each point.
+
+------------------------------------------------------------------------
+5.5 THE NONLINEAR INTERACTION FIELD
+------------------------------------------------------------------------
+
+The nonlinear interaction field is:
+
+  N(x,t) = M'(rho(x,t)) * |nabla(rho(x,t))|^2
+
+This field is defined at every spatial point and quantifies the
+local strength of the nonlinear mode coupling.
+
+Shape:
+  - Zero at density peaks and troughs (where nabla(rho) = 0).
+  - Zero far from density features (where |nabla(rho)| is small).
+  - Maximum on the flanks of density peaks, where both M' and
+    |nabla(rho)|^2 are significant.
+  - The field is always non-positive (since M' < 0 for rho < rho_max
+    and |nabla(rho)|^2 >= 0).
+
+The nonlinear interaction field's geometry defines the Triad Locus
+(the spatial region where N is large in magnitude). It is a
+transient field that shrinks as the density profile approaches
+homogeneity.
+
+------------------------------------------------------------------------
+5.6 FIELD INTERSECTIONS
+------------------------------------------------------------------------
+
+The five component fields intersect to produce the geometric objects:
+
+SPIRAL SHEET = Flow Field (spiral region) restricted to the domain
+  where Damping Field < 1. The sheet's winding is determined by the
+  flow field's tangential component, which is itself determined by
+  the Memory Loop coupling.
+
+MONOTONIC CONE = Flow Field (nodal region) restricted to the domain
+  where Damping Field > 1. The cone's opening angle is determined by
+  the eigenvalue ratio of the damping tensor.
+
+HORIZON SURFACE = Mobility Field zero set, intersected with the
+  trajectory space. The horizon forms when trajectories enter the
+  region where M < epsilon, and dissolves when the penalty pushes
+  them back out.
+
+BOUNDARY SURFACE = Damping Field level set at Gamma = 1. This is
+  a purely parameter-space object, independent of the density
+  configuration.
+
+MODAL FUNNEL = Potential Landscape restricted to trajectories
+  approaching the minimum. The funnel's shape is set by the
+  differential steepness of V along different eigenfield directions.
+
+TRIAD LOCUS = Nonlinear Interaction Field's region of significant
+  magnitude, intersected with the Saddle geometry (where nabla(rho)
+  changes sign nearby).
+
+
+========================================================================
+6. FIELD DYNAMICS
+========================================================================
+
+------------------------------------------------------------------------
+6.1 LOCAL UPDATE RULES
+------------------------------------------------------------------------
+
+The architectural field evolves according to local rules. At every
+spatial point x and every time t, the field update is determined
+entirely by local quantities:
+
+  drho(x,t)/dt = D * [M(rho)*nabla^2(rho) + M'(rho)*|nabla(rho)|^2
+                       - P_SY2(rho)]  +  H * v(x,t)
+
+  dv(x,t)/dt = (1/tau) * [M(rho)*nabla^2(rho) + M'(rho)*|nabla(rho)|^2
+                            - P_SY2(rho)]  -  (zeta/tau) * v(x,t)
+
+The locality of these rules is significant. The operator field F[rho]
+depends only on rho, nabla(rho), and nabla^2(rho) at the point x.
+These are local differential quantities. The penalty depends only on
+rho(x). The memory depends only on v(x) and F[rho](x).
+
+The architectural field is a local field theory: the rule at each
+point depends only on the field's value and its spatial derivatives
+at that point. There is no action at a distance. The boundary
+conditions (periodic, via np.roll) provide the only spatial coupling,
+and this coupling is local in the sense that each point communicates
+only with its immediate neighbors through the gradient and Laplacian.
+
+------------------------------------------------------------------------
+6.2 GLOBAL CONSTRAINTS
+------------------------------------------------------------------------
+
+Despite the local update rules, the architectural field is subject
+to global constraints that shape its behavior:
+
+CONSERVATION OF MASS:
+  The spatial integral of rho is not exactly conserved (the penalty
+  breaks conservation by adding or removing density to drive toward
+  rho*). However, the diffusion terms M*nabla^2(rho) and
+  M'*|nabla(rho)|^2 are conservative: they redistribute density
+  without changing the total. The penalty's effect on the mean is
+  to pull it toward rho*, so the mean density approaches rho* from
+  any initial value.
+
+CHANNEL COMPLEMENTARITY:
+  D + H = 1 at every point, at every time. This is a global algebraic
+  constraint, not a dynamical one. It structures the field's update
+  rule by fixing the total weight of the diffusive and participatory
+  channels.
+
+BOUNDED STATE SPACE:
+  rho(x,t) is bounded in [0, rho_max] at every point. This is
+  enforced dynamically by the mobility collapse at rho_max and by
+  the penalty structure. The global constraint is that the field
+  trajectory remains in a bounded subset of the state space at all
+  times.
+
+------------------------------------------------------------------------
+6.3 ENERGY-LIKE QUANTITIES
+------------------------------------------------------------------------
+
+The architectural field possesses several energy-like functionals
+that characterize its state:
+
+TOTAL FIELD ENERGY:
+  E(t) = integral [ (rho - rho*)^2 + tau * v^2 ] dx
+
+  This is the total deviation from equilibrium in both fields. It
+  is non-negative, zero only at equilibrium, and monotonically
+  decreasing under the field dynamics. It serves as a Lyapunov
+  functional for the global convergence.
+
+GRADIENT ENERGY:
+  G(t) = integral [ |nabla(rho)|^2 ] dx
+
+  This measures the total spatial structure in the density field.
+  The diffusion terms decrease G (they smooth gradients). The
+  participation channel can temporarily increase G (by driving
+  density oscillations that create new gradients), but the net
+  effect over a full oscillation cycle is to decrease G.
+
+SPECTRAL ENERGY:
+  S_k(t) = |a_k(t)|^2 for each mode k.
+
+  The k-th spectral energy measures the amplitude of the k-th
+  Fourier component. S_k decays at rate proportional to k^2 for
+  the diffusion channel, modified by the participation coupling.
+  The hierarchy S_1 > S_2 > S_3 > ... establishes quickly and
+  persists.
+
+PARTICIPATION ENERGY:
+  P(t) = integral [ v^2 ] dx
+
+  This measures the total stored memory in the participation field.
+  It is generated by F[rho] (the operator drives v) and dissipated
+  by the zeta*v damping. At equilibrium, P = 0. The participation
+  energy is the field-theoretic measure of the Memory Loop's
+  activation.
+
+------------------------------------------------------------------------
+6.4 DISSIPATION STRUCTURE
+------------------------------------------------------------------------
+
+The architectural field is strictly dissipative. Every energy-like
+quantity decreases over time (at least on average over oscillation
+cycles). The dissipation has three independent channels:
+
+DIFFUSIVE DISSIPATION (rate proportional to D):
+  The D*F[rho] term in the density equation directly dissipates
+  spatial structure. Its effect is to smooth the density field
+  toward homogeneity. The dissipation rate scales as D * k^2 for
+  the k-th mode.
+
+PENALTY DISSIPATION (rate proportional to alpha*gamma):
+  The penalty P_SY2 dissipates density deviations from rho*. Its
+  effect is to pull the mean density toward the equilibrium value.
+  This acts on the k=0 (mean) mode and indirectly on all other
+  modes through the nonlinear coupling.
+
+PARTICIPATORY DISSIPATION (rate proportional to zeta/tau):
+  The zeta*v term in the v-equation dissipates participation energy.
+  Its effect is to drain the Memory Loop of stored history, reducing
+  the feedback's influence over time.
+
+The total dissipation is the sum of all three channels. The field
+cannot sustain structure against this combined drain. This is the
+field-theoretic proof of the Law of Transient Structure: three
+independent dissipation channels, all active, all draining energy,
+with no energy source.
+
+------------------------------------------------------------------------
+6.5 WHY ED DYNAMICS HAVE THEIR CHARACTER
+------------------------------------------------------------------------
+
+The field-theoretic description explains four fundamental properties
+of ED dynamics:
+
+GLOBALLY CONVERGENT: because the total field energy E(t) is a
+  Lyapunov functional that decreases at every step. The potential
+  landscape has a unique minimum, and the dissipation structure
+  ensures downhill flow. There is no mechanism to create secondary
+  minima, no energy source to sustain motion, and no topological
+  obstruction to convergence.
+
+LOCALLY NONLINEAR: because the operator field F[rho] contains the
+  cubic interaction N[rho] = M'*|nabla(rho)|^2, which couples modes
+  and generates harmonic content. The nonlinearity is local (it
+  depends on the field at each point) and cubic (it involves three
+  factors of the field or its derivatives). This is the minimum
+  nonlinearity needed to produce the observed harmonic structure.
+
+SPECTRALLY HIERARCHICAL: because the linearized operator field has
+  eigenvalues scaling as k^2. This is a consequence of the diffusion
+  operator's Laplacian structure. The spectral hierarchy is not
+  imposed by hand; it is inherited from the mathematical structure
+  of second-order spatial differentiation.
+
+GEOMETRICALLY CONSTRAINED: because the mobility field creates a
+  bounded state space, the damping field creates a topological
+  partition, and the potential landscape creates a unique basin.
+  The field's geometry is not free; it is determined by the
+  component fields' shapes and their intersections.
+
+
+========================================================================
+7. UNIFIED INTERPRETATION
+========================================================================
+
+HOW BECOMING IS ENCODED IN THE FIELD
+
+The ED ontology asserts that reality is a process of becoming: density
+fields evolve, structure forms and dissolves, and the rules of
+becoming determine what can happen. The Architectural Field Theory
+provides the precise encoding of this ontology.
+
+Becoming is encoded in the field through:
+
+  THE OPERATOR FIELD F[rho]:
+    This is the rule of becoming. At every point, F[rho] computes
+    what should happen next: how much density should flow, in which
+    direction, at what rate. F is not a static quantity; it changes
+    as rho changes, creating a dynamic, self-updating rule. The rule
+    of becoming is itself subject to becoming.
+
+  THE PARTICIPATION FIELD v:
+    This is the memory of becoming. The participation field records
+    what has happened and feeds it forward. Without v, the system
+    would have no history — each instant would be determined solely
+    by the current density configuration. With v, the system carries
+    its past into its future, creating the temporal depth that makes
+    oscillation possible.
+
+  THE DENSITY FIELD rho:
+    This is the substance of becoming. It is what changes, what has
+    structure, what the other fields act upon. The density field is
+    not a backdrop for dynamics; it is the dynamics. Its spatial
+    shape at any moment is the architecture's instantaneous
+    expression.
+
+WHY THE ARCHITECTURE IS STABLE
+
+The Architectural Field Theory reveals that the ED architecture's
+stability is not a single property but a convergence of three
+independent stabilizing mechanisms:
+
+  (1) POTENTIAL STABILITY: the energy functional V[rho] has a unique
+      minimum. There is nowhere else for the system to go.
+
+  (2) DISSIPATIVE STABILITY: three independent dissipation channels
+      (diffusive, regulatory, participatory) all drain energy. There
+      is no mechanism to sustain structure.
+
+  (3) SPECTRAL STABILITY: the k^2 eigenvalue hierarchy ensures rapid
+      dimensional collapse. There is no mechanism for high-mode
+      excitation to persist.
+
+Any one of these would make the architecture stable. All three
+together make it robustly stable: stable under multiplicative
+perturbations of any component (Law of Proportional Stability),
+stable across the entire parameter space (Law of Unique Attraction),
+and stable for every initial condition (Law of Transient Structure).
+
+The architecture is fragile only to additive perturbations, which
+bypass the coupling structure and inject energy into the Memory Loop
+from outside. This is the field-theoretic explanation of the
+multiplicative/additive distinction: multiplicative perturbations
+act within the field's coupling structure and are absorbed by the
+dissipation channels, while additive perturbations act outside the
+coupling structure and can temporarily overpower the dissipation.
+
+HOW GLOBAL BEHAVIOR EMERGES FROM LOCAL RULES
+
+The architectural field is local: each point updates based on its
+immediate neighborhood. Yet the global behavior is highly organized:
+all trajectories converge, the manifold is one-dimensional, the
+boundary is a global surface.
+
+The field theory explains this local-to-global emergence through
+three mechanisms:
+
+  SPATIAL COUPLING VIA THE LAPLACIAN:
+    The nabla^2 operator couples each point to its neighbors. This
+    is a local coupling (only nearest neighbors contribute), but
+    iterating it propagates information across the entire domain.
+    After a few diffusion times, every point has communicated with
+    every other point, and the global spatial structure has organized.
+
+  TEMPORAL COUPLING VIA THE MEMORY LOOP:
+    The v-field integrates F[rho] over time, creating temporal
+    coherence. Each spatial point's history influences its future,
+    and since F[rho] depends on spatial derivatives, the temporal
+    coupling is also spatial. The Memory Loop synchronizes the
+    evolution across space by feeding back the spatially-integrated
+    operator output.
+
+  SPECTRAL COUPLING VIA THE NONLINEAR TRIAD:
+    The M'*|nabla(rho)|^2 term couples Fourier modes. This creates
+    coherence across spatial scales: the k=1 mode drives the k=3
+    mode, which affects the k=1 mode through the mode-mode coupling.
+    The spectral coupling ensures that the field's evolution is
+    organized across scales, not just across space and time.
+
+These three coupling mechanisms — spatial, temporal, spectral —
+together ensure that the local field rules produce global order.
+The local rules are simple (diffuse, regulate, remember). The global
+outcome is rich (spirals, harmonics, horizons, manifolds). The field
+theory bridges the two: it shows how the simple local structure
+generates the complex global geometry through iterated spatial,
+temporal, and spectral coupling.
+
+HOW THE FIELD THEORY COMPLETES THE ED ONTOLOGY
+
+The five ED-Arch documents form a complete structural description of
+the unified ED cosmology PDE:
+
+  ED-Arch-01 (Summary):        WHAT the architecture does.
+  ED-Arch-02 (Motifs):         WHAT PATTERNS recur.
+  ED-Arch-03 (Laws):           WHAT RULES govern.
+  ED-Arch-04 (Geometry):       WHAT SHAPES result.
+  ED-Arch-05 (Field Theory):   HOW IT ALL WORKS TOGETHER.
+
+The Architectural Field Theory is the synthesis layer. It takes the
+motifs, laws, and geometry and shows that they are not separate
+descriptions but aspects of a single field structure. The motifs are
+the field's characteristic patterns. The laws are the field's global
+constraints. The geometry is the field's shape. And the field itself
+is the continuous, law-governed, self-evolving structure that unifies
+all three.
+
+The field theory reveals the ED architecture as a complete physical
+system in the following sense:
+
+  - It has substance (the density field).
+  - It has memory (the participation field).
+  - It has rules (the operator field).
+  - It has constraints (the architectural laws).
+  - It has shapes (the geometric objects).
+  - It has dynamics (the local update rules).
+  - It has stability (the dissipation structure).
+  - It has creativity (the nonlinear coupling).
+  - It has transience (the Lyapunov decay).
+
+The Architectural Field Theory is the statement that all of these
+properties are aspects of a single object: the coupled field
+(rho, v, F[rho]) evolving under the unified PDE. The architecture
+is the field. The field is the architecture.
+
+
+========================================================================
+END OF DOCUMENT
+========================================================================
+
+ED-Arch-05: Architectural Field Theory
+Series: ED Architecture
+Part 5 of the ED-Arch synthesis series

@@ -1,0 +1,1083 @@
+ED-Arch-06: Architectural Energetics of the Unified ED Cosmology PDE
+=====================================================================
+
+Series:    ED Architecture
+Document:  ED-Arch-06
+Title:     Architectural Energetics
+Author:    Allen Proxmire
+Date:      2026-03-17
+Scope:     Energy-like functionals, dissipation channels, variational
+           structure, and flow principles of the ED architecture
+Sources:   ED-Phys-01 through ED-Phys-34, ED-Arch-01 through ED-Arch-05
+
+
+========================================================================
+1. PURPOSE OF ARCHITECTURAL ENERGETICS
+========================================================================
+
+The Architectural Field Theory (ED-Arch-05) described the ED
+architecture as a coupled field evolving under local rules with global
+constraints. This sixth chapter asks the next question: what drives
+that evolution? What quantities decrease, what channels carry the
+decrease, and what variational principle organizes the whole process?
+
+Architectural energetics is the study of energy-like quantities in
+the ED framework. The term "energy-like" requires immediate
+clarification:
+
+  (i)   NOT PHYSICAL ENERGY.  The ED cosmology PDE is not a
+        Hamiltonian system. It does not conserve energy. It has no
+        kinetic energy in the mechanical sense, no potential energy
+        in the gravitational sense, and no Hamiltonian that generates
+        time evolution. The quantities studied here are not physical
+        energies.
+
+  (ii)  ARCHITECTURAL ENERGY.  The quantities are functionals of the
+        field state (rho, v) that measure deviation from equilibrium,
+        that decrease monotonically under the dynamics (at least on
+        average), and that constrain the architecture's evolution.
+        They are Lyapunov-like functionals: non-negative, zero only
+        at equilibrium, and decreasing along trajectories.
+
+  (iii) DIRECTION OF BECOMING.  In the ED ontology, becoming has a
+        direction. The architecture does not wander randomly through
+        state space. It moves toward equilibrium. Architectural
+        energetics identifies the quantities whose decrease defines
+        this direction. The architecture's "direction of becoming"
+        is the direction of decreasing architectural energy.
+
+Architectural energetics differs from PDE mechanics in the same way
+that thermodynamics differs from molecular dynamics. PDE mechanics
+computes trajectories. Energetics identifies the quantities that
+determine which trajectories are possible and which direction they
+flow. PDE mechanics is a calculation. Energetics is a principle.
+
+The previous chapters established:
+  - What patterns recur (motifs, ED-Arch-02).
+  - What rules govern (laws, ED-Arch-03).
+  - What shapes result (geometry, ED-Arch-04).
+  - How the field works (field theory, ED-Arch-05).
+
+This chapter establishes: what drives the field. Energetics is the
+architecture's engine room. It explains not just what happens, but
+why it must happen in one direction and not the other.
+
+
+========================================================================
+2. THE ENERGY-LIKE FUNCTIONALS
+========================================================================
+
+The ED architecture possesses four principal energy-like functionals.
+Each measures a different aspect of the field's deviation from
+equilibrium, and each decreases through a different mechanism.
+
+------------------------------------------------------------------------
+(a) PENALTY POTENTIAL: V_P[rho]
+------------------------------------------------------------------------
+
+Definition:
+  V_P[rho] = integral [ Phi(rho(x)) ] dx
+
+  where Phi(rho) is the antiderivative of the penalty function:
+  Phi(rho) = integral_rho*^rho P_SY2(s) ds
+
+  For the canonical penalty P_SY2(rho) = alpha*gamma*(rho - rho*)/
+  sqrt((rho - rho*)^2 + rho_0^2):
+
+  Phi(rho) = alpha*gamma * [ sqrt((rho - rho*)^2 + rho_0^2) - rho_0 ]
+
+What it measures:
+  V_P measures the total cost of density deviation from equilibrium.
+  Every spatial point where rho differs from rho* contributes a
+  positive amount to V_P. The contribution is approximately quadratic
+  for small deviations (|rho - rho*| << rho_0) and approximately
+  linear for large deviations (|rho - rho*| >> rho_0). The penalty
+  potential is the architecture's measure of how far the density
+  field is from its target.
+
+Why it decreases:
+  The penalty term -P_SY2(rho) in the operator field F[rho] acts
+  as a gradient descent on V_P. The time derivative of V_P along
+  the dynamics contains the term:
+
+    -integral [ P_SY2(rho)^2 / (D_eff) ] dx
+
+  which is strictly negative wherever rho differs from rho*. The
+  penalty potential decreases because the penalty force is always
+  directed downhill on V_P.
+
+  The diffusion terms also contribute to decreasing V_P, because
+  they smooth density toward the spatial mean, which the penalty
+  simultaneously pulls toward rho*. The participation channel can
+  temporarily increase V_P during oscillatory overshoots, but the
+  net effect over each cycle is negative because the damping term
+  zeta*v removes participation energy that would otherwise drive
+  further overshoot.
+
+Governing laws:
+  - Law of Unique Attraction: V_P has a unique minimum at rho = rho*
+    (because Phi(rho) >= 0 with equality only at rho*).
+  - Law of Transient Structure: V_P -> 0 as t -> infinity.
+
+Quantitative evidence:
+  - ED-Phys-29: final_std ~ 10^-14 across all 66 runs, implying
+    V_P has decreased to machine precision.
+  - ED-Phys-25, 26: relaxation times of 640-688 time units measure
+    the time for V_P to decrease by a factor of 1/e in the dominant
+    mode.
+
+
+------------------------------------------------------------------------
+(b) MOBILITY CURVATURE ENERGY: V_M[rho]
+------------------------------------------------------------------------
+
+Definition:
+  V_M[rho] = (1/2) * integral [ M(rho(x)) * |nabla(rho(x))|^2 ] dx
+
+  This is the weighted gradient energy, where the weight is the
+  mobility function M(rho).
+
+What it measures:
+  V_M measures the total spatial structure in the density field,
+  weighted by the local ability to transport density. High V_M means
+  the field has steep gradients in regions where mobility is high
+  (and therefore where diffusion is active). V_M is zero only when
+  the density field is spatially homogeneous (nabla(rho) = 0
+  everywhere).
+
+  V_M differs from the simple gradient energy integral(|nabla(rho)|^2 dx)
+  by the mobility weighting. This weighting means that gradients near
+  rho_max (where M is small) contribute less to V_M than gradients
+  at low density (where M is large). V_M is the architecturally
+  relevant measure of spatial structure, because it weights gradients
+  by their dynamical significance.
+
+Why it decreases:
+  The diffusion term M(rho)*nabla^2(rho) in the operator field is
+  the variational derivative of V_M (up to boundary terms and
+  nonlinear corrections from M'). This means the D-channel of the
+  PDE performs approximate gradient descent on V_M. The time
+  derivative of V_M contains:
+
+    -D * integral [ M(rho) * (nabla^2(rho))^2 ] dx  +  lower-order terms
+
+  The leading term is strictly negative wherever nabla^2(rho) is
+  nonzero. Spatial curvature is always being smoothed.
+
+  The nonlinear term M'*|nabla(rho)|^2 provides a correction that
+  can redistribute energy between modes but does not create net
+  gradient energy. The participation channel can temporarily increase
+  V_M (by driving density oscillations that create new gradients),
+  but the net effect is dissipative.
+
+Governing laws:
+  - Law of Modal Hierarchy: V_M decreases at rate proportional to k^2
+    for the k-th mode, establishing the spectral ordering of
+    dissipation.
+  - Law of One-Dimensional Relaxation: V_M's decrease is dominated
+    by the higher modes, which decay fastest, leaving only the k=1
+    contribution at late times.
+
+Quantitative evidence:
+  - ED-Phys-29: convergence rates lambda = 0.002 to 0.023 at D=0.5
+    measure V_M's late-time decay rate projected onto the dominant
+    mode.
+  - ED-Phys-33: fastest convergence lambda = 0.139 (D=0, zeta=0.25)
+    and slowest lambda = 0.006 (D=1, zeta=1) bound V_M's decay rate
+    across the parameter space.
+
+
+------------------------------------------------------------------------
+(c) PARTICIPATION MEMORY ENERGY: V_v[v]
+------------------------------------------------------------------------
+
+Definition:
+  V_v[v] = (1/2) * tau * integral [ v(x,t)^2 ] dx
+
+  The factor of tau normalizes the energy to the participation
+  time scale.
+
+What it measures:
+  V_v measures the total stored memory in the participation field.
+  Wherever v differs from zero, the field is carrying information
+  about past operator forcing. High V_v means the Memory Loop is
+  strongly activated: the participation field has accumulated
+  significant forcing history that has not yet been dissipated.
+
+  V_v is zero only at equilibrium (v = 0 everywhere). During
+  oscillatory transients, V_v oscillates: it peaks when v is at
+  maximum amplitude and dips when v passes through zero. But the
+  envelope of these oscillations decreases monotonically, because
+  the damping term removes more energy from v than the operator
+  injects over each complete cycle.
+
+Why it decreases:
+  The v-equation is:
+    dv/dt = (1/tau) * (F[rho] - zeta*v)
+
+  The time derivative of V_v is:
+    dV_v/dt = tau * integral [ v * dv/dt ] dx
+            = integral [ v * F[rho] - zeta * v^2 ] dx
+
+  The -zeta*v^2 term is strictly negative wherever v is nonzero.
+  This is the direct dissipation channel for participation energy.
+  The v*F[rho] term can be positive (F driving v in the same
+  direction) or negative (F opposing v). During oscillation, these
+  terms alternate in sign, but the zeta*v^2 drain is always active.
+
+  The net dissipation rate per cycle is proportional to zeta: higher
+  damping removes participation energy faster. At zeta = 1.0, the
+  dissipation is so strong that V_v never accumulates significantly:
+  the system is overdamped. At zeta = 0.25, the dissipation is
+  weaker, allowing V_v to build up and sustain many oscillation
+  cycles before draining.
+
+Governing laws:
+  - Law of Critical Damping Boundary: the boundary D + 2*zeta = 1
+    is the locus where V_v's oscillatory excursions transition to
+    monotonic decay. Below the boundary, V_v oscillates with
+    decreasing envelope. Above it, V_v decreases monotonically.
+  - Law of Transient Structure: V_v -> 0 as t -> infinity.
+
+Quantitative evidence:
+  - ED-Phys-27: peak v increases from 0.148 (canonical) to 0.634
+    (nonsmooth additive), indicating V_v amplification of roughly
+    (0.634/0.148)^2 = 18x under additive perturbation.
+  - ED-Phys-31: at zeta = 0.25, mean cycles = 91.5, indicating
+    V_v oscillates many times before draining. At zeta = 1.0,
+    mean cycles = 0, indicating V_v drains immediately.
+
+
+------------------------------------------------------------------------
+(d) NONLINEAR INTERACTION ENERGY: V_N[rho]
+------------------------------------------------------------------------
+
+Definition:
+  V_N[rho] = integral [ |M'(rho(x))| * |nabla(rho(x))|^2 ] dx
+
+  This is the unsigned magnitude of the nonlinear coupling term,
+  integrated over space.
+
+What it measures:
+  V_N measures the total activity of the Nonlinear Triad: the
+  strength of the mode-mode coupling at any instant. High V_N means
+  the field has steep gradients in regions where the mobility is
+  changing rapidly with density, creating strong harmonic generation.
+  V_N is zero only at equilibrium (where nabla(rho) = 0 everywhere).
+
+  V_N differs from V_M in that V_M weights gradients by mobility
+  (measuring diffusive potential) while V_N weights gradients by
+  the mobility derivative (measuring nonlinear coupling strength).
+  The two energies are related but not proportional: V_M emphasizes
+  gradients at moderate density, while V_N emphasizes gradients
+  where density is changing the mobility most rapidly.
+
+Why it decreases:
+  V_N decreases because both of its factors decrease: |nabla(rho)|^2
+  decreases through diffusion, and the density field approaches
+  rho* where |M'| is moderate. V_N cannot increase without an
+  increase in gradient energy, which the diffusion channel
+  continuously removes.
+
+  The Nonlinear Triad generates k=3 content from k=1, but this
+  spectral transfer does not increase V_N. The k=3 mode decays 9x
+  faster than k=1, so the generated harmonic content is immediately
+  dissipated. The Triad is a spectral transformer, not an energy
+  source.
+
+Governing laws:
+  - Law of Harmonic Protection: V_N's spectral output (k=3 from k=1)
+    is architecturally determined. The ratio k3/k1 is fixed by the
+    coupling structure, not by V_N's magnitude.
+  - Law of Modal Hierarchy: V_N's spectral output decays faster
+    (k=3 at rate 9*lambda_1) than its input (k=1 at rate lambda_1).
+
+Quantitative evidence:
+  - ED-Phys-25, 26: k3_max = 6.36-6.44, invariant across all
+    perturbation variants. This invariance reflects V_N's structural
+    relationship to the gradient field, not to specific parameter
+    values.
+  - ED-Phys-29: k3_max scales with amplitude (0.54 at A=10, 3.52
+    at A=80), confirming V_N's dependence on gradient energy.
+
+
+------------------------------------------------------------------------
+(e) TOTAL ARCHITECTURAL ENERGY: E[rho, v]
+------------------------------------------------------------------------
+
+Definition:
+  E[rho, v] = V_P[rho] + V_M[rho] + V_v[v]
+
+  The total architectural energy is the sum of the penalty potential,
+  the mobility curvature energy, and the participation memory energy.
+  V_N is not included as an independent contribution because it is
+  determined by V_M (both depend on |nabla(rho)|^2, differing only
+  in the weighting function).
+
+What it measures:
+  E measures the total deviation of the architectural field from
+  equilibrium, combining all three aspects: density deviation from
+  rho* (V_P), spatial structure (V_M), and stored memory (V_v).
+  E = 0 if and only if rho = rho* everywhere and v = 0 everywhere.
+
+Why it decreases:
+  E decreases because each of its three components decreases on
+  average. The three dissipation channels (Section 3) independently
+  drain each component. Even during oscillatory transients, where
+  V_P and V_M may temporarily increase as the participation channel
+  drives overshoots, the total E decreases because the participation
+  damping (zeta*v^2) removes more energy than the overshoot injects.
+
+  This can be shown formally: the time derivative of E along the
+  dynamics is:
+
+    dE/dt = -(diffusive dissipation) - (penalty dissipation)
+            - (participatory dissipation) + (cross terms)
+
+  The cross terms arise from the coupling between channels. In the
+  oscillatory regime, the cross terms oscillate but have zero time-
+  average. The dissipation terms are always non-positive. Therefore
+  dE/dt averaged over a cycle is strictly negative.
+
+  In the monotonic regime (D + 2*zeta > 1), the cross terms vanish
+  and dE/dt is strictly negative at every instant.
+
+Governing laws:
+  E is the master Lyapunov-like functional. Its monotone decrease
+  is the field-theoretic expression of the Law of Transient
+  Structure. Its unique zero is the expression of the Law of
+  Unique Attraction. Its spectral decomposition expresses the
+  Law of Modal Hierarchy.
+
+
+========================================================================
+3. THE THREE DISSIPATION CHANNELS
+========================================================================
+
+Architectural energy leaves the system through three independent
+channels. Each channel has a distinct physical mechanism, corresponds
+to a distinct law, produces a distinct motif, is located on a
+distinct geometric object, and acts on a distinct component of the
+architectural field.
+
+------------------------------------------------------------------------
+(a) PARABOLIC DISSIPATION (D-CHANNEL)
+------------------------------------------------------------------------
+
+Mechanism:
+  The D-channel operates through the term D*F[rho] in the density
+  equation. It acts by direct nonlinear diffusion: the curvature
+  term M*nabla^2(rho) smooths the density profile, and the penalty
+  term -P_SY2 pulls density toward rho*. The D-channel converts
+  spatial structure (V_M) and density deviation (V_P) into
+  equilibrium.
+
+Dissipation rate:
+  The D-channel's dissipation rate is proportional to D. At D = 1
+  (parabolic regime), it is the sole dissipation mechanism. At D = 0
+  (oscillatory regime), it is absent.
+
+  The rate scales with the spatial mode number: the k-th Fourier
+  mode is dissipated at rate D*k^2*M(rho*), where M(rho*) is the
+  mobility at equilibrium. This k^2 scaling creates the Modal Funnel
+  geometry: high-k modes are dissipated rapidly, low-k modes persist.
+
+Corresponding law:     Modal Hierarchy, One-Dimensional Relaxation
+Corresponding motif:   Dissipator
+Corresponding geometry: Monotonic Cone, Modal Funnel
+Corresponding field:   Operator field F[rho] acting directly on rho
+
+Quantitative evidence:
+  - ED-Phys-31: at D = 1.0, mean cycles = 0 and lambda = 0.020
+    across all tau and zeta combinations. The D-channel alone
+    produces monotonic convergence.
+  - ED-Phys-30: parabolic regime v-spread = 0.047, indicating
+    minimal participation energy when the D-channel dominates.
+  - ED-Phys-32: curvature 10.6-72.0 in the monotonic regime,
+    confirming near-straight trajectories driven by the D-channel.
+
+
+------------------------------------------------------------------------
+(b) PARTICIPATORY DAMPING (ZETA-CHANNEL)
+------------------------------------------------------------------------
+
+Mechanism:
+  The zeta-channel operates through the term -zeta*v/tau in the
+  v-equation. It acts by exponential damping of the participation
+  field: every nonzero v is pulled toward zero at rate zeta/tau.
+  The zeta-channel converts participation memory energy (V_v) into
+  equilibrium.
+
+Dissipation rate:
+  The zeta-channel's dissipation rate is proportional to zeta/tau.
+  It acts uniformly across all spatial modes (zeta multiplies v,
+  not nabla(v)), so it does not preferentially dissipate high-k
+  participation content.
+
+  The total participation energy dissipated per unit time is:
+
+    dV_v/dt |_damping = -zeta * integral [ v^2 ] dx = -2*zeta/tau * V_v
+
+  This is an exponential drain: V_v decays as exp(-2*zeta*t/tau)
+  in the absence of forcing. The forcing (F[rho]) counteracts this
+  drain during oscillatory transients, but the drain always wins
+  eventually because F[rho] itself decreases as rho approaches
+  equilibrium.
+
+Corresponding law:     Critical Damping Boundary
+Corresponding motif:   Memory Loop (the zeta-channel damps the loop)
+Corresponding geometry: Spiral Sheet (the zeta-channel controls the
+                        sheet's winding tightness)
+Corresponding field:   Participation field v
+
+Quantitative evidence:
+  - ED-Phys-31: at zeta = 0.25, mean cycles = 91.5 (weak damping,
+    slow V_v drain). At zeta = 0.50, mean cycles = 1.78 (moderate
+    damping). At zeta = 1.0, mean cycles = 0 (strong damping,
+    immediate V_v drain).
+  - ED-Phys-27: canonical peak v = 0.148 (zeta-channel controls
+    V_v). Nonsmooth additive peak v = 0.634 (additive forcing
+    overwhelms the zeta-channel temporarily).
+  - ED-Phys-32: curvature drops from 505,631 (zeta=0.25) to 10.6
+    (zeta=1.0), measuring the zeta-channel's effect on spiral
+    geometry.
+
+
+------------------------------------------------------------------------
+(c) PENALTY RELAXATION (P-CHANNEL)
+------------------------------------------------------------------------
+
+Mechanism:
+  The P-channel operates through the penalty term -P_SY2(rho) in
+  the operator field F[rho]. It acts by pulling the local density
+  toward rho* at every spatial point. Unlike the D-channel (which
+  smooths spatial gradients) and the zeta-channel (which damps
+  participation), the P-channel acts directly on the density value,
+  reducing V_P.
+
+Dissipation rate:
+  The P-channel's dissipation rate depends on the deviation from
+  rho*. For small deviations (|rho - rho*| << rho_0):
+
+    P_SY2(rho) approximately equal to alpha*gamma*(rho - rho*)/rho_0
+
+  giving linear relaxation at rate alpha*gamma/rho_0. For large
+  deviations (|rho - rho*| >> rho_0):
+
+    P_SY2(rho) approximately equal to alpha*gamma*sign(rho - rho*)
+
+  giving constant-rate relaxation independent of deviation. The
+  penalty saturates at large deviations, preventing the relaxation
+  rate from growing without bound.
+
+  The P-channel acts on all spatial modes simultaneously (the
+  penalty depends on rho(x), not on nabla(rho)). It does not have
+  the k^2 spectral selectivity of the D-channel. However, because
+  the penalty's effect on each mode is proportional to that mode's
+  amplitude, it reinforces the D-channel's spectral hierarchy rather
+  than competing with it.
+
+Corresponding law:     Unique Attraction (the penalty's unique zero
+                        at rho* guarantees the unique attractor)
+Corresponding motif:   Saddle (the penalty creates the restoring
+                        force at density extrema)
+Corresponding geometry: Attractor Point (the P-channel defines the
+                        attractor's location at rho*)
+Corresponding field:   Operator field F[rho], specifically the
+                        -P_SY2(rho) component
+
+Quantitative evidence:
+  - ED-Phys-25: relaxation times 448-688 time units across penalty
+    variants. The P-channel's relaxation rate sets the time scale
+    for V_P decrease.
+  - ED-Phys-29: final_std ~ 10^-14 across all 66 runs, confirming
+    that the P-channel drives V_P to machine-precision zero.
+  - ED-Phys-34: all 20 runs converge to rho = rho* = 50.0,
+    confirming the P-channel's unique target.
+
+
+------------------------------------------------------------------------
+SUMMARY: THE THREE CHANNELS AS A DISSIPATIVE TRIAD
+------------------------------------------------------------------------
+
+The three dissipation channels form a complete dissipative system:
+
+  Channel     Acts on        Drains        Rate scales with
+  ---------   -----------    ----------    -------------------
+  D-channel   rho directly   V_M, V_P     D * k^2 (spectrally selective)
+  zeta-ch.    v directly     V_v           zeta/tau (spectrally uniform)
+  P-channel   rho directly   V_P           alpha*gamma/rho_0 (deviation-dep.)
+
+No energy-like functional is left without a drain:
+  - V_P is drained by the P-channel and the D-channel.
+  - V_M is drained by the D-channel.
+  - V_v is drained by the zeta-channel.
+  - V_N is drained indirectly through V_M (since V_N depends on
+    gradients that the D-channel dissipates).
+
+The three channels are independent in the sense that each can operate
+alone (D=1, zeta=0 gives pure D-channel; D=0, zeta>0 gives pure
+zeta-channel; penalty always operates). But they are coupled through
+the field: the D-channel's smoothing of rho changes F[rho], which
+changes the zeta-channel's input; the P-channel's regulation of rho
+changes the gradients that the D-channel acts on.
+
+The combined dissipation is what makes the architecture unconditionally
+convergent. Any single channel might leave some energy-like quantity
+undrained (the D-channel alone does not drain V_v; the zeta-channel
+alone does not drain V_M; the P-channel alone does not drain spatial
+gradients). But together, they drain everything.
+
+
+========================================================================
+4. VARIATIONAL INTERPRETATION
+========================================================================
+
+The unified ED cosmology PDE admits a variational interpretation:
+it can be understood as a system that minimizes a functional subject
+to dissipative constraints. This interpretation connects the PDE's
+mechanics to the architectural energetics and reveals the variational
+structure underlying the dynamics.
+
+------------------------------------------------------------------------
+4.1 GRADIENT FLOW IN THE PENALTY POTENTIAL
+------------------------------------------------------------------------
+
+Consider the density equation with D = 1 (pure parabolic, no
+participation):
+
+  drho/dt = F[rho] = M(rho)*nabla^2(rho) + M'(rho)|nabla(rho)|^2
+                     - P_SY2(rho)
+
+The first two terms constitute the weighted Laplacian of rho with
+respect to the mobility function M. In variational language:
+
+  M(rho)*nabla^2(rho) + M'(rho)|nabla(rho)|^2 = div(M(rho)*nabla(rho))
+
+This is the divergence of the mobility-weighted gradient, which is
+the variational derivative of the mobility curvature energy V_M:
+
+  div(M(rho)*nabla(rho)) = -delta(V_M)/delta(rho)
+
+  (up to sign conventions and boundary terms)
+
+The penalty term -P_SY2(rho) is the variational derivative of the
+penalty potential V_P:
+
+  -P_SY2(rho) = -delta(V_P)/delta(rho)
+
+Therefore the pure parabolic PDE is:
+
+  drho/dt = -delta(V_M + V_P)/delta(rho) = -delta(E_rho)/delta(rho)
+
+where E_rho = V_M + V_P is the total density-sector energy. This is
+a GRADIENT FLOW: the density field evolves by steepest descent on
+the energy functional E_rho. The gradient flow structure guarantees
+monotone decrease of E_rho:
+
+  dE_rho/dt = integral [ (delta E_rho/delta rho) * (drho/dt) ] dx
+            = -integral [ (delta E_rho/delta rho)^2 ] dx
+            <= 0
+
+with equality only at equilibrium.
+
+------------------------------------------------------------------------
+4.2 DAMPED WAVE IN THE PARTICIPATION FIELD
+------------------------------------------------------------------------
+
+When H > 0 (participation active), the coupled system can be
+rewritten by eliminating v from the equations. Differentiating the
+density equation and substituting the v-equation:
+
+  tau * d^2(rho)/dt^2 + zeta * drho/dt
+    = (D*tau + H) * dF/dt + D*zeta*F + H*F
+
+This is a DAMPED WAVE EQUATION in the density field, with:
+  - Inertia: tau (the participation time scale provides effective mass)
+  - Damping: zeta (the participation damping provides friction)
+  - Restoring force: F[rho] (the operator field provides the spring)
+
+The wave interpretation explains why the system oscillates when
+damping is insufficient (zeta too small) and why it relaxes
+monotonically when damping is sufficient (zeta large enough).
+The Critical Damping Boundary D + 2*zeta = 1 is the condition
+under which the effective damping equals the critical damping of
+this wave equation.
+
+The damped wave has an energy:
+
+  E_wave = (1/2)*tau*(drho/dt)^2 + E_rho[rho]
+
+The first term is kinetic-like (proportional to the square of the
+rate of change) and the second is potential-like (the gradient flow
+energy). The damping term zeta*drho/dt dissipates the kinetic-like
+energy, while the gradient flow structure dissipates the potential-
+like energy.
+
+------------------------------------------------------------------------
+4.3 NONLINEAR DIFFUSION IN THE MOBILITY FIELD
+------------------------------------------------------------------------
+
+The spatial evolution at any instant can be interpreted as a nonlinear
+diffusion process with density-dependent diffusivity M(rho). The
+diffusion flux is:
+
+  J(x,t) = -M(rho) * nabla(rho)
+
+and the diffusion equation (neglecting the penalty and participation
+for the moment) is:
+
+  drho/dt = -div(J) = div(M(rho)*nabla(rho))
+          = M(rho)*nabla^2(rho) + M'(rho)|nabla(rho)|^2
+
+This is a porous medium equation with mobility M(rho). The nonlinear
+diffusion interpretation reveals:
+  - At low density (rho << rho_max), M is large and diffusion is fast.
+  - At high density (rho near rho_max), M is small and diffusion
+    stalls.
+  - The diffusion is degenerate at rho = rho_max (M = 0), creating
+    the Horizon Surface.
+
+The porous medium equation has a well-known variational structure: it
+is a gradient flow in the Wasserstein metric (the optimal transport
+metric) on the space of probability measures. In this interpretation,
+the density field rho(x,t) is a distribution being optimally
+transported to minimize the free energy V_P + V_M. The mobility M(rho)
+determines the local transport cost.
+
+------------------------------------------------------------------------
+4.4 THE ARCHITECTURAL ACTION-DISSIPATION STRUCTURE
+------------------------------------------------------------------------
+
+Combining the three variational interpretations, the full PDE can be
+expressed in terms of two functionals:
+
+  THE ARCHITECTURAL ACTION:
+    A[rho, v] = V_P[rho] + V_M[rho] + V_v[v]
+              = E[rho, v]
+
+    This is the total architectural energy. It measures the total
+    deviation from equilibrium across all fields.
+
+  THE ARCHITECTURAL DISSIPATION:
+    R[drho/dt, dv/dt] = (1/2) * integral [ (1/M(rho)) * (drho/dt)^2
+                        + tau/zeta * (dv/dt)^2 ] dx
+
+    This is the dissipation functional, measuring the rate of energy
+    expenditure during evolution. The 1/M(rho) weighting penalizes
+    rapid density changes in low-mobility regions. The tau/zeta
+    weighting penalizes rapid participation changes relative to the
+    damping rate.
+
+  The PDE arises from the variational principle:
+
+    Minimize R[drho/dt, dv/dt] subject to dA/dt = -2*R
+
+  This is the Rayleigh dissipation principle: the system evolves
+  along the path that dissipates energy at the rate determined by
+  the dissipation functional. The factor of 2 is the standard
+  relationship between the Rayleigh functional and the energy
+  dissipation rate in a linear dissipative system.
+
+  The Rayleigh structure reveals that the PDE is not merely a set
+  of evolution equations but a dissipative variational system. The
+  trajectory is the one that minimizes a cost functional (the
+  dissipation) while satisfying a constraint (the energy balance).
+  This variational structure is the deepest reason for the
+  architecture's convergence: among all possible evolutions, the
+  PDE selects the one that most efficiently dissipates architectural
+  energy.
+
+
+========================================================================
+5. ENERGY FLOW GEOMETRY
+========================================================================
+
+Architectural energy does not simply decrease uniformly. It flows
+through the geometric objects of ED-Arch-04 in specific patterns,
+following channels determined by the field structure.
+
+------------------------------------------------------------------------
+5.1 ENERGY FLOW THROUGH THE SPIRAL SHEET
+------------------------------------------------------------------------
+
+On the Spiral Sheet (D + 2*zeta < 1), architectural energy flows
+inward along the spiral trajectories. The flow has two components:
+
+  RADIAL INFLOW: energy decreases as the trajectory approaches the
+    Attractor Point. The radial component of the energy flow is
+    monotonic: each successive spiral revolution has less total
+    energy than the previous one. The rate of radial inflow is
+    determined by the combined action of all three dissipation
+    channels.
+
+  TANGENTIAL CIRCULATION: energy cycles between V_P and V_v as
+    the trajectory revolves. During the overshoot phase, V_v
+    increases (the Memory Loop stores energy) while V_P decreases
+    (density is moving toward rho*). During the undershoot phase,
+    V_v decreases (the Memory Loop releases energy) while V_P
+    increases (density has overshot past rho*). The tangential
+    circulation is the energetic signature of oscillation.
+
+The Spiral Sheet's winding geometry reflects the competition between
+radial inflow and tangential circulation. Tight winding (many
+revolutions, high curvature) means tangential circulation dominates
+radial inflow: energy cycles many times between V_P and V_v before
+being fully dissipated. Loose winding (few revolutions) means
+radial inflow dominates: energy is dissipated faster than it can
+circulate.
+
+Energy inventory per cycle (canonical regime, D=0.5, zeta=0.5):
+  Undershoot amplitude decreases from cycle to cycle. In ED-Phys-25,
+  canonical undershoot = 2.26 with relaxation time 656 time units.
+  In ED-Phys-27 (nonsmooth), undershoot decays geometrically:
+  12.24 -> 4.14 -> 1.22 -> 0.27, with a decay ratio of approximately
+  3.3 per cycle. Each cycle dissipates roughly 70% of the remaining
+  architectural energy through the combined action of the three
+  channels.
+
+------------------------------------------------------------------------
+5.2 ENERGY FLOW THROUGH THE MONOTONIC CONE
+------------------------------------------------------------------------
+
+On the Monotonic Cone (D + 2*zeta > 1), architectural energy flows
+directly inward without circulation. There is no tangential component:
+V_P, V_M, and V_v all decrease monotonically at every instant. The
+energy flow is purely radial.
+
+The Monotonic Cone's geometry reflects this direct inflow. The cone's
+narrow aperture (curvature 10.6-72.0) means all trajectories take
+nearly the same path to the Attractor Point. The energy flow is
+channeled through a narrow geometric bottleneck: the Manifold Curve
+at the cone's center.
+
+Energy flow rate in the Monotonic Cone:
+  At D=1.0, the D-channel is the sole dissipation mechanism (H=0,
+  so the Memory Loop is inactive and V_v = 0 throughout). The
+  energy flow rate is:
+
+    dE/dt = -D * integral [ (F[rho])^2 / M(rho) ] dx
+
+  This is the D-channel's dissipation rate, weighted inversely by
+  mobility. Energy is dissipated fastest where F[rho] is large (far
+  from equilibrium) and M is large (low-density regions). Near the
+  equilibrium, the dissipation rate approaches the exponential decay
+  rate lambda_1 = M(rho*) * (pi/L)^2, which equals the convergence
+  rates measured in ED-Phys-31 (lambda = 0.020 at D=1.0).
+
+------------------------------------------------------------------------
+5.3 ENERGY FLOW THROUGH THE HORIZON SURFACE
+------------------------------------------------------------------------
+
+At the Horizon Surface, the D-channel shuts down (M -> 0). Energy
+flow through the D-channel ceases at the horizon. But the P-channel
+and the zeta-channel remain active:
+
+  - The penalty P_SY2 continues to act, pulling rho back from
+    rho_max toward rho*. This is a direct drain on V_P.
+  - The participation damping zeta*v continues to act, draining V_v.
+
+The Horizon Surface is therefore a partial energy flow blockage: one
+of three dissipation channels is blocked, but the other two continue
+to operate. This is why the horizon is transient: even with the
+D-channel blocked, the remaining channels eventually pull the density
+back from the horizon, restoring the D-channel's operation.
+
+The energy dynamics at the horizon create a characteristic signature:
+V_M temporarily stalls (because gradients cannot be smoothed when
+M = 0), V_P continues to decrease (the penalty is unaffected by
+mobility), and V_v continues its oscillatory cycling (the Memory
+Loop operates independently of M). The stalling of V_M creates
+a brief plateau in the total energy E, visible as a temporary
+flattening of the convergence curve.
+
+------------------------------------------------------------------------
+5.4 ENERGY FLOW THROUGH THE MODAL FUNNEL
+------------------------------------------------------------------------
+
+The Modal Funnel is the geometry of spectral energy dissipation. Each
+Fourier mode k carries spectral energy S_k = |a_k|^2. The D-channel
+dissipates S_k at rate proportional to D*k^2. The spectral energy
+flow is therefore:
+
+  High-k modes drain first (rate proportional to k^2).
+  Low-k modes drain last (rate proportional to 1).
+  The flow is from high-k to equilibrium, not from high-k to low-k.
+
+This is a critical distinction: the Modal Funnel does not transfer
+energy from high modes to low modes (as in a turbulent cascade). It
+drains each mode independently, at a rate set by k^2. The apparent
+"transfer" is an illusion created by the Nonlinear Triad, which
+generates k=3 content from k=1. But this generation is not an energy
+transfer in the architectural sense: it is a coupling that enslaves
+the k=3 amplitude to the k=1 amplitude, not a flow of energy from
+one to the other.
+
+The Modal Funnel's energy flow geometry is a set of parallel drains,
+one per mode, with the high-k drains being wider (faster). The total
+energy drains as the sum of these parallel processes, dominated at
+late times by the narrowest drain (k=1).
+
+------------------------------------------------------------------------
+5.5 ENERGY FLOW THROUGH THE TRIAD LOCUS
+------------------------------------------------------------------------
+
+The Triad Locus is not a significant site of energy dissipation. It
+is a site of energy transformation: the Nonlinear Triad converts
+k=1 gradient energy into k=3 gradient energy through the
+M'|nabla(rho)|^2 coupling. The transformed energy (k=3) is then
+rapidly dissipated by the D-channel at 9x the k=1 rate.
+
+The energy flow through the Triad Locus is:
+
+  k=1 gradient energy -> (Triad coupling) -> k=3 gradient energy
+                                              -> (D-channel) -> 0
+
+The Triad is an energy relay, not an energy sink. It diverts a
+fraction of the k=1 energy into a fast-decay channel (k=3). The
+effect on the total energy budget is small: the k=3 amplitude
+(k3_max = 6.44) is modest compared to the k=1 amplitude, and
+the k=3 contribution to V_M is small because it decays so rapidly.
+
+The Triad Locus shrinks as the density field approaches equilibrium
+(because |nabla(rho)|^2 decreases). The energy relay shuts down as
+the gradients that feed it disappear. This is consistent with the
+Law of Transient Structure: the Triad's activity is part of the
+transient, not the equilibrium.
+
+------------------------------------------------------------------------
+5.6 PROPERTIES OF ARCHITECTURAL ENERGY FLOW
+------------------------------------------------------------------------
+
+The energy flow across all geometric objects shares four properties:
+
+INWARD: energy flows toward the Attractor Point from all directions,
+  through all geometric objects, via all dissipation channels. No
+  outward flow is possible because no energy source exists.
+
+MONOTONE: the total architectural energy E decreases along every
+  trajectory (on average over oscillation cycles). Individual
+  components (V_P, V_M, V_v) may fluctuate during oscillation, but
+  their sum decreases.
+
+SPECTRALLY ORDERED: high-k energy is dissipated before low-k energy.
+  The spectral ordering of dissipation is set by the k^2 hierarchy
+  and is independent of initial conditions, parameters, or
+  perturbation class.
+
+GEOMETRICALLY CONSTRAINED: the energy flow is channeled through
+  specific geometric objects (Spiral Sheet, Monotonic Cone, Modal
+  Funnel). The geometry determines the path of dissipation, not
+  just the rate. Two trajectories with the same initial energy but
+  different initial positions in state space may dissipate energy
+  through entirely different geometric channels (one through the
+  Spiral Sheet, the other through the Monotonic Cone).
+
+
+========================================================================
+6. CONSERVATION VS. DISSIPATION
+========================================================================
+
+------------------------------------------------------------------------
+6.1 WHAT IS CONSERVED
+------------------------------------------------------------------------
+
+Very little is conserved in the ED architecture. The system is almost
+purely dissipative.
+
+SPATIAL MEAN DENSITY (APPROXIMATELY CONSERVED):
+  The divergence terms in the operator field (M*nabla^2(rho) and
+  div(M*nabla(rho))) are conservative: they redistribute density
+  without changing the spatial mean. The penalty breaks this
+  conservation by adding or removing density to drive the mean
+  toward rho*. In the early transient, when the mean is already
+  near rho* (as in most ED-Phys experiments), the penalty's effect
+  on the mean is small, and the mean is approximately conserved.
+  In the late transient, the mean is exactly rho* and is trivially
+  conserved.
+
+  This is not a true conservation law. It is an approximate
+  symmetry broken by the penalty.
+
+THE D + H = 1 CONSTRAINT (EXACTLY CONSERVED):
+  Channel complementarity is exact at all times. This is not a
+  dynamical conservation law (it does not arise from a symmetry
+  of the equations). It is a structural constraint imposed by the
+  architecture's definition.
+
+NOTHING ELSE:
+  There is no conserved energy. There is no conserved momentum
+  (the system is not translationally symmetric in a dynamical sense;
+  the penalty breaks Galilean invariance). There is no conserved
+  vorticity (the system has no curl structure). There is no conserved
+  charge. There is no conserved topological invariant.
+
+------------------------------------------------------------------------
+6.2 WHAT IS DISSIPATED
+------------------------------------------------------------------------
+
+Almost everything is dissipated:
+
+  - V_P: the penalty potential dissipates to zero.
+  - V_M: the mobility curvature energy dissipates to zero.
+  - V_v: the participation memory energy dissipates to zero.
+  - V_N: the nonlinear interaction energy dissipates to zero.
+  - E: the total architectural energy dissipates to zero.
+  - Every Fourier mode amplitude dissipates to zero.
+  - Every spatial gradient dissipates to zero.
+  - Every velocity component dissipates to zero.
+
+The equilibrium state (rho = rho*, v = 0) has zero value for every
+energy-like functional, every mode amplitude, every gradient, and
+every participation variable. The architecture dissipates everything
+that can be dissipated.
+
+------------------------------------------------------------------------
+6.3 ED AS A DISSIPATIVE ARCHITECTURE
+------------------------------------------------------------------------
+
+The ED cosmology PDE is a purely dissipative architecture. This is
+its most fundamental energetic property. The implications are:
+
+NO CONSERVED MOMENTUM:
+  There is no analog of Newton's first law. A density perturbation
+  does not persist by inertia. It persists only as long as the
+  dissipation channels have not yet erased it. The participation
+  field v provides a form of inertia (it creates overshoots and
+  oscillations), but this inertia is itself damped by the zeta-
+  channel. There is no perpetual motion.
+
+NO CONSERVED ENERGY:
+  There is no Hamiltonian. The architecture cannot store energy
+  indefinitely. Every form of architectural energy is subject to
+  at least one dissipation channel. The system runs downhill.
+
+NO CONSERVED VORTICITY:
+  The phase-space flow has no conserved rotational invariant. The
+  spiral trajectories look rotational, but the rotation decays.
+  The spiral is a dissipating vortex, not a conserved one.
+
+ONLY THE DIRECTION OF BECOMING IS CONSERVED:
+  The one invariant of the ED architecture is the direction of
+  evolution: always toward equilibrium. This is not a conserved
+  quantity in the traditional sense (it is not a number that stays
+  constant). It is a conserved principle: the architectural energy
+  always decreases, without exception, for all parameters, all
+  initial conditions, and all admissible perturbations.
+
+  The direction of becoming is the architectural analog of the
+  second law of thermodynamics. In thermodynamics, entropy always
+  increases. In ED, architectural energy always decreases. Both
+  statements define an arrow: thermodynamics has an arrow of time;
+  ED has an arrow of becoming.
+
+  The arrow of becoming is what makes ED a theory of process rather
+  than a theory of state. The architecture does not describe
+  equilibria (there is only one, and it is trivial). It describes
+  the process of approaching equilibrium: the transient richness,
+  the motif vocabulary, the geometric structure, the spectral
+  hierarchy, the oscillatory cycles. All of this is the arrow of
+  becoming in action.
+
+
+========================================================================
+7. UNIFIED INTERPRETATION
+========================================================================
+
+WHAT ARCHITECTURAL ENERGETICS REVEALS
+
+The energetic analysis answers the five fundamental "why" questions
+of the ED architecture:
+
+WHY DOES THE ARCHITECTURE ALWAYS CONVERGE?
+  Because the total architectural energy E[rho, v] is a Lyapunov-like
+  functional with a unique zero at (rho*, 0), and the three
+  dissipation channels (D-channel, zeta-channel, P-channel)
+  collectively drain every component of E. No energy-like quantity
+  escapes dissipation. Convergence is not a special property of
+  particular parameter regimes or initial conditions. It is a
+  structural consequence of the dissipation triad's completeness.
+
+WHY DO OSCILLATIONS DECAY?
+  Because the participation memory energy V_v is drained by the
+  zeta-channel at rate proportional to zeta/tau. The Memory Loop
+  circulates energy between V_P and V_v during each oscillation
+  cycle, but the zeta-channel removes a fraction of V_v on every
+  pass. After enough cycles, V_v is depleted and the oscillation
+  ceases. The oscillation is a transient energy circulation pattern
+  superimposed on a monotone energy drain.
+
+WHY DO HORIZONS DISSOLVE?
+  Because the horizon blocks only the D-channel (by setting M to
+  zero). The P-channel and zeta-channel remain active at the horizon,
+  continuing to drain V_P and V_v. The penalty pulls density away
+  from rho_max, restoring M > 0 and re-opening the D-channel. The
+  horizon dissolves because two of three dissipation channels remain
+  operational even when the third is blocked.
+
+WHY DOES THE MANIFOLD EXIST?
+  Because the D-channel's dissipation rate scales as k^2, creating
+  a spectral hierarchy in which high-k energy drains faster than
+  low-k energy. After a few decay times of the k=2 mode, only the
+  k=1 mode retains significant energy. The manifold is the set of
+  states with zero energy in all modes except k=1. It exists because
+  the spectral dissipation hierarchy leaves only one degree of
+  freedom alive at late times.
+
+WHY IS THE FIELD THEORY STABLE?
+  Because the variational structure (gradient flow plus Rayleigh
+  dissipation) guarantees that the PDE selects the trajectory of
+  maximum energy dissipation rate. Any perturbation that pushes
+  the trajectory off this optimal path results in even faster
+  dissipation back to the optimal path. The variational principle
+  provides self-correcting stability: the architecture not only
+  converges, it converges along the most efficient dissipation
+  pathway.
+
+HOW ENERGETICS COMPLETES THE ED-ARCH ONTOLOGY
+
+The six ED-Arch documents form a complete structural description
+of the unified ED cosmology PDE:
+
+  ED-Arch-01 (Summary):       WHAT the architecture does.
+  ED-Arch-02 (Motifs):        WHAT PATTERNS recur.
+  ED-Arch-03 (Laws):          WHAT RULES govern.
+  ED-Arch-04 (Geometry):      WHAT SHAPES result.
+  ED-Arch-05 (Field Theory):  HOW IT ALL WORKS TOGETHER.
+  ED-Arch-06 (Energetics):    WHY IT WORKS THE WAY IT DOES.
+
+Energetics provides the final layer of understanding: the causal
+layer. Laws tell us what must be true. Geometry tells us what it
+looks like. Field theory tells us how the pieces fit together.
+Energetics tells us why the system evolves in one direction and not
+the other.
+
+The architectural energetics reveals the ED cosmology PDE as a
+dissipative variational system: a field theory that evolves by
+minimizing architectural energy subject to a dissipation cost. The
+system's trajectory is not arbitrary. It is the unique path of
+steepest descent on the energy landscape, modified by the inertia
+of the participation field and channeled through the geometry of
+the Spiral Sheet, Monotonic Cone, and Modal Funnel.
+
+The arrow of becoming — the one invariant of the ED architecture —
+is the energetic arrow. Architectural energy decreases. This is the
+deepest statement that can be made about the unified PDE. Everything
+else — the motifs, the laws, the geometry, the field structure —
+follows from this single principle and the structure of the
+dissipation channels through which the energy drains.
+
+The architecture is a machine for dissipating architectural energy.
+Its transient richness (spirals, harmonics, horizons, manifolds) is
+the shape of that dissipation. Its equilibrium (rho = rho*, v = 0)
+is the cessation of that dissipation. And the process of becoming —
+the ED ontology's central concept — is the act of dissipation itself.
+
+
+========================================================================
+END OF DOCUMENT
+========================================================================
+
+ED-Arch-06: Architectural Energetics
+Series: ED Architecture
+Part 6 of the ED-Arch synthesis series
