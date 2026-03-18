@@ -1,138 +1,93 @@
-# Event Density Ontology
+# Event Density (ED)
 
-## Overview
+Event Density (ED) is a foundational ontology for physics based on a minimal
+set of primitives: events, becoming, gradients, and flow. ED does not assume
+spacetime, geometry, fields, or curvature. Instead, it derives large-scale
+cosmological behavior from a single compositional rule governing how event
+density evolves across finite configurations.
 
-Event Density (ED) is a foundational framework for physics built on a minimal ontology of **events**, **becoming**, and **event density**.  
-
-It does **not** assume spacetime, fields, curvature, or geometric structure.  
-Instead, ED begins with the idea that the universe is a finite configuration of events whose density of becoming evolves according to a single **compositional rule**.
-
-From this rule alone, ED derives large‑scale cosmological behavior — early exponential smoothing, residual gradients, structure formation, expansion, and late‑time flattening — without invoking geometry or external dynamical laws.
-
-ED is not a simulation or a toy model.  
-It is a **candidate ontology for this universe**.
-
-This repository contains the ED ontology, the compositional rule, and the cosmological consequences derived from it.
-
----
-
-## Core primitives
-
-**Becoming**: The continuous generative activity from which all distinctions, changes, and structures arise. Becoming is the substrate of reality; ED models how it distributes itself.
-
-**Micro‑Event**: The smallest undirected differentiation within becoming — a minimal flicker of generative activity before any form, direction, or flow emerges.
-
-**Event‑Density** The distribution of events across a region, expressing how intensely becoming is manifesting there. Higher event‑density means more generative activity per unit area.
-
-**Gradient**: A directional difference in event‑density or flow across a region. Gradients drive movement, reorientation, and structural change.
-
-**Flow**: The directed propagation of becoming through a region. Flow expresses how event‑density moves, redistributes, or reorganizes.
-
-**Finite Configurations**  ED is always defined on finite sets of events.  There is no continuum, no background manifold, and no geometric structure assumed.
-
-Everything else — gradients, boundaries, horizons, structure, expansion — emerges from how ED behaves across these finite configurations.
-
-From these primitives, ED derives the familiar features of both cosmology and microphysics — the emergence of space and time, the formation of structure, and the architectural analogues of entanglement, spin, and baryogenesis.
-
-ED defines a compositional rule that determines how regions combine, how gradients evolve, and how structures emerge. Saddles, boundaries, horizons, collapse, and compositionality are not assumptions — they are consequences of how becoming distributes itself.
-
-ED is not a physical theory. It is an architectural and predictive ontology.
-
-ED is an architectural account of the structural possibilities for any universe.
-
+This repository contains the complete ED framework:
+- the **Architectural Canon** (the seven irreducible principles P1–P7)
+- the **Unified Cosmological Equation (UCE)**, the physical instantiation of ED
+- the **ED Testing and Validation** suite used to reproduce all architectural
+  signatures
+- supporting materials on ED architecture, physics, foundations, and
+  interpretations
 
 ---
 
-## The Compositional Rule
+## 📄 Core Papers
 
-The core of ED is a universal rule that determines the ED of a union of configurations:
+### **1. The Architectural Canon of the Unified ED Framework**
+Defines the seven structural principles (P1–P7) that uniquely characterize the
+ED architecture. These principles are validated independently in the ED Testing
+suite.
 
-p(A ∪ B)
-= p(A) + p(B)
-− α ∫_{A∩B} f(p) du
-− β ∫_{A∪B} g(|∇p|) du
-− γ ∫_{∂(A∪B)} h(|∇p|) dS.
+### **2. The Unified Cosmological Equation of Event Density**
+Derives the ED cosmological dynamics from the canonical operator and shows how
+ED reproduces inflation-like smoothing, structure formation, expansion, and
+late-time flattening without geometry.
 
-This rule contains three competing contributions:
-
-### **Relational Penalty**  
-Concave in p.  
-Suppresses overlap of high‑ED regions.  
-Drives competition and structure formation.
-
-### **Gradient Penalty**  
-Quadratic in |∇p|.  
-Penalizes inhomogeneity.  
-Drives exponential smoothing (ED‑inflation).
-
-### **Boundary Term**  
-Saturating in |∇p|.  
-Dominates in extreme regimes.  
-Generates horizon‑like behavior and late‑time flattening.
-
-These three terms — competition, smoothing, and boundary dominance — are the engines of ED cosmology.
+Both papers are included at the top level of the repository.
 
 ---
 
-## Cosmology from ED
+## 🧪 Reproducibility: ED Testing & Validation
 
-When applied to the universe as a whole, the compositional rule produces a coherent cosmological history:
+The folders **ED Testing** and **ED Validation** contain the scripts used to
+reproduce all architectural principles:
 
-### **Early Universe: Exponential Smoothing**  
-The gradient penalty dominates, forcing rapid decay of gradients.  
-This yields an inflation‑like phase without geometry or fields.
+- P1 — Modal Funnel  
+- P2 — D/H Complementarity  
+- P3 — Manifold Collapse  
+- P4 — Horizon Formation  
+- P6 — Damping Discriminant  
+- P7 — Nonlinear Triad Coupling  
 
-### **Residual Gradients: Seeds of Structure**  
-Smoothing weakens as gradients shrink.  
-Small variations survive and become the seeds of structure.
+Each test is self-contained and regenerates its own outputs (plots, JSON
+summaries). No precomputed data is required.
 
-### **Structure Formation**  
-The concave relational penalty amplifies residual gradients and stabilizes high‑ED pockets — the ED analogues of galaxies, stars, and clusters.
+To run a test:
 
-### **Expansion via Thinning**  
-ED flows outward from high‑ED pockets, reducing the global average ED density.  
-The coarse‑grained homogeneity scale grows.  
-This is the ED analogue of cosmic expansion.
-
-### **Late‑Time Flattening and Horizons**  
-As gradients vanish, the boundary term dominates.  
-The universe approaches a thin, nearly uniform state with horizon‑like behavior.
-
-All of this arises from the compositional rule alone — no metric, no curvature, no fields.
+cd "ED Testing/P4_horizon_formation"
+python run_test.py
 
 ---
 
-## What ED Is Not
-
-- Not a simulation  
-- Not a discretization of GR or QM  
-- Not a cellular automaton  
-- Not a toy model  
-- Not a geometric theory  
-
-ED is a **non‑geometric ontology** that aims to explain why the universe has the laws it does.
 
 ---
 
-## What ED Aims to Explain
+## 🧱 Repository Structure
 
-- Why laws exist  
-- Why they are stable  
-- Why they are finite  
-- Why structure forms  
-- Why the universe smooths  
-- Why expansion occurs  
-- Why horizons appear  
-- Why late‑time flattening is universal  
-
-These are testable consequences of the compositional rule.
+- **ED Architecture** — Canon, principles, structural definitions  
+- **ED Physics** — UCE, cosmological modules, physical consequences  
+- **ED Foundations** — ontology, primitives, conceptual grounding  
+- **ED Interpretations** — philosophical and structural interpretations  
+- **ED Testing** — reproducible scripts for P1–P7  
+- **ED Validation** — outputs, summaries, and analysis  
+- **Scale Correspondence** — supporting work on ED scaling behavior  
 
 ---
 
-## Status
+## 🌌 What ED Provides
+
+- A non-geometric ontology for physical law  
+- A compositional rule that generates cosmology  
+- Predictive structure without fields or curvature  
+- A unified account of smoothing, structure, expansion, and horizons  
+- A reproducible architectural identity (P1–P7)
+
+---
+
+## 📬 Contact & Collaboration
 
 ED is an active research program.  
-The ontology is defined.  
-The compositional rule is specified.  
-The cosmological consequences are derived.  
-Mathematical formalization and empirical mapping are ongoing.
+Researchers interested in ontology, cosmology, mathematical physics, or
+architectural frameworks are invited to engage with the work.
+
+---
+
+## Citation
+
+Proxmire, Allen T., Event Density Ontology - Paper Title, 2026
+https://doi.org/10.5281/zenodo.18090236
