@@ -87,7 +87,14 @@ architectural frameworks are invited to engage with the work.
 
 ---
 
+<<<<<<< HEAD
 ## Citation
 
 Proxmire, Allen T., Event Density Ontology - Paper Title, 2026
 https://doi.org/10.5281/zenodo.18090236
+=======
+## 🍎 Citation
+
+Proxmire, Allen T., Event Density Ontology - Paper Title, 2026
+[![DOI](https://zenodo.org/badge/1124778234.svg)](https://doi.org/10.5281/zenodo.18090236)
+>>>>>>> cc5cd1b83e79800bdf29fc06c7411ee8ce7efe26
