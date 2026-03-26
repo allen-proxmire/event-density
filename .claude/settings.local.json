@@ -42,7 +42,9 @@
       "Bash(python \"tests/architectural/P7_triad_ratio/test_triad_ratio.py\")",
       "Bash(python \"tests/architectural/P1_modal_funnel/test_modal_funnel.py\")",
       "Bash(python \"tests/architectural/P4_horizon_formation/test_horizon_formation.py\")",
-      "Bash(python tests/architectural/P2_DH_complementarity/test_DH_complementarity.py)"
+      "Bash(python tests/architectural/P2_DH_complementarity/test_DH_complementarity.py)",
+      "Bash(grep -l \"energy functional\\\\|spectral gap\\\\|Lyapunov\" \"C:\\\\Users\\\\allen\\\\GitHub\\\\Event Density\\\\ED_Canon Foundation Appendices\"/*.md)",
+      "Bash(find 'C:\\\\Users\\\\allen\\\\GitHub\\\\Event Density' -type f -name *Canon* -o -name *Rigour*)"
     ]
   }
 }
