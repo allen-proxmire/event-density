@@ -6,8 +6,8 @@ Post-processing script for the Broadband Cascade experiment (Atlas §4).
 Loads all broadband_IC* runs and produces:
 
   Per-IC figures:
-    (A) Modal collapse — |a_k(t)| for all activated modes, colored by k.
-    (B) Network density — number of modes above threshold vs time.
+    (A) Modal collapse -- |a_k(t)| for all activated modes, colored by k.
+    (B) Network density -- number of modes above threshold vs time.
 
   Cross-IC figures:
     (C) Energy and complexity comparison.
@@ -105,7 +105,7 @@ def active_count_vs_time(modal: np.ndarray, A: float) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Figure A (per IC): Modal collapse — |a_k(t)| colored by k
+# Figure A (per IC): Modal collapse -- |a_k(t)| colored by k
 # ---------------------------------------------------------------------------
 def figure_modal_collapse(label: str, run: dict):
     ts = run["data"]
@@ -172,7 +172,7 @@ def figure_modal_collapse(label: str, run: dict):
     # Seed range annotation
     if seeded:
         ax.annotate(
-            f"Seeded: modes {seeded[0]}–{seeded[-1]} ({len(seeded)} modes)",
+            f"Seeded: modes {seeded[0]}-{seeded[-1]} ({len(seeded)} modes)",
             xy=(0.02, 0.95),
             xycoords="axes fraction",
             fontsize=9, va="top",
@@ -184,7 +184,7 @@ def figure_modal_collapse(label: str, run: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal amplitude $|a_k(t)|$",
-        title=f"Broadband Cascade — {label}: modes {seeded[0]}–{seeded[-1]}",
+        title=f"Broadband Cascade -- {label}: modes {seeded[0]}-{seeded[-1]}",
     )
     fig.tight_layout()
 
@@ -195,7 +195,7 @@ def figure_modal_collapse(label: str, run: dict):
 
 
 # ---------------------------------------------------------------------------
-# Figure B (per IC): Network density — active mode count vs time
+# Figure B (per IC): Network density -- active mode count vs time
 # ---------------------------------------------------------------------------
 def figure_network_density(label: str, run: dict):
     ts = run["data"]
@@ -239,7 +239,7 @@ def figure_network_density(label: str, run: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel="Number of active modes",
-        title=f"Triad Network Density — {label}: modes {seeded[0]}–{seeded[-1]}",
+        title=f"Triad Network Density -- {label}: modes {seeded[0]}-{seeded[-1]}",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     ax.set_ylim(bottom=0)
@@ -271,7 +271,7 @@ def figure_cross_ic_comparison(runs: dict):
 
         color = ic_colors.get(label, "0.3")
         ls = ic_styles.get(label, "-")
-        range_str = f"{seeded[0]}–{seeded[-1]}" if seeded else "?"
+        range_str = f"{seeded[0]}-{seeded[-1]}" if seeded else "?"
 
         # Energy
         E = ts["E_total"]
@@ -293,11 +293,11 @@ def figure_cross_ic_comparison(runs: dict):
             )
 
     setup_axes(ax_e, r"Time $t$", r"Energy $\mathcal{E}(t)$",
-               "Energy Decay — Broadband Cascade")
+               "Energy Decay -- Broadband Cascade")
     ax_e.legend(fontsize=9, loc="upper right", framealpha=0.9)
 
     setup_axes(ax_c, r"Time $t$", r"$C_{\mathrm{ED}}(t)$",
-               "Complexity Decay — Broadband Cascade")
+               "Complexity Decay -- Broadband Cascade")
     ax_c.legend(fontsize=9, loc="upper right", framealpha=0.9)
 
     fig.tight_layout()
@@ -367,8 +367,8 @@ def figure_dissipation_largest(runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel="Dissipation rate",
-        title=f"Dissipation Channels — {best_label}: modes "
-              f"{seeded[0]}–{seeded[-1]} ({best_count} modes)",
+        title=f"Dissipation Channels -- {best_label}: modes "
+              f"{seeded[0]}-{seeded[-1]} ({best_count} modes)",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig.tight_layout()
@@ -401,7 +401,7 @@ def figure_network_density_comparison(runs: dict):
         n_snap = min(len(t), modal.shape[0])
 
         count = active_count_vs_time(modal[:n_snap], A_pm)
-        range_str = f"{seeded[0]}–{seeded[-1]}" if seeded else "?"
+        range_str = f"{seeded[0]}-{seeded[-1]}" if seeded else "?"
 
         ax.plot(
             t[:n_snap], count,
@@ -415,7 +415,7 @@ def figure_network_density_comparison(runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel="Number of active modes",
-        title="Triad Network Density — All Broadband ICs",
+        title="Triad Network Density -- All Broadband ICs",
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9)
     ax.set_ylim(bottom=0)
@@ -448,7 +448,7 @@ def main():
         meta = run["data"]["metadata"]
         seeded = meta.get("seeded_modes", [])
         tri = meta.get("triad_statistics", {})
-        print(f"    {label}: modes {seeded[0]}–{seeded[-1]} "
+        print(f"    {label}: modes {seeded[0]}-{seeded[-1]} "
               f"({len(seeded)} modes, {tri.get('n_triads', '?')} triads)")
 
     # --- (A) Per-IC modal collapse ---
@@ -489,7 +489,7 @@ def main():
         modal = ts.get("modal_amplitudes")
         A_pm = meta.get("A_per_mode", 0.02)
 
-        peak_active = "—"
+        peak_active = "--"
         if modal is not None and modal.ndim == 2:
             n_snap = min(len(ts["t"]), modal.shape[0])
             count = active_count_vs_time(modal[:n_snap], A_pm)

@@ -6,14 +6,14 @@ Appendix C.7).
 
 Loads all attractor_IC* runs and produces five figure groups:
 
-  (A) Long-time modal collapse — |a_k(t)| for all modes, highlighting the
+  (A) Long-time modal collapse -- |a_k(t)| for all modes, highlighting the
       surviving low modes and annotating the attractor.
-  (B) Return map for the dominant mode — (a_1(t), a_1(t+dt)) fixed-point
+  (B) Return map for the dominant mode -- (a_1(t), a_1(t+dt)) fixed-point
       structure.
-  (C) Phase portrait of (a_1, a_2) — 2D trajectory visualizing attractor
+  (C) Phase portrait of (a_1, a_2) -- 2D trajectory visualizing attractor
       geometry.
-  (D) Energy and complexity long-time decay — all ICs on semilog-y.
-  (E) Attractor convergence rate — |a_k(t) - a_k(T)| exponential decay.
+  (D) Energy and complexity long-time decay -- all ICs on semilog-y.
+  (E) Attractor convergence rate -- |a_k(t) - a_k(T)| exponential decay.
 
 All figures saved to output/figures/low_mode_attractor/ as PNG (300 dpi).
 
@@ -249,7 +249,7 @@ def figure_modal_collapse(label: str, run: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal amplitude $|a_k(t)|$",
-        title=f"Low-Mode Attractor — {label}: Modal Collapse",
+        title=f"Low-Mode Attractor -- {label}: Modal Collapse",
     )
     ax.legend(fontsize=8, loc="upper right", framealpha=0.9, ncol=2)
     fig.tight_layout()
@@ -314,7 +314,7 @@ def figure_return_map(label: str, run: dict):
         ax,
         xlabel=rf"$a_{{{k}}}(t)$",
         ylabel=rf"$a_{{{k}}}(t + \Delta t)$",
-        title=f"Return Map — {label}: Mode $k = {k}$",
+        title=f"Return Map -- {label}: Mode $k = {k}$",
     )
     ax.set_aspect("equal", adjustable="datalim")
     ax.legend(fontsize=9, loc="upper left", framealpha=0.9)
@@ -379,7 +379,7 @@ def figure_phase_portrait(label: str, run: dict):
         ax,
         xlabel=r"$a_1(t)$",
         ylabel=r"$a_2(t)$",
-        title=f"Phase Portrait — {label}: $(a_1, a_2)$",
+        title=f"Phase Portrait -- {label}: $(a_1, a_2)$",
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9)
     fig.tight_layout()
@@ -437,11 +437,11 @@ def figure_energy_complexity(runs: dict):
     )
 
     setup_axes(ax_e, r"Time $t$", r"Energy $\mathcal{E}(t)$",
-               "Attractor — Energy Decay (all ICs)")
+               "Attractor -- Energy Decay (all ICs)")
     ax_e.legend(fontsize=7, loc="upper right", framealpha=0.9)
 
     setup_axes(ax_c, r"Time $t$", r"$C_{\mathrm{ED}}(t)$",
-               "Attractor — Complexity Decay (all ICs)")
+               "Attractor -- Complexity Decay (all ICs)")
     ax_c.legend(fontsize=7, loc="upper right", framealpha=0.9)
 
     fig.tight_layout()
@@ -452,7 +452,7 @@ def figure_energy_complexity(runs: dict):
 
 
 # ---------------------------------------------------------------------------
-# Figure E: Attractor convergence rate — |a_k(t) - a_k(T)| for low modes
+# Figure E: Attractor convergence rate -- |a_k(t) - a_k(T)| for low modes
 # ---------------------------------------------------------------------------
 def figure_convergence_rate(runs: dict):
     fig, axes = plt.subplots(
@@ -525,7 +525,7 @@ def figure_convergence_rate(runs: dict):
                    label)
         ax.legend(fontsize=7, loc="upper right", framealpha=0.9)
 
-    fig.suptitle("Attractor Convergence Rate — Exponential Decay to Equilibrium",
+    fig.suptitle("Attractor Convergence Rate -- Exponential Decay to Equilibrium",
                  fontsize=14, fontweight="bold", y=1.02)
     fig.tight_layout()
 
@@ -542,7 +542,7 @@ def figure_convergence_rate(runs: dict):
 # ---------------------------------------------------------------------------
 def print_summary(runs: dict, convergence_data: dict):
     print(f"\n{'='*95}")
-    print("  Low-Mode Attractor — Summary")
+    print("  Low-Mode Attractor -- Summary")
     print(f"{'='*95}")
 
     # --- Surviving modes ---

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-ED-SIM v1 is the canonical simulation engine for the Event-Density architectural ontology. It implements the PDE system of the Rigour Paper (Appendix C), computes the sixteen invariant families of the Numerical Atlas, and produces the ED Consistency Certificate that summarises the architecture's structural integrity across all tested parameter regimes.
+ED-SIM v1 is the canonical simulation engine for the Event Density architectural ontology. It implements the PDE system of the Rigour Paper (Appendix C), computes the sixteen invariant families of the Numerical Atlas, and produces the ED Consistency Certificate that summarizes the architecture's structural integrity across all tested parameter regimes.
 
 This reproducibility suite guarantees that every invariant, every figure, and every certificate in the ED-SIM v1 pipeline can be regenerated from scratch on any machine with a standard Python environment. No pre-computed data is required. No manual intervention is needed. The suite runs end-to-end and produces a machine-verifiable output that matches the published results.
 
@@ -156,4 +156,4 @@ This suite tracks ED-SIM v1.0.0. All output files contain version metadata. The 
 
 ## License
 
-This reproducibility suite is part of the Event-Density Architectural Canon. See the repository root for license terms.
+This reproducibility suite is part of the Event Density Architectural Canon. See the repository root for license terms.

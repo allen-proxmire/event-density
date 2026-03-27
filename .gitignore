@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE and tool config
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ED Simulation generated outputs (large, regenerable)
+ED Simulation/output/runs/
+ED Simulation/output/runs_legacy/
+ED Simulation/output/logs/
+ED Simulation/output/figures/**/*.png
+ED Simulation/output/atlas/*.png
+ED Simulation/output/atlas/*.pdf
+
+# ED Physics generated results (regenerable)
+ED Physics/ED-Phys-*/results/*.npz
+ED Physics/ED-Phys-*/results/*.npy
+ED Physics/ED-Phys-*/results/*.csv
+ED Physics/ED-Phys-*/results/*.json
+
+# ED Validation generated outputs (regenerable)
+ED Validation/P*/results.json
+ED Validation/P*/*.png
+ED Validation/P*/*.npz
+
+# Checkpoints
+*.checkpoint.npz

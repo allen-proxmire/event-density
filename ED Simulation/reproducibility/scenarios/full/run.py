@@ -4,7 +4,7 @@ Full Reproducibility Scenario
 Runs the complete ED-SIM v1 pipeline. Equivalent to:
     python reproducibility/run_all.py
 
-Expected runtime: 30–120 minutes depending on hardware.
+Expected runtime: 30-120 minutes depending on hardware.
 
 Usage:
     python reproducibility/scenarios/full/run.py
@@ -19,7 +19,7 @@ SIM_DIR = os.path.dirname(os.path.dirname(os.path.dirname(SCRIPT_DIR)))
 
 
 def main():
-    print("  ED-SIM v1 — Full Reproducibility Scenario")
+    print("  ED-SIM v1 -- Full Reproducibility Scenario")
     print("  Delegating to run_all.py...")
     print()
 

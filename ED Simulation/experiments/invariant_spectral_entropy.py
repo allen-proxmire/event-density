@@ -14,13 +14,13 @@ value H^*.
 The spectral entropy measures how evenly the energy is distributed across
 modes.  H = 0 when all energy is in a single mode; H = log(N) when energy
 is uniformly distributed.  Its attractor value H^* encodes the asymptotic
-spectral shape — a structural invariant of the ED architecture
+spectral shape -- a structural invariant of the ED architecture
 (Appendix C.4, Proposition C.29).
 
 Produces:
-  (A) Spectral Entropy Evolution — H(t) for a representative run.
-  (B) Attractor Entropy Profile — H^* vs D for all runs.
-  (C) Convergence Heatmap — converged/not across (D, A, Nm).
+  (A) Spectral Entropy Evolution -- H(t) for a representative run.
+  (B) Attractor Entropy Profile -- H^* vs D for all runs.
+  (C) Convergence Heatmap -- converged/not across (D, A, Nm).
 
 All figures saved to output/figures/invariants/spectral_entropy/
 as PNG (300 dpi).
@@ -80,7 +80,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -317,7 +317,7 @@ def figure_entropy_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Spectral entropy $H(t)$",
-        title=(f"Spectral Entropy — D={run['D']}, A={run['A']}, "
+        title=(f"Spectral Entropy -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=10, loc="center right", framealpha=0.9)
@@ -403,7 +403,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Diffusion $D$",
         ylabel=r"Attractor entropy $H^*$",
-        title="Spectral Entropy Attractor — All Admissible Runs",
+        title="Spectral Entropy Attractor -- All Admissible Runs",
     )
     ax.set_ylim(bottom=0)
     fig.tight_layout()
@@ -470,7 +470,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=9, color="0.5")
                 else:
                     label = "Y" if val > 0.5 else "N"
@@ -487,7 +487,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Spectral Entropy Convergence — Heatmap by $(D, A, N_m)$",
+        "Spectral Entropy Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -503,7 +503,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*100}")
-    print("  Invariant Spectral Entropy — Summary Table")
+    print("  Invariant Spectral Entropy -- Summary Table")
     print(f"{'='*100}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} "
@@ -514,7 +514,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     all_H_star = []
 
     for run, ana in zip(runs, analyses):
-        regime = run["metadata"].get("regime", "—")
+        regime = run["metadata"].get("effective_regime", run["metadata"].get("regime", "--"))
         conv_str = "Y" if ana["converged"] else "N"
 
         print(f"  {run['D']:<7.3f} {run['A']:<7.4f} {run['Nm']:<5d} "
@@ -572,11 +572,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---

@@ -9,15 +9,15 @@ manifold invariants: effective dimension, spectral gap, curvature proxy,
 and the PCA embedding.
 
 For the ED architecture, Principle 3 (unique attractor) predicts that
-the attractor is a fixed point — all trajectories converge to (ρ*, 0).
+the attractor is a fixed point -- all trajectories converge to (ρ*, 0).
 In modal space, the attractor window should collapse to a small cloud
 around the equilibrium amplitudes, with effective dimension D_eff = 0
 (or very small, reflecting residual numerical noise).
 
 Produces:
-  (A) PCA Spectrum — eigenvalue decay for a representative run.
-  (B) Attractor Embedding — 2-D projections onto principal components.
-  (C) Effective Dimension vs D — D_eff scatter for all runs.
+  (A) PCA Spectrum -- eigenvalue decay for a representative run.
+  (B) Attractor Embedding -- 2-D projections onto principal components.
+  (C) Effective Dimension vs D -- D_eff scatter for all runs.
 
 All figures saved to output/figures/invariants/attractor_manifold/
 as PNG (300 dpi).
@@ -77,7 +77,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -272,7 +272,7 @@ def analyse_run(run: dict) -> dict:
     pca = pca_analysis(x)
 
     # Store only what's needed for figures (not the full projection matrix
-    # for non-representative runs — save memory)
+    # for non-representative runs -- save memory)
     return {
         "K": K,
         "d": pca["d"],
@@ -361,7 +361,7 @@ def figure_pca_spectrum(runs: list[dict], analyses: list[dict]):
     ax2.legend(fontsize=9, loc="lower right", framealpha=0.9)
 
     fig.suptitle(
-        f"PCA Spectrum — D={run['D']}, A={run['A']}, Nm={run['Nm']}",
+        f"PCA Spectrum -- D={run['D']}, A={run['A']}, Nm={run['Nm']}",
         fontsize=14, fontweight="bold", y=1.02,
     )
     fig.tight_layout()
@@ -429,7 +429,7 @@ def figure_attractor_embedding(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        f"Attractor Embedding — D={run['D']}, A={run['A']}, Nm={run['Nm']}",
+        f"Attractor Embedding -- D={run['D']}, A={run['A']}, Nm={run['Nm']}",
         fontsize=14, fontweight="bold", y=1.02,
     )
     fig.tight_layout()
@@ -486,7 +486,7 @@ def figure_dimension_scatter(runs: list[dict], analyses: list[dict]):
             fontsize=10, va="top",
         )
 
-    # ED prediction: D_eff ≈ 0 (point attractor)
+    # ED prediction: D_eff ~= 0 (point attractor)
     ax.axhline(0, color="#1b7837", linestyle=":", linewidth=1.5,
                alpha=0.5, label=r"ED prediction: $D_{\mathrm{eff}} \approx 0$")
 
@@ -513,7 +513,7 @@ def figure_dimension_scatter(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Diffusion $D$",
         ylabel=r"Effective dimension $D_{\mathrm{eff}}$ (99% variance)",
-        title="Attractor Effective Dimension — All Admissible Runs",
+        title="Attractor Effective Dimension -- All Admissible Runs",
     )
     ax.set_ylim(bottom=-0.5)
     fig.tight_layout()
@@ -529,7 +529,7 @@ def figure_dimension_scatter(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*120}")
-    print("  Invariant Attractor Manifold — Summary Table")
+    print("  Invariant Attractor Manifold -- Summary Table")
     print(f"{'='*120}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'d':<5} "
@@ -595,10 +595,10 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n  ED Principle 3 (point attractor) check:")
     mean_Deff = np.mean(all_Deff) if all_Deff else float("nan")
     if mean_Deff <= 3:
-        print(f"    PASS — mean D_eff = {mean_Deff:.2f} "
-              f"(≤ 3 consistent with near-point attractor)")
+        print(f"    PASS -- mean D_eff = {mean_Deff:.2f} "
+              f"(<= 3 consistent with near-point attractor)")
     else:
-        print(f"    NOTE — mean D_eff = {mean_Deff:.2f} "
+        print(f"    NOTE -- mean D_eff = {mean_Deff:.2f} "
               f"(residual dimensionality may reflect transient dynamics "
               f"or numerical noise in the attractor window)")
 
@@ -620,15 +620,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse
-    print(f"\nPerforming PCA on attractor windows (K ≤ {K_MAX})...")
+    print(f"\nPerforming PCA on attractor windows (K <= {K_MAX})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

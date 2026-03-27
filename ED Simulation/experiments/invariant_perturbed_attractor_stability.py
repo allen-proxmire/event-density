@@ -25,9 +25,9 @@ perturbing the attractor state and running a short re-integration
 perturbation level is skipped with a warning.
 
 Produces:
-  (A) Perturbation Recovery Curves — E_err(t) for all ε.
-  (B) Recovery Rate vs ε — σ_ε scatter for all runs.
-  (C) Stability Heatmap — fraction recovered across (D, A, Nm).
+  (A) Perturbation Recovery Curves -- E_err(t) for all ε.
+  (B) Recovery Rate vs ε -- σ_ε scatter for all runs.
+  (C) Stability Heatmap -- fraction recovered across (D, A, Nm).
 
 All figures saved to output/figures/invariants/perturbed_attractor_stability/
 as PNG (300 dpi).
@@ -98,7 +98,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -189,7 +189,7 @@ def _fill_from_dirname(name: str, D, A, Nm):
 def extract_attractor(modal: np.ndarray, n_total: int, K: int) -> np.ndarray:
     """Mean modal amplitudes over the last LATE_FRAC of the base run.
 
-    Returns a_star of shape (K,) — may be complex or real.
+    Returns a_star of shape (K,) -- may be complex or real.
     """
     start = max(0, int((1.0 - LATE_FRAC) * n_total))
     return np.mean(modal[start:, 1:K+1], axis=0)
@@ -400,7 +400,7 @@ def figure_recovery_curves(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Recovery error $E_{\mathrm{err}}(t) = \Sigma_k |a_k - a_k^*|^2$",
-        title=(f"Perturbation Recovery — D={run['D']}, A={run['A']}, "
+        title=(f"Perturbation Recovery -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=8, loc="upper right", framealpha=0.9)
@@ -491,7 +491,7 @@ def figure_rate_vs_eps(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Perturbation amplitude $\varepsilon$",
         ylabel=r"Recovery rate $\sigma_\varepsilon$",
-        title="Recovery Rate vs Perturbation Amplitude — All Runs",
+        title="Recovery Rate vs Perturbation Amplitude -- All Runs",
     )
     fig.tight_layout()
 
@@ -557,7 +557,7 @@ def figure_stability_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     # Find n_attempted for this cell
@@ -583,7 +583,7 @@ def figure_stability_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        r"Perturbed Attractor Stability — Heatmap by $(D, A, N_m)$",
+        r"Perturbed Attractor Stability -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -599,7 +599,7 @@ def figure_stability_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*140}")
-    print("  Invariant Perturbed-Attractor Stability — Summary Table")
+    print("  Invariant Perturbed-Attractor Stability -- Summary Table")
     print(f"{'='*140}")
 
     # Header
@@ -629,7 +629,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
                 print(f"{r['sigma']:<10.4f}", end="")
                 per_eps_sigma[e].append(r["sigma"])
             else:
-                print(f"{'—':<10}", end="")
+                print(f"{'--':<10}", end="")
 
         for e in EPS_VALUES:
             r = ana["eps_results"].get(e)
@@ -640,7 +640,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
                     per_eps_thalf[e].append(r["t_half"])
                 mono_str += "M" if r["monotone"] else "."
             else:
-                print(f"{'—':<10}", end="")
+                print(f"{'--':<10}", end="")
                 mono_str += "-"
 
         print(f"{mono_str:<8}")
@@ -685,7 +685,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
         arr = np.array(all_sigmas)
         cv = np.std(arr) / max(np.mean(arr), 1e-30)
         print(f"\n  ε-independence of σ (pooled across all ε):")
-        print(f"    CV = {cv:.4f} — ", end="")
+        print(f"    CV = {cv:.4f} -- ", end="")
         if cv < 0.10:
             print("CONSISTENT (σ independent of ε, as predicted)")
         else:

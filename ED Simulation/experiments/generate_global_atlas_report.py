@@ -10,7 +10,7 @@ This is the capstone script of the invariant analysis pipeline.  It
 draws on every invariant family, every meta-analysis (universality,
 cross-consistency, embedding), and every stability test to produce a
 single, self-contained verdict on whether the ED architecture's
-predictions (Principles 1–7, Appendices C–D) are confirmed, partially
+predictions (Principles 1-7, Appendices C-D) are confirmed, partially
 confirmed, or contradicted by the numerical evidence.
 
 Outputs:
@@ -127,7 +127,7 @@ def extract_family_verdicts(atlas: dict) -> dict:
         if data is None:
             verdicts[key] = {
                 "status": "MISSING",
-                "verdict": "—",
+                "verdict": "--",
                 "detail": "Invariant JSON not found.",
             }
             continue
@@ -312,11 +312,11 @@ def compute_final_verdict(family_verdicts: dict,
     if total == 0:
         final = "INSUFFICIENT DATA"
     elif passes / total > 0.8:
-        final = "PASS — ED architecture confirmed"
+        final = "PASS -- ED architecture confirmed"
     elif passes / total > 0.5:
-        final = "PARTIAL — ED architecture partially confirmed"
+        final = "PARTIAL -- ED architecture partially confirmed"
     else:
-        final = "FAIL — ED architecture contradicted"
+        final = "FAIL -- ED architecture contradicted"
 
     return {
         "final_verdict": final,
@@ -341,7 +341,7 @@ def generate_text_report(atlas: dict, family_verdicts: dict,
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     w(sep)
-    w("  ED ATTRACTOR INVARIANT ATLAS — GLOBAL REPORT")
+    w("  ED ATTRACTOR INVARIANT ATLAS -- GLOBAL REPORT")
     w(sep)
     w(f"  Generated: {timestamp}")
     w(f"  Runs analysed: {n_runs}")
@@ -356,11 +356,11 @@ def generate_text_report(atlas: dict, family_verdicts: dict,
     w("-" * 80)
     w("")
     w("  This report synthesises the numerical evidence from the ED")
-    w("  Attractor Invariant Atlas — a systematic survey of structural")
+    w("  Attractor Invariant Atlas -- a systematic survey of structural")
     w("  invariants across the (D, A, Nm) parameter space.")
     w("")
     w("  The analysis tests the central prediction of the ED architecture:")
-    w("  that all systems satisfying Principles 1–7 converge to a unique")
+    w("  that all systems satisfying Principles 1-7 converge to a unique")
     w("  attractor whose qualitative structure is universal (Appendix D).")
     w("")
 
@@ -374,8 +374,8 @@ def generate_text_report(atlas: dict, family_verdicts: dict,
 
     for key in FAMILY_MAP:
         v = family_verdicts[key]
-        cv_str = f"{v['CV']:.4f}" if v.get("CV") is not None else "—"
-        sc_str = f"{v['score']:.4f}" if v.get("score") is not None else "—"
+        cv_str = f"{v['CV']:.4f}" if v.get("CV") is not None else "--"
+        sc_str = f"{v['score']:.4f}" if v.get("score") is not None else "--"
         w(f"  {key:<22} {v['status']:<10} {v['verdict']:<25} "
           f"{cv_str:<10} {sc_str:<10}")
 
@@ -563,7 +563,7 @@ def main():
 
     # Console summary
     print(f"\n{'='*60}")
-    print("  ED ATTRACTOR INVARIANT ATLAS — CONSOLE SUMMARY")
+    print("  ED ATTRACTOR INVARIANT ATLAS -- CONSOLE SUMMARY")
     print(f"{'='*60}")
     print(f"  Invariants loaded: {len(loaded)}/{len(FAMILY_MAP)}")
     print(f"  Runs covered:      {n_runs}")

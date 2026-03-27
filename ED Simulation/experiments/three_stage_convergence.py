@@ -37,7 +37,7 @@ def run_three_stage_experiment(param_set: str = "I",
 
     Parameters
     ----------
-    param_set : canonical parameter set ('I'–'V')
+    param_set : canonical parameter set ('I'-'V')
     complexity_levels : dict mapping label -> IC amplitude A
     T : integration time (long enough for Stage III)
     verbose : print progress

@@ -125,8 +125,10 @@ Modules mapping the global structure of the ED dynamical system.
 
 ## Running the Pipeline
 
-Each module is self-contained with its own Python scripts and results
-directory. To run a single module:
+Each module has its own Python scripts and results directory and can be
+run independently. However, modules 01-08 form a logical derivation chain
+(each builds on concepts from the previous), so new users should run them
+in order. Modules 09-34 can be run in any order. To run a single module:
 
 ```
 cd "ED Physics/ED-Phys-05_ParameterSweeps"

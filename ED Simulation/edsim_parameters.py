@@ -3,7 +3,7 @@ edsim_parameters.py
 ====================
 Canonical parameter sets and constitutive functions for the ED simulation engine.
 
-Implements the five canonical parameter sets (I–V) from the Simulation Suite §2.2
+Implements the five canonical parameter sets (I-V) from the Simulation Suite §2.2
 and the constitutive functions M(rho), P(rho) from the Architectural Canon.
 
 All notation follows Appendix C of the Rigour Paper.
@@ -293,11 +293,11 @@ class EDParameters:
 
 
 # ---------------------------------------------------------------------------
-#  Canonical parameter sets I–V (Simulation Suite §2.2, Atlas §10.2)
+#  Canonical parameter sets I-V (Simulation Suite §2.2, Atlas §10.2)
 # ---------------------------------------------------------------------------
 
 def parameter_set_I(**overrides) -> EDParameters:
-    """Set I — Deep Oscillatory. D=0.3, zeta=0.1, tau=1.0."""
+    """Set I -- Deep Oscillatory. D=0.3, zeta=0.1, tau=1.0."""
     defaults = dict(D=0.3, zeta=0.1, tau=1.0, rho_star=0.5, rho_max=1.0,
                     M0=1.0, beta=2.0, P0=1.0)
     defaults.update(overrides)
@@ -305,7 +305,7 @@ def parameter_set_I(**overrides) -> EDParameters:
 
 
 def parameter_set_II(**overrides) -> EDParameters:
-    """Set II — Moderate Oscillatory. D=0.6, zeta=0.5, tau=1.0."""
+    """Set II -- Moderate Oscillatory. D=0.6, zeta=0.5, tau=1.0."""
     defaults = dict(D=0.6, zeta=0.5, tau=1.0, rho_star=0.5, rho_max=1.0,
                     M0=1.0, beta=2.0, P0=1.0)
     defaults.update(overrides)
@@ -313,7 +313,7 @@ def parameter_set_II(**overrides) -> EDParameters:
 
 
 def parameter_set_III(**overrides) -> EDParameters:
-    """Set III — Near-Critical. D=0.8, zeta=1.8, tau=1.0."""
+    """Set III -- Near-Critical. D=0.8, zeta=1.8, tau=1.0."""
     defaults = dict(D=0.8, zeta=1.8, tau=1.0, rho_star=0.5, rho_max=1.0,
                     M0=1.0, beta=2.0, P0=1.0)
     defaults.update(overrides)
@@ -321,7 +321,7 @@ def parameter_set_III(**overrides) -> EDParameters:
 
 
 def parameter_set_IV(**overrides) -> EDParameters:
-    """Set IV — Deep Monotonic. D=0.9, zeta=5.0, tau=1.0."""
+    """Set IV -- Deep Monotonic. D=0.9, zeta=5.0, tau=1.0."""
     defaults = dict(D=0.9, zeta=5.0, tau=1.0, rho_star=0.5, rho_max=1.0,
                     M0=1.0, beta=2.0, P0=1.0)
     defaults.update(overrides)
@@ -329,7 +329,7 @@ def parameter_set_IV(**overrides) -> EDParameters:
 
 
 def parameter_set_V(**overrides) -> EDParameters:
-    """Set V — High Participation Coupling. D=0.2, zeta=0.3, tau=0.5."""
+    """Set V -- High Participation Coupling. D=0.2, zeta=0.3, tau=0.5."""
     defaults = dict(D=0.2, zeta=0.3, tau=0.5, rho_star=0.5, rho_max=1.0,
                     M0=1.0, beta=2.0, P0=1.0)
     defaults.update(overrides)

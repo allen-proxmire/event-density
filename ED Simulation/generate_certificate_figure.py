@@ -25,6 +25,7 @@ Requires: matplotlib, numpy.
 
 import os
 import sys
+import json
 import argparse
 import datetime
 import numpy as np
@@ -109,8 +110,8 @@ FONT_MONO    = "JetBrains Mono"
 FONT_HEADING_FB = "DejaVu Sans"
 FONT_MONO_FB    = "DejaVu Sans Mono"
 
-# --- Sample metric values (representative PASS data) ---
-SAMPLE_METRICS = {
+# --- Fallback sample metrics (used only if no atlas report is found) ---
+_FALLBACK_METRICS = {
     "PASS": {
         "U": 0.9412, "U_verdict": "UNIVERSAL",
         "C": 0.8731, "C_verdict": "CONSISTENT",
@@ -136,6 +137,71 @@ SAMPLE_METRICS = {
         "pass_frac": "1/5",
     },
 }
+
+# --- Atlas report paths (tried in order) ---
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+_ATLAS_REPORT = os.path.join(_SCRIPT_DIR, "output", "atlas",
+                             "ED_Attractor_Invariant_Atlas_Report.json")
+
+
+def _load_real_metrics(verdict: str) -> dict:
+    """Load metrics from the atlas report JSON. Falls back to samples."""
+    if not os.path.isfile(_ATLAS_REPORT):
+        print(f"  Note: no atlas report found; using sample metrics.")
+        return _FALLBACK_METRICS.get(verdict, _FALLBACK_METRICS["PASS"])
+
+    try:
+        with open(_ATLAS_REPORT, "r", encoding="utf-8") as f:
+            rpt = json.load(f)
+
+        univ = rpt.get("universality", {})
+        cons = rpt.get("cross_consistency", {})
+        stab = rpt.get("stability", {})
+        embd = rpt.get("embedding", {})
+        prec = rpt.get("perturbation_recovery", {})
+        fnal = rpt.get("final", {})
+
+        n_diag = 5
+        n_pass = sum(1 for v in [
+            univ.get("verdict", ""),
+            cons.get("verdict", ""),
+            stab.get("verdict", ""),
+            embd.get("verdict", ""),
+            prec.get("verdict", ""),
+        ] if v and v.upper() not in ("NOT", "INCONSISTENT",
+                                      "UNSTABLE", "SCATTERED", "FRAGILE"))
+
+        return {
+            "U":           univ.get("U", 0.0),
+            "U_verdict":   univ.get("verdict", "--"),
+            "C":           cons.get("C", 0.0),
+            "C_verdict":   cons.get("verdict", "--"),
+            "n_pos":       stab.get("n_positive", 0),
+            "D_KY":        stab.get("D_KY", 0.0),
+            "D_eff":       stab.get("D_eff", 0.0),
+            "stab_verdict": stab.get("verdict", "--"),
+            "radius":      embd.get("radius", 0.0),
+            "emb_verdict": embd.get("verdict", "--"),
+            "eps_cv":      prec.get("eps_independence_CV", 0.0),
+            "rec_verdict": prec.get("verdict", "--"),
+            "pass_frac":   f"{n_pass}/{n_diag}",
+        }
+    except (json.JSONDecodeError, KeyError, TypeError) as e:
+        print(f"  Warning: could not parse atlas report ({e}); "
+              f"using sample metrics.")
+        return _FALLBACK_METRICS.get(verdict, _FALLBACK_METRICS["PASS"])
+
+
+def _get_metrics(verdict: str) -> dict:
+    """Return the metrics dict for the certificate figure.
+
+    Tries real computed data first, falls back to representative samples.
+    """
+    return _load_real_metrics(verdict)
+
+
+# Legacy alias so existing code continues to work
+SAMPLE_METRICS = _FALLBACK_METRICS
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -338,7 +404,7 @@ def draw_header(fig):
 
     # Version
     ax.text(
-        0.5, 0.18, "ED-SIM-01  ·  v1.0.0",
+        0.5, 0.18, "ED-SIM-01  .  v1.0.0",
         fontfamily=MONO_FONT, fontsize=7, fontweight="normal",
         color=CLR_MUTED, ha="center", va="center",
     )
@@ -406,7 +472,7 @@ def draw_verdict(fig, verdict: str):
 def draw_metrics(fig, verdict: str):
     """Zone C: Five-row metrics table with icons, labels, and verdict chips."""
     pal = PALETTES[verdict]
-    m = SAMPLE_METRICS[verdict]
+    m = _get_metrics(verdict)
     ax = _make_zone_ax(fig, ZONE_METRICS, facecolor=CARD_BG)
 
     # Outer border
@@ -464,7 +530,7 @@ def draw_metrics(fig, verdict: str):
         "icon": 2,
         "subs": [
             (f"Positive Lyapunov exponents", f"n₊ = {m['n_pos']}"),
-            (f"Kaplan–Yorke dimension", f"D_KY = {m['D_KY']:.2f}"),
+            (f"Kaplan-Yorke dimension", f"D_KY = {m['D_KY']:.2f}"),
             (f"Effective dimension (PCA)", f"D_eff = {m['D_eff']:.1f}"),
         ],
     })
@@ -555,7 +621,7 @@ def draw_metrics(fig, verdict: str):
 
 def draw_footer(fig, verdict: str):
     """Zone D: Statement, timestamp, version, and run count."""
-    m = SAMPLE_METRICS[verdict]
+    m = _get_metrics(verdict)
     ax = _make_zone_ax(fig, ZONE_FOOTER, facecolor="none")
 
     # Top rule
@@ -707,7 +773,7 @@ def main():
     )
     args = parser.parse_args()
 
-    print("  ED Architecture Certificate — Figure Generator")
+    print("  ED Architecture Certificate -- Figure Generator")
     print("  " + "=" * 50)
     print()
 

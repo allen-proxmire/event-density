@@ -54,13 +54,15 @@ All core papers are collected in `ED PAPERS/`.
 
 ```
 Event Density/
-├── ED Architecture/     Structural anatomy: 12 layered documents
-├── ED PAPERS/           Core papers, appendices, and monograph
-├── ED Physics/          UCE, cosmological modules, physical consequences
-├── ED Interpretations/  31 domain interpretations + 12 foundational essays
-├── ED Experiments/      Open Note, experiment program, SPARC test
-├── ED Simulation/       ED-SIM v1: full numerical pipeline
-└── ED Validation/       P1–P7 reproducible test outputs
+├── ED Architecture/     [documents]  Structural anatomy: 12 layered documents
+├── ED PAPERS/           [documents]  Core papers, appendices, and monograph
+├── ED Physics/          [code]       UCE, cosmological modules, physical consequences
+├── ED Interpretations/  [documents]  31 domain interpretations + 12 foundational essays
+├── ED Experiments/      [documents]  Open Note, experiment program, SPARC test
+├── ED Simulation/       [code]       ED-SIM v1: full numerical pipeline
+├── ED Validation/       [code]       P1-P7 reproducible test outputs
+├── Makefile                          Build targets for the full pipeline
+└── requirements.txt                  Python dependencies
 ```
 
 ### ED Architecture
@@ -77,21 +79,24 @@ glossary), the Applications Paper, the Numerical Atlas, the Simulation
 Suite specification, and the Monograph.
 
 ### ED Physics
-Ten modules deriving the physical consequences of the canonical PDE: the
-update rule, the simulator, cosmological timeline, physical analogues,
-parameter sweeps, emergent phenomena, analytical theory, documentation,
-extensions, and multi-field generalizations.
+Thirty-four modules deriving the physical consequences of the canonical
+PDE: core derivation (update rule, simulator, cosmological timeline,
+physical analogues, parameter sweeps, emergent phenomena, analytical
+theory, documentation), extensions and variants, robustness and stress
+testing, global analysis, and unified verification.
 
 ### ED Interpretations
-Forty-three documents exploring ED across physics: twelve foundational
+Forty-nine documents exploring ED across physics: thirteen foundational
 essays (architecture of the universe, galactic curvature, temporal tension,
-spacetime emergence) and thirty-one domain-specific interpretations covering
+spacetime emergence), thirty domain-specific interpretations covering
 superconductivity, entanglement, spin, the quantum-classical boundary,
 magnetism, the double-slit experiment, the Higgs boson, neutrinos,
 gravitational waves, baryogenesis, photonics, quantum information,
 topological effects, microresonators, Casimir self-assembly, chiral phonons,
 Josephson junctions, black-hole scattering, weak lensing, tunneling,
-gamma rays, and photons.
+gamma rays, and photons, plus six physical computation papers
+(computation, temporal engineering, stability engineering, horizon
+engineering, agency, and global constraints).
 
 ### ED Experiments
 The experimental program: the Open Note defining all falsifiable predictions,
@@ -107,6 +112,7 @@ engine implementing the canonical PDE with:
 - The Invariant Atlas and global architectural verdict
 - The ED Architecture Certificate
 - A full reproducibility suite (`reproducibility/`)
+- Runtime: ~2-4 hours for the full 64-point regime sweep on a single core
 
 ### ED Validation
 Self-contained test scripts reproducing each architectural principle:
@@ -116,6 +122,9 @@ Self-contained test scripts reproducing each architectural principle:
 - P4 — Horizon Formation
 - P6 — Damping Discriminant
 - P7 — Nonlinear Triad Coupling
+
+P5 (Participation Feedback) is validated implicitly through the P2 and P6
+tests, which depend on the participation loop functioning correctly.
 
 Each test regenerates its own outputs. No precomputed data is required.
 
@@ -201,10 +210,15 @@ in the ED Architecture Certificate.
 
 ## Quick Start
 
+**Install dependencies:**
+```
+pip install -r requirements.txt
+```
+
 **Run a principle test:**
 ```
 cd "ED Validation/P4_horizon_formation"
-python run_test.py
+python test_horizon_formation.py
 ```
 
 **Run the full ED-SIM pipeline:**
@@ -214,9 +228,53 @@ python run_all.py
 ```
 
 **Read the monograph:**
-```
-ED PAPERS/The ED Monograph.pdf
-```
+
+See `ED PAPERS/The ED Monograph.pdf`.
+
+> Note: Validation and simulation outputs are not included in the
+> repository. Run the tests or pipeline to generate them.
+
+**New contributors:** see
+`ED Simulation/reproducibility/docs/onboarding.md` for the full
+contributor guide, including how to add invariants, experiments, and
+figures.
+
+---
+
+## For Contributors
+
+If you are new to the codebase, read these documents in order:
+
+1. **This README** — project overview and Quick Start
+2. **`ED Simulation/reproducibility/docs/onboarding.md`** — how to run the pipeline and how to extend it
+3. **`ED Simulation/reproducibility/docs/architecture.md`** — system structure and design principles
+4. **`ED Simulation/experiments/README.md`** — file roles and layer organization
+5. **`ED Simulation/reproducibility/docs/invariant_map.md`** — one-page reference for all invariant families
+
+See also `CONTRIBUTING.md` at the repository root for the contributor
+workflow.
+
+---
+
+## Build Targets
+
+A `Makefile` at the repository root provides shortcuts for the full
+pipeline. Requires GNU Make and Bash (available via Git Bash on Windows).
+On Windows, install Make via Chocolatey (`choco install make`) or use
+the Make bundled with MSYS2/Git for Windows. Alternatively, skip the
+Makefile entirely and run scripts directly with `python`. The canonical
+specification of the full pipeline is `ED Simulation/reproducibility/run_all.py`.
+
+| Target | Command | What it does |
+|--------|---------|-------------|
+| `make all` | Full pipeline | Runs the complete ED-SIM reproducibility suite |
+| `make validate` | Principle tests | Runs all six P1-P7 validation scripts |
+| `make simulate` | Regime volume | Runs the 64-point parameter sweep |
+| `make invariants` | Invariant extraction | Runs all 23 invariant scripts (20 core + 3 meta-analyses) |
+| `make figures` | Figure generation | Produces all monograph figures |
+| `make certificate` | Certificate | Generates the ED Architecture Certificate |
+| `make check` | Environment checks | Verifies dependencies and data integrity |
+| `make clean` | Cleanup | Removes generated PNGs and logs (preserves run data) |
 
 ---
 
@@ -225,6 +283,8 @@ ED PAPERS/The ED Monograph.pdf
 - Python 3.10+
 - NumPy, SciPy, Matplotlib
 - Optional: scikit-learn (for embedding analyses), umap-learn
+
+Install via: `pip install -r requirements.txt`
 
 No external data is required. All tests and simulations are self-contained.
 

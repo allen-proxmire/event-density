@@ -183,7 +183,7 @@ def main():
     print("  " + "-" * 75)
 
     for r in results:
-        issues_str = "; ".join(r["issues"][:2]) if r["issues"] else "—"
+        issues_str = "; ".join(r["issues"][:2]) if r["issues"] else "--"
         if len(issues_str) > 30:
             issues_str = issues_str[:28] + "..."
         print(f"  {r['name']:<40} {r['status']:<10} "

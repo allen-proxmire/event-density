@@ -2,7 +2,7 @@
 
 ## Overview
 
-ED-SIM v1 is the computational engine for the Event-Density Architectural Canon. It implements the canonical PDE system derived in the Rigour Paper (Appendix C), solves it numerically across a three-dimensional parameter space (D, A, Nm), and computes sixteen families of attractor invariants that characterise the structural properties of the ED architecture.
+ED-SIM v1 is the computational engine for the Event Density Architectural Canon. It implements the canonical PDE system derived in the Rigour Paper (Appendix C), solves it numerically across a three-dimensional parameter space (D, A, Nm), and computes sixteen families of attractor invariants that characterize the structural properties of the ED architecture.
 
 ## Pipeline Structure
 
@@ -28,7 +28,7 @@ ED-SIM v1 is the computational engine for the Event-Density Architectural Canon.
 └──────────────────────┬──────────────────────────────────────┘
                        │
 ┌──────────────────────▼──────────────────────────────────────┐
-│  Layer 3: Invariant Analyses (16 families)                   │
+│  Layer 3: Invariant Analyses (20 core + 3 meta in Layer 4)   │
 │  ┌────────────┐ ┌────────────┐ ┌────────────┐              │
 │  │ low_mode   │ │ mode_ratio │ │ renyi      │  ...         │
 │  │ triad_bal  │ │ dissip_pt  │ │ lyapunov   │              │
@@ -78,7 +78,7 @@ Each invariant family captures one aspect of the attractor:
 | Lyapunov spectrum | Dynamical stability | Principle 3 (attractor) |
 | Attractor manifold | Effective dimension | Universality (Appendix D) |
 
-The three meta-analyses synthesise the families:
+The three meta-analyses synthesize the families:
 
 - **Universality** asks: do all (D, A, Nm) regimes produce the same invariants?
 - **Cross-consistency** asks: do the invariants agree with each other?
@@ -115,3 +115,7 @@ generate_master_index_and_certificate.py
 3. **Defensive computation**: every step checks positivity, capacity, energy monotonicity.
 4. **Reproducibility by construction**: seeded PRNG, versioned formats, environment capture.
 5. **Graceful degradation**: missing data → SKIPPED, not crash.
+
+---
+
+See the [reproducibility README](../README.md), the [ED Simulation README](../../README.md), or the [root README](../../../README.md) for project navigation.

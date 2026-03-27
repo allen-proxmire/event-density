@@ -114,8 +114,10 @@ schemes, multi-domain, stochastic perturbations).
 The unified mathematical treatment. Integrates the Canon, Rigour Paper,
 Applications Paper, Invariant Atlas, and Simulation Suite into a single
 self-contained book in six parts: Foundations, Invariants, Computation,
-Synthesis, Reproducibility, and Outlook. Also available as Markdown
-(`ed_monograph.md`) and LaTeX (`ed_monograph.tex`) in `ED Simulation/`.
+Synthesis, Reproducibility, and Outlook. The Markdown and LaTeX source
+files (`ed_monograph.md`, `ed_monograph.tex`, `ed_references.bib`) are
+located in `ED Simulation/` because they document the simulation results
+and are maintained alongside the code that generates the figures.
 
 ---
 
@@ -140,8 +142,8 @@ Markdown documents.
 
 | File | Purpose |
 |------|---------|
-| `glossary.md` | Canonical lexicon of ED architectural and dynamical terms: attractor, capacity, discriminant, horizon, manifold, modal hierarchy, spiral, triad, and all related quantities. |
-| `references.md` | Curated reference list: foundational PDE theory (Amann, Evans, Ladyzhenskaya), dynamical systems (Hirsch–Smale, Khalil, Strogatz), spectral methods (Boyd, Trefethen), universality and normal forms (Arnold, Guckenheimer–Holmes, Goldenfeld), numerical methods (LeVeque, Press), and functional analysis (Rudin, Zeidler). |
+| `ED_Canon Foundation Appendices/glossary.md` | Canonical lexicon of ED architectural and dynamical terms: attractor, capacity, discriminant, horizon, manifold, modal hierarchy, spiral, triad, and all related quantities. |
+| `ED_Canon Foundation Appendices/references.md` | Curated reference list: foundational PDE theory (Amann, Evans, Ladyzhenskaya), dynamical systems (Hirsch-Smale, Khalil, Strogatz), spectral methods (Boyd, Trefethen), universality and normal forms (Arnold, Guckenheimer-Holmes, Goldenfeld), numerical methods (LeVeque, Press), and functional analysis (Rudin, Zeidler). |
 
 ---
 

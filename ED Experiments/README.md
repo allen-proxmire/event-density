@@ -64,7 +64,7 @@ ordering means physically, and how to distinguish ED predictions from
 environmental-coupling explanations.
 
 ### Applications Paper
-**`applications_paper.md`**
+**See `ED PAPERS/applications_paper.md`** (canonical copy).
 
 The formal, journal-ready paper deriving all nineteen predictions from the
 canonical principles. Each prediction is traced to specific theorems in

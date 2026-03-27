@@ -4,20 +4,20 @@ invariant_dissipation_geometry.py
 Experiment / Analysis: Invariant Dissipation Geometry
 
 Scans all completed regime_D*_A*_Nm* runs and analyses the joint
-energy–dissipation trajectory
+energy-dissipation trajectory
 
     (X(t), Y(t)) = (E(t), D_total(t))
 
-in the energy–dissipation plane.  The attractor point (X*, Y*) encodes
-the equilibrium energy and the equilibrium dissipation rate — two
+in the energy-dissipation plane.  The attractor point (X*, Y*) encodes
+the equilibrium energy and the equilibrium dissipation rate -- two
 structural invariants of the ED architecture whose existence is guaranteed
 by the Lyapunov theory (Appendix C.5) and whose uniqueness follows from
 Principle 3 (strict penalty monotonicity).
 
 Produces:
-  (A) Energy–Dissipation Trajectory — parametric curve for a representative run.
-  (B) Attractor Geometry Scatter — (X*, Y*) for all runs with covariance ellipse.
-  (C) Convergence Heatmap — converged/not across (D, A, Nm).
+  (A) Energy-Dissipation Trajectory -- parametric curve for a representative run.
+  (B) Attractor Geometry Scatter -- (X*, Y*) for all runs with covariance ellipse.
+  (C) Convergence Heatmap -- converged/not across (D, A, Nm).
 
 All figures saved to output/figures/invariants/dissipation_geometry/
 as PNG (300 dpi).
@@ -78,7 +78,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -154,7 +154,7 @@ def _fill_from_dirname(name: str, D, A, Nm):
 
 
 # ---------------------------------------------------------------------------
-# Per-run analysis (streaming — no extra arrays retained)
+# Per-run analysis (streaming -- no extra arrays retained)
 # ---------------------------------------------------------------------------
 def analyse_run(run: dict) -> dict:
     """Compute attractor coordinates and convergence for one run."""
@@ -268,7 +268,7 @@ def covariance_ellipse(points: np.ndarray, n_std: float = 2.0) -> Ellipse:
 
 
 # ---------------------------------------------------------------------------
-# Figure A: Energy–Dissipation Trajectory (representative run)
+# Figure A: Energy-Dissipation Trajectory (representative run)
 # ---------------------------------------------------------------------------
 def figure_trajectory(runs: list[dict], analyses: list[dict]):
     """Parametric curve (E(t), D_total(t)) for the run with largest Nm."""
@@ -339,7 +339,7 @@ def figure_trajectory(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Energy $\mathcal{E}(t)$",
         ylabel=r"Total dissipation $\mathcal{D}(t)$",
-        title=(f"Energy–Dissipation Trajectory — D={run['D']}, "
+        title=(f"Energy-Dissipation Trajectory -- D={run['D']}, "
                f"A={run['A']}, Nm={run['Nm']}"),
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9)
@@ -434,7 +434,7 @@ def figure_attractor_scatter(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Attractor energy $X^* = \mathcal{E}^*$",
         ylabel=r"Attractor dissipation $Y^* = \mathcal{D}^*$",
-        title="Dissipation Geometry — Attractor Scatter",
+        title="Dissipation Geometry -- Attractor Scatter",
     )
     fig.tight_layout()
 
@@ -500,7 +500,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=9, color="0.5")
                 else:
                     label = "Y" if val > 0.5 else "N"
@@ -517,7 +517,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Dissipation Geometry Convergence — Heatmap by $(D, A, N_m)$",
+        "Dissipation Geometry Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -533,7 +533,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*120}")
-    print("  Invariant Dissipation Geometry — Summary Table")
+    print("  Invariant Dissipation Geometry -- Summary Table")
     print(f"{'='*120}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} "
@@ -616,11 +616,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---
@@ -636,7 +636,7 @@ def main():
                   f"(conv={c_str})")
 
     # --- Figures ---
-    print("\n--- (A) Energy–Dissipation Trajectory ---")
+    print("\n--- (A) Energy-Dissipation Trajectory ---")
     figure_trajectory(runs, analyses)
 
     print("\n--- (B) Attractor Geometry Scatter ---")

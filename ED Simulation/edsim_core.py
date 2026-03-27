@@ -229,7 +229,7 @@ def step_crank_nicolson(rho: np.ndarray, v: float, params: EDParameters):
 
 
 # ===================================================================
-#  TIME STEPPING: ETD-RK4 (Method B — Spectral)
+#  TIME STEPPING: ETD-RK4 (Method B -- Spectral)
 # ===================================================================
 
 def _phi_functions(z: np.ndarray):

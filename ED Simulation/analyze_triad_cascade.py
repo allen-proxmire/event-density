@@ -209,7 +209,7 @@ def figure_per_ic(label: str, run: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal amplitude $|a_k(t)|$",
-        title=f"Triad Cascade — {label}: seeded modes {seeded}",
+        title=f"Triad Cascade -- {label}: seeded modes {seeded}",
     )
     ax.legend(fontsize=8, loc="upper right", framealpha=0.9, ncol=2)
     fig.tight_layout()
@@ -226,8 +226,8 @@ def figure_per_ic(label: str, run: dict):
 def figure_detail(label: str, run: dict):
     """Two-panel figure for a single IC showing triad anatomy.
 
-    Top panel:  parent (seeded) modes — solid lines.
-    Bottom panel: child (triad-generated) modes — dashed lines,
+    Top panel:  parent (seeded) modes -- solid lines.
+    Bottom panel: child (triad-generated) modes -- dashed lines,
                   with annotations of the triad relations.
     """
     ts = run["data"]
@@ -267,7 +267,7 @@ def figure_detail(label: str, run: dict):
         ax_top,
         xlabel="",
         ylabel=r"$|a_k(t)|$",
-        title=f"Triad Cascade Detail — {label}: seeded modes {seeded}",
+        title=f"Triad Cascade Detail -- {label}: seeded modes {seeded}",
     )
     ax_top.legend(fontsize=10, loc="upper right", framealpha=0.9)
 
@@ -374,7 +374,7 @@ def figure_energy_comparison(runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Energy $\mathcal{E}(t)$",
-        title="Triad Cascade — Energy Decay Comparison",
+        title="Triad Cascade -- Energy Decay Comparison",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig.tight_layout()
@@ -444,7 +444,7 @@ def main():
             other = []
 
         print(f"  {label:<6} {str(seeded):<12} {str(children):<16} "
-              f"{str(other) if other else '—':<16}")
+              f"{str(other) if other else '--':<16}")
 
     print(f"\nAll figures saved to: {FIG_DIR}")
     print("Done.")

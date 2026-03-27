@@ -2,6 +2,12 @@
 
 The computational engine of the Event Density research program.
 
+> **TL;DR:** Run `python reproducibility/run_all.py` from this directory
+> to execute the full pipeline. Outputs go to `output/` (runs, figures,
+> atlas, certificate). To run only the simulation:
+> `python experiments/regime_volume_3d.py`. New contributors: start with
+> `reproducibility/docs/onboarding.md`.
+
 ED-SIM v1 is a complete, reproducible numerical pipeline that solves the
 canonical ED partial differential equation across a systematic parameter
 space, computes sixteen families of attractor invariants, performs three
@@ -288,6 +294,14 @@ No external data is required. All runs and outputs are self-contained.
 | **ED Experiments** | The architectural signatures confirmed by ED-SIM underpin the nineteen predictions in the Open Note and the Applications Paper. |
 | **ED Validation** | The six principle tests validate P1–P7 individually. ED-SIM confirms they hold together across 64 parameter regimes. |
 | **ED Interpretations** | The domain interpretations invoke structural behaviors (modal hierarchy, triad coupling, three-stage convergence) that ED-SIM quantifies. |
+
+---
+
+## Glossary
+
+For definitions of technical terms (attractor, capacity, discriminant,
+horizon, manifold, modal hierarchy, triad, etc.), see the glossary in
+`ED PAPERS/ED_Canon Foundation Appendices/glossary.md`.
 
 ---
 

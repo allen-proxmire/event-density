@@ -7,15 +7,18 @@ Runs the complete ED-SIM v1 pipeline end-to-end:
 
   Phase 1: Environment checks
   Phase 2: Data integrity checks
-  Phase 3: Regime volume experiment (if missing)
-  Phase 4: All 16 invariant analyses
+  Phase 3: Regime volume experiment (64-point sweep, ~2-4 hours)
+  Phase 4: All 20 core invariant analyses
   Phase 5: Meta-analyses (universality, cross-consistency, embedding)
   Phase 6: Global atlas report
-  Phase 7: Master index + ED Consistency Certificate
+  Phase 7: Master index + ED Consistency Certificate (text)
   Phase 8: Output validation
+  Phase 9: Figure generation (monograph figures + certificate figure)
+
+This is the canonical specification of the full ED-SIM pipeline.
 
 Robust to missing data and optional dependencies. Never crashes on
-partial results — reports what succeeded and what was skipped.
+partial results -- reports what succeeded and what was skipped.
 
 Usage:
     python reproducibility/run_all.py [--skip-runs] [--skip-invariants]
@@ -43,6 +46,7 @@ sys.path.insert(0, SIM_DIR)
 EXPERIMENTS_DIR = os.path.join(SIM_DIR, "experiments")
 CHECKS_DIR = os.path.join(SCRIPT_DIR, "checks")
 VALIDATION_DIR = os.path.join(SCRIPT_DIR, "validation")
+ANALYSIS_DIR = os.path.join(SIM_DIR, "analysis")
 ATLAS_DIR = os.path.join(SIM_DIR, "output", "atlas")
 
 
@@ -96,6 +100,15 @@ PHASE_4_INVARIANTS = [
      os.path.join(EXPERIMENTS_DIR, "invariant_lyapunov_spectrum.py")),
     ("Attractor Manifold",
      os.path.join(EXPERIMENTS_DIR, "invariant_attractor_manifold.py")),
+    ("Dissipation Geometry",
+     os.path.join(EXPERIMENTS_DIR, "invariant_dissipation_geometry.py")),
+    ("Geometric Norms",
+     os.path.join(EXPERIMENTS_DIR, "invariant_geometric_norms.py")),
+    ("Return Map",
+     os.path.join(EXPERIMENTS_DIR, "invariant_return_map.py")),
+    ("Perturbed-Attractor Stability",
+     os.path.join(EXPERIMENTS_DIR,
+                  "invariant_perturbed_attractor_stability.py")),
 ]
 
 PHASE_5_META = [
@@ -121,6 +134,13 @@ PHASE_7_CERT = [
 PHASE_8_VALIDATE = [
     ("Output Validation",
      os.path.join(VALIDATION_DIR, "validate_outputs.py")),
+]
+
+PHASE_9_FIGURES = [
+    ("Monograph Figures",
+     os.path.join(ANALYSIS_DIR, "generate_all_figures.py")),
+    ("Certificate Figure",
+     os.path.join(SIM_DIR, "generate_certificate_figure.py")),
 ]
 
 
@@ -169,7 +189,7 @@ class PipelineRunner:
                 print(f"    Status: PASS ({elapsed:.1f}s)")
                 return True
             else:
-                # Non-zero exit — capture stderr
+                # Non-zero exit -- capture stderr
                 stderr_tail = result.stderr.strip().split("\n")[-5:]
                 msg = "\n".join(stderr_tail)
                 self.results[name] = {
@@ -198,7 +218,7 @@ class PipelineRunner:
                 "time_s": elapsed,
                 "message": str(e),
             }
-            print(f"    Status: ERROR ({elapsed:.1f}s) — {e}")
+            print(f"    Status: ERROR ({elapsed:.1f}s) -- {e}")
             return False
 
     def run_phase(self, phase_name: str,
@@ -219,7 +239,7 @@ class PipelineRunner:
         """Run the full ED-SIM v1 reproducibility pipeline."""
         print()
         print("  ╔════════════════════════════════════════════════════════╗")
-        print("  ║   ED-SIM v1 — Full Reproducibility Pipeline           ║")
+        print("  ║   ED-SIM v1 -- Full Reproducibility Pipeline           ║")
         print("  ╚════════════════════════════════════════════════════════╝")
         print()
         print(f"  Started: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -234,7 +254,7 @@ class PipelineRunner:
         # Phase 3: Regime Volume Runs
         if self.skip_runs:
             print("\n" + "=" * 70)
-            print("  PHASE: Regime Volume Runs — SKIPPED (--skip-runs)")
+            print("  PHASE: Regime Volume Runs -- SKIPPED (--skip-runs)")
             print("=" * 70)
             for name, _ in PHASE_3_RUNS:
                 self.results[name] = {
@@ -248,7 +268,7 @@ class PipelineRunner:
         # Phase 4: Invariants
         if self.skip_invariants:
             print("\n" + "=" * 70)
-            print("  PHASE: Invariant Analyses — SKIPPED (--skip-invariants)")
+            print("  PHASE: Invariant Analyses -- SKIPPED (--skip-invariants)")
             print("=" * 70)
             for name, _ in PHASE_4_INVARIANTS:
                 self.results[name] = {
@@ -279,6 +299,9 @@ class PipelineRunner:
 
         # Phase 8: Validation
         self.run_phase("Output Validation", PHASE_8_VALIDATE)
+
+        # Phase 9: Figures
+        self.run_phase("Figure Generation", PHASE_9_FIGURES)
 
         # Summary
         self.print_summary()
@@ -314,7 +337,7 @@ class PipelineRunner:
         print("  " + "-" * 57)
         for name, r in self.results.items():
             status = r["status"]
-            t = f"{r['time_s']:.1f}s" if r["time_s"] > 0 else "—"
+            t = f"{r['time_s']:.1f}s" if r["time_s"] > 0 else "--"
 
             mark = {"PASS": "+", "FAIL": "x", "SKIPPED": "-",
                     "ERROR": "!", "TIMEOUT": "!"}
@@ -334,7 +357,7 @@ class PipelineRunner:
             print("  └────────────────────────────────────────────────────┘")
         elif n_fail > 0:
             print("  ┌────────────────────────────────────────────────────┐")
-            print(f"  │  {n_fail} STEP(S) FAILED — see details above"
+            print(f"  │  {n_fail} STEP(S) FAILED -- see details above"
                   f"{'':>{36-len(str(n_fail))}}│")
             print("  └────────────────────────────────────────────────────┘")
         print()

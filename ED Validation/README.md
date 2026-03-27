@@ -2,8 +2,12 @@
 
 Reproducible computational tests of the seven architectural principles.
 
-This folder contains six self-contained test scripts, each validating a
-specific structural principle (P1–P7) of the Event Density architecture.
+This folder contains six self-contained test scripts validating the seven
+architectural principles (P1-P7) of the Event Density architecture. Six
+tests cover all seven principles; P5 (Participation Feedback) is validated
+implicitly through the P2 (D/H Complementarity) and P6 (Damping
+Discriminant) tests, which depend on the participation feedback loop
+functioning correctly.
 Every test solves the canonical ED PDE from scratch, extracts the
 architectural signature, and produces a results file and a diagnostic
 figure. No precomputed data is required. The outputs are fully
@@ -197,6 +201,14 @@ time scale τ and damping rate ζ).
 | **ED Physics** | ED-Phys modules 25–28 (robustness tests) and module 34 (unified verification) perform broader parameter-space versions of these tests. |
 | **ED Simulation** | ED-SIM v1 extends these targeted tests into a sixteen-family invariant atlas across 64 parameter regimes, with a global consistency certificate. |
 | **ED Experiments** | The architectural signatures validated here underpin the falsifiable predictions in the Open Note and the Applications Paper. |
+
+---
+
+## Glossary
+
+For definitions of technical terms (attractor, capacity, discriminant,
+horizon, manifold, modal hierarchy, triad, etc.), see the glossary in
+`ED PAPERS/ED_Canon Foundation Appendices/glossary.md`.
 
 ---
 

@@ -6,11 +6,11 @@ Suite §4.1)
 
 Sweeps the diffusion coefficient D and the perturbation amplitude A on a
 2D grid while holding all other canonical parameters fixed at Parameter Set I.
-Each point uses a broadband initial condition (modes 1–20, equal amplitude A),
+Each point uses a broadband initial condition (modes 1-20, equal amplitude A),
 identical in structure to broadband_cascade IC2.
 
-The purpose is to map the regime geometry — oscillatory, critical, overdamped,
-and inadmissible — as a function of the two most experimentally accessible
+The purpose is to map the regime geometry -- oscillatory, critical, overdamped,
+and inadmissible -- as a function of the two most experimentally accessible
 control parameters:
 
   D: controls the diffusion timescale and, through the discriminant Delta,
@@ -74,7 +74,7 @@ METHOD = "crank_nicolson"
 K_OUT = 10
 N_OBS = 64
 
-SEEDED_MODES = list(range(1, 21))   # modes 1–20
+SEEDED_MODES = list(range(1, 21))   # modes 1-20
 
 D_VALUES = [0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 0.8]
 A_VALUES = [0.005, 0.01, 0.02, 0.05, 0.10]
@@ -299,7 +299,7 @@ def run_single_point(D_val: float, A_val: float, verbose: bool = True) -> dict:
     elif observed_oscillation:
         effective_regime = "oscillatory"
     elif linear_regime == "underdamped" and not observed_oscillation:
-        # Linear says underdamped but no oscillation observed —
+        # Linear says underdamped but no oscillation observed --
         # possible if amplitude is so small the oscillation is below noise
         effective_regime = "underdamped_weak"
     elif linear_regime == "overdamped" and observed_oscillation:
@@ -383,7 +383,7 @@ def main():
     print(f"  D grid: {D_VALUES}")
     print(f"  A grid: {A_VALUES}")
     print(f"  Total points: {total}")
-    print(f"  IC: modes {SEEDED_MODES[0]}–{SEEDED_MODES[-1]}")
+    print(f"  IC: modes {SEEDED_MODES[0]}-{SEEDED_MODES[-1]}")
     print(f"  T = {T},  method = {METHOD}")
     print("=" * 65)
 

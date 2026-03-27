@@ -21,9 +21,9 @@ For each stage, a local slope on log(e) vs t is extracted and
 classified as fast / drift / exponential / flat / noisy.
 
 Produces:
-  (A) Convergence Curves — e(t) for a representative run with stages shaded.
-  (B) Attractor Stability Scatter — Stage-3 slopes for all runs.
-  (C) Stability Heatmap — fraction of clean exponential Stage-3 signals.
+  (A) Convergence Curves -- e(t) for a representative run with stages shaded.
+  (B) Attractor Stability Scatter -- Stage-3 slopes for all runs.
+  (C) Stability Heatmap -- fraction of clean exponential Stage-3 signals.
 
 All figures saved to output/figures/invariants/convergence_stability/
 as PNG (300 dpi).
@@ -63,7 +63,7 @@ LOG_FLOOR = 1e-30
 # Stage boundaries (fraction of total time)
 STAGE_1_END = 0.20       # Fast transient
 STAGE_2_END = 0.80       # Drift / algebraic
-# Stage 3: 0.80 – 1.00   # Exponential
+# Stage 3: 0.80 - 1.00   # Exponential
 
 # Slope classification thresholds
 SLOPE_EXP_MIN = 0.01     # |slope| must exceed this for "exponential"
@@ -106,7 +106,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -141,7 +141,7 @@ def discover_regime_runs() -> list[dict]:
 
         n = min(len(t), len(E), len(D_total))
 
-        # Shannon entropy (optional — compute from modal if available)
+        # Shannon entropy (optional -- compute from modal if available)
         H = None
         if modal is not None and modal.ndim == 2:
             n = min(n, modal.shape[0])
@@ -390,7 +390,7 @@ def figure_convergence_curves(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel="Convergence error",
-        title=(f"Three-Stage Convergence — D={run['D']}, A={run['A']}, "
+        title=(f"Three-Stage Convergence -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=8, loc="upper right", framealpha=0.9, ncol=2)
@@ -477,7 +477,7 @@ def figure_stability_scatter(runs: list[dict], analyses: list[dict]):
     fig.colorbar(sm, ax=axes.tolist(), label=r"Diffusion $D$",
                  shrink=0.8, pad=0.03)
 
-    fig.suptitle("Stage-3 Convergence Rates — All Admissible Runs",
+    fig.suptitle("Stage-3 Convergence Rates -- All Admissible Runs",
                  fontsize=14, fontweight="bold", y=1.02)
     fig.tight_layout()
 
@@ -542,7 +542,7 @@ def figure_stability_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     n_s = 3  # E, H, D
@@ -561,7 +561,7 @@ def figure_stability_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Convergence Stability — Heatmap by $(D, A, N_m)$",
+        "Convergence Stability -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -577,7 +577,7 @@ def figure_stability_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*150}")
-    print("  Invariant Convergence Stability — Summary Table")
+    print("  Invariant Convergence Stability -- Summary Table")
     print(f"{'='*150}")
 
     # Header
@@ -610,7 +610,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
                 if sr[sig][2]["regime"] == "exponential":
                     all_s3[sig].append(s3_slope)
             else:
-                print(f"{'—':<30}", end="")
+                print(f"{'--':<30}", end="")
 
         n_exp = ana["n_exp3"]
         print(f"{n_exp:<6d} {ana['frac_exp3']:<7.1%}")
@@ -667,11 +667,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse all runs

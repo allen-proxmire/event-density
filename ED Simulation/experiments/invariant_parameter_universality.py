@@ -1,3 +1,8 @@
+# NOTE: This is a Layer 4 meta-analysis script.
+# It operates on the outputs of all Layer 3 invariant scripts.
+# It is NOT a core invariant and should run AFTER all Layer 3 scripts.
+# In run_all.py, it belongs to PHASE_5_META, not PHASE_4_INVARIANTS.
+
 """
 invariant_parameter_universality.py
 ====================================
@@ -8,16 +13,16 @@ produced by each invariant analysis script, constructs a unified
 invariant vector per run, and tests whether the invariant vectors are
 universal across the (D, A, Nm) parameter space.
 
-The universality hypothesis (Appendix D, Theorems D.7–D.19) predicts
-that all systems satisfying Principles 1–7 share the same qualitative
+The universality hypothesis (Appendix D, Theorems D.7-D.19) predicts
+that all systems satisfying Principles 1-7 share the same qualitative
 invariant structure.  This script quantifies the degree of universality
 by measuring the pairwise distance between standardised invariant
 vectors and computing a scalar universality score U.
 
 Produces:
-  (A) Distance Matrix Heatmap — pairwise distances with clustered ordering.
-  (B) Dendrogram — hierarchical clustering coloured by parameters.
-  (C) Universality Scatter — U vs D for all runs.
+  (A) Distance Matrix Heatmap -- pairwise distances with clustered ordering.
+  (B) Dendrogram -- hierarchical clustering coloured by parameters.
+  (C) Universality Scatter -- U vs D for all runs.
 
 All figures saved to output/figures/invariants/parameter_universality/
 as PNG (300 dpi).
@@ -39,7 +44,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
-# Optional: scipy for clustering — graceful fallback if unavailable
+# Optional: scipy for clustering -- graceful fallback if unavailable
 try:
     from scipy.cluster.hierarchy import linkage, dendrogram, fcluster
     from scipy.spatial.distance import pdist, squareform
@@ -99,7 +104,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -503,7 +508,7 @@ def figure_universality_scatter(runs: list[dict],
         ax,
         xlabel=r"Diffusion $D$",
         ylabel="Mean distance to other runs",
-        title="Parameter Universality — All Admissible Runs",
+        title="Parameter Universality -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -523,7 +528,7 @@ def print_summary(runs: list[dict], mean_dists: np.ndarray,
     n_keys = len(all_keys)
 
     print(f"\n{'='*100}")
-    print("  Parameter Universality — Summary")
+    print("  Parameter Universality -- Summary")
     print(f"{'='*100}")
 
     print(f"\n  Invariant vector: {n_keys} components from "
@@ -558,8 +563,8 @@ def print_summary(runs: list[dict], mean_dists: np.ndarray,
     print(f"\n  Pairwise distance statistics ({len(upper)} pairs):")
     print(f"    Mean:   {mean_d:.4f}")
     print(f"    Std:    {std_d:.4f}")
-    print(f"    Min:    {np.min(upper):.4f}" if len(upper) > 0 else "    Min:    —")
-    print(f"    Max:    {np.max(upper):.4f}" if len(upper) > 0 else "    Max:    —")
+    print(f"    Min:    {np.min(upper):.4f}" if len(upper) > 0 else "    Min:    --")
+    print(f"    Max:    {np.max(upper):.4f}" if len(upper) > 0 else "    Max:    --")
     print(f"    CV:     {cv_d:.4f}")
 
     print(f"\n  Universality Score: U = {U_global:.4f}")
@@ -568,12 +573,12 @@ def print_summary(runs: list[dict], mean_dists: np.ndarray,
     elif U_global > 0.75:
         print(f"    Verdict: WEAKLY UNIVERSAL (U > 0.75)")
     else:
-        print(f"    Verdict: NOT UNIVERSAL (U ≤ 0.75)")
+        print(f"    Verdict: NOT UNIVERSAL (U <= 0.75)")
 
     # Clustering summary (if scipy available)
     if HAS_SCIPY and n >= 2:
         condensed = pdist(dist_matrix)
-        # Use precomputed distances — need to convert dist_matrix to condensed
+        # Use precomputed distances -- need to convert dist_matrix to condensed
         condensed = squareform(dist_matrix)
         Z_link = linkage(condensed, method="ward")
         max_dist = Z_link[-1, 2]
@@ -584,9 +589,9 @@ def print_summary(runs: list[dict], mean_dists: np.ndarray,
         print(f"\n  Hierarchical clustering (Ward, {DISSIMILARITY_THRESH:.0%} threshold):")
         print(f"    Number of clusters: {n_clusters}")
         if n_clusters == 1:
-            print(f"    All runs in a single cluster — CONSISTENT with universality")
+            print(f"    All runs in a single cluster -- CONSISTENT with universality")
         else:
-            print(f"    Multiple clusters — check if they correspond to parameter regions")
+            print(f"    Multiple clusters -- check if they correspond to parameter regions")
 
 
 # ---------------------------------------------------------------------------

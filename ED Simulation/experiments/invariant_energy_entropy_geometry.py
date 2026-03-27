@@ -1,27 +1,27 @@
 """
 invariant_energy_entropy_geometry.py
 =====================================
-Experiment / Analysis: Invariant Energy–Entropy Geometry
+Experiment / Analysis: Invariant Energy-Entropy Geometry
 
 Scans all completed regime_D*_A*_Nm* runs, computes the joint trajectory
 
     (E(t), H(t))
 
-in the energy–entropy plane, where H(t) = −Σ_k p_k log p_k is the
+in the energy-entropy plane, where H(t) = −Σ_k p_k log p_k is the
 Shannon spectral entropy, and analyses convergence toward the attractor
 point (E*, H*).
 
-The energy–entropy plane combines two complementary invariants: E
+The energy-entropy plane combines two complementary invariants: E
 measures the total perturbation amplitude, H measures how evenly that
 amplitude is distributed across modes.  Together they define a
-two-dimensional geometric fingerprint of the ED equilibrium — a
+two-dimensional geometric fingerprint of the ED equilibrium -- a
 structural invariant whose existence follows from the Lyapunov theory
 (Appendix C.5) and whose uniqueness follows from Principle 3.
 
 Produces:
-  (A) Energy–Entropy Trajectory — parametric curve for a representative run.
-  (B) Attractor Geometry Scatter — (E*, H*) for all runs with ellipse.
-  (C) Convergence Heatmap — converged/not across (D, A, Nm).
+  (A) Energy-Entropy Trajectory -- parametric curve for a representative run.
+  (B) Attractor Geometry Scatter -- (E*, H*) for all runs with ellipse.
+  (C) Convergence Heatmap -- converged/not across (D, A, Nm).
 
 All figures saved to output/figures/invariants/energy_entropy_geometry/
 as PNG (300 dpi).
@@ -84,7 +84,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -152,7 +152,7 @@ def _fill_from_dirname(name: str, D, A, Nm):
 # Shannon entropy computation
 # ---------------------------------------------------------------------------
 def compute_shannon_entropy(modal: np.ndarray) -> np.ndarray:
-    """Compute H(t) = −Σ_k p_k log p_k from modal amplitudes (k ≥ 1)."""
+    """Compute H(t) = −Σ_k p_k log p_k from modal amplitudes (k >= 1)."""
     E_k = modal[:, 1:] ** 2
     E_total = np.sum(E_k, axis=1, keepdims=True)
     E_total = np.maximum(E_total, LOG_FLOOR)
@@ -166,7 +166,7 @@ def compute_shannon_entropy(modal: np.ndarray) -> np.ndarray:
 # Per-run analysis
 # ---------------------------------------------------------------------------
 def analyse_run(run: dict) -> dict:
-    """Compute energy–entropy attractor and convergence."""
+    """Compute energy-entropy attractor and convergence."""
     t = run["t"]
     E = run["E"]
     H = compute_shannon_entropy(run["modal"])
@@ -265,7 +265,7 @@ def covariance_ellipse(points: np.ndarray, n_std: float = 2.0) -> Ellipse:
 
 
 # ---------------------------------------------------------------------------
-# Figure A: Energy–Entropy Trajectory (representative run)
+# Figure A: Energy-Entropy Trajectory (representative run)
 # ---------------------------------------------------------------------------
 def figure_trajectory(runs: list[dict], analyses: list[dict]):
     """Parametric (E(t), H(t)) colored by time with arrows."""
@@ -332,7 +332,7 @@ def figure_trajectory(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Energy $\mathcal{E}(t)$",
         ylabel=r"Shannon entropy $H(t)$",
-        title=(f"Energy–Entropy Trajectory — D={run['D']}, "
+        title=(f"Energy-Entropy Trajectory -- D={run['D']}, "
                f"A={run['A']}, Nm={run['Nm']}"),
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9)
@@ -426,7 +426,7 @@ def figure_attractor_scatter(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Attractor energy $E^*$",
         ylabel=r"Attractor entropy $H^*$",
-        title="Energy–Entropy Geometry — Attractor Scatter",
+        title="Energy-Entropy Geometry -- Attractor Scatter",
     )
     fig.tight_layout()
 
@@ -491,7 +491,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=9, color="0.5")
                 else:
                     label = "Y" if val > 0.5 else "N"
@@ -508,7 +508,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Energy–Entropy Convergence — Heatmap by $(D, A, N_m)$",
+        "Energy-Entropy Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -524,7 +524,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*120}")
-    print("  Invariant Energy–Entropy Geometry — Summary Table")
+    print("  Invariant Energy-Entropy Geometry -- Summary Table")
     print(f"{'='*120}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} "
@@ -607,15 +607,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---
-    print("\nComputing energy–entropy geometry...")
+    print("\nComputing energy-entropy geometry...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)
@@ -627,7 +627,7 @@ def main():
                   f"(conv={c_str})")
 
     # --- Figures ---
-    print("\n--- (A) Energy–Entropy Trajectory ---")
+    print("\n--- (A) Energy-Entropy Trajectory ---")
     figure_trajectory(runs, analyses)
 
     print("\n--- (B) Attractor Geometry Scatter ---")

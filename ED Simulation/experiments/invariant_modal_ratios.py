@@ -6,9 +6,9 @@ Experiment / Analysis: Invariant Modal Ratio Structure
 Scans all completed regime_D*_A*_Nm* runs, computes the inter-modal
 amplitude ratios R_k(t) = |a_{k+1}(t)| / |a_k(t)|, and produces:
 
-  (A) Modal Ratio Evolution — R_k(t) for k = 1..10 (representative run).
-  (B) Modal Ratio Attractor Profile — R_k^* vs k (all runs overlaid).
-  (C) Convergence Heatmap — boolean convergence flags across (D, A, Nm).
+  (A) Modal Ratio Evolution -- R_k(t) for k = 1..10 (representative run).
+  (B) Modal Ratio Attractor Profile -- R_k^* vs k (all runs overlaid).
+  (C) Convergence Heatmap -- boolean convergence flags across (D, A, Nm).
 
 Also prints a summary table.
 
@@ -84,8 +84,8 @@ def discover_regime_runs() -> list[dict]:
                 meta = json.load(f)
 
         # Skip inadmissible runs
-        regime = meta.get("regime", "")
-        if regime == "inadmissible":
+        # Admissibility check (boolean flag from regime_volume_3d.py)
+        if meta.get("inadmissible", False):
             continue
 
         # Extract parameters
@@ -339,7 +339,7 @@ def figure_ratio_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal ratio $R_k(t) = |a_{k+1}| / |a_k|$",
-        title=(f"Modal Ratio Evolution — D={run['D']}, A={run['A']}, "
+        title=(f"Modal Ratio Evolution -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=8, loc="upper right", framealpha=0.9, ncol=2)
@@ -412,7 +412,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Mode index $k$",
         ylabel=r"Attractor ratio $R_k^*$",
-        title="Modal Ratio Attractor Profile — All Admissible Runs",
+        title="Modal Ratio Attractor Profile -- All Admissible Runs",
     )
     ax.set_xticks(range(1, K_MAX + 1))
     fig.tight_layout()
@@ -492,7 +492,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     txt_color = "white" if val < 0.4 else "black"
@@ -508,7 +508,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
         shrink=0.8, pad=0.04,
     )
 
-    fig.suptitle("Modal Ratio Convergence — Heatmap by $(D, A, N_m)$",
+    fig.suptitle("Modal Ratio Convergence -- Heatmap by $(D, A, N_m)$",
                  fontsize=14, fontweight="bold", y=1.03)
     fig.tight_layout()
 
@@ -527,7 +527,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     conv_cols = "  ".join(f"C{k}" for k in range(1, K_MAX + 1))
 
     print(f"\n{'='*140}")
-    print("  Invariant Modal Ratios — Summary Table")
+    print("  Invariant Modal Ratios -- Summary Table")
     print(f"{'='*140}")
 
     # Compact table: D, A, Nm, R_k^* for k=1..K_MAX
@@ -548,12 +548,12 @@ def print_summary(runs: list[dict], analyses: list[dict]):
             if j < k_eff and not np.isnan(R_star[j]):
                 ratio_strs.append(f"{R_star[j]:8.4f}")
             else:
-                ratio_strs.append(f"{'—':>8}")
+                ratio_strs.append(f"{'--':>8}")
 
             if j < len(fits):
                 conv_strs.append(f"{'Y' if fits[j]['converged'] else 'N':>4}")
             else:
-                conv_strs.append(f"{'—':>4}")
+                conv_strs.append(f"{'--':>4}")
 
         line = (f"  {run['D']:<7.3f} {run['A']:<7.4f} {run['Nm']:<5d} "
                 + "  ".join(ratio_strs) + "  " + "  ".join(conv_strs))
@@ -602,11 +602,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---

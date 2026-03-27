@@ -444,7 +444,7 @@ def main():
         elif rel_spread < 1e-2:
             print(f"    MARGINAL: ICs are converging but may need longer integration time.")
         else:
-            print(f"    FAIL: significant spread — investigate convergence.")
+            print(f"    FAIL: significant spread -- investigate convergence.")
     else:
         print(f"    NOTE: E(T) ~ 0, attractor reached to machine precision.")
 

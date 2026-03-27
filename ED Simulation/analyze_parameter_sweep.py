@@ -7,12 +7,12 @@ Post-processing script for the Diffusion-Coefficient Sweep experiment
 Loads all param_D* runs and produces:
 
   Per-D figures:
-    (A) Modal funnel — |a_k(t)| colored by k, annotated with decay ordering.
+    (A) Modal funnel -- |a_k(t)| colored by k, annotated with decay ordering.
 
   Cross-D figures:
-    (B) Energy and complexity vs time — all D values on common axes.
-    (C) Dissipation channels — one sub-panel per D.
-    (D) Regime map — fitted decay rate and peak active modes vs D.
+    (B) Energy and complexity vs time -- all D values on common axes.
+    (C) Dissipation channels -- one sub-panel per D.
+    (D) Regime map -- fitted decay rate and peak active modes vs D.
 
 All figures saved to output/figures/parameter_sweep/ as PNG (300 dpi).
 
@@ -234,7 +234,7 @@ def figure_modal_funnel(D_val: float, run: dict):
         )
 
     setup_axes(ax, r"Time $t$", r"Modal amplitude $|a_k(t)|$",
-               f"Modal Funnel — $D = {D_val}$")
+               f"Modal Funnel -- $D = {D_val}$")
     fig.tight_layout()
 
     fname = f"modal_funnel_D{D_val:.1f}.png".replace(".", "p", 1)
@@ -285,11 +285,11 @@ def figure_energy_complexity(runs: dict):
     )
 
     setup_axes(ax_e, r"Time $t$", r"Energy $\mathcal{E}(t)$",
-               "Energy Decay — D Sweep")
+               "Energy Decay -- D Sweep")
     ax_e.legend(fontsize=9, loc="upper right", framealpha=0.9)
 
     setup_axes(ax_c, r"Time $t$", r"$C_{\mathrm{ED}}(t)$",
-               "Complexity Decay — D Sweep")
+               "Complexity Decay -- D Sweep")
     ax_c.legend(fontsize=9, loc="upper right", framealpha=0.9)
 
     fig.tight_layout()
@@ -352,7 +352,7 @@ def figure_dissipation_channels(runs: dict):
                    ncol=4, fontsize=9, framealpha=0.9,
                    bbox_to_anchor=(0.5, 1.02))
 
-    fig.suptitle("Dissipation Channels — D Sweep", fontsize=14,
+    fig.suptitle("Dissipation Channels -- D Sweep", fontsize=14,
                  fontweight="bold", y=1.06)
     fig.tight_layout()
     fig.savefig(os.path.join(FIG_DIR, "dissipation_channels_sweep.png"),
@@ -362,7 +362,7 @@ def figure_dissipation_channels(runs: dict):
 
 
 # ---------------------------------------------------------------------------
-# Figure D: Regime map — decay rate and peak active modes vs D
+# Figure D: Regime map -- decay rate and peak active modes vs D
 # ---------------------------------------------------------------------------
 def figure_regime_map(runs: dict, sweep_data: dict):
     D_all = sorted(sweep_data.keys())
@@ -426,7 +426,7 @@ def figure_regime_map(runs: dict, sweep_data: dict):
     ax_p.legend(fontsize=9, loc="upper right", framealpha=0.9)
     ax_p.set_ylim(bottom=0)
 
-    fig.suptitle("Regime Map — D Sweep", fontsize=14, fontweight="bold", y=1.02)
+    fig.suptitle("Regime Map -- D Sweep", fontsize=14, fontweight="bold", y=1.02)
     fig.tight_layout()
     fig.savefig(os.path.join(FIG_DIR, "regime_map_D.png"),
                 dpi=300, bbox_inches="tight")

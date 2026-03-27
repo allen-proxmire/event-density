@@ -6,11 +6,11 @@ Suite §4.1).
 
 Loads all regime_D*_A*_Nm* runs and produces:
 
-  (A) 3D regime scatter — axes (D, A, N_m), color by regime, size by peak
+  (A) 3D regime scatter -- axes (D, A, N_m), color by regime, size by peak
       active modes.
-  (B) Regime slices — fix one axis, show the 2D regime map of the other two.
-  (C) Decay-rate tensor — sigma(D, A, N_m) as heatmaps per N_m.
-  (D) Cascade-breadth tensor — peak_active(D, A, N_m) as heatmaps per N_m.
+  (B) Regime slices -- fix one axis, show the 2D regime map of the other two.
+  (C) Decay-rate tensor -- sigma(D, A, N_m) as heatmaps per N_m.
+  (D) Cascade-breadth tensor -- peak_active(D, A, N_m) as heatmaps per N_m.
 
 All figures saved to output/figures/regime_volume_3d/ as PNG (300 dpi).
 
@@ -247,7 +247,7 @@ def figure_3d_scatter(sweep_data: dict):
     ax.set_xlabel(r"$D$", fontsize=11, labelpad=8)
     ax.set_ylabel(r"$A$", fontsize=11, labelpad=8)
     ax.set_zlabel(r"$N_m$", fontsize=11, labelpad=8)
-    ax.set_title("3D Regime Volume — $(D, A, N_m)$",
+    ax.set_title("3D Regime Volume -- $(D, A, N_m)$",
                  fontsize=14, fontweight="bold", pad=15)
     ax.tick_params(labelsize=8)
 
@@ -391,7 +391,7 @@ def figure_regime_slices(sweep_data: dict):
 
 
 # ---------------------------------------------------------------------------
-# Figure C: Decay-rate tensor — heatmaps per Nm
+# Figure C: Decay-rate tensor -- heatmaps per Nm
 # ---------------------------------------------------------------------------
 def figure_decay_rate_tensor(sweep_data: dict):
     D_vals = sorted(set(d["D"] for d in sweep_data.values()))
@@ -466,7 +466,7 @@ def figure_decay_rate_tensor(sweep_data: dict):
 
 
 # ---------------------------------------------------------------------------
-# Figure D: Cascade-breadth tensor — heatmaps per Nm
+# Figure D: Cascade-breadth tensor -- heatmaps per Nm
 # ---------------------------------------------------------------------------
 def figure_cascade_breadth_tensor(sweep_data: dict):
     D_vals = sorted(set(d["D"] for d in sweep_data.values()))
@@ -529,7 +529,7 @@ def figure_cascade_breadth_tensor(sweep_data: dict):
                         pad=0.02, shrink=0.85)
     cbar.ax.tick_params(labelsize=8)
 
-    fig.suptitle("Cascade-Breadth Tensor — Peak Active Modes",
+    fig.suptitle("Cascade-Breadth Tensor -- Peak Active Modes",
                  fontsize=14, fontweight="bold", y=1.02)
     fig.tight_layout()
     fig.savefig(os.path.join(FIG_DIR, "cascade_breadth_tensor.png"),
@@ -585,7 +585,7 @@ def main():
 
     # --- Summary table ---
     print(f"\n{'='*125}")
-    print("  3D Regime Volume — Full Summary")
+    print("  3D Regime Volume -- Full Summary")
     print(f"{'='*125}")
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'Delta':<9} "
           f"{'Regime':<18} {'sigma':<12} {'R^2':<8} "

@@ -5,15 +5,15 @@ Experiment: Broadband Cascade Dynamics (Atlas §4, Suite §3)
 
 Investigates the spectral cascade when a dense block of modes is seeded
 simultaneously, activating a large triad network. This is the most
-physically realistic initial condition — analogous to a broadband
-perturbation or thermal fluctuation — and produces the richest cascade
+physically realistic initial condition -- analogous to a broadband
+perturbation or thermal fluctuation -- and produces the richest cascade
 structure in the modal hierarchy.
 
 Initial conditions (equal amplitude per mode):
-  IC1: modes 1–10     — moderate breadth, 45 active triads
-  IC2: modes 1–20     — wide breadth, 190 active triads
-  IC3: modes 5–25     — shifted window, 210 triads, novel low-k generation
-  IC4: modes 1–30     — stress test, 435 triads, deep forward cascade
+  IC1: modes 1-10     -- moderate breadth, 45 active triads
+  IC2: modes 1-20     -- wide breadth, 190 active triads
+  IC3: modes 5-25     -- shifted window, 210 triads, novel low-k generation
+  IC4: modes 1-30     -- stress test, 435 triads, deep forward cascade
 
 The number of active triads scales as N_m*(N_m-1)/2 where N_m is the
 number of seeded modes. The forward cascade can generate modes up to
@@ -69,19 +69,19 @@ N_OBS = 64
 # Initial conditions: dense blocks of modes
 IC_SPECS = {
     "IC1": {
-        "modes": list(range(1, 11)),    # 1–10
+        "modes": list(range(1, 11)),    # 1-10
         "description": "Moderate breadth: modes 1-10, 45 triads",
     },
     "IC2": {
-        "modes": list(range(1, 21)),    # 1–20
+        "modes": list(range(1, 21)),    # 1-20
         "description": "Wide breadth: modes 1-20, 190 triads",
     },
     "IC3": {
-        "modes": list(range(5, 26)),    # 5–25
+        "modes": list(range(5, 26)),    # 5-25
         "description": "Shifted window: modes 5-25, 210 triads, inverse cascade to low-k",
     },
     "IC4": {
-        "modes": list(range(1, 31)),    # 1–30
+        "modes": list(range(1, 31)),    # 1-30
         "description": "Stress test: modes 1-30, 435 triads, deep forward cascade",
     },
 }
@@ -104,7 +104,7 @@ def build_broadband_ic(x: np.ndarray, params, modes: list, A_per_mode: float):
     for n in modes:
         rho0 += A_per_mode * np.cos(n * np.pi * x / params.L)
 
-    # Safety clamp — should not trigger at A = 0.02 with N_m <= 30
+    # Safety clamp -- should not trigger at A = 0.02 with N_m <= 30
     rho0 = np.clip(rho0, 1e-12, params.rho_max - 1e-12)
     v0 = 0.0
     return rho0, v0
@@ -159,7 +159,7 @@ def run_single_ic(label: str, spec: dict, verbose: bool = True) -> dict:
     if verbose:
         print(f"\n{'='*60}")
         print(f"  {run_id}")
-        print(f"  Modes: {modes[0]}–{modes[-1]} ({n_modes} modes), A = {A}")
+        print(f"  Modes: {modes[0]}-{modes[-1]} ({n_modes} modes), A = {A}")
         print(f"  {description}")
         print(f"{'='*60}")
 

@@ -18,16 +18,16 @@ profile (R_1^*, ..., R_B^*) is a coarse-grained spectral invariant of
 the ED architecture (Appendix C.4, Proposition C.29).
 
 Bin definitions:
-  Bin 1:  k = 1–2     (largest scales)
-  Bin 2:  k = 3–4
-  Bin 3:  k = 5–8
-  Bin 4:  k = 9–16
-  Bin 5:  k = 17–32   (smallest scales in the Atlas)
+  Bin 1:  k = 1-2     (largest scales)
+  Bin 2:  k = 3-4
+  Bin 3:  k = 5-8
+  Bin 4:  k = 9-16
+  Bin 5:  k = 17-32   (smallest scales in the Atlas)
 
 Produces:
-  (A) Cascade Evolution — R_b(t) for a representative run.
-  (B) Attractor Cascade Profile — polylines for all runs.
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+  (A) Cascade Evolution -- R_b(t) for a representative run.
+  (B) Attractor Cascade Profile -- polylines for all runs.
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm).
 
 All figures saved to output/figures/invariants/broadband_cascade/
 as PNG (300 dpi).
@@ -70,7 +70,7 @@ BIN_DEFS = [
     (17, 32),
 ]
 BIN_LABELS = [
-    "1–2", "3–4", "5–8", "9–16", "17–32",
+    "1-2", "3-4", "5-8", "9-16", "17-32",
 ]
 
 LATE_FRAC = 0.10
@@ -101,7 +101,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -356,7 +356,7 @@ def figure_cascade_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Bin ratio $R_b(t) = B_b / E_{\mathrm{total}}$",
-        title=(f"Broadband Cascade — D={run['D']}, A={run['A']}, "
+        title=(f"Broadband Cascade -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']} ({ana['n_bins']} bins)"),
     )
     ax.legend(fontsize=9, loc="center right", framealpha=0.9)
@@ -454,7 +454,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Spectral bin (mode range)",
         ylabel=r"Attractor bin ratio $R_b^*$",
-        title="Broadband Cascade Attractor — All Admissible Runs",
+        title="Broadband Cascade Attractor -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -519,7 +519,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     # Find n_bins for this cell
@@ -544,7 +544,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Broadband Cascade Convergence — Heatmap by $(D, A, N_m)$",
+        "Broadband Cascade Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -562,7 +562,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     max_bins = max(ana["n_bins"] for ana in analyses)
 
     print(f"\n{'='*120}")
-    print("  Invariant Broadband Cascade — Summary Table")
+    print("  Invariant Broadband Cascade -- Summary Table")
     print(f"{'='*120}")
 
     bin_hdr = "  ".join(f"R_{BIN_LABELS[i]}" for i in range(max_bins))
@@ -592,7 +592,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
                 print(f"{R_s:<12.6f}", end="")
                 all_R[i].append(R_s)
             else:
-                print(f"{'—':<12}", end="")
+                print(f"{'--':<12}", end="")
         print()
 
     # --- Global statistics per bin ---
@@ -625,7 +625,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     means = [np.mean(all_R[i]) for i in range(max_bins) if len(all_R[i]) > 0]
     total_mean = sum(means)
     print(f"\n  Partition sum check: Σ R_b^* = {total_mean:.6f} "
-          f"(expected: ≤ 1.000000)")
+          f"(expected: <= 1.000000)")
 
     # Overall convergence
     total = sum(ana["n_bins"] for ana in analyses)
@@ -651,11 +651,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---

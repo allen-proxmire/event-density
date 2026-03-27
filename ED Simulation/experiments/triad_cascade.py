@@ -9,10 +9,10 @@ small amplitude (weakly nonlinear regime) and tracks the energy redistribution
 across the modal hierarchy.
 
 Initial conditions:
-  IC1: modes {1, 2}            — fundamental forward cascade (generates 3, 1)
-  IC2: modes {2, 3}            — forward + inverse cascade (generates 5, 1)
-  IC3: modes {1, 3}            — gap triad (generates 4, 2)
-  IC4: modes {1, 2, 3}         — broadband triad cluster
+  IC1: modes {1, 2}            -- fundamental forward cascade (generates 3, 1)
+  IC2: modes {2, 3}            -- forward + inverse cascade (generates 5, 1)
+  IC3: modes {1, 3}            -- gap triad (generates 4, 2)
+  IC4: modes {1, 2, 3}         -- broadband triad cluster
 
 Uses Parameter Set I (deep oscillatory, same as modal_hierarchy.py and
 three_stage_convergence.py).
@@ -110,7 +110,7 @@ def run_single_ic(label: str, modes: list, verbose: bool = True) -> dict:
         print(f"  {run_id}: seeded modes = {modes}, A = {A}")
         print(f"{'='*60}")
 
-    # Load parameters — same canonical Set I as other experiments
+    # Load parameters -- same canonical Set I as other experiments
     params = load_parameter_set(PARAM_SET, T=T, method=METHOD, k_out=K_OUT)
 
     # Build initial condition

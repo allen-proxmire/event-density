@@ -1,0 +1,12 @@
+# Event Density Research Program
+# Core dependencies (required)
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+
+# Recommended: needed for Phase 5 meta-analyses (embedding map).
+# The embedding script handles missing imports gracefully (skips
+# PCA/t-SNE/UMAP if not installed), but results will be incomplete.
+scikit-learn>=1.2
+# umap-learn>=0.5      # Optional: UMAP embedding (not required)
+# h5py>=3.8            # Optional: HDF5 checkpoint format (future)

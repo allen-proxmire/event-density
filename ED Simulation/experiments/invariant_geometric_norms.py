@@ -6,21 +6,21 @@ Experiment / Analysis: Invariant Geometric Norm Structure
 Scans all completed regime_D*_A*_Nm* runs, computes the weighted spectral
 norms (geometric norms)
 
-    G_α(t) = Σ_k  k^α  |a_k(t)|²
+    G_alpha(t) = Σ_k  k^alpha  |a_k(t)|²
 
-for a fixed set of exponents α ∈ {−2, −1, 0, 1, 2, 3, 4}, and analyses
-their convergence toward late-time attractor values G_α^*.
+for a fixed set of exponents alpha in {−2, −1, 0, 1, 2, 3, 4}, and analyses
+their convergence toward late-time attractor values G_alpha^*.
 
 These norms probe the shape of the spectral distribution at different
-scales: negative α weights low modes (large-scale structure), positive α
+scales: negative alpha weights low modes (large-scale structure), positive alpha
 weights high modes (small-scale / gradient structure).  Their attractor
 values and convergence rates are structural invariants of the ED
-architecture (Appendix C.4–C.5, Appendix D).
+architecture (Appendix C.4-C.5, Appendix D).
 
 Produces:
-  (A) Geometric Norm Evolution — G_α(t) for a representative run.
-  (B) Attractor Geometry Profile — G_α^* vs D for all runs.
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm) per α.
+  (A) Geometric Norm Evolution -- G_alpha(t) for a representative run.
+  (B) Attractor Geometry Profile -- G_alpha^* vs D for all runs.
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm) per alpha.
 
 All figures saved to output/figures/invariants/geometric_norms/
 as PNG (300 dpi).
@@ -59,7 +59,7 @@ LATE_FRAC = 0.10                     # Fraction for late-time average
 FIT_FRAC = 0.20                      # Fraction for convergence fit
 R2_THRESH = 0.95                     # R² threshold for convergence
 
-# Labels and colors for each α
+# Labels and colors for each alpha
 ALPHA_COLORS = {
     -2: "#1b9e77", -1: "#d95f02", 0: "#7570b3",
     1: "#e7298a", 2: "#66a61e", 3: "#e6ab02", 4: "#a6761d",
@@ -87,7 +87,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -155,13 +155,13 @@ def _fill_from_dirname(name: str, D, A, Nm):
 def analyse_run(run: dict) -> dict:
     """Compute geometric norms and their attractor summaries.
 
-    Streams through exponents one at a time.  For each α, the norm
-    G_α(t) = Σ_k k^α |a_k(t)|² is computed as a dot product (no new
+    Streams through exponents one at a time.  For each alpha, the norm
+    G_alpha(t) = Σ_k k^alpha |a_k(t)|² is computed as a dot product (no new
     2-D allocation), then the summary is extracted and the 1-D norm
     array is discarded.
 
     Returns dict with:
-        norms: {α: {"G_star": float, "sigma": float, "R2": float,
+        norms: {alpha: {"G_star": float, "sigma": float, "R2": float,
                      "converged": bool}}
         n_converged, frac_converged
     """
@@ -169,13 +169,13 @@ def analyse_run(run: dict) -> dict:
     t = run["t"]
     n_steps, n_modes = modal.shape
 
-    # Pre-compute |a_k|² — shape (n_steps, n_modes).
+    # Pre-compute |a_k|² -- shape (n_steps, n_modes).
     # This is the only 2-D array we hold; it replaces repeated squaring.
     a_sq = modal ** 2           # element-wise; same size as modal
 
-    # Mode indices starting from 1 (skip k=0 for negative α to avoid 0^α)
-    # For α < 0, k=0 would give 0^α = inf, so we start from k=1.
-    # For α >= 0, k=0 gives 0^α = 0 (α>0) or 1 (α=0), but the
+    # Mode indices starting from 1 (skip k=0 for negative alpha to avoid 0^alpha)
+    # For alpha < 0, k=0 would give 0^alpha = inf, so we start from k=1.
+    # For alpha >= 0, k=0 gives 0^alpha = 0 (alpha>0) or 1 (alpha=0), but the
     # homogeneous mode a_0 is part of the mass, not the gradient
     # structure.  We include k >= 1 uniformly for consistency.
     k_indices = np.arange(1, n_modes)   # [1, 2, ..., n_modes-1]
@@ -185,10 +185,10 @@ def analyse_run(run: dict) -> dict:
     n_converged = 0
 
     for alpha in ALPHAS:
-        # Weight vector: k^α for k = 1, ..., n_modes-1
+        # Weight vector: k^alpha for k = 1, ..., n_modes-1
         weights = k_indices.astype(np.float64) ** alpha   # (n_modes-1,)
 
-        # G_α(t) = Σ_{k>=1} k^α |a_k(t)|²  — via matrix-vector product
+        # G_alpha(t) = Σ_{k>=1} k^alpha |a_k(t)|²  -- via matrix-vector product
         G = a_sq_active @ weights                         # (n_steps,)
 
         # Late-time average
@@ -270,7 +270,7 @@ def setup_axes(ax, xlabel: str, ylabel: str, title: str):
 # Figure A: Geometric Norm Evolution (representative run)
 # ---------------------------------------------------------------------------
 def figure_norm_evolution(runs: list[dict], analyses: list[dict]):
-    """Plot G_α(t) for all α on semilog-y for the run with largest Nm.
+    """Plot G_alpha(t) for all alpha on semilog-y for the run with largest Nm.
 
     Recomputes norm time series on-the-fly for the single representative
     run.
@@ -315,7 +315,7 @@ def figure_norm_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Geometric norm $G_\alpha(t)$",
-        title=(f"Geometric Norms — D={run['D']}, A={run['A']}, "
+        title=(f"Geometric Norms -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9, ncol=2)
@@ -328,10 +328,10 @@ def figure_norm_evolution(runs: list[dict], analyses: list[dict]):
 
 
 # ---------------------------------------------------------------------------
-# Figure B: Attractor Geometry Profile (G_α^* vs D, all runs)
+# Figure B: Attractor Geometry Profile (G_alpha^* vs D, all runs)
 # ---------------------------------------------------------------------------
 def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
-    """One panel per α: G_α^* vs D, colored by A, marker by Nm."""
+    """One panel per alpha: G_alpha^* vs D, colored by A, marker by Nm."""
     A_vals = sorted(set(r["A"] for r in runs))
     Nm_vals = sorted(set(r["Nm"] for r in runs))
 
@@ -358,7 +358,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         row, col = divmod(panel_idx, n_cols)
         ax = axes[row][col]
 
-        # Collect all G_α^* for global mean
+        # Collect all G_alpha^* for global mean
         all_G = [ana["norms"][alpha]["G_star"]
                  for ana in analyses
                  if not np.isnan(ana["norms"][alpha]["G_star"])
@@ -417,7 +417,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Geometric Norm Attractor Profile — All Admissible Runs",
+        "Geometric Norm Attractor Profile -- All Admissible Runs",
         fontsize=14, fontweight="bold", y=1.01,
     )
     fig.tight_layout()
@@ -429,15 +429,15 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
 
 
 # ---------------------------------------------------------------------------
-# Figure C: Convergence Heatmap (one panel per α)
+# Figure C: Convergence Heatmap (one panel per alpha)
 # ---------------------------------------------------------------------------
 def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
-    """One panel per α; cell color = converged (1) or not (0)."""
+    """One panel per alpha; cell color = converged (1) or not (0)."""
     D_vals = sorted(set(r["D"] for r in runs))
     A_vals = sorted(set(r["A"] for r in runs))
     Nm_vals = sorted(set(r["Nm"] for r in runs))
 
-    # For each α, aggregate convergence across Nm values:
+    # For each alpha, aggregate convergence across Nm values:
     # cell value = fraction of Nm values for which that (D, A) converged.
     n_alpha = len(ALPHAS)
     n_cols = min(4, n_alpha)
@@ -494,7 +494,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 tot = int(total_count[di_idx, ai_idx])
                 if tot == 0:
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=7, color="0.5")
                 else:
                     cv = int(conv_count[di_idx, ai_idx])
@@ -518,7 +518,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        r"Geometric Norm Convergence — Heatmap by $(D, A)$, per $\alpha$",
+        r"Geometric Norm Convergence -- Heatmap by $(D, A)$, per $\alpha$",
         fontsize=14, fontweight="bold", y=1.02,
     )
     fig.tight_layout()
@@ -536,7 +536,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     # --- Per-run table ---
     alpha_hdr = "  ".join(f"G_{a}*" for a in ALPHAS)
     print(f"\n{'='*130}")
-    print("  Invariant Geometric Norms — Summary Table")
+    print("  Invariant Geometric Norms -- Summary Table")
     print(f"{'='*130}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} "
@@ -546,7 +546,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     print()
     print("  " + "-" * 120)
 
-    # Collect per-α values
+    # Collect per-alpha values
     all_G = {a: [] for a in ALPHAS}
 
     for run, ana in zip(runs, analyses):
@@ -574,7 +574,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     for a in ALPHAS:
         arr = np.array(all_G[a])
         if len(arr) == 0:
-            print(f"  α={a:<5} (no data)")
+            print(f"  alpha={a:<5} (no data)")
             continue
 
         mean_v = np.mean(arr)
@@ -588,7 +588,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
         else:
             verdict = "NOT INVARIANT"
 
-        print(f"  α={a:<5} "
+        print(f"  alpha={a:<5} "
               f"{mean_v:<14.6e} {std_v:<14.6e} "
               f"{np.min(arr):<14.6e} {np.max(arr):<14.6e} "
               f"{cv:<10.4f} {verdict}")
@@ -617,15 +617,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs (streaming) ---
-    print(f"\nComputing geometric norms (α ∈ {ALPHAS})...")
+    print(f"\nComputing geometric norms (alpha in {ALPHAS})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

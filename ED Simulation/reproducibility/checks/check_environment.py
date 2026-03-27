@@ -59,7 +59,7 @@ def check_package(name: str, min_version: str) -> dict:
             required = tuple(int(x) for x in min_version.split(".")[:2])
             ok = installed >= required
         except ValueError:
-            ok = True  # Can't parse — assume OK
+            ok = True  # Can't parse -- assume OK
         return {
             "installed": True,
             "version": ver,
@@ -122,7 +122,7 @@ def main():
         result = check_package(name, min_ver)
         report["required_packages"][name] = result
         status = result["status"]
-        ver = result["version"] or "—"
+        ver = result["version"] or "--"
         print(f"    {name:<15} {ver:<12} (>= {min_ver})  [{status}]")
         if status != "PASS":
             all_ok = False
@@ -134,9 +134,9 @@ def main():
         report["optional_packages"][name] = result
         result["purpose"] = purpose
         status = result["status"]
-        ver = result["version"] or "—"
+        ver = result["version"] or "--"
         mark = "+" if result["installed"] else "-"
-        print(f"    {mark} {name:<15} {ver:<12} — {purpose}")
+        print(f"    {mark} {name:<15} {ver:<12} -- {purpose}")
 
     gpu = report["gpu"]
     print()

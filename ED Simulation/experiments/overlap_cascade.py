@@ -9,16 +9,16 @@ pairwise triads overlap, producing richer cascade dynamics than the
 isolated-triad experiments of triad_cascade.py.
 
 Initial conditions:
-  IC1: modes {1, 2, 3}      — triads sharing mode 2
+  IC1: modes {1, 2, 3}      -- triads sharing mode 2
        Active triads: (1,2)→{3,1}, (1,3)→{4,2}, (2,3)→{5,1}
        Mode 1 is both seeded and a triad target: energy fed back into source.
 
-  IC2: modes {1, 2, 3, 5}   — triads sharing mode 3
+  IC2: modes {1, 2, 3, 5}   -- triads sharing mode 3
        Active triads: (1,2)→{3,1}, (1,3)→{4,2}, (2,3)→{5,1},
                       (1,5)→{6,4}, (2,5)→{7,3}, (3,5)→{8,2}
        Modes 1, 2, 3 appear as both sources and targets: strongly coupled.
 
-  IC3: modes {2, 3, 5}      — extended overlap with gap
+  IC3: modes {2, 3, 5}      -- extended overlap with gap
        Active triads: (2,3)→{5,1}, (2,5)→{7,3}, (3,5)→{8,2}
        Mode 5 is both seeded and a triad target of (2,3): resonant overlap.
        Mode 3 is both seeded and a target of (2,5): double overlap.

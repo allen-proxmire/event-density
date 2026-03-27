@@ -13,15 +13,15 @@ window and E_j = |a_j|², and analyses their convergence toward late-time
 attractor values O_k^*.
 
 The overlap ratio measures how much energy is concentrated near each
-mode relative to the total — a local spectral density probe.  The
+mode relative to the total -- a local spectral density probe.  The
 attractor profile (O_1^*, ..., O_K^*) encodes the nearest-neighbour
 coupling structure at equilibrium, which is constrained by the modal
 hierarchy (Proposition C.29) and the triad selection rule (Theorem C.34).
 
 Produces:
-  (A) Overlap Evolution — O_k(t) for a representative run.
-  (B) Attractor Overlap Profile — polylines for all runs.
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+  (A) Overlap Evolution -- O_k(t) for a representative run.
+  (B) Attractor Overlap Profile -- polylines for all runs.
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm).
 
 All figures saved to output/figures/invariants/modal_overlap/
 as PNG (300 dpi).
@@ -81,7 +81,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -322,7 +322,7 @@ def figure_overlap_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Overlap ratio $O_k(t)$",
-        title=(f"Modal Overlap — D={run['D']}, A={run['A']}, "
+        title=(f"Modal Overlap -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']} ($K={K}$)"),
     )
     fig.tight_layout()
@@ -412,7 +412,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel=r"Attractor overlap $O_k^*$",
-        title="Modal Overlap Attractor — All Admissible Runs",
+        title="Modal Overlap Attractor -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -476,7 +476,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     K_cell = K_MAX
@@ -500,7 +500,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Modal Overlap Convergence — Heatmap by $(D, A, N_m)$",
+        "Modal Overlap Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -518,7 +518,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     max_K = max(ana["K"] for ana in analyses)
 
     print(f"\n{'='*140}")
-    print("  Invariant Modal Overlap — Summary Table")
+    print("  Invariant Modal Overlap -- Summary Table")
     print(f"{'='*140}")
 
     n_show = min(10, max_K)
@@ -604,15 +604,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse
-    print(f"\nComputing modal overlaps (K ≤ {K_MAX})...")
+    print(f"\nComputing modal overlaps (K <= {K_MAX})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

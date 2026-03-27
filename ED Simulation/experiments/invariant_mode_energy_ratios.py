@@ -12,14 +12,14 @@ for k = 1..K (K = min(20, n_modes−1)), and analyses their convergence
 toward late-time attractor values R_k^*.
 
 The attractor ratio profile (R_1^*, ..., R_K^*) is the normalised
-spectral fingerprint of the ED equilibrium — a structural invariant
+spectral fingerprint of the ED equilibrium -- a structural invariant
 whose shape is determined by the modal hierarchy (Proposition C.29)
 and whose uniqueness follows from the Lyapunov stability (Theorem C.43).
 
 Produces:
-  (A) Mode-Energy Ratio Evolution — R_k(t) for a representative run.
-  (B) Attractor Ratio Profile — polylines for all runs overlaid.
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+  (A) Mode-Energy Ratio Evolution -- R_k(t) for a representative run.
+  (B) Attractor Ratio Profile -- polylines for all runs overlaid.
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm).
 
 All figures saved to output/figures/invariants/mode_energy_ratios/
 as PNG (300 dpi).
@@ -80,7 +80,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -303,7 +303,7 @@ def figure_ratio_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Energy ratio $R_k(t) = E_k / E_{\mathrm{total}}$",
-        title=(f"Mode-Energy Ratios — D={run['D']}, A={run['A']}, "
+        title=(f"Mode-Energy Ratios -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']} (K={K})"),
     )
     fig.tight_layout()
@@ -333,7 +333,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
 
     fig, ax = plt.subplots(figsize=(12, 6))
 
-    # Collect profiles (variable length — use max K)
+    # Collect profiles (variable length -- use max K)
     max_K = max(ana["K"] for ana in analyses)
     all_profiles = []
 
@@ -396,7 +396,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel=r"Attractor ratio $R_k^*$",
-        title="Mode-Energy Ratio Attractor Profile — All Admissible Runs",
+        title="Mode-Energy Ratio Attractor Profile -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -461,7 +461,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     # Find the K for this (D, A, Nm) cell
@@ -486,7 +486,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Mode-Energy Ratio Convergence — Heatmap by $(D, A, N_m)$",
+        "Mode-Energy Ratio Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -504,7 +504,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     max_K = max(ana["K"] for ana in analyses)
 
     print(f"\n{'='*140}")
-    print("  Invariant Mode-Energy Ratios — Summary Table")
+    print("  Invariant Mode-Energy Ratios -- Summary Table")
     print(f"{'='*140}")
 
     # Compact header: show first 10 R_k^* columns
@@ -593,15 +593,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs (streaming) ---
-    print(f"\nComputing mode-energy ratios (K ≤ {K_MAX})...")
+    print(f"\nComputing mode-energy ratios (K <= {K_MAX})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

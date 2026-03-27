@@ -4,7 +4,7 @@ edsim_diagnostics.py
 Observable extraction and diagnostic computation for the ED simulation engine.
 
 Implements all observables from the Simulation Suite §5:
-  - Energy functional and dissipation channels (§5.1–5.2)
+  - Energy functional and dissipation channels (§5.1-5.2)
   - Modal amplitudes and spectral decomposition (§5.3)
   - Triad coefficients and selection-rule validation (§5.4)
   - ED-complexity (§5.5)
@@ -380,9 +380,9 @@ def detect_three_stages(t: np.ndarray, E: np.ndarray,
     """
     Detect the three stages of convergence from the energy time series.
 
-    Stage I:  Global bounds — energy is bounded and decreasing
-    Stage II: Algebraic decay — E(t) ~ C * t^{-alpha}
-    Stage III: Exponential decay — E(t) ~ C * exp(-2*sigma*t)
+    Stage I:  Global bounds -- energy is bounded and decreasing
+    Stage II: Algebraic decay -- E(t) ~ C * t^{-alpha}
+    Stage III: Exponential decay -- E(t) ~ C * exp(-2*sigma*t)
 
     Returns dict with transition times and stage diagnostics.
     """

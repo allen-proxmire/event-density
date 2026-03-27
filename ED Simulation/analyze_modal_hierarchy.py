@@ -6,13 +6,13 @@ Post-processing script for the Modal Hierarchy experiments (Atlas §3).
 Scans output/runs/ for all modal-hierarchy runs, loads diagnostics,
 and produces four publication-quality figures:
 
-  Figure A:  Single-mode decay — |a_k(t)| for each single-mode run,
+  Figure A:  Single-mode decay -- |a_k(t)| for each single-mode run,
              with predicted slopes -D*alpha_k overlaid.
-  Figure B:  Modal funnel — |a_k(t)| for k = 0..10 from the multi-mode run,
+  Figure B:  Modal funnel -- |a_k(t)| for k = 0..10 from the multi-mode run,
              demonstrating the spectral gap (higher modes collapse first).
-  Figure C:  Triad activation — if a two-mode IC run is present,
+  Figure C:  Triad activation -- if a two-mode IC run is present,
              plot |a_1|, |a_2|, |a_3| showing nonlinear generation of a_3.
-  Figure D:  Dissipation channels — D_grad, D_pen, D_part, D_total
+  Figure D:  Dissipation channels -- D_grad, D_pen, D_part, D_total
              for a representative run.
 
 All figures saved to output/figures/modal_hierarchy/ as PNG (300 dpi).
@@ -205,7 +205,7 @@ def figure_single_mode_decay(single_runs: dict):
             ax,
             xlabel=r"Time $t$",
             ylabel=r"Modal amplitude $|a_k(t)|$",
-            title=f"Single-Mode Decay — Parameter Set {param_set}",
+            title=f"Single-Mode Decay -- Parameter Set {param_set}",
         )
         ax.legend(fontsize=8, loc="upper right", framealpha=0.9, ncol=2)
         fig.tight_layout()
@@ -266,7 +266,7 @@ def figure_modal_funnel(multi_runs: dict):
             ax,
             xlabel=r"Time $t$",
             ylabel=r"Modal amplitude $|a_k(t)|$",
-            title=f"Modal Funnel — Set {param_set}, $N_m = {n_m}$",
+            title=f"Modal Funnel -- Set {param_set}, $N_m = {n_m}$",
         )
         ax.legend(fontsize=8, loc="upper right", framealpha=0.9, ncol=2)
         fig.tight_layout()
@@ -379,7 +379,7 @@ def figure_triad_activation(single_runs: dict, multi_runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal amplitude $|a_k(t)|$",
-        title=f"Triad Activation — {triad_label}",
+        title=f"Triad Activation -- {triad_label}",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig.tight_layout()
@@ -460,7 +460,7 @@ def figure_dissipation_channels(single_runs: dict, multi_runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Dissipation rate",
-        title=f"Dissipation Channels — {rep_label}",
+        title=f"Dissipation Channels -- {rep_label}",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig.tight_layout()

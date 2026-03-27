@@ -43,7 +43,7 @@ ACTIVATION_FRAC = 1e-4
 
 
 # ---------------------------------------------------------------------------
-# Color palette — deterministic per mode index
+# Color palette -- deterministic per mode index
 # ---------------------------------------------------------------------------
 _PALETTE = [
     "#636363",  # 0  grey
@@ -125,12 +125,12 @@ def classify_modes(seeded: list, modal: np.ndarray, A: float):
     -------
     roles : dict  {mode_index: role_string}
         Possible roles:
-          "seeded"       — in the initial condition
-          "first_gen"    — direct pairwise target of two seeded modes
+          "seeded"       -- in the initial condition
+          "first_gen"    -- direct pairwise target of two seeded modes
                            (i.e. a first-generation child)
-          "network"      — activated but not seeded or first-gen
+          "network"      -- activated but not seeded or first-gen
                            (second-generation or higher cascade product)
-          "inactive"     — below threshold
+          "inactive"     -- below threshold
     first_gen_set : set of int
     network_set   : set of int
     """
@@ -251,7 +251,7 @@ def figure_per_ic(label: str, run: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal amplitude $|a_k(t)|$",
-        title=f"Overlapping Triad Cascade — {label}: seeded {seeded}",
+        title=f"Overlapping Triad Cascade -- {label}: seeded {seeded}",
     )
 
     # Two-column legend to keep it compact
@@ -306,7 +306,7 @@ def figure_detail(label: str, run: dict):
     setup_axes(
         ax_top, xlabel="",
         ylabel=r"$|a_k(t)|$",
-        title=f"Overlap Cascade Detail — {label}: seeded {seeded}",
+        title=f"Overlap Cascade Detail -- {label}: seeded {seeded}",
     )
     ax_top.legend(fontsize=10, loc="upper right", framealpha=0.9)
 
@@ -435,7 +435,7 @@ def figure_energy_comparison(runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Energy $\mathcal{E}(t)$",
-        title="Overlapping Triad Cascade — Energy Decay Comparison",
+        title="Overlapping Triad Cascade -- Energy Decay Comparison",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig.tight_layout()
@@ -478,7 +478,7 @@ def figure_complexity_comparison(runs: dict):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"$C_{\mathrm{ED}}(t)$",
-        title="Overlapping Triad Cascade — Complexity Decay Comparison",
+        title="Overlapping Triad Cascade -- Complexity Decay Comparison",
     )
     ax.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig.tight_layout()
@@ -565,8 +565,8 @@ def main():
         feedback = overlap.get("feedback_targets", [])
 
         print(f"  {label:<6} {str(seeded):<16} {str(fg_active):<16} "
-              f"{str(nw_active) if nw_active else '—':<14} "
-              f"{str(feedback) if feedback else '—':<12}")
+              f"{str(nw_active) if nw_active else '--':<14} "
+              f"{str(feedback) if feedback else '--':<12}")
 
     print(f"\nAll figures saved to: {FIG_DIR}")
     print("Done.")

@@ -5,7 +5,7 @@ Experiment / Analysis: Invariant Lyapunov Spectrum
 
 Scans all completed regime_D*_A*_Nm* runs, estimates the Lyapunov
 exponent spectrum from the modal amplitude time series, and computes
-the Kaplan–Yorke attractor dimension.
+the Kaplan-Yorke attractor dimension.
 
 Method:
   - Construct a 2K-dimensional state vector from Re/Im (or ±) parts
@@ -13,18 +13,18 @@ Method:
   - Estimate the local tangent map via finite differences.
   - Accumulate the Lyapunov exponents using the standard QR method
     (Benettin et al. 1980) over the attractor window (last 20%).
-  - Compute the Kaplan–Yorke dimension from the ordered exponents.
+  - Compute the Kaplan-Yorke dimension from the ordered exponents.
 
 For the ED architecture, Principle 3 (unique attractor) and the
 Lyapunov stability theorem (Appendix C.5, Theorem C.43) predict that
-all exponents are non-positive — the attractor is a fixed point,
-not a chaotic set.  The Kaplan–Yorke dimension should be 0 (point
+all exponents are non-positive -- the attractor is a fixed point,
+not a chaotic set.  The Kaplan-Yorke dimension should be 0 (point
 attractor) or very close to 0.
 
 Produces:
-  (A) Lyapunov Spectrum — λ_i vs i for a representative run.
-  (B) Attractor Dimension vs D — D_KY scatter for all runs.
-  (C) Spectrum Heatmap — number of positive exponents across (D, A, Nm).
+  (A) Lyapunov Spectrum -- λ_i vs i for a representative run.
+  (B) Attractor Dimension vs D -- D_KY scatter for all runs.
+  (C) Spectrum Heatmap -- number of positive exponents across (D, A, Nm).
 
 All figures saved to output/figures/invariants/lyapunov_spectrum/
 as PNG (300 dpi).
@@ -84,7 +84,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -199,7 +199,7 @@ def compute_lyapunov_spectrum(x: np.ndarray, dt_arr: np.ndarray) -> np.ndarray:
         x = x[:, :MAX_DIM]
         d = MAX_DIM
 
-    # Finite-difference tangent vectors: dx/dt ≈ (x_{n+1} - x_n) / dt_n
+    # Finite-difference tangent vectors: dx/dt ~= (x_{n+1} - x_n) / dt_n
     dx = np.diff(x, axis=0)                        # (n_steps-1, d)
 
     # Initialise orthonormal frame
@@ -214,9 +214,9 @@ def compute_lyapunov_spectrum(x: np.ndarray, dt_arr: np.ndarray) -> np.ndarray:
             continue
 
         # Local Jacobian approximation:
-        # The tangent map maps perturbations δx_n → δx_{n+1} ≈ δx_n + J_n δx_n dt
+        # The tangent map maps perturbations δx_n → δx_{n+1} ~= δx_n + J_n δx_n dt
         # For the QR method, we propagate: Y = (I + J_n dt) @ Q
-        # With J_n ≈ dx_n dx_n^T / (||dx_n||^2 + eps) as rank-1 approximation:
+        # With J_n ~= dx_n dx_n^T / (||dx_n||^2 + eps) as rank-1 approximation:
         #   (I + J_n dt) = I + dt * dx_n dx_n^T / (||dx_n||^2 + eps)
         #
         # However, a more robust approach for trajectory-based Lyapunov
@@ -270,9 +270,9 @@ def kaplan_yorke_dimension(lambdas: np.ndarray) -> float:
     """Compute the Kaplan-Yorke dimension from sorted Lyapunov exponents.
 
     D_KY = j + Σ_{i=1..j} λ_i / |λ_{j+1}|
-    where j is the largest index such that Σ_{i=1..j} λ_i ≥ 0.
+    where j is the largest index such that Σ_{i=1..j} λ_i >= 0.
 
-    For a fixed-point attractor (all λ_i ≤ 0), D_KY = 0.
+    For a fixed-point attractor (all λ_i <= 0), D_KY = 0.
     """
     if len(lambdas) == 0:
         return 0.0
@@ -291,7 +291,7 @@ def kaplan_yorke_dimension(lambdas: np.ndarray) -> float:
     j = int(np.max(np.where(positive_mask)[0]))
 
     if j + 1 >= len(lambdas):
-        # All exponents sum to positive — dimension equals full space
+        # All exponents sum to positive -- dimension equals full space
         return float(len(lambdas))
 
     denom = abs(lambdas[j + 1])
@@ -411,7 +411,7 @@ def figure_spectrum(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Exponent index $i$",
         ylabel=r"Lyapunov exponent $\lambda_i$",
-        title=(f"Lyapunov Spectrum — D={run['D']}, A={run['A']}, "
+        title=(f"Lyapunov Spectrum -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     fig.tight_layout()
@@ -492,8 +492,8 @@ def figure_dimension_scatter(runs: list[dict], analyses: list[dict]):
     setup_axes(
         ax,
         xlabel=r"Diffusion $D$",
-        ylabel=r"Kaplan–Yorke dimension $D_{KY}$",
-        title="Attractor Dimension — All Admissible Runs",
+        ylabel=r"Kaplan-Yorke dimension $D_{KY}$",
+        title="Attractor Dimension -- All Admissible Runs",
     )
     ax.set_ylim(bottom=-0.5)
     fig.tight_layout()
@@ -565,7 +565,7 @@ def figure_spectrum_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     n_pos = int(val)
@@ -583,7 +583,7 @@ def figure_spectrum_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        r"Lyapunov Spectrum — Positive Exponents by $(D, A, N_m)$",
+        r"Lyapunov Spectrum -- Positive Exponents by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -599,7 +599,7 @@ def figure_spectrum_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*120}")
-    print("  Invariant Lyapunov Spectrum — Summary Table")
+    print("  Invariant Lyapunov Spectrum -- Summary Table")
     print(f"{'='*120}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'d':<5} "
@@ -660,10 +660,10 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     all_zero = all(n == 0 for n in all_n_pos)
     print(f"\n  ED Principle 3 (point attractor) check:")
     if all_zero:
-        print(f"    PASS — all runs have 0 positive exponents, D_KY = 0")
+        print(f"    PASS -- all runs have 0 positive exponents, D_KY = 0")
     else:
         n_nonzero = sum(1 for n in all_n_pos if n > 0)
-        print(f"    WARNING — {n_nonzero}/{len(all_n_pos)} runs have "
+        print(f"    WARNING -- {n_nonzero}/{len(all_n_pos)} runs have "
               f"positive exponents")
         print(f"    (may be numerical artifacts from finite-difference "
               f"Jacobian approximation)")
@@ -686,11 +686,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse

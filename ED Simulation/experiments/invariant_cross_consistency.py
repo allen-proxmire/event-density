@@ -1,3 +1,8 @@
+# NOTE: This is a Layer 4 meta-analysis script.
+# It operates on the outputs of all Layer 3 invariant scripts.
+# It is NOT a core invariant and should run AFTER all Layer 3 scripts.
+# In run_all.py, it belongs to PHASE_5_META, not PHASE_4_INVARIANTS.
+
 """
 invariant_cross_consistency.py
 ===============================
@@ -8,11 +13,11 @@ summaries, groups the invariant components by family, and analyses
 the cross-family correlation structure.
 
 This tests whether the thirteen invariant families (low-mode collapse,
-mode ratios, Rényi entropies, dissipation partitions, broadband
+mode ratios, Renyi entropies, dissipation partitions, broadband
 cascade, modal correlations, modal overlap, phase dynamics, PAC,
 Lyapunov spectrum, attractor manifold, energy-entropy geometry, and
 convergence stability) provide mutually consistent information about
-the attractor — or whether some families are redundant (highly
+the attractor -- or whether some families are redundant (highly
 correlated) or contradictory (anti-correlated).
 
 The ED architecture predicts that all invariants derive from the same
@@ -21,9 +26,9 @@ should be positively correlated but not perfectly redundant: each
 family probes a different aspect of the nine-layer ontology.
 
 Produces:
-  (A) Cross-Invariant Correlation Heatmap — family × family.
-  (B) Redundancy Bar Chart — per family.
-  (C) Consistency Scatter — per-run score vs D.
+  (A) Cross-Invariant Correlation Heatmap -- family × family.
+  (B) Redundancy Bar Chart -- per family.
+  (C) Consistency Scatter -- per-run score vs D.
 
 All figures saved to output/figures/invariants/cross_consistency/
 as PNG (300 dpi).
@@ -79,7 +84,7 @@ FAMILY_ORDER = list(FAMILY_SOURCES.keys())
 FAMILY_LABELS = {
     "low_mode":     "Low-Mode",
     "mode_ratios":  "Mode Ratios",
-    "renyi":        "Rényi",
+    "renyi":        "Renyi",
     "diss_part":    "Dissipation",
     "cascade":      "Cascade",
     "correlations": "Correlations",
@@ -88,7 +93,7 @@ FAMILY_LABELS = {
     "PAC":          "PAC",
     "lyapunov":     "Lyapunov",
     "manifold":     "Manifold",
-    "E_H_geom":    "E–H Geom",
+    "E_H_geom":    "E-H Geom",
     "conv_stab":    "Conv Stab",
 }
 
@@ -111,7 +116,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -491,7 +496,7 @@ def figure_consistency_scatter(runs: list[dict],
         v_color = "#b2182b"
 
     ax.annotate(
-        f"$C = {C_global:.4f}$ — {verdict}",
+        f"$C = {C_global:.4f}$ -- {verdict}",
         xy=(0.98, 0.95), xycoords="axes fraction",
         fontsize=11, fontweight="bold", ha="right", va="top",
         color=v_color,
@@ -517,7 +522,7 @@ def figure_consistency_scatter(runs: list[dict],
         ax,
         xlabel=r"Diffusion $D$",
         ylabel="Per-run consistency score",
-        title="Cross-Invariant Consistency — All Runs",
+        title="Cross-Invariant Consistency -- All Runs",
     )
     ax.set_ylim(0, 1.05)
     fig.tight_layout()
@@ -537,7 +542,7 @@ def print_summary(fam_names: list[str], corr: np.ndarray,
     F = len(fam_names)
 
     print(f"\n{'='*110}")
-    print("  Cross-Invariant Consistency — Summary")
+    print("  Cross-Invariant Consistency -- Summary")
     print(f"{'='*110}")
 
     # Per-family table
@@ -560,9 +565,9 @@ def print_summary(fam_names: list[str], corr: np.ndarray,
             bot_name = FAMILY_LABELS.get(corrs_others[-1][2], corrs_others[-1][2])
             bot_r = corrs_others[-1][1]
         else:
-            top_name = "—"
+            top_name = "--"
             top_r = 0.0
-            bot_name = "—"
+            bot_name = "--"
             bot_r = 0.0
 
         label = FAMILY_LABELS.get(fam, fam)
@@ -596,7 +601,7 @@ def print_summary(fam_names: list[str], corr: np.ndarray,
     elif C_global > 0.5:
         print(f"    Verdict: PARTIALLY CONSISTENT (C > 0.5)")
     else:
-        print(f"    Verdict: INCONSISTENT (C ≤ 0.5)")
+        print(f"    Verdict: INCONSISTENT (C <= 0.5)")
 
 
 # ---------------------------------------------------------------------------

@@ -1,3 +1,8 @@
+# NOTE: This is a Layer 4 meta-analysis script.
+# It operates on the outputs of all Layer 3 invariant scripts.
+# It is NOT a core invariant and should run AFTER all Layer 3 scripts.
+# In run_all.py, it belongs to PHASE_5_META, not PHASE_4_INVARIANTS.
+
 """
 invariant_embedding_map.py
 ===========================
@@ -8,15 +13,15 @@ vectors (produced by invariant_parameter_universality.py), and embeds
 them into 2-D using PCA, t-SNE, and optionally UMAP.
 
 The ED architecture (Appendix D) predicts that all systems satisfying
-Principles 1–7 converge to the same qualitative attractor structure.
+Principles 1-7 converge to the same qualitative attractor structure.
 In invariant space, this means the standardised invariant vectors
-should collapse to a small cluster — the "universality point."  The
+should collapse to a small cluster -- the "universality point."  The
 embedding map visualises this collapse and quantifies its tightness.
 
 Produces:
-  (A) PCA Embedding — first two principal components.
-  (B) t-SNE Embedding — nonlinear neighbourhood-preserving map.
-  (C) UMAP Embedding — topology-preserving map (if available).
+  (A) PCA Embedding -- first two principal components.
+  (B) t-SNE Embedding -- nonlinear neighbourhood-preserving map.
+  (C) UMAP Embedding -- topology-preserving map (if available).
 
 All figures saved to output/figures/invariants/embedding_map/
 as PNG (300 dpi).
@@ -39,7 +44,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
-# Optional imports — graceful fallback
+# Optional imports -- graceful fallback
 try:
     from sklearn.decomposition import PCA
     from sklearn.manifold import TSNE
@@ -108,7 +113,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -518,7 +523,7 @@ def print_summary(runs: list[dict],
     n = len(runs)
 
     print(f"\n{'='*120}")
-    print("  Invariant Embedding Map — Summary")
+    print("  Invariant Embedding Map -- Summary")
     print(f"{'='*120}")
 
     # Per-run coordinates

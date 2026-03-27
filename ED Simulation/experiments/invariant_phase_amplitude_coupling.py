@@ -1,7 +1,7 @@
 """
 invariant_phase_amplitude_coupling.py
 ======================================
-Experiment / Analysis: Invariant Phase–Amplitude Coupling (PAC)
+Experiment / Analysis: Invariant Phase-Amplitude Coupling (PAC)
 
 Scans all completed regime_D*_A*_Nm* runs, extracts complex modal
 amplitudes a_k(t), and analyses the coupling between amplitude and
@@ -11,20 +11,20 @@ phase degrees of freedom:
   - Cross PAC: PAC_ij = corr(A_i, φ_j)
   - Triad PAC closure: PAC_ijk = corr(A_k, Δφ_ijk)
 
-Phase–amplitude coupling reveals whether the nonlinear term
+Phase-amplitude coupling reveals whether the nonlinear term
 M'(ρ)|∇ρ|² (Principle 7) creates systematic relationships between
 a mode's amplitude and the phase structure of the spectral field.
 In the ED architecture, the triad selection rule (Theorem C.34)
 predicts specific PAC patterns among triad-connected modes.
 
 Note: for real-valued Neumann eigenbasis data, phases are 0 or π,
-so PAC becomes the correlation between amplitude and sign — still
-meaningful as a measure of amplitude–polarity coupling.
+so PAC becomes the correlation between amplitude and sign -- still
+meaningful as a measure of amplitude-polarity coupling.
 
 Produces:
-  (A) Self PAC Profile — ρ_k vs k for a representative run.
-  (B) Cross-Mode PAC Matrix — |PAC_ij| heatmap.
-  (C) Triad PAC Closure — scatter for all runs.
+  (A) Self PAC Profile -- ρ_k vs k for a representative run.
+  (B) Cross-Mode PAC Matrix -- |PAC_ij| heatmap.
+  (C) Triad PAC Closure -- scatter for all runs.
 
 All figures saved to output/figures/invariants/phase_amplitude_coupling/
 as PNG (300 dpi).
@@ -83,7 +83,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -346,7 +346,7 @@ def figure_self_pac(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel=r"Self PAC $\rho_k = \mathrm{corr}(A_k, \varphi_k)$",
-        title=f"Phase–Amplitude Coupling — D={run['D']}, A={run['A']}, Nm={run['Nm']}",
+        title=f"Phase-Amplitude Coupling -- D={run['D']}, A={run['A']}, Nm={run['Nm']}",
     )
     ax.legend(fontsize=9, loc="upper left", framealpha=0.9)
     fig.tight_layout()
@@ -407,7 +407,7 @@ def figure_cross_pac_matrix(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Mode $j$ (phase donor)",
         ylabel=r"Mode $i$ (amplitude)",
-        title=(f"Cross-Mode PAC — D={run['D']}, A={run['A']}, "
+        title=(f"Cross-Mode PAC -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     fig.tight_layout()
@@ -484,7 +484,7 @@ def figure_triad_pac_closure(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Triad index",
         ylabel=r"$|\mathrm{PAC}_{ijk}| = |\mathrm{corr}(A_k, \Delta\varphi_{ijk})|$",
-        title="Triad PAC Closure — All Admissible Runs",
+        title="Triad PAC Closure -- All Admissible Runs",
     )
     ax.set_ylim(-0.05, 1.05)
     fig.tight_layout()
@@ -500,7 +500,7 @@ def figure_triad_pac_closure(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*110}")
-    print("  Invariant Phase–Amplitude Coupling — Summary Table")
+    print("  Invariant Phase-Amplitude Coupling -- Summary Table")
     print(f"{'='*110}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'K':<4} {'Phase':<7} "
@@ -573,15 +573,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse
-    print(f"\nAnalysing phase–amplitude coupling (K ≤ {K_MAX})...")
+    print(f"\nAnalysing phase-amplitude coupling (K <= {K_MAX})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

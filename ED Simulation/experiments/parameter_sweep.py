@@ -6,7 +6,7 @@ Experiment: Diffusion-Coefficient Sweep (Atlas §8.3, Suite §4.1)
 Varies the diffusion coefficient D across five values while holding all other
 canonical parameters (zeta, tau, rho_star, rho_max, constitutive functions)
 fixed at Parameter Set I. Each run uses the same broadband initial condition
-(modes 1–20, equal amplitude A = 0.02), identical to broadband_cascade IC2.
+(modes 1-20, equal amplitude A = 0.02), identical to broadband_cascade IC2.
 
 This isolates the effect of D on:
   - energy decay rate
@@ -15,7 +15,7 @@ This isolates the effect of D on:
   - triad coupling strength
   - convergence stage durations
 
-The sweep directly validates Atlas Figures 8.5–8.8 and the regime-map
+The sweep directly validates Atlas Figures 8.5-8.8 and the regime-map
 predictions of Appendix C.3.
 
 Sweep values:
@@ -62,7 +62,7 @@ METHOD = "crank_nicolson"
 K_OUT = 10                    # Output every K_OUT steps
 N_OBS = 64                    # Observable modes (covers forward cascade)
 
-# Broadband IC: modes 1–20 (same as broadband_cascade IC2)
+# Broadband IC: modes 1-20 (same as broadband_cascade IC2)
 SEEDED_MODES = list(range(1, 21))
 
 # Sweep parameter
@@ -165,7 +165,7 @@ def run_single_D(D_val: float, verbose: bool = True) -> dict:
     if verbose:
         print(f"\n{'='*60}")
         print(f"  {run_id}  (D = {D_val})")
-        print(f"  Modes: {SEEDED_MODES[0]}–{SEEDED_MODES[-1]} "
+        print(f"  Modes: {SEEDED_MODES[0]}-{SEEDED_MODES[-1]} "
               f"({len(SEEDED_MODES)} modes), A = {A}")
         print(f"{'='*60}")
 
@@ -347,7 +347,7 @@ def main():
     print("=" * 60)
     print("  Parameter Sweep: Diffusion Coefficient D")
     print(f"  Baseline: Parameter Set {PARAM_SET}")
-    print(f"  IC: modes {SEEDED_MODES[0]}–{SEEDED_MODES[-1]}, A = {A}")
+    print(f"  IC: modes {SEEDED_MODES[0]}-{SEEDED_MODES[-1]}, A = {A}")
     print(f"  D values: {D_VALUES}")
     print(f"  T = {T}, method = {METHOD}")
     print("=" * 60)

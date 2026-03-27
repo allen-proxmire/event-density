@@ -40,7 +40,7 @@ def run_script(label: str, path: str) -> bool:
 
 
 def main():
-    print("  ED-SIM v1 — Minimal Reproducibility Scenario")
+    print("  ED-SIM v1 -- Minimal Reproducibility Scenario")
     print("  " + "=" * 50)
 
     exp = os.path.join(SIM_DIR, "experiments")

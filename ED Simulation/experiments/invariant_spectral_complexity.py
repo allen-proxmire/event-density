@@ -1,17 +1,17 @@
 """
 invariant_spectral_complexity.py
 =================================
-Experiment / Analysis: Invariant Spectral Complexity (Rényi Entropy)
+Experiment / Analysis: Invariant Spectral Complexity (Renyi Entropy)
 
-Scans all completed regime_D*_A*_Nm* runs, computes the Rényi entropies
+Scans all completed regime_D*_A*_Nm* runs, computes the Renyi entropies
 
     H_q(t) = (1/(1−q)) log( Σ_k p_k(t)^q )
 
-for q ∈ {0, 0.5, 1, 2, 3, 4} where p_k = |a_k|²/Σ_j|a_j|² is the
-normalised modal energy distribution (k ≥ 1), and analyses their
+for q in {0, 0.5, 1, 2, 3, 4} where p_k = |a_k|²/Σ_j|a_j|² is the
+normalised modal energy distribution (k >= 1), and analyses their
 convergence toward late-time attractor values H_q^*.
 
-The Rényi entropy family provides a multi-scale probe of spectral
+The Renyi entropy family provides a multi-scale probe of spectral
 complexity:
   q = 0  →  log(#active modes)   (Hartley / support size)
   q = 1  →  Shannon entropy       (information content)
@@ -19,13 +19,13 @@ complexity:
   q > 2  →  sensitivity to dominant modes
 
 Their attractor values are structural invariants of the ED architecture
-(Appendix C.4–C.5), and their ratios encode the spectral shape beyond
+(Appendix C.4-C.5), and their ratios encode the spectral shape beyond
 what any single entropy measure captures.
 
 Produces:
-  (A) Spectral Complexity Evolution — H_q(t) for a representative run.
-  (B) Attractor Complexity Profile — H_q^* vs D for all runs.
-  (C) Convergence Heatmap — fraction converged per q.
+  (A) Spectral Complexity Evolution -- H_q(t) for a representative run.
+  (B) Attractor Complexity Profile -- H_q^* vs D for all runs.
+  (C) Convergence Heatmap -- fraction converged per q.
 
 All figures saved to output/figures/invariants/spectral_complexity/
 as PNG (300 dpi).
@@ -76,7 +76,7 @@ Q_LABELS = {
     0.0: r"$H_0$ (Hartley)",
     0.5: r"$H_{0.5}$",
     1.0: r"$H_1$ (Shannon)",
-    2.0: r"$H_2$ (Rényi-2)",
+    2.0: r"$H_2$ (Renyi-2)",
     3.0: r"$H_3$",
     4.0: r"$H_4$",
 }
@@ -102,7 +102,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -165,17 +165,17 @@ def _fill_from_dirname(name: str, D, A, Nm):
 
 
 # ---------------------------------------------------------------------------
-# Rényi entropy computation
+# Renyi entropy computation
 # ---------------------------------------------------------------------------
 def _compute_renyi(p: np.ndarray, q: float) -> np.ndarray:
-    """Compute Rényi entropy H_q for each row of the distribution matrix p.
+    """Compute Renyi entropy H_q for each row of the distribution matrix p.
 
     Parameters
     ----------
     p : ndarray, shape (n_steps, n_modes)
         Normalised modal energy distribution (rows sum to 1).
     q : float
-        Rényi order.
+        Renyi order.
 
     Returns
     -------
@@ -201,7 +201,7 @@ def _compute_renyi(p: np.ndarray, q: float) -> np.ndarray:
 # Per-run analysis (streaming over q values)
 # ---------------------------------------------------------------------------
 def analyse_run(run: dict) -> dict:
-    """Compute Rényi entropies and attractor summaries for all q.
+    """Compute Renyi entropies and attractor summaries for all q.
 
     Computes the normalised distribution p once (same size as modal[:,1:]),
     then streams through q values.
@@ -345,8 +345,8 @@ def figure_complexity_evolution(runs: list[dict], analyses: list[dict]):
     setup_axes(
         ax,
         xlabel=r"Time $t$",
-        ylabel=r"Rényi entropy $H_q(t)$",
-        title=(f"Spectral Complexity — D={run['D']}, A={run['A']}, "
+        ylabel=r"Renyi entropy $H_q(t)$",
+        title=(f"Spectral Complexity -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=9, loc="center right", framealpha=0.9)
@@ -444,7 +444,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Spectral Complexity Attractor — All Admissible Runs",
+        "Spectral Complexity Attractor -- All Admissible Runs",
         fontsize=14, fontweight="bold", y=1.01,
     )
     fig.tight_layout()
@@ -519,7 +519,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 tot = int(total_count[di_idx, ai_idx])
                 if tot == 0:
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=7, color="0.5")
                 else:
                     cv = int(conv_count[di_idx, ai_idx])
@@ -543,7 +543,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        r"Spectral Complexity Convergence — Heatmap per $q$",
+        r"Spectral Complexity Convergence -- Heatmap per $q$",
         fontsize=14, fontweight="bold", y=1.02,
     )
     fig.tight_layout()
@@ -559,7 +559,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*130}")
-    print("  Invariant Spectral Complexity (Rényi) — Summary Table")
+    print("  Invariant Spectral Complexity (Renyi) -- Summary Table")
     print(f"{'='*130}")
 
     q_hdr = "  ".join(f"H_{q:g}*" for q in Q_VALUES)
@@ -623,7 +623,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
         means[sorted_q[i]] >= means[sorted_q[i + 1]] - 1e-8
         for i in range(len(sorted_q) - 1)
     )
-    print(f"\n  Rényi monotonicity (H_q decreasing in q): "
+    print(f"\n  Renyi monotonicity (H_q decreasing in q): "
           f"{'PASS' if monotone else 'FAIL'}")
 
     # Overall convergence
@@ -650,16 +650,16 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---
     q_str = ", ".join(f"{q:g}" for q in Q_VALUES)
-    print(f"\nComputing Rényi entropies (q ∈ {{{q_str}}})...")
+    print(f"\nComputing Renyi entropies (q in {{{q_str}}})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

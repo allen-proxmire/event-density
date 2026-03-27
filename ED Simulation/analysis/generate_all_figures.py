@@ -482,7 +482,7 @@ def figure_regime_slices(runs: list[Run]) -> list[str]:
                   loc="upper right", framealpha=0.9)
 
         setup_axes(ax, r"Diffusion weight $D$", r"Amplitude $A$",
-                   rf"Regime Map — $N_m = {nm}$")
+                   rf"Regime Map -- $N_m = {nm}$")
         fig.tight_layout()
         fname = f"regime_map_slice_Nm{nm:02d}.png"
         saved.append(save_figure(fig, fname))
@@ -696,7 +696,7 @@ def figure_embedding_map(runs: list[Run]) -> Optional[str]:
     ax.legend(handles=handles, fontsize=STYLE["font_legend"],
               loc="upper right", framealpha=0.9)
 
-    setup_axes(ax, f"{method} — Component 1", f"{method} — Component 2",
+    setup_axes(ax, f"{method} -- Component 1", f"{method} -- Component 2",
                f"Embedding Map ({method})")
     ax.set_aspect("equal", adjustable="datalim")
     fig.tight_layout()
@@ -752,7 +752,7 @@ def figure_broadband_cascade(runs: list[Run]) -> Optional[str]:
               framealpha=0.9)
     setup_axes(ax, r"Mode index $k$",
                r"Modal energy $\langle E_k \rangle_{\mathrm{att}}$",
-               "Broadband Cascade — Late-Time Energy Spectrum")
+               "Broadband Cascade -- Late-Time Energy Spectrum")
     fig.tight_layout()
     return save_figure(fig, "broadband_cascade.png")
 
@@ -811,7 +811,7 @@ def figure_three_stage(runs: list[Run]) -> Optional[str]:
     ax1.legend(fontsize=STYLE["font_legend"], loc="upper right",
                framealpha=0.9)
     setup_axes(ax1, r"Time $t$", r"Energy $\mathcal{E}(t)$",
-               f"Three-Stage Convergence — {run.name}")
+               f"Three-Stage Convergence -- {run.name}")
 
     # Bottom panel: |E - E*|
     ax2.semilogy(t, residual_safe, color="#1b7837",
@@ -838,7 +838,7 @@ def figure_three_stage(runs: list[Run]) -> Optional[str]:
     ax2.legend(fontsize=STYLE["font_legend"], loc="upper right",
                framealpha=0.9, ncol=2)
     setup_axes(ax2, r"Time $t$", r"$|\mathcal{E}(t) - \mathcal{E}^*|$",
-               "Energy Residual — Stage Decomposition")
+               "Energy Residual -- Stage Decomposition")
 
     fig.tight_layout()
     return save_figure(fig, "three_stage_convergence.png")
@@ -884,7 +884,7 @@ def figure_attractor_stability(runs: list[Run]) -> Optional[str]:
 
     setup_axes(ax, r"Time $t$",
                r"$|\mathcal{E}(t) - \mathcal{E}^*|$",
-               "Attractor Stability — Distance to Equilibrium")
+               "Attractor Stability -- Distance to Equilibrium")
     fig.tight_layout()
     return save_figure(fig, "attractor_stability.png")
 
@@ -896,7 +896,7 @@ def main():
     os.makedirs(FIG_DIR, exist_ok=True)
 
     print("=" * 70)
-    print("  ED-SIM v1 — Unified Figure Generation Pipeline")
+    print("  ED-SIM v1 -- Unified Figure Generation Pipeline")
     print("=" * 70)
 
     # Discover runs

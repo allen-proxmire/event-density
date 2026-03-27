@@ -1,7 +1,7 @@
 """
 Diagnostic Scenario
 ====================
-Runs only consistency checks — no new simulations, no new invariants.
+Runs only consistency checks -- no new simulations, no new invariants.
 
 Checks:
   - Environment
@@ -59,7 +59,7 @@ def run_script(label: str, path: str) -> bool:
 
 
 def main():
-    print("  ED-SIM v1 — Diagnostic Scenario")
+    print("  ED-SIM v1 -- Diagnostic Scenario")
     print("  " + "=" * 50)
 
     n_pass = 0
@@ -71,7 +71,7 @@ def main():
     if n_pass == len(CHECKS):
         print("  Diagnostic: ALL CLEAR")
     else:
-        print("  Diagnostic: ISSUES FOUND — see details above.")
+        print("  Diagnostic: ISSUES FOUND -- see details above.")
 
 
 if __name__ == "__main__":

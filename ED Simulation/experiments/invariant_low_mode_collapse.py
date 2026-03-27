@@ -8,14 +8,14 @@ amplitudes m_k(t) = |a_k(t)| for k = 0..5, and analyses their convergence
 toward late-time attractor values m_k^*.
 
 The low-mode attractor profile (m_0^*, ..., m_5^*) encodes the
-asymptotic spectral shape at the largest scales — a structural invariant
+asymptotic spectral shape at the largest scales -- a structural invariant
 of the ED architecture (Appendix C.4, Proposition C.29; Appendix C.7,
 Theorem C.76).
 
 Produces:
-  (A) Low-Mode Evolution — m_k(t) for a representative run.
-  (B) Attractor Low-Mode Profile — 6-point polylines for all runs.
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+  (A) Low-Mode Evolution -- m_k(t) for a representative run.
+  (B) Attractor Low-Mode Profile -- 6-point polylines for all runs.
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm).
 
 All figures saved to output/figures/invariants/low_mode_collapse/
 as PNG (300 dpi).
@@ -79,7 +79,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -279,7 +279,7 @@ def figure_mode_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"Modal amplitude $|a_k(t)|$",
-        title=(f"Low-Mode Collapse — D={run['D']}, A={run['A']}, "
+        title=(f"Low-Mode Collapse -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9, ncol=2)
@@ -367,7 +367,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel=r"Attractor amplitude $m_k^*$",
-        title="Low-Mode Attractor Profile — All Admissible Runs",
+        title="Low-Mode Attractor Profile -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -433,7 +433,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     n_conv = int(round(val * N_LOW))
@@ -450,7 +450,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Low-Mode Collapse Convergence — Heatmap by $(D, A, N_m)$",
+        "Low-Mode Collapse Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -467,7 +467,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 def print_summary(runs: list[dict], analyses: list[dict]):
     # --- Per-run table ---
     print(f"\n{'='*140}")
-    print("  Invariant Low-Mode Collapse — Summary Table")
+    print("  Invariant Low-Mode Collapse -- Summary Table")
     print(f"{'='*140}")
 
     # Header
@@ -548,11 +548,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---

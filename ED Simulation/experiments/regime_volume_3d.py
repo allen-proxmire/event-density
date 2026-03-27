@@ -11,11 +11,11 @@ fixed at Parameter Set I. Each point uses a broadband initial condition
 
 The three control parameters span the experimentally accessible design space:
 
-  D:   diffusion timescale — controls the discriminant Delta and thereby the
+  D:   diffusion timescale -- controls the discriminant Delta and thereby the
        linear regime classification (oscillatory vs overdamped).
-  A:   perturbation amplitude — controls the nonlinear regime experienced
+  A:   perturbation amplitude -- controls the nonlinear regime experienced
        during transients (triad activation, mobility-collapse proximity).
-  N_m: number of seeded modes — controls the triad-network density
+  N_m: number of seeded modes -- controls the triad-network density
        (N_m*(N_m-1)/2 active triads) and the initial ED-complexity.
 
 The 3D sweep reveals:
@@ -36,6 +36,10 @@ Output directories:
 
 Usage:
     python experiments/regime_volume_3d.py
+
+Runtime: approximately 2-4 hours on a single core for the full 64-point
+sweep. Each run integrates to T=20 with Crank-Nicolson at N=768,
+dt=3.125e-5 (~640,000 time steps per run).
 
 All notation follows Appendix C of the Rigour Paper.
 """
@@ -389,7 +393,7 @@ def main():
 
     # --- Summary: 2D slices ---
     print("\n" + "=" * 80)
-    print("  3D Regime Volume — Summary")
+    print("  3D Regime Volume -- Summary")
     print("=" * 80)
 
     # Print one 2D slice per Nm value
@@ -401,7 +405,7 @@ def main():
     }
 
     for Nm in NM_VALUES:
-        print(f"\n  --- Nm = {Nm} (modes 1–{Nm}, "
+        print(f"\n  --- Nm = {Nm} (modes 1-{Nm}, "
               f"{Nm*(Nm-1)//2} triads) ---")
         header = f"  {'D \\ A':<10}"
         for A_val in A_VALUES:

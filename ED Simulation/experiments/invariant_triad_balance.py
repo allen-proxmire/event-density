@@ -11,9 +11,9 @@ Scans all completed regime_D*_A*_Nm* runs, identifies all active triads
 and analyses its convergence toward a late-time attractor value T_ijk^*.
 
 Produces:
-  (A) Triad Balance Evolution — T_ijk(t) for the first 10 triads (representative).
-  (B) Triad Attractor Profile — T_ijk^* vs triad index (all runs overlaid).
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+  (A) Triad Balance Evolution -- T_ijk(t) for the first 10 triads (representative).
+  (B) Triad Attractor Profile -- T_ijk^* vs triad index (all runs overlaid).
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm).
 
 Also prints a summary table with convergence statistics and invariance verdict.
 
@@ -88,7 +88,7 @@ def discover_regime_runs() -> list[dict]:
                 meta = json.load(f)
 
         # Skip inadmissible runs
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D = meta.get("D")
@@ -230,7 +230,7 @@ def load_triad_coefficients(run: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Triad balance computation (streaming — O(1) per triad, no bulk storage)
+# Triad balance computation (streaming -- O(1) per triad, no bulk storage)
 # ---------------------------------------------------------------------------
 def compute_triad_summaries(modal: np.ndarray, t: np.ndarray,
                             triads: list[tuple],
@@ -254,7 +254,7 @@ def compute_triad_summaries(modal: np.ndarray, t: np.ndarray,
         if i >= n_modes or j >= n_modes or k >= n_modes:
             continue
 
-        # Compute balance (temporary — discarded at end of iteration)
+        # Compute balance (temporary -- discarded at end of iteration)
         lam = coefficients.get((i, j, k), 0.0)
         T_ijk = modal[:, i] * modal[:, j] - lam * modal[:, k]
 
@@ -274,7 +274,7 @@ def compute_triad_summaries(modal: np.ndarray, t: np.ndarray,
             "R2": float(fit["R2"]),
             "converged": bool(fit["converged"]),
         })
-        # T_ijk is discarded here — no reference retained
+        # T_ijk is discarded here -- no reference retained
 
     return results
 
@@ -329,7 +329,7 @@ def fit_convergence_scalar(t: np.ndarray, arr: np.ndarray,
 
 
 # ---------------------------------------------------------------------------
-# Per-run analysis pipeline (streaming — memory-safe)
+# Per-run analysis pipeline (streaming -- memory-safe)
 # ---------------------------------------------------------------------------
 def analyse_run(run: dict) -> dict:
     """Full triad-balance analysis for one run (streaming).
@@ -422,7 +422,7 @@ def figure_balance_evolution(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Time $t$",
         ylabel=r"$|T_{ijk}(t)| = |a_i\,a_j - \lambda_{ijk}\,a_k|$",
-        title=(f"Triad Balance Evolution — D={run['D']}, A={run['A']}, "
+        title=(f"Triad Balance Evolution -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']} ({ana['n_triads']} triads)"),
     )
     ax.legend(fontsize=7, loc="upper right", framealpha=0.9, ncol=2)
@@ -498,7 +498,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Triad index (ordered by $i + j = k$)",
         ylabel=r"$|T_{ijk}^*|$",
-        title="Triad Balance Attractor Profile — All Admissible Runs",
+        title="Triad Balance Attractor Profile -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -564,7 +564,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     txt_color = "white" if val < 0.4 else "black"
@@ -579,7 +579,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
         shrink=0.8, pad=0.04,
     )
 
-    fig.suptitle("Triad Balance Convergence — Heatmap by $(D, A, N_m)$",
+    fig.suptitle("Triad Balance Convergence -- Heatmap by $(D, A, N_m)$",
                  fontsize=14, fontweight="bold", y=1.03)
     fig.tight_layout()
 
@@ -594,7 +594,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*100}")
-    print("  Invariant Triad Balance — Summary Table")
+    print("  Invariant Triad Balance -- Summary Table")
     print(f"{'='*100}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'#Triads':<9} "
@@ -604,7 +604,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
     all_T_star_flat = []
 
     for run, ana in zip(runs, analyses):
-        regime = run["metadata"].get("regime", "—")
+        regime = run["metadata"].get("effective_regime", run["metadata"].get("regime", "--"))
         print(f"  {run['D']:<7.3f} {run['A']:<7.4f} {run['Nm']:<5d} "
               f"{ana['n_triads']:<9d} {ana['n_converged']:<7d} "
               f"{ana['frac_converged']:<8.1%} {regime:<12}")
@@ -660,11 +660,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---

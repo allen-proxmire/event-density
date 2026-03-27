@@ -2,7 +2,7 @@
 
 The interpretive reach of the Event Density framework across physics.
 
-This folder contains 48 documents that apply the ED ontology to specific
+This folder contains 49 documents that apply the ED ontology to specific
 physical phenomena, from quantum mechanics and galactic dynamics to
 condensed matter, photonics, particle physics, and cosmological structure.
 Each interpretation maps a known physical system or observation onto the
@@ -29,9 +29,9 @@ here as an interpretation.
 
 ---
 
-## Foundational Essays (01–12)
+## Foundational Essays (01-12.5)
 
-Twelve essays developing the conceptual foundations of ED and its
+Thirteen essays developing the conceptual foundations of ED and its
 relationship to established physics.
 
 | # | Title | Scope |

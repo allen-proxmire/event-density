@@ -7,14 +7,14 @@ and ED Architecture Certificate (figure).
 Loads the global atlas report JSON, extracts all verdicts and metrics,
 and generates three final deliverables:
 
-  1. MASTER_INDEX.txt — structured index of every invariant family,
+  1. MASTER_INDEX.txt -- structured index of every invariant family,
      figure directory, and summary file in the Atlas.
 
-  2. ED_Consistency_Certificate.txt — a single-page text certificate
+  2. ED_Consistency_Certificate.txt -- a single-page text certificate
      summarising the ED architecture's structural consistency across
      all tested regimes.
 
-  3. ED_Architecture_Certificate.png / .pdf — publication-ready
+  3. ED_Architecture_Certificate.png / .pdf -- publication-ready
      certificate figure rendered by generate_certificate_figure.py.
 
 These are the publication-facing outputs of the ED-SIM invariant
@@ -66,7 +66,7 @@ FAMILY_META = {
         "key_metric": "R_k^* spectral fingerprint",
     },
     "renyi": {
-        "label":   "Spectral Complexity (Rényi)",
+        "label":   "Spectral Complexity (Renyi)",
         "json":    "invariant_spectral_complexity.json",
         "figures": "spectral_complexity",
         "key_metric": "H_q^* entropy family",
@@ -78,7 +78,7 @@ FAMILY_META = {
         "key_metric": "R_grad^*, R_pen^*, R_part^*",
     },
     "E_H_geometry": {
-        "label":   "Energy–Entropy Geometry",
+        "label":   "Energy-Entropy Geometry",
         "json":    "invariant_energy_entropy_geometry.json",
         "figures": "energy_entropy_geometry",
         "key_metric": "(E*, H*) attractor point",
@@ -114,7 +114,7 @@ FAMILY_META = {
         "key_metric": "phase coherence, triad closure",
     },
     "PAC": {
-        "label":   "Phase–Amplitude Coupling",
+        "label":   "Phase-Amplitude Coupling",
         "json":    "invariant_phase_amplitude_coupling.json",
         "figures": "phase_amplitude_coupling",
         "key_metric": "ρ_k self-PAC, triad PAC",
@@ -155,7 +155,7 @@ FAMILY_META = {
 # ---------------------------------------------------------------------------
 # Safe extraction
 # ---------------------------------------------------------------------------
-def _get(d, *keys, default="—"):
+def _get(d, *keys, default="--"):
     obj = d
     for k in keys:
         if isinstance(obj, dict) and k in obj:
@@ -166,8 +166,8 @@ def _get(d, *keys, default="—"):
 
 
 def _fmt(val, fmt=".4f"):
-    if val is None or val == "—":
-        return "—"
+    if val is None or val == "--":
+        return "--"
     try:
         return format(float(val), fmt)
     except (ValueError, TypeError):
@@ -188,7 +188,7 @@ def generate_master_index(report: dict) -> str:
     n_total = _get(report, "n_families_total", default=len(FAMILY_META))
 
     w(sep)
-    w("  ED ATTRACTOR INVARIANT ATLAS — MASTER INDEX")
+    w("  ED ATTRACTOR INVARIANT ATLAS -- MASTER INDEX")
     w(sep)
     w(f"  Generated: {timestamp}")
     w(f"  Runs:      {n_runs}")
@@ -206,7 +206,7 @@ def generate_master_index(report: dict) -> str:
     for key, meta in FAMILY_META.items():
         v = fv.get(key, {})
         status = _get(v, "status", default="MISSING")
-        verdict = _get(v, "verdict", default="—")
+        verdict = _get(v, "verdict", default="--")
         cv = _get(v, "CV")
 
         w(f"  [{key}]")
@@ -313,7 +313,7 @@ def generate_text_certificate(report: dict) -> str:
     n_pos = _fmt(_get(stab, "n_positive"), ".1f")
     D_KY = _fmt(_get(stab, "D_KY"), ".2f")
     D_eff = _fmt(_get(stab, "D_eff"), ".1f")
-    stab_v = _get(stab, "verdict", default="—")
+    stab_v = _get(stab, "verdict", default="--")
     if len(stab_v) > 16:
         stab_v = stab_v[:16]
     w(f"  │ Stability (Lyapunov)     │ {stab_v:<16} │ n+ = {n_pos:<11} │")
@@ -327,7 +327,7 @@ def generate_text_certificate(report: dict) -> str:
     # Perturbation Recovery
     # (may not be in report; show if available)
     perturb = _get(report, "perturbation_recovery", default={})
-    prec_v = _get(perturb, "verdict", default="—")
+    prec_v = _get(perturb, "verdict", default="--")
     eps_cv = _fmt(_get(perturb, "eps_independence_CV"))
     w(f"  │ Perturbation Recovery    │ {prec_v:<16} │ ε-CV = {eps_cv:<9} │")
 

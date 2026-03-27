@@ -13,9 +13,9 @@ ratios
 and analyses their convergence toward late-time attractor values.
 
 Produces:
-  (A) Dissipation Ratio Evolution — R(t) for a representative run.
-  (B) Attractor Partition Profile — R^* vs D for all runs.
-  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+  (A) Dissipation Ratio Evolution -- R(t) for a representative run.
+  (B) Attractor Partition Profile -- R^* vs D for all runs.
+  (C) Convergence Heatmap -- fraction converged across (D, A, Nm).
 
 Also prints a summary table with invariance verdicts.
 
@@ -100,7 +100,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -326,14 +326,14 @@ def figure_ratio_evolution(runs: list[dict], analyses: list[dict]):
 
         del R
 
-    # Verification: R_grad + R_pen + R_part ≈ 1
+    # Verification: R_grad + R_pen + R_part ~= 1
     ax.axhline(1.0, color="0.6", linestyle=":", linewidth=0.6, alpha=0.4)
 
     setup_axes(
         ax,
         xlabel=r"Time $t$",
         ylabel="Dissipation ratio",
-        title=(f"Dissipation Partitions — D={run['D']}, A={run['A']}, "
+        title=(f"Dissipation Partitions -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     ax.legend(fontsize=10, loc="center right", framealpha=0.9)
@@ -427,7 +427,7 @@ def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
         framealpha=0.9, title="Seed count",
     )
 
-    fig.suptitle("Dissipation Partition Attractor Profile — All Admissible Runs",
+    fig.suptitle("Dissipation Partition Attractor Profile -- All Admissible Runs",
                  fontsize=14, fontweight="bold", y=1.02)
     fig.tight_layout()
 
@@ -493,7 +493,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=8, color="0.5")
                 else:
                     txt_color = "white" if val < 0.4 else "black"
@@ -511,7 +511,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Dissipation Partition Convergence — Heatmap by $(D, A, N_m)$",
+        "Dissipation Partition Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -527,7 +527,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*110}")
-    print("  Invariant Dissipation Partitions — Summary Table")
+    print("  Invariant Dissipation Partitions -- Summary Table")
     print(f"{'='*110}")
 
     header = (f"  {'D':<7} {'A':<7} {'Nm':<5} "
@@ -541,7 +541,7 @@ def print_summary(runs: list[dict], analyses: list[dict]):
 
     for run, ana in zip(runs, analyses):
         p = ana["partition"]
-        regime = run["metadata"].get("regime", "—")
+        regime = run["metadata"].get("effective_regime", run["metadata"].get("regime", "--"))
 
         # Convergence flag string (e.g., "GPC" = grad+pen+part converged)
         conv_str = ""
@@ -619,11 +619,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs (streaming) ---

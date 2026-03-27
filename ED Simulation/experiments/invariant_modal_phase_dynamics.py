@@ -22,9 +22,9 @@ coefficients).  The script handles both the fully complex case and the
 real-valued case.
 
 Produces:
-  (A) Phase Drift Rates — dφ_k/dt vs k for a representative run.
-  (B) Phase Coherence Matrix — heatmap of C_ij.
-  (C) Triad Closure Coherence — scatter for all runs.
+  (A) Phase Drift Rates -- dφ_k/dt vs k for a representative run.
+  (B) Phase Coherence Matrix -- heatmap of C_ij.
+  (C) Triad Closure Coherence -- scatter for all runs.
 
 All figures saved to output/figures/invariants/modal_phase_dynamics/
 as PNG (300 dpi).
@@ -82,7 +82,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -357,7 +357,7 @@ def figure_drift_rates(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel=r"Phase drift rate $d\varphi_k/dt$",
-        title=f"Phase Drift Rates — D={run['D']}, A={run['A']}, Nm={run['Nm']}",
+        title=f"Phase Drift Rates -- D={run['D']}, A={run['A']}, Nm={run['Nm']}",
     )
     ax.legend(fontsize=9, loc="upper left", framealpha=0.9)
     fig.tight_layout()
@@ -421,7 +421,7 @@ def figure_coherence_matrix(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel="Mode index $k$",
-        title=(f"Phase Coherence Matrix — D={run['D']}, A={run['A']}, "
+        title=(f"Phase Coherence Matrix -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']}"),
     )
     fig.tight_layout()
@@ -502,7 +502,7 @@ def figure_triad_closure(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Triad index",
         ylabel=r"Closure coherence $|\langle e^{i\Delta_{ijk}} \rangle|$",
-        title="Triad Phase Closure — All Admissible Runs",
+        title="Triad Phase Closure -- All Admissible Runs",
     )
     ax.set_ylim(-0.05, 1.05)
     fig.tight_layout()
@@ -518,7 +518,7 @@ def figure_triad_closure(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*110}")
-    print("  Invariant Modal Phase Dynamics — Summary Table")
+    print("  Invariant Modal Phase Dynamics -- Summary Table")
     print(f"{'='*110}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'K':<4} {'Phase':<7} "
@@ -596,15 +596,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse
-    print(f"\nAnalysing modal phase dynamics (K ≤ {K_MAX})...")
+    print(f"\nAnalysing modal phase dynamics (K <= {K_MAX})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

@@ -151,7 +151,7 @@ def detect_stage_transitions(t: np.ndarray, E: np.ndarray) -> dict:
     stable_idx = np.where(rate_std < threshold)[0]
 
     if len(stable_idx) > 0:
-        # First time the rate becomes stable — that's the start of Stage III
+        # First time the rate becomes stable -- that's the start of Stage III
         idx = stable_idx[0]
         # Only accept if it's after Stage I→II
         t_candidate = 0.5 * (t[idx] + t[min(idx + 1, len(t) - 1)])
@@ -208,7 +208,7 @@ def main():
         ax1,
         xlabel=r"Time $t$",
         ylabel=r"Energy $\mathcal{E}(t)$",
-        title="Three-Stage Convergence, Set I — Energy Decay",
+        title="Three-Stage Convergence, Set I -- Energy Decay",
     )
     ax1.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig1.tight_layout()
@@ -286,7 +286,7 @@ def main():
         ax2,
         xlabel=r"Time $t$",
         ylabel=r"ED-Complexity $C_{\mathrm{ED}}(t)$",
-        title="Three-Stage Convergence, Set I — Complexity Decay",
+        title="Three-Stage Convergence, Set I -- Complexity Decay",
     )
     ax2.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig2.tight_layout()
@@ -334,7 +334,7 @@ def main():
         ax3,
         xlabel=r"Time $t$",
         ylabel=r"Dissipation rate",
-        title=r"Three-Stage Convergence, Set I — Dissipation Channels ($A = 0.1$)",
+        title=r"Three-Stage Convergence, Set I -- Dissipation Channels ($A = 0.1$)",
     )
     ax3.legend(fontsize=10, loc="upper right", framealpha=0.9)
     fig3.tight_layout()
@@ -368,7 +368,7 @@ def main():
             ax4,
             xlabel=r"Time $t$",
             ylabel=r"Modal amplitude $|a_k(t)|$",
-            title=r"Three-Stage Convergence, Set I — Modal Amplitudes ($A = 0.1$)",
+            title=r"Three-Stage Convergence, Set I -- Modal Amplitudes ($A = 0.1$)",
         )
         ax4.legend(fontsize=9, loc="upper right", framealpha=0.9, ncol=2)
     else:
@@ -383,7 +383,7 @@ def main():
             ax4,
             xlabel=r"Time $t$",
             ylabel=r"Modal amplitude $|a_k(t)|$",
-            title=r"Three-Stage Convergence, Set I — Modal Amplitudes ($A = 0.1$)",
+            title=r"Three-Stage Convergence, Set I -- Modal Amplitudes ($A = 0.1$)",
         )
 
     fig4.tight_layout()

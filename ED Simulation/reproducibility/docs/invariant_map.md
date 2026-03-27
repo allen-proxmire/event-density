@@ -89,3 +89,7 @@ All invariant scripts require:
 Families 6, 7, 9 additionally require `D_grad`, `D_pen`, `D_part`, `D_total`, `E_total` fields.
 
 Families 12, 13 require complex-valued `modal_amplitudes` (with phase information).
+
+---
+
+See the [reproducibility README](../README.md), the [ED Simulation README](../../README.md), or the [root README](../../../README.md) for project navigation.

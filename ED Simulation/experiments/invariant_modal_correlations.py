@@ -13,15 +13,15 @@ and extracts structural invariants of C: mean off-diagonal correlation,
 extremal correlations, spectral radius, and condition number.
 
 The correlation matrix encodes the coupling geometry among modes in the
-asymptotic regime — which modes co-fluctuate, which are independent,
+asymptotic regime -- which modes co-fluctuate, which are independent,
 and how the triad coupling (Principle 7) organises the inter-modal
 relationships at equilibrium.  Its summary statistics are structural
 invariants of the ED architecture (Appendix C.4, Theorem C.34).
 
 Produces:
-  (A) Correlation Matrix — heatmap for a representative run.
-  (B) Attractor Correlation Profiles — mean row correlations for all runs.
-  (C) Correlation Invariant Scatter — summary invariants vs D.
+  (A) Correlation Matrix -- heatmap for a representative run.
+  (B) Attractor Correlation Profiles -- mean row correlations for all runs.
+  (C) Correlation Invariant Scatter -- summary invariants vs D.
 
 All figures saved to output/figures/invariants/modal_correlations/
 as PNG (300 dpi).
@@ -80,7 +80,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -220,7 +220,7 @@ def analyse_run(run: dict) -> dict:
         cond_number = float("nan")
 
     # Mean row correlation (for profile plot)
-    mean_row = np.mean(C, axis=1)  # (K,) — includes diagonal (=1)
+    mean_row = np.mean(C, axis=1)  # (K,) -- includes diagonal (=1)
     # Exclude self-correlation: mean of off-diagonal per row
     mean_row_off = (np.sum(C, axis=1) - 1.0) / max(K - 1, 1)
 
@@ -308,7 +308,7 @@ def figure_correlation_matrix(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel="Mode index $k$",
-        title=(f"Modal Energy Correlation — D={run['D']}, A={run['A']}, "
+        title=(f"Modal Energy Correlation -- D={run['D']}, A={run['A']}, "
                f"Nm={run['Nm']} ($K={K}$)"),
     )
     fig.tight_layout()
@@ -401,7 +401,7 @@ def figure_correlation_profiles(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel="Mode index $k$",
         ylabel="Mean off-diagonal correlation",
-        title="Modal Correlation Profile — All Admissible Runs",
+        title="Modal Correlation Profile -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -473,7 +473,7 @@ def figure_invariant_scatter(runs: list[dict], analyses: list[dict]):
                    title if panel_idx == 1 else "")
 
     # Global title
-    fig.suptitle("Correlation Invariants vs Diffusion — All Runs",
+    fig.suptitle("Correlation Invariants vs Diffusion -- All Runs",
                  fontsize=14, fontweight="bold", y=1.02)
 
     # Colorbar
@@ -504,7 +504,7 @@ def figure_invariant_scatter(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*110}")
-    print("  Invariant Modal Correlations — Summary Table")
+    print("  Invariant Modal Correlations -- Summary Table")
     print(f"{'='*110}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'K':<4} "
@@ -579,15 +579,15 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # Analyse all runs
-    print(f"\nComputing modal correlation matrices (K ≤ {K_MAX})...")
+    print(f"\nComputing modal correlation matrices (K <= {K_MAX})...")
     analyses = []
     for i, run in enumerate(runs):
         ana = analyse_run(run)

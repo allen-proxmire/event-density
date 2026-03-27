@@ -89,7 +89,7 @@ def run_triad_activation(param_set: str = "I",
             N_obs=N_obs,
         )
 
-        # Override IC in runner — we run manually
+        # Override IC in runner -- we run manually
         from edsim_runner import (
             TimeSeries, ensure_dirs, diagnostic_snapshot,
             enforce_bounds,
@@ -257,7 +257,7 @@ def run_cascade_depth(param_set: str = "I",
     """
     Harmonic cascade: track spectral evolution from IC-B.
 
-    Initializes with modes 1–4 and tracks how the nonlinear term
+    Initializes with modes 1-4 and tracks how the nonlinear term
     cascades energy to higher modes through successive triad interactions.
 
     Returns dict with spectral snapshots at selected times.

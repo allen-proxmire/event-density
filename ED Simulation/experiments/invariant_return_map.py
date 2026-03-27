@@ -12,14 +12,14 @@ and analyses the return-map trajectory (x(t), y(t)) → (x(t+Δ), y(t+Δ))
 in the two-dimensional modal-amplitude plane.
 
 The attractor point (x*, y*) encodes the equilibrium amplitudes of the
-first two non-homogeneous modes — structural invariants of the ED
+first two non-homogeneous modes -- structural invariants of the ED
 architecture whose existence follows from the spectral theory
-(Appendix C.3–C.4) and whose uniqueness follows from Principle 3.
+(Appendix C.3-C.4) and whose uniqueness follows from Principle 3.
 
 Produces:
-  (A) Return Map Trajectory — parametric curve with return-map arrows.
-  (B) Attractor Projection Scatter — (x*, y*) for all runs with ellipse.
-  (C) Convergence Heatmap — converged/not across (D, A, Nm).
+  (A) Return Map Trajectory -- parametric curve with return-map arrows.
+  (B) Attractor Projection Scatter -- (x*, y*) for all runs with ellipse.
+  (C) Convergence Heatmap -- converged/not across (D, A, Nm).
 
 All figures saved to output/figures/invariants/return_map/ as PNG (300 dpi).
 
@@ -81,7 +81,7 @@ def discover_regime_runs() -> list[dict]:
             with open(meta_path, "r") as f:
                 meta = json.load(f)
 
-        if meta.get("regime") == "inadmissible":
+        if meta.get("inadmissible", False):
             continue
 
         D_val = meta.get("D")
@@ -326,7 +326,7 @@ def figure_return_map(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"$|a_1(t)|$",
         ylabel=r"$|a_2(t)|$",
-        title=(f"Return Map — D={run['D']}, A={run['A']}, Nm={run['Nm']} "
+        title=(f"Return Map -- D={run['D']}, A={run['A']}, Nm={run['Nm']} "
                rf"($\Delta = {delta}$ steps)"),
     )
     ax.legend(fontsize=9, loc="upper right", framealpha=0.9)
@@ -418,7 +418,7 @@ def figure_attractor_scatter(runs: list[dict], analyses: list[dict]):
         ax,
         xlabel=r"Attractor $x^* = |a_1|^*$",
         ylabel=r"Attractor $y^* = |a_2|^*$",
-        title="Return-Map Attractor — All Admissible Runs",
+        title="Return-Map Attractor -- All Admissible Runs",
     )
     fig.tight_layout()
 
@@ -483,7 +483,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
             for ai_idx in range(len(A_vals)):
                 val = grid[di_idx, ai_idx]
                 if np.isnan(val):
-                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                    ax.text(ai_idx, di_idx, "--", ha="center", va="center",
                             fontsize=9, color="0.5")
                 else:
                     label = "Y" if val > 0.5 else "N"
@@ -500,7 +500,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
     )
 
     fig.suptitle(
-        "Return-Map Convergence — Heatmap by $(D, A, N_m)$",
+        "Return-Map Convergence -- Heatmap by $(D, A, N_m)$",
         fontsize=14, fontweight="bold", y=1.03,
     )
     fig.tight_layout()
@@ -516,7 +516,7 @@ def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
 # ---------------------------------------------------------------------------
 def print_summary(runs: list[dict], analyses: list[dict]):
     print(f"\n{'='*120}")
-    print("  Invariant Return Map — Summary Table")
+    print("  Invariant Return Map -- Summary Table")
     print(f"{'='*120}")
 
     print(f"  {'D':<7} {'A':<7} {'Nm':<5} "
@@ -599,11 +599,11 @@ def main():
         sys.exit(1)
 
     print(f"  Found {len(runs)} admissible runs.")
-    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} - "
           f"{max(r['D'] for r in runs):.3f}")
-    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} - "
           f"{max(r['A'] for r in runs):.4f}")
-    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} - "
           f"{max(r['Nm'] for r in runs)}")
 
     # --- Analyse all runs ---

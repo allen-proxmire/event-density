@@ -6,10 +6,10 @@ Suite §4.1).
 
 Loads all regime_D*_A* runs and produces:
 
-  (A) 2D regime map — scatter in (D, A) colored by effective regime.
-  (B) Decay-rate surface — sigma(D, A) as a filled contour / heatmap.
-  (C) Peak-active-modes surface — peak_active(D, A) as a heatmap.
-  (D) Representative modal funnels — |a_k(t)| for selected (D, A) pairs.
+  (A) 2D regime map -- scatter in (D, A) colored by effective regime.
+  (B) Decay-rate surface -- sigma(D, A) as a filled contour / heatmap.
+  (C) Peak-active-modes surface -- peak_active(D, A) as a heatmap.
+  (D) Representative modal funnels -- |a_k(t)| for selected (D, A) pairs.
 
 All figures saved to output/figures/regime_map_2d/ as PNG (300 dpi).
 
@@ -260,7 +260,7 @@ def figure_regime_map(sweep_data: dict):
 
     setup_axes(ax, r"Diffusion coefficient $D$",
                r"Perturbation amplitude $A$",
-               "2D Regime Map — $(D, A)$ Plane")
+               "2D Regime Map -- $(D, A)$ Plane")
     ax.set_xscale("log")
     ax.set_yscale("log")
     fig.tight_layout()
@@ -386,7 +386,7 @@ def figure_peak_active_surface(sweep_data: dict):
 
     setup_axes(ax, r"Diffusion coefficient $D$",
                r"Perturbation amplitude $A$",
-               "Peak Active Modes — $(D, A)$ Plane")
+               "Peak Active Modes -- $(D, A)$ Plane")
     ax.set_xscale("log")
     ax.set_yscale("log")
     fig.tight_layout()
@@ -501,7 +501,7 @@ def figure_representative_funnels(runs: dict, sweep_data: dict):
         col = idx % ncols
         axes[row, col].set_visible(False)
 
-    fig.suptitle("Representative Modal Funnels — $(D, A)$ Plane",
+    fig.suptitle("Representative Modal Funnels -- $(D, A)$ Plane",
                  fontsize=14, fontweight="bold", y=1.01)
     fig.tight_layout()
     fig.savefig(os.path.join(FIG_DIR, "representative_funnels.png"),
@@ -555,7 +555,7 @@ def main():
 
     # --- Summary table ---
     print(f"\n{'='*115}")
-    print("  2D Regime Map — Summary Table")
+    print("  2D Regime Map -- Summary Table")
     print(f"{'='*115}")
     print(f"  {'D':<8} {'A':<8} {'Delta':<9} {'Regime':<18} "
           f"{'sigma':<12} {'R^2':<8} {'Peak':<7} "
@@ -590,7 +590,7 @@ def main():
         for A_val in A_vals:
             d = sweep_data.get((D_val, A_val))
             if d is None:
-                row += f" {'—':<8}"
+                row += f" {'--':<8}"
             else:
                 short = abbrev.get(d["effective_regime"], "?")
                 row += f" {short:<8}"
