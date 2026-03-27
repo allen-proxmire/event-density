@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "description": "Expected directory structure and output files for ED-SIM v1",
+  "directories": {
+    "output/runs": {
+      "description": "Simulation run directories",
+      "pattern": "regime_D*_A*_Nm*",
+      "expected_count": 64,
+      "required_files": [
+        "time_series.npz",
+        "metadata.json"
+      ]
+    },
+    "output/figures/invariants": {
+      "description": "Invariant analysis figure directories",
+      "subdirectories": [
+        "low_mode_collapse",
+        "mode_energy_ratios",
+        "modal_ratios",
+        "spectral_entropy",
+        "spectral_complexity",
+        "dissipation_partitions",
+        "energy_entropy_geometry",
+        "broadband_cascade",
+        "convergence_stability",
+        "modal_correlations",
+        "modal_overlap",
+        "modal_phase_dynamics",
+        "phase_amplitude_coupling",
+        "triad_balance",
+        "lyapunov_spectrum",
+        "attractor_manifold",
+        "parameter_universality",
+        "cross_consistency",
+        "embedding_map"
+      ]
+    },
+    "output/atlas": {
+      "description": "Global synthesis outputs",
+      "required_files": [
+        "ED_Attractor_Invariant_Atlas_Report.txt",
+        "ED_Attractor_Invariant_Atlas_Report.json",
+        "MASTER_INDEX.txt",
+        "ED_Consistency_Certificate.txt",
+        "environment_check.json",
+        "data_integrity_check.json"
+      ]
+    }
+  },
+  "invariant_jsons": {
+    "description": "Summary JSONs produced by invariant scripts",
+    "expected": [
+      "invariant_low_mode_collapse.json",
+      "invariant_mode_energy_ratios.json",
+      "invariant_modal_ratios.json",
+      "invariant_spectral_entropy.json",
+      "invariant_spectral_complexity.json",
+      "invariant_dissipation_partitions.json",
+      "invariant_energy_entropy_geometry.json",
+      "invariant_broadband_cascade.json",
+      "invariant_convergence_stability.json",
+      "invariant_modal_correlations.json",
+      "invariant_modal_overlap.json",
+      "invariant_phase_dynamics.json",
+      "invariant_phase_amplitude_coupling.json",
+      "invariant_triad_balance.json",
+      "invariant_lyapunov_spectrum.json",
+      "invariant_attractor_manifold.json",
+      "invariant_parameter_universality.json",
+      "invariant_cross_consistency.json",
+      "invariant_embedding_map.json"
+    ]
+  }
+}

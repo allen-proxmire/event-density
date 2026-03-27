@@ -1,0 +1,82 @@
+# ED Architecture
+
+The structural anatomy of the Event Density framework.
+
+This folder contains the twelve architectural documents that develop the
+internal structure of the ED ontology from its canonical PDE form through
+motifs, laws, geometry, field theory, energetics, causality, information,
+symmetry, and invariants to the irreducible Architectural Canon (P1–P7).
+
+---
+
+## Role in the ED Program
+
+The ED Architecture series occupies the structural core of the repository.
+Where **ED Foundations** establishes the ontological primitives and
+**ED Physics** derives the cosmological dynamics, the Architecture series
+answers a different question: *what is the internal organisation of the
+ED equation itself?*
+
+The answer is developed in twelve progressive layers. Each document isolates
+a distinct structural aspect of the canonical PDE, and the final document
+(ED-Arch-12) distills the entire series into the seven irreducible
+principles that define the Architectural Canon. These principles are the
+ones validated in **ED Testing** and placed on rigorous mathematical
+footing in the Rigour Paper (Appendices C and D).
+
+---
+
+## Documents
+
+| Document | Title | Content |
+|----------|-------|---------|
+| ED-Arch-01 | Architectural Summary | The canonical PDE in its three-channel form (restoring penalty, diffusive coupling, participatory feedback) with parameter definitions and baseline structure. |
+| ED-Arch-02 | Architectural Motifs | Recurring structural patterns — modal funnel, manifold collapse, horizon formation — that persist across parameter regimes and initial conditions. |
+| ED-Arch-03 | Architectural Laws | Invariant constraints that hold universally across all motifs, parameters, and initial conditions, derived from the irreducible structure of the PDE. |
+| ED-Arch-04 | Architectural Geometry | Geometric structures at three levels: physical space (density profiles), phase space (trajectory shapes), and parameter space (regime regions and boundaries). |
+| ED-Arch-05 | Architectural Field Theory | Unification of motifs, laws, and geometry into a field-theoretic description that assigns dynamical content to every point in state space simultaneously. |
+| ED-Arch-06 | Architectural Energetics | Energy functionals, dissipation channels, and the Lyapunov structure that governs monotonic energy descent and three-stage convergence. |
+| ED-Arch-07 | Architectural Causality | How influence propagates through the ED field: directional constraints, channel structure, and the mixed parabolic–hyperbolic character of the dynamics. |
+| ED-Arch-08 | Architectural Information | How information is encoded, transmitted, compressed, and erased by the architecture's evolution — the information-theoretic content of the ED dynamics. |
+| ED-Arch-09 | Architectural Symmetry | Invariances and transformation rules under which the ED architecture is unchanged — structural symmetries rather than physical symmetries. |
+| ED-Arch-10 | Architectural Invariants | Quantities, structures, and relationships that remain fixed under architectural transformations — the fixed points of the symmetry group. |
+| ED-Arch-11 | Architectural Synthesis | Integration of the nine structural layers into a single, mutually constraining coherent system where each layer implies and is implied by the others. |
+| ED-Arch-12 | Architectural Canon | The minimal, irreducible set of structural principles (P1–P7) from which the entire architecture can be derived. This is the axiomatic foundation of ED. |
+
+---
+
+## Reading Order
+
+The documents are numbered in logical order. Readers new to ED should begin
+with **ED-Arch-01** (the canonical equation) and **ED-Arch-12** (the
+principles). The intermediate documents (02–11) develop the structural
+layers that connect the equation to its principles.
+
+For readers coming from the Rigour Paper or the ED-SIM pipeline, the most
+relevant documents are:
+
+- **ED-Arch-06** (Energetics) — the Lyapunov structure and dissipation
+  channels validated in Appendix C.2 and the Simulation Suite.
+- **ED-Arch-10** (Invariants) — the structural invariants that motivate the
+  sixteen invariant families of the ED-SIM Invariant Atlas.
+- **ED-Arch-12** (Canon) — the seven principles tested in ED Testing and
+  formalised in Appendix C.
+
+---
+
+## Connection to Other Folders
+
+| Folder | Relationship |
+|--------|-------------|
+| **ED Foundations** | Provides the ontological primitives (events, becoming, gradients, flow) that the Architecture formalises into PDE structure. |
+| **ED Physics** | Derives the physical consequences (cosmology, structure formation, expansion) from the architectural principles defined here. |
+| **ED Interpretations** | Explores the philosophical and structural meaning of the architectural layers. |
+| **ED Testing** | Reproduces the architectural principles (P1–P7) computationally with self-contained scripts. |
+| **ED Validation** | Contains the outputs and summaries generated by the testing suite. |
+| **ED Simulation** | Implements the full ED-SIM pipeline, Numerical Atlas, and Invariant Atlas that verify the architecture at scale. |
+
+---
+
+## Citation
+
+Proxmire, Allen T., *Event Density Ontology*, 2026

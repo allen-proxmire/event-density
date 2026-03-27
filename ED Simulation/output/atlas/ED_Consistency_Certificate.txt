@@ -1,0 +1,52 @@
+
+  ╔════════════════════════════════════════════════════════════════╗
+  ║                                                              ║
+  ║       ED ARCHITECTURE CONSISTENCY CERTIFICATE                ║
+  ║                                                              ║
+  ╚════════════════════════════════════════════════════════════════╝
+
+  ┌══════════════════════════════════════════════════════════┐
+  │                            PASS                            │
+  └══════════════════════════════════════════════════════════┘
+
+  ┌──────────────────────────┬──────────────────┬──────────────────┐
+  │ Diagnostic               │ Verdict          │ Key Metric       │
+  ├──────────────────────────┼──────────────────┼──────────────────┤
+  │ Universality             │ UNIVERSAL        │ U = 0.9412       │
+  │ Cross-Consistency        │ CONSISTENT       │ C = 0.8731       │
+  │ Stability (Lyapunov)     │ STABLE           │ n+ = 0.0         │
+  │   Kaplan-Yorke dim       │                  │ D_KY = 0.00      │
+  │   Effective dim (PCA)    │                  │ D_eff = 1.2      │
+  │ Embedding                │ COLLAPSED        │ r = 0.0710       │
+  │ Perturbation Recovery    │ ROBUST           │ ε-CV = 0.0320    │
+  └──────────────────────────┴──────────────────┴──────────────────┘
+
+  Pass fraction: 100.0%
+  Runs analysed: 64
+
+  ─────────────────────────────────────────────────────────────────
+
+  All invariants were computed from reproducible simulations under
+  the ED-SIM v1 pipeline.  This certificate summarises the
+  structural consistency of the ED attractor across all tested
+  regimes in the (D, A, Nm) parameter space.
+
+  The invariant analysis covers thirteen families (low-mode
+  collapse, mode-energy ratios, Renyi entropies, dissipation
+  partitions, broadband cascade, modal correlations, modal
+  overlap, phase dynamics, phase-amplitude coupling, Lyapunov
+  spectrum, attractor manifold, energy-entropy geometry, and
+  convergence stability), plus three meta-analyses (parameter
+  universality, cross-consistency, and embedding map).
+
+  Each invariant was tested for convergence (exponential fit,
+  R^2 > 0.95), invariance (CV < 5%), and cross-regime stability.
+  The final verdict reflects the agreement of all sub-verdicts.
+
+  ─────────────────────────────────────────────────────────────────
+
+  Generated automatically by ED-SIM
+  2026-03-27 10:31:08
+
+  ED-SIM v1.0.0  |  Event-Density Architectural Canon
+  Simulation Suite Specification  |  Numerical Atlas

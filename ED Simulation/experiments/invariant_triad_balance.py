@@ -1,0 +1,700 @@
+"""
+invariant_triad_balance.py
+==========================
+Experiment / Analysis: Invariant Triad Balance Structure
+
+Scans all completed regime_D*_A*_Nm* runs, identifies all active triads
+(i, j, k) with i + j = k and i < j, computes the triad balance quantity
+
+    T_ijk(t) = a_i(t) * a_j(t) - lambda_ijk * a_k(t)
+
+and analyses its convergence toward a late-time attractor value T_ijk^*.
+
+Produces:
+  (A) Triad Balance Evolution — T_ijk(t) for the first 10 triads (representative).
+  (B) Triad Attractor Profile — T_ijk^* vs triad index (all runs overlaid).
+  (C) Convergence Heatmap — fraction converged across (D, A, Nm).
+
+Also prints a summary table with convergence statistics and invariance verdict.
+
+All figures saved to output/figures/invariants/triad_balance/ as PNG (300 dpi).
+
+Usage:
+    python experiments/invariant_triad_balance.py
+
+Requires: numpy, matplotlib.
+"""
+
+import os
+import sys
+import glob
+import json
+import re
+import numpy as np
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+
+# ---------------------------------------------------------------------------
+# Paths
+# ---------------------------------------------------------------------------
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SIM_DIR = os.path.dirname(SCRIPT_DIR)  # ED Simulation/
+RUNS_DIR = os.path.join(SIM_DIR, "output", "runs")
+FIG_DIR = os.path.join(SIM_DIR, "output", "figures", "invariants", "triad_balance")
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+# Maximum number of triads to plot in Figure A
+MAX_TRIADS_PLOT = 10
+
+# Fraction of time series used for late-time average
+LATE_FRAC = 0.10
+
+# Fraction used for convergence-rate fit
+FIT_FRAC = 0.20
+
+# Minimum amplitude for a mode to be considered active
+AMP_FLOOR = 1e-28
+
+# R^2 threshold for declaring convergence
+R2_THRESH = 0.95
+
+
+# ---------------------------------------------------------------------------
+# Discovery (shared pattern with invariant_modal_ratios.py)
+# ---------------------------------------------------------------------------
+def discover_regime_runs() -> list[dict]:
+    """Scan RUNS_DIR for regime_D*_A*_Nm* folders with valid modal data.
+
+    Returns a sorted list of dicts with keys:
+        dir, name, D, A, Nm, metadata, t, modal
+    """
+    pattern = os.path.join(RUNS_DIR, "regime_D*_A*_Nm*")
+    dirs = sorted(glob.glob(pattern))
+
+    runs = []
+    for d in dirs:
+        ts_path = os.path.join(d, "time_series.npz")
+        meta_path = os.path.join(d, "metadata.json")
+        if not os.path.isfile(ts_path):
+            continue
+
+        meta = {}
+        if os.path.isfile(meta_path):
+            with open(meta_path, "r") as f:
+                meta = json.load(f)
+
+        # Skip inadmissible runs
+        if meta.get("regime") == "inadmissible":
+            continue
+
+        D = meta.get("D")
+        A = meta.get("A") or meta.get("A_per_mode")
+        Nm = meta.get("Nm") or meta.get("n_seeded") or meta.get("N_modes_seeded")
+
+        # Fallback: parse from directory name
+        name = os.path.basename(d)
+        D, A, Nm = _fill_from_dirname(name, D, A, Nm)
+
+        if D is None or A is None or Nm is None:
+            continue
+
+        ts = np.load(ts_path, allow_pickle=True)
+        modal = ts.get("modal_amplitudes")
+        t = ts.get("t")
+
+        if modal is None or t is None or modal.ndim != 2:
+            continue
+
+        n = min(len(t), modal.shape[0])
+        if modal.shape[1] < 3:
+            continue  # Need at least modes 0, 1, 2 for one triad
+
+        runs.append({
+            "dir": d,
+            "name": name,
+            "D": float(D),
+            "A": float(A),
+            "Nm": int(Nm),
+            "metadata": meta,
+            "t": t[:n],
+            "modal": modal[:n],
+        })
+
+    runs.sort(key=lambda r: (r["D"], r["A"], r["Nm"]))
+    return runs
+
+
+def _fill_from_dirname(name: str, D, A, Nm):
+    m_D = re.search(r"D([\d.eE+-]+)", name)
+    m_A = re.search(r"A([\d.eE+-]+)", name)
+    m_Nm = re.search(r"Nm(\d+)", name)
+    if D is None and m_D:
+        try:
+            D = float(m_D.group(1))
+        except ValueError:
+            pass
+    if A is None and m_A:
+        try:
+            A = float(m_A.group(1))
+        except ValueError:
+            pass
+    if Nm is None and m_Nm:
+        try:
+            Nm = int(m_Nm.group(1))
+        except ValueError:
+            pass
+    return D, A, Nm
+
+
+# ---------------------------------------------------------------------------
+# Triad enumeration
+# ---------------------------------------------------------------------------
+def enumerate_triads(n_modes: int) -> list[tuple[int, int, int]]:
+    """Return all triads (i, j, k) with i < j and i + j = k < n_modes.
+
+    These are the triads generated by the quadratic nonlinearity
+    M'(rho)|nabla rho|^2 in the Neumann eigenbasis (Theorem C.34).
+    """
+    triads = []
+    for i in range(1, n_modes):
+        for j in range(i, n_modes):
+            k = i + j
+            if k < n_modes:
+                triads.append((i, j, k))
+    return triads
+
+
+# ---------------------------------------------------------------------------
+# Triad coupling coefficients
+# ---------------------------------------------------------------------------
+def load_triad_coefficients(run: dict) -> dict:
+    """Load or compute the triad coupling coefficients lambda_ijk.
+
+    First tries to load from the run's metadata or a dedicated file.
+    Falls back to computing them from the Neumann eigenbasis overlap integrals.
+
+    Returns dict mapping (i, j, k) -> lambda_ijk.
+    """
+    meta = run["metadata"]
+
+    # Try loading from metadata
+    stored = meta.get("triad_coefficients")
+    if stored is not None and isinstance(stored, dict):
+        coeff = {}
+        for key_str, val in stored.items():
+            # Keys may be stored as "i,j,k" or "(i,j,k)"
+            parts = re.findall(r"\d+", key_str)
+            if len(parts) == 3:
+                coeff[(int(parts[0]), int(parts[1]), int(parts[2]))] = float(val)
+        if coeff:
+            return coeff
+
+    # Try loading from a coefficients file in the run directory
+    coeff_path = os.path.join(run["dir"], "triad_coefficients.json")
+    if os.path.isfile(coeff_path):
+        with open(coeff_path, "r") as f:
+            raw = json.load(f)
+        coeff = {}
+        for key_str, val in raw.items():
+            parts = re.findall(r"\d+", key_str)
+            if len(parts) == 3:
+                coeff[(int(parts[0]), int(parts[1]), int(parts[2]))] = float(val)
+        if coeff:
+            return coeff
+
+    # Fallback: compute from Neumann eigenbasis overlap integrals.
+    #
+    # For Neumann modes phi_n(x) = sqrt(2/L) cos(n*pi*x/L) on [0, L]:
+    #   Gamma_{ijk} = (2/L) int_0^L phi_i'(x) phi_j'(x) phi_k(x) dx
+    # The selection rule gives nonzero only for k = i + j or k = |i - j|.
+    # For k = i + j:
+    #   Gamma_{ij,i+j} = (pi/L)^2 * i * j * sqrt(2/L) * (1/2)
+    # The coupling coefficient lambda_ijk in the balance relation
+    #   T_ijk = a_i * a_j - lambda_ijk * a_k
+    # is lambda_ijk = Gamma_ijk / (D * alpha_k) where alpha_k = (k*pi/L)^2.
+    #
+    # Simplification:  lambda_ijk = (i * j) / (2 * k^2)
+    # (the L and pi factors cancel).
+
+    n_modes = run["modal"].shape[1]
+    triads = enumerate_triads(n_modes)
+    coeff = {}
+    for (i, j, k) in triads:
+        coeff[(i, j, k)] = (i * j) / (2.0 * k * k)
+
+    return coeff
+
+
+# ---------------------------------------------------------------------------
+# Triad balance computation (streaming — O(1) per triad, no bulk storage)
+# ---------------------------------------------------------------------------
+def compute_triad_summaries(modal: np.ndarray, t: np.ndarray,
+                            triads: list[tuple],
+                            coefficients: dict) -> list[dict]:
+    """Stream through triads, compute summary statistics, discard time series.
+
+    For each triad (i, j, k):
+      - Compute T_ijk(t) = a_i*a_j - lambda_ijk*a_k  (temporary 1-D array)
+      - Extract late-time average T_star
+      - Fit exponential convergence rate
+      - Discard T_ijk; keep only the scalar summary
+
+    Returns list of dicts, one per valid triad:
+        {"triad": (i,j,k), "T_star": float, "sigma": float,
+         "R2": float, "converged": bool}
+    """
+    n_steps, n_modes = modal.shape
+    results = []
+
+    for (i, j, k) in triads:
+        if i >= n_modes or j >= n_modes or k >= n_modes:
+            continue
+
+        # Compute balance (temporary — discarded at end of iteration)
+        lam = coefficients.get((i, j, k), 0.0)
+        T_ijk = modal[:, i] * modal[:, j] - lam * modal[:, k]
+
+        # Late-time average
+        T_s = late_time_average_scalar(T_ijk, LATE_FRAC)
+
+        # Convergence fit
+        if np.isnan(T_s):
+            fit = {"sigma": 0.0, "C": 0.0, "R2": 0.0, "converged": False}
+        else:
+            fit = fit_convergence_scalar(t, T_ijk, T_s, FIT_FRAC)
+
+        results.append({
+            "triad": (i, j, k),
+            "T_star": float(T_s) if not np.isnan(T_s) else np.nan,
+            "sigma": float(fit["sigma"]),
+            "R2": float(fit["R2"]),
+            "converged": bool(fit["converged"]),
+        })
+        # T_ijk is discarded here — no reference retained
+
+    return results
+
+
+def late_time_average_scalar(arr: np.ndarray, frac: float) -> float:
+    """Compute mean of the last `frac` fraction of an array."""
+    start = max(0, int((1.0 - frac) * len(arr)))
+    tail = arr[start:]
+    if len(tail) == 0:
+        return np.nan
+    return np.mean(tail)
+
+
+def fit_convergence_scalar(t: np.ndarray, arr: np.ndarray,
+                           target: float, frac: float) -> dict:
+    """Fit |arr(t) - target| ~ C exp(-sigma t) over the last `frac` fraction.
+
+    Returns dict with sigma, C, R2, converged.
+    """
+    result = {"sigma": 0.0, "C": 0.0, "R2": 0.0, "converged": False}
+
+    n = len(t)
+    start = max(0, int((1.0 - frac) * n))
+    t_fit = t[start:]
+    residual = np.abs(arr[start:] - target)
+
+    valid = residual > 1e-30
+    if np.sum(valid) < 10:
+        return result
+
+    log_r = np.log(residual[valid])
+    t_v = t_fit[valid]
+
+    try:
+        coeffs = np.polyfit(t_v, log_r, 1)
+        sigma = -coeffs[0]
+        C = np.exp(coeffs[1])
+
+        predicted = coeffs[0] * t_v + coeffs[1]
+        ss_res = np.sum((log_r - predicted) ** 2)
+        ss_tot = np.sum((log_r - np.mean(log_r)) ** 2)
+        R2 = 1.0 - ss_res / max(ss_tot, 1e-30)
+
+        result["sigma"] = sigma
+        result["C"] = C
+        result["R2"] = R2
+        result["converged"] = R2 > R2_THRESH and sigma > 0
+    except (np.linalg.LinAlgError, ValueError):
+        pass
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Per-run analysis pipeline (streaming — memory-safe)
+# ---------------------------------------------------------------------------
+def analyse_run(run: dict) -> dict:
+    """Full triad-balance analysis for one run (streaming).
+
+    Returns dict with:
+        summaries: list of {triad, T_star, sigma, R2, converged}
+        n_triads, n_converged, frac_converged
+    No full time-series arrays are retained.
+    """
+    modal = run["modal"]
+    t = run["t"]
+    n_modes = modal.shape[1]
+
+    triads = enumerate_triads(n_modes)
+    coefficients = load_triad_coefficients(run)
+    summaries = compute_triad_summaries(modal, t, triads, coefficients)
+
+    n_triads = len(summaries)
+    n_converged = sum(1 for s in summaries if s["converged"])
+    frac = n_converged / max(n_triads, 1)
+
+    return {
+        "summaries": summaries,
+        "n_triads": n_triads,
+        "n_converged": n_converged,
+        "frac_converged": frac,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+def setup_axes(ax, xlabel: str, ylabel: str, title: str):
+    ax.set_xlabel(xlabel, fontsize=11)
+    ax.set_ylabel(ylabel, fontsize=11)
+    ax.set_title(title, fontsize=13, fontweight="bold")
+    ax.tick_params(labelsize=10)
+    ax.grid(True, alpha=0.3, linewidth=0.5)
+
+
+# ---------------------------------------------------------------------------
+# Figure A: Triad Balance Evolution (representative run)
+# ---------------------------------------------------------------------------
+def figure_balance_evolution(runs: list[dict], analyses: list[dict]):
+    """Plot T_ijk(t) for the first 10 triads of the run with largest Nm.
+
+    Recomputes T_ijk(t) on-the-fly for the plotted triads only (at most 10),
+    so memory usage is O(n_timesteps), not O(n_triads * n_timesteps).
+    """
+    best_idx = max(range(len(runs)), key=lambda i: runs[i]["Nm"])
+    run = runs[best_idx]
+    ana = analyses[best_idx]
+
+    t = run["t"]
+    modal = run["modal"]
+    summaries = ana["summaries"]
+    coefficients = load_triad_coefficients(run)
+
+    n_plot = min(len(summaries), MAX_TRIADS_PLOT)
+    colors = plt.cm.tab10(np.linspace(0, 1, n_plot))
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    for idx in range(n_plot):
+        s = summaries[idx]
+        i, j, k = s["triad"]
+        T_s = s["T_star"]
+
+        # Recompute T_ijk(t) for this single triad (temporary)
+        lam = coefficients.get((i, j, k), 0.0)
+        T_arr = modal[:, i] * modal[:, j] - lam * modal[:, k]
+
+        # Plot |T_ijk(t)| on semilog-y
+        ax.semilogy(
+            t[:len(T_arr)], np.maximum(np.abs(T_arr), 1e-30),
+            color=colors[idx], linewidth=1.2,
+            label=rf"$T_{{{i},{j},{k}}}$",
+        )
+
+        # Horizontal dashed line at |T_ijk^*|
+        if not np.isnan(T_s) and abs(T_s) > 1e-30:
+            ax.axhline(
+                abs(T_s), color=colors[idx], linestyle="--",
+                linewidth=0.7, alpha=0.5,
+            )
+
+        del T_arr  # explicit discard
+
+    setup_axes(
+        ax,
+        xlabel=r"Time $t$",
+        ylabel=r"$|T_{ijk}(t)| = |a_i\,a_j - \lambda_{ijk}\,a_k|$",
+        title=(f"Triad Balance Evolution — D={run['D']}, A={run['A']}, "
+               f"Nm={run['Nm']} ({ana['n_triads']} triads)"),
+    )
+    ax.legend(fontsize=7, loc="upper right", framealpha=0.9, ncol=2)
+    fig.tight_layout()
+
+    fname = "balance_evolution.png"
+    fig.savefig(os.path.join(FIG_DIR, fname), dpi=300)
+    plt.close(fig)
+    print(f"  Saved: {fname}")
+
+
+# ---------------------------------------------------------------------------
+# Figure B: Triad Attractor Profile (all runs overlaid)
+# ---------------------------------------------------------------------------
+def figure_attractor_profile(runs: list[dict], analyses: list[dict]):
+    """Plot |T_ijk^*| vs triad index for all runs."""
+    D_vals = sorted(set(r["D"] for r in runs))
+    Nm_vals = sorted(set(r["Nm"] for r in runs))
+
+    D_cmap = plt.cm.plasma
+    D_norm = mcolors.Normalize(
+        vmin=min(D_vals) * 0.9 if D_vals else 0,
+        vmax=max(D_vals) * 1.1 if D_vals else 1,
+    )
+    Nm_markers = {Nm_vals[i]: m for i, m in
+                  zip(range(len(Nm_vals)), ["o", "s", "^", "D", "v", "P", "*"])}
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+
+    for run, ana in zip(runs, analyses):
+        summaries = ana["summaries"]
+
+        if not summaries:
+            continue
+
+        indices = np.arange(len(summaries))
+        values = np.array([abs(s["T_star"]) if not np.isnan(s["T_star"])
+                           else np.nan for s in summaries])
+        valid = ~np.isnan(values) & (values > 1e-30)
+
+        if np.sum(valid) < 1:
+            continue
+
+        color = D_cmap(D_norm(run["D"]))
+        marker = Nm_markers.get(run["Nm"], "o")
+
+        ax.semilogy(
+            indices[valid], values[valid],
+            color=color, marker=marker, markersize=4,
+            linewidth=0.6, alpha=0.5,
+        )
+
+    # Colorbar for D
+    sm = plt.cm.ScalarMappable(cmap=D_cmap, norm=D_norm)
+    sm.set_array([])
+    cbar = fig.colorbar(sm, ax=ax, label=r"Diffusion $D$", pad=0.02)
+    cbar.ax.tick_params(labelsize=9)
+
+    # Marker legend for Nm
+    legend_handles = []
+    for Nm, marker in Nm_markers.items():
+        h = plt.Line2D(
+            [0], [0], marker=marker, color="0.5", markersize=7,
+            linestyle="None", label=f"$N_m = {Nm}$",
+        )
+        legend_handles.append(h)
+    ax.legend(
+        handles=legend_handles, fontsize=9, loc="upper right",
+        framealpha=0.9, title="Seed count",
+    )
+
+    setup_axes(
+        ax,
+        xlabel="Triad index (ordered by $i + j = k$)",
+        ylabel=r"$|T_{ijk}^*|$",
+        title="Triad Balance Attractor Profile — All Admissible Runs",
+    )
+    fig.tight_layout()
+
+    fname = "attractor_profile.png"
+    fig.savefig(os.path.join(FIG_DIR, fname), dpi=300)
+    plt.close(fig)
+    print(f"  Saved: {fname}")
+
+
+# ---------------------------------------------------------------------------
+# Figure C: Convergence Heatmap
+# ---------------------------------------------------------------------------
+def figure_convergence_heatmap(runs: list[dict], analyses: list[dict]):
+    """One panel per Nm; cell color = fraction of triads converged."""
+    Nm_vals = sorted(set(r["Nm"] for r in runs))
+    D_vals = sorted(set(r["D"] for r in runs))
+    A_vals = sorted(set(r["A"] for r in runs))
+
+    n_Nm = len(Nm_vals)
+    if n_Nm == 0:
+        print("  SKIP convergence heatmap: no data.")
+        return
+
+    fig, axes = plt.subplots(
+        1, n_Nm,
+        figsize=(4.5 * n_Nm + 1, max(3, 0.6 * len(D_vals) + 1.5)),
+        squeeze=False,
+    )
+    axes = axes.flatten()
+
+    for panel_idx, Nm in enumerate(Nm_vals):
+        ax = axes[panel_idx]
+        grid = np.full((len(D_vals), len(A_vals)), np.nan)
+
+        for run, ana in zip(runs, analyses):
+            if run["Nm"] != Nm:
+                continue
+            di = D_vals.index(run["D"]) if run["D"] in D_vals else None
+            ai = A_vals.index(run["A"]) if run["A"] in A_vals else None
+            if di is None or ai is None:
+                continue
+            grid[di, ai] = ana["frac_converged"]
+
+        cmap = plt.cm.RdYlGn
+        im = ax.imshow(
+            grid, aspect="auto", origin="lower",
+            cmap=cmap, vmin=0.0, vmax=1.0,
+            interpolation="nearest",
+        )
+
+        ax.set_xticks(range(len(A_vals)))
+        ax.set_xticklabels([f"{a:.3f}" for a in A_vals], fontsize=8, rotation=45)
+        ax.set_yticks(range(len(D_vals)))
+        ax.set_yticklabels([f"{d:.3f}" for d in D_vals], fontsize=8)
+
+        ax.set_xlabel(r"Amplitude $A$", fontsize=10)
+        if panel_idx == 0:
+            ax.set_ylabel(r"Diffusion $D$", fontsize=10)
+        ax.set_title(rf"$N_m = {Nm}$", fontsize=12, fontweight="bold")
+
+        # Cell annotations
+        for di_idx in range(len(D_vals)):
+            for ai_idx in range(len(A_vals)):
+                val = grid[di_idx, ai_idx]
+                if np.isnan(val):
+                    ax.text(ai_idx, di_idx, "—", ha="center", va="center",
+                            fontsize=8, color="0.5")
+                else:
+                    txt_color = "white" if val < 0.4 else "black"
+                    ax.text(ai_idx, di_idx, f"{val:.0%}", ha="center",
+                            va="center", fontsize=8, color=txt_color,
+                            fontweight="bold")
+
+    fig.colorbar(
+        plt.cm.ScalarMappable(cmap=plt.cm.RdYlGn,
+                              norm=mcolors.Normalize(0, 1)),
+        ax=axes.tolist(), label="Fraction of triads converged",
+        shrink=0.8, pad=0.04,
+    )
+
+    fig.suptitle("Triad Balance Convergence — Heatmap by $(D, A, N_m)$",
+                 fontsize=14, fontweight="bold", y=1.03)
+    fig.tight_layout()
+
+    fname = "convergence_heatmap.png"
+    fig.savefig(os.path.join(FIG_DIR, fname), dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved: {fname}")
+
+
+# ---------------------------------------------------------------------------
+# Summary table
+# ---------------------------------------------------------------------------
+def print_summary(runs: list[dict], analyses: list[dict]):
+    print(f"\n{'='*100}")
+    print("  Invariant Triad Balance — Summary Table")
+    print(f"{'='*100}")
+
+    print(f"  {'D':<7} {'A':<7} {'Nm':<5} {'#Triads':<9} "
+          f"{'#Conv':<7} {'Frac':<8} {'Regime':<12}")
+    print("  " + "-" * 60)
+
+    all_T_star_flat = []
+
+    for run, ana in zip(runs, analyses):
+        regime = run["metadata"].get("regime", "—")
+        print(f"  {run['D']:<7.3f} {run['A']:<7.4f} {run['Nm']:<5d} "
+              f"{ana['n_triads']:<9d} {ana['n_converged']:<7d} "
+              f"{ana['frac_converged']:<8.1%} {regime:<12}")
+
+        # Collect all finite T_star values for cross-run statistics
+        for s in ana["summaries"]:
+            val = s["T_star"]
+            if not np.isnan(val) and abs(val) > 1e-30:
+                all_T_star_flat.append(abs(val))
+
+    # Cross-run statistics on |T_ijk^*|
+    if all_T_star_flat:
+        arr = np.array(all_T_star_flat)
+        mean_T = np.mean(arr)
+        std_T = np.std(arr)
+        cv = std_T / max(abs(mean_T), 1e-30)
+
+        print(f"\n  |T_ijk^*| statistics (across {len(arr)} triad-run pairs):")
+        print(f"    Mean:   {mean_T:.6e}")
+        print(f"    Std:    {std_T:.6e}")
+        print(f"    Min:    {np.min(arr):.6e}")
+        print(f"    Max:    {np.max(arr):.6e}")
+        print(f"    CV:     {cv:.4f}")
+
+        if cv < 0.05:
+            print(f"    Verdict: INVARIANT (CV < 5%)")
+        elif cv < 0.15:
+            print(f"    Verdict: WEAKLY INVARIANT (CV < 15%)")
+        else:
+            print(f"    Verdict: NOT INVARIANT (CV >= 15%)")
+
+    # Global convergence
+    total_triads = sum(a["n_triads"] for a in analyses)
+    total_conv = sum(a["n_converged"] for a in analyses)
+    print(f"\n  Overall convergence: {total_conv}/{total_triads} "
+          f"({100*total_conv/max(total_triads,1):.1f}%)")
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+def main():
+    os.makedirs(FIG_DIR, exist_ok=True)
+
+    print("Discovering regime volume runs...")
+    runs = discover_regime_runs()
+
+    if not runs:
+        print(f"\nERROR: No admissible regime_D*_A*_Nm* runs found in:")
+        print(f"  {RUNS_DIR}")
+        print("\nRun the regime volume experiment first:")
+        print("  python experiments/regime_volume_3d.py")
+        sys.exit(1)
+
+    print(f"  Found {len(runs)} admissible runs.")
+    print(f"  D range:  {min(r['D'] for r in runs):.3f} – "
+          f"{max(r['D'] for r in runs):.3f}")
+    print(f"  A range:  {min(r['A'] for r in runs):.4f} – "
+          f"{max(r['A'] for r in runs):.4f}")
+    print(f"  Nm range: {min(r['Nm'] for r in runs)} – "
+          f"{max(r['Nm'] for r in runs)}")
+
+    # --- Analyse all runs ---
+    print("\nComputing triad balances and convergence fits...")
+    analyses = []
+    for i, run in enumerate(runs):
+        ana = analyse_run(run)
+        analyses.append(ana)
+        if (i + 1) % 10 == 0 or i == len(runs) - 1:
+            n_t = ana["n_triads"]
+            n_c = ana["n_converged"]
+            print(f"  [{i+1}/{len(runs)}] {run['name']}: "
+                  f"{n_t} triads, {n_c} converged ({ana['frac_converged']:.0%})")
+
+    # --- Figures ---
+    print("\n--- (A) Triad Balance Evolution ---")
+    figure_balance_evolution(runs, analyses)
+
+    print("\n--- (B) Attractor Profile ---")
+    figure_attractor_profile(runs, analyses)
+
+    print("\n--- (C) Convergence Heatmap ---")
+    figure_convergence_heatmap(runs, analyses)
+
+    # --- Summary ---
+    print_summary(runs, analyses)
+
+    print(f"\nAll figures saved to: {FIG_DIR}")
+    print("Done.")
+
+
+if __name__ == "__main__":
+    main()
