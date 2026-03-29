@@ -59,7 +59,8 @@ def density_potential(rho: np.ndarray, params: EDParameters) -> np.ndarray:
         M_s = params.M0 * np.clip(params.rho_max - s, 1e-30, None) ** params.beta
         P_s = params.P0 * (s - params.rho_star)
         integrand = P_s / M_s
-        result.ravel()[idx] = np.trapz(integrand, s)
+        _trapz = getattr(np, 'trapezoid', getattr(np, 'trapz', None))
+        result.ravel()[idx] = _trapz(integrand, s)
     return result
 
 

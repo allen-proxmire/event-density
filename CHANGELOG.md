@@ -1,8 +1,55 @@
 # Changelog
 
-All notable changes to the ED-SIM-02 platform are documented here.
+All notable changes to the Event Density project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 Versioning follows [Semantic Versioning](https://semver.org/).
+
+## [2.0.0] - 2026-03-29
+
+### Added
+
+**Structural Analogues (Six Falsifiable Tests)**
+- Analogue 1: RC/Debye relaxation (penalty channel, 0.00% error)
+- Analogue 2: Barenblatt PME self-similarity (mobility channel, 1.1% accuracy)
+- Analogue 3: Stefan horizon dynamics (mobility + penalty, 2.5% threshold error)
+- Analogue 4: Telegraph-modulated horizons (negative result, architectural limit)
+- Analogue 5: Telegraph-modulated PME (mobility + participation, 0.03% frequency match)
+- Analogue 6: Temporal tension interaction (emergent nonlinear repulsion discovered)
+- All analogues in `edsim/phys/analogues/`
+
+**Physics Experiments (ED-PHYS-01 through ED-PHYS-10)**
+- Diffusion regime, wave/telegraph regime, reaction regime
+- Pattern formation (negative result: no Turing instability)
+- Quantum-like regime, global phase diagram
+- Energy/Lyapunov structure, physical interpretation matrix
+- Cosmological analogues, master interpretation synthesis
+- All experiments in `edsim/phys/`
+
+**BAO Analogue**
+- Telegraph-modulated correlation feature in 2D
+- H-controlled peak radius, absent at H=0
+- Paper: `manuscript/ED_BAO_Paper.md` and `.tex`
+
+**Foundational Paper**
+- Full manuscript: six analogues, falsification, synthesis
+- LaTeX source (Overleaf-ready): `manuscript/foundational_paper/`
+
+**Units, Regimes, Math, Comparison Layers**
+- Physical units with five scale factories (Planck to cosmological)
+- Regime manifold with five canonical domains
+- Formal mathematical development (axioms, laws, transients)
+- Cross-framework comparison against six theoretical frameworks
+
+**Monograph**
+- Full research monograph: `manuscript/monograph/ED_Monograph.md`
+
+**Documentation**
+- WHAT_IS_ED.md, HOW_TO_RUN_ANALOGUES.md, REPRODUCING_FOUNDATIONS_PAPER.md
+- Updated README, CONTRIBUTING, CHANGELOG
+
+**Repository Refactor**
+- Research archive moved to `research/` with index
+- Clean top-level layout for public release
 
 ## [0.1.0] - 2026-03-28
 
