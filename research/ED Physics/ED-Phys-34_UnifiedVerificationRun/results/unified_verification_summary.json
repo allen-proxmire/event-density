@@ -1,0 +1,322 @@
+{
+  "experiment": "ED-Phys-34_UnifiedVerificationRun",
+  "total_runs": 20,
+  "total_checks": 57,
+  "checks_passed": 53,
+  "checks_failed": 4,
+  "pass_rate": "93.0%",
+  "failures": [
+    {
+      "regime": "hybrid_canonical",
+      "ic": "sine_k4",
+      "check": "monotonic_approach"
+    },
+    {
+      "regime": "hybrid_canonical",
+      "ic": "mixed_k4k7",
+      "check": "monotonic_approach"
+    },
+    {
+      "regime": "parabolic_monotonic",
+      "ic": "sine_k4",
+      "check": "monotonic_approach"
+    },
+    {
+      "regime": "parabolic_monotonic",
+      "ic": "mixed_k4k7",
+      "check": "monotonic_approach"
+    }
+  ],
+  "verification": [
+    {
+      "regime": "pure_oscillatory",
+      "D": 0.0,
+      "zeta": 0.25,
+      "tau": 1.0,
+      "predictions": {
+        "many_cycles": true,
+        "spiral_manifold": true,
+        "horizon_at_A40": true,
+        "monotonic": false,
+        "fast_convergence": false
+      },
+      "observed": {
+        "gauss_A20": {
+          "convergence_rate": 0.050688826208668665,
+          "n_cycles": 14,
+          "undershoot": 0.40162953908329513,
+          "overshoot": 0.10881326515495715,
+          "peak_v": 0.47034428495495667,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "gauss_A40": {
+          "convergence_rate": 0.042870264318622446,
+          "n_cycles": 11,
+          "undershoot": 0.37561798087797627,
+          "overshoot": 0.07038719982187303,
+          "peak_v": 0.7318611343244225,
+          "flow_type": "spiral",
+          "horizon_max": 1,
+          "horizon_activated": true
+        },
+        "sine_k4": {
+          "convergence_rate": 0.023743354491293146,
+          "n_cycles": 80,
+          "undershoot": 0.9540057385636231,
+          "overshoot": 0.02357979724249759,
+          "peak_v": 0.07757209176256276,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "mixed_k4k7": {
+          "convergence_rate": 0.01865002383158933,
+          "n_cycles": 69,
+          "undershoot": 0.09169694799243189,
+          "overshoot": 0.0032323529940327944,
+          "peak_v": 0.006650259039013198,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        }
+      },
+      "checks_passed": 9,
+      "checks_total": 9,
+      "match": true
+    },
+    {
+      "regime": "hybrid_fast",
+      "D": 0.25,
+      "zeta": 0.25,
+      "tau": 1.0,
+      "predictions": {
+        "many_cycles": false,
+        "spiral_manifold": true,
+        "horizon_at_A40": false,
+        "monotonic": false,
+        "fast_convergence": true
+      },
+      "observed": {
+        "gauss_A20": {
+          "convergence_rate": 0.09060421088653806,
+          "n_cycles": 9,
+          "undershoot": 0.2399942639789785,
+          "overshoot": 0.055104840987105774,
+          "peak_v": 0.4681259035674115,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "gauss_A40": {
+          "convergence_rate": 0.04247379086140572,
+          "n_cycles": 9,
+          "undershoot": 0.17084287652424024,
+          "overshoot": 0.04373588606136991,
+          "peak_v": 0.695511160800004,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "sine_k4": {
+          "convergence_rate": 0.07754200603525525,
+          "n_cycles": 9,
+          "undershoot": 0.8737334143999576,
+          "overshoot": 0.015768351751340504,
+          "peak_v": 0.07940866298217489,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "mixed_k4k7": {
+          "convergence_rate": 0.05857364060176866,
+          "n_cycles": 10,
+          "undershoot": 0.08017443188729345,
+          "overshoot": 0.0014700737555131127,
+          "peak_v": 0.005354923561316665,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        }
+      },
+      "checks_passed": 13,
+      "checks_total": 13,
+      "match": true
+    },
+    {
+      "regime": "hybrid_canonical",
+      "D": 0.5,
+      "zeta": 0.5,
+      "tau": 1.0,
+      "predictions": {
+        "many_cycles": false,
+        "spiral_manifold": false,
+        "horizon_at_A40": false,
+        "monotonic": true,
+        "fast_convergence": false
+      },
+      "observed": {
+        "gauss_A20": {
+          "convergence_rate": 0.01495774166543382,
+          "n_cycles": 0,
+          "undershoot": 0.0,
+          "overshoot": 0.0,
+          "peak_v": 0.23216511920064764,
+          "flow_type": "monotonic",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "gauss_A40": {
+          "convergence_rate": 0.007920001414564545,
+          "n_cycles": 0,
+          "undershoot": 0.0,
+          "overshoot": 0.0,
+          "peak_v": 0.3176999772731552,
+          "flow_type": "monotonic",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "sine_k4": {
+          "convergence_rate": 0.007629878232695907,
+          "n_cycles": 0,
+          "undershoot": 0.7399838089633093,
+          "overshoot": 0.005663587689241467,
+          "peak_v": 0.049192365438469055,
+          "flow_type": "damped",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "mixed_k4k7": {
+          "convergence_rate": -0.009654378588383281,
+          "n_cycles": 0,
+          "undershoot": 0.06086615786981042,
+          "overshoot": 0.00021110137016933095,
+          "peak_v": 0.0022309160585112773,
+          "flow_type": "damped",
+          "horizon_max": 0,
+          "horizon_activated": false
+        }
+      },
+      "checks_passed": 11,
+      "checks_total": 13,
+      "match": false
+    },
+    {
+      "regime": "parabolic_monotonic",
+      "D": 1.0,
+      "zeta": 1.0,
+      "tau": 1.0,
+      "predictions": {
+        "many_cycles": false,
+        "spiral_manifold": false,
+        "horizon_at_A40": false,
+        "monotonic": true,
+        "fast_convergence": false
+      },
+      "observed": {
+        "gauss_A20": {
+          "convergence_rate": 0.013223928948200115,
+          "n_cycles": 0,
+          "undershoot": 0.0,
+          "overshoot": 0.0,
+          "peak_v": 0.11531199671907208,
+          "flow_type": "monotonic",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "gauss_A40": {
+          "convergence_rate": 0.006148244504656008,
+          "n_cycles": 0,
+          "undershoot": 0.0,
+          "overshoot": 0.0,
+          "peak_v": 0.15633864730618305,
+          "flow_type": "monotonic",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "sine_k4": {
+          "convergence_rate": 0.020123597312374827,
+          "n_cycles": 0,
+          "undershoot": 0.7061453774303601,
+          "overshoot": 0.004517088584016449,
+          "peak_v": 0.02566227243384089,
+          "flow_type": "damped",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "mixed_k4k7": {
+          "convergence_rate": 0.00699236143499963,
+          "n_cycles": 0,
+          "undershoot": 0.05677065345098953,
+          "overshoot": 0.00013448053593378972,
+          "peak_v": 0.0010544866131516695,
+          "flow_type": "damped",
+          "horizon_max": 0,
+          "horizon_activated": false
+        }
+      },
+      "checks_passed": 11,
+      "checks_total": 13,
+      "match": false
+    },
+    {
+      "regime": "boundary_case",
+      "D": 0.5,
+      "zeta": 0.25,
+      "tau": 1.0,
+      "predictions": {
+        "many_cycles": false,
+        "spiral_manifold": true,
+        "horizon_at_A40": false,
+        "monotonic": false,
+        "fast_convergence": false
+      },
+      "observed": {
+        "gauss_A20": {
+          "convergence_rate": 0.06165574552529255,
+          "n_cycles": 6,
+          "undershoot": 0.11451275205710232,
+          "overshoot": 0.014086000814849342,
+          "peak_v": 0.46558868646768176,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "gauss_A40": {
+          "convergence_rate": 0.02030300321807992,
+          "n_cycles": 6,
+          "undershoot": 0.09278408947028538,
+          "overshoot": 0.013228475138198803,
+          "peak_v": 0.6721013700324877,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "sine_k4": {
+          "convergence_rate": 0.053195429040990505,
+          "n_cycles": 7,
+          "undershoot": 0.8333088903111303,
+          "overshoot": 0.01096451499922324,
+          "peak_v": 0.08222856212187099,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        },
+        "mixed_k4k7": {
+          "convergence_rate": 0.03914767687183595,
+          "n_cycles": 7,
+          "undershoot": 0.07229708863397377,
+          "overshoot": 0.000763194570971848,
+          "peak_v": 0.004674829735402436,
+          "flow_type": "spiral",
+          "horizon_max": 0,
+          "horizon_activated": false
+        }
+      },
+      "checks_passed": 9,
+      "checks_total": 9,
+      "match": true
+    }
+  ]
+}

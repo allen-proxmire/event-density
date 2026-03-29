@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "edsim"
+version = "0.1.0"
+description = "ED-SIM-02: An Architectural Lab for Entropic Dynamics"
+authors = [{ name = "Allen Proxmire" }]
+readme = "edsim/README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["PDE", "simulation", "event-density", "nonlinear-dynamics", "spectral-methods"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/allen/edsim"
+Documentation = "https://github.com/allen/edsim/docs"
+Source = "https://github.com/allen/edsim"
+
+[project.scripts]
+edsim = "edsim.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["edsim*"]
+
+[tool.pytest.ini_options]
+testpaths = ["edsim/tests"]
+addopts = "-v --tb=short"

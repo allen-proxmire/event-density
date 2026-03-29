@@ -1,0 +1,196 @@
+{
+  "D": 0.5,
+  "zeta": 0.5,
+  "flow_type_counts": {
+    "monotonic": 25
+  },
+  "dominant_type": "monotonic",
+  "mean_convergence_rate": 0.046542602410978774,
+  "std_convergence_rate": 0.07785982548713134,
+  "mean_curvature": 209.17331477691963,
+  "fixed_points": [
+    {
+      "rho": 50.0,
+      "v": 0.0,
+      "type": "stable"
+    }
+  ],
+  "secondary_fixed_points": [],
+  "trajectories": [
+    {
+      "rho_offset": -40,
+      "v_init": -0.5,
+      "flow_type": "monotonic",
+      "curvature": 98.92485541410802,
+      "convergence_rate": 0.011476747481554498
+    },
+    {
+      "rho_offset": -40,
+      "v_init": -0.25,
+      "flow_type": "monotonic",
+      "curvature": 122.81832397106608,
+      "convergence_rate": 0.011530965649811264
+    },
+    {
+      "rho_offset": -40,
+      "v_init": 0.0,
+      "flow_type": "monotonic",
+      "curvature": 152.4902929221363,
+      "convergence_rate": 0.011586219886975562
+    },
+    {
+      "rho_offset": -40,
+      "v_init": 0.25,
+      "flow_type": "monotonic",
+      "curvature": 189.34901820200741,
+      "convergence_rate": 0.011642539879058894
+    },
+    {
+      "rho_offset": -40,
+      "v_init": 0.5,
+      "flow_type": "monotonic",
+      "curvature": 88.43101526880538,
+      "convergence_rate": 0.011635801797230462
+    },
+    {
+      "rho_offset": -20,
+      "v_init": -0.5,
+      "flow_type": "monotonic",
+      "curvature": 240.29175589288317,
+      "convergence_rate": 0.01778042891919287
+    },
+    {
+      "rho_offset": -20,
+      "v_init": -0.25,
+      "flow_type": "monotonic",
+      "curvature": 120.89868385256433,
+      "convergence_rate": 0.01802990633295699
+    },
+    {
+      "rho_offset": -20,
+      "v_init": 0.0,
+      "flow_type": "monotonic",
+      "curvature": 161.354997715201,
+      "convergence_rate": 0.018290897416748823
+    },
+    {
+      "rho_offset": -20,
+      "v_init": 0.25,
+      "flow_type": "monotonic",
+      "curvature": 215.4826511057821,
+      "convergence_rate": 0.018564258917383166
+    },
+    {
+      "rho_offset": -20,
+      "v_init": 0.5,
+      "flow_type": "monotonic",
+      "curvature": 108.84903045740252,
+      "convergence_rate": 0.018850942477502425
+    },
+    {
+      "rho_offset": 0,
+      "v_init": -0.5,
+      "flow_type": "monotonic",
+      "curvature": 323.01119660980237,
+      "convergence_rate": 0.22215074678941937
+    },
+    {
+      "rho_offset": 0,
+      "v_init": -0.25,
+      "flow_type": "monotonic",
+      "curvature": 754.2722656759368,
+      "convergence_rate": 0.22716212041626485
+    },
+    {
+      "rho_offset": 0,
+      "v_init": 0.0,
+      "flow_type": "monotonic",
+      "curvature": 0.0,
+      "convergence_rate": 0.0
+    },
+    {
+      "rho_offset": 0,
+      "v_init": 0.25,
+      "flow_type": "monotonic",
+      "curvature": 756.730579488541,
+      "convergence_rate": 0.22716051541968124
+    },
+    {
+      "rho_offset": 0,
+      "v_init": 0.5,
+      "flow_type": "monotonic",
+      "curvature": 324.96724861664165,
+      "convergence_rate": 0.22213920942156742
+    },
+    {
+      "rho_offset": 20,
+      "v_init": -0.5,
+      "flow_type": "monotonic",
+      "curvature": 253.0754416883197,
+      "convergence_rate": 0.015489975564610034
+    },
+    {
+      "rho_offset": 20,
+      "v_init": -0.25,
+      "flow_type": "monotonic",
+      "curvature": 177.57483719240213,
+      "convergence_rate": 0.015205255724612867
+    },
+    {
+      "rho_offset": 20,
+      "v_init": 0.0,
+      "flow_type": "monotonic",
+      "curvature": 124.57953631924082,
+      "convergence_rate": 0.014931824622259705
+    },
+    {
+      "rho_offset": 20,
+      "v_init": 0.25,
+      "flow_type": "monotonic",
+      "curvature": 231.154121078199,
+      "convergence_rate": 0.015099513553459216
+    },
+    {
+      "rho_offset": 20,
+      "v_init": 0.5,
+      "flow_type": "monotonic",
+      "curvature": 162.60769758227164,
+      "convergence_rate": 0.014830231343996086
+    },
+    {
+      "rho_offset": 40,
+      "v_init": -0.5,
+      "flow_type": "monotonic",
+      "curvature": 157.547874618834,
+      "convergence_rate": 0.008176583641268925
+    },
+    {
+      "rho_offset": 40,
+      "v_init": -0.25,
+      "flow_type": "monotonic",
+      "curvature": 113.56206481812129,
+      "convergence_rate": 0.008088610833785405
+    },
+    {
+      "rho_offset": 40,
+      "v_init": 0.0,
+      "flow_type": "monotonic",
+      "curvature": 81.77886516437013,
+      "convergence_rate": 0.00800104315589558
+    },
+    {
+      "rho_offset": 40,
+      "v_init": 0.25,
+      "flow_type": "monotonic",
+      "curvature": 156.66719948958007,
+      "convergence_rate": 0.007913824033031437
+    },
+    {
+      "rho_offset": 40,
+      "v_init": 0.5,
+      "flow_type": "monotonic",
+      "curvature": 112.91331627877341,
+      "convergence_rate": 0.007826896996202265
+    }
+  ]
+}

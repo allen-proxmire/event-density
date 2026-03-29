@@ -1,0 +1,197 @@
+{
+  "D": 0.0,
+  "zeta": 0.5,
+  "flow_type_counts": {
+    "spiral": 24,
+    "monotonic": 1
+  },
+  "dominant_type": "spiral",
+  "mean_convergence_rate": 0.053467552311960674,
+  "std_convergence_rate": 0.08196430874733387,
+  "mean_curvature": 88651.56260583867,
+  "fixed_points": [
+    {
+      "rho": 50.0,
+      "v": 0.0,
+      "type": "stable"
+    }
+  ],
+  "secondary_fixed_points": [],
+  "trajectories": [
+    {
+      "rho_offset": -40,
+      "v_init": -0.5,
+      "flow_type": "spiral",
+      "curvature": 117318.9992296739,
+      "convergence_rate": 0.015481706536228379
+    },
+    {
+      "rho_offset": -40,
+      "v_init": -0.25,
+      "flow_type": "spiral",
+      "curvature": 22812.796098771498,
+      "convergence_rate": 0.01564501704947319
+    },
+    {
+      "rho_offset": -40,
+      "v_init": 0.0,
+      "flow_type": "spiral",
+      "curvature": 38364.11986668457,
+      "convergence_rate": 0.015814876317578285
+    },
+    {
+      "rho_offset": -40,
+      "v_init": 0.25,
+      "flow_type": "spiral",
+      "curvature": 118536.85091150897,
+      "convergence_rate": 0.01581805503200407
+    },
+    {
+      "rho_offset": -40,
+      "v_init": 0.5,
+      "flow_type": "spiral",
+      "curvature": 23688.484974538333,
+      "convergence_rate": 0.01598997755609875
+    },
+    {
+      "rho_offset": -20,
+      "v_init": -0.5,
+      "flow_type": "spiral",
+      "curvature": 34799.58264148001,
+      "convergence_rate": 0.025326649851584355
+    },
+    {
+      "rho_offset": -20,
+      "v_init": -0.25,
+      "flow_type": "spiral",
+      "curvature": 158985.36709652038,
+      "convergence_rate": 0.025051360322534168
+    },
+    {
+      "rho_offset": -20,
+      "v_init": 0.0,
+      "flow_type": "spiral",
+      "curvature": 31484.90940529503,
+      "convergence_rate": 0.02590451214043941
+    },
+    {
+      "rho_offset": -20,
+      "v_init": 0.25,
+      "flow_type": "spiral",
+      "curvature": 116384.50117837096,
+      "convergence_rate": 0.026855169559542917
+    },
+    {
+      "rho_offset": -20,
+      "v_init": 0.5,
+      "flow_type": "spiral",
+      "curvature": 37392.90049661419,
+      "convergence_rate": 0.027923931056732805
+    },
+    {
+      "rho_offset": 0,
+      "v_init": -0.5,
+      "flow_type": "spiral",
+      "curvature": 226717.2832943676,
+      "convergence_rate": 0.2398402515601549
+    },
+    {
+      "rho_offset": 0,
+      "v_init": -0.25,
+      "flow_type": "spiral",
+      "curvature": 183002.30924968014,
+      "convergence_rate": 0.24160867987809673
+    },
+    {
+      "rho_offset": 0,
+      "v_init": 0.0,
+      "flow_type": "monotonic",
+      "curvature": 0.0,
+      "convergence_rate": 0.0
+    },
+    {
+      "rho_offset": 0,
+      "v_init": 0.25,
+      "flow_type": "spiral",
+      "curvature": 182818.55955984636,
+      "convergence_rate": 0.2415892741902098
+    },
+    {
+      "rho_offset": 0,
+      "v_init": 0.5,
+      "flow_type": "spiral",
+      "curvature": 227867.2921802751,
+      "convergence_rate": 0.23979520117904182
+    },
+    {
+      "rho_offset": 20,
+      "v_init": -0.5,
+      "flow_type": "spiral",
+      "curvature": 171830.53027791955,
+      "convergence_rate": 0.023160250779461024
+    },
+    {
+      "rho_offset": 20,
+      "v_init": -0.25,
+      "flow_type": "spiral",
+      "curvature": 32005.054215915286,
+      "convergence_rate": 0.022165522072151143
+    },
+    {
+      "rho_offset": 20,
+      "v_init": 0.0,
+      "flow_type": "spiral",
+      "curvature": 155260.80725583126,
+      "convergence_rate": 0.021265844835023518
+    },
+    {
+      "rho_offset": 20,
+      "v_init": 0.25,
+      "flow_type": "spiral",
+      "curvature": 30884.634044698472,
+      "convergence_rate": 0.021391700164635475
+    },
+    {
+      "rho_offset": 20,
+      "v_init": 0.5,
+      "flow_type": "spiral",
+      "curvature": 124758.05391588574,
+      "convergence_rate": 0.020555363831002857
+    },
+    {
+      "rho_offset": 40,
+      "v_init": -0.5,
+      "flow_type": "spiral",
+      "curvature": 39502.43633344233,
+      "convergence_rate": 0.011414264845386886
+    },
+    {
+      "rho_offset": 40,
+      "v_init": -0.25,
+      "flow_type": "spiral",
+      "curvature": 31287.339697528583,
+      "convergence_rate": 0.011167840075672992
+    },
+    {
+      "rho_offset": 40,
+      "v_init": 0.0,
+      "flow_type": "spiral",
+      "curvature": 40068.91768116953,
+      "convergence_rate": 0.0112163169939523
+    },
+    {
+      "rho_offset": 40,
+      "v_init": 0.25,
+      "flow_type": "spiral",
+      "curvature": 30138.46662209867,
+      "convergence_rate": 0.01097357880061892
+    },
+    {
+      "rho_offset": 40,
+      "v_init": 0.5,
+      "flow_type": "spiral",
+      "curvature": 40378.8689178504,
+      "convergence_rate": 0.010733463171391913
+    }
+  ]
+}

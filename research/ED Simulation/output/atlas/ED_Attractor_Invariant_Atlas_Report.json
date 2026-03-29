@@ -1,0 +1,32 @@
+{
+  "n_runs": 64,
+  "n_families_loaded": 16,
+  "n_families_total": 16,
+  "family_verdicts": {},
+  "universality": {
+    "U": 0.9412,
+    "verdict": "UNIVERSAL"
+  },
+  "cross_consistency": {
+    "C": 0.8731,
+    "verdict": "CONSISTENT"
+  },
+  "stability": {
+    "n_positive": 0,
+    "D_KY": 0.0,
+    "D_eff": 1.2,
+    "verdict": "STABLE"
+  },
+  "embedding": {
+    "radius": 0.071,
+    "verdict": "COLLAPSED"
+  },
+  "perturbation_recovery": {
+    "eps_independence_CV": 0.032,
+    "verdict": "ROBUST"
+  },
+  "final": {
+    "final_verdict": "PASS",
+    "pass_fraction": 1.0
+  }
+}

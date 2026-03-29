@@ -1,0 +1,70 @@
+name: Docs
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "docs/**"
+      - "edsim/**"
+      - "examples/**"
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Verify docs exist
+        run: |
+          echo "Checking documentation files..."
+          test -f docs/index.md && echo "  docs/index.md: OK"
+          test -f docs/usage.md && echo "  docs/usage.md: OK"
+          test -f docs/architecture.md && echo "  docs/architecture.md: OK"
+          test -f docs/api.md && echo "  docs/api.md: OK"
+          test -f docs/performance.md && echo "  docs/performance.md: OK"
+          echo "All doc files present."
+
+      - name: Verify example notebooks
+        run: |
+          echo "Checking notebook structure..."
+          python -c "
+          import json
+          for nb_path in ['examples/edsim_lab_tour.ipynb', 'examples/edsim_visual_gallery.ipynb']:
+              try:
+                  nb = json.load(open(nb_path))
+                  n_cells = len(nb['cells'])
+                  n_code = sum(1 for c in nb['cells'] if c['cell_type'] == 'code')
+                  print(f'  {nb_path}: {n_cells} cells ({n_code} code)')
+              except FileNotFoundError:
+                  print(f'  {nb_path}: not found (optional)')
+          "
+
+      - name: Build manuscript (generates figures)
+        run: |
+          python -c "
+          from edsim.manuscript.build import build_manuscript
+          path = build_manuscript()
+          print(f'Manuscript built: {path}')
+          "
+
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: |
+            docs/
+            manuscript/
+            examples/
+          retention-days: 30

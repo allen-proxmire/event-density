@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "description": "Canonical parameter sets for the ED Numerical Atlas (Suite §7.3)",
+  "created": "2026-03-26",
+  "parameter_sets": {
+    "I": {
+      "label": "Deep Oscillatory",
+      "D": 0.3,
+      "zeta": 0.1,
+      "tau": 1.0,
+      "rho_star": 0.5,
+      "rho_max": 1.0,
+      "M0": 1.0,
+      "beta": 2.0,
+      "P0": 1.0,
+      "regime": "spiral",
+      "D_0_sign": "negative"
+    },
+    "II": {
+      "label": "Moderate Oscillatory",
+      "D": 0.6,
+      "zeta": 0.5,
+      "tau": 1.0,
+      "rho_star": 0.5,
+      "rho_max": 1.0,
+      "M0": 1.0,
+      "beta": 2.0,
+      "P0": 1.0,
+      "regime": "spiral",
+      "D_0_sign": "negative"
+    },
+    "III": {
+      "label": "Near-Critical",
+      "D": 0.8,
+      "zeta": 1.8,
+      "tau": 1.0,
+      "rho_star": 0.5,
+      "rho_max": 1.0,
+      "M0": 1.0,
+      "beta": 2.0,
+      "P0": 1.0,
+      "regime": "critical",
+      "D_0_sign": "near_zero"
+    },
+    "IV": {
+      "label": "Deep Monotonic",
+      "D": 0.9,
+      "zeta": 5.0,
+      "tau": 1.0,
+      "rho_star": 0.5,
+      "rho_max": 1.0,
+      "M0": 1.0,
+      "beta": 2.0,
+      "P0": 1.0,
+      "regime": "monotonic",
+      "D_0_sign": "positive"
+    },
+    "V": {
+      "label": "High Participation Coupling",
+      "D": 0.2,
+      "zeta": 0.3,
+      "tau": 0.5,
+      "rho_star": 0.5,
+      "rho_max": 1.0,
+      "M0": 1.0,
+      "beta": 2.0,
+      "P0": 1.0,
+      "regime": "spiral",
+      "D_0_sign": "negative"
+    }
+  },
+  "numerical_defaults": {
+    "N": 512,
+    "L": 1.0,
+    "dt": 5e-4,
+    "T": 50.0,
+    "k_out": 50,
+    "method_A": "crank_nicolson",
+    "method_B": "etdrk4",
+    "N_modes_spectral": 128,
+    "N_obs": 32
+  },
+  "initial_conditions": {
+    "A": {
+      "label": "Single-mode cosine",
+      "default_A": 0.05,
+      "default_n": 1,
+      "default_v0": 0.0
+    },
+    "B": {
+      "label": "Multi-mode superposition",
+      "default_A": 0.05,
+      "default_N_m": 8,
+      "default_v0": 0.0
+    },
+    "C": {
+      "label": "Localized Gaussian",
+      "default_A": 0.3,
+      "default_sigma": 0.05,
+      "default_v0": 0.0
+    },
+    "D": {
+      "label": "Near-capacity",
+      "default_delta": 0.05,
+      "default_A": 0.02,
+      "default_v0": 0.0
+    }
+  },
+  "constitutive_functions": {
+    "mobility": "M(rho) = M0 * (rho_max - rho)^beta",
+    "penalty": "P(rho) = P0 * (rho - rho_star)",
+    "constraints": [
+      "M(rho_max) = 0  [Principle 4: mobility collapse]",
+      "P(rho_star) = 0  [Principle 3: penalty equilibrium]",
+      "P'(rho_star) > 0  [Principle 3: strict monotonicity]",
+      "M(rho) > 0 for rho in (0, rho_max)  [Principle 4: positive mobility]"
+    ]
+  }
+}
