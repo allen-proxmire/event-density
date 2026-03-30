@@ -1,7 +1,7 @@
 # ED-SIM-02: An Architectural Lab for Entropic Dynamics
 
-![Tests](https://github.com/allen/edsim/actions/workflows/tests.yml/badge.svg)
-![Certify](https://github.com/allen/edsim/actions/workflows/certify.yml/badge.svg)
+![Tests](https://github.com/allen-proxmire/event-density/actions/workflows/tests.yml/badge.svg)
+![Certify](https://github.com/allen-proxmire/event-density/actions/workflows/certify.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
 ![Version](https://img.shields.io/badge/version-0.1.0-green)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
