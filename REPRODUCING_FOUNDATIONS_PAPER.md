@@ -4,7 +4,7 @@ This document explains how to regenerate every figure, table, and result in:
 
 > **Event Density as an Ontological Framework: Constitutive Channels, Structural Laws, and Six Empirical Analogues**
 
-The paper source files are in `manuscript/foundational_paper/`:
+The paper source files are in `documents/manuscript/foundational_paper/`:
 - `ED_Foundational_Paper.md` — Markdown source
 - `ED_Foundational_Paper.tex` — LaTeX source (Overleaf-ready)
 
@@ -111,7 +111,7 @@ reports = {
     'ED-Analogue-06_TemporalTension_Report.md': build_temporal_tension_report,
 }
 for fname, builder in reports.items():
-    with open(f'manuscript/{fname}', 'w') as f:
+    with open(f'documents/manuscript/{fname}', 'w') as f:
         f.write(builder())
     print(f'  Written: {fname}')
 print('Done.')
@@ -147,7 +147,7 @@ Expected output: 112 tests pass.
 The `.tex` file compiles directly in Overleaf or locally:
 
 ```bash
-cd manuscript/foundational_paper/
+cd documents/manuscript/foundational_paper/
 pdflatex ED_Foundational_Paper.tex
 pdflatex ED_Foundational_Paper.tex  # second pass for TOC
 ```

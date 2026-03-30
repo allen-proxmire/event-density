@@ -16,7 +16,7 @@ All analogues live in `edsim/phys/analogues/`. Each module provides:
 - A `run_*_experiment()` function running the full experiment.
 - A `build_*_report()` function generating the Markdown report.
 
-Reports are saved to `manuscript/`.
+Reports are saved to `documents/manuscript/`.
 
 ---
 
@@ -39,7 +39,7 @@ print(f"lambda error: {result.lambda_error_pct}%")
 
 # Generate report
 report = build_rc_debye_report()
-with open("manuscript/ED-Analogue-01_RC_Debye_Report.md", "w") as f:
+with open("documents/manuscript/ED-Analogue-01_RC_Debye_Report.md", "w") as f:
     f.write(report)
 ```
 
@@ -70,7 +70,7 @@ for r in result.runs:
 
 # Generate report
 report = build_barenblatt_report()
-with open("manuscript/ED-Analogue-02_Barenblatt_Report.md", "w") as f:
+with open("documents/manuscript/ED-Analogue-02_Barenblatt_Report.md", "w") as f:
     f.write(report)
 ```
 
@@ -99,7 +99,7 @@ print(f"A_c measured: {result.A_c_measured}")
 
 # Generate report
 report = build_horizon_report()
-with open("manuscript/ED-Analogue-03_Horizon_Report.md", "w") as f:
+with open("documents/manuscript/ED-Analogue-03_Horizon_Report.md", "w") as f:
     f.write(report)
 ```
 
@@ -124,7 +124,7 @@ print(f"Oscillation detected: {result.oscillation_detected}")
 
 # Generate report
 report = build_telegraph_horizon_report()
-with open("manuscript/ED-Analogue-04_TelegraphHorizon_Report.md", "w") as f:
+with open("documents/manuscript/ED-Analogue-04_TelegraphHorizon_Report.md", "w") as f:
     f.write(report)
 ```
 
@@ -155,7 +155,7 @@ for r in result.runs:
 
 # Generate report
 report = build_telegraph_pme_report()
-with open("manuscript/ED-Analogue-05_TelegraphPME_Report.md", "w") as f:
+with open("documents/manuscript/ED-Analogue-05_TelegraphPME_Report.md", "w") as f:
     f.write(report)
 ```
 
@@ -181,7 +181,7 @@ for r in result.baseline_runs:
 
 # Generate report
 report = build_temporal_tension_report()
-with open("manuscript/ED-Analogue-06_TemporalTension_Report.md", "w") as f:
+with open("documents/manuscript/ED-Analogue-06_TemporalTension_Report.md", "w") as f:
     f.write(report)
 ```
 
@@ -225,7 +225,7 @@ reports = {
     'ED-Analogue-06_TemporalTension_Report.md': build_temporal_tension_report,
 }
 for fname, builder in reports.items():
-    with open(f'manuscript/{fname}', 'w') as f:
+    with open(f'documents/manuscript/{fname}', 'w') as f:
         f.write(builder())
     print(f'  {fname}: written')
 "
