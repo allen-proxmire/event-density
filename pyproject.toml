@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=64", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "edsim"
@@ -34,9 +34,9 @@ test = ["pytest>=7.0"]
 dev = ["pytest>=7.0"]
 
 [project.urls]
-Homepage = "https://github.com/allen/edsim"
-Documentation = "https://github.com/allen/edsim/docs"
-Source = "https://github.com/allen/edsim"
+Homepage = "https://github.com/allen-proxmire/event-density"
+Documentation = "https://github.com/allen-proxmire/event-density/tree/main/documents"
+Source = "https://github.com/allen-proxmire/event-density"
 
 [project.scripts]
 edsim = "edsim.cli:main"

@@ -60,6 +60,4 @@ Connects the ED ontology to empirical physics at two scales. In condensed matter
 
 ## For General Audiences
 
-**File:** [`../../ED_FOR_EVERYONE_VERSION.md`](../../ED_FOR_EVERYONE_VERSION.md) (if available at repo root)
-
-A plain-language explanation of ED with zero equations, written for anyone who is curious.
+See `WHAT_IS_ED.md` at the repo root for a conceptual overview accessible to non-specialists.

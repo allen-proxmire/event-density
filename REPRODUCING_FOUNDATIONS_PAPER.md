@@ -93,29 +93,24 @@ for r in result.telegraph_runs:
 
 ## Regenerating All Reports
 
-```bash
-python -c "
-from edsim.phys.analogues.rc_debye import build_rc_debye_report
-from edsim.phys.analogues.barenblatt import build_barenblatt_report
-from edsim.phys.analogues.horizon import build_horizon_report
-from edsim.phys.analogues.telegraph_horizon import build_telegraph_horizon_report
-from edsim.phys.analogues.telegraph_pme import build_telegraph_pme_report
-from edsim.phys.analogues.temporal_tension import build_temporal_tension_report
+Run each analogue's full experiment function. These return report strings:
 
-reports = {
-    'ED-Analogue-01_RC_Debye_Report.md': build_rc_debye_report,
-    'ED-Analogue-02_Barenblatt_Report.md': build_barenblatt_report,
-    'ED-Analogue-03_Horizon_Report.md': build_horizon_report,
-    'ED-Analogue-04_TelegraphHorizon_Report.md': build_telegraph_horizon_report,
-    'ED-Analogue-05_TelegraphPME_Report.md': build_telegraph_pme_report,
-    'ED-Analogue-06_TemporalTension_Report.md': build_temporal_tension_report,
-}
-for fname, builder in reports.items():
-    with open(f'documents/manuscript/{fname}', 'w') as f:
-        f.write(builder())
-    print(f'  Written: {fname}')
-print('Done.')
-"
+```python
+from edsim.phys.analogues.rc_debye import run_full_rc_experiment
+from edsim.phys.analogues.barenblatt import run_full_barenblatt_experiment
+from edsim.phys.analogues.telegraph_horizon import run_full_telegraph_horizon_experiment
+from edsim.phys.analogues.telegraph_pme import run_full_telegraph_pme_experiment
+from edsim.phys.analogues.temporal_tension import run_full_tension_experiment
+
+for name, runner in [
+    ("RC/Debye", run_full_rc_experiment),
+    ("Barenblatt", run_full_barenblatt_experiment),
+    ("Telegraph Horizon", run_full_telegraph_horizon_experiment),
+    ("Telegraph PME", run_full_telegraph_pme_experiment),
+    ("Temporal Tension", run_full_tension_experiment),
+]:
+    report = runner()
+    print(f"{name}: done ({len(report)} chars)")
 ```
 
 ---
