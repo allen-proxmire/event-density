@@ -25,24 +25,51 @@ env/
 Thumbs.db
 desktop.ini
 
-# ED Simulation generated outputs (large, regenerable)
-ED Simulation/output/runs/
-ED Simulation/output/runs_legacy/
-ED Simulation/output/logs/
-ED Simulation/output/figures/**/*.png
-ED Simulation/output/atlas/*.png
-ED Simulation/output/atlas/*.pdf
+# === Generated / binary files (never track) ===
 
-# ED Physics generated results (regenerable)
-ED Physics/ED-Phys-*/results/*.npz
-ED Physics/ED-Phys-*/results/*.npy
-ED Physics/ED-Phys-*/results/*.csv
-ED Physics/ED-Phys-*/results/*.json
+# Data files
+**/*.npz
+**/*.npy
+**/*.csv
+**/*.xlsx
+**/*.json
 
-# ED Validation generated outputs (regenerable)
-ED Validation/P*/results.json
-ED Validation/P*/*.png
-ED Validation/P*/*.npz
+# Images and figures
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.tiff
+**/*.gif
+**/*.bmp
 
-# Checkpoints
+# PDFs (papers are in .md; compile locally)
+**/*.pdf
+
+# LaTeX build artifacts
+**/*.aux
+**/*.log
+**/*.out
+**/*.toc
+**/*.bbl
+**/*.blg
+**/*.synctex.gz
+**/*.fls
+**/*.fdb_latexmk
+**/*.tex
+
+# Notebooks (outputs)
+**/*.ipynb
+
+# Simulation outputs
+**/output/
+**/results/
+**/runs/
+**/figures/
+
+# Archive (local only, not tracked)
+/archive/
+
+# Miscellaneous
+**/*.bib
 *.checkpoint.npz
+.pytest_cache/
