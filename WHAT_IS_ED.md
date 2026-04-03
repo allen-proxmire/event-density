@@ -2,13 +2,22 @@
 
 ## Overview
 
-Event Density (ED) is an ontological framework for density-driven dynamics. It asks a single question: **what are the minimal primitives from which physically recognisable structure arises?**
+Event Density (ED) is a **constrained generative ontology** for density-driven dynamics. It asks a single question: **what are the minimal primitives from which physically recognisable structure arises?**
 
-The answer is four objects and three channels. From these, a unique canonical PDE is derived, and its structural consequences are compared — not fitted — to known physical laws.
+The answer is four primitive objects and three constitutive channels. From these, a canonical PDE is derived via seven structural axioms, and its structural consequences are compared — not fitted — to known physical laws.
 
 ---
 
 ## The Four Primitives
+
+The ED system is built on four irreducible objects:
+
+| Primitive | Symbol | Type | Role |
+|-----------|--------|------|------|
+| Density | $\rho(x,t)$ | Bounded scalar field on $\Omega \subset \mathbb{R}^d$ | State variable |
+| Mobility | $M(\rho) = M_0(\rho_{\max} - \rho)^\beta$ | Constitutive function, $\geq 0$ | Degenerate transport coefficient |
+| Penalty | $P(\rho) = P_0(\rho - \rho^*)$ | Constitutive function | Monostable restoring force |
+| Participation | $v(t)$ | Global scalar | Non-local feedback variable |
 
 ### 1. Density
 
@@ -44,31 +53,33 @@ A global scalar variable $v(t)$, driven by the domain-averaged operator and feed
 
 The canonical PDE is not postulated. It is derived from seven structural axioms:
 
-| Axiom | Title | Content |
-|-------|-------|---------|
-| P1 | Locality | The operator at each point depends only on local values and derivatives |
-| P2 | Isotropy | The operator is invariant under rotations and reflections |
-| P3 | Gradient-driven flow | The flux is $J = -M(\rho)\nabla\rho$ with state-dependent mobility |
-| P4 | Dissipative structure | There exists a Lyapunov functional with $dE/dt \leq 0$ |
-| P5 | Single scalar field | The system evolves one real-valued scalar |
-| P6 | Minimal coupling | The global mode $v(t)$ couples additively with minimal structure |
-| P7 | Dimensional consistency | Constitutive functions are independent of spatial dimension |
+1. **P1 — Locality.** The operator at each point depends only on local values and spatial derivatives of $\rho$.
+2. **P2 — Isotropy.** The operator is invariant under rotations and reflections: it depends on $\rho$, $|\nabla\rho|^2$, and $\nabla^2\rho$ only.
+3. **P3 — Gradient-driven flow.** The flux is $J = -M(\rho)\nabla\rho$ with a non-negative, state-dependent mobility.
+4. **P4 — Dissipative structure.** There exists a Lyapunov functional $E[\rho]$ with $dE/dt \leq 0$ along all solutions.
+5. **P5 — Single scalar field.** The system evolves one real-valued bounded scalar $\rho(x,t)$.
+6. **P6 — Minimal coupling.** A global mode $v(t)$ couples additively into the density equation with minimal dynamical structure.
+7. **P7 — Dimensional consistency.** The constitutive functions $M(\rho)$ and $P(\rho)$ are independent of spatial dimension $d$.
 
-These seven axioms uniquely determine the canonical ED PDE.
+These seven axioms determine the canonical ED PDE. The axioms constrain the *class* of admissible constitutive functions; the canonical forms $M(\rho) = M_0(\rho_{\max} - \rho)^\beta$ and $P(\rho) = P_0(\rho - \rho^*)$ are the simplest representatives of that class (see [Limitations and Scope](#limitations-and-scope) below).
 
 ---
 
 ## The Canonical PDE
 
-$$\partial_t \rho = D\,F[\rho] + H\,v, \qquad \dot{v} = \frac{1}{\tau}\bigl(\bar{F} - \zeta\,v\bigr)$$
+> **Density evolution:**
+> $$\partial_t \rho = D\bigl[\nabla\cdot(M(\rho)\,\nabla\rho) - P(\rho)\bigr] + H\,v$$
+>
+> **Participation ODE:**
+> $$\dot{v} = \frac{1}{\tau}\bigl(\bar{F} - \zeta\,v\bigr)$$
+>
+> **where** $\bar{F} = |\Omega|^{-1}\int_\Omega F[\rho]\,d^d x$ is the domain-averaged density operator.
 
-where
+Equivalently, the local density operator expands as:
 
 $$F[\rho] = M(\rho)\,\nabla^2\rho + M'(\rho)\,|\nabla\rho|^2 - P(\rho)$$
 
-and $\bar{F} = |\Omega|^{-1}\int_\Omega F[\rho]\,d^d x$.
-
-The first two terms of $F$ combine into a divergence: $M\nabla^2\rho + M'|\nabla\rho|^2 = \nabla\cdot[M(\rho)\nabla\rho]$.
+The first two terms combine into a divergence: $M\nabla^2\rho + M'|\nabla\rho|^2 = \nabla\cdot[M(\rho)\nabla\rho]$.
 
 ---
 
@@ -109,3 +120,19 @@ No comparison PDE — not the porous-medium equation, not Allen-Cahn, not Cahn-H
 - ED is not a variational theory (it has Lyapunov functionals but is not a gradient flow)
 
 ED is a **constitutive architecture**: a specific choice of mathematical objects whose structural consequences are then compared to known physics.
+
+---
+
+## Limitations and Scope
+
+### Global participation variable
+
+The participation variable $v(t)$ is a single global scalar. ED currently describes single-domain systems where $v$ couples uniformly to all points. A spatially varying participation field $v(x,t)$ — enabling multi-domain or multi-scale dynamics — is a natural future extension but is not part of the current framework.
+
+### Constitutive under-specification
+
+Axioms P1–P7 constrain the *class* of admissible constitutive functions but do not uniquely determine the functional forms of $M(\rho)$ and $P(\rho)$. The canonical choices — $M(\rho) = M_0(\rho_{\max} - \rho)^\beta$ (monomial mobility) and $P(\rho) = P_0(\rho - \rho^*)$ (linear penalty) — are the simplest representatives of that admissible class. Other forms satisfying the axioms (e.g., exponential mobility, nonlinear penalty) would produce a different member of the same PDE family. The nine architectural laws have been verified only for the canonical constitutive functions.
+
+### The canonical PDE is one member of an admissible family
+
+The axioms define a family of PDEs, not a single equation. The canonical PDE is distinguished by constitutive simplicity (lowest-order monomial and linear forms), not by axiomatic uniqueness alone. Claims of structural universality — such as the nine laws — apply to the canonical representative and may or may not extend to the full admissible class.

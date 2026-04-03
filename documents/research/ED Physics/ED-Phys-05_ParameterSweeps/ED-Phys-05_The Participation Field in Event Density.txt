@@ -1,0 +1,685 @@
+# ED-Phys-05: The Participation Field in Event Density
+
+## Physical Interpretation, Cross-Regime Anchoring, and Falsifiable Predictions
+
+**Author:** Allen Proxmire
+**Series:** ED-Phys-05
+**Date:** March 2026
+**Status:** Research Note
+
+---
+
+## Abstract
+
+The Event Density (ED) architecture contains a global participation field $v(t)$ whose physical interpretation has remained the single largest open question in the framework. This paper resolves the interpretation and derives its consequences. We show that $v(t)$ corresponds to the spatially-averaged Madelung velocity (Ehrenfest mean current) in the quantum regime, generalised with dissipation. Requiring causal propagation uniquely fixes the participation coupling $H$ to the Compton frequency, giving a telegraph propagation speed equal to $c$. We trace $v(t)$ across five physical regimes, identify which interpretations are exact, anchored, or candidate, and derive five falsifiable predictions that distinguish ED from standard physics. Five numerical experiments are proposed to isolate $v(t)$'s effects within the existing ED-SIM-02 simulation engine.
+
+---
+
+## 1. Motivation
+
+Event Density is now a validated architecture with a working simulation engine (ED-SIM-02, 112 tests, 9/9 reproducibility phases), a full analogue suite (six structural analogues, five quantitative matches), successful empirical tests in condensed matter ($\beta = 2.00 \pm 0.29$ across three materials), and galaxy-scale predictions (cored halos, BTFR with exponent $1/4$, activity dependence, merger lag).
+
+The one major open question is the physical interpretation of the participation field $v(t)$. This field drives:
+
+- Telegraph behaviour (Analogues 4–5)
+- Temporal tension and pair interactions (Analogue 6)
+- The baryonic Tully–Fisher relation scaling (ED-Data-Galaxy series)
+- Cosmology-like expansion and horizon effects
+
+The March 2026 Critical Assessment identified the dimensional mapping gap as the #1 priority. The ED-Dimensional series (01–05 + Master Atlas) closed the gap for the density field $\rho$ and the diffusion coefficient $D$. But the participation field was classified as "candidate" in every regime — physically motivated but not uniquely determined.
+
+This paper aims to resolve that classification: to determine what $v(t)$ *is*, what it *must* be, and what ED predicts because of it.
+
+---
+
+## 2. The $v(t)$ Equation and Its Structural Role
+
+### 2.1 The Coupled System
+
+The ED canonical PDE is a coupled system of one PDE and one ODE:
+
+$$\partial_t \rho = \underbrace{D\,\nabla\!\cdot\!(M(\rho)\nabla\rho)}_{\text{mobility}} - \underbrace{D\,P(\rho)}_{\text{penalty}} + \underbrace{H\,v(t)}_{\text{participation}}$$
+
+$$\dot{v} = -\gamma\,v + H\,\bar{F}[\rho]$$
+
+where:
+
+- $M(\rho) = M_0(\rho_{\max} - \rho)^\beta$ is the degenerate mobility
+- $P(\rho) = P_0(\rho - \rho^*)$ is the penalty
+- $\bar{F}[\rho] = \langle D[\nabla\!\cdot\!(M(\rho)\nabla\rho) - P(\rho)] \rangle$ is the volume-averaged local forcing
+- $H$ is the participation coupling strength
+- $\gamma$ is the damping rate
+
+The forcing $\bar{F}[\rho]$ is the spatial mean of everything the density field does *without* participation — the average of the mobility and penalty channels.
+
+### 2.2 Why $v(t)$ Is Global
+
+The participation field $v(t)$ has no spatial index. It is a scalar function of time only. This is not an approximation or a simplification — it is a structural feature of the ED architecture. Whatever $v(t)$ represents physically, it must be an aggregate property of the entire system.
+
+### 2.3 The Feedback Structure
+
+The coupling between $\rho$ and $v$ is bidirectional:
+
+1. **$v(t)$ is driven by the density dynamics.** The forcing $H\bar{F}$ means $v(t)$ responds to what $\rho$ does on average. It does not have independent dynamics.
+
+2. **$v(t)$ feeds back uniformly.** The $+Hv$ term in the $\rho$-equation is the same at every spatial point. This is a mean-field coupling, not a spatially structured interaction.
+
+3. **The combined system is telegraph.** In the spatially uniform limit ($\nabla\rho = 0$), defining $\delta = \langle\rho\rangle - \rho^*$, the coupled system reduces to:
+
+$$\ddot{\delta} + (D P_0 + \gamma)\dot{\delta} + (D^2 P_0^2 + H^2 D P_0)\,\delta = 0$$
+
+This is the telegraph/RLC equation with damping rate $(D P_0 + \gamma)/2$ and natural frequency $\omega_0^2 = D^2 P_0^2 + H^2 D P_0$.
+
+### 2.4 Three Constraints on Any Interpretation
+
+Any physical interpretation of $v(t)$ must satisfy:
+
+| # | Constraint | Reason |
+|---|-----------|--------|
+| 1 | $v(t)$ must be global (not spatially varying) | It is a scalar ODE, not a PDE |
+| 2 | $v(t)$ must be driven by density dynamics | The $\bar{F}[\rho]$ forcing is structural |
+| 3 | $v(t)$ must produce telegraph behaviour when coupled to $\rho$ | This is the defining feature of the participation channel |
+
+---
+
+## 3. The Madelung Mapping
+
+### 3.1 The Standard Madelung Picture
+
+Write $\psi = \sqrt{\rho}\,e^{iS/\hbar}$. The Schrödinger equation splits into two real equations:
+
+**Continuity equation:**
+
+$$\partial_t \rho + \nabla\!\cdot\!(\rho\,\mathbf{u}) = 0, \qquad \mathbf{u} = \frac{\nabla S}{m}$$
+
+**Hamilton–Jacobi equation:**
+
+$$\partial_t S + \frac{|\nabla S|^2}{2m} + V + Q = 0, \qquad Q = -\frac{\hbar^2}{2m}\frac{\nabla^2\sqrt{\rho}}{\sqrt{\rho}}$$
+
+where $Q$ is the quantum potential.
+
+The Madelung system has two dynamical objects: the density field $\rho(\mathbf{x},t)$ and the phase field $S(\mathbf{x},t)$, or equivalently the velocity field $\mathbf{u}(\mathbf{x},t) = \nabla S/m$.
+
+### 3.2 What ED Has vs. What Madelung Has
+
+| Madelung | ED |
+|----------|-----|
+| $\rho(\mathbf{x},t)$ — density field | $\rho(\mathbf{x},t)$ — density field |
+| $\mathbf{u}(\mathbf{x},t) = \nabla S/m$ — velocity field | **absent** |
+| $S(\mathbf{x},t)$ — phase field | **absent** |
+| — | $v(t)$ — global participation scalar |
+
+ED has *fewer* degrees of freedom than Madelung. It replaces the spatially-resolved velocity field $\mathbf{u}(\mathbf{x},t)$ with a single global scalar $v(t)$. This is the critical structural difference.
+
+### 3.3 The Natural Identification
+
+The most parsimonious identification consistent with the three constraints (Section 2.4) is:
+
+$$\boxed{v(t) \;\longleftrightarrow\; \langle \mathbf{u} \rangle = \frac{1}{\mathrm{Vol}}\int \frac{\nabla S}{m}\,d^d x}$$
+
+**$v(t)$ is ED's representation of the spatially-averaged Madelung velocity.**
+
+### 3.4 The $v(t)$ Equation as Averaged Euler Equation
+
+In the Madelung picture, the velocity field satisfies the Euler equation:
+
+$$\partial_t \mathbf{u} + (\mathbf{u}\cdot\nabla)\mathbf{u} = -\frac{1}{m}\nabla(V + Q)$$
+
+Averaging over the spatial domain:
+
+$$\frac{d\langle \mathbf{u}\rangle}{dt} = -\frac{1}{m}\langle\nabla(V+Q)\rangle - \langle(\mathbf{u}\cdot\nabla)\mathbf{u}\rangle + \text{boundary terms}$$
+
+The convective term $\langle(\mathbf{u}\cdot\nabla)\mathbf{u}\rangle$ creates a closure problem: the average of the product is not the product of the averages. Information about the spatial structure of $\mathbf{u}$ is needed to close the equation.
+
+**ED's $v(t)$ equation is a specific closure of this hierarchy.** It replaces the full spatial dynamics with:
+
+$$\dot{v} = -\gamma v + H\bar{F}[\rho]$$
+
+where:
+
+- The $H\bar{F}[\rho]$ term captures the mean force $-\langle\nabla(V+Q)\rangle/m$
+- The $-\gamma v$ term absorbs the information lost by compressing $\mathbf{u}(\mathbf{x},t) \to v(t)$
+
+### 3.5 Physical Content of the Damping $\gamma$
+
+The damping rate $\gamma$ represents the decorrelation between the true velocity field and its spatial mean — the information that is lost in the mean-field compression.
+
+- In closed systems with coherent states: $\mathbf{u}(\mathbf{x},t) \approx \mathbf{u}_0(t)$ is nearly uniform, the compression is nearly exact, and $\gamma$ is small.
+- In open systems or decoherent states: $\mathbf{u}(\mathbf{x},t)$ has rich spatial structure (interference, vortices), the compression loses significant information, and $\gamma$ is large.
+
+$\gamma$ is therefore interpretable as a **decoherence rate** in the quantum regime — the rate at which spatial velocity correlations are lost.
+
+### 3.6 Where the Identification Holds and Breaks
+
+The identification $v(t) \leftrightarrow \langle\mathbf{u}\rangle$ is exact in two limits:
+
+1. **Coherent states** ($\mathbf{u}(\mathbf{x},t) \approx \mathbf{u}_0(t)$, nearly uniform velocity): $v(t) \approx u_0(t)$ is an excellent approximation.
+
+2. **Spatially uniform $\rho$** (the RC/Debye limit): there is no spatial structure to average over, and the telegraph equation is exact.
+
+It breaks when $\mathbf{u}(\mathbf{x},t)$ has rich spatial structure — interference patterns, vortices, multi-valued phase. In those cases, $\langle\mathbf{u}\rangle$ is a poor summary of the velocity field, and ED's $v(t)$ will diverge from the full Madelung description.
+
+**This divergence is itself a prediction.** ED asserts that the mean-field closure is the correct physics — that the global flow captures the essential dynamics — not just a convenient approximation. Any experiment comparing ED predictions to full Schrödinger evolution in the high-interference regime would test this assertion.
+
+### 3.7 Connection to Nelson's Stochastic Mechanics
+
+In Nelson's stochastic-mechanics framework, the Madelung picture acquires a diffusion interpretation. The particle undergoes Brownian motion with diffusion coefficient $D = \hbar/(2m)$, and two velocity fields emerge:
+
+- **Current velocity:** $\mathbf{v}_c = \nabla S/m$ (the Madelung velocity, directed drift)
+- **Osmotic velocity:** $\mathbf{b} = \frac{\hbar}{2m}\frac{\nabla\rho}{\rho} = D\,\nabla(\ln\rho)$ (the quantum diffusion counterpart)
+
+The forward and backward velocities are $\mathbf{v}_\pm = \mathbf{v}_c \pm \mathbf{b}$.
+
+The spatial average of the osmotic velocity $\langle\mathbf{b}\rangle$ depends on boundary conditions and the shape of $\rho$. For symmetric distributions, $\langle\mathbf{b}\rangle = 0$ by parity. Therefore:
+
+$$v(t) \;\longleftrightarrow\; \langle \mathbf{v}_c \rangle = \langle \nabla S/m \rangle$$
+
+The participation field is the mean *current* velocity — the coherent drift — not the osmotic part. This is physically sensible: the osmotic velocity is the "quantum diffusion" that maintains $\rho$'s shape; the current velocity is the actual directed flow. ED's $v(t)$ captures the flow and is insensitive to the osmotic fluctuations.
+
+### 3.8 Does $v(t)$ Map to a Known Quantum Quantity?
+
+**Partially yes, partially no.**
+
+| Aspect | Maps to known quantity? | Details |
+|--------|------------------------|---------|
+| $v(t)$ as spatial average of $\mathbf{u}$ | **Yes** | Ehrenfest mean velocity $\langle\mathbf{p}\rangle/m$ |
+| Damping $-\gamma v$ | **Yes, in open QM** | Lindblad dissipation; no counterpart in closed-system QM |
+| Coupling $H$ (feedback strength) | **No** | Standard QM has no parameter controlling mean-field feedback on $\rho$ |
+| Telegraph structure | **No** | Standard QM does not produce telegraph dynamics in $\rho$ |
+
+**Conclusion:** $v(t)$ is the Ehrenfest mean velocity *generalised* with dissipation ($\gamma$) and controllable mean-field coupling ($H$). It contains standard QM as the limit $\gamma \to 0$, $H \to 0$, and goes beyond it when either is nonzero.
+
+---
+
+## 4. The Compton Frequency Anchoring
+
+### 4.1 The Propagation Speed
+
+The telegraph equation, in its spatially-extended form, propagates information at finite speed. For the ED coupled system in the long-wavelength limit, the characteristic propagation speed is:
+
+$$c_{\text{ED}}^2 \sim D \cdot H$$
+
+The precise proportionality constant depends on the penalty and mobility parameters, but the dimensional scaling is set by $DH$.
+
+### 4.2 The Causality Requirement
+
+In the quantum regime, $D = \hbar/(2m)$. The question is: **what value of $H$ makes the propagation speed equal to the speed of light?**
+
+$$c^2 = \frac{\hbar}{2m} \cdot H \quad \Longrightarrow \quad H = \frac{2mc^2}{\hbar} \equiv 2\omega_C$$
+
+where $\omega_C = mc^2/\hbar$ is the Compton angular frequency.
+
+$$\boxed{H = \frac{2mc^2}{\hbar} \quad \Longrightarrow \quad c_{\text{ED}} = c}$$
+
+**If the participation coupling in the quantum regime equals twice the Compton frequency, then the ED telegraph equation propagates at the speed of light.**
+
+### 4.3 Numerical Verification
+
+| Particle | $D = \hbar/(2m)$ | $H = 2mc^2/\hbar$ | $c_{\text{ED}} = \sqrt{DH}$ |
+|----------|---|---|---|
+| Electron | $5.79 \times 10^{-5}$ m²/s | $1.55 \times 10^{21}$ s⁻¹ | $3.00 \times 10^{8}$ m/s |
+| Proton | $3.15 \times 10^{-8}$ m²/s | $2.85 \times 10^{24}$ s⁻¹ | $3.00 \times 10^{8}$ m/s |
+| Planck mass | $2.42 \times 10^{-43}$ m²/s | $3.71 \times 10^{59}$ s⁻¹ | $3.00 \times 10^{8}$ m/s |
+
+The result is exact and mass-independent: $c_{\text{ED}} = \sqrt{(\hbar/2m)(2mc^2/\hbar)} = c$ for all $m$.
+
+### 4.4 Why This Anchoring Is Not Optional
+
+The standard ED PDE without participation ($H = 0$) is parabolic. Parabolic equations propagate at infinite speed — a delta-function initial condition produces nonzero density everywhere at any $t > 0$. This is the same mathematical pathology as the Schrödinger equation's "instantaneous spreading."
+
+Setting $H = 2\omega_C$ converts the short-time behaviour from parabolic (infinite speed) to hyperbolic (speed $c$). The system transitions from wave-like at times $t \lesssim 1/\gamma$ to diffusion-like at times $t \gg 1/\gamma$.
+
+**The participation channel is not a speculative addition to the ED PDE. It is the mechanism by which ED respects the speed of light in the quantum regime.**
+
+### 4.5 The Wave–Diffusion Interpolation
+
+The ratio $\gamma/H$ controls the character of propagation:
+
+| Regime | Condition | Behaviour |
+|--------|-----------|-----------|
+| Ultrarelativistic (wave-like) | $\gamma \ll H$ | Telegraph → wave equation, propagation at speed $c$ |
+| Intermediate | $\gamma \sim H$ | Damped oscillatory propagation |
+| Nonrelativistic (diffusion-like) | $\gamma \gg H$ | Telegraph → diffusion equation, infinite effective speed |
+
+The transition from wave to diffusion physics is controlled by $\gamma/H$. For $H = 2\omega_C$, the Compton timescale $\tau_C = 1/\omega_C \sim 10^{-21}$ s (electron) sets the crossover: at times shorter than $\tau_C$, propagation is wave-like; at times longer, it becomes diffusion-like.
+
+### 4.6 Connection to Zitterbewegung
+
+The oscillation frequency in the uniform limit is:
+
+$$\omega_0^2 = D^2 P_0^2 + H^2 D P_0$$
+
+With $H = 2\omega_C$ dominating (i.e., $H^2 D P_0 \gg D^2 P_0^2$):
+
+$$\omega_0 \approx H\sqrt{D P_0} = 2\omega_C \sqrt{D P_0}$$
+
+This rapid oscillation at a frequency proportional to the Compton frequency is structurally reminiscent of Zitterbewegung — the rapid trembling motion predicted by the Dirac equation. In ED, it arises naturally from the participation channel, not from spin or antiparticle interference.
+
+### 4.7 Falsifiability
+
+The Compton anchoring makes a specific prediction: **quantum probability density propagates at finite speed $c$, with a sharp wavefront.**
+
+- Standard Schrödinger equation: infinite propagation speed (exponentially small but nonzero superluminal tails).
+- ED with $H = 2\omega_C$: strict propagation speed $c$ (no superluminal tails).
+
+This is testable in principle via tunnelling-time experiments, arrival-time distributions, or any setup measuring the leading edge of a probability wavefront.
+
+---
+
+## 5. Cross-Regime Dictionary
+
+### 5.1 Quantum Regime ($D = \hbar/2m$)
+
+| Quantity | Interpretation | Status |
+|----------|---------------|--------|
+| $v(t)$ | Ehrenfest mean velocity $\langle\nabla S/m\rangle$ | **Anchored** (from Madelung mapping) |
+| $H$ | Compton frequency $2mc^2/\hbar$ | **Anchored** (from causality requirement) |
+| $\gamma$ | Decoherence rate | **Candidate** (not uniquely fixed by architecture) |
+| $Hv$ term | Mean current advection | **Anchored** |
+| Telegraph speed | $c$ (speed of light) | **Exact** (follows from $H$ anchoring) |
+
+**Prediction beyond standard QM:** Density-dependent mobility $M(\rho)$ modifies quantum diffusion near saturation. Decoherence rate $\gamma$ is an intrinsic parameter of the ED architecture, not an environmental input. Probability propagation has a strict finite speed.
+
+### 5.2 Condensed Matter Regime ($D$ = thermal diffusivity)
+
+| Quantity | Interpretation | Status |
+|----------|---------------|--------|
+| $v(t)$ | Mean drift velocity of particle ensemble | **Candidate** (physically natural) |
+| $H$ | Collective coupling strength (hydrodynamic interactions) | **Candidate** |
+| $\gamma$ | Viscous damping rate (Stokes drag) | **Candidate** (independently measurable) |
+| $Hv$ term | Collective drift advecting concentration | **Candidate** |
+| Telegraph speed | $\sqrt{D \cdot H}$ = characteristic collective speed | **Candidate** |
+
+**Prediction beyond standard diffusion:** Telegraph oscillations in collective particle motion. Finite propagation speed for concentration disturbances. Overshoot and ringing in relaxation experiments at high volume fraction.
+
+### 5.3 Galactic Regime ($D = v_{\text{circ}} \cdot L_0$)
+
+| Quantity | Interpretation | Status |
+|----------|---------------|--------|
+| $v(t)$ | Mean peculiar velocity / bulk streaming motion | **Candidate** |
+| $H$ | Gravitational coupling / dynamical response frequency | **Candidate** |
+| $\gamma$ | Dynamical friction rate | **Candidate** |
+| $Hv$ term | Temporal tension (source of BTFR) | **Anchored** (produces correct $V \propto M_b^{1/4}$ scaling) |
+| Telegraph speed | $\sqrt{D \cdot H}$ = characteristic halo response speed | **Candidate** |
+
+**Prediction beyond $\Lambda$CDM and MOND:** Activity dependence (star-forming vs. quiescent galaxies differ at fixed $M_b$). Merger lag (recently merged systems show transient BTFR deviation). Both follow from the dynamical $v(t)$, which equilibrates on a finite timescale $\tau_{\text{eq}} \sim 1/\gamma$.
+
+### 5.4 Cosmological Regime ($D = c^2/H_0$)
+
+| Quantity | Interpretation | Status |
+|----------|---------------|--------|
+| $v(t)$ | Mean expansion rate / Hubble-like parameter | **Speculative** |
+| $H$ | Cosmological coupling frequency | **Speculative** |
+| $\gamma$ | Expansion damping (dark-energy-like term) | **Speculative** |
+| $Hv$ term | Bulk flow modifying density evolution | **Speculative** |
+| Telegraph speed | $c \cdot \sqrt{H/H_0}$ | **Speculative** |
+
+**Potential prediction:** The telegraph structure produces oscillatory deviations from smooth Hubble expansion — a specific prediction for the deceleration parameter $q(t)$ that could be compared to supernova cosmology data.
+
+### 5.5 Planck Regime ($D = \sqrt{\hbar G/c}$)
+
+| Quantity | Interpretation | Status |
+|----------|---------------|--------|
+| $v(t)$ | Mean Planck-scale flow | **Speculative** |
+| $H$ | Planck frequency $\sim \sqrt{c^5/(\hbar G)}$ | **Speculative** (by dimensional analysis) |
+| $\gamma$ | Planck dissipation rate | **Speculative** |
+
+**Note:** The Planck regime is the least constrained. No empirical tests are currently possible. The anchoring, if it exists, would follow from requiring $c_{\text{ED}} = c$ at the Planck scale, which gives $H = c^2/D = \sqrt{c^5/(\hbar G)} = \omega_P$ (Planck frequency).
+
+### 5.6 Minimal Cross-Regime Constraints
+
+A correct $v(t)$ interpretation must satisfy simultaneously:
+
+| # | Constraint | Origin |
+|---|-----------|--------|
+| 1 | Dimensional consistency: $v(t)$ has dimensions of velocity in every regime | Structural |
+| 2 | $H = 0$ recovery: ED reduces to known physics when participation decouples | Correspondence principle |
+| 3 | Global character: interpretation is a spatially-averaged quantity | Architecture (ODE, not PDE) |
+| 4 | Causal propagation: $\sqrt{DH} \leq c$ in regimes where causality is required | Relativity |
+| 5 | Telegraph structure: interpretation naturally satisfies a damped driven ODE | Architecture |
+
+Constraint 4 is the most powerful. It uniquely fixes $H$ in any regime where the speed of light is the causal limit:
+
+$$H_{\text{causal}} = \frac{c^2}{D}$$
+
+| Regime | $D$ | $H_{\text{causal}} = c^2/D$ | Physical name |
+|--------|-----|---|---|
+| Quantum | $\hbar/(2m)$ | $2mc^2/\hbar$ | $2\times$ Compton frequency |
+| Planck | $\sqrt{\hbar G/c}$ | $\sqrt{c^5/(\hbar G)}$ | Planck frequency |
+| Cosmological | $c^2/H_0$ | $H_0$ | Hubble frequency |
+
+The anchoring hierarchy — Compton, Planck, Hubble — follows from a single principle: the telegraph speed equals $c$.
+
+---
+
+## 6. Numerical Experiments to Isolate $v(t)$
+
+All experiments use the ED-SIM-02 simulation engine and require no code modifications — only parameter choices.
+
+### 6.1 Experiment 1: $H$-Transition in the PME Regime
+
+**Purpose:** Identify the participation threshold — the critical $H$ at which $v(t)$ begins to dominate the dynamics.
+
+**Setup:** Barenblatt initial condition (compact bump), $\beta = 2$, $P_0 = 0.01$, $D = 0.3$, $d = 2$.
+
+**Protocol:** Run the identical initial condition at $H = 0, 0.1, 0.5, 1, 2, 5, 10, 20, 50, 100, 200$.
+
+**Observables:**
+
+| Observable | Expected behaviour |
+|-----------|-------------------|
+| Front position $R(t)$ | Unchanged at small $H$; oscillatory modulation at large $H$ |
+| $v(t)$ time series | Zero at $H=0$; oscillatory onset at some $H_c$ |
+| $\langle\rho\rangle(t)$ | Monotonic at $H=0$; damped oscillation at large $H$ |
+| Energy $E(t)$ | Monotonically decreasing (Law 2) — test whether this survives at all $H$ |
+
+**Key question:** Is there a sharp $H_c$ below which $v(t)$ is negligible and above which it dominates? If so, $H_c$ defines a "participation threshold" — a phase boundary in the PDE's parameter space.
+
+### 6.2 Experiment 2: Coherence Test (Single Peak vs. Two Peaks)
+
+**Purpose:** Test the $v(t) \leftrightarrow \langle\mathbf{u}\rangle$ identification directly.
+
+**Setup:** Two initial conditions at identical $(D, M_0, \beta, P_0, H)$:
+
+- **IC-A:** Single Gaussian peak (nearly coherent, $\langle\mathbf{u}\rangle$ well-defined, net drift expected)
+- **IC-B:** Two symmetric Gaussian peaks (rich spatial structure, $\langle\mathbf{u}\rangle \approx 0$ by symmetry)
+
+**Protocol:** Evolve both and compare $v(t)$ amplitudes.
+
+**Prediction:** If $v(t) \leftrightarrow \langle\mathbf{u}\rangle$, then IC-A should show large $v(t)$ oscillations while IC-B should show suppressed $v(t)$. The ratio $|v_A|/|v_B|$ quantifies how well the mean-velocity interpretation works.
+
+### 6.3 Experiment 3: Propagation Speed Measurement
+
+**Purpose:** Measure the finite propagation speed introduced by the participation channel.
+
+**Setup:** Narrow density pulse at $x = 0$, large domain ($L \gg$ pulse width), $H > 0$. Track the arrival time of the density perturbation at positions $x = L/4, L/2, 3L/4$.
+
+**Protocol:** At $H = 0$, the pulse spreads diffusively (arrival time $\sim L^2/D$). At $H > 0$, the telegraph structure should give a finite propagation speed, so arrival time should scale as $L/c_{\text{ED}}$ for large $L$.
+
+**Observables:**
+
+| Measurement | $H = 0$ (diffusion) | $H > 0$ (telegraph) |
+|------------|-------|---------|
+| Arrival time $t_{\text{arr}}(L)$ | $\propto L^2$ | $\propto L$ |
+| Leading-edge profile | Gaussian tail (infinite speed) | Sharp front (finite speed) |
+| Extracted speed | $\infty$ (no well-defined speed) | $c_{\text{ED}} = \sqrt{DH}$ |
+
+**What this tests:** The most fundamental prediction of the participation channel — finite-speed propagation. If confirmed numerically, this is the single strongest argument for the telegraph interpretation.
+
+### 6.4 Experiment 4: Temporal Tension Potential Map
+
+**Purpose:** Map the effective inter-peak potential created by $v(t)$.
+
+**Setup:** Two-peak system (Analogue 6 configuration), sweep $(d, H)$ over $d \in [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]$ and $H \in [0, 0.5, 1, 2, 3, 5, 7, 10]$.
+
+**Observables:**
+
+| Observable | Purpose |
+|-----------|---------|
+| Drift rate at each $(d, H)$ | Sign indicates attraction vs. repulsion |
+| Phase boundary where drift = 0 | Critical curve in $(d, H)$ space |
+| Potential well depth (if any) | Whether bound states can form |
+| Equilibrium separation $d_{\text{eq}}(H)$ | Where attraction balances repulsion |
+
+**What this tests:** The temporal tension mechanism in full generality. If $v(t)$ creates an effective inter-peak potential with a well, that predicts bound-state formation mediated purely by the participation channel — a phenomenon with no counterpart in standard diffusion theory.
+
+### 6.5 Experiment 5: Architectural Law Survival
+
+**Purpose:** Test whether the nine architectural laws hold across the full range of participation coupling.
+
+**Setup:** Run the full 9-phase ED-SIM-02 reproducibility pipeline at $H = 0, 1, 10, 100$.
+
+**Analysis:**
+
+| Law | Expected at $H = 0$ | Question at large $H$ |
+|-----|-----|------|
+| L1 (Unique attractor) | Pass | Does $v(t)$ prevent convergence? |
+| L2 (Energy monotonicity) | Pass | Does participation inject energy? |
+| L3 (Spectral decay) | Pass | Does telegraph coupling excite high modes? |
+| L4 (Complexity dilution) | Pass | Does $v(t)$ change dimensional scaling? |
+| L5 (Dissipation channels) | Pass | Does $R_{\text{part}}$ dominate at large $H$? |
+| L6 (Topological conservation) | Pass | Does $v(t)$ create/destroy topological features? |
+
+**What this tests:** Any law that breaks at high $H$ identifies a structural limitation of the architecture. Any law that *strengthens* at high $H$ identifies participation as a stabilising mechanism.
+
+---
+
+## 7. Predictions Beyond Standard Physics
+
+### 7.1 Prediction 1: Finite-Speed Quantum Probability Propagation
+
+**What ED predicts:** Probability density propagates at speed $c$ when $H = 2\omega_C$. The leading edge of a propagating probability distribution has a sharp cutoff — no superluminal tails.
+
+**What standard QM predicts:** The Schrödinger equation is parabolic: probability density propagates at infinite speed. A Gaussian wave packet produces nonzero probability everywhere at any $t > 0$, though the superluminal amplitude is exponentially small.
+
+**How to test:** Tunnelling-time experiments (Larmor clock, attoclock), arrival-time distributions, or time-of-flight measurements sensitive to the leading edge of the probability wavefront.
+
+**Falsification criterion:** If quantum probability density propagates faster than $c$ in any experiment, the Compton anchoring is wrong. If there is a sharp cutoff at $c$ (as ED predicts), the anchoring is confirmed.
+
+### 7.2 Prediction 2: Telegraph Oscillations in Dense Colloids
+
+**What ED predicts:** In concentrated colloidal suspensions ($\phi > 0.3$), a concentration perturbation should relax with damped oscillations, not monotonic exponential decay. The oscillation frequency scales as $\omega \sim \sqrt{DH}$ where $D$ is the collective diffusion coefficient and $H$ is the hydrodynamic coupling strength.
+
+**What standard diffusion predicts:** Fick's second law gives purely monotonic relaxation: $\delta(t) = \delta_0 e^{-t/\tau}$ with no oscillation at any concentration.
+
+**How to test:** Concentration-step experiment in dense colloidal suspension. Track concentration profile with confocal microscopy at sub-millisecond resolution. Look for overshoot and ringing in the approach to equilibrium.
+
+**Falsification criterion:** If relaxation is purely monotonic at all concentrations and measurement resolutions, the participation channel is absent in condensed matter.
+
+### 7.3 Prediction 3: Activity-Dependent Rotation Curves
+
+**What ED predicts:** Because $v(t)$ equilibrates on a finite timescale $\tau_{\text{eq}} \sim 1/\gamma$, galaxies with recent activity (star formation, accretion) should have $v(t)$ out of equilibrium and therefore show systematic deviations from the equilibrium BTFR prediction. Specifically, star-forming galaxies should scatter *above* the BTFR at fixed baryonic mass.
+
+**What $\Lambda$CDM predicts:** Dark matter halos do not couple to baryonic activity on short timescales. No systematic difference between active and quiescent galaxies at fixed halo mass.
+
+**What MOND predicts:** Modified gravity is instantaneous (algebraic relation between acceleration and baryonic mass). No activity dependence.
+
+**How to test:** Compare rotation curves of star-forming vs. quiescent galaxies at fixed baryonic mass in SPARC or MaNGA survey data.
+
+**Falsification criterion:** If no systematic activity dependence exists at $>2\sigma$ significance, the temporal tension mechanism is wrong.
+
+### 7.4 Prediction 4: Merger Lag
+
+**What ED predicts:** Recently merged galaxy pairs should show transient BTFR violations because their combined $v(t)$ has not yet equilibrated to the new combined mass. The relaxation timescale is $\tau_{\text{eq}} \sim 1/\gamma$, expected to be several hundred Myr for typical galaxy parameters. The deviation should correlate with time-since-merger and decay exponentially.
+
+**What $\Lambda$CDM predicts:** Post-merger relaxation occurs via dynamical friction and violent relaxation of the dark matter halo, on timescales of $\sim 1$ Gyr. The BTFR deviation is controlled by halo properties, not baryonic dynamics.
+
+**What MOND predicts:** No transient deviation (instantaneous response).
+
+**How to test:** Identify post-merger galaxies (morphological signatures, tidal features) and measure BTFR residuals. Correlate residuals with estimated time-since-merger from tidal-feature age.
+
+**Falsification criterion:** If post-merger BTFR residuals are uncorrelated with merger age, the $v(t)$ equilibration mechanism is wrong.
+
+### 7.5 Prediction 5: Oscillatory Deceleration Parameter
+
+**What ED predicts:** If the cosmological $v(t)$ has telegraph dynamics, the expansion history should show damped oscillations around the smooth $\Lambda$CDM prediction. The deceleration parameter $q(z)$ should have subtle oscillatory deviations with a characteristic frequency set by $\sqrt{D \cdot H}$ in cosmological units.
+
+**What $\Lambda$CDM predicts:** Smooth, monotonic transition from $q > 0$ (deceleration, matter-dominated) to $q < 0$ (acceleration, $\Lambda$-dominated).
+
+**How to test:** High-precision supernova cosmology (Rubin Observatory LSST, Roman Space Telescope) measuring $q(z)$ at $z < 2$ with sufficient precision to detect oscillatory deviations from smooth $\Lambda$CDM.
+
+**Falsification criterion:** If $q(z)$ is smooth to within measurement precision over the next decade, the cosmological telegraph prediction is not supported.
+
+---
+
+## 8. What Would Falsify This Interpretation
+
+| Test | Result that falsifies | What it would mean |
+|------|----------------------|-------------------|
+| Quantum propagation speed $\neq c$ | Compton anchoring wrong | $H$ is not uniquely fixed in quantum regime |
+| No telegraph oscillations in dense colloids at any $\phi$ | Participation channel absent in condensed matter | $v(t)$ may be quantum-only, not universal |
+| No activity dependence in galaxy rotation curves | Temporal tension mechanism wrong | $v(t)$ does not equilibrate on astrophysical timescales |
+| $v(t)$ amplitude does not scale with $\langle\mathbf{u}\rangle$ in coherence test | Mean-velocity interpretation wrong | $v(t)$ is something other than the averaged Madelung velocity |
+| Architectural laws break at moderate $H$ | Participation channel destabilises the architecture | The ED PDE is only valid in the $H \to 0$ limit |
+| Post-merger BTFR residuals uncorrelated with merger age | $v(t)$ equilibration mechanism wrong | Temporal tension has no dynamical timescale |
+
+---
+
+## 9. Open Questions
+
+1. **Physical origin of $\gamma$ in each regime.** The damping rate $\gamma$ is the least constrained parameter. In the quantum regime, it maps to decoherence; in condensed matter, to viscous drag; in galaxies, to dynamical friction. But can $\gamma$ be derived from the other ED parameters $(D, M_0, \beta, P_0)$, or is it genuinely independent? If independent, it is ED's only free parameter not fixed by the architecture.
+
+2. **Multi-particle generalisation.** The current $v(t)$ is a single global scalar. For systems with multiple species or multiple length scales, does ED require multiple participation fields $v_1(t), v_2(t), \ldots$? If so, how do they couple?
+
+3. **Connection to Berry phase.** In the quantum regime, the phase $S(\mathbf{x},t)$ contains geometric (Berry) phase contributions when the Hamiltonian is cycled adiabatically. Does $v(t) = \langle\nabla S/m\rangle$ capture Berry-phase effects, or does the spatial averaging erase them?
+
+4. **Does the Compton anchoring extend to other regimes?** The causality requirement $c_{\text{ED}} = c$ uniquely fixes $H$ in any regime where $D$ is known. In the galactic regime ($D = v_{\text{circ}} \cdot L_0$), this would give $H = c^2/(v_{\text{circ}} \cdot L_0)$. Is this physically reasonable? Does it match the $H$ values that produce the correct BTFR?
+
+5. **Can $\gamma$ be measured independently?** If $\gamma$ is the decoherence rate (quantum), or the viscous damping rate (condensed matter), or the dynamical friction timescale (galactic), then it should be measurable independently of ED. Comparing the independently-measured $\gamma$ with the value needed to fit ED predictions would be a strong consistency check.
+
+6. **The $\gamma \to 0$ limit.** When $\gamma = 0$ (no damping), the telegraph equation becomes the wave equation. Does ED in the $\gamma = 0$ limit correspond to a known physical theory? In the quantum regime with $H = 2\omega_C$ and $\gamma = 0$, is the result equivalent to the Klein–Gordon equation or some other relativistic wave equation?
+
+7. **Spatial generalisation of $v(t)$.** Could $v(t)$ be promoted to a field $v(\mathbf{x},t)$ in a future version of ED? If so, the ED PDE would become a system of two coupled PDEs — structurally similar to Madelung itself. Would this recover the full Schrödinger equation as a limit?
+
+---
+
+## Appendix A: Derivation of the Spatially-Averaged Euler Equation
+
+Starting from the Madelung–Euler equation:
+
+$$\partial_t \mathbf{u} + (\mathbf{u}\cdot\nabla)\mathbf{u} = -\frac{1}{m}\nabla(V + Q)$$
+
+Integrate over the spatial domain $\Omega$ with volume $|\Omega|$:
+
+$$\frac{d}{dt}\langle\mathbf{u}\rangle = -\frac{1}{m}\langle\nabla(V + Q)\rangle - \langle(\mathbf{u}\cdot\nabla)\mathbf{u}\rangle$$
+
+The convective term can be decomposed as:
+
+$$\langle(\mathbf{u}\cdot\nabla)\mathbf{u}\rangle = \langle\mathbf{u}\rangle \cdot \langle\nabla\mathbf{u}\rangle + \langle\mathbf{u}'\cdot\nabla\mathbf{u}'\rangle$$
+
+where $\mathbf{u}' = \mathbf{u} - \langle\mathbf{u}\rangle$ is the fluctuation. The second term is the Reynolds-stress-like closure term.
+
+**ED's closure:** Replace $\langle\mathbf{u}'\cdot\nabla\mathbf{u}'\rangle$ with $\gamma\langle\mathbf{u}\rangle$, a linear damping proportional to the mean velocity. This is the simplest closure that:
+
+- Is dissipative (removes energy from the mean flow)
+- Vanishes when $\mathbf{u}$ is spatially uniform ($\mathbf{u}' = 0$)
+- Has a single free parameter ($\gamma$)
+
+The result is:
+
+$$\frac{d\langle\mathbf{u}\rangle}{dt} = -\gamma\langle\mathbf{u}\rangle - \frac{1}{m}\langle\nabla(V + Q)\rangle - \langle\mathbf{u}\rangle \cdot \langle\nabla\mathbf{u}\rangle$$
+
+Identifying $v(t) = \langle\mathbf{u}\rangle$ and absorbing the last term into $\gamma$ (or dropping it for nearly uniform flow):
+
+$$\dot{v} = -\gamma v + H\bar{F}[\rho]$$
+
+where $H\bar{F}[\rho]$ captures $-\langle\nabla(V+Q)\rangle/m$ through the ED constitutive channels.
+
+---
+
+## Appendix B: Telegraph Equation Propagation Speed
+
+### B.1 The Spatially-Extended Telegraph Equation
+
+Consider the ED coupled system linearised around the equilibrium $\rho = \rho^*$, $v = 0$, with small perturbations $\delta(\mathbf{x},t) = \rho - \rho^*$ and $v(t)$:
+
+$$\partial_t \delta = D\nabla^2\delta - D P_0 \delta + Hv$$
+$$\dot{v} = -\gamma v + H(D\langle\nabla^2\delta\rangle - D P_0\langle\delta\rangle)$$
+
+For a single Fourier mode $\delta \propto e^{ikx}$, the spatial average $\langle\nabla^2\delta\rangle = -k^2\langle\delta\rangle$ and $\langle\delta\rangle = \delta$ (for a single mode).
+
+Eliminating $v$:
+
+$$\ddot{\delta} + (Dk^2 + DP_0 + \gamma)\dot{\delta} + \gamma(Dk^2 + DP_0)\delta + H^2 DP_0\delta + H^2 Dk^2\delta = 0$$
+
+In the long-wavelength limit ($k \to 0$), the $k^2$ terms are subdominant. In the short-wavelength limit ($k$ large), the leading terms give:
+
+$$\ddot{\delta} + Dk^2\dot{\delta} \approx -H^2 Dk^2 \delta$$
+
+The dispersion relation gives a propagation speed:
+
+$$c_{\text{ED}}^2 = \lim_{k\to\infty} \frac{\omega^2}{k^2} = D \cdot H$$
+
+### B.2 The Compton Result
+
+Substituting $D = \hbar/(2m)$ and $H = 2mc^2/\hbar$:
+
+$$c_{\text{ED}}^2 = \frac{\hbar}{2m} \cdot \frac{2mc^2}{\hbar} = c^2$$
+
+$$\boxed{c_{\text{ED}} = c}$$
+
+This result is exact, independent of $P_0$, $\gamma$, $M_0$, or $\beta$.
+
+---
+
+## Appendix C: Numerical Experiment Parameters
+
+### C.1 Experiment 1: $H$-Transition Sweep
+
+| Parameter | Value |
+|-----------|-------|
+| $d$ | 2 |
+| $N$ | $[128, 128]$ |
+| $D$ | 0.3 |
+| $M_0$ | 1.0 |
+| $\beta$ | 2.0 |
+| $P_0$ | 0.01 |
+| $\rho^*$ | 0.5 |
+| $\rho_{\max}$ | 1.0 |
+| IC | Barenblatt compact bump, $A = 0.3$ |
+| $H$ values | $[0, 0.1, 0.5, 1, 2, 5, 10, 20, 50, 100, 200]$ |
+| $\gamma$ | $0.1$ (fixed across sweep) |
+| $T$ | 2.0 |
+| $dt$ | 0.001 |
+
+### C.2 Experiment 2: Coherence Test
+
+| Parameter | IC-A (single peak) | IC-B (two peaks) |
+|-----------|---|---|
+| $d$ | 2 | 2 |
+| $N$ | $[128, 128]$ | $[128, 128]$ |
+| IC | Gaussian, centre $(0.5, 0.5)$, $\sigma = 0.1$ | Two Gaussians, centres $(0.3, 0.5)$ and $(0.7, 0.5)$, $\sigma = 0.08$ |
+| $H$ | 5.0 | 5.0 |
+| All other params | Identical | Identical |
+
+### C.3 Experiment 3: Propagation Speed
+
+| Parameter | Value |
+|-----------|-------|
+| $d$ | 1 (use 2D with $N = [512, 4]$ for quasi-1D) |
+| IC | Narrow Gaussian pulse at $x = 0.05$, $\sigma = 0.01$ |
+| Domain | $L = 4.0$ (extended domain) |
+| Measurement points | $x = 1.0, 2.0, 3.0$ |
+| $H$ values | $[0, 1, 5, 10, 50, 100]$ |
+| Detection threshold | $\delta/\delta_{\max} = 0.01$ |
+
+### C.4 Experiment 4: Tension Potential Map
+
+| Parameter | Value |
+|-----------|-------|
+| $d$ | 2 |
+| $N$ | $[128, 128]$ |
+| IC | Two identical Gaussian peaks at separation $d_{\text{sep}}$ |
+| $d_{\text{sep}}$ values | $[0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]$ |
+| $H$ values | $[0, 0.5, 1, 2, 3, 5, 7, 10]$ |
+| Observable | Drift rate = $d(d_{\text{sep}})/dt$ at $t = 0.1$ |
+
+### C.5 Experiment 5: Law Survival
+
+| Parameter | Value |
+|-----------|-------|
+| Pipeline | Full 9-phase ED-SIM-02 reproducibility pipeline |
+| $H$ values | $[0, 1, 10, 100]$ |
+| Pass criterion | All 9 phases pass |
+
+---
+
+## References
+
+1. Proxmire, A. (2026). *Event Density as an Ontological Framework: Constitutive Channels, Structural Laws, and Six Empirical Analogues.* ED Foundational Paper.
+
+2. Proxmire, A. (2026). *ED-Dimensional-Master: The Unified Atlas.* ED-Dimensional series.
+
+3. Proxmire, A. (2026). *Uniqueness, Well-Posedness, and Architectural Laws.* ED-Math-01.
+
+4. Proxmire, A. (2026). *Event Density: From Condensed Matter to Cosmological Structure.* ED Final Synthesis.
+
+5. Madelung, E. (1927). *Quantentheorie in hydrodynamischer Form.* Z. Phys. 40, 322–326.
+
+6. Nelson, E. (1966). *Derivation of the Schrödinger equation from Newtonian mechanics.* Phys. Rev. 150, 1079–1085.
+
+7. Ehrenfest, P. (1927). *Bemerkung über die angenäherte Gültigkeit der klassischen Mechanik innerhalb der Quantenmechanik.* Z. Phys. 45, 455–457.
+
+---
+
+*ED-Phys-05 · Event Density Research Programme · March 2026*
