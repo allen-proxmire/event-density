@@ -47,6 +47,16 @@ Connects the ED ontology to empirical physics at two scales. In condensed matter
 
 ---
 
+## 5. The Factor Skyline Evaluation
+
+**File:** [`research/FactorSkyline_Evaluation_EventDensity.md`](documents/research/FactorSkyline_Evaluation_EventDensity.md)
+
+Formal Factor Skyline evaluation of ED using the full EXPBD triad. Runs three extraction modes — Axiom → Envelope (9 bounding inequalities, 7 forbidden/7 necessary configurations), PDE → Extremal Dynamics (7 universal inequalities, complete stability atlas, all blow-up excluded), and Channels → Constraint Surface (12-constraint observable signature, 5 universality classes, cross-channel coupling matrix). Concludes that ED is overdetermined: 18 independent constraints on 8 free parameters.
+
+*What it establishes:* The ED architecture satisfies minimality, locality, determinism, generative sufficiency, envelope tightness, and structural optimality under FS criteria.
+
+---
+
 ## Supporting Series
 
 | Series | Location | Content |
