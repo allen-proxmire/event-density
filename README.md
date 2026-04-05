@@ -4,6 +4,9 @@
 
 ---
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Allen-Proxmire/Event-Density/blob/main/ED_FrontDoor/ED_minimal_demo.ipynb)
+
+
 ## What This Is
 
 Event Density (ED) derives a nonlinear PDE from seven axioms. The PDE has three channels:
