@@ -37,17 +37,7 @@ Proves uniqueness of the canonical PDE (P1–P7 ⇒ canonical form), establishes
 
 ---
 
-## 4. The Synthesis Paper
-
-**File:** [`research/ED PAPERS/ED-Final_Synthesis_EventDensity_Physics.md`](documents/research/ED%20PAPERS/ED-Final_Synthesis_EventDensity_Physics.md)
-
-Connects the ED ontology to empirical physics at two scales. In condensed matter: the mobility law fits three materials with β = 2.00 ± 0.29. At galactic scales: the ED–Poisson system produces cored halos, the temporal-tension channel predicts the BTFR with exponent 1/4, and weak-lensing flatness to 1 Mpc. Derives two ED-unique predictions (activity dependence, merger lag) that distinguish ED from both MOND and ΛCDM.
-
-*What it establishes:* ED makes quantitative contact with real data and produces falsifiable predictions that can be tested with current surveys.
-
----
-
-## 5. The Factor Skyline Evaluation
+## 4. X5D Skyline Evaluation
 
 **File:** [`research/FactorSkyline_Evaluation_EventDensity.md`](documents/research/FactorSkyline_Evaluation_EventDensity.md)
 
