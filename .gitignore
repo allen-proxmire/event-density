@@ -69,6 +69,9 @@ desktop.ini
 # Archive (local only, not tracked)
 /archive/
 
+# Repo-reorg staging area (local only; user reviews before discarding)
+/Remove from Repo/
+
 # Miscellaneous
 **/*.bib
 *.checkpoint.npz
