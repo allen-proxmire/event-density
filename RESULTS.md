@@ -142,4 +142,4 @@ The diffusivity that sets the cluster-merger lag (`D_T`, fixed independently fro
 3. **[`papers/Dimensional_Atlas/`](papers/Dimensional_Atlas/)** — the cross-regime mapping (the PDE Atlas).
 4. **[`papers/Universal_Mobility_Law/`](papers/Universal_Mobility_Law/)** — soft-matter mobility law.
 5. **[`papers/Cluster_Merger_Lag_Evidence/`](papers/Cluster_Merger_Lag_Evidence/)** — cluster-merger lag.
-6. **[`docs/research/ED PAPERS/`](docs/research/ED%20PAPERS/)** — the historical research log (background and supplementary).
+6. **[`/archive/research_history/`](archive/research_history/)** — the historical research log (background and supplementary).

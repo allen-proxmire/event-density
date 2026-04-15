@@ -320,7 +320,7 @@ Open outreach/ED_minimal_demo.ipynb in Jupyter or Google Colab.
 pytest edsim/tests/ -v
 ```
 
-The data fits for all 10 materials are documented in docs/research/ED Data/ (ED-Data-01 through ED-Data-11).
+The data fits for all 10 materials are documented in archive/research_history/ED Data/ (ED-Data-01 through ED-Data-11).
 
 ---
 

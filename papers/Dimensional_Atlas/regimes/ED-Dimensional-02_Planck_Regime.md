@@ -14,7 +14,7 @@
 | ED Foundational Paper | Canonical PDE, Appendix A parameters, Appendix D PME derivation |
 | `edsim/units/constants.py` | CODATA 2018 physical constants and Planck scales |
 | `edsim/units/scales.py` | `Scales` dataclass, `compute_scales()`, `planck_scales()` |
-| `docs/units.md` | Nondimensionalization scheme |
+| `archive/docs_legacy/units.md` | Nondimensionalization scheme |
 
 **Scope.** This note addresses the Planck regime, where all three characteristic scales are built from the three constants $\hbar$, $G$, and $c$ — no particle mass, no temperature, no external scale. It is the second in the ED-Dimensional series (following ED-Dimensional-01: Quantum Regime) and the only regime in which the anchoring is fully determined by dimensional analysis alone.
 

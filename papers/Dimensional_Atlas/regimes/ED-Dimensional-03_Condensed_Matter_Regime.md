@@ -15,7 +15,7 @@
 | ED Foundational Paper | Canonical PDE, Appendix A parameters, Appendix D PME derivation |
 | `edsim/units/constants.py` | CODATA 2018 physical constants |
 | `edsim/units/scales.py` | `Scales` dataclass, `compute_scales()`, `condensed_matter_scales()` |
-| `docs/units.md` | Nondimensionalization scheme |
+| `archive/docs_legacy/units.md` | Nondimensionalization scheme |
 | CRC Handbook of Chemistry and Physics | Thermal diffusivities and densities of materials |
 
 **Scope.** This note addresses the condensed-matter regime, where all three characteristic scales are set by experimentally measured material properties rather than by fundamental constants or dimensional analysis. It is the third in the ED-Dimensional series and the first regime in which the anchoring is directly falsifiable against laboratory data.

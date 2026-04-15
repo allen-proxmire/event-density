@@ -66,11 +66,12 @@ desktop.ini
 **/runs/
 **/figures/
 
-# Archive (local only, not tracked)
-/archive/
-
 # Repo-reorg staging area (local only; user reviews before discarding)
 /Remove from Repo/
+
+# Raw downloaded datasets (large; reproducibility instructions in each
+# data/<dataset>/README.md document where to fetch them)
+data/*/raw/
 
 # Miscellaneous
 **/*.bib

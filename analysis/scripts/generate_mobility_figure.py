@@ -5,7 +5,7 @@ Data sources:
   Materials 1-3: Raw data from ED-Data-02, ED-Data-05, ED-Data-08
   Materials 4-10: Reconstructed from published sources via ED-Data-06/07/08
 
-Fitted parameters from docs/research/ED Data/ED-Data-08/
+Fitted parameters from archive/research_history/ED Data/
   ED-Data-08_UniversalityPaper_Draft1.md (Table in Section 3.1)
 
 Output: outputs/figures/mobility_law_10panel.png
@@ -24,7 +24,7 @@ from matplotlib.ticker import MultipleLocator
 # ---------------------------------------------------------------------------
 
 # Material 1: Hard-sphere colloids (Segre et al. 1995)
-# Source: docs/research/ED PAPERS/ED-Data-02_First_Dataset_Selection_and_Extraction.md
+# Source: archive/research_history/ED PAPERS/ED-Data-02_First_Dataset_Selection_and_Extraction.md
 HS_phi = np.array([0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30,
                     0.35, 0.40, 0.45, 0.50, 0.54, 0.57])
 HS_D   = np.array([1.000, 0.84, 0.72, 0.60, 0.47, 0.36, 0.26,
@@ -32,13 +32,13 @@ HS_D   = np.array([1.000, 0.84, 0.72, 0.60, 0.47, 0.36, 0.26,
 HS_phimax = 0.64  # random close packing
 
 # Material 2: Sucrose-water (Price et al. 2016)
-# Source: docs/research/ED PAPERS/ED-Data-05_Second_Material_Test.md
+# Source: archive/research_history/ED PAPERS/ED-Data-05_Second_Material_Test.md
 SUC_phi = np.array([0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70]) / 0.70
 SUC_D   = np.array([1.000, 0.758, 0.512, 0.280, 0.118, 0.035, 0.006, 0.0006])
 SUC_phimax = 1.0  # already normalised (wt fraction / c_max)
 
 # Material 3: BSA protein (Roosen-Runge et al. 2011)
-# Source: docs/research/ED PAPERS/ED-Data-08_Third_Material_Test.md
+# Source: archive/research_history/ED PAPERS/ED-Data-08_Third_Material_Test.md
 BSA_phi = np.array([0.00, 0.05, 0.07, 0.10, 0.13, 0.16, 0.20, 0.25, 0.30])
 BSA_D   = np.array([1.000, 0.73, 0.62, 0.50, 0.40, 0.32, 0.24, 0.16, 0.10])
 BSA_phimax = 0.40  # constrained fit

@@ -9,4 +9,4 @@ python -m edsim certify          # Regenerates all validation outputs
 
 Individual analogue outputs can be regenerated via the functions in `edsim/phys/analogues/`.
 
-See [docs/HOW_TO_RUN_ANALOGUES.md](../docs/HOW_TO_RUN_ANALOGUES.md) for detailed instructions.
+See [archive/docs_legacy/HOW_TO_RUN_ANALOGUES.md](../archive/docs_legacy/HOW_TO_RUN_ANALOGUES.md) for detailed instructions.

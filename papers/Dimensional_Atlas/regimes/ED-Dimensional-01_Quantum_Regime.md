@@ -14,7 +14,7 @@
 | `edsim/units/constants.py` | CODATA 2018 physical constants |
 | `edsim/units/scales.py` | `Scales` dataclass, `compute_scales()`, `quantum_scales()` |
 | `edsim/units/mapping.py` | Conversion functions |
-| `docs/units.md` | Nondimensionalization scheme |
+| `archive/docs_legacy/units.md` | Nondimensionalization scheme |
 | Madelung (1927), Nelson (1966) | Schrödinger–diffusion correspondence |
 
 **Scope.** This note addresses the quantum regime only, where $D_{\text{phys}} = \hbar/2m$ is determined by a mathematical theorem (the Madelung transformation). Other regimes — Planck, condensed matter, galactic, cosmological — require separate scale anchoring and will be treated in ED-Dimensional-02 through 05.

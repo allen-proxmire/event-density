@@ -3,7 +3,7 @@ Figure generation for ED-Data-Galaxy-15
 ========================================
 Generates all data-driven figures for the merger-lag paper.
 
-Outputs to docs/research/ED PAPERS/figures/galaxy15/
+Outputs to papers/Cluster_Merger_Lag_Evidence/figures/
 """
 
 import os
