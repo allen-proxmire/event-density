@@ -11,8 +11,9 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 
 # ── Paths ──────────────────────────────────────────────────────────
-REPO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-IMG_DIR = os.path.join(REPO, "ED_FrontDoor")
+# Script lives in outreach/slides/, so .. takes us to outreach/, ../.. to repo root.
+REPO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+IMG_DIR = os.path.join(REPO, "outreach")
 OUT_PATH = r"C:\Users\allen\Desktop\ED_3min_video_slides.pptx"
 
 # ── Colors ─────────────────────────────────────────────────────────
@@ -337,7 +338,7 @@ add_text(s, "github.com/Allen-Proxmire/Event-Density",
          font_size=24, color=LIGHT, align=PP_ALIGN.CENTER,
          font_name="Consolas")
 
-add_text(s, "Open in Colab  \u2192  ED_FrontDoor/ED_minimal_demo.ipynb",
+add_text(s, "Open in Colab  \u2192  outreach/ED_minimal_demo.ipynb",
          1.0, 5.3, 11.3, 0.6,
          font_size=20, color=DIM, align=PP_ALIGN.CENTER)
 

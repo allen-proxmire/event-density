@@ -75,7 +75,7 @@ For a researcher new to ED who wants a complete theoretical understanding:
 - **Empirical results that test this theory:** [`/RESULTS.md`](../RESULTS.md), [`/papers/Universal_Mobility_Law/`](../papers/Universal_Mobility_Law/), [`/papers/Cluster_Merger_Lag_Evidence/`](../papers/Cluster_Merger_Lag_Evidence/).
 - **Runnable demonstration of the three channels:** [`/analysis/notebooks/02_three_channels.ipynb`](../analysis/notebooks/02_three_channels.ipynb).
 - **Simulation engine that integrates this PDE:** [`/edsim/`](../edsim/) (Python package, CLI, 112-test suite, 9-phase certify pipeline).
-- **Falsifiable prediction not yet tested:** [`/ED_FrontDoor/ED_Falsifiable_Prediction.md`](../ED_FrontDoor/ED_Falsifiable_Prediction.md).
+- **Falsifiable prediction not yet tested:** [`/outreach/ED_Falsifiable_Prediction.md`](../outreach/ED_Falsifiable_Prediction.md).
 
 ---
 

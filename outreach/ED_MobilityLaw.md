@@ -313,7 +313,7 @@ print(run_full_barenblatt_experiment())
 
 **Run the minimal demo (3 minutes):**
 
-Open ED_FrontDoor/ED_minimal_demo.ipynb in Jupyter or Google Colab.
+Open outreach/ED_minimal_demo.ipynb in Jupyter or Google Colab.
 
 **Run the full test suite (112 tests):**
 ```bash

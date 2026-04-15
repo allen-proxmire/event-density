@@ -2,7 +2,7 @@
 
 **One PDE, derived from four primitives and seven structural constraints, whose three constitutive channels predict the dynamics of concentrated soft matter, merging galaxy clusters, and physics across 61 orders of magnitude — with no fitting between domains.**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Allen-Proxmire/Event-Density/blob/main/ED_FrontDoor/ED_minimal_demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Allen-Proxmire/Event-Density/blob/main/outreach/ED_minimal_demo.ipynb)
 
 ---
 
@@ -87,7 +87,7 @@ The same PDE, the same parameter set, no inter-domain fitting. Full unification 
 git clone https://github.com/Allen-Proxmire/Event-Density.git
 cd Event-Density
 pip install -r requirements.txt
-jupyter notebook ED_FrontDoor/ED_minimal_demo.ipynb
+jupyter notebook outreach/ED_minimal_demo.ipynb
 ```
 
 Full quickstart, reproduction notebooks, and troubleshooting: **[GETTING_STARTED.md](GETTING_STARTED.md)**.
@@ -114,11 +114,13 @@ event-density/
 │   └── (core / experiments / phys / invariants / tests / units)
 │
 ├── data/                    ← empirical datasets (SPARC, GSWLC, z0MGS, …)
-├── analysis/                ← reusable scripts and reproduction notebooks
-│   └── notebooks/           ← 01_minimal_demo, 02_three_channels, 03_galaxy15_lag, 04_udm_mobility
+├── analysis/                ← reproducible research layer
+│   ├── notebooks/           ← 02_three_channels, 03_galaxy15_lag, 04_udm_mobility
+│   └── scripts/             ← figure-generation + reference implementations
 ├── outputs/                 ← solver outputs (gitignored, regenerable)
 │
-├── ED_FrontDoor/            ← outreach materials, 1-pagers, demo notebook
+├── outreach/                ← public-facing entry: minimal demo, 1-pagers, slides
+│   └── slides/              ← slide and video-graphics generators
 ├── docs/                    ← architecture, how-to-run, API, changelog, archive
 │
 ├── CONTRIBUTING.md
@@ -131,7 +133,7 @@ event-density/
 
 ## What ED claims, and what it doesn't
 
-**Claims.** Architectural sufficiency: one PDE, derived from minimal primitives, generates the dynamical structure of multiple known regimes without fitting. The structural correspondences (mobility ⇔ porous-medium, penalty ⇔ exponential decay, participation ⇔ telegraph) hold for *all* parameter values, not just tuned ones. Tested empirically in concentrated soft matter (10 materials) and cluster mergers (7 systems + 1 aggregate sample of 58 subclusters). Falsifiable predictions are documented in [`ED_FrontDoor/ED_Falsifiable_Prediction.md`](ED_FrontDoor/ED_Falsifiable_Prediction.md).
+**Claims.** Architectural sufficiency: one PDE, derived from minimal primitives, generates the dynamical structure of multiple known regimes without fitting. The structural correspondences (mobility ⇔ porous-medium, penalty ⇔ exponential decay, participation ⇔ telegraph) hold for *all* parameter values, not just tuned ones. Tested empirically in concentrated soft matter (10 materials) and cluster mergers (7 systems + 1 aggregate sample of 58 subclusters). Falsifiable predictions are documented in [`outreach/ED_Falsifiable_Prediction.md`](outreach/ED_Falsifiable_Prediction.md).
 
 **Does not claim.** ED does not derive general relativity, quantum mechanics, or the Standard Model. It does not contain gauge fields, fermions, or superposition. Its horizons are transient. Its cosmology is provisionally falsified as a standalone model. These limits are not concealed; they are tested and documented.
 

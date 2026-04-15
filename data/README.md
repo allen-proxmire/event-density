@@ -20,4 +20,4 @@ Empirical datasets used in the Event Density galactic-scale analysis.
 
 These datasets support the ED-unique falsifiable prediction: **activity-dependent rotation velocities at fixed baryonic mass.** The analysis combines resolved HI rotation curves (SPARC) with star-formation rate indicators (GALEX UV, WISE IR) to test whether the ED mobility coupling produces a measurable velocity offset between active and quiescent galaxies.
 
-See [ED_FrontDoor/ED_Falsifiable_Prediction.md](../ED_FrontDoor/ED_Falsifiable_Prediction.md) for the full prediction statement.
+See [outreach/ED_Falsifiable_Prediction.md](../outreach/ED_Falsifiable_Prediction.md) for the full prediction statement.

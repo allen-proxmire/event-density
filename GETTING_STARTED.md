@@ -50,14 +50,14 @@ The fastest path to seeing ED in action is the minimal demo notebook.
 
 ### Colab (zero setup)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Allen-Proxmire/Event-Density/blob/main/ED_FrontDoor/ED_minimal_demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Allen-Proxmire/Event-Density/blob/main/outreach/ED_minimal_demo.ipynb)
 
 Click the badge, then `Runtime → Run all`. Total runtime: under 3 minutes.
 
 ### Local
 
 ```bash
-jupyter notebook ED_FrontDoor/ED_minimal_demo.ipynb
+jupyter notebook outreach/ED_minimal_demo.ipynb
 ```
 
 ### Expected output
@@ -122,7 +122,7 @@ jupyter notebook analysis/notebooks/04_udm_mobility.ipynb
 1. **[RESULTS.md](RESULTS.md)** — the unification narrative tying all three results to the single canonical PDE.
 2. **[`papers/Foundations_of_Event_Density/`](papers/Foundations_of_Event_Density/)** — the axiomatic derivation.
 3. **[`papers/Universal_Mobility_Law/`](papers/Universal_Mobility_Law/)** and **[`papers/Cluster_Merger_Lag_Evidence/`](papers/Cluster_Merger_Lag_Evidence/)** — the two recent flagship empirical papers.
-4. **[ED_FrontDoor/ED_Falsifiable_Prediction.md](ED_FrontDoor/ED_Falsifiable_Prediction.md)** — the strongest currently-untested ED prediction, with an observational protocol you can execute.
+4. **[outreach/ED_Falsifiable_Prediction.md](outreach/ED_Falsifiable_Prediction.md)** — the strongest currently-untested ED prediction, with an observational protocol you can execute.
 
 ---
 
@@ -177,7 +177,7 @@ Some notebooks intentionally use a small, fast subset of the full data (so they 
 
 ## 6. Where to go next
 
-- **Reproduce a falsifiable prediction** — see [`ED_FrontDoor/ED_Falsifiable_Prediction.md`](ED_FrontDoor/ED_Falsifiable_Prediction.md). The strongest currently-untested ED prediction (activity-dependent rotation velocities) can be tested *today* with existing SPARC + GALEX data.
+- **Reproduce a falsifiable prediction** — see [`outreach/ED_Falsifiable_Prediction.md`](outreach/ED_Falsifiable_Prediction.md). The strongest currently-untested ED prediction (activity-dependent rotation velocities) can be tested *today* with existing SPARC + GALEX data.
 - **Read the canonical PDE derivation** — [`papers/Foundations_of_Event_Density/`](papers/Foundations_of_Event_Density/).
 - **Understand the cross-regime atlas** — [`papers/Dimensional_Atlas/`](papers/Dimensional_Atlas/).
 - **Contribute** — see [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports, new analogues, new test cases, and documentation improvements are all welcome.

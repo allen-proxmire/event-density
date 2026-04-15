@@ -624,7 +624,7 @@ print(f"Predicted FRAP front exponent  alpha = 1/(3*beta + 2) = {front_exp:.3f}"
 print(f"Fickian comparison              alpha_Fickian        = 0.500")
 print()
 print("This is testable in a single afternoon on a standard confocal microscope.")
-print("See ED_FrontDoor/ED_Falsifiable_Prediction.md and papers/UDM/ for protocol.")
+print("See outreach/ED_Falsifiable_Prediction.md and papers/Universal_Mobility_Law/ for protocol.")
 """),
 
         md(r"""

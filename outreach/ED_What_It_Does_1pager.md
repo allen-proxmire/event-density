@@ -75,7 +75,7 @@ Turn the participation channel on, and the system becomes a telegraph oscillator
 
 The minimal demo notebook runs the full pipeline in under 3 minutes:
 
-**[`ED_FrontDoor/ED_minimal_demo.ipynb`](ED_minimal_demo.ipynb)**
+**[`outreach/ED_minimal_demo.ipynb`](ED_minimal_demo.ipynb)**
 
 Clone the repo, open the notebook, press "Run All."
 

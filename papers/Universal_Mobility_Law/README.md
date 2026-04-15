@@ -18,7 +18,7 @@ The paper additionally derives a zero-free-parameter falsifiable prediction: the
 
 ## Status of the Markdown source
 
-The canonical Markdown source of this paper currently lives in [`/ED_FrontDoor/ED_MobilityLaw.md`](../../ED_FrontDoor/ED_MobilityLaw.md) (with an alternate arXiv-formatted version at [`/ED_FrontDoor/ED_ArXiv_MobilityLaw.md`](../../ED_FrontDoor/ED_ArXiv_MobilityLaw.md)). It will be relocated to `paper.md` here in a subsequent reorganization step; the PDF is canonical in the meantime.
+The canonical Markdown source of this paper currently lives in [`/outreach/ED_MobilityLaw.md`](../../outreach/ED_MobilityLaw.md) (with an alternate arXiv-formatted version at [`/outreach/ED_ArXiv_MobilityLaw.md`](../../outreach/ED_ArXiv_MobilityLaw.md)). It will be relocated to `paper.md` here in a subsequent reorganization step; the PDF is canonical in the meantime.
 
 ## Reproduction notebook
 
@@ -27,5 +27,5 @@ A self-contained reproduction of the universal mobility-law fit on representativ
 ## Cross-references
 
 - Canonical PDE (mobility channel): [`/theory/PDE.md`](../../theory/PDE.md), §4.1
-- Falsifiable prediction (FRAP front exponent): [`/ED_FrontDoor/ED_Falsifiable_Prediction.md`](../../ED_FrontDoor/ED_Falsifiable_Prediction.md)
+- Falsifiable prediction (FRAP front exponent): [`/outreach/ED_Falsifiable_Prediction.md`](../../outreach/ED_Falsifiable_Prediction.md)
 - Empirical results overview: [`/RESULTS.md`](../../RESULTS.md)
