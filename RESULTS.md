@@ -27,7 +27,7 @@ The unifier is the diffusivity `D`. Set independently from the Mistele weak-lens
 
 ## Result 1 — UDM (Universal Degenerate Mobility)
 
-**Folder:** [`papers/UDM/`](papers/UDM/)
+**Folder:** [`papers/Universal_Mobility_Law/`](papers/Universal_Mobility_Law/)
 **Reproduction notebook:** [`analysis/notebooks/04_udm_mobility.ipynb`](analysis/notebooks/04_udm_mobility.ipynb)
 
 **Channel exercised:** Mobility, in isolation.
@@ -52,7 +52,7 @@ UDM also predicts a zero-free-parameter, sub-Fickian front-propagation exponent 
 
 ## Result 2 — Galaxy-15 (Merger Lag)
 
-**Folder:** [`papers/galaxy-15/`](papers/galaxy-15/)
+**Folder:** [`papers/Cluster_Merger_Lag_Evidence/`](papers/Cluster_Merger_Lag_Evidence/)
 **Reproduction notebook:** [`analysis/notebooks/03_galaxy15_lag.ipynb`](analysis/notebooks/03_galaxy15_lag.ipynb)
 
 **Channel exercised:** Penalty + dynamical wake (the temporal-tension field).
@@ -90,7 +90,7 @@ This is a one-parameter prediction; `D_T` is fixed independently from the Mistel
 
 ## Result 3 — PDE Atlas (Dimensional + Numerical)
 
-**Folder:** [`papers/ED-Dimensional-Master_The_Unified_Atlas.md`](papers/ED-Dimensional-Master_The_Unified_Atlas.md), [`docs/research/ED PAPERS/numerical_atlas.md`](docs/research/ED%20PAPERS/numerical_atlas.md)
+**Folder:** [`papers/Dimensional_Atlas/`](papers/Dimensional_Atlas/), [`papers/Numerical_Atlas/`](papers/Numerical_Atlas/)
 **Reproduction notebook:** [`analysis/notebooks/02_three_channels.ipynb`](analysis/notebooks/02_three_channels.ipynb)
 
 **Channel exercised:** All three, demonstrated across all five regimes.
@@ -138,8 +138,8 @@ The diffusivity that sets the cluster-merger lag (`D_T`, fixed independently fro
 ## Reading order
 
 1. **[GETTING_STARTED.md](GETTING_STARTED.md)** — install, run the demo, run a reproduction notebook.
-2. **[`papers/foundational/`](papers/foundational/)** — the axiomatic derivation of the canonical PDE.
-3. **[`papers/ED-Dimensional-Master_The_Unified_Atlas.md`](papers/ED-Dimensional-Master_The_Unified_Atlas.md)** — the cross-regime mapping (the PDE Atlas).
-4. **[`papers/UDM/`](papers/UDM/)** — soft-matter mobility law.
-5. **[`papers/galaxy-15/`](papers/galaxy-15/)** — cluster-merger lag.
+2. **[`papers/Foundations_of_Event_Density/`](papers/Foundations_of_Event_Density/)** — the axiomatic derivation of the canonical PDE.
+3. **[`papers/Dimensional_Atlas/`](papers/Dimensional_Atlas/)** — the cross-regime mapping (the PDE Atlas).
+4. **[`papers/Universal_Mobility_Law/`](papers/Universal_Mobility_Law/)** — soft-matter mobility law.
+5. **[`papers/Cluster_Merger_Lag_Evidence/`](papers/Cluster_Merger_Lag_Evidence/)** — cluster-merger lag.
 6. **[`docs/research/ED PAPERS/`](docs/research/ED%20PAPERS/)** — the historical research log (background and supplementary).

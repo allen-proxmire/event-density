@@ -103,7 +103,7 @@ jupyter notebook analysis/notebooks/03_galaxy15_lag.ipynb
 1. **Velocity-scaling test:** plots observed lensing-BCG offset `ℓ` versus current subcluster velocity `v_current` for the four high-precision clusters (Bullet, El Gordo, MACS J0025, Musket Ball). Performs a power-law fit and prints the slope.
 2. **Deceleration test:** plots `ℓ` versus time since pericenter for the seven-cluster sample, overlaid with the ED prediction (monotonic growth) and the SIDM prediction (peak-and-decay).
 
-**Expected output.** Two plots and the printed power-law slope `n = −1.07 ± 0.20` (ED predicts n = −1). Total runtime: ~5 seconds. The plots match Figures 5 and 6 of `papers/galaxy-15/ED-Data-Galaxy-15_First_Evidence_For_Merger_Lag.pdf`.
+**Expected output.** Two plots and the printed power-law slope `n = −1.07 ± 0.20` (ED predicts n = −1). Total runtime: ~5 seconds. The plots match Figures 5 and 6 of `papers/Cluster_Merger_Lag_Evidence/paper.pdf`.
 
 ### Notebook 04 — UDM Mobility Fits
 
@@ -120,8 +120,8 @@ jupyter notebook analysis/notebooks/04_udm_mobility.ipynb
 ## 4. What to read after running
 
 1. **[RESULTS.md](RESULTS.md)** — the unification narrative tying all three results to the single canonical PDE.
-2. **[`papers/foundational/`](papers/foundational/)** — the axiomatic derivation.
-3. **[`papers/UDM/`](papers/UDM/)** and **[`papers/galaxy-15/`](papers/galaxy-15/)** — the two recent flagship empirical papers.
+2. **[`papers/Foundations_of_Event_Density/`](papers/Foundations_of_Event_Density/)** — the axiomatic derivation.
+3. **[`papers/Universal_Mobility_Law/`](papers/Universal_Mobility_Law/)** and **[`papers/Cluster_Merger_Lag_Evidence/`](papers/Cluster_Merger_Lag_Evidence/)** — the two recent flagship empirical papers.
 4. **[ED_FrontDoor/ED_Falsifiable_Prediction.md](ED_FrontDoor/ED_Falsifiable_Prediction.md)** — the strongest currently-untested ED prediction, with an observational protocol you can execute.
 
 ---
@@ -159,7 +159,7 @@ Most often caused by Colab's pre-installed numpy/scipy versions. Add a setup cel
 
 then `Runtime → Restart runtime → Run all`.
 
-### "Cannot find `papers/galaxy-15/`"
+### "Cannot find `papers/Cluster_Merger_Lag_Evidence/`" (or any other `papers/*` folder)
 
 You're on an older clone. Pull the latest:
 
@@ -167,7 +167,7 @@ You're on an older clone. Pull the latest:
 git pull origin main
 ```
 
-The repository was reorganised in early 2026; the old top-level PDFs were moved into `papers/<paper-name>/` subfolders.
+The repository was reorganised in 2026: paper folders were renamed to descriptive titles (e.g., `papers/galaxy-15/` → `papers/Cluster_Merger_Lag_Evidence/`, `papers/UDM/` → `papers/Universal_Mobility_Law/`, `papers/foundational/` → `papers/Foundations_of_Event_Density/`).
 
 ### Reproduction notebook outputs differ from the paper
 
@@ -178,6 +178,6 @@ Some notebooks intentionally use a small, fast subset of the full data (so they 
 ## 6. Where to go next
 
 - **Reproduce a falsifiable prediction** — see [`ED_FrontDoor/ED_Falsifiable_Prediction.md`](ED_FrontDoor/ED_Falsifiable_Prediction.md). The strongest currently-untested ED prediction (activity-dependent rotation velocities) can be tested *today* with existing SPARC + GALEX data.
-- **Read the canonical PDE derivation** — [`papers/foundational/`](papers/foundational/).
-- **Understand the cross-regime atlas** — [`papers/ED-Dimensional-Master_The_Unified_Atlas.md`](papers/ED-Dimensional-Master_The_Unified_Atlas.md).
+- **Read the canonical PDE derivation** — [`papers/Foundations_of_Event_Density/`](papers/Foundations_of_Event_Density/).
+- **Understand the cross-regime atlas** — [`papers/Dimensional_Atlas/`](papers/Dimensional_Atlas/).
 - **Contribute** — see [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports, new analogues, new test cases, and documentation improvements are all welcome.

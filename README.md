@@ -61,7 +61,7 @@ Each constitutive channel, when isolated, reduces *exactly* to a known physical 
    └────────────────┘    └────────────────┘    └────────────────────┘
 ```
 
-Full derivation: [`papers/foundational/`](papers/foundational/), the Foundational Paper.
+Full derivation: [`papers/Foundations_of_Event_Density/`](papers/Foundations_of_Event_Density/), the Foundational Paper.
 
 ---
 
@@ -69,9 +69,9 @@ Full derivation: [`papers/foundational/`](papers/foundational/), the Foundationa
 
 | Result | Domain | Channel | Prediction | Observed |
 |--------|--------|---------|------------|----------|
-| **[UDM](papers/UDM/)** | Concentrated soft matter | Mobility | `D(c) = D₀(1 − c/c_max)^β` | R² > 0.986 across 10 materials; β = 1.72 ± 0.37 |
-| **[Galaxy-15](papers/galaxy-15/)** | Cluster mergers | Penalty / dynamical wake | `ℓ = D_T / v_current` | 7 clusters + Finner+25 median 79 ± 14 kpc, all consistent |
-| **[PDE Atlas](papers/ED-Dimensional-Master_The_Unified_Atlas.md)** | All physics, 5 regimes | All channels | One PDE across 61 orders of magnitude | 9 architectural laws verified in dimensions 1–4 |
+| **[UDM](papers/Universal_Mobility_Law/)** | Concentrated soft matter | Mobility | `D(c) = D₀(1 − c/c_max)^β` | R² > 0.986 across 10 materials; β = 1.72 ± 0.37 |
+| **[Galaxy-15](papers/Cluster_Merger_Lag_Evidence/)** | Cluster mergers | Penalty / dynamical wake | `ℓ = D_T / v_current` | 7 clusters + Finner+25 median 79 ± 14 kpc, all consistent |
+| **[PDE Atlas](papers/Dimensional_Atlas/)** | All physics, 5 regimes | All channels | One PDE across 61 orders of magnitude | 9 architectural laws verified in dimensions 1–4 |
 
 The same PDE, the same parameter set, no inter-domain fitting. Full unification narrative: **[RESULTS.md](RESULTS.md)**.
 
@@ -103,10 +103,12 @@ event-density/
 ├── GETTING_STARTED.md       ← install + reproduction quickstart
 │
 ├── papers/                  ← canonical papers (one folder per paper)
-│   ├── foundational/        ← Foundational Paper (axioms, derivation, analogues)
-│   ├── UDM/                 ← Universal Degenerate Mobility (soft matter)
-│   ├── galaxy-15/           ← Merger-Lag First Evidence (cluster lensing)
-│   └── ED-Dimensional-Master_The_Unified_Atlas.md
+│   ├── Foundations_of_Event_Density/      ← axioms, derivation, six analogues, formal appendices
+│   ├── Event_Density_Ontology_and_Axioms/ ← ontological framing
+│   ├── Universal_Mobility_Law/            ← UDM (soft matter) — published PDF
+│   ├── Cluster_Merger_Lag_Evidence/       ← Galaxy-15 (cluster lensing)
+│   ├── Dimensional_Atlas/                 ← five-regime mapping, 61 orders of magnitude
+│   └── Numerical_Atlas/                   ← computational realization of the canonical PDE
 │
 ├── edsim/                   ← simulation engine (Python package, CLI, 112 tests)
 │   └── (core / experiments / phys / invariants / tests / units)
