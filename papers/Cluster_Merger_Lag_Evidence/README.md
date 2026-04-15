@@ -1,4 +1,4 @@
-# Cluster Merger-Lag Evidence (Galaxy-15)
+# Cluster Merger-Lag Evidence
 
 First systematic empirical evidence for the Event Density prediction that the lensing mass centroid trails the brightest cluster galaxy in merging galaxy clusters, with a *velocity- and deceleration-dependent* offset $\ell = D_T / v_{\rm current}$.
 
