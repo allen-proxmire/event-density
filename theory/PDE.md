@@ -1,6 +1,16 @@
 # The Canonical Event Density PDE
 
-This document is the authoritative statement of the Event Density PDE. Every empirical and theoretical claim in this repository ultimately reduces to it.
+This document is the authoritative statement of the Event Density PDE as instantiated in this repo. Every empirical and theoretical claim in this repository ultimately reduces to it.
+
+## Canonical-form note (consolidated 2026-04-20)
+
+This block summarises the three architectural conventions a reader must hold while parsing the rest of this document. Each is expanded in the indicated section below.
+
+- **Architectural layer is separate.** This document gives the *concrete* canonical PDE with specific functional forms. The *architectural* layer — the seven irreducible principles **P1–P7** that define ED as a class of PDEs, rather than a specific equation — lives in [`Architectural_Canon.md`](Architectural_Canon.md). The four pre-PDE axioms (ED-05) and the universal invariants are also captured there and in [`Universal_Invariants.md`](Universal_Invariants.md). For complete orientation across the broader ED paper series (ED-02 through ED-13, plus the 00-series, ED-I series, ED-Arch, ED-SC, ED-XX), see [`../docs/ED-Orientation.md`](../docs/ED-Orientation.md).
+
+- **Two conventions for `D`.** Throughout this document, `D` refers to the **dimensional diffusivity** `D_phys` (m²/s in galactic units; e.g., `2.1 × 10²⁷ m²/s` fixed from the Mistele weak-lensing extent). In the Architectural Canon (P2) and in 00.3 *Unified Cosmological Equation*, the same letter `D` denotes the **dimensionless channel weight** in `∂_t ρ = D·F[ρ] + H·v` with `D + H = 1` and `D, H ∈ [0,1]`. Both parameterisations describe the same architecture at different abstraction layers. When reading across documents, check which convention applies. The bifurcation `D_crit = 0.5` referenced elsewhere in the corpus uses the dimensionless channel-weight convention.
+
+- **Two penalty forms — linear is a near-equilibrium simplification.** The penalty `P(ρ) = P₀(ρ − ρ*)` shown in §1 below is the **linear near-equilibrium form**. The full canonical form per 00.3 is the **smoothed / saturating** SY2 penalty `P_SY2(ρ) = αγ · (ρ − ρ*)/√((ρ − ρ*)² + ρ₀²)`. Both satisfy P3 (unique zero at `ρ*`, monotone) and agree to first order around `ρ*`; they differ qualitatively at the mobility ceiling. Use the linear form for local / near-equilibrium analysis; use SY2 for global, near-ceiling, horizon, or heat-death analysis. See §1 below for the full statement and `Architectural_Canon.md` §3 for the universal invariants `E_ground = αγρ₀`, `t_rel ≈ ρ₀/(αγ)` that depend specifically on the SY2 form.
 
 ---
 
@@ -25,6 +35,14 @@ $$
 M(\rho) \;=\; M_0\,(\rho_{\max} - \rho)^{\beta}, \qquad
 P(\rho) \;=\; P_0\,(\rho - \rho^\ast).
 $$
+
+**Canonical form of the penalty (2026 update).** The linear form `P₀(ρ − ρ*)` shown here is a **near-equilibrium simplification**. The full canonical form established in 00.3 *Unified Cosmological Equation* (March 2026) is the **smoothed / saturating** form:
+
+$$
+P_{SY2}(\rho) \;=\; \alpha\gamma \cdot \frac{\rho - \rho^*}{\sqrt{(\rho - \rho^*)^2 + \rho_0^2}}
+$$
+
+Both forms agree to first order around `ρ*` and both satisfy the Penalty Equilibrium principle P3 (unique zero at `ρ*`, monotone). They differ at the mobility ceiling: `P_SY2` persists (bounded) when `M(ρ) → 0`, while the linear form grows unboundedly. The horizon behavior, heat-death arguments, and universal relaxation laws in 00.3 and ED-06 (*Horizons as Decoupling Surfaces*) depend on `P_SY2`'s saturation. Use the linear form for local / near-equilibrium analysis; use `P_SY2` for global or near-ceiling analysis.
 
 That is the entire system. There are **eight scalar parameters** ($D, M_0, \beta, \rho_{\max}, P_0, \rho^\ast, H, \tau, \zeta$ — eight if $H$ is set by the global feedback, nine otherwise) and **no fitted couplings**. Where the PDE has been compared to data — soft matter (UDM), galaxy cluster mergers (Galaxy-15), galactic rotation curves (ED-Data-Galaxy series) — the parameters are fixed independently from one observable per regime, then the rest is prediction.
 
@@ -89,6 +107,8 @@ With the constitutive form $M(\rho) = M_0(\rho_{\max}-\rho)^{\beta}$, this is th
 With a moving baryonic source coupled in, this becomes a diffusion-decay-source equation whose steady-state is an exponential wake of length $\ell = D / v$ behind the source. In isolation (uniform initial conditions), it gives **exponential (Debye / RC) decay** $\rho(t) = \rho^\ast + (\rho_0 - \rho^\ast) e^{-D P_0 t}$ with zero error vs analytic.
 
 **Empirical correspondence:** the cluster-merger lensing-mass offset $\ell = D_T / v_{\rm current}$, tested against 7 well-measured clusters and the Finner+25 aggregate sample of 58 subclusters. See `papers/Cluster_Merger_Lag_Evidence/`.
+
+**Environment-sourcing update (2026-04-17, ED-XX).** At galactic scale, the April 2026 revision (ED-XX *Environment Sourcing of Temporal Tension*) overturned the earlier assumption that each galaxy generates its own temporal-tension halo. The 3D Green's function of the penalty+source PDE, $T(r) \propto (1/r) e^{-r/\ell_T}$, contains a `1/r` geometric dilution that dominates long before exponential decay is relevant — so no compact galactic source can sustain a flat field over 10–1000 kpc. Flat fields require extended sources with width $\sigma \gtrsim 1$–3 Mpc. The updated picture: **the galaxy sets the amplitude (via its baryonic identity); the cosmic web — groups, filaments, local structure — sets the spatial extent.** At cluster scale (Galaxy-15) the source IS extended (the cluster itself), so the merger-lag test above is unaffected. See [`../docs/ED-Orientation.md`](../docs/ED-Orientation.md) §6 for the full revision.
 
 ### 4.3 Participation channel
 

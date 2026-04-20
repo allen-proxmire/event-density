@@ -5,6 +5,21 @@
 
 ---
 
+> ## ⚠ Status note (April 2026 update — ED-XX)
+>
+> **The galaxy-sourced framing in this paper is superseded.** As of [ED-XX *Environment Sourcing of Temporal Tension*](../../../docs/ED-Orientation.md#6-the-environment-sourcing-revision-ed-xx-april-2026----most-important-update) (April 2026), the temporal-tension field of a flat-rotation-curve halo cannot be sourced by an isolated galaxy. The 3D Green's-function `T(r) ∝ (1/r)·exp(−r/ℓ_T)` shows that the `1/r` geometric dilution dominates well before exponential decay sets in, so a compact (5–20 kpc) galactic source cannot produce a flat `T(r)` over the 10–1000 kpc range demanded by rotation curves and weak lensing. Flatness at 30–1000 kpc requires source width `σ ≥ 1–3 Mpc` — i.e., **groups, filaments, and the local cosmic web**, not the galaxy itself.
+>
+> **What this changes about this paper.**
+> - **Role split:** the galaxy still sets the *amplitude* (via its baryonic identity); the *spatial extent* of the temporal-tension field comes from the megaparsec-scale environment.
+> - **`D_phys` anchoring (§2.3) remains valid as a dimensional construction** — `v_circ · L_0` is still the unique galactic-observable diffusivity — but its physical interpretation as the rate of *galaxy-internal* temporal-tension transport is replaced by interpretation as the rate of *coupling between the galaxy and its environment*.
+> - **Numerical values in §2 and §3 (Milky Way, dwarf, cluster) are unchanged in dimension and order of magnitude.** What changes is the source-attribution column: rows that read "galaxy-sourced" should be reinterpreted as "environment-sourced, with galaxy setting amplitude."
+> - **The dwarf-galaxy `D_outer` test (ED-04.5)** referenced as motivation continues to hold under ED-XX: `Active`/`Quiet` morphology correlates with environmental activity, so the 53 % `D_outer` separation survives as an environmental proxy.
+> - **The BTFR-Activity reanalysis** (`papers/ED-BTFR-Activity/`, `data/ED-Data-12..17/`) was *mis-framed* under the galaxy-sourced hypothesis. The proper variable is environmental, not individual-galaxy, sSFR — see the addendum in those files.
+>
+> The body of this paper is preserved as written for historical continuity. Treat its quantitative predictions as still valid in dimension and structure but reattributed in source per ED-XX. A planned `ED-Dimensional-04-Ext` will rewrite the source-attribution layer in line with the cosmic-web sourcing scale `σ ≥ 1–3 Mpc`.
+
+---
+
 **Canonical sources:**
 
 | Source | Content used |
