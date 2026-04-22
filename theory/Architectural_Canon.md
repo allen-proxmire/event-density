@@ -97,9 +97,9 @@ Without P5: no memory, no oscillation, no spiral, no temporal causality, no info
 
 Flow type is determined by the discriminant
 
-$$\Delta = D + 2\zeta$$
+$$(D - \zeta)^2 \;<\; 4(1 - D) \quad \Longleftrightarrow \quad \text{underdamped}$$
 
-**Underdamped when `Δ < 1`, overdamped when `Δ > 1`, with a sharp transition at `Δ = 1`** — i.e., at the oscillation-death threshold `D_crit = 0.5`. This threshold is analytically derived in 00.3 and numerically confirmed in ED-Phys-18.
+**Sharp transition at equality:** `D_crit(ζ) = √(2−ζ)·(2 − √(2−ζ))`, which evaluates to **≈ 0.896** at canon-default `ζ = 1/4`. This supersedes the retired additive heuristic `Δ = D + 2ζ = 1 → D_crit = 0.5`, which is off by ~80% (see [`D_crit_Resolution_Memo.md`](D_crit_Resolution_Memo.md), 2026-04-22). The sharpness and structural existence of the bifurcation are unchanged; only the numerical location shifts.
 
 The boundary partitions the architecture into two topologically distinct dynamical regimes and is the mathematical origin of the three-regime phase structure (parabolic / oscillatory / hybrid).
 
@@ -118,7 +118,7 @@ The unified PDE `∂t ρ = D·F[ρ] + H·v` admits several universal invariants 
 - **Unique equilibrium** `ρ*` — global attractor across all `D ∈ [0,1]`.
 - **Ground state energy** `E_ground = αγρ₀` — dimension-, regime-, and IC-independent.
 - **Relaxation timescale** `t_rel ≈ ρ₀/(αγ)` — varies only ~13% across the full hybrid parameter space.
-- **Oscillation-death threshold** `D_crit = 0.5` — sharp.
+- **Oscillation-death threshold** `D_crit(ζ) ≈ 0.896` at canon-default `ζ = 1/4` — sharp (corrected 2026-04-22; see `D_crit_Resolution_Memo.md`).
 - **Triad coupling coefficient** `C ≈ 0.03` — measured in ED-Phys-16.
 - **Harmonic-generation ratio** ~3–6% of fundamental.
 - **Quality factor** `Q ≈ 3.5` in the oscillatory sector.

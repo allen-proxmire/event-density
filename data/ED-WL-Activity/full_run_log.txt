@@ -1,0 +1,473 @@
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Loading lens catalog...
+  221365 lens galaxies loaded
+  Columns: ['uberID', 'ra', 'DEC', 'z_spec', 'z_quality', 'uberclass', 'science_class', 'mstar', 'sfr', 'GroupID', 'RankIterCen', 'log_mstar', 'log_mhi', 'm_baryon', 'log_mbaryon', 'ssfr', 'log_ssfr', 'in_group', 'is_central', 'mbaryon_bin', 'ssfr_bin']
+Loading KiDS-1000 catalog from: C:\Users\allen\GitHub\Event Density\data\KiDS-1000\KiDS_DR4.1_ugriZYJHKs_SOM_gold_WL_cat.fits
+  Columns: ['RAJ2000', 'DECJ2000', 'e1', 'e2', 'weight', 'Z_B']
+  Total sources in catalog: 21,262,011
+  Loaded in 372.1s
+  Quality cuts (weight>0, Z_B>0.1): 21,262,011 / 21,262,011 (100.0%)
+  Computing ESD for bin 'high_active_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 33s, ETA 633s
+    Lens 100/1000 (10%) elapsed 68s, ETA 609s
+    Lens 150/1000 (15%) elapsed 100s, ETA 566s
+    Lens 200/1000 (20%) elapsed 133s, ETA 530s
+    Lens 250/1000 (25%) elapsed 165s, ETA 495s
+    Lens 300/1000 (30%) elapsed 199s, ETA 463s
+    Lens 350/1000 (35%) elapsed 231s, ETA 430s
+    Lens 400/1000 (40%) elapsed 265s, ETA 397s
+    Lens 450/1000 (45%) elapsed 298s, ETA 364s
+    Lens 500/1000 (50%) elapsed 331s, ETA 331s
+    Lens 550/1000 (55%) elapsed 363s, ETA 297s
+    Lens 600/1000 (60%) elapsed 396s, ETA 264s
+    Lens 650/1000 (65%) elapsed 430s, ETA 232s
+    Lens 700/1000 (70%) elapsed 464s, ETA 199s
+    Lens 750/1000 (75%) elapsed 497s, ETA 166s
+    Lens 800/1000 (80%) elapsed 530s, ETA 132s
+    Lens 850/1000 (85%) elapsed 563s, ETA 99s
+    Lens 900/1000 (90%) elapsed 595s, ETA 66s
+    Lens 950/1000 (95%) elapsed 628s, ETA 33s
+    Lens 1000/1000 (100%) elapsed 661s, ETA 0s
+  Done in 661.1s, total pairs: 1,913,181
+
+  >> high_active_isolated: n=1000, mean DS(100-1000)=8.92 Msun/pc2, pairs=1,913,181, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'high_active_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 34s, ETA 638s
+    Lens 100/1000 (10%) elapsed 68s, ETA 610s
+    Lens 150/1000 (15%) elapsed 101s, ETA 570s
+    Lens 200/1000 (20%) elapsed 134s, ETA 538s
+    Lens 250/1000 (25%) elapsed 168s, ETA 504s
+    Lens 300/1000 (30%) elapsed 202s, ETA 471s
+    Lens 350/1000 (35%) elapsed 237s, ETA 440s
+    Lens 400/1000 (40%) elapsed 273s, ETA 409s
+    Lens 450/1000 (45%) elapsed 309s, ETA 378s
+    Lens 500/1000 (50%) elapsed 343s, ETA 343s
+    Lens 550/1000 (55%) elapsed 378s, ETA 309s
+    Lens 600/1000 (60%) elapsed 412s, ETA 275s
+    Lens 650/1000 (65%) elapsed 447s, ETA 241s
+    Lens 700/1000 (70%) elapsed 481s, ETA 206s
+    Lens 750/1000 (75%) elapsed 516s, ETA 172s
+    Lens 800/1000 (80%) elapsed 550s, ETA 138s
+    Lens 850/1000 (85%) elapsed 587s, ETA 104s
+    Lens 900/1000 (90%) elapsed 623s, ETA 69s
+    Lens 950/1000 (95%) elapsed 659s, ETA 35s
+    Lens 1000/1000 (100%) elapsed 696s, ETA 0s
+  Done in 696.2s, total pairs: 2,990,940
+
+  >> high_active_grouped: n=1000, mean DS(100-1000)=9.75 Msun/pc2, pairs=2,990,940, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'high_moderate_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 34s, ETA 643s
+    Lens 100/1000 (10%) elapsed 65s, ETA 581s
+    Lens 150/1000 (15%) elapsed 97s, ETA 547s
+    Lens 200/1000 (20%) elapsed 128s, ETA 511s
+    Lens 250/1000 (25%) elapsed 160s, ETA 480s
+    Lens 300/1000 (30%) elapsed 193s, ETA 451s
+    Lens 350/1000 (35%) elapsed 226s, ETA 419s
+    Lens 400/1000 (40%) elapsed 259s, ETA 388s
+    Lens 450/1000 (45%) elapsed 294s, ETA 359s
+    Lens 500/1000 (50%) elapsed 328s, ETA 328s
+    Lens 550/1000 (55%) elapsed 361s, ETA 296s
+    Lens 600/1000 (60%) elapsed 395s, ETA 263s
+    Lens 650/1000 (65%) elapsed 429s, ETA 231s
+    Lens 700/1000 (70%) elapsed 463s, ETA 198s
+    Lens 750/1000 (75%) elapsed 495s, ETA 165s
+    Lens 800/1000 (80%) elapsed 528s, ETA 132s
+    Lens 850/1000 (85%) elapsed 560s, ETA 99s
+    Lens 900/1000 (90%) elapsed 592s, ETA 66s
+    Lens 950/1000 (95%) elapsed 626s, ETA 33s
+    Lens 1000/1000 (100%) elapsed 660s, ETA 0s
+  Done in 659.6s, total pairs: 2,143,968
+
+  >> high_moderate_isolated: n=1000, mean DS(100-1000)=-0.51 Msun/pc2, pairs=2,143,968, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'high_moderate_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 34s, ETA 645s
+    Lens 100/1000 (10%) elapsed 68s, ETA 609s
+    Lens 150/1000 (15%) elapsed 101s, ETA 575s
+    Lens 200/1000 (20%) elapsed 136s, ETA 543s
+    Lens 250/1000 (25%) elapsed 170s, ETA 510s
+    Lens 300/1000 (30%) elapsed 204s, ETA 476s
+    Lens 350/1000 (35%) elapsed 238s, ETA 442s
+    Lens 400/1000 (40%) elapsed 271s, ETA 407s
+    Lens 450/1000 (45%) elapsed 306s, ETA 374s
+    Lens 500/1000 (50%) elapsed 340s, ETA 340s
+    Lens 550/1000 (55%) elapsed 375s, ETA 307s
+    Lens 600/1000 (60%) elapsed 410s, ETA 273s
+    Lens 650/1000 (65%) elapsed 445s, ETA 240s
+    Lens 700/1000 (70%) elapsed 480s, ETA 206s
+    Lens 750/1000 (75%) elapsed 516s, ETA 172s
+    Lens 800/1000 (80%) elapsed 549s, ETA 137s
+    Lens 850/1000 (85%) elapsed 594s, ETA 105s
+    Lens 900/1000 (90%) elapsed 629s, ETA 70s
+    Lens 950/1000 (95%) elapsed 662s, ETA 35s
+    Lens 1000/1000 (100%) elapsed 696s, ETA 0s
+  Done in 695.7s, total pairs: 3,073,070
+
+  >> high_moderate_grouped: n=1000, mean DS(100-1000)=6.43 Msun/pc2, pairs=3,073,070, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'high_quiet_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 33s, ETA 631s
+    Lens 100/1000 (10%) elapsed 66s, ETA 593s
+    Lens 150/1000 (15%) elapsed 99s, ETA 559s
+    Lens 200/1000 (20%) elapsed 130s, ETA 522s
+    Lens 250/1000 (25%) elapsed 164s, ETA 492s
+    Lens 300/1000 (30%) elapsed 197s, ETA 460s
+    Lens 350/1000 (35%) elapsed 230s, ETA 426s
+    Lens 400/1000 (40%) elapsed 264s, ETA 396s
+    Lens 450/1000 (45%) elapsed 301s, ETA 368s
+    Lens 500/1000 (50%) elapsed 335s, ETA 335s
+    Lens 550/1000 (55%) elapsed 366s, ETA 299s
+    Lens 600/1000 (60%) elapsed 397s, ETA 265s
+    Lens 650/1000 (65%) elapsed 432s, ETA 233s
+    Lens 700/1000 (70%) elapsed 467s, ETA 200s
+    Lens 750/1000 (75%) elapsed 500s, ETA 167s
+    Lens 800/1000 (80%) elapsed 534s, ETA 133s
+    Lens 850/1000 (85%) elapsed 567s, ETA 100s
+    Lens 900/1000 (90%) elapsed 600s, ETA 67s
+    Lens 950/1000 (95%) elapsed 633s, ETA 33s
+    Lens 1000/1000 (100%) elapsed 666s, ETA 0s
+  Done in 665.9s, total pairs: 2,523,812
+
+  >> high_quiet_isolated: n=1000, mean DS(100-1000)=0.69 Msun/pc2, pairs=2,523,812, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'high_quiet_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 42s, ETA 791s
+    Lens 100/1000 (10%) elapsed 76s, ETA 683s
+    Lens 150/1000 (15%) elapsed 112s, ETA 636s
+    Lens 200/1000 (20%) elapsed 148s, ETA 590s
+    Lens 250/1000 (25%) elapsed 183s, ETA 548s
+    Lens 300/1000 (30%) elapsed 220s, ETA 514s
+    Lens 350/1000 (35%) elapsed 257s, ETA 478s
+    Lens 400/1000 (40%) elapsed 293s, ETA 439s
+    Lens 450/1000 (45%) elapsed 327s, ETA 400s
+    Lens 500/1000 (50%) elapsed 362s, ETA 362s
+    Lens 550/1000 (55%) elapsed 395s, ETA 323s
+    Lens 600/1000 (60%) elapsed 429s, ETA 286s
+    Lens 650/1000 (65%) elapsed 466s, ETA 251s
+    Lens 700/1000 (70%) elapsed 501s, ETA 215s
+    Lens 750/1000 (75%) elapsed 535s, ETA 178s
+    Lens 800/1000 (80%) elapsed 569s, ETA 142s
+    Lens 850/1000 (85%) elapsed 603s, ETA 106s
+    Lens 900/1000 (90%) elapsed 636s, ETA 71s
+    Lens 950/1000 (95%) elapsed 670s, ETA 35s
+    Lens 1000/1000 (100%) elapsed 707s, ETA 0s
+  Done in 706.9s, total pairs: 4,131,613
+
+  >> high_quiet_grouped: n=1000, mean DS(100-1000)=0.75 Msun/pc2, pairs=4,131,613, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'low_active_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 45s, ETA 850s
+    Lens 100/1000 (10%) elapsed 88s, ETA 792s
+    Lens 150/1000 (15%) elapsed 136s, ETA 772s
+    Lens 200/1000 (20%) elapsed 184s, ETA 736s
+    Lens 250/1000 (25%) elapsed 234s, ETA 702s
+    Lens 300/1000 (30%) elapsed 285s, ETA 665s
+    Lens 350/1000 (35%) elapsed 339s, ETA 630s
+    Lens 400/1000 (40%) elapsed 386s, ETA 579s
+    Lens 450/1000 (45%) elapsed 446s, ETA 546s
+    Lens 500/1000 (50%) elapsed 498s, ETA 498s
+    Lens 550/1000 (55%) elapsed 543s, ETA 444s
+    Lens 600/1000 (60%) elapsed 600s, ETA 400s
+    Lens 650/1000 (65%) elapsed 653s, ETA 352s
+    Lens 700/1000 (70%) elapsed 702s, ETA 301s
+    Lens 750/1000 (75%) elapsed 752s, ETA 251s
+    Lens 800/1000 (80%) elapsed 796s, ETA 199s
+    Lens 850/1000 (85%) elapsed 852s, ETA 150s
+    Lens 900/1000 (90%) elapsed 913s, ETA 101s
+    Lens 950/1000 (95%) elapsed 961s, ETA 51s
+    Lens 1000/1000 (100%) elapsed 1003s, ETA 0s
+  Done in 1003.4s, total pairs: 12,489,829
+
+  >> low_active_isolated: n=1000, mean DS(100-1000)=1.24 Msun/pc2, pairs=12,489,829, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'low_active_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 58s, ETA 1101s
+    Lens 100/1000 (10%) elapsed 113s, ETA 1019s
+    Lens 150/1000 (15%) elapsed 159s, ETA 902s
+    Lens 200/1000 (20%) elapsed 203s, ETA 813s
+    Lens 250/1000 (25%) elapsed 266s, ETA 798s
+    Lens 300/1000 (30%) elapsed 321s, ETA 749s
+    Lens 350/1000 (35%) elapsed 369s, ETA 686s
+    Lens 400/1000 (40%) elapsed 434s, ETA 651s
+    Lens 450/1000 (45%) elapsed 489s, ETA 598s
+    Lens 500/1000 (50%) elapsed 535s, ETA 535s
+    Lens 550/1000 (55%) elapsed 597s, ETA 489s
+    Lens 600/1000 (60%) elapsed 644s, ETA 429s
+    Lens 650/1000 (65%) elapsed 697s, ETA 375s
+    Lens 700/1000 (70%) elapsed 758s, ETA 325s
+    Lens 750/1000 (75%) elapsed 811s, ETA 270s
+    Lens 800/1000 (80%) elapsed 869s, ETA 217s
+    Lens 850/1000 (85%) elapsed 913s, ETA 161s
+    Lens 900/1000 (90%) elapsed 963s, ETA 107s
+    Lens 950/1000 (95%) elapsed 1014s, ETA 53s
+    Lens 1000/1000 (100%) elapsed 1068s, ETA 0s
+  Done in 1067.8s, total pairs: 14,441,514
+
+  >> low_active_grouped: n=1000, mean DS(100-1000)=0.83 Msun/pc2, pairs=14,441,514, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'low_moderate_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 64s, ETA 1225s
+    Lens 100/1000 (10%) elapsed 117s, ETA 1051s
+    Lens 150/1000 (15%) elapsed 170s, ETA 965s
+    Lens 200/1000 (20%) elapsed 243s, ETA 973s
+    Lens 250/1000 (25%) elapsed 314s, ETA 943s
+    Lens 300/1000 (30%) elapsed 369s, ETA 862s
+    Lens 350/1000 (35%) elapsed 419s, ETA 779s
+    Lens 400/1000 (40%) elapsed 476s, ETA 713s
+    Lens 450/1000 (45%) elapsed 534s, ETA 653s
+    Lens 500/1000 (50%) elapsed 589s, ETA 589s
+    Lens 550/1000 (55%) elapsed 648s, ETA 530s
+    Lens 600/1000 (60%) elapsed 700s, ETA 466s
+    Lens 650/1000 (65%) elapsed 756s, ETA 407s
+    Lens 700/1000 (70%) elapsed 809s, ETA 347s
+    Lens 750/1000 (75%) elapsed 855s, ETA 285s
+    Lens 800/1000 (80%) elapsed 922s, ETA 231s
+    Lens 850/1000 (85%) elapsed 977s, ETA 172s
+    Lens 900/1000 (90%) elapsed 1025s, ETA 114s
+    Lens 950/1000 (95%) elapsed 1069s, ETA 56s
+    Lens 1000/1000 (100%) elapsed 1131s, ETA 0s
+  Done in 1131.1s, total pairs: 15,977,005
+
+  >> low_moderate_isolated: n=1000, mean DS(100-1000)=-0.32 Msun/pc2, pairs=15,977,005, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'low_moderate_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 69s, ETA 1304s
+    Lens 100/1000 (10%) elapsed 128s, ETA 1150s
+    Lens 150/1000 (15%) elapsed 183s, ETA 1037s
+    Lens 200/1000 (20%) elapsed 246s, ETA 986s
+    Lens 250/1000 (25%) elapsed 299s, ETA 898s
+    Lens 300/1000 (30%) elapsed 371s, ETA 866s
+    Lens 350/1000 (35%) elapsed 431s, ETA 801s
+    Lens 400/1000 (40%) elapsed 496s, ETA 744s
+    Lens 450/1000 (45%) elapsed 551s, ETA 673s
+    Lens 500/1000 (50%) elapsed 625s, ETA 625s
+    Lens 550/1000 (55%) elapsed 677s, ETA 554s
+    Lens 600/1000 (60%) elapsed 731s, ETA 487s
+    Lens 650/1000 (65%) elapsed 788s, ETA 424s
+    Lens 700/1000 (70%) elapsed 854s, ETA 366s
+    Lens 750/1000 (75%) elapsed 910s, ETA 303s
+    Lens 800/1000 (80%) elapsed 966s, ETA 242s
+    Lens 850/1000 (85%) elapsed 1028s, ETA 181s
+    Lens 900/1000 (90%) elapsed 1080s, ETA 120s
+    Lens 950/1000 (95%) elapsed 1135s, ETA 60s
+    Lens 1000/1000 (100%) elapsed 1196s, ETA 0s
+  Done in 1195.8s, total pairs: 17,937,338
+
+  >> low_moderate_grouped: n=1000, mean DS(100-1000)=1.07 Msun/pc2, pairs=17,937,338, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'low_quiet_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 106s, ETA 2010s
+    Lens 100/1000 (10%) elapsed 177s, ETA 1597s
+    Lens 150/1000 (15%) elapsed 244s, ETA 1385s
+    Lens 200/1000 (20%) elapsed 304s, ETA 1215s
+    Lens 250/1000 (25%) elapsed 358s, ETA 1075s
+    Lens 300/1000 (30%) elapsed 411s, ETA 959s
+    Lens 350/1000 (35%) elapsed 465s, ETA 863s
+    Lens 400/1000 (40%) elapsed 525s, ETA 788s
+    Lens 450/1000 (45%) elapsed 579s, ETA 708s
+    Lens 500/1000 (50%) elapsed 636s, ETA 636s
+    Lens 550/1000 (55%) elapsed 710s, ETA 581s
+    Lens 600/1000 (60%) elapsed 768s, ETA 512s
+    Lens 650/1000 (65%) elapsed 839s, ETA 452s
+    Lens 700/1000 (70%) elapsed 888s, ETA 381s
+    Lens 750/1000 (75%) elapsed 945s, ETA 315s
+    Lens 800/1000 (80%) elapsed 999s, ETA 250s
+    Lens 850/1000 (85%) elapsed 1059s, ETA 187s
+    Lens 900/1000 (90%) elapsed 1110s, ETA 123s
+    Lens 950/1000 (95%) elapsed 1165s, ETA 61s
+    Lens 1000/1000 (100%) elapsed 1219s, ETA 0s
+  Done in 1219.0s, total pairs: 19,367,932
+
+  >> low_quiet_isolated: n=1000, mean DS(100-1000)=1.33 Msun/pc2, pairs=19,367,932, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'low_quiet_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 63s, ETA 1199s
+    Lens 100/1000 (10%) elapsed 122s, ETA 1094s
+    Lens 150/1000 (15%) elapsed 180s, ETA 1022s
+    Lens 200/1000 (20%) elapsed 239s, ETA 957s
+    Lens 250/1000 (25%) elapsed 294s, ETA 881s
+    Lens 300/1000 (30%) elapsed 356s, ETA 831s
+    Lens 350/1000 (35%) elapsed 408s, ETA 758s
+    Lens 400/1000 (40%) elapsed 458s, ETA 687s
+    Lens 450/1000 (45%) elapsed 511s, ETA 625s
+    Lens 500/1000 (50%) elapsed 570s, ETA 570s
+    Lens 550/1000 (55%) elapsed 634s, ETA 519s
+    Lens 600/1000 (60%) elapsed 688s, ETA 459s
+    Lens 650/1000 (65%) elapsed 742s, ETA 400s
+    Lens 700/1000 (70%) elapsed 815s, ETA 349s
+    Lens 750/1000 (75%) elapsed 874s, ETA 291s
+    Lens 800/1000 (80%) elapsed 934s, ETA 233s
+    Lens 850/1000 (85%) elapsed 994s, ETA 175s
+    Lens 900/1000 (90%) elapsed 1051s, ETA 117s
+    Lens 950/1000 (95%) elapsed 1124s, ETA 59s
+    Lens 1000/1000 (100%) elapsed 1179s, ETA 0s
+  Done in 1179.0s, total pairs: 18,353,938
+
+  >> low_quiet_grouped: n=1000, mean DS(100-1000)=-0.29 Msun/pc2, pairs=18,353,938, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'mid_active_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 35s, ETA 661s
+    Lens 100/1000 (10%) elapsed 69s, ETA 622s
+    Lens 150/1000 (15%) elapsed 105s, ETA 595s
+    Lens 200/1000 (20%) elapsed 139s, ETA 557s
+    Lens 250/1000 (25%) elapsed 173s, ETA 520s
+    Lens 300/1000 (30%) elapsed 207s, ETA 483s
+    Lens 350/1000 (35%) elapsed 242s, ETA 449s
+    Lens 400/1000 (40%) elapsed 277s, ETA 416s
+    Lens 450/1000 (45%) elapsed 312s, ETA 381s
+    Lens 500/1000 (50%) elapsed 346s, ETA 346s
+    Lens 550/1000 (55%) elapsed 383s, ETA 313s
+    Lens 600/1000 (60%) elapsed 420s, ETA 280s
+    Lens 650/1000 (65%) elapsed 455s, ETA 245s
+    Lens 700/1000 (70%) elapsed 491s, ETA 210s
+    Lens 750/1000 (75%) elapsed 528s, ETA 176s
+    Lens 800/1000 (80%) elapsed 564s, ETA 141s
+    Lens 850/1000 (85%) elapsed 602s, ETA 106s
+    Lens 900/1000 (90%) elapsed 638s, ETA 71s
+    Lens 950/1000 (95%) elapsed 673s, ETA 35s
+    Lens 1000/1000 (100%) elapsed 708s, ETA 0s
+  Done in 707.6s, total pairs: 2,701,472
+
+  >> mid_active_isolated: n=1000, mean DS(100-1000)=-5.26 Msun/pc2, pairs=2,701,472, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'mid_active_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 37s, ETA 694s
+    Lens 100/1000 (10%) elapsed 72s, ETA 652s
+    Lens 150/1000 (15%) elapsed 109s, ETA 619s
+    Lens 200/1000 (20%) elapsed 145s, ETA 578s
+    Lens 250/1000 (25%) elapsed 181s, ETA 544s
+    Lens 300/1000 (30%) elapsed 221s, ETA 516s
+    Lens 350/1000 (35%) elapsed 259s, ETA 481s
+    Lens 400/1000 (40%) elapsed 296s, ETA 444s
+    Lens 450/1000 (45%) elapsed 332s, ETA 406s
+    Lens 500/1000 (50%) elapsed 369s, ETA 369s
+    Lens 550/1000 (55%) elapsed 408s, ETA 334s
+    Lens 600/1000 (60%) elapsed 447s, ETA 298s
+    Lens 650/1000 (65%) elapsed 481s, ETA 259s
+    Lens 700/1000 (70%) elapsed 515s, ETA 221s
+    Lens 750/1000 (75%) elapsed 551s, ETA 184s
+    Lens 800/1000 (80%) elapsed 588s, ETA 147s
+    Lens 850/1000 (85%) elapsed 624s, ETA 110s
+    Lens 900/1000 (90%) elapsed 661s, ETA 73s
+    Lens 950/1000 (95%) elapsed 697s, ETA 37s
+    Lens 1000/1000 (100%) elapsed 731s, ETA 0s
+  Done in 731.0s, total pairs: 3,663,427
+
+  >> mid_active_grouped: n=1000, mean DS(100-1000)=2.34 Msun/pc2, pairs=3,663,427, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'mid_moderate_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 36s, ETA 689s
+    Lens 100/1000 (10%) elapsed 74s, ETA 663s
+    Lens 150/1000 (15%) elapsed 109s, ETA 620s
+    Lens 200/1000 (20%) elapsed 151s, ETA 603s
+    Lens 250/1000 (25%) elapsed 189s, ETA 567s
+    Lens 300/1000 (30%) elapsed 228s, ETA 531s
+    Lens 350/1000 (35%) elapsed 266s, ETA 495s
+    Lens 400/1000 (40%) elapsed 309s, ETA 464s
+    Lens 450/1000 (45%) elapsed 345s, ETA 422s
+    Lens 500/1000 (50%) elapsed 382s, ETA 382s
+    Lens 550/1000 (55%) elapsed 421s, ETA 344s
+    Lens 600/1000 (60%) elapsed 459s, ETA 306s
+    Lens 650/1000 (65%) elapsed 497s, ETA 268s
+    Lens 700/1000 (70%) elapsed 535s, ETA 229s
+    Lens 750/1000 (75%) elapsed 572s, ETA 191s
+    Lens 800/1000 (80%) elapsed 612s, ETA 153s
+    Lens 850/1000 (85%) elapsed 648s, ETA 114s
+    Lens 900/1000 (90%) elapsed 683s, ETA 76s
+    Lens 950/1000 (95%) elapsed 722s, ETA 38s
+    Lens 1000/1000 (100%) elapsed 761s, ETA 0s
+  Done in 761.2s, total pairs: 4,647,423
+
+  >> mid_moderate_isolated: n=1000, mean DS(100-1000)=5.07 Msun/pc2, pairs=4,647,423, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'mid_moderate_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 40s, ETA 765s
+    Lens 100/1000 (10%) elapsed 81s, ETA 727s
+    Lens 150/1000 (15%) elapsed 121s, ETA 684s
+    Lens 200/1000 (20%) elapsed 161s, ETA 645s
+    Lens 250/1000 (25%) elapsed 206s, ETA 619s
+    Lens 300/1000 (30%) elapsed 247s, ETA 576s
+    Lens 350/1000 (35%) elapsed 294s, ETA 546s
+    Lens 400/1000 (40%) elapsed 334s, ETA 501s
+    Lens 450/1000 (45%) elapsed 379s, ETA 463s
+    Lens 500/1000 (50%) elapsed 421s, ETA 421s
+    Lens 550/1000 (55%) elapsed 461s, ETA 378s
+    Lens 600/1000 (60%) elapsed 499s, ETA 333s
+    Lens 650/1000 (65%) elapsed 539s, ETA 290s
+    Lens 700/1000 (70%) elapsed 577s, ETA 247s
+    Lens 750/1000 (75%) elapsed 616s, ETA 205s
+    Lens 800/1000 (80%) elapsed 655s, ETA 164s
+    Lens 850/1000 (85%) elapsed 699s, ETA 123s
+    Lens 900/1000 (90%) elapsed 738s, ETA 82s
+    Lens 950/1000 (95%) elapsed 780s, ETA 41s
+    Lens 1000/1000 (100%) elapsed 817s, ETA 0s
+  Done in 817.1s, total pairs: 6,029,784
+
+  >> mid_moderate_grouped: n=1000, mean DS(100-1000)=-3.13 Msun/pc2, pairs=6,029,784, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'mid_quiet_isolated': 1000 lenses
+    Lens 50/1000 (5%) elapsed 41s, ETA 779s
+    Lens 100/1000 (10%) elapsed 81s, ETA 732s
+    Lens 150/1000 (15%) elapsed 117s, ETA 665s
+    Lens 200/1000 (20%) elapsed 154s, ETA 616s
+    Lens 250/1000 (25%) elapsed 190s, ETA 570s
+    Lens 300/1000 (30%) elapsed 227s, ETA 530s
+    Lens 350/1000 (35%) elapsed 269s, ETA 499s
+    Lens 400/1000 (40%) elapsed 306s, ETA 459s
+    Lens 450/1000 (45%) elapsed 345s, ETA 422s
+    Lens 500/1000 (50%) elapsed 382s, ETA 382s
+    Lens 550/1000 (55%) elapsed 418s, ETA 342s
+    Lens 600/1000 (60%) elapsed 458s, ETA 305s
+    Lens 650/1000 (65%) elapsed 500s, ETA 269s
+    Lens 700/1000 (70%) elapsed 545s, ETA 234s
+    Lens 750/1000 (75%) elapsed 582s, ETA 194s
+    Lens 800/1000 (80%) elapsed 618s, ETA 154s
+    Lens 850/1000 (85%) elapsed 656s, ETA 116s
+    Lens 900/1000 (90%) elapsed 694s, ETA 77s
+    Lens 950/1000 (95%) elapsed 733s, ETA 39s
+    Lens 1000/1000 (100%) elapsed 774s, ETA 0s
+  Done in 773.7s, total pairs: 5,098,487
+
+  >> mid_quiet_isolated: n=1000, mean DS(100-1000)=5.44 Msun/pc2, pairs=5,098,487, cross<signal@R500=False, monotonic@R200=False
+  Computing ESD for bin 'mid_quiet_grouped': 1000 lenses
+    Lens 50/1000 (5%) elapsed 39s, ETA 747s
+    Lens 100/1000 (10%) elapsed 80s, ETA 723s
+    Lens 150/1000 (15%) elapsed 120s, ETA 679s
+    Lens 200/1000 (20%) elapsed 160s, ETA 639s
+    Lens 250/1000 (25%) elapsed 199s, ETA 598s
+    Lens 300/1000 (30%) elapsed 258s, ETA 601s
+    Lens 350/1000 (35%) elapsed 300s, ETA 558s
+    Lens 400/1000 (40%) elapsed 353s, ETA 529s
+    Lens 450/1000 (45%) elapsed 398s, ETA 486s
+    Lens 500/1000 (50%) elapsed 439s, ETA 439s
+    Lens 550/1000 (55%) elapsed 479s, ETA 392s
+    Lens 600/1000 (60%) elapsed 523s, ETA 348s
+    Lens 650/1000 (65%) elapsed 564s, ETA 304s
+    Lens 700/1000 (70%) elapsed 607s, ETA 260s
+    Lens 750/1000 (75%) elapsed 648s, ETA 216s
+    Lens 800/1000 (80%) elapsed 688s, ETA 172s
+    Lens 850/1000 (85%) elapsed 730s, ETA 129s
+    Lens 900/1000 (90%) elapsed 774s, ETA 86s
+    Lens 950/1000 (95%) elapsed 818s, ETA 43s
+    Lens 1000/1000 (100%) elapsed 861s, ETA 0s
+  Done in 860.5s, total pairs: 7,388,677
+
+  >> mid_quiet_grouped: n=1000, mean DS(100-1000)=6.85 Msun/pc2, pairs=7,388,677, cross<signal@R500=False, monotonic@R200=False
+
+================================================================================
+GLOBAL SUMMARY
+================================================================================
+Total runtime: 15534s (4.3 hours)
+Bins completed: 18
+Total lens-source pairs: 144,873,410
+
+Bin                            n_used    mean_DS  cross_ok  monoton
+----------------------------------------------------------------------
+high_active_isolated             1000       8.92     False    False
+high_active_grouped              1000       9.75     False    False
+high_moderate_isolated           1000      -0.51     False    False
+high_moderate_grouped            1000       6.43     False    False
+high_quiet_isolated              1000       0.69     False    False
+high_quiet_grouped               1000       0.75     False    False
+low_active_isolated              1000       1.24     False    False
+low_active_grouped               1000       0.83     False    False
+low_moderate_isolated            1000      -0.32     False    False
+low_moderate_grouped             1000       1.07     False    False
+low_quiet_isolated               1000       1.33     False    False
+low_quiet_grouped                1000      -0.29     False    False
+mid_active_isolated              1000      -5.26     False    False
+mid_active_grouped               1000       2.34     False    False
+mid_moderate_isolated            1000       5.07     False    False
+mid_moderate_grouped             1000      -3.13     False    False
+mid_quiet_isolated               1000       5.44     False    False
+mid_quiet_grouped                1000       6.85     False    False
+
+All profiles saved to: C:\Users\allen\GitHub\Event Density\data\ED-WL-Activity\esd_profiles/
+Summary CSV: C:\Users\allen\GitHub\Event Density\data\ED-WL-Activity\bin_summaries.csv
+Combined CSV: C:\Users\allen\GitHub\Event Density\data\ED-WL-Activity\esd_summary.csv

@@ -63,3 +63,7 @@ GSWLC cannot test SPARC galaxies (z_min = 0.01 vs SPARC z < 0.005). The correct 
 - Salim, S., Lee, J.C., Janowiecki, S., et al. 2016, ApJS, 227, 2
 - Salim, S., Boquien, M., & Lee, J.C. 2018, ApJ, 859, 11
 - https://salims.pages.iu.edu/gswlc/
+
+---
+
+*For context on the corrected sign interpretation of the modules that did produce signals (ED-Data-12, 13, 14, 16, 17), see [`papers/ED-BTFR-Activity/memo.md`](../../papers/ED-BTFR-Activity/memo.md).*

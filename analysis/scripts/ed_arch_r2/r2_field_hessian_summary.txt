@@ -1,0 +1,10 @@
+ED-Arch-01 R2 field-space Hessian test
+N=512, T=4570, n=2.7, sigma=0.0556, alpha=1.0, gamma=3, dt=0.1, seed=20260417
+Saddle count: 24
+mean ratio: -3.2848
+std ratio:  2.0400
+median:     -2.4651
+5-95 pct:   [-7.1668, -1.2959]
+25-75 pct:  [-4.4943, -1.8564]
+Fraction in [-1.5, -1.1]: 8.3%
+Fraction near -1 (symmetric): 4.2%

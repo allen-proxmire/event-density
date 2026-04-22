@@ -10,7 +10,7 @@
 | Delta vs log(sSFR) | +0.092 | 0.700 | Positive |
 | Tertile (high > low) | — | **0.041** | **Positive, significant** |
 
-**Verdict: SUGGESTIVE** — The correlation is positive (rho = +0.36), the high-SFR tertile lies above the BTFR while the low-SFR tertile lies below (p = 0.04, significant), but the overall Spearman test is not significant at p < 0.05 with n = 20.
+**Verdict (revised 2026-04-17): MODULE INCONCLUSIVE; sign interpretation reversed.** ρ(Δ_M, log SFR) = +0.356 and the tertile Mann–Whitney test at p = 0.041 are real, but both were computed with Δ_M (M-space residual from the M-on-V fit). By the identity Δ_M = −B · Δ_V at fixed baryonic mass, the positive M-space signal is algebraically a **negative** V-space signal — opposite to the ED prediction of V-inflation for active galaxies. At n = 20 the signal does not reach p < 0.05 in any convention on the Spearman. Definitive test: BIG-SPARC (ED-Data-18). Full analysis: [`papers/ED-BTFR-Activity/memo.md`](../../papers/ED-BTFR-Activity/memo.md).
 
 ## Why This Matters
 

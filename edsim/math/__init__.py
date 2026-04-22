@@ -50,8 +50,18 @@ from .laws import (
     laws_to_markdown,
 )
 from .appendix import build_math_appendix
+from .damping import (
+    d_crit,
+    d_crit_heuristic,
+    underdamped,
+    D_CRIT_CANONICAL,
+    ZETA_CANONICAL,
+)
 
 __all__ = [
+    # Damping (Canon P6 linearised threshold)
+    "d_crit", "d_crit_heuristic", "underdamped",
+    "D_CRIT_CANONICAL", "ZETA_CANONICAL",
     # Modal
     "ModalSpectrum", "ModalHierarchy",
     "compute_modal_spectrum", "extract_modal_hierarchy", "modal_decay_rates",

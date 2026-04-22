@@ -11,7 +11,7 @@
 | Kendall tau | +0.214 (p=0.135) | No |
 | Tertile (high > low) | **p=0.030** | **Yes** |
 
-**Verdict: SUGGESTIVE** — All three correlation measures are positive. The tertile test is significant at 3%. The Spearman test requires n > 30 for adequate power at rho ~ 0.3.
+**Verdict (revised 2026-04-17): MODULE INCONCLUSIVE; sign interpretation reversed.** ρ(Δ_M, log SFR) = +0.324 and the tertile Mann–Whitney test at p = 0.030 are real. Both were computed with Δ_M (M-space residual from the M-on-V fit). By the identity Δ_M = −B · Δ_V at fixed baryonic mass, the positive M-space signal is algebraically a **negative** V-space signal — opposite to the ED prediction of V-inflation for active galaxies. Sample size (n = 25) is insufficient for statistical significance in either convention on the Spearman. Definitive test: BIG-SPARC (ED-Data-18). Full analysis: [`papers/ED-BTFR-Activity/memo.md`](../../papers/ED-BTFR-Activity/memo.md).
 
 ## The Tertile Result
 

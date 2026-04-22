@@ -77,3 +77,7 @@ data/*/raw/
 **/*.bib
 *.checkpoint.npz
 .pytest_cache/
+
+# Large data files (never track)
+*.fits
+data/KiDS-1000/

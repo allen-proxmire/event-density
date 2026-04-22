@@ -159,7 +159,13 @@ def _run_solver(params, rho0, T, snap_interval):
                 break
             rho = rho_new
 
-        F_avg = spatial_average(params.D * F_local, dx)
+        # BUG FIX (2026-04-22, v1.4): PDE spec (FPv2 §2.1) is `τv̇ = ⟨F[ρ]⟩ − ζv`.
+        # Previous code `spatial_average(params.D * F_local, dx)` inserted a spurious
+        # factor of D into the participation ODE's forcing, shifting the 2D eigenmode
+        # off-diagonal from P₀/τ (spec) to D·P₀/τ (bug) and producing a spurious
+        # "54% renormalization" (ω_coded = √D · ω_paper asymptotically). Root cause
+        # documented in analysis/scripts/telegraph_pme/v1.4_bug_diagnosis/memo.md.
+        F_avg = spatial_average(F_local, dx)
         v = advance_v(v, F_avg, params)
         t += dt
 

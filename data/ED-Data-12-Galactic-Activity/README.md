@@ -16,10 +16,10 @@ The participation field v(t) equilibrates on a finite timescale. Galaxies with r
 
 ## Result
 
-- Spearman rho = +0.039, p = 0.67
-- Direction: **positive** (consistent with ED prediction)
-- Significance: **not significant** (p > 0.05)
-- Verdict: **SUGGESTIVE** — the sign is correct but the signal is not statistically significant with morphological type as the SFR proxy
+- Spearman ρ(Δ_M, T_type) = +0.039, p = 0.67 (M-space residual convention used here)
+- Direction: positive in the Δ_M convention
+- Significance: not significant (p > 0.05)
+- **Verdict (revised 2026-04-17): NOT SIGNIFICANT. Sign interpretation reversed.** The M-on-V fit used here produces a Δ_M residual that is algebraically the negative of the Δ_V residual ED actually predicts (see [`papers/ED-BTFR-Activity/memo.md`](../../papers/ED-BTFR-Activity/memo.md), §2). The positive Δ_M sign therefore corresponds to a *negative* V-residual correlation with activity — opposite to ED's prediction of V-inflation at fixed mass. At p = 0.67 this is in any case consistent with zero, so this module alone is statistically inconclusive. A definitive test awaits BIG-SPARC (ED-Data-18).
 
 ## Interpretation
 

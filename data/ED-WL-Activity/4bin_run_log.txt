@@ -1,0 +1,146 @@
+Loading lens catalog...
+  147577 lenses (quiet + active only)
+  Mass split at log M_baryon = 10.75
+
+Bin populations:
+mass2  ssfr_bin
+high   active      34784
+       quiet       39004
+low    active      39004
+       quiet       34785
+dtype: int64
+Total: 147577
+
+Loading KiDS-1000 catalog...
+  21,262,011 sources, computing RA sort order...
+  Loaded + sorted in 268s, ~0.5 GB
+
+============================================================
+BIN 1/4: high_active (34784 lenses)
+============================================================
+    [high_active] Lens 1739/34784 (5%) 522s elapsed, ETA 9922s
+    [high_active] Lens 3478/34784 (10%) 988s elapsed, ETA 8892s
+    [high_active] Lens 5217/34784 (15%) 1484s elapsed, ETA 8410s
+    [high_active] Lens 6956/34784 (20%) 1977s elapsed, ETA 7908s
+    [high_active] Lens 8695/34784 (25%) 2416s elapsed, ETA 7249s
+    [high_active] Lens 10434/34784 (30%) 2798s elapsed, ETA 6530s
+    [high_active] Lens 12173/34784 (35%) 3249s elapsed, ETA 6035s
+    [high_active] Lens 13912/34784 (40%) 3683s elapsed, ETA 5526s
+    [high_active] Lens 15651/34784 (45%) 4042s elapsed, ETA 4941s
+    [high_active] Lens 17390/34784 (50%) 4367s elapsed, ETA 4368s
+    [high_active] Lens 19129/34784 (55%) 4679s elapsed, ETA 3829s
+    [high_active] Lens 20868/34784 (60%) 4988s elapsed, ETA 3327s
+    [high_active] Lens 22607/34784 (65%) 5324s elapsed, ETA 2868s
+    [high_active] Lens 24346/34784 (70%) 5668s elapsed, ETA 2430s
+    [high_active] Lens 26085/34784 (75%) 5985s elapsed, ETA 1996s
+    [high_active] Lens 27824/34784 (80%) 6331s elapsed, ETA 1584s
+    [high_active] Lens 29563/34784 (85%) 6669s elapsed, ETA 1178s
+    [high_active] Lens 31302/34784 (90%) 7049s elapsed, ETA 784s
+    [high_active] Lens 33041/34784 (95%) 7415s elapsed, ETA 391s
+    [high_active] Lens 34780/34784 (100%) 7754s elapsed, ETA 1s
+  [high_active] Done: 34784 lenses, 77,131,044 pairs, 7755s (0.223 s/lens)
+  mean DS(100-1000) = -0.067 +/- 1.720 Msun/pc2
+  S/N = 0.0, cross_RMS = 3.240
+
+============================================================
+BIN 2/4: high_quiet (39004 lenses)
+============================================================
+    [high_quiet] Lens 1950/39004 (5%) 405s elapsed, ETA 7699s
+    [high_quiet] Lens 3900/39004 (10%) 849s elapsed, ETA 7643s
+    [high_quiet] Lens 5850/39004 (15%) 1723s elapsed, ETA 9765s
+    [high_quiet] Lens 7800/39004 (20%) 2588s elapsed, ETA 10355s
+    [high_quiet] Lens 9750/39004 (25%) 3520s elapsed, ETA 10562s
+    [high_quiet] Lens 11700/39004 (30%) 3998s elapsed, ETA 9330s
+    [high_quiet] Lens 13650/39004 (35%) 4411s elapsed, ETA 8193s
+    [high_quiet] Lens 15600/39004 (40%) 4862s elapsed, ETA 7294s
+    [high_quiet] Lens 17550/39004 (45%) 5329s elapsed, ETA 6515s
+    [high_quiet] Lens 19500/39004 (50%) 5774s elapsed, ETA 5775s
+    [high_quiet] Lens 21450/39004 (55%) 6241s elapsed, ETA 5107s
+    [high_quiet] Lens 23400/39004 (60%) 6639s elapsed, ETA 4427s
+    [high_quiet] Lens 25350/39004 (65%) 6998s elapsed, ETA 3769s
+    [high_quiet] Lens 27300/39004 (70%) 7378s elapsed, ETA 3163s
+    [high_quiet] Lens 29250/39004 (75%) 7756s elapsed, ETA 2586s
+    [high_quiet] Lens 31200/39004 (80%) 8153s elapsed, ETA 2039s
+    [high_quiet] Lens 33150/39004 (85%) 8517s elapsed, ETA 1504s
+    [high_quiet] Lens 35100/39004 (90%) 8921s elapsed, ETA 992s
+    [high_quiet] Lens 37050/39004 (95%) 9406s elapsed, ETA 496s
+    [high_quiet] Lens 39000/39004 (100%) 9849s elapsed, ETA 1s
+  [high_quiet] Done: 39004 lenses, 153,256,443 pairs, 9850s (0.253 s/lens)
+  mean DS(100-1000) = 0.408 +/- 1.389 Msun/pc2
+  S/N = 0.3, cross_RMS = 1.014
+
+============================================================
+BIN 3/4: low_active (39004 lenses)
+============================================================
+    [low_active] Lens 1950/39004 (5%) 614s elapsed, ETA 11676s
+    [low_active] Lens 3900/39004 (10%) 1236s elapsed, ETA 11121s
+    [low_active] Lens 5850/39004 (15%) 1932s elapsed, ETA 10948s
+    [low_active] Lens 7800/39004 (20%) 2743s elapsed, ETA 10972s
+    [low_active] Lens 9750/39004 (25%) 3445s elapsed, ETA 10335s
+    [low_active] Lens 11700/39004 (30%) 4237s elapsed, ETA 9887s
+    [low_active] Lens 13650/39004 (35%) 4968s elapsed, ETA 9227s
+    [low_active] Lens 15600/39004 (40%) 5812s elapsed, ETA 8719s
+    [low_active] Lens 17550/39004 (45%) 6615s elapsed, ETA 8086s
+    [low_active] Lens 19500/39004 (50%) 7272s elapsed, ETA 7274s
+    [low_active] Lens 21450/39004 (55%) 8020s elapsed, ETA 6563s
+    [low_active] Lens 23400/39004 (60%) 8770s elapsed, ETA 5848s
+    [low_active] Lens 25350/39004 (65%) 9380s elapsed, ETA 5052s
+    [low_active] Lens 27300/39004 (70%) 9928s elapsed, ETA 4256s
+    [low_active] Lens 29250/39004 (75%) 10544s elapsed, ETA 3516s
+    [low_active] Lens 31200/39004 (80%) 11134s elapsed, ETA 2785s
+    [low_active] Lens 33150/39004 (85%) 11797s elapsed, ETA 2083s
+    [low_active] Lens 35100/39004 (90%) 12405s elapsed, ETA 1380s
+    [low_active] Lens 37050/39004 (95%) 13101s elapsed, ETA 691s
+    [low_active] Lens 39000/39004 (100%) 13770s elapsed, ETA 1s
+  [low_active] Done: 39004 lenses, 365,683,595 pairs, 13771s (0.353 s/lens)
+  mean DS(100-1000) = -1.175 +/- 1.218 Msun/pc2
+  S/N = 1.0, cross_RMS = 1.709
+
+============================================================
+BIN 4/4: low_quiet (34785 lenses)
+============================================================
+    [low_quiet] Lens 1739/34785 (5%) 801s elapsed, ETA 15221s
+    [low_quiet] Lens 3478/34785 (10%) 1553s elapsed, ETA 13978s
+    [low_quiet] Lens 5217/34785 (15%) 2364s elapsed, ETA 13400s
+    [low_quiet] Lens 6956/34785 (20%) 3227s elapsed, ETA 12910s
+    [low_quiet] Lens 8695/34785 (25%) 4146s elapsed, ETA 12439s
+    [low_quiet] Lens 10434/34785 (30%) 4947s elapsed, ETA 11544s
+    [low_quiet] Lens 12173/34785 (35%) 5722s elapsed, ETA 10628s
+    [low_quiet] Lens 13912/34785 (40%) 6686s elapsed, ETA 10032s
+    [low_quiet] Lens 15651/34785 (45%) 8241s elapsed, ETA 10075s
+    [low_quiet] Lens 17390/34785 (50%) 9152s elapsed, ETA 9154s
+    [low_quiet] Lens 19129/34785 (55%) 10070s elapsed, ETA 8242s
+    [low_quiet] Lens 20868/34785 (60%) 10991s elapsed, ETA 7330s
+    [low_quiet] Lens 22607/34785 (65%) 11864s elapsed, ETA 6391s
+    [low_quiet] Lens 24346/34785 (70%) 12605s elapsed, ETA 5405s
+    [low_quiet] Lens 26085/34785 (75%) 13294s elapsed, ETA 4434s
+    [low_quiet] Lens 27824/34785 (80%) 14088s elapsed, ETA 3525s
+    [low_quiet] Lens 29563/34785 (85%) 14840s elapsed, ETA 2621s
+    [low_quiet] Lens 31302/34785 (90%) 15718s elapsed, ETA 1749s
+    [low_quiet] Lens 33041/34785 (95%) 16669s elapsed, ETA 880s
+    [low_quiet] Lens 34780/34785 (100%) 17458s elapsed, ETA 3s
+  [low_quiet] Done: 34785 lenses, 528,275,468 pairs, 17460s (0.502 s/lens)
+  mean DS(100-1000) = -0.003 +/- 1.131 Msun/pc2
+  S/N = 0.0, cross_RMS = 1.198
+
+================================================================================
+4-BIN GLOBAL SUMMARY
+================================================================================
+Runtime: 49106s (13.6 hours)
+Total pairs: 1,124,346,550
+
+Bin              n_lens   mean_DS    error    S/N  cross_rms  cross_ok   mono
+---------------------------------------------------------------------------
+high_active       34784    -0.067    1.720    0.0      3.240     False  False
+high_quiet        39004     0.408    1.389    0.3      1.014      True  False
+low_active        39004    -1.175    1.218    1.0      1.709     False  False
+low_quiet         34785    -0.003    1.131    0.0      1.198     False  False
+
+================================================================================
+THE ED TEST: active - quiet at fixed mass
+ED predicts: active > quiet (positive difference)
+================================================================================
+  M_baryon= low: quiet=  -0.003, active=  -1.175, diff=-1.172 +/- 1.663, significance=0.7 sigma -> NOISE
+  M_baryon=high: quiet=   0.408, active=  -0.067, diff=-0.475 +/- 2.211, significance=0.2 sigma -> NOISE
+
+Profiles saved to: C:\Users\allen\GitHub\Event Density\data\ED-WL-Activity\esd_profiles_4bin/

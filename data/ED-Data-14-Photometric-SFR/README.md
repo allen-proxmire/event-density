@@ -12,9 +12,9 @@ Definitive test of the ED-Phys-05 activity-dependence prediction using published
 | log(SFR) | +0.247 | **0.081** | Positive | Marginal |
 | Phot-only (n=33) | +0.039 | 0.828 | Positive | No |
 
-## Verdict: INCONCLUSIVE
+## Verdict (revised 2026-04-17): INCONCLUSIVE, and sign-interpretation reversed
 
-The total SFR shows a marginal positive correlation (p = 0.08) in the ED-predicted direction, but the specific SFR shows no correlation. The photometric-only subsample (33 galaxies with z0MGS, KINGFISH, or 11HUGS SFR) shows no significant signal. The sample size (51 galaxies) is too small for a definitive test.
+ρ(Δ_M, log SFR) = +0.247 at p = 0.081 (marginal). The positive sign is **not** in the ED-predicted direction once the sign-convention identity Δ_M = −B · Δ_V at fixed M is applied (see [`papers/ED-BTFR-Activity/memo.md`](../../papers/ED-BTFR-Activity/memo.md), §2). A translated V-space partial correlation from this sample would be approximately −0.25; the small sample (n = 51) prevents any strong claim either way. The sSFR null (ρ = −0.063, p = 0.66) is consistent with no activity signal once mass is removed. Definitive test: BIG-SPARC (ED-Data-18).
 
 ## Progression Across Modules
 

@@ -4,6 +4,52 @@ All notable changes to the Event Density project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
 Versioning follows [Semantic Versioning](https://semver.org/).
 
+## [Unreleased] — 2026-04-22
+
+### Fixed
+
+- **`edsim/phys/analogues/telegraph_pme.py` — Analogue 5 participation-ODE forcing term.**
+  Previous implementation passed `params.D * F_local` to `spatial_average` before
+  forwarding to `advance_v` (line 162). The PDE specification (FPv2 §2.1) is
+  `τv̇ = ⟨F[ρ]⟩ − ζv` — the domain-averaged operator *without* the `D` prefactor.
+  The extra `D` shifted the off-diagonal of the coupled-mode 2D matrix from
+  `P₀/τ` (intended) to `D·P₀/τ` (buggy), producing a spurious eigenmode
+  `ω_coded = √(DP₀(H+ζ)/τ − γ²)` whose ratio to the intended
+  `ω_linear = √((DP₀ζ + HP₀)/τ − γ²)` asymptotes to `√D ≈ 0.548`. This is the
+  origin of the "54% renormalization" reported in Foundational Paper v2 §8.4
+  at H ∈ {10, 20, 50} (matches 0.1662, 0.2400, 0.3842 to 4 sig figs).
+  One-character fix — remove `params.D *` — restores `ω_measured ≈ ω_linear`
+  at all tested H to within FFT-bin resolution.
+  Full diagnosis: [`analysis/scripts/telegraph_pme/v1.4_bug_diagnosis/memo.md`](../analysis/scripts/telegraph_pme/v1.4_bug_diagnosis/memo.md).
+  Solver-independence audit that motivated the forensic: [`analysis/scripts/telegraph_pme/v1.3_solver_independence/memo.md`](../analysis/scripts/telegraph_pme/v1.3_solver_independence/memo.md).
+
+### Added
+
+- **`analysis/scripts/telegraph_pme/v1.4_bug_diagnosis/`** — forensic root-cause
+  analysis of the FPv2 §8.4 54% renormalization, with a diagnostic script
+  (`diagnostic_runs.py`) containing three tests: reproduce-the-54%, amplitude-
+  independence, and patch-verification.
+
+- **Updated `analysis/scripts/telegraph_pme/v1.3_solver_independence/architectural_followthrough.md`**
+  — Part 2 drop-in correction block for FPv2 §8.4 v3 revision now includes the
+  line-level root-cause diagnosis (upgraded from "solver-specific, not physical"
+  to "one-character code patch").
+
+### Impact on published claims
+
+- The Analogue-5 qualitative structure (telegraph-modulated PME, v–δ frequency
+  match, participation-channel coupling) **is unaffected**. The coupling exists;
+  both `v(t)` and `ρ_center(t)` oscillate at a matched frequency.
+- The specific quantitative table in FPv2 §8.4 (ω_v = 0.1662, 0.2400, 0.3842
+  at H = 10, 20, 50 with a systematic "54% of linear" interpretation)
+  **is withdrawn and replaced** by the standard linear-eigenmode prediction
+  `ω = √((DP₀ζ + HP₀)/τ − γ²)`, which the patched code reproduces at
+  FFT-bin precision.
+- All other analogue modules (`rc_debye.py`, `barenblatt.py`, `horizon.py`,
+  `temporal_tension.py`) are audited and correct; this was a localised error.
+
+---
+
 ## [2.0.0] - 2026-03-29
 
 ### Added

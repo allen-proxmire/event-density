@@ -24,45 +24,67 @@ The invariants in §2–§4 below are properties of this equation that hold *wit
 
 ---
 
-## 2. Oscillation-death threshold: `D_crit = 0.5`
+## 2. Oscillation-death threshold: `D_crit(ζ) ≈ 0.896` at canon-default `ζ = 1/4`
 
-### Statement
+> **Update 2026-04-22.** Earlier drafts gave `D_crit = 0.5` via the additive heuristic `Δ = D + 2ζ, critical at Δ = 1`. That heuristic is retired as a quantitative claim (it is off by ~80%). The correct linearised threshold is given by the exact discriminant below. Derivation and discrepancy analysis in [`D_crit_Resolution_Memo.md`](D_crit_Resolution_Memo.md).
 
-The flow type of the coupled `(ρ, v)` system is governed by the **damping discriminant** (Canon principle P6):
+### Statement (revised)
 
-$$\Delta \;=\; D + 2\zeta.$$
+The flow type of the coupled `(ρ, v)` system is governed by the **damping discriminant** of the linearised 2×2 system around equilibrium. At reference mode `ε_k·τ = 1`:
 
-The system is **underdamped (oscillatory)** when `Δ < 1` and **overdamped (parabolic)** when `Δ > 1`. The transition at `Δ = 1` is **sharp** — i.e., a discontinuous change in dynamical character at a specific parameter value, not a smooth crossover. For the canonical choice `ζ = 1/4`, the transition lands at:
+$$
+(D - \zeta)^2 \;<\; 4\,(1 - D) \quad \Longleftrightarrow \quad \text{underdamped (oscillatory)}
+$$
 
-$$\boxed{\;D_{\text{crit}} \;=\; 1 - 2\zeta \;=\; 0.5 \quad\text{(at canonical }\zeta = 1/4\text{).}\;}$$
+The transition at equality is **sharp** — a transversal crossing of the discriminant through zero, giving a discontinuous change in dynamical character. The critical threshold is
 
-The deeper invariant is `Δ_crit = 1` — the location of the discriminant zero. The specific value `D_crit = 0.5` follows from the canonical `ζ = 1/4` choice. Different `ζ` shifts `D_crit` accordingly without changing the sharpness or the existence of the bifurcation.
+$$
+\boxed{\;D_{\rm crit}(\zeta) \;=\; -(2-\zeta) + 2\sqrt{2-\zeta} \;=\; \sqrt{2-\zeta}\bigl(2 - \sqrt{2-\zeta}\bigr).\;}
+$$
 
-### Derivation sketch
+At canon-default `ζ = 1/4`: **`D_crit ≈ 0.8958`** (the "0.9" figure flagged in the 2026-04-20 ED-Dimensional-01-Ext Appendix A). At `ζ = 0`: `D_crit = 2√2 − 2 ≈ 0.828`. At `ζ → 1`: `D_crit → 1`.
 
-Linearise the canonical PDE around the unique equilibrium `ρ = ρ*` (set `δ = ρ − ρ*`, ignore spatial gradients for the uniform mode, and use the linear penalty `P(δ) ≈ P₀ δ` with `P₀ = αγ/ρ_0`). The system becomes
+The deeper invariant is the **existence** and **sharpness** of the bifurcation, not its numerical location. Both survive the correction; the numerical value changes from 0.5 to ≈ 0.896.
 
-$$\dot\delta \;=\; -D P_0\, \delta \;+\; H\, v, \qquad \dot v \;=\; \tfrac{1}{\tau}\bigl(-P_0\,\delta - \zeta\, v\bigr).$$
+### Derivation (corrected)
 
-The matrix is `[[-DP₀, H], [-P₀/τ, -ζ/τ]]`, with characteristic polynomial
+Linearise the canonical PDE around `ρ*` with `δ = ρ − ρ*`. Using `P(δ) ≈ P₀ δ` (linear penalty) and `M(ρ*) = M₀`, the mobility-channel contribution is `M₀∇²δ`. Fourier mode at wavenumber `k` gives the effective rate `ε_k = M₀ k² + P₀`. The coupled (ρ, v) ODE becomes
 
-$$\lambda^2 + (D P_0 + \zeta/\tau)\,\lambda + (P_0/\tau)(D \zeta + H) \;=\; 0.$$
+$$
+\dot\delta \;=\; -D\epsilon_k\,\delta + H\,v, \qquad \dot v \;=\; \tfrac{1}{\tau}\bigl(-\epsilon_k\,\delta - \zeta\, v\bigr).
+$$
 
-Reading the discriminant of this quadratic and tracking the boundary between complex-conjugate roots (oscillatory) and real roots (overdamped), the transition lands at `D + 2ζ = 1` for the canonical normalisation `P₀ = 1/τ`. Sharp because the discriminant is a continuous monotone function of `Δ` that crosses zero transversally at `Δ = 1`.
+Characteristic polynomial:
+
+$$
+\lambda^2 + (D\epsilon_k + \zeta/\tau)\,\lambda + \frac{\epsilon_k(D\zeta + H)}{\tau} \;=\; 0.
+$$
+
+With `ε_k = τ = 1` and `H = 1 − D`, the underdamping condition `T² < 4S` collapses to
+
+$$
+(D + \zeta)^2 < 4(1 - D + D\zeta) \;\;\Longleftrightarrow\;\; (D - \zeta)^2 < 4(1-D),
+$$
+
+and equality at `D_crit(ζ)` as above. The earlier heuristic `Δ = D + 2ζ = 1` drops the coupled cross-term and over-weights `ζ` by ~2×; full derivation and error analysis in the resolution memo.
 
 ### Numerical confirmation
 
-ED-Phys-18 (`HybridCosmology`) and ED-Phys-19 (`UnifiedCosmology`) confirm `D_crit = 0.5` numerically by sweeping `D` across the bifurcation and observing the qualitative regime change. The orientation summarises three regimes:
+ED-Phys-18 (`HybridCosmology`) and ED-Phys-19 (`UnifiedCosmology`) swept `D` across the bifurcation and observed the qualitative regime change. Their published boundary at `D ≈ 0.5` used the retired heuristic as a classification marker; the underlying eigenvalues are correctly computed in code and therefore the actual numerical results do not change, only the interpretive label shifts from "boundary at 0.5" to "boundary at ≈ 0.896."
 
-| Regime | Condition | Behavior |
-|:-------|:---------:|:---------|
-| Oscillatory | `D < 0.1` (or `Δ < 1`) | Underdamped, reversible, standing participation waves; 8–19 transient oscillations per ED-Phys-17 |
-| Hybrid | `0.1 ≤ D ≤ 0.4` | Mixed, smooth interpolation |
-| Parabolic | `D ≥ 0.5` (or `Δ > 1`) | Overdamped, irreversible, structure-forming; Barenblatt spreading; horizon dynamics |
+The three-regime taxonomy survives:
+
+| Regime | Condition (corrected) | Behavior |
+|:-------|:---------------------|:---------|
+| Oscillatory | `D ≪ D_crit(ζ)` | Underdamped, reversible, standing participation waves; 8–19 transient oscillations per ED-Phys-17 |
+| Hybrid | `D → D_crit(ζ)` from below | Mixed, smooth interpolation |
+| Parabolic | `D ≥ D_crit(ζ) ≈ 0.896` | Overdamped, irreversible, structure-forming; Barenblatt spreading; horizon dynamics |
 
 ### Why it matters
 
-This is the architectural backbone of the **ED-09.5 quantum-classical transition prediction**. The identification of `D_crit = 0.5` with the physical Q-C boundary is the central claim of the Aspelmeyer optomechanics analysis in [`../docs/ED-09-5-Observable-Sharpening.md`](../docs/ED-09-5-Observable-Sharpening.md) §11, §22.
+This is the architectural backbone of the **ED-09.5 quantum-classical transition prediction**. The claim is that `D_crit` is a physical Q-C boundary — a claim about the **existence of a sharp transition**, not its numerical value. The correction shifts the boundary from 0.5 to ≈ 0.896 but leaves the Q-C claim qualitatively intact. Any Aspelmeyer optomechanics analysis or other experimental-design memo that depends on the sharp-transition existence ([`../docs/ED-09-5-Observable-Sharpening.md`](../docs/ED-09-5-Observable-Sharpening.md) §11, §22) inherits the corrected threshold without structural disruption.
+
+**Helper available in code** — `edsim.math.damping.d_crit(zeta)` and `edsim.math.damping.D_CRIT_CANONICAL` for programmatic access.
 
 ---
 
@@ -127,7 +149,7 @@ Each invariant anchors a different class of ED prediction:
 
 | Invariant | Anchors |
 |:----------|:--------|
-| `D_crit = 0.5` | ED-09.5 quantum-classical sharp transition (`docs/ED-09-5-Experimental-Strategy.md`); regime classification across the dimensional atlas |
+| `D_crit(ζ) ≈ 0.896` at `ζ = 1/4` | ED-09.5 quantum-classical sharp transition (`docs/ED-09-5-Experimental-Strategy.md`); regime classification across the dimensional atlas. Corrected 2026-04-22 from retired heuristic 0.5; see `D_crit_Resolution_Memo.md` |
 | `E_ground = αγρ₀` | Confirmed in ED-Phys-17 §12.2; underlies the heat-death floor in 00.1 *Cosmology from the Compositional Rule* |
 | `t_rel ≈ ρ₀/(αγ)` | Sets the timescale for the porous-medium, RC-Debye, and telegraph reductions; appears in UDM, FRAP, Cluster Merger-Lag predictions |
 

@@ -1,8 +1,14 @@
 # theory/
 
-**The home of the canonical Event Density PDE statement.** This directory is intentionally small: it holds the one-page authoritative PDE document and a navigation README. Long-form theoretical *papers* (the Foundational Paper, the Ontology paper, the Dimensional Atlas, the Numerical Atlas) live in [`/papers/`](../papers/) where every paper has its own canonical folder.
+**The home of the canonical Event Density PDE statement.** This directory is intentionally small: it holds the authoritative PDE document, the architectural-canon reference, and a navigation README. Long-form theoretical *papers* (the Foundational Paper, the Ontology paper, the Dimensional Atlas, the Numerical Atlas) live in [`/papers/`](../papers/) where every paper has its own canonical folder.
 
-Use `theory/PDE.md` when you want a compact, complete statement of the equation and its structural setup. Use `/papers/` when you want the long-form derivations, proofs, regime mappings, and computational atlases that *establish* what `theory/PDE.md` summarizes.
+| File | Layer | When to read |
+|---|---|---|
+| [`PDE.md`](PDE.md) | Concrete PDE with specific functional forms | Compact one-page statement of the equation this repo instantiates and tests. |
+| [`Architectural_Canon.md`](Architectural_Canon.md) | Structural axioms: 7 principles P1–P7 + 4 pre-PDE axioms | Understanding what defines ED as a *class* of PDEs, not a specific equation. |
+| [`../docs/ED-Orientation.md`](../docs/ED-Orientation.md) | Complete orientation across the 20+ paper ED series | First read for a new session; covers the full paper series including PhilArchive papers not in this repo. |
+
+Use `PDE.md` when you want a compact statement of the equation and its structural setup. Use `Architectural_Canon.md` when you need the architectural principles rather than the concrete equation. Use `/papers/` for long-form derivations, proofs, regime mappings, and computational atlases. Use `ED-Orientation.md` to orient across the wider ED program — including the ED-XX environment-sourcing revision (April 2026), the ED-05 pre-PDE axioms, the ED-09.5 sharp-quantum-classical-transition prediction, and the ED-13 master empirical synthesis.
 
 ---
 
@@ -83,8 +89,15 @@ For a researcher new to ED who wants a complete theoretical understanding:
 
 **What is mathematically established.** The uniqueness theorem (Theorem D.19) selects the canonical PDE from C1–C7 with no free choices. Well-posedness, spectral structure, Lyapunov dissipation, and the three-stage convergence theorem are proved in Appendix C. The five-regime dimensional reduction is an explicit construction.
 
-**What is empirically established.** The mobility channel (UDM) has been tested against 10 materials in the soft-matter regime, all $R^2 > 0.986$. The penalty channel (Galaxy-15) has been tested against 7 well-measured clusters and the Finner+25 aggregate of 58 subclusters, all consistent with the corrected formula $\ell = D_T / v_{\rm current}$. The three architectural signatures (velocity scaling, deceleration scaling, scale dependence) are confirmed in the data.
+**What is empirically established.** The mobility channel (UDM) has been tested against 10 materials in the soft-matter regime, all $R^2 > 0.986$. The penalty channel (Galaxy-15) has been tested against 7 well-measured clusters and the Finner+25 aggregate of 58 subclusters, all consistent with the corrected formula $\ell = D_T / v_{\rm current}$. The three architectural signatures (velocity scaling, deceleration scaling, scale dependence) are confirmed in the data. See ED-13 (*Event Density as a Physical Ontology*, March 2026) for the master cross-regime empirical synthesis: condensed-matter diffusivity fit (3 chemical systems, exponent ~2), naturally-cored dwarf halos, flat weak-lensing velocities to 1 Mpc, BTFR with the observed 1/4 exponent, plus two sharp discriminating predictions (activity-dependent WL velocities and merger-lag lensing).
+
+**Recent revision (April 2026).** ED-XX *Environment Sourcing of Temporal Tension* overturned the earlier galaxy-sourced hypothesis at galactic scale. The 3D Green's function `T(r) ∝ (1/r)e^(−r/ℓ_T)` has a geometric dilution term that no compact galactic source can overcome. Flat weak-lensing fields require megaparsec-scale sources — i.e., the cosmic web. Galaxies set the amplitude; groups, filaments, and the local cosmic web set the spatial extent. Cluster-scale results (Galaxy-15) are unaffected because clusters are themselves the extended source. See [`../docs/ED-Orientation.md`](../docs/ED-Orientation.md) §6.
 
 **What remains open.** No experimental test of the quantum regime mapping has been performed. No experimental test of the Planck regime mapping has been performed. The cosmological regime is provisionally falsified as a *standalone* model (the monostable penalty cannot generate cosmic structure growth on its own, though the participation channel may; this is unresolved). The participation channel's identification across regimes is a candidate, not a confirmed fact. ED does not derive general relativity, quantum mechanics, or the Standard Model.
+
+**Candidate testable predictions not yet tested.** Beyond the empirical tests currently in flight, two sharp ED-specific predictions are documented in the wider paper series but have no assigned test program in the repo:
+
+- **ED-09.5 sharp quantum-classical transition** (*Event Density and the Quantum–Classical Boundary*, Feb 2026): ED predicts a *structural* boundary at the quantum-classical transition distinct from smooth environmental decoherence — a sharp collapse to a single participation channel when internal complexity outpaces event-production capacity. Standard decoherence theory never predicts this sharp transition. Candidate experimental regimes: macroscopic quantum coherence (cavity QED with increasing atom number; optomechanical systems near the quantum-classical boundary; large-mass superposition experiments).
+- **ED-13 activity-dependent weak-lensing velocities**: galaxies with more collective activity should show higher asymptotic `V_∞` at fixed baryonic mass. After ED-XX, the relevant variable is environmental activity (group/filament scale), not individual-galaxy SFR. BIG-SPARC with group/filament cross-match is the definitive test.
 
 These limits are documented in the foundational papers and tested in the simulation engine.
