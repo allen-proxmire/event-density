@@ -1,0 +1,62 @@
+F4-alt-refine two-point correlation scan at \u03be_target = 1.7575 lu, 10 seeds, 8 r-bins (\u0394r = 0.25 lu in [0.25, 2.0] lu)
+Seed 11 — calibration + evolution...
+  seed=11  \u03be_meas=1.7535 (miss 0.23%, refined=False)  L=1.8938  r_diag=1  N_motifs_total=2821  t=4.1s
+Seed 22 — calibration + evolution...
+  seed=22  \u03be_meas=1.7475 (miss 0.57%, refined=False)  L=1.8873  r_diag=1  N_motifs_total=2840  t=3.7s
+Seed 33 — calibration + evolution...
+  seed=33  \u03be_meas=1.7552 (miss 0.13%, refined=False)  L=1.8956  r_diag=1  N_motifs_total=2625  t=3.7s
+Seed 44 — calibration + evolution...
+  seed=44  \u03be_meas=1.7564 (miss 0.06%, refined=False)  L=1.8969  r_diag=1  N_motifs_total=2776  t=3.8s
+Seed 55 — calibration + evolution...
+  seed=55  \u03be_meas=1.7566 (miss 0.05%, refined=False)  L=1.8972  r_diag=1  N_motifs_total=2683  t=3.8s
+Seed 66 — calibration + evolution...
+  seed=66  \u03be_meas=1.7575 (miss 0.00%, refined=False)  L=1.8981  r_diag=1  N_motifs_total=2637  t=3.7s
+Seed 77 — calibration + evolution...
+  seed=77  \u03be_meas=1.7569 (miss 0.03%, refined=False)  L=1.8975  r_diag=1  N_motifs_total=2647  t=3.7s
+Seed 88 — calibration + evolution...
+  seed=88  \u03be_meas=1.7547 (miss 0.16%, refined=False)  L=1.8951  r_diag=1  N_motifs_total=2690  t=4.0s
+Seed 99 — calibration + evolution...
+  seed=99  \u03be_meas=1.7534 (miss 0.23%, refined=False)  L=1.8937  r_diag=1  N_motifs_total=2712  t=3.8s
+Seed 111 — calibration + evolution...
+  seed=111  \u03be_meas=1.7558 (miss 0.10%, refined=False)  L=1.8963  r_diag=1  N_motifs_total=2779  t=3.7s
+
+Global pool: N_motifs = 27210, \u03c1\u0304 = -3.046782, \u03c3²_\u03c1 = 4.384064
+Pair counts: total binned = 3714, unbinned (outside r-grid) = 933482
+  r=0.25  N_pairs=0  C=None  rank=None  CoV=None  low_N=True
+  r=0.50  N_pairs=0  C=None  rank=None  CoV=None  low_N=True
+  r=0.75  N_pairs=0  C=None  rank=None  CoV=None  low_N=True
+  r=1.00  N_pairs=1473  C=2.044669535718382  rank=2.012454373743956  CoV=0.0827473360180046  low_N=False
+  r=1.25  N_pairs=0  C=None  rank=None  CoV=None  low_N=True
+  r=1.50  N_pairs=1126  C=2.0420855811957455  rank=2.014870571356938  CoV=0.07424506104660887  low_N=False
+  r=1.75  N_pairs=0  C=None  rank=None  CoV=None  low_N=True
+  r=2.00  N_pairs=1115  C=2.083880913286346  rank=2.119051346930503  CoV=0.09103293974797004  low_N=False
+
+Half-rise: r_half_filt = None, r_half_unfilt = 1.7575325729470939, ratio = None
+Verdict: Inconclusive-thin — primary admissibility gate failed: 3/8 bins admissible (< 6 required)
+
+Wrote table \u2192 C:\Users\allen\GitHub\Event Density\analysis\scripts\..\..\outputs\ed_sc_3_4_twopoint_relaxed_refine\correlation_twopoint_table.csv
+Wrote per-seed \u2192 C:\Users\allen\GitHub\Event Density\analysis\scripts\..\..\outputs\ed_sc_3_4_twopoint_relaxed_refine\correlation_twopoint_per_seed.csv
+Wrote summary \u2192 C:\Users\allen\GitHub\Event Density\analysis\scripts\..\..\outputs\ed_sc_3_4_twopoint_relaxed_refine\correlation_twopoint_summary.json
+{
+  "N_seeds": 10,
+  "N_r_bins": 8,
+  "N_motifs_total": 27210,
+  "N_pairs_total": 3714,
+  "N_admissible_bins": 3,
+  "rho_bar": -3.0467821162851907,
+  "sigma2_rho": 4.384063827868527,
+  "r_half_filt_central": null,
+  "r_half_unfilt": 1.7575325729470939,
+  "ratio_central": null,
+  "ratio_bootstrap_16_84": null,
+  "verdict": "Inconclusive-thin",
+  "verdict_reason": "primary admissibility gate failed: 3/8 bins admissible (< 6 required)",
+  "rigid_C_at_r_min": null,
+  "rigid_C_at_r_max": 2.083880913286346,
+  "C_admissible_values": [
+    2.044669535718382,
+    2.0420855811957455,
+    2.083880913286346
+  ],
+  "wall_seconds_total": 39.69423699378967
+}

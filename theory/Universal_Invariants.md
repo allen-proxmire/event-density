@@ -6,6 +6,8 @@
 
 **Cross-reference.** For the architectural principles these invariants follow from, see [`Architectural_Canon.md`](Architectural_Canon.md). For the concrete PDE instantiation, see [`PDE.md`](PDE.md). For the broader ED corpus context, see [`../docs/ED-Orientation.md`](../docs/ED-Orientation.md) §3, §4, and the universal-invariants block in §6.9 / §22 of [`../docs/ED-09-5-Observable-Sharpening.md`](../docs/ED-09-5-Observable-Sharpening.md).
 
+**r\* status (2026-04-23).** The ED-SC 2.0 motif-conditioned saddle-ratio median is **not** a derivation-based invariant of the canonical PDE. Its status was closed 2026-04-23 as a filter-conditioned statistic of the GRF linearisation of the R2 simulator, with pooled value r\* ≈ −1.88 ± 0.4. See [`ED_SC_2_0_r_star_Final_Verdict.md`](ED_SC_2_0_r_star_Final_Verdict.md) for the full closure and [`../analysis/ED_SC_2_0_Sample_Size_Audit.md`](../analysis/ED_SC_2_0_Sample_Size_Audit.md) for the audit trail. Readers arriving here via the orientation doc's universal-invariant block should not resurrect the scalar form.
+
 ---
 
 ## 1. The unified PDE in canonical form
@@ -153,7 +155,9 @@ Each invariant anchors a different class of ED prediction:
 | `E_ground = αγρ₀` | Confirmed in ED-Phys-17 §12.2; underlies the heat-death floor in 00.1 *Cosmology from the Compositional Rule* |
 | `t_rel ≈ ρ₀/(αγ)` | Sets the timescale for the porous-medium, RC-Debye, and telegraph reductions; appears in UDM, FRAP, Cluster Merger-Lag predictions |
 
-Together with the **dimensional invariant** `D · T₀/L₀² = 0.3` (verified across 5 regimes spanning 61 orders of magnitude per the dimensional atlas), the **triad coupling** `C ≈ 0.03` (ED-Phys-16), the **third-harmonic ratio** 3–6 % of fundamental (ED-Phys), and the **ED-SC 2.0 architectural saddle ratio** `r* ≈ −1.304` (`docs/ED-SC-2.0.md`), they form the **universal-invariant block** of the ED Math Pipeline (see [`docs/figures/atlas/ED-Math-Pipeline.png`](../docs/figures/atlas/ED-Math-Pipeline.png) bottom row). Each is a forced consequence of the canonical PDE, with no additional assumptions.
+Together with the **dimensional invariant** `D · T₀/L₀² = 0.3` (verified across 5 regimes spanning 61 orders of magnitude per the dimensional atlas), they form the **derivation-based universal-invariant block** of the ED Math Pipeline (see [`docs/figures/atlas/ED-Math-Pipeline.png`](../docs/figures/atlas/ED-Math-Pipeline.png) bottom row). Each is a forced consequence of the canonical PDE, with no additional assumptions.
+
+**Not in this block (removed 2026-04-23):** the ED-SC 2.0 motif-conditioned saddle-ratio median (formerly `r* ≈ −1.304`) and the two ED-Phys-16-provenance figures `C ≈ 0.03` (triad coupling) and third-harmonic ratio 3–6 %. The first was retired from scalar-invariant status following the falsifier audit; the structural replacement is *"a motif-conditioned saddle-ratio distribution exists on the filtered Gaussian-random-field saddle population of the canonical PDE and is filter-dependent"* — see [`ED_SC_2_0_r_star_Final_Verdict.md`](ED_SC_2_0_r_star_Final_Verdict.md). The latter two remain provisional pending provenance re-check against the C7 deterministic-canonical-operator results (`analysis/scripts/telegraph_pme/triad_calibration/memo.md`).
 
 ---
 

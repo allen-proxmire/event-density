@@ -59,15 +59,17 @@ $$\mathcal{R}_{\text{motif}}(E) = \{\, r(x*) \,:\, x* \in \mathcal{S}_{\text{mot
 
 ## 2. Architectural invariance claim (ED-SC 2.0)
 
-> **Claim.** For every pair of ED-architecturally-equivalent systems `A` and `B` satisfying the domain conditions of §3, there exist event-density fields `E_A` and `E_B` on 2D domains `Ω_A, Ω_B` such that the motif-conditioned distributions satisfy
+> **Claim (revised 2026-04-23).** For every pair of ED-architecturally-equivalent systems `A` and `B` satisfying the domain conditions of §3, there exist event-density fields `E_A` and `E_B` on 2D domains `Ω_A, Ω_B` such that the motif-conditioned distributions, **pooled over ≥10 independent seeds / images of each system**, satisfy
 >
-> $$|\operatorname{median}(\mathcal{R}_{\text{motif}}(E_A)) - \operatorname{median}(\mathcal{R}_{\text{motif}}(E_B))| \leq \varepsilon_{\text{med}}, \qquad \varepsilon_{\text{med}} = 0.2.$$
+> $$|\operatorname{median}(\mathcal{R}_{\text{motif}}(E_A)) - \operatorname{median}(\mathcal{R}_{\text{motif}}(E_B))| \leq \varepsilon_{\text{med}}, \qquad \varepsilon_{\text{med}} = 0.4.$$
 >
 > Furthermore, the common value is
 >
-> $$r^* = \operatorname{median}(\mathcal{R}_{\text{motif}}(E)) \approx -1.30,$$
+> $$r^* = \operatorname{median}(\mathcal{R}_{\text{motif}}(E)) \approx -1.88 \pm 0.4\ \text{(95\% CI)},$$
 >
-> with Scenario D at its architectural saddle peak `(n^* = 2.7, \sigma^* = 0.0556)` as the reference system: the motif-conditioned median of the canonical Scenario-D field satisfies `r^*_{\text{ScenD}} = -1.304`.
+> with Scenario D at its architectural saddle peak `(n^* = 2.7, \sigma^* = 0.0556)` as the reference system: the 10-seed pooled motif-conditioned median of the canonical Scenario-D field is `r^*_{\text{ScenD}} \approx -1.88`.
+>
+> **History note.** The previously-cited value `r^* = -1.304` is retained in the literature as a small-sample (N=6 motifs, single seed 77) fluctuation inside the 95% CI of the pooled distribution; it is not the canonical reference value. See [`theory/ED_SC_2_0_r_star_Final_Verdict.md`](../theory/ED_SC_2_0_r_star_Final_Verdict.md).
 
 No claim is made about higher moments of `\mathcal{R}_{\text{motif}}` (mean, variance, IQR, skewness, tail behaviour). The invariant is **the median, and only the median**.
 
@@ -98,9 +100,11 @@ A system becomes admissible under ED-SC 2.0 only if a native 2D real-space physi
 
 ## 4. Falsification criterion
 
-ED-SC 2.0 is falsified by any single comparison system `E_X` satisfying §3 for which
+ED-SC 2.0 is falsified by any **pooled-N (≥10 seeds / ≥10 images)** comparison system `E_X` satisfying §3 for which
 
-$$|\operatorname{median}(\mathcal{R}_{\text{motif}}(E_X)) - (-1.30)| > 0.20.$$
+$$|\operatorname{median}(\mathcal{R}_{\text{motif}}(E_X)) - (-1.88)| > 0.40.$$
+
+Single-seed / single-image comparisons are no longer admissible as evidence either for or against the claim, per the r*-arc falsifier results ([`theory/ED_SC_2_0_r_star_Final_Verdict.md`](../theory/ED_SC_2_0_r_star_Final_Verdict.md)).
 
 Falsifying measurements must be pre-registered with respect to:
 
@@ -195,8 +199,10 @@ For reproducibility and future recalibration, the reference measurement from whi
 | Total steps | 500 (`t_{\text{phys}} = 25`) |
 | Post-run statistics | `\hat p = 0.10788`, `\sigma_E = 0.01525`, range `[0.054, 0.165]` |
 | Motif filter | `\alpha_{\text{filt}} = 0.25`, `L_{\text{ray}} = 2`, `\delta = 0.10` |
-| Post-motif sample size | `|\mathcal{S}_{\text{motif}}| = 6` |
-| **Reference invariant** | `\operatorname{median}(\mathcal{R}_{\text{motif}}(p_{\text{ScenD}})) = -1.304` |
+| Post-motif sample size (10 seeds pooled) | N = 34 |
+| **Reference invariant (10-seed pooled)** | `median(𝓡_motif) = −1.88, 95% CI [−2.34, −1.46]` |
+| Historical single-seed value (seed 77, N=6) | −1.304 *(retained for provenance; not the canonical value)* |
+| See also | [`theory/ED_SC_2_0_r_star_Final_Verdict.md`](../theory/ED_SC_2_0_r_star_Final_Verdict.md) and [`analysis/ED_SC_2_0_r_star_R2_GRF_Tests.md`](../analysis/ED_SC_2_0_r_star_R2_GRF_Tests.md) |
 
 Re-derivation requires `ED_Update_Rule.py` and `Run_Simulation.py` from `Emergence Universe/ED-SIM-Code/`. The motif-filter implementation is provided in `analysis/scripts/ed_arch_r2/r2_motif_filter.py`.
 
@@ -204,10 +210,21 @@ Re-derivation requires `ED_Update_Rule.py` and `Run_Simulation.py` from `Emergen
 
 ## 8. Open items
 
-1. **Ensemble statistics.** The reference measurement is from a single seed. An ensemble `(N ≥ 20)` over independent seeds would yield an uncertainty estimate on `r^* = −1.30` and a better-characterised filter sensitivity. Not blocking for publication; recommended before first cross-scale test.
+1. **Ensemble statistics — RESOLVED 2026-04-23.** 10-seed pooled measurement complete; r* ≈ −1.88 ± 0.4. See [`analysis/ED_SC_2_0_r_star_R2_GRF_Tests.md`](../analysis/ED_SC_2_0_r_star_R2_GRF_Tests.md). Downstream consequence: the scalar form of the invariant is retired. See the final verdict memo ([`theory/ED_SC_2_0_r_star_Final_Verdict.md`](../theory/ED_SC_2_0_r_star_Final_Verdict.md)) for the restatement as a filtered-GRF statistical invariant, and the restatement targets for ED-SC 3.0 therein.
 2. **Structural vs coincidental `H_{\text{param}} \leftrightarrow H_{\text{field}}` correspondence.** Whether the exact agreement between the parameter-space and field-space medians at `(n^*, \sigma^*)` reflects a derivable mapping is an open theoretical problem. Deferred to a separate ED-SC theory note.
 3. **Motif-filter robustness.** Alternative motif detectors (persistence-based Morse–Smale complex, topological-data-analysis thresholding, channel-network graph-theoretic filters) should be cross-checked against the `(α = 0.25, L_{\text{ray}} = 2)` detector to confirm that the `r^* = −1.30` result is detector-robust.
 4. **First cross-scale test target.** Among the five comparison systems of §5, **thin-film dewetting (§5.3)** is the lowest-cost: AFM profilometry data at the required resolution is widely published, and the motif filter applies directly. Recommended as the first ED-SC 2.0 cross-scale test.
+
+---
+
+---
+
+## 9. Pointers for future readers
+
+- **If you arrive at `r* ≈ −1.30` from an older paper or orientation summary,** read [`theory/ED_SC_2_0_r_star_Final_Verdict.md`](../theory/ED_SC_2_0_r_star_Final_Verdict.md) before using the number. The scalar form is retired; the pooled value is −1.88 ± 0.4.
+- **If you are designing a cross-scale test (AFM dewetting, Casimir, stripe domains, RD activator),** the pass criterion in §5 now reads median ∈ `[−2.3, −1.5]` (40% window around −1.88), applied to a pooled-N statistic. The old `[−1.5, −1.1]` window is retired.
+- **If you are updating downstream memos,** the authoritative closure chain is: [`theory/ED_SC_2_0_r_star_Consolidation.md`](../theory/ED_SC_2_0_r_star_Consolidation.md) → [`theory/ED_SC_2_0_r_star_R2_Analytic.md`](../theory/ED_SC_2_0_r_star_R2_Analytic.md) → [`theory/ED_SC_2_0_r_star_R2_GRF.md`](../theory/ED_SC_2_0_r_star_R2_GRF.md) → [`analysis/ED_SC_2_0_r_star_R2_GRF_Tests.md`](../analysis/ED_SC_2_0_r_star_R2_GRF_Tests.md) → [`theory/ED_SC_2_0_r_star_Final_Verdict.md`](../theory/ED_SC_2_0_r_star_Final_Verdict.md).
+- **If you are writing ED-SC 3.0,** the structural replacement for the scalar invariant is in the Final Verdict memo §6.3; the correlation-length `ξ` is the recommended cross-scale hinge.
 
 ---
 

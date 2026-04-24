@@ -366,7 +366,31 @@ This:
 
 ---
 
-## 8. Related Memos
+## 8. External parallel work — Lohmiller & Slotine (RSPA 2026)
+
+Lohmiller & Slotine, "On computing quantum waves exactly from classical action," *Proc. R. Soc. A* **482**, 20250413 (2026) — arXiv:2405.06328 — construct Schrödinger wave functions exactly from a **𝕁-valued classical least-action field** `φ_j(x, t)` plus the classical density `ρ_j` transported along each extremal branch. Their central identity (eq. 3.1) is
+
+$$
+\psi_j = \sqrt{\rho_j}\; e^{i\phi_j/\hbar}\; e^{-\tfrac12\int_0^t \Delta_{\mathbf M}\phi_j\,d\theta},
+\qquad \psi = \sum_{j\in \mathbb J}\psi_j,
+$$
+
+with the **pure classical Hamilton-Jacobi p.d.e. (1.2/2.2)** — *no* Bohm quantum potential `Q = −(ℏ²/2m)∇²√ρ/√ρ` is added. The continuity equation (1.4) supplies the amplitude decay factor along each path, and "quantum" behavior emerges from (i) non-Lipschitz branch points where `Δ_M φ_j` is unbounded, and (ii) coherent summation over branches. Lemma 3.1 proves each `ψ_j` exactly solves Schrödinger (1.6); they extend the construction to Klein-Gordon, Pauli, Dirac, and Maxwell, and illustrate with double-slit, Aharonov-Bohm, particle-in-a-box, tunnelling, hydrogen, harmonic oscillator, and EPR/spin correlations.
+
+**Relation to this memo.** SL is a *parallel, independent* confirmation of the structural claim that `(ρ, phase)` — equivalently a density plus an action/participation field — is the natural primitive pair for recovering Schrödinger dynamics, without invoking second-quantisation axioms. The two constructions differ in important ways:
+
+- **Primitive.** SL's phase is the *classical action* `φ_j` satisfying HJ. ED's participation `v` (or its coarse-grained phase in §3–4) is *not* an HJ action: it obeys a relaxational ODE `τ ∂_t v = F[ρ] − ζ v` driven by penalty-functional variation, and is part of a triad (mobility, penalty, participation) with saturation and irreversibility outside the reversible slice.
+- **Setting.** SL works in finite-dimensional particle mechanics on `ℝ^N` (with constrained manifolds `𝔾^N`). ED is a field theory with a canonical PDE, operator basis closed under RG (`memory/project_ed_rg_three_regime.md`), three-regime structure, cross-scale invariance `r* = −1.304`, and a penalty channel that generates dissipation. None of this structure appears in SL.
+- **Quantum-potential handling.** SL *absorbs* `Q` into the branch-indexed amplitude factor plus coherent summation. The reversible-slice construction in this memo produces a linear Schrödinger picture directly from the harmonic Fock sector; no per-branch construction is needed because the slice is already `(D, ζ) = (0, 0)`. The two mechanisms are compatible but not identical.
+- **Scope of claim.** SL claim *exact* equivalence to Schrödinger, Klein-Gordon, Pauli, Dirac, Maxwell. This memo claims only *reversible-slice consistency* with free scalar QFT — the honest ED position given the guardrails in `memory/project_ed10_geometry_qft_scope.md`. SL does not overclaim either: they explicitly say "no particle path exists until wave collapse," treat QM as *recovered* rather than *derived-from-new-axioms*, and note their formalism is a **computational alternative** to Feynman path integrals (a strict subset of the zig-zag paths).
+
+**Potentially transferable tool.** SL's branch-indexed mechanism — extremal action branches + `exp(−½ ∫ Δ_M φ dθ)` amplitude factor + coherent sum — could be examined for ED's reversible slice to ask whether ED's participation field, when HJ-like reductions apply (e.g., along the ray-extremal motifs of ED-SC 2.0), admits an analogous multi-branch construction of the emergent QFT wave operator. This is a speculative cross-pollination target, not a claim. It does **not** change anything in §1–§7 of this memo; the reversible-slice construction stands on its own.
+
+**Calibration.** SL should be cited as independent external parallel evidence that the `(density, action-like field)` decomposition is the right primitive pair for Schrödinger recovery, and as a useful pointer in the literature for readers skeptical that anything structural survives a `(D, ζ) → 0` limit. It is **not** evidence for ED-specific claims (triad structure, RG closure, cross-scale invariance), all of which are orthogonal to the SL construction.
+
+---
+
+## 9. Related Memos
 
 - `theory/Architectural_Canon.md` — Canon P1–P7; §6 for the ED-10 ontology dictionary.
 - `theory/PDE.md` — canonical PDE and primitives.
