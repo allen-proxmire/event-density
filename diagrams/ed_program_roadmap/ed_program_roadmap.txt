@@ -1,0 +1,167 @@
+================================================================================
+   ED PROGRAM ROADMAP — Phase-1 → Phase-2 → Phase-3 → Phase-4
+   Status after Phase-3 closure (2026-04-24)
+================================================================================
+
+
+  ┌───────────────────────────────────────────────────────────────────────────┐
+  │  ✓ PHASE-1 — DONE                                                         │
+  │     Non-relativistic QM emergence                                         │
+  │     • Schrödinger equation                  • Bell / Tsirelson 2√2        │
+  │     • Born rule  Prob = |P|²/Σ|P|²          • Heisenberg Δx·Δp ≥ ℏ/2      │
+  │     Foundation:  P_K = √b · e^(iπ)  +  four-band  +  commitment           │
+  └────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+                                       ▼  extends to relativistic regime
+  ┌───────────────────────────────────────────────────────────────────────────┐
+  │  ✓ PHASE-2 — DONE — Quantum Sector                                        │
+  │                                                                           │
+  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+  │  │ ✓ Arc R DONE │─▶│ ✓ Arc M DONE │─▶│ ✓ Arc Q DONE │─▶│ ✓ Arc N DONE │   │
+  │  │  rel. kinem. │  │  mass struct.│  │ QFT extension│  │ memory-kernel│   │
+  │  │  + dynamics  │  │ H1-dominant  │  │ 30% positive │  │  layer       │   │
+  │  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘   │
+  │         │                 │ form FORCED      │                 │           │
+  │         │ T1 spin-stats   │ values INHERIT.  │ T5 GRH uncond.  │ T8 V1     │
+  │         │ T2 Cl(3,1)      │ (σ_τ form,       │ T6 canon. comm. │ finite-   │
+  │         │ T3 anyon proh.  │  Theorem M1)     │ T7 UV-FIN       │ width     │
+  │         │ T4 Dirac emerg. │                  │                 │ vacuum    │
+  │         │ (R.1 + R.2 +    │ ◀──────────┐     │                 │ kernel    │
+  │         │  R.3)           │ F-M8 back- │     │                 │ (N1)      │
+  │         │                 │ flow from  └─────┘                 │           │
+  │         ▼                 ▼   GRH closure    ▼                 ▼           │
+  │       (4 thms)       (form-FORCED       (3 thms)          (1 thm)          │
+  │                       only)                                                │
+  └────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+                                       ▼  V1 + Synge generalisation
+  ┌───────────────────────────────────────────────────────────────────────────┐
+  │  ✓ PHASE-3 — DONE — Gravitational Sector                                  │
+  │     (lands in partial GR-induce quadrant)                                 │
+  │                                                                           │
+  │     • Theorem GR1: V1 with Synge world function FORCED  (T9)              │
+  │     • GR-3A free-chain geodesic worldlines (FORCED-conditional)           │
+  │     • GR-2D curvature-dependent cross-chain correlations                  │
+  │     • GR-4D Λ-integral existence (cosmological-Λ divergence dissolved)    │
+  │                                                                           │
+  │     Cosmological framework — 4 structural channels + 4 empirical routes:  │
+  │       1.  Λ as V1-kernel integral                                         │
+  │       2.  V1-induced dispersion modifications                             │
+  │       3.  V5-mediated cosmological correlations                           │
+  │       4.  Curvature–vacuum coupling                                       │
+  │                                                                           │
+  │     ED-Phys-10 acoustic-metric guardrails preserved throughout:           │
+  │       • no Einstein equations FORCED   • no Schwarzschild                 │
+  │       • no Newtonian-gravity emergence • no α from primitives             │
+  └────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+                                       ▼  Phase-4 outlook
+  ┌───────────────────────────────────────────────────────────────────────────┐
+  │  ○ PHASE-4 — OPEN                                                         │
+  │                                                                           │
+  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐         │
+  │  │ ○ ED-GR action   │  │ ○ Empirical      │  │ ○ Kernel         │         │
+  │  │   candidates     │  │   tests          │  │   parameter      │         │
+  │  │   SPECULATIVE    │  │                  │  │   inference      │         │
+  │  │                  │  │  • UHECR timing  │  │                  │         │
+  │  │  - Einstein-     │  │    (~10^19 eV)   │  │  joint analysis  │         │
+  │  │    Hilbert + V1  │  │  • GRB photon    │  │  across 4 obs.   │         │
+  │  │  - non-local     │  │    timing (TeV;  │  │  channels →      │         │
+  │  │    from V1       │  │    Fermi-LAT)    │  │  V1/V5 kernel    │         │
+  │  │  - acoustic-     │  │  • GW dispersion │  │  parameters      │         │
+  │  │    metric-only   │  │    (LIGO/Virgo/  │  │  (width,         │         │
+  │  │    (baseline)    │  │     KAGRA)       │  │   exponent,      │         │
+  │  │                  │  │  • LSS corr.     │  │   scales)        │         │
+  │  │                  │  │    persistence   │  │                  │         │
+  │  └──────────────────┘  └──────────────────┘  └──────────────────┘         │
+  │                                                                           │
+  │  ┌──────────────────────────────────────────────────────────────────┐     │
+  │  │ ○ GR-4A promotion question  —  SPECULATIVE                       │     │
+  │  │    Can Einstein-equation emergence be promoted from              │     │
+  │  │    SPECULATIVE to FORCED via:                                    │     │
+  │  │      • new primitive introduction?                               │     │
+  │  │      • derivation from existing primitives via novel argument?   │     │
+  │  │      • effective-theory upgrade via UV-FIN?                      │     │
+  │  │    No path identified at Phase-3 closure.                        │     │
+  │  │    ED-Phys-10 baseline (no Einstein eqs from primitives)         │     │
+  │  │    remains the structural ceiling.                               │     │
+  │  └──────────────────────────────────────────────────────────────────┘     │
+  └───────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+NINE FORCED THEOREMS — completed inventory across all six layers
+================================================================================
+
+   Layer                        Theorems                           Type
+   ──────────────────────────  ─────────────────────────────────  ──────────────
+   Phase-1                      (no FORCED theorems; foundation)   —
+   Phase-2 Arc R                T1 spin-statistics                 Theorem-level
+                                T2 Cl(3,1) frame uniqueness        Algebra-level
+                                T3 anyon prohibition in 3+1D       Topology-level
+                                T4 Dirac emergence                 Dynamical-eqn
+   Phase-2 Arc M                (no NEW FORCED theorems;           —
+                                F-M8 unconditional via back-flow)
+   Phase-2 Arc Q                T5 GRH unconditional FORCED        Existence
+                                T6 canonical (anti-)commutation    Operator
+                                T7 UV-FIN FORCED                   Bound
+   Phase-2 Arc N                T8 (N1) V1 finite-width kernel     Memory-kernel
+   Phase-3                      T9 (GR1) V1 + Synge world fn       Curved-kernel
+
+   Total: 9 FORCED structural theorems established.
+
+
+================================================================================
+PHASE COMPLETION TIMELINE
+================================================================================
+
+   Phase-1 closure ──────────▶  Phase-2 Arc R ──▶  Arc M ──▶  Arc Q ──▶  Arc N
+        ✓                          ✓                ✓           ✓         ✓
+                                                                          │
+                                                                          ▼
+                                                                       Phase-3
+                                                                          ✓
+                                                                          │
+                                                                          ▼
+                                                                       Phase-4
+                                                                          ○
+
+   Status:  ✓ = closed structurally     ○ = open / Phase-4 deliverable
+
+
+================================================================================
+KEY OPEN QUESTIONS (Phase-4)
+================================================================================
+
+   #   Question                                            Status
+   ─   ──────────────────────────────────────────────────  ──────────────────
+   1   ED-GR action — can a primitive-level effective      SPECULATIVE
+       Lagrangian be derived (Einstein-Hilbert + V1?
+       non-local from V1? acoustic-metric-only?)
+   2   UHECR timing — V1-induced dispersion at ~10^19 eV   awaiting kernel
+                                                            parameter input
+   3   GRB photon timing — V1-induced dispersion at TeV    Fermi-LAT bounds
+                                                            existing
+   4   GW dispersion — V1-induced graviton-dispersion      LIGO/Virgo/KAGRA
+                                                            bounds existing
+   5   LSS correlation persistence — V5 cosmological       awaiting joint
+       correlation observability                            analysis
+   6   Kernel parameter inference — joint constraint of    Phase-4 deliverable
+       V1 width, exponent, multi-scale weights, V5
+       amplitudes/ranges
+   7   GR-4A promotion — Einstein-equation emergence       SPECULATIVE
+       from primitives                                      ED-Phys-10 baseline
+                                                            preserved
+   8   Cosmology-baryogenesis link — C-N4.1 promotion      CANDIDATE carryover
+       (vacuum-mediated additional CP phases)               from Arc N
+   9   Quantum-gravity-style Planck-scale physics —        SPECULATIVE
+       if ℓ_ED identified with Planck scale
+   10  Black-hole structural content — Theorem GR1         SPECULATIVE
+       analogue-black-hole interior?
+
+
+================================================================================
+                  Form-FORCED, value-INHERITED methodology
+              consistent across all six closed structural layers
+                  Phase-4 inherits this discipline
+================================================================================

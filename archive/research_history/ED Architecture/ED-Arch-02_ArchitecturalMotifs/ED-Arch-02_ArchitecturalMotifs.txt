@@ -1,0 +1,744 @@
+ED-Arch-02: Architectural Motifs of the Unified ED Cosmology PDE
+================================================================
+
+Series:    ED Architecture
+Document:  ED-Arch-02
+Title:     Architectural Motifs
+Author:    Allen Proxmire
+Date:      2026-03-17
+Scope:     Conceptual synthesis of recurring structural patterns
+Sources:   ED-Phys-01 through ED-Phys-34, ED-Arch-01
+
+
+========================================================================
+1. DEFINITION OF AN ARCHITECTURAL MOTIF
+========================================================================
+
+An architectural motif, in the ED context, is a recurring structural
+pattern that emerges from the PDE architecture itself rather than from
+any particular choice of parameters, initial conditions, or boundary
+conditions. Motifs are the irreducible geometric and dynamical shapes
+that the equation generates across its entire operating range.
+
+A motif has four defining properties:
+
+  (i)   RECURRENCE.  It appears across multiple experiments, multiple
+        parameter regimes, and multiple initial condition classes.
+
+  (ii)  PARAMETER INDEPENDENCE.  Its qualitative character persists
+        even as D, zeta, tau, and amplitude are varied. Quantitative
+        details change; the structural pattern does not.
+
+  (iii) IC INDEPENDENCE.  Whether the initial density is a Gaussian,
+        a sine mode, a step function, a composite waveform, or pure
+        noise, the motif still appears in some form.
+
+  (iv)  ARCHITECTURAL EMERGENCE.  The motif is not imposed by hand. It
+        arises from the interaction of the PDE's structural components:
+        nonlinear diffusion, penalty regulation, and participatory
+        feedback.
+
+Motifs differ from features and behaviors in the following way:
+
+  - A FEATURE is a specific measured quantity: a cycle count, a
+    convergence rate, a harmonic amplitude. Features are data points.
+
+  - A BEHAVIOR is a specific dynamical outcome: oscillation, monotonic
+    decay, horizon formation. Behaviors are what the system does in a
+    particular configuration.
+
+  - A MOTIF is the structural pattern that generates entire families
+    of behaviors and explains why certain features cluster together.
+    Motifs are the architecture's vocabulary.
+
+The relationship is hierarchical: motifs generate behaviors, and
+behaviors produce features. To understand the ED cosmology PDE at the
+architectural level is to understand its motifs.
+
+
+========================================================================
+2. LIST OF CORE MOTIFS
+========================================================================
+
+------------------------------------------------------------------------
+(a) THE SADDLE
+------------------------------------------------------------------------
+
+Name:       The Saddle
+Definition: A sign-reversal geometry in the density gradient field,
+            where spatial regions of compression (drho/dx > 0) meet
+            regions of expansion (drho/dx < 0), creating a local
+            extremum that acts as a dynamical pivot.
+
+Where it appears:
+  - ED-Phys-01 through ED-Phys-05: every Gaussian initial condition
+    creates a saddle at the peak of the density profile.
+  - ED-Phys-29 (AttractorMap): all 22 IC types generate saddle
+    structures within the first few time steps.
+  - ED-Phys-32 (GlobalPhasePortrait): saddle geometry visible in
+    every one of the 375 trajectory runs.
+
+Why it is structurally inevitable:
+  The nonlinear diffusion operator F[rho] = M(rho)*nabla^2(rho) +
+  M'(rho)*|nabla(rho)|^2 - P_SY2(rho) acts on the curvature of the
+  density field. Any non-uniform density profile has at least one
+  extremum. At that extremum, nabla^2(rho) changes sign. The diffusion
+  term drives material away from peaks and toward troughs. The penalty
+  term pulls toward rho*. These two forces create a saddle-like
+  geometry in the (rho, nabla(rho)) plane that organizes all
+  subsequent evolution.
+
+How it arises from PDE architecture:
+  The saddle is the geometric consequence of having both a curvature-
+  sensitive diffusion operator and a density-dependent restoring force.
+  The diffusion operator cares about spatial shape; the penalty cares
+  about local density value. Their competition creates the saddle as
+  the pivot around which all redistribution organizes.
+
+
+------------------------------------------------------------------------
+(b) THE SPIRAL
+------------------------------------------------------------------------
+
+Name:       The Spiral
+Definition: An oscillatory, convergent trajectory in the reduced
+            phase space (rho_peak, v_peak), in which the system
+            approaches its equilibrium through repeated overshoots
+            and undershoots with monotonically decreasing amplitude.
+
+Where it appears:
+  - ED-Phys-29: 22/22 runs oscillatory at D=0; 19/22 at D=0.5.
+  - ED-Phys-30: 16/16 oscillatory approach at D=0; 13/16 at D=0.5.
+  - ED-Phys-31: mean 49 cycles at D=0, zeta=0.25; mean 3.8 cycles
+    at D=0.25.
+  - ED-Phys-32: spiral topology dominant for D + 2*zeta < 1, with
+    curvatures reaching 505,631 at (D=0, zeta=0.25).
+  - ED-Phys-34: confirmed in pure oscillatory, hybrid fast, and
+    boundary regimes.
+
+Why it is structurally inevitable:
+  The participation channel introduces a memory variable v that
+  integrates the operator F[rho] and feeds back into the density
+  equation through the H*v coupling. This creates a second-order
+  dynamical system in the reduced coordinates. When the damping
+  coefficient zeta is insufficient to critically damp the feedback
+  loop, the system necessarily spirals. The spiral is the generic
+  behavior of an under-damped second-order system.
+
+How it arises from PDE architecture:
+  The density equation contains the term H*v, and the velocity
+  equation contains (1/tau)*(F[rho] - zeta*v). Together, these
+  form a coupled oscillator: F[rho] drives v, v drives rho, rho
+  determines F[rho]. The loop delay (controlled by tau) and the
+  damping (controlled by zeta) set the spiral's tightness and
+  convergence rate. The D+H=1 constraint ensures that as D
+  increases, H decreases, reducing the spiral's energy source.
+
+
+------------------------------------------------------------------------
+(c) THE HORIZON
+------------------------------------------------------------------------
+
+Name:       The Horizon
+Definition: A transient kinetic boundary formed when local density
+            approaches rho_max, causing the mobility function
+            M(rho) = M0*(1 - rho/rho_max)^2 to collapse toward zero
+            and effectively freezing diffusive transport.
+
+Where it appears:
+  - ED-Phys-29: horizon activated in 8/22 runs at D=0 (36%),
+    exclusively when amplitude A >= 40. Never at D >= 0.25.
+  - ED-Phys-33 (GlobalAtlas): horizon fraction 33% at D=0, 0% at
+    all other D values across 135 runs.
+  - ED-Phys-34: horizon activated at D=0 for gauss_A40 initial
+    condition (horizon_max = 1).
+
+Why it is structurally inevitable:
+  The mobility function M(rho) vanishes quadratically as rho
+  approaches rho_max. This is not a numerical artifact; it is built
+  into the definition of M. Any initial condition with amplitude
+  large enough to push rho near rho_max will encounter this kinetic
+  barrier. The barrier is transient because the penalty term P_SY2
+  always pulls rho back toward rho* = 50, well below rho_max = 100.
+  The horizon forms, persists while the density is elevated, and
+  dissolves as the penalty draws the system back.
+
+How it arises from PDE architecture:
+  The horizon is the architectural consequence of finite capacity.
+  M(rho) encodes the principle that density cannot grow without
+  bound: as rho approaches the maximum, the system's ability to
+  redistribute density through diffusion collapses. The horizon
+  appears at rho approximately equal to 0.9*rho_max = 90, where
+  M(rho) has fallen to roughly 1% of its maximum value. This is
+  the PDE's built-in saturation mechanism.
+
+
+------------------------------------------------------------------------
+(d) THE MANIFOLD
+------------------------------------------------------------------------
+
+Name:       The Manifold
+Definition: A universal one-dimensional attracting curve in the
+            infinite-dimensional state space, onto which all
+            trajectories collapse regardless of initial condition,
+            and along which they converge to the unique fixed point
+            at (rho*, 0).
+
+Where it appears:
+  - ED-Phys-29: 1D manifold in 64/66 trajectories (97%). The two
+    exceptions showed dim=2 only at D=0 with extreme amplitude.
+  - ED-Phys-30: 1D manifold in 48/48 trajectories (100%) across
+    all 16 probe types and all 3 cosmologies.
+  - ED-Phys-31: convergence exponents consistent with 1D manifold
+    across all 135 parameter combinations.
+  - ED-Phys-33: global attractor confirmed as unique across all
+    135 atlas runs; no secondary attractors found.
+
+Why it is structurally inevitable:
+  The PDE has a unique homogeneous equilibrium: rho = rho*
+  everywhere, v = 0 everywhere. The penalty P_SY2 has exactly one
+  zero at rho = rho*. The mobility M(rho) is strictly positive for
+  rho < rho_max. Together, these ensure that every trajectory is
+  drawn toward the same fixed point. The manifold emerges because
+  the approach to this fixed point is dominated by a single slowest-
+  decaying mode. Higher modes decay exponentially faster, leaving
+  the dynamics effectively one-dimensional after an initial transient.
+
+How it arises from PDE architecture:
+  The manifold is the intersection of three architectural facts:
+  (1) the penalty creates a unique equilibrium, (2) the diffusion
+  operator erases spatial structure at a rate proportional to k^2
+  (Fourier mode number squared), and (3) the participation channel
+  couples all modes through the spatially integrated operator F[rho].
+  The k=1 mode decays slowest, and the manifold is the trajectory
+  along which k=1 relaxation occurs. The manifold's v-spread
+  narrows from 0.178 in oscillatory to 0.047 in parabolic regimes,
+  reflecting the loss of participation coupling as H decreases.
+
+
+------------------------------------------------------------------------
+(e) THE BOUNDARY
+------------------------------------------------------------------------
+
+Name:       The Boundary
+Definition: A sharp topological transition surface in the (D, zeta)
+            parameter plane, located at D + 2*zeta approximately
+            equal to 1, across which the flow type switches from
+            spiral to monotonic.
+
+Where it appears:
+  - ED-Phys-31: zeta=0.25 gives 91.5 mean cycles; zeta=0.50 gives
+    1.78 cycles; zeta=1.0 gives 0 cycles. The transition is sharp.
+  - ED-Phys-32: the full topology grid maps the boundary precisely.
+    Spiral at (D=0.25, zeta=0.5), monotonic at (D=0.5, zeta=0.5).
+    Spiral at (D=0.75, zeta=0.25), monotonic at (D=1.0, zeta=0.25).
+    Six documented topological transitions, all unidirectional.
+  - ED-Phys-33: spiral fraction drops from 56% at D=0 to 0% at
+    D=1.0, with the boundary's position controlled by zeta.
+  - ED-Phys-34: boundary regime at (D=0.5, zeta=0.25) confirmed
+    as spiral with 6-7 cycles.
+
+Why it is structurally inevitable:
+  The participation channel's damping term is zeta*v. The diffusion
+  channel's strength is D. The participation channel's strength is
+  H = 1 - D. The effective damping ratio of the coupled system is
+  proportional to (D + 2*zeta). When this exceeds approximately 1,
+  the system is overdamped and cannot spiral. The boundary is
+  therefore a consequence of the D + H = 1 constraint combined with
+  the linear damping structure of the v-equation.
+
+How it arises from PDE architecture:
+  The boundary encodes the competition between two dissipation
+  mechanisms: diffusive dissipation (controlled by D) and damped
+  participation (controlled by zeta). Both act to suppress
+  oscillations, but through different channels. The diffusion
+  channel dissipates spatial structure directly. The damping term
+  dissipates velocity. When their combined strength crosses the
+  critical threshold, oscillation becomes impossible. The boundary
+  is the locus of critical damping in the PDE's parameter space.
+
+
+------------------------------------------------------------------------
+(f) THE MEMORY LOOP
+------------------------------------------------------------------------
+
+Name:       The Memory Loop
+Definition: The closed feedback cycle F[rho] -> v -> rho -> F[rho],
+            in which the operator output drives the participation
+            variable, the participation variable modifies the density,
+            and the modified density changes the operator output.
+
+Where it appears:
+  - ED-Phys-27: the participation channel is the unique source of
+    oscillatory dynamics. When the v-equation is perturbed with
+    nonsmooth additive forcing, cycles jump from 1 to 9 and
+    amplitudes increase by 5.8x, demonstrating that the memory
+    loop amplifies perturbations.
+  - ED-Phys-28: combined stress test confirms that the memory loop
+    is the most perturbation-sensitive component. NonSmooth_All
+    produces 8 cycles with 6.4x amplitude enhancement.
+  - ED-Phys-30: approach direction analysis shows velocity-dominated
+    approach in 7/16 oscillatory probes, confirming the loop's role
+    in organizing convergence geometry.
+  - ED-Phys-32: curvature values of 505,631 at (D=0, zeta=0.25)
+    reflect tight spiral winding driven by the memory loop.
+
+Why it is structurally inevitable:
+  The PDE architecture contains two coupled evolution equations:
+  one for rho and one for v. Whenever H > 0 (i.e., D < 1), the
+  v-equation receives input from F[rho] and the rho-equation
+  receives input from v. This bidirectional coupling is a closed
+  loop. Closed loops with delay (tau) and insufficient damping
+  (zeta) generate oscillations. This is not a special feature; it
+  is the generic behavior of coupled dynamical systems.
+
+How it arises from PDE architecture:
+  The density equation: d(rho)/dt = D*F[rho] + H*v.
+  The velocity equation: d(v)/dt = (1/tau)*(F[rho] - zeta*v).
+  The loop is: rho determines F[rho] (through mobility, gradient,
+  and penalty); F[rho] drives v (through the velocity equation);
+  v drives rho (through the H*v coupling). The loop's gain is
+  proportional to H/tau, and its damping is proportional to zeta.
+  The memory loop is what makes ED a participatory theory rather
+  than a pure diffusion equation.
+
+
+------------------------------------------------------------------------
+(g) THE DISSIPATOR
+------------------------------------------------------------------------
+
+Name:       The Dissipator
+Definition: The diffusive channel D*F[rho], which acts directly on
+            the density field without passing through the participation
+            variable, producing monotonic, non-oscillatory convergence
+            to equilibrium.
+
+Where it appears:
+  - ED-Phys-29: at D=1.0 (parabolic), only 2/22 runs show
+    oscillatory behavior (9%), and those are transient.
+  - ED-Phys-30: at D=1.0, 16/16 probes show monotonic approach,
+    0/16 oscillatory. Manifold v-spread collapses to 0.047.
+  - ED-Phys-31: at D=1.0, mean cycles = 0.0 across all 27 runs.
+    Convergence rate lambda = 0.020, the slowest among all D values.
+  - ED-Phys-32: monotonic flow type at all (D=1.0, zeta) pairs.
+    Curvature drops to 10.6-72.0, reflecting near-straight
+    trajectories.
+  - ED-Phys-34: parabolic monotonic regime passes 12/16 checks
+    (4 marginal failures are classifier artifacts at damped/monotonic
+    boundary).
+
+Why it is structurally inevitable:
+  When D = 1 and H = 0, the density equation reduces to
+  d(rho)/dt = F[rho], a pure nonlinear diffusion equation with
+  penalty. There is no coupling to v, no feedback loop, no
+  mechanism for oscillation. The system relaxes monotonically
+  because F[rho] is a gradient-like operator: it always drives
+  rho toward rho* through spatial smoothing and penalty regulation.
+
+How it arises from PDE architecture:
+  The dissipator is the D-channel of the unified PDE, operating
+  independently of the participation variable. It inherits the
+  stability properties of nonlinear diffusion: spatial gradients
+  are always reduced, density always moves toward the penalty
+  equilibrium, and the approach is monotonic because there is no
+  second variable to create oscillation. The dissipator is the
+  PDE's memoryless channel.
+
+
+------------------------------------------------------------------------
+(h) THE NONLINEAR TRIAD
+------------------------------------------------------------------------
+
+Name:       The Nonlinear Triad
+Definition: The three-component nonlinear interaction encoded in the
+            operator F[rho] = M(rho)*nabla^2(rho) + M'(rho)*|nabla(rho)|^2
+            - P_SY2(rho), which generates higher-harmonic content
+            (especially the k=3 mode) through the coupling of density-
+            dependent mobility with spatial gradient structure.
+
+Where it appears:
+  - ED-Phys-25: k3_max = 6.36, invariant across all 5 penalty
+    perturbation variants to within 0.01%.
+  - ED-Phys-26: k3_max = 6.44, invariant across all 5 mobility
+    perturbation variants to within 0.01%.
+  - ED-Phys-28: k3_max preserved even under combined stress testing.
+  - ED-Phys-29: k3_max scales with initial amplitude: 0.54 at A=10,
+    2.17 at A=40, 3.52 at A=80, confirming nonlinear origin.
+
+Why it is structurally inevitable:
+  The M'(rho)*|nabla(rho)|^2 term is a product of two nonlinear
+  quantities: the mobility derivative and the squared gradient. In
+  Fourier space, a squared gradient of a k=1 mode produces k=0 and
+  k=2 content. Multiplication by a density-dependent coefficient
+  (through M'(rho)) mixes these with the original k=1 mode,
+  generating k=3 content. This harmonic generation is intrinsic to
+  any nonlinear diffusion operator with density-dependent mobility.
+
+How it arises from PDE architecture:
+  The triad consists of three interacting components:
+  (1) M(rho)*nabla^2(rho): linear diffusion modulated by density.
+  (2) M'(rho)*|nabla(rho)|^2: the explicitly nonlinear term, which
+      couples the rate of change of mobility to the spatial gradient
+      energy. This is the harmonic generator.
+  (3) P_SY2(rho): the penalty, which regulates the equilibrium
+      around which the nonlinear coupling operates.
+  The triad's k=3 amplitude is architecturally protected because
+  it depends on the functional form of the nonlinearity (M' and
+  nabla^2 coupling), not on the specific shape of M, P, or v.
+  Multiplicative perturbations preserve the coupling structure;
+  additive perturbations disrupt it.
+
+
+========================================================================
+3. MOTIF INTERACTIONS
+========================================================================
+
+The eight motifs do not operate in isolation. They combine to produce
+the full dynamical repertoire of the ED cosmology PDE. The following
+interactions are the primary generative combinations.
+
+SPIRAL + HORIZON: OSCILLATORY SATURATION
+  When the memory loop drives oscillations large enough to push rho
+  near rho_max, the horizon activates and temporarily freezes
+  diffusive transport. The spiral continues in the v-channel but the
+  density channel stalls. This creates a characteristic flattening of
+  the rho-peak near rho_max followed by release as the penalty pulls
+  rho back down. Observed at D=0, A >= 40 in ED-Phys-29, where
+  horizon_max reached 7 density units above the activation threshold.
+  The horizon caps the spiral's amplitude without destroying the
+  spiral itself.
+
+MANIFOLD + DISSIPATOR: MONOTONIC RELAXATION
+  When D = 1 (pure parabolic), the dissipator dominates and the
+  manifold narrows to a v-spread of 0.047. Trajectories collapse
+  onto this thin manifold and slide monotonically toward equilibrium
+  with near-zero curvature (10.6 at D=1.0, zeta=1.0). The manifold
+  geometry becomes almost a straight line in phase space. This is
+  the simplest motif interaction: a one-dimensional attractor
+  traversed without oscillation.
+
+MEMORY LOOP + PENALTY: RINGING AROUND EQUILIBRIUM
+  The penalty defines the target rho*. The memory loop creates
+  oscillatory approach. Their interaction produces the characteristic
+  ringing pattern: rho overshoots rho*, F[rho] reverses sign, v
+  accumulates in the opposite direction, rho undershoots rho*, and
+  the cycle repeats with decreasing amplitude. The ringing frequency
+  and decay rate are set by the loop gain (H/tau) and damping (zeta).
+  At D=0, zeta=0.25, this interaction produces 49 mean cycles
+  (ED-Phys-31) with curvatures exceeding 500,000 (ED-Phys-32).
+
+BOUNDARY + SPIRAL: TOPOLOGICAL TRANSITION
+  The boundary motif governs the existence of the spiral motif. Below
+  D + 2*zeta = 1, spirals exist; above it, they do not. At the
+  boundary itself, the spiral's amplitude decays to near-zero in
+  approximately 1-2 cycles, producing a critically damped transient
+  that is neither clearly oscillatory nor clearly monotonic. The four
+  classifier failures in ED-Phys-34 (93% pass rate) all occurred at
+  or near this boundary, where the damped transient is too weak for
+  the oscillation detector but too structured for the monotonic
+  classifier. The boundary is where the spiral motif dies.
+
+SADDLE + NONLINEAR TRIAD: HARMONIC GENERATION
+  The saddle geometry at the density peak creates the spatial
+  structure (gradients, curvatures) on which the nonlinear triad
+  operates. The M'(rho)*|nabla(rho)|^2 term couples the saddle's
+  gradient field to the density-dependent mobility derivative,
+  generating the k=3 harmonic. The saddle sets the stage; the triad
+  performs the spectral transfer. Without the saddle (i.e., in a
+  perfectly uniform field), the triad has nothing to act on.
+
+HORIZON + DISSIPATOR: TRANSIENT BARRIER
+  In the pure parabolic regime (D=1), the horizon can still form if
+  the initial amplitude is large enough, but the dissipator erases
+  it rapidly because there is no memory loop to sustain oscillations
+  that might drive rho back toward rho_max. The horizon appears and
+  dissolves in a single pass. In the oscillatory regime (D=0), the
+  memory loop can repeatedly drive rho back toward the horizon,
+  creating recurring barrier encounters.
+
+MEMORY LOOP + MANIFOLD: SPIRAL WINDING ON THE ATTRACTOR
+  The manifold provides the one-dimensional curve; the memory loop
+  provides the oscillatory motion along and around that curve. The
+  resulting trajectory is a spiral wound tightly onto the manifold
+  surface. The manifold's curvature (up to 69,277 in ED-Phys-30)
+  reflects the memory loop's winding. As zeta increases, the winding
+  loosens, the curvature drops, and the spiral degenerates into
+  monotonic sliding.
+
+
+========================================================================
+4. MOTIF STABILITY
+========================================================================
+
+The robustness experiments ED-Phys-25 through ED-Phys-28 tested which
+motifs survive perturbation and which break. The results reveal a
+sharp architectural distinction between perturbation types.
+
+MULTIPLICATIVE PERTURBATIONS (PRESERVE MOTIF STRUCTURE)
+  Multiplicative perturbations modify the amplitude or shape of a
+  component without changing its qualitative coupling to the rest of
+  the architecture. Examples: steeper mobility, flatter penalty,
+  stronger damping. Under multiplicative perturbation:
+
+  - The Saddle survives: gradient sign-reversal geometry is preserved.
+  - The Spiral survives: cycle count unchanged (1 cycle at D=0.5
+    across all 4 multiplicative mobility variants in ED-Phys-26).
+  - The Horizon survives: activation threshold shifts slightly but
+    the mechanism persists.
+  - The Manifold survives: 1D dimensionality maintained.
+  - The Boundary survives: spiral-monotonic transition location
+    shifts by at most one grid point.
+  - The Memory Loop survives: loop gain changes quantitatively but
+    loop structure is preserved.
+  - The Dissipator survives: monotonic convergence still monotonic.
+  - The Nonlinear Triad survives: k3_max varies by < 0.01% across
+    all multiplicative variants.
+
+  Quantitative evidence: in ED-Phys-26, undershoot varies by less
+  than 3% across 5 mobility variants. Relaxation time varies by less
+  than 4%. Boundary structure (cycle counts at D=0.44, 0.46, 0.48)
+  is identical across all variants.
+
+NONSMOOTH ADDITIVE PERTURBATIONS (BREAK MOTIF STRUCTURE)
+  Additive perturbations inject new dynamical content that is not
+  modulated by the existing architecture. They bypass the coupling
+  structure rather than modifying it. Under additive perturbation:
+
+  - The Spiral AMPLIFIES: cycles jump from 1 to 9 (ED-Phys-27)
+    or from 1 to 8 (ED-Phys-28). Amplitude increases by 5.8-6.4x.
+  - The Boundary SHIFTS: at D=0.44, canonical gives 3 cycles but
+    nonsmooth gives 11 cycles (ED-Phys-27). The boundary location
+    moves far from D + 2*zeta = 1.
+  - The Memory Loop OVERDRIVES: peak v increases from 0.148 to 0.634
+    (4.3x), indicating the loop gain has been artificially boosted.
+  - The Manifold PERSISTS: even nonsmooth perturbations do not break
+    the 1D manifold dimension. The system still converges to the
+    same fixed point. The topology is preserved; the geometry is not.
+  - The Nonlinear Triad PERSISTS: k3_max is preserved even under
+    additive perturbation, because the triad's harmonic generation
+    depends on the coupling structure of nabla^2 and M', not on the
+    v-equation.
+  - The Horizon is NOT TESTED: nonsmooth runs at D=0.5 do not
+    approach rho_max.
+
+WHY THE DISTINCTION EXISTS
+  Multiplicative perturbations can be written as M(rho) -> M(rho)*g(rho)
+  for some modifying function g. This preserves the zeros, the sign
+  structure, and the coupling topology of the original operator. The
+  perturbed system has the same motif vocabulary as the original; only
+  the quantitative parameters of each motif change.
+
+  Additive perturbations can be written as v_update -> v_update + h(rho)
+  for some forcing function h. This injects energy into the system at
+  every time step, regardless of the system's current state. The
+  forcing does not respect the architecture's coupling structure. It
+  pumps the memory loop from outside, creating oscillations that the
+  natural damping cannot suppress.
+
+  The architectural principle: the PDE's motif structure is encoded in
+  the coupling topology (which components talk to which, through what
+  functional forms). Multiplicative perturbations modify the conversation
+  without changing who talks to whom. Additive perturbations introduce
+  a new speaker who talks out of turn.
+
+
+========================================================================
+5. MOTIF MAP
+========================================================================
+
+The following text diagram describes how the eight motifs distribute
+across the ED cosmology PDE's parameter space and how they relate to
+each other.
+
+PARAMETER SPACE LAYOUT:
+
+               zeta = 0.25      zeta = 0.50      zeta = 1.0
+          +------------------+------------------+-----------------+
+  D=0.00  | SPIRAL           | SPIRAL           | DISSIPATOR      |
+  (H=1)   | MEMORY LOOP      | MEMORY LOOP      | MANIFOLD        |
+          | HORIZON (A>=40)  | SADDLE           | SADDLE          |
+          | SADDLE           | NONLINEAR TRIAD  | NONLINEAR TRIAD |
+          | NONLINEAR TRIAD  | MANIFOLD         |                 |
+          | MANIFOLD         |                  |                 |
+          +------------------+------------------+-----------------+
+  D=0.25  | SPIRAL           | SPIRAL           | DISSIPATOR      |
+  (H=0.75)| MEMORY LOOP      | MEMORY LOOP      | MANIFOLD        |
+          | SADDLE           | SADDLE           | SADDLE          |
+          | NONLINEAR TRIAD  | NONLINEAR TRIAD  | NONLINEAR TRIAD |
+          | MANIFOLD         | MANIFOLD         |                 |
+          +------------------+------------------+-----------------+
+  D=0.50  | SPIRAL           | >>BOUNDARY<<     | DISSIPATOR      |
+  (H=0.50)| MEMORY LOOP      | DISSIPATOR       | MANIFOLD        |
+          | SADDLE           | MANIFOLD         |                 |
+          | NONLINEAR TRIAD  | SADDLE           |                 |
+          | MANIFOLD         | NONLINEAR TRIAD  |                 |
+          +------------------+------------------+-----------------+
+  D=0.75  | SPIRAL           | DISSIPATOR       | DISSIPATOR      |
+  (H=0.25)| MEMORY LOOP      | MANIFOLD         | MANIFOLD        |
+          | SADDLE           | SADDLE           |                 |
+          | NONLINEAR TRIAD  | NONLINEAR TRIAD  |                 |
+          | MANIFOLD         |                  |                 |
+          +------------------+------------------+-----------------+
+  D=1.00  | DISSIPATOR       | DISSIPATOR       | DISSIPATOR      |
+  (H=0)   | MANIFOLD         | MANIFOLD         | MANIFOLD        |
+          | SADDLE           | SADDLE           |                 |
+          | NONLINEAR TRIAD  | NONLINEAR TRIAD  |                 |
+          +------------------+------------------+-----------------+
+
+MOTIF HIERARCHY:
+
+  ALWAYS PRESENT (all parameter values, all ICs):
+    - Saddle:          gradient sign-reversal at every extremum
+    - Manifold:        1D attractor, 97%+ trajectories
+    - Nonlinear Triad: k3 generation whenever gradients exist
+
+  CONDITIONALLY PRESENT (parameter-dependent):
+    - Spiral:          requires D + 2*zeta < 1
+    - Memory Loop:     requires H > 0 (i.e., D < 1)
+    - Dissipator:      always present but dominant only when D > 0
+    - Boundary:        exists at D + 2*zeta = 1
+
+  RARELY PRESENT (requires extreme conditions):
+    - Horizon:         requires D = 0 AND A >= 40
+
+MOTIF TRANSITIONS ACROSS PARAMETER SPACE:
+
+  Moving from D=0 to D=1 (increasing diffusion, decreasing participation):
+    - Spiral WEAKENS: cycle count drops (49 -> 3.8 -> 2.4 -> 1.3 -> 0)
+    - Memory Loop FADES: loop gain proportional to H = 1-D
+    - Dissipator STRENGTHENS: direct F[rho] channel grows
+    - Manifold NARROWS: v-spread drops from 0.178 to 0.047
+    - Horizon DISAPPEARS: not accessible for D > 0
+
+  Moving from zeta=0.25 to zeta=1.0 (increasing damping):
+    - Spiral DIES: cycles drop (91.5 -> 1.78 -> 0)
+    - Memory Loop DAMPENS: loop energy absorbed by zeta*v term
+    - Curvature COLLAPSES: 505,631 -> 209 -> 10.6
+
+  The Boundary (D + 2*zeta = 1) sweeps across the parameter plane
+  as the critical curve separating two qualitatively different
+  motif configurations:
+    - Below the boundary: Spiral + Memory Loop + Saddle + Triad + Manifold
+    - Above the boundary: Dissipator + Saddle + Triad + Manifold
+
+  The transition is sharp, unidirectional, and has been observed at
+  all 6 documented topological transition points in ED-Phys-32.
+  No reverse transitions (monotonic -> spiral) have ever been observed
+  in any of the 1,000+ runs across the entire ED-Phys series.
+
+
+========================================================================
+6. UNIFIED INTERPRETATION
+========================================================================
+
+WHAT THE MOTIFS REVEAL ABOUT ED AS AN ARCHITECTURAL THEORY
+
+The eight architectural motifs of the ED cosmology PDE are not ad hoc
+observations. They form a complete structural vocabulary: a finite set
+of irreducible patterns from which all observed behaviors can be
+composed. This is what makes ED an architectural theory rather than
+merely a dynamical system.
+
+A dynamical system has solutions. An architectural theory has motifs.
+The distinction matters because solutions are particular (this initial
+condition at these parameter values produces this trajectory), while
+motifs are universal (the spiral appears whenever under-damping exists,
+regardless of specifics). The motif level of description is the correct
+abstraction for understanding what the PDE does across its entire
+operating range.
+
+THE MOTIF ABSTRACTION LAYER
+
+The motifs sit between two other levels of description:
+
+  PDE MECHANICS (below):
+    Specific terms in the equation: M(rho)*nabla^2(rho),
+    M'(rho)|nabla(rho)|^2, P_SY2(rho), H*v, (1/tau)(F[rho]-zeta*v).
+    These are the equation's components. They are not self-explanatory:
+    knowing that M'(rho)|nabla(rho)|^2 appears in the operator does
+    not immediately reveal that it generates k=3 harmonics.
+
+  OBSERVED BEHAVIORS (above):
+    Specific measured outcomes: 49 cycles at D=0, convergence rate
+    0.091 at (D=0.25, zeta=0.25), k3_max = 6.44. These are data
+    points. They are accurate but not explanatory: knowing that
+    there are 49 cycles does not reveal why cycles exist.
+
+  MOTIFS (between):
+    Structural patterns that connect PDE mechanics to observed
+    behaviors. The Memory Loop motif explains why cycles exist (the
+    F -> v -> rho -> F feedback with insufficient damping). The
+    Boundary motif explains where cycles stop (D + 2*zeta = 1). The
+    Nonlinear Triad explains why k3 is generated (M' coupling to
+    gradient squared). Motifs are the causal link between the
+    equation's structure and the system's behavior.
+
+HOW MOTIFS UNIFY THE EXPERIMENTAL RECORD
+
+The 34 ED-Phys experiments and the ED-Arch-01 synthesis produced over
+1,000 simulation runs spanning initial conditions from single Gaussians
+to random noise, parameters from (D=0, zeta=0.25) to (D=1, zeta=1),
+and perturbation classes from smooth multiplicative to nonsmooth
+additive. The diversity of measured features across these runs is
+enormous: cycle counts from 0 to 235, convergence rates from 0.006 to
+0.139, curvatures from 10.6 to 505,631.
+
+Yet this diversity is generated by exactly eight motifs and their
+interactions. Every observed behavior can be decomposed into a
+combination of motifs:
+
+  - 235 cycles at D=0, A=80: Memory Loop at full gain, Horizon
+    repeatedly activated, Spiral winding tightly on the Manifold.
+
+  - 0 cycles at D=1.0: Dissipator dominant, Memory Loop absent,
+    Manifold traversed monotonically.
+
+  - 6 cycles at D=0.5, zeta=0.25: Memory Loop at half gain, Spiral
+    near the Boundary, Saddle and Triad active.
+
+  - k3_max = 6.44 invariant across perturbations: Nonlinear Triad
+    protected by multiplicative coupling architecture.
+
+  - 93% pass rate in verification: Manifold, Saddle, and Triad
+    universally confirmed; 4 failures localized to the Boundary
+    where Spiral and Dissipator are in competition.
+
+The motifs are not merely descriptive. They are predictive. Given a
+parameter point (D, zeta, tau), the motif map predicts which motifs
+will be active, how they will interact, and what qualitative behavior
+will result. The 93% verification rate in ED-Phys-34 confirms that
+the motif-level description has genuine predictive power.
+
+THE RULES OF BECOMING
+
+In the ED ontology, the fundamental question is not what exists but
+how things come to be: the rules of becoming. The eight motifs are
+the rules of becoming for density fields governed by the unified
+PDE. They encode:
+
+  - How structure forms (Saddle: gradient geometry organizes flow)
+  - How structure oscillates (Spiral + Memory Loop: under-damped
+    feedback creates ringing)
+  - How structure saturates (Horizon: finite capacity creates
+    transient barriers)
+  - How structure dissipates (Dissipator: diffusion erases gradients)
+  - How structure generates complexity (Nonlinear Triad: harmonic
+    transfer creates spectral richness)
+  - How structure converges (Manifold: all trajectories collapse to
+    one dimension)
+  - How regimes change (Boundary: topology transitions at critical
+    damping)
+
+Together, these motifs constitute the architectural grammar of the ED
+cosmology PDE. They are the minimal structural vocabulary needed to
+describe everything the equation can do. Nothing in the experimental
+record lies outside their scope.
+
+
+========================================================================
+END OF DOCUMENT
+========================================================================
+
+ED-Arch-02: Architectural Motifs
+Series: ED Architecture
+Part 2 of the ED-Arch synthesis series

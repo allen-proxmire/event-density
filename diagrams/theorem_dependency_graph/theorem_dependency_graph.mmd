@@ -1,0 +1,122 @@
+flowchart BT
+    classDef prim fill:#10b981,stroke:#064e3b,color:#fff,stroke-width:1.5px
+    classDef thm fill:#fbbf24,stroke:#92400e,color:#000,stroke-width:1.5px
+    classDef arc fill:#2563eb,stroke:#1e3a8a,color:#fff,stroke-width:1.5px
+    classDef phase fill:#1e3a8a,stroke:#0c1e4a,color:#fff,stroke-width:2px
+
+    %% ---- Primitives (bottom layer) ----
+    subgraph PRIMS["Primitives 01–13"]
+        direction LR
+        P01["Primitive 01<br/>micro-event<br/>discreteness"]:::prim
+        P02["Primitive 02<br/>worldline"]:::prim
+        P03["Primitive 03<br/>participation"]:::prim
+        P04["Primitive 04<br/>bandwidth<br/>(four-band, bounded)"]:::prim
+        P06["Primitive 06<br/>four-gradient<br/>Lorentz cov."]:::prim
+        P07["Primitive 07<br/>rule-type<br/>(L1–L4)"]:::prim
+        P09["Primitive 09<br/>polarity phase"]:::prim
+        P10["Primitive 10<br/>individuation<br/>threshold"]:::prim
+        P11["Primitive 11<br/>commitment<br/>(local events)"]:::prim
+        P13["Primitive 13<br/>relational timing<br/>(finite intervals)"]:::prim
+    end
+
+    %% ---- Phase-2 form-level theorems (Arc R + Arc Q) ----
+    T1["T1 Spin-statistics<br/>η = (−1)^{2s}<br/>R.2.5"]:::thm
+    T2["T2 Cl(3,1) frame<br/>uniqueness<br/>R.2.4"]:::thm
+    T3["T3 Anyon prohibition<br/>π₁(Q₂) = ℤ₂ in 3+1D<br/>R.2.3"]:::thm
+    T4["T4 Dirac emergence<br/>(iγ^μ ∂_μ − mc/ℏ)Ψ = 0<br/>R.3"]:::thm
+
+    T5["T5 GRH unconditional<br/>massless Case-P (1/2,1/2)<br/>Q.1 + Q.8"]:::thm
+    T6["T6 Canonical<br/>(anti-)commutation<br/>Q.7"]:::thm
+    T7["T7 UV-FIN<br/>primitive-level finiteness<br/>Q.8"]:::thm
+
+    %% ---- Arc encapsulation labels ----
+    AR["Arc R<br/>relativistic kinematics"]:::arc
+    AM["Arc M<br/>mass structure<br/>(H1-dominant)"]:::arc
+    AQ["Arc Q<br/>QFT extension"]:::arc
+    AN["Arc N<br/>memory-kernel layer"]:::arc
+
+    %% ---- Kernel-level + curved theorems ----
+    T8["T8 (N1) V1 finite-width<br/>vacuum memory kernel<br/>N.5"]:::thm
+    T9["T9 (GR1) V1 with<br/>Synge world function<br/>GR.5"]:::thm
+
+    P3["Phase-3<br/>gravitational sector<br/>(partial GR-induce)"]:::phase
+
+    %% ---- Primitive → Arc R theorem dependencies ----
+    P02 --> T1
+    P03 --> T1
+    P06 --> T1
+    P07 --> T1
+    P10 --> T1
+    P11 --> T1
+    P13 --> T1
+
+    P06 --> T2
+
+    P02 --> T3
+    P11 --> T3
+
+    P02 --> T4
+    P06 --> T4
+    P13 --> T4
+
+    %% ---- Arc R inter-theorem dependencies ----
+    T1 --> T4
+    T2 --> T4
+    T3 -.->|3+1D rigidity| T1
+
+    %% ---- Arc R → Arc M → Arc Q (form-level chain) ----
+    T1 --> AR
+    T2 --> AR
+    T3 --> AR
+    T4 --> AR
+    AR --> AM
+    AM --> AQ
+
+    %% ---- Primitive → Arc Q theorem dependencies ----
+    P07 --> T5
+    P10 --> T5
+    P11 --> T5
+    P10 --> T6
+    P01 --> T7
+    P04 --> T7
+    P13 --> T7
+
+    %% ---- Arc Q inter-theorem ----
+    T1 -->|spin-stats + indiv.| T6
+    T5 -.->|GRH closure ⇒ F-M8 unconditional| AM
+
+    T5 --> AQ
+    T6 --> AQ
+    T7 --> AQ
+
+    %% ---- Arc Q → Arc N ----
+    AQ --> AN
+
+    %% ---- Primitive + theorem → T8 (Arc N) ----
+    P01 --> T8
+    P04 --> T8
+    P06 --> T8
+    P11 --> T8
+    P13 --> T8
+    T7 -->|UV-FIN forces V1| T8
+
+    T8 --> AN
+
+    %% ---- Arc N → Phase-3 ----
+    AN --> P3
+
+    %% ---- T8 → T9 (Hadamard-parametrix extension) ----
+    T8 -->|Synge world function| T9
+    T7 -.->|metric-independent| T9
+    P01 --> T9
+    P04 --> T9
+    P06 --> T9
+    P11 --> T9
+    P13 --> T9
+
+    T9 --> P3
+
+    %% ---- Cross-layer constraints (preservation) ----
+    T1 -.->|preserved at every event| AN
+    T1 -.->|preserved at every cosmological event| P3
+    T6 -.->|preserved unequal-time| AN

@@ -1,0 +1,391 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+
+\title{A Curved-Spacetime Vacuum Kernel and the Gravitational-Sector Closure of Event-Density Theory}
+
+\author{Allen Proxmire \and Copilot (AI collaborator)}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We extend the Event-Density (ED) program from its Phase-2 + Arc N quantum-sector closure to a gravitational-sector structural foundation. Phase-3 addresses the question: \emph{does ED's primitive-level structure force, admit, or forbid gravitational coupling, dynamical curvature, and cosmological structure?} Through a six-stage analysis (GR.0 scoping, GR.1 catalogue of admissible curvature-coupling structures, GR.2 \textsc{forced} evaluation, GR.3 \textsc{refuted} evaluation, GR.4 cosmological implications, GR.5 synthesis), we establish \textbf{Theorem GR1 (V1 with Synge World Function \textsc{forced})}: the vacuum-response kernel in curved spacetime is structurally forced at primitive level to take the form $K_\mathrm{vac}^\mathrm{curved}(x, x') = K_\mathrm{vac}^\mathrm{prim}(\sigma(x, x') / \ell_\mathrm{ED}^2)$ with $\sigma(x, x')$ Synge's world function, via a Hadamard-parametrix-style extension of Arc N's Theorem N1 to curved spacetime. Three \textsc{forced}-conditional cascading items emerge (free-chain geodesic worldlines via eikonal limit, curvature-dependent cross-chain correlations, $\Lambda$-integral existence). Seven \textsc{refuted} determinations under the C1/C2/C3/locality + Phase-2-theorem framework bound the admissibility space --- including the unconditional refutation of curvature-dependent Case-P/Case-R distinctions by spin-statistics applying pointwise at every event regardless of curvature. GR-4A (Einstein-equation emergence from primitives) remains \textsc{not refuted but speculative}: ED admits Einstein equations as effective-theory addition without deriving them from primitives. ED-Phys-10's acoustic-metric-only baseline is preserved throughout. Stage GR.4 establishes a coherent cosmological framework with four substantive structural channels --- $\Lambda$ as V1-kernel integral with finite primitive-level magnitude (structurally dissolving the cosmological-constant divergence-form puzzle while $\Lambda$'s magnitude remains \textsc{inherited}), V1-induced dispersion-relation modifications, V5-mediated cosmological correlations, and curvature-vacuum coupling --- and four empirical-signature routes (UHECR timing, GRB photon timing, gravitational-wave dispersion, cosmological-correlation persistence). Phase-3 lands in the partial-GR-induce quadrant, paralleling Arc M's H1-dominant pattern. Theorem GR1 takes its place as ED's first gravitational-sector structural theorem and the ninth \textsc{forced} theorem in the ED structural inventory, completing the six-layer structural foundation while preserving the \emph{form-\textsc{forced}, value-\textsc{inherited}} methodology.
+\end{abstract}
+
+\section{Introduction}
+
+The Event-Density (ED) program builds quantum and gravitational physics as forced structural consequences of a small primitive stack on a 3+1-dimensional event manifold. Phase-1~\cite{phase1} derived non-relativistic single-particle quantum mechanics. Phase-2 extended this through three connected arcs: Arc~R~\cite{arcr} (Klein--Gordon, spin--statistics, Cl(3,1) frame, Dirac equation); Arc~M~\cite{arcm} (mass structure: form \textsc{forced}, values \textsc{inherited}); Arc~Q~\cite{arcq} (QFT extension: GRH unconditional \textsc{forced}, canonical (anti-)commutation \textsc{forced}, UV-FIN \textsc{forced}). Arc~N~\cite{arcn} closed the kernel-level memory-structure layer with Theorem N1 (V1 finite-width vacuum memory kernel \textsc{forced}).
+
+Phase-3 opens the gravitational sector. The driving question:
+\begin{quote}
+\textbf{(Q-Phase-3)} Does ED's primitive-level structure force, admit, or forbid gravitational coupling, dynamical curvature, and cosmological structure?
+\end{quote}
+
+Phase-3 closes with the answer: \textbf{(GR-induce) partial}. ED admits structural curvature-coupling channels --- most cleanly via Theorem GR1's curved-spacetime extension of V1 --- but does not derive full Einstein dynamics from primitives.
+
+This paper presents the six-stage closure: GR.0 scoping~\cite{gr0}, GR.1 catalogue~\cite{gr1}, GR.2 \textsc{forced} evaluation~\cite{gr2}, GR.3 \textsc{refuted} evaluation~\cite{gr3}, GR.4 cosmological implications~\cite{gr4}, GR.5 synthesis~\cite{gr5}.
+
+The headline verdict: \textbf{ED forces a curved-spacetime vacuum kernel, forces geodesic free-chain motion conditionally, forces $\Lambda$ to be finite and kernel-integral-defined, admits but does not force curvature-dynamics equations, and provides a coherent cosmological framework with testable signatures.} All Phase-2 + Arc N theorems are preserved; ED-Phys-10's prior closure~\cite{edphys10} is preserved as the structural ceiling.
+
+The paper is organised as follows. Section~2 reviews the ED structural inventory and Phase-3's position. Section~3 presents the roadmap. Section~4 states and proves Theorem~GR1. Section~5 presents \textsc{refuted} and \textsc{admissible} structures. Section~6 evaluates cosmological implications. Section~7 states the final Phase-3 verdict. Section~8 outlines the Phase-4 outlook.
+
+\section{Background and Position in the ED Program}
+
+\subsection{ED structural inventory (post-Arc N)}
+
+Phase-3 inherits eight \textsc{forced} structural theorems:
+\begin{center}
+\begin{tabular}{cll}
+\hline
+\# & Theorem & Source / Type \\
+\hline
+1 & Spin--statistics $\eta = (-1)^{2s}$ & R.2.5 / Theorem-level \\
+2 & Cl(3,1) frame uniqueness & R.2.4 / Algebra-level \\
+3 & Anyon prohibition in 3+1D & R.2.3 / Topology-level \\
+4 & Dirac equation emergence & R.3 / Dynamical-equation-level \\
+5 & GRH unconditional \textsc{forced} & Q.1 + Q.2/3/7/8 / Existence-level \\
+6 & Canonical (anti-)commutation \textsc{forced} & Q.7 / Operator-level \\
+7 & UV-FIN \textsc{forced} & Q.8 / Bound-level \\
+8 & V1 finite-width vacuum kernel \textsc{forced} & N.2 + N.5 / Memory-kernel-level \\
+\hline
+\end{tabular}
+\end{center}
+
+Theorem~GR1 becomes the ninth \textsc{forced} theorem and the first at the curved-spacetime-kernel-level.
+
+\subsection{ED-Phys-10 prior closure as structural ceiling}
+
+The ED-Phys-10 kinematic-curvature arc~\cite{edphys10} established the acoustic effective metric for bandwidth-mode perturbations, causal-cone structure, and analogue-horizon structures. It explicitly closed \emph{without}: Einstein equations, Schwarzschild solution, Newtonian-gravity emergence at long-wavelength, or fine-structure constant $\alpha$ from primitives. Phase-3 must produce results consistent with these guardrails or explicitly relax them.
+
+\subsection{What Arc N changes}
+
+Arc~N's Theorem~N1 supplies a primitive-level structural mechanism for non-Markovian vacuum response. In flat space, V1's kernel depends on the Lorentz invariant $(x - x')^2$. In curved spacetime, the natural generalisation replaces this with Synge's world function $\sigma(x, x')$ --- substantively new structural input enabling Theorem~GR1.
+
+\subsection{Why gravitational coupling is a Phase, not an Arc}
+
+Arcs R, M, Q, N each addressed a single coherent structural question within the quantum sector. Phase-3 spans a different conceptual layer entirely: gravitational coupling and cosmological structure. The shift is from quantum-sector to gravitational-sector content, requiring extension to curved spacetime, integration with the kinematic acoustic-metric framework, and consideration of cosmological-scale phenomenology.
+
+\subsection{Six-layer ED structural foundation}
+
+Post-Phase-3, the ED structural foundation spans six layers:
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Layer & Content \\
+\hline
+Phase-1 & Non-relativistic QM \\
+Phase-2 Arc R & Relativistic kinematics + dynamics \\
+Phase-2 Arc M & Mass structure \\
+Phase-2 Arc Q & QFT extension \\
+Phase-2 Arc N & Memory-kernel layer \\
+\textbf{Phase-3} & \textbf{Gravitational sector} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Phase-3 Roadmap and Methodology}
+
+Phase-3 proceeds through six substages: GR.0 scoping~\cite{gr0}; GR.1 catalogue~\cite{gr1} (20 admissible curvature-coupling structures across GR-1 bandwidth-curvature, GR-2 vacuum-curvature, GR-3 worldline-curvature, GR-4 curvature-dynamics sectors); GR.2 \textsc{forced} evaluation~\cite{gr2} (Theorem GR1 unconditionally \textsc{forced}; three cascading \textsc{forced}-conditional; GR-4A \textsc{speculative}); GR.3 \textsc{refuted} evaluation~\cite{gr3} (seven \textsc{refuted} determinations); GR.4 cosmological implications~\cite{gr4}; GR.5 synthesis~\cite{gr5}.
+
+Methodological discipline preserved throughout: clear separation of \textsc{forced}/\textsc{candidate}/\textsc{refuted}/\textsc{admissible}/\textsc{inherited}; honest expected-verdict prior (45\% partial GR-induce / 30\% GR-add / 15\% GR-emerge / 10\% surprise); \emph{form-\textsc{forced}, value-\textsc{inherited}} framing; ED-Phys-10 guardrails preserved.
+
+\section{Theorem GR1: Curved-Spacetime V1 Kernel \textsc{forced}}
+
+\subsection{Statement}
+
+\begin{theorem}[V1 with Synge World Function \textsc{forced}, GR1]
+In curved spacetime where unique geodesics connect any two events $x, x'$, the vacuum-response kernel is structurally \textsc{forced} at primitive level to take the form
+\begin{equation}
+K_\mathrm{vac}^\mathrm{curved}(x, x') = K_\mathrm{vac}^\mathrm{prim}\bigl(\sigma(x, x') / \ell_\mathrm{ED}^2\bigr),
+\end{equation}
+with $\sigma(x, x')$ Synge's world function (one-half squared geodesic distance), $K_\mathrm{vac}^\mathrm{prim}$ a kernel of admissibility class identical to the Theorem~N1 flat-space class (finite, non-zero, decaying, Lorentz-scalar, sub-power-law-2), and $\ell_\mathrm{ED}$ the primitive event-discreteness scale.
+\end{theorem}
+
+\subsection{Three-leg proof sketch}
+
+The forcing argument extends Theorem~N1's three-leg flat-space argument~\cite{arcn} to curved spacetime via Hadamard-parametrix construction.
+
+\paragraph{Leg 1 --- UV-FIN is metric-independent.}
+Arc~Q's UV-FIN argument (Theorem~Q3~\cite{arcq}) operates by primitive-level finiteness of multi-chain participation integrals via Primitive~01 + 13 + 04 jointly. Each primitive is \textbf{metric-independent}: they operate on the underlying event manifold regardless of curvature. UV-FIN extends to curved spacetime unchanged.
+
+A $\delta$-function vacuum response in curved spacetime, $K_\mathrm{vac}^\mathrm{curved} \propto \delta_g^{(4)}(x, x')$, has Fourier transform with respect to a local-inertial-frame at $x$ that produces constant frequency-weighting --- exactly as in flat space. UV-amplification pathology applies pointwise at every event. The $\delta$-curved limit is \textsc{refuted} for the same reason V1-$\delta$ is \textsc{refuted} in flat space.
+
+\paragraph{Leg 2 --- General covariance + locality.}
+A constant kernel $K_\mathrm{vac}^\mathrm{curved}(x, x') = c_\infty$ for all $x, x'$ implies infinite correlation length on the curved manifold. Generally-covariant locality (extension of Primitive~11 to curved spacetime: commitment events remain point-events) forbids constant kernels. The infinite-width limit is \textsc{refuted} by C1 + locality.
+
+\paragraph{Leg 3 --- 3+1D power-counting applies pointwise.}
+The 3+1D power-counting argument from Theorem~N1 ($\alpha < 2$ for power-law kernels) operates locally --- it depends on the dimensionality of spacetime at the event-resolution scale, not on global curvature. The argument applies pointwise to $\sigma(x, x') / \ell_\mathrm{ED}^2$ in place of $(x - x')^2 / \ell_\mathrm{ED}^2$.
+
+\paragraph{Synthesis.}
+The three legs jointly force $K_\mathrm{vac}^\mathrm{curved}$ to satisfy finite-width, decaying-support, sub-power-law-2 conditions in $\sigma(x, x')$. The Synge-world-function form is the unique generally-covariant scalar two-point function reducing to flat-space $\tfrac{1}{2}(x - x')^2$ in the flat limit. The Hadamard parametrix construction~\cite{dewitt, wald} supplies the standard mathematical infrastructure. $\square$
+
+\subsection{Dependencies}
+
+Theorem~GR1 depends on:
+\begin{itemize}
+  \item Primitive~01 (event-discreteness, metric-independent): natural-cutoff scale $\ell_\mathrm{ED}$.
+  \item Primitive~04 (bounded bandwidth, metric-independent): amplitude content.
+  \item Primitive~06 (general covariance): C1 constraint.
+  \item Primitive~11 (commitment-event locality): C1-locality refinement.
+  \item Primitive~13 (finite proper-time intervals, generalised to affine-parameter intervals).
+  \item Theorem~N1: flat-space prerequisite.
+  \item Theorem~Q3 (UV-FIN): primitive-level UV finiteness.
+  \item ED-Phys-10: supplies geodesic structure where no proposed dynamical metric exists.
+\end{itemize}
+
+\subsection{Bounded admissibility class}
+
+Stage~GR.3 limit refutations bound Theorem~GR1's admissibility class:
+\begin{itemize}
+  \item \textbf{GR-2A-$\delta$ (zero-width limit) \textsc{refuted} by C3} --- bounds the \textsc{forced} class from below.
+  \item \textbf{GR-2A-$\infty$ (infinite-width limit) \textsc{refuted} by C1 + locality} --- bounds the \textsc{forced} class from above.
+\end{itemize}
+
+The bounds are derived consequences of C1 + C3 in their curved-spacetime extensions --- not additional postulates.
+
+\subsection{Cascading \textsc{forced}-conditional items}
+
+Theorem~GR1 propagates \textsc{forced}-conditional status to three secondary catalogue items:
+\begin{itemize}
+  \item \textbf{GR-3A (free-chain geodesic worldlines):} KG/Dirac eikonal limit yields geodesic motion. \textsc{forced}-conditional on acoustic-metric identification.
+  \item \textbf{GR-2D (curvature-dependent cross-chain correlations):} V5 inherits Synge-world-function structure under Theorem~GR1.
+  \item \textbf{GR-4D (curvature-induced vacuum backreaction, existence sense):} $\Lambda_\mathrm{primitive}(x) \sim \int K_\mathrm{vac}^\mathrm{curved}(x, x') \rho_\mathrm{vac}(x') d^4 x'$ \textsc{forced}-conditional.
+\end{itemize}
+
+\subsection{Significance}
+
+Theorem~GR1 is \textbf{ED's first gravitational-sector structural theorem} and the \textbf{ninth \textsc{forced} theorem} in the ED inventory.
+
+\section{\textsc{refuted} and \textsc{admissible} Structures}
+
+\subsection{\textsc{refuted} determinations}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ID / Sub-case & Constraint & Brief reason \\
+\hline
+GR-1E (Case-P/R curvature-dep.) & C2 & Spin-statistics applies pointwise; metric-independent \\
+GR-1D (TYPE-mixing Fierz) & C2 & Fierz TYPE classification is rule-type data \\
+GR-3B (Case-R-delay) & C2 & Pauli exclusion violation in delay window \\
+GR-2A-$\delta$ (zero-width) & C3 & $\delta$-distribution amplifies UV \\
+GR-2A-$\infty$ (infinite-width) & C1 + locality & Constant kernel breaks locality \\
+GR-3A-non-geodesic & eikonal limit & KG/Dirac eikonal forces geodesics \\
+GR-2D large-amp/long-range & C1, C3 & Cascade refutation \\
+\hline
+\end{tabular}
+\end{center}
+
+The pattern: 2 C1, 3 C2, 2 C3 violations + 1 cascade + 1 Phase-2-theorem violation. Constraint framework exhaustive.
+
+\subsection{Theorem~GR1 admissibility class bounded both ways}
+
+The two GR-2A limit refutations together establish that Theorem~GR1's admissibility class is bounded: kernels must have finite, non-zero, decaying width. The pattern parallels Theorem N1's V1 admissibility-class bounding in flat space.
+
+\subsection{\textsc{admissible-not-forced} structures}
+
+13 catalogue items + 3 admissible sub-cases + 4 FORCED-related items pass Stage~GR.3 unrefuted:
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ID & Description & Influences \\
+\hline
+GR-1A & Curvature-dep. bandwidth evolution & Arc M coupling refinement \\
+GR-1B & Curvature-modified $\sigma_\tau$ shift & Arc M, structure formation \\
+GR-1C & Curvature-dep. bandweights & Arc M \\
+GR-1D, same-TYPE & Same-TYPE Fierz corrections & Arc M within-class \\
+GR-2B & Curvature-dep. kernel width & $\Lambda$, dispersion \\
+GR-2C & Curvature-dep. amplitude & $\Lambda$ scaling \\
+GR-2D, bounded & Bounded cross-chain correlations & Cosmological correlations \\
+GR-2E & Curvature-dep. vacuum polarisation & Arc Q.5 cosmological \\
+GR-3A & Free-chain geodesics (cond.) & Test-particle motion \\
+GR-3B, non-Case-R-delay & Quantitative threshold-shift & Arc Q.7 cosmological \\
+GR-3C & Curvature-dep. adjacency graphs & Multi-chain dynamics \\
+GR-3D & Curvature-dep. memory kernels & Arc N cosmological \\
+GR-3E & Curvature-dep. null-cone deformation & ED-Phys-10 baseline \\
+GR-4B & Non-local curvature equations & Alternative to GR-4A \\
+GR-4C & Acoustic-metric-only baseline & ED-Phys-10 preserved \\
+GR-4D, existence & Vacuum backreaction (FORCED-cond.) & $\Lambda$ structure \\
+GR-4E & Curvature-dep. UV-FIN & Phase-4 work \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{GR-4A unique status}
+
+GR-4A (Einstein-like equations) is \textbf{\textsc{not refuted} but \textsc{speculative}}: ADMISSIBLE as effective-theory addition; not derivable from primitives. ED-Phys-10's ``no Einstein equations from primitives'' preserved.
+
+\subsection{Bounded curvature-coupling space}
+
+Admissible curvature-coupling structure in ED is bounded, not arbitrary. C1 forbids frame-dependent and infinite-correlation-length structures; C2 forbids spin-statistics-violating sub-cases; C3 forbids insufficient short-time decay; eikonal-limit forbids non-geodesic free-chain motion.
+
+\section{Cosmological Implications}
+
+Stage~GR.4~\cite{gr4} establishes four substantive cosmological structural channels.
+
+\subsection{$\Lambda$ as V1-kernel integral}
+
+\begin{equation}
+\Lambda_\mathrm{primitive}(x) \sim \int K_\mathrm{vac}^\mathrm{curved}(x, x') \cdot \rho_\mathrm{vac}(x') \, d^4 x'.
+\end{equation}
+
+Form \textsc{forced}-conditional via GR-4D + Theorem~GR1; magnitude \textsc{inherited}. ED structurally \textbf{dissolves} the cosmological-$\Lambda$ divergence-form puzzle but does not predict $\Lambda \approx 10^{-122}$.
+
+In FLRW backgrounds, $\Lambda(t)$ admissible structurally without forcing $w(z) \neq -1$. Scale-stratified $\Lambda$ structure emerges between primitive-level UV-FIN protection and effective-theory long-wavelength behaviour.
+
+\subsection{V1-induced dispersion-relation modifications}
+
+\begin{equation}
+\omega^2 = c^2 |\mathbf{k}|^2 + \delta\omega^2(\mathbf{k}; K_\mathrm{vac}).
+\end{equation}
+
+Form \textsc{forced}; magnitudes \textsc{inherited}.
+
+\subsection{V5-mediated cosmological correlations}
+
+\begin{equation}
+\langle \delta b_{K_1}^\mathrm{env}(x_1) \cdot \delta b_{K_2}^\mathrm{env}(x_2) \rangle = K_\mathrm{cross}(\sigma(x_1, x_2)).
+\end{equation}
+
+Existence \textsc{forced}-conditional via cascade; amplitudes/ranges \textsc{inherited}.
+
+\subsection{Curvature-vacuum coupling}
+
+Theorem~GR1 itself is the curvature-vacuum coupling result. Refinements GR-2B/C/E ADMISSIBLE.
+
+\subsection{CP-phase enrichment carryover}
+
+C-N4.1 (vacuum-mediated additional CP phases beyond Jarlskog count for $\geq 3$ generations) carries forward as cosmological \textsc{candidate}: modified baryogenesis channels, CP-violation correlations across cosmological scales, CP-violating vacuum-polarisation contributions. Remains a \textsc{candidate}.
+
+\subsection{Empirical-signature framework}
+
+Four observational channels:
+\begin{itemize}
+  \item \textbf{UHECR timing} ($\sim 10^{19}$ eV scales) --- V1-induced dispersion offsets.
+  \item \textbf{GRB photon timing} (TeV scales; existing Fermi-LAT bounds).
+  \item \textbf{Gravitational-wave dispersion} (LIGO/Virgo/KAGRA bounds).
+  \item \textbf{Cosmological-correlation persistence} (LSS power-spectrum modifications).
+\end{itemize}
+
+Each route inherits V1/V5 kernel structure; specific testability \textsc{inherited}.
+
+\subsection{Distinguishing structural vs \textsc{inherited}}
+
+\textbf{Structurally \textsc{forced}:} existence of finite $\Lambda$; existence of cross-chain correlations; geodesic free-chain motion; bounded V1 admissibility class; V1-induced dispersion modification form.
+
+\textbf{\textsc{Inherited}:} $\Lambda$ magnitude; $H_0$, $w(z)$; $G$; specific kernel widths and forms; correlation amplitudes/ranges; power-spectrum corrections; inflation/dark-matter/baryogenesis specifics; generation count.
+
+\section{Final Phase-3 Verdict}
+
+\begin{enumerate}
+  \item \textbf{ED forces a curved-spacetime vacuum kernel} --- Theorem~GR1 \textsc{forced}.
+  \item \textbf{ED forces geodesic free-chain motion (conditional)} --- GR-3A \textsc{forced}-conditional via eikonal limit.
+  \item \textbf{ED forces $\Lambda$ to be finite and kernel-integral-defined} --- GR-4D existence \textsc{forced}-conditional; magnitude \textsc{inherited}; \textbf{cosmological-$\Lambda$ divergence-form structurally dissolved}.
+  \item \textbf{ED admits but does not force curvature-dynamics equations} --- GR-4A \textsc{not refuted but speculative}; ED-Phys-10 baseline preserved.
+  \item \textbf{ED preserves all Phase-2 + Arc N theorems} --- no prior verdict overturned; three Phase-2 closures structurally enriched (Arc M $\sigma_\tau$, Arc Q.5 vacuum polarisation, Arc Q.8 cosmological-$\Lambda$).
+  \item \textbf{ED provides a coherent cosmological framework with testable signatures} --- four substantive structural channels + four empirical-signature routes.
+  \item \textbf{Phase-3 lands in the partial-GR-induce quadrant} --- paralleling Arc M's H1-dominant pattern.
+\end{enumerate}
+
+\section{Outlook (Phase-4 Preview)}
+
+Phase-3's closure positions ED through the gravitational-sector-coupling layer. Phase-4 (or extended Phase-3 work) opens with several open items:
+
+\subsection{ED-GR action candidates}
+
+Three candidate forms: effective Einstein-Hilbert + V1-kernel-corrected source (\textsc{speculative}); non-local effective action via Theorem~GR1 cascades (ADMISSIBLE under GR-4B); acoustic-metric-only effective action (ED-Phys-10 baseline preserved). Promotion to \textsc{forced} requires either new structural input or a derivation strategy not yet identified.
+
+\subsection{Empirical tests}
+
+Four observational channels (UHECR timing, GRB photon timing, gravitational-wave dispersion, cosmological-correlation persistence) await sharpening of V1/V5 kernel-parameter inference.
+
+\subsection{Kernel parameter inference}
+
+Combining empirical bounds from the four observational channels could constrain V1 kernel parameters (width $\ell_\mathrm{ED}$, decay form, multi-scale weights) and V5 correlation parameters. Joint analysis could in principle infer kernel structure at the percent level.
+
+\subsection{GR-4A promotion question}
+
+The most consequential open structural question: can a primitive-level argument promote GR-4A from \textsc{speculative} to \textsc{forced}? Three plausible routes (new primitive introduction, derivation via novel argument, effective-theory upgrade via UV-FIN) all require structural content not yet identified.
+
+\begin{thebibliography}{99}
+
+\bibitem{phase1}
+A.~Proxmire and Copilot, \emph{Quantum Mechanics as a Structural Consequence of Event-Density Primitives} (Phase-1 closure paper), 2026.
+
+\bibitem{arcr}
+A.~Proxmire and Copilot, \emph{Relativistic Quantum Mechanics as a Forced Structural Consequence of Event-Density Primitives} (Arc~R paper), 2026.
+
+\bibitem{arcm}
+A.~Proxmire and Copilot, \emph{Mass and Masslessness as Structural Features of Event-Density Theory} (Arc~M paper), 2026.
+
+\bibitem{arcq}
+A.~Proxmire and Copilot, \emph{A UV-Finite Quantum Field Theory from Event-Density Primitives} (Arc~Q paper), 2026.
+
+\bibitem{arcn}
+A.~Proxmire and Copilot, \emph{Non-Markovian Structure as a Forced Memory-Kernel Layer of Event-Density Theory} (Arc~N paper), 2026.
+
+\bibitem{gr0}
+A.~Proxmire, \emph{Phase-3 Scoping}, \texttt{phase3\_scoping.md}, 2026.
+
+\bibitem{gr1}
+A.~Proxmire, \emph{GR Coupling Catalogue}, \texttt{gr\_coupling\_catalogue.md}, 2026.
+
+\bibitem{gr2}
+A.~Proxmire, \emph{GR Coupling FORCED Evaluation}, \texttt{gr\_coupling\_forced.md}, 2026.
+
+\bibitem{gr3}
+A.~Proxmire, \emph{GR Coupling REFUTED Evaluation}, \texttt{gr\_coupling\_refuted.md}, 2026.
+
+\bibitem{gr4}
+A.~Proxmire, \emph{Cosmological and Large-Scale Implications}, \texttt{gr\_cosmological\_implications.md}, 2026.
+
+\bibitem{gr5}
+A.~Proxmire, \emph{Phase-3 Synthesis}, \texttt{phase3\_synthesis.md}, 2026.
+
+\bibitem{edphys10}
+ED-Phys-10 kinematic-curvature arc, closed 2026-04-22. See \texttt{memory/project\_ed10\_geometry\_qft\_scope.md}.
+
+\bibitem{dewitt}
+B.~S.~DeWitt, \emph{The Global Approach to Quantum Field Theory}. Oxford University Press, 2003.
+
+\bibitem{wald}
+R.~M.~Wald, \emph{Quantum Field Theory in Curved Spacetime and Black Hole Thermodynamics}. University of Chicago Press, 1994.
+
+\bibitem{visser}
+M.~Visser, ``Acoustic black holes: horizons, ergospheres, and Hawking radiation,'' \emph{Class. Quantum Grav.} \textbf{15}, 1767 (1998).
+
+\bibitem{lambda}
+S.~Weinberg, ``The Cosmological Constant Problem,'' \emph{Rev. Mod. Phys.} \textbf{61}, 1 (1989).
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript closure: 2026-04-24. Companion documents: Phase-1 paper~\cite{phase1}, Arc~R paper~\cite{arcr}, Arc~M paper~\cite{arcm}, Arc~Q paper~\cite{arcq}, Arc~N paper~\cite{arcn}, Phase-3 synthesis~\cite{gr5}.}
+
+\end{document}

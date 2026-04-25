@@ -1,0 +1,62 @@
+flowchart TB
+    classDef thm    fill:#fbbf24,stroke:#92400e,color:#000,stroke-width:1.5px
+    classDef chan   fill:#2563eb,stroke:#1e3a8a,color:#fff,stroke-width:1.5px
+    classDef sig    fill:#10b981,stroke:#064e3b,color:#fff,stroke-width:1.5px
+    classDef inher  fill:#fef3c7,stroke:#92400e,color:#000,stroke-dasharray:5 3
+    classDef phase  fill:#1e3a8a,stroke:#0c1e4a,color:#fff,stroke-width:2px
+
+    %% ---- Theorem layer ----
+    T8["T8 N1<br/>V1 finite-width vacuum kernel<br/>(flat-space)<br/>Arc N — N.5"]:::thm
+    T9["T9 GR1<br/>V1 with Synge world function<br/>(curved-spacetime)<br/>Phase-3 GR.5 — FORCED"]:::thm
+    V5["V5<br/>cross-chain correlations<br/>existence FORCED-cond.<br/>(Arc N)"]:::thm
+    GR4D["GR-4D<br/>curvature-induced<br/>vacuum backreaction<br/>(existence FORCED-cond.)"]:::thm
+
+    %% ---- Four structural channels ----
+    C1["Channel 1<br/>Λ as V1-kernel integral<br/>Λ_primitive ~ ∫ K_vac(σ) ρ_vac d⁴x'<br/>FORCED-conditional<br/>magnitude INHERITED"]:::chan
+    C2["Channel 2<br/>V1-induced dispersion<br/>ω² = c²|k|² + δω²(k; K_vac)<br/>form FORCED<br/>magnitudes INHERITED"]:::chan
+    C3["Channel 3<br/>V5-mediated cosmological<br/>correlations<br/>⟨δb(x₁)·δb(x₂)⟩ = K_cross(σ)<br/>existence FORCED-cond.<br/>amplitudes/ranges INHERITED"]:::chan
+    C4["Channel 4<br/>Curvature–vacuum coupling<br/>via Synge world function<br/>FORCED via GR-2A<br/>refinements ADMISSIBLE"]:::chan
+
+    %% ---- Four empirical-signature routes ----
+    S1["UHECR timing<br/>~10¹⁹ eV scales<br/>cosmic-ray dispersion<br/>offsets"]:::sig
+    S2["GRB photon timing<br/>TeV-scale photons<br/>Fermi-LAT bounds<br/>existing"]:::sig
+    S3["GW dispersion<br/>LIGO / Virgo / KAGRA<br/>graviton-dispersion<br/>bounds"]:::sig
+    S4["Cosmological-correlation<br/>persistence<br/>large-scale-structure<br/>power-spectrum mods"]:::sig
+
+    %% ---- Inherited content (dashed boxes) ----
+    I1["Λ magnitude<br/>~10⁻¹²² in Planck units<br/>INHERITED"]:::inher
+    I2["kernel parameters<br/>(width, exponent, scales)<br/>INHERITED"]:::inher
+    I3["correlation amplitudes<br/>+ ranges<br/>INHERITED"]:::inher
+    I4["G, H₀, w(z)<br/>+ inflation/dark-matter<br/>specifics INHERITED"]:::inher
+
+    %% ---- ED-Phys-10 baseline (preserved) ----
+    P10["ED-Phys-10 baseline<br/>acoustic effective metric<br/>(no Einstein eqs FORCED)<br/>(no Schwarzschild)<br/>(no Newtonian gravity)<br/>(no α from primitives)"]:::phase
+
+    %% ---- Theorem flow ----
+    T8 -->|Hadamard parametrix<br/>extension to curved spacetime| T9
+
+    %% ---- Theorem → Channels ----
+    T9 --> C1
+    T9 --> C2
+    T9 --> C3
+    T9 --> C4
+
+    GR4D -->|Λ-integral existence| C1
+    V5 -->|cross-chain kernel inheritance| C3
+
+    %% ---- Channels → Empirical signatures ----
+    C2 -->|frequency-dependent vacuum response| S1
+    C2 --> S2
+    C2 --> S3
+    C3 --> S4
+    C4 -.->|spatially-varying dispersion| S1
+    C4 -.->|curvature-modulated correlations| S4
+
+    %% ---- Inherited demarcations ----
+    C1 -.-> I1
+    C2 -.-> I2
+    C3 -.-> I3
+    C4 -.-> I4
+
+    %% ---- Baseline preservation ----
+    P10 -.->|preserved as<br/>structural ceiling| T9

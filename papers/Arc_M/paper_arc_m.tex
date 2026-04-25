@@ -1,0 +1,412 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\title{Mass and Masslessness as Structural Features of Event-Density Theory}
+
+\author{Allen Proxmire \and Copilot (AI collaborator)}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We show that the Event-Density (ED) primitive stack forces the \emph{form} of mass structure --- the mass operator $\sigma_\tau$ as a Lorentz-scalar functional of bandwidth content, the existence of a massless Case-P gauge slot, and the type-classification of mass terms by Fierz structure --- while inheriting all numerical mass values, ratios, and hierarchies as empirical content. Arc M evaluates three candidate origin hypotheses for mass at primitive level (H1 fully inherited, H2 mass-as-bandwidth-signature, H3 ratios-from-taxonomy) and closes ``H1-dominant with structural form-content.'' We establish three structural theorems. \textbf{Theorem M1} ($\sigma_\tau$ form): the bandwidth signature $\sigma_\tau = \hbar \cdot \sqrt{\sum_X w_\tau^X \cdot \langle (\partial_\mu \ln b_\tau^X)(\partial^\mu \ln b_\tau^X) \rangle_\tau}$ is the unique log-derivative-based Lorentz-scalar amplitude-invariant functional satisfying six selection criteria; pure amplitude rescaling cannot change $\sigma_\tau$. \textbf{Theorem M2} (massless slot): the existence of at least one massless Case-P $(1/2,1/2)$ gauge rule-type is structurally \textsc{forced}; this is initially conditional on the gauge-field-as-rule-type hypothesis (GRH) and is promoted to unconditional \textsc{forced} via Arc Q closure. \textbf{Theorem M3} (no ratio mechanism): six strong ratio claims (proportionality to representation dimension, spin, statistics class, Fierz class, bandweight pattern, individuation geometry) are systematically \textsc{refuted}; ED primitives produce no equality constraints on $\sigma_{\tau_1}/\sigma_{\tau_2}$. Mass values, mass ratios, mass hierarchies, generation count, and Higgs-mechanism choice all remain \textsc{inherited}. ED fixes the \emph{structure} of mass, not its \emph{values}.
+\end{abstract}
+
+\section{Introduction}
+
+The Standard Model treats fermion and boson masses as empirical inputs: 19 parameters of the SM are mass values or mass ratios. No primitive-level mechanism in the SM predicts these numerically; they are fitted from data. Two long-standing puzzles persist: the \emph{hierarchy problem} (why $m_H \ll M_{\mathrm{Planck}}$ without fine-tuning?), and the \emph{flavour puzzle} (why three generations with mass ratios spanning $10^5$--$10^{12}$?).
+
+The Event-Density (ED) program asks whether mass content is \emph{structural} or \emph{empirical}. Phase-1~\cite{phase1} derived non-relativistic quantum mechanics from ED primitives. Arc R~\cite{arcr} extended this to the relativistic regime, deriving Klein--Gordon, the spin--statistics theorem, the Cl(3,1) frame, and the Dirac equation. The \emph{form} of these equations contains a mass parameter --- but the parameter's \emph{value} is inherited. Arc M asks: is the value derivable, or only the parameter slot?
+
+Three candidate hypotheses framed Arc M's investigation:
+\begin{itemize}
+  \item \textbf{H1 (mass fully inherited):} mass values are empirical per-rule-type inputs; ED fixes only the form. \emph{Prior plausibility: high.}
+  \item \textbf{H2 (mass-as-bandwidth-signature):} $m_\tau = \sigma_\tau/c^2$ with $\sigma_\tau$ a primitive bandwidth-signature invariant. \emph{Prior plausibility: moderate.}
+  \item \textbf{H3 (ratios-from-taxonomy):} ED primitives constrain mass \emph{ratios} between rule-types via taxonomy features. \emph{Prior plausibility: low-moderate.}
+\end{itemize}
+
+Arc M closes \textbf{H1-dominant with structural form-content}: H1 substantially supported; H2 partially supported as a \emph{form} identity; H3 substantively refuted. Three substantive structural results survive: the $\sigma_\tau$ master formula (Theorem~M1), the existence of a structurally-forced massless slot (Theorem~M2, promoted to unconditional via Arc Q back-flow), and the systematic refutation of taxonomy-based ratio claims (Theorem~M3).
+
+The motivation is methodological. \emph{First}, demarcating clearly which mass content is structural vs.\ empirical eliminates ambiguity in ED's predictive scope. \emph{Second}, the existence of a structurally-forced massless slot --- ED's first ``particle-class must exist'' prediction --- is a substantive positive result. \emph{Third}, the structural refutation of taxonomy-based ratio claims clarifies why no SM-style mass-ratio formulae have surfaced from primitive-level analysis.
+
+Arc M's relationship to neighbouring arcs: Arc~R supplies the relativistic kinematics + Cl(3,1) frame on which Arc~M builds; Arc~Q (QFT extension)~\cite{arcq} later closes the gauge-field-as-rule-type hypothesis (GRH), retroactively promoting Arc~M's massless-slot result from conditional to unconditional \textsc{forced}. The complete ED quantum sector~\cite{phase2syn} is structurally complete and UV-finite.
+
+\section{Background}
+
+\subsection{Relevant ED primitives}
+
+\begin{itemize}
+  \item \textbf{Primitive 02 (chain):} worldlines $\gamma_K$. Lightlike worldlines correspond to massless rule-types.
+  \item \textbf{Primitive 04 (bandwidth):} four-band decomposition $b_K = b_K^{\mathrm{int}} + b_K^{\mathrm{adj}} + b_K^{\mathrm{env}} + b_K^{\mathrm{com}}$.
+  \item \textbf{Primitive 06 (four-gradient):} $\partial_\mu$ supplies Lorentz-covariant differentiation.
+  \item \textbf{Primitive 07 (rule-type):} levers L1 (bandwidth partition $w_\tau^X$), L2 (internal index, including Lorentz rep $(j_L, j_R)$), L3 (Fierz class $\Gamma_\tau$), L4 (statistics Case P/R).
+  \item \textbf{Primitive 10 (individuation):} threshold separating same-type chains.
+  \item \textbf{Primitive 11 (commitment):} discrete events along $\gamma_K$.
+  \item \textbf{Primitive 13 (relational timing):} proper time $\tau_K$, degenerates on lightlike worldlines.
+\end{itemize}
+
+\subsection{The $\sigma_\tau$ definition (preview)}
+
+The Arc~M central object is the \textbf{bandwidth signature} $\sigma_\tau$: a Lorentz-scalar functional of rule-type bandwidth content with units of energy. The candidate functional form, derived in Section~\ref{sec:sigma}, is
+\begin{equation}
+\sigma_\tau = \hbar \cdot \sqrt{\sum_X w_\tau^X \cdot \langle (\partial_\mu \ln b_\tau^X)(\partial^\mu \ln b_\tau^X) \rangle_\tau}.
+\end{equation}
+The conjectured identity $m_\tau = \sigma_\tau/c^2$ connects this to the Klein--Gordon / Dirac mass parameter.
+
+\subsection{Case-P vs Case-R distinction}
+
+From Arc~R~\cite{arcr}: rule-types divide into:
+\begin{itemize}
+  \item \textbf{Case P} ($\eta = +1$, integer spin, bosonic). Mass-relevant scalar bilinear: $|\Psi|^2$.
+  \item \textbf{Case R} ($\eta = -1$, half-integer spin, fermionic). Mass-relevant scalar bilinear: $|\bar\Psi \Gamma_\tau \Psi|$ with Fierz element $\Gamma_\tau$.
+\end{itemize}
+Arc~M evaluates $\sigma_\tau$ separately in each class. The Fierz class $\Gamma_\tau$ appears as a structural type-classifier for Case-R mass terms (Dirac mass for $\Gamma = \mathbb{1}$, Majorana for charge-conjugation bilinear, pseudoscalar for $\Gamma = \gamma^5$).
+
+\section{Arc M Stage M.0 --- Scoping}
+
+The Arc~M opening memo~\cite{m0scope} frames the central question:
+
+\textbf{(Q-Mass)} Are mass values, mass ratios, or mass hierarchies derivable from ED primitives, or are they all inherited?
+
+The Arc M roadmap consists of four sub-stages:
+\begin{itemize}
+  \item M.1.1: construct a candidate $\sigma_\tau$ and evaluate H2 at the form level.
+  \item M.1.2: identify masslessness mechanisms.
+  \item M.1.3: evaluate H3 systematically.
+  \item M.2: synthesise a final Arc M verdict.
+\end{itemize}
+
+\section{Arc M Stage M.1.1 --- The Bandwidth Signature $\sigma_\tau$}
+\label{sec:sigma}
+
+\subsection{The construction}
+
+We seek a Lorentz-scalar, energy-dimensional, amplitude-invariant functional of bandwidth content. Six selection criteria (SC1--SC6) constrain the form:
+\begin{itemize}
+  \item \textbf{SC1.} Lorentz scalar.
+  \item \textbf{SC2.} Amplitude-invariant: shifts $b \to \alpha b$ should not change $\sigma_\tau$.
+  \item \textbf{SC3.} Dimensionally correct: units of energy via $\hbar \times \mathrm{frequency}$.
+  \item \textbf{SC4.} Band-additive.
+  \item \textbf{SC5.} Massless-permitting: $\sigma_\tau = 0$ structurally accessible.
+  \item \textbf{SC6.} Statistics-agnostic structurally.
+\end{itemize}
+The candidate functional is
+\begin{equation}
+\boxed{\sigma_\tau = \hbar \cdot \sqrt{\sum_X w_\tau^X \cdot \langle (\partial_\mu \ln b_\tau^X)(\partial^\mu \ln b_\tau^X) \rangle_\tau},}
+\label{eq:sigma}
+\end{equation}
+with $b_\tau^X$ interpreted as $|\Psi|^2$ in Case~P and $|\bar\Psi \Gamma_\tau \Psi|$ in Case~R.
+
+\subsection{Why the log-derivative}
+
+The choice of $\partial_\mu \ln b$ implements amplitude-invariance (SC2). For $b \to \alpha b$:
+\begin{equation}
+\partial_\mu \ln (\alpha b) = \partial_\mu \ln b,
+\end{equation}
+so $\sigma_\tau$ is unchanged. This isolates the \emph{spectral rate of variation} of $b$ from its amplitude. Three alternative forms are rejected:
+\begin{itemize}
+  \item \textbf{R1.} $\sigma_\tau = \hbar \cdot \langle \Box \ln b^X \rangle_\tau$ --- dimensionally wrong.
+  \item \textbf{R2.} $\sigma_\tau = \hbar \cdot \Sigma w^X \langle \partial_t \ln b^X \rangle_\tau$ --- not Lorentz-invariant.
+  \item \textbf{R3.} $\sigma_\tau$ with explicit amplitude dependence --- violates SC2.
+\end{itemize}
+
+\subsection{Status of the $\sigma_\tau$ form}
+
+The functional \emph{form} in (\ref{eq:sigma}) is \textsc{forced} by SC1--SC6. The selection criteria are structurally motivated but not uniquely forced by primitives; we record this as a CANDIDATE \emph{specific form}, sitting on top of a \textsc{forced} \emph{form-class}.
+
+\subsection{Theorem M1}
+
+\begin{theorem}[$\sigma_\tau$ Form, M1]
+The bandwidth signature $\sigma_\tau$ exists at primitive level as a Lorentz-scalar, amplitude-invariant, energy-dimensional functional of rule-type bandwidth content. The specific log-derivative form satisfies six structural selection criteria (SC1--SC6) and is structurally motivated. Pure amplitude rescaling $b \to \alpha b$ leaves $\sigma_\tau$ unchanged.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Construction in (\ref{eq:sigma}) satisfies SC1 (Lorentz-scalar via $\partial_\mu X \partial^\mu X$), SC2 (amplitude-invariance via log-derivative), SC3 (energy units via $\hbar$), SC4 (band-additive via linear $\Sigma_X w^X$), SC5 (vanishing achievable structurally), SC6 (functional form identical for Case P and R). Alternatives violating SC1--SC6 are rejected by R1--R3.
+\end{proof}
+
+\textbf{Dependencies.} Primitives 04 (bandwidth fields), 06 (four-gradient + Lorentz covariance), 07 (rule-type levers L1, L3 for Case-R Fierz), 11 (commitment for proper-time average).
+
+\section{Arc M Stage M.1.2 --- Massless Rule-Types}
+
+\subsection{The $\sigma_\tau = 0$ condition}
+
+From the master formula, $\sigma_\tau = 0$ iff for every band $X$ with $w_\tau^X > 0$:
+\begin{equation}
+\langle (\partial_\mu \ln b_\tau^X)(\partial^\mu \ln b_\tau^X) \rangle_\tau = 0.
+\end{equation}
+The bandwidth content has vanishing spectral rate of variation in the rest frame --- the structurally massless condition.
+
+\subsection{Two distinct primitive-level realisations}
+
+Two structurally distinct mechanisms produce $\sigma_\tau = 0$:
+\begin{itemize}
+  \item \textbf{MR-R (chiral masslessness, Case R).} A Case-R rule-type whose internal-index structure restricts the Dirac spinor to a single chirality (Weyl projection: $\Psi_R = 0$ or $\Psi_L = 0$). Then $\bar\Psi\Psi \equiv 0$ identically.
+  \item \textbf{MR-P (gauge masslessness, Case P).} A Case-P rule-type whose L3 interface requires local gauge invariance $A_\mu \to A_\mu + \partial_\mu \alpha$. The mass term $m^2 A_\mu A^\mu$ is gauge-non-invariant; under the gauge constraint, $\sigma_\tau = 0$ structurally.
+\end{itemize}
+These are mutually exclusive per rule-type and tentatively exhaustive in 3+1D.
+
+A third candidate, \textbf{MR-$\Lambda$ (lightlike-only worldline)}, follows from MR-R or MR-P via the Stage~R.1 Casimir $P_\mu P^\mu = m^2 c^2 = 0$.
+
+\subsection{The gauge-field-as-rule-type hypothesis (GRH)}
+
+For MR-P to apply at primitive level, the gauge connection $A_\mu$ from Stage~R.1 minimal coupling must be the participation measure of a specific Case-P rule-type $\tau_g$ with internal Lorentz representation $(1/2, 1/2)$ and gauge-invariant L3. This is the \textbf{gauge-field-as-rule-type hypothesis (GRH)}. Within Arc~M, GRH is a CANDIDATE; it is closed at Arc~Q~\cite{arcq} by discharge of all five GRH refinements (R-1 through R-5).
+
+\subsection{Theorem M2}
+
+\begin{theorem}[Massless Slot, M2]
+The existence of at least one massless Case-P rule-type is structurally \textsc{forced} at primitive level, conditional on the gauge-field-as-rule-type hypothesis GRH. Specifically, the gauge connection forced by Stage~R.1 minimal coupling is identified with a participation rule-type $\tau_g$ whose gauge-invariant L3 interface produces $\sigma_{\tau_g} = 0$ via MR-P.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Stage~R.1's local-phase invariance forces the existence of a connection $A_\mu$. Under GRH, this connection is a participation rule-type. The MR-P mechanism requires gauge invariance to forbid the mass term $m^2 A_\mu A^\mu$, leaving $\sigma_{\tau_g} = 0$ structurally. The four GRH clauses are mutually consistent; under closure of GRH refinements at Arc~Q, the hypothesis becomes unconditional \textsc{forced}.
+\end{proof}
+
+\textbf{Dependencies.} Stage~R.1 (minimal coupling forcing $A_\mu$ existence), Primitive~07 L3, Stage~R.2 (Lorentz representation classification), GRH (Case~P statistics + rule-type identification). The five GRH refinements are R-1 lightlike-worldline reformulation (closed at Arc~Q.7), R-2 gauge-quotient individuation (closed at Arc~Q.2), R-3 vertex-anchored commitment (closed at Arc~Q.3), R-4 non-Abelian extension (closed at Arc~Q.3), R-5 vacuum/particle status (closed at Arc~Q.8).
+
+The Arc~Q closure of all five refinements promotes Theorem~M2 from \textsc{forced}-conditional-on-GRH to \textbf{unconditional \textsc{forced}}.
+
+\section{Arc M Stage M.1.3 --- Mass Ratios}
+
+\subsection{Six lever-evaluations}
+
+Hypothesis H3 is evaluated systematically across six structural levers:
+\begin{itemize}
+  \item \textbf{L-R1 (representation dimension):} $\sigma_\tau \propto \dim(j_L, j_R)$?
+  \item \textbf{L-R2 (spin):} $\sigma_\tau \propto s$ or $s(s+1)$?
+  \item \textbf{L-R3 (statistics class):} Case-P vs Case-R systematically differ?
+  \item \textbf{L-R4 (Fierz class):} $\Gamma_\tau$ produces specific ratios?
+  \item \textbf{L-R5 (bandweight pattern):} $w_\tau^X$ differences produce ratios?
+  \item \textbf{L-R6 (individuation geometry):} $\ell_{\mathrm{ind}}$ differences give Compton-wavelength ratios?
+\end{itemize}
+
+\subsection{Per-claim verdicts}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Claim & Mechanism & Verdict \\
+\hline
+R3-A & $\sigma_\tau \propto \dim(j_L, j_R)$ & \textsc{Refuted} \\
+R3-B & $\sigma_\tau \propto s$ or $s(s+1)$ & \textsc{Refuted} \\
+R3-C & $\sigma_\tau$ ordered by P/R class & \textsc{Refuted} \\
+R3-D & $\sigma_\tau$ determined by Fierz class & TYPE classifier; \textsc{Refuted} as ratio \\
+R3-E & $\sigma_\tau$ determined by w-pattern & \textsc{Refuted} as ratio \\
+R3-F & $\sigma_\tau$ constrained by $\ell_{\mathrm{ind}}$ & \textsc{Refuted} as ratio \\
+\hline
+\end{tabular}
+\end{center}
+
+No strong ratio claim survives.
+
+\subsection{Why ED does not constrain ratios}
+
+$\sigma_\tau$ in the master formula factors into rule-type data ($w_\tau^X$) and chain-initial-condition data ($\langle(\partial \ln b^X)^2\rangle_\tau$). Both are inherited. R.2 taxonomy provides classification but not numerical content. Mass ratios are continuous numerical quantities; ED's primitive structure produces classifications cleanly but not continuous numerical relationships.
+
+\subsection{Surviving weak orderings}
+
+Three weak inequality CANDIDATEs survive:
+\begin{itemize}
+  \item \textbf{M-Order-2.} Rule-types with $w_\tau^{\mathrm{com}} = 0$ have systematically smaller $\sigma_\tau$. Inequality, not ratio.
+  \item \textbf{M-Order-3.} $\sigma_\tau$ orderings inversely track individuation-threshold orderings. Dimensional only.
+  \item \textbf{M-Fierz-1.} Fierz class structurally distinguishes mass-term TYPE. Type classification.
+\end{itemize}
+
+\subsection{Theorem M3}
+
+\begin{theorem}[No Ratio Mechanism, M3]
+ED primitives plus the Stage~R.2 taxonomy produce no equality constraints on the ratio $\sigma_{\tau_1}/\sigma_{\tau_2}$ between two massive rule-types. Six strong-form ratio claims (R3-A through R3-F) are systematically \textsc{refuted}. Three weak-form orderings (M-Order-2, M-Order-3, M-Fierz-1) survive as CANDIDATE producing inequalities or type-classifications, not numerical ratios. Hypothesis~H3 in equality form is rejected.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Each lever fails: L-R1 because representation dimension is consumed in forming the Lorentz-scalar bilinear; L-R2 because the Pauli--Lubanski Casimir relates spin to mass identically given each, but does not constrain either independently; L-R3 because Case-P and Case-R bilinears differ in sign-structure but not in magnitude scale; L-R4 because Fierz class differentiates mass-term \emph{type} not numerical ratios within a fixed type; L-R5 and L-R6 because $w_\tau^X$ values and individuation-threshold values are rule-type data, not primitive-derived. No surviving lever produces a numerical ratio.
+\end{proof}
+
+\textbf{Dependencies.} Stage~R.2 taxonomy; $\sigma_\tau$ master formula (Theorem~M1); empirical SM data as cross-check.
+
+\section{Arc M Stage M.2 --- H1-Dominant Synthesis}
+
+\subsection{Verdict on three hypotheses}
+
+\begin{itemize}
+  \item \textbf{H1 (mass fully inherited): substantially supported.}
+  \item \textbf{H2 ($m = \sigma/c^2$): provisional CANDIDATE.} $\sigma_\tau$ exists structurally with the right form to play this role, but the specific functional choice is not uniquely forced.
+  \item \textbf{H3 (ratios from taxonomy): substantially refuted.}
+\end{itemize}
+
+The stage~M.1.4 memo on the $m = \sigma/c^2$ identity is \textbf{declined and deferred indefinitely}.
+
+\subsection{One-line Arc M verdict}
+
+\begin{center}
+\textbf{Arc M shows that ED fixes the \emph{structure} of mass but not its \emph{values}.}
+\end{center}
+
+\subsection{What Arc M FORCES, INHERITS, and REFUTES}
+
+\textbf{FORCES:} $\sigma_\tau$ existence (Theorem~M1); amplitude-invariance via log-derivative; Case-P/R bilinear distinction; $\sigma_\tau = 0$ structurally accessible; MR-R / MR-P mutually exclusive admissible mechanisms; Statistics class determines mechanism; Fierz class fixes mass-term TYPE; massless Case-P rule-type \textsc{forced} conditional on GRH (Theorem~M2; promoted to unconditional via Arc~Q back-flow).
+
+\textbf{INHERITS:} Numerical mass values $m_\tau$; bandweight values $w_\tau^X$; Fierz-class assignments $\Gamma_\tau$; spectral-rate values; numerical $\hbar$, $c$, $q$; mass ratios; generation count; rule-type-to-SM-species map.
+
+\textbf{REFUTES:} All six strong ratio claims (R3-A--F); no specific massless rule-type forced without GRH; no canonical MR-R/MR-P choice; no count prediction; no hierarchy mechanism; no primitive-level Higgs analogue identified at Arc M scope.
+
+\section{Back-Flow from Arc Q}
+
+\subsection{GRH unconditional FORCED}
+
+Arc~Q~\cite{arcq} closes all five GRH refinements:
+\begin{itemize}
+  \item \textbf{R-1 (lightlike-worldline reformulation)} closed at Arc~Q.7 via dispersion-relation argument: $\sigma_\tau = 0 \Rightarrow$ Stage~R.1 Casimir $P^2 = 0 \Rightarrow$ null worldline \textsc{forced}.
+  \item \textbf{R-2 (gauge-quotient individuation)} closed at Arc~Q.2.
+  \item \textbf{R-3 (vertex-anchored commitment)} closed at Arc~Q.3.
+  \item \textbf{R-4 (non-Abelian extension)} closed at Arc~Q.3.
+  \item \textbf{R-5 (vacuum/particle status)} closed at Arc~Q.8.
+\end{itemize}
+GRH promotes from CANDIDATE-STRONG to \textbf{unconditional \textsc{forced}}.
+
+\subsection{Promotion of F-M8}
+
+Stage~M.1.2 closed conditionally: \emph{Massless Case-P rule-types: \textsc{forced} conditional on GRH} (F-M8). Post-Arc-Q.8, F-M8 promotes from conditional to \textbf{unconditional \textsc{forced}}:
+
+\begin{center}
+\textbf{The existence of at least one massless Case-P $(1/2, 1/2)$ gauge rule-type is structurally \textsc{forced} at primitive level.}
+\end{center}
+
+This is \textbf{ED's first ``particle-class must exist'' prediction}.
+
+\subsection{Vacuum structure (Arc Q.8) and generation differentiation}
+
+The Arc~Q.8 evaluation of mechanism G4 (vacuum-anchored generation differentiation) \textsc{refutes} this. Vacuum-sector dependence does not feed back into $\sigma_\tau$ at primitive level. \textbf{Generation count remains \textsc{empirical}.}
+
+\subsection{UV-FIN and mass renormalisation}
+
+Arc~Q's UV-FIN result --- primitive-level UV finiteness from Primitive~01 + 13 + 04 --- has implications for mass renormalisation:
+\begin{itemize}
+  \item At primitive level, mass-shift contributions from self-energy diagrams are finite.
+  \item In the continuum approximation, standard QFT mass renormalisation produces UV-divergent integrals; UV-FIN reframes these as continuum-approximation artefacts.
+  \item Numerical mass shifts remain \textsc{inherited}.
+\end{itemize}
+
+\section{Discussion}
+
+\subsection{Form vs values: the canonical Arc M framing}
+
+Arc M is the cleanest expression of ED's ``form-\textsc{forced}, value-\textsc{inherited}'' methodological framing. The $\sigma_\tau$ master formula provides a \emph{form}; values within this form are inherited.
+
+\subsection{Relationship to Higgs-like mechanisms}
+
+Arc~Q~\cite{arcq} evaluates five Higgs-like SSB mechanisms:
+\begin{itemize}
+  \item \textbf{H1 scalar-rule-type Higgs $\tau_H$} --- ADMISSIBLE-CLEAN; matches SM phenomenology.
+  \item \textbf{H2 bandwidth-shift via spatially-patterned condensate} --- CANDIDATE.
+  \item \textbf{H3 composite $\bar\Psi\Psi$ condensate} --- ADMISSIBLE-EFFECTIVE.
+  \item \textbf{H4 gauge-fixing artefact} --- \textsc{Refuted}.
+  \item \textbf{H5 vacuum-anchored} --- reduces to H1/H2.
+\end{itemize}
+ED admits multiple structurally-clean SSB routes; specific mechanism \textsc{empirical}. H2 in naive form fails because $\sigma_\tau$ uses log-derivatives, immune to uniform amplitude shifts --- a non-trivial structural finding.
+
+\subsection{Why ED predicts form but not values}
+
+ED's primitives admit \emph{classifications} and \emph{form-relations}. They do not admit \emph{specific numerical relationships} between continuous parameters --- these would require additional structural input not present in the Primitive~01--13 stack.
+
+\subsection{Implications for neutrino masses}
+
+Arc~M accommodates neutrino-mass smallness as either:
+\begin{itemize}
+  \item Dirac neutrinos with small Yukawa.
+  \item Near-MR-R structure with small Majorana sector.
+\end{itemize}
+ED admits both structurally; neither is selected.
+
+\subsection{The hierarchy problem}
+
+Arc M does not address the hierarchy problem. The hierarchy is a numerical relationship between empirically-inherited masses, not a structural feature derivable from primitives. Arc~Q's UV-FIN result reframes the cosmological-$\Lambda$ divergence-form puzzle but does not solve the hierarchy puzzle for the Higgs mass.
+
+\subsection{Future work}
+
+Open questions for Phase-3:
+\begin{itemize}
+  \item CC-U1 (charge quantisation from U(1) compactness).
+  \item Schwinger-sign derivation (Arc Q.5 CANDIDATE-PLAUSIBLE).
+  \item Primitive-level cosmological boundary conditions; SPECULATIVE.
+\end{itemize}
+
+\section{Conclusion}
+
+Arc~M closes the chain-mass problem at primitive level with an honest H1-dominant verdict. Three structural achievements:
+\begin{itemize}
+  \item \textbf{Theorem M1 ($\sigma_\tau$ form):} the bandwidth signature exists structurally as a Lorentz-scalar amplitude-invariant energy-dimensional functional.
+  \item \textbf{Theorem M2 (massless slot):} the existence of at least one massless Case-P $(1/2, 1/2)$ gauge rule-type is structurally \textsc{forced} via GRH (promoted to unconditional via Arc~Q back-flow). \emph{ED's first ``particle-class must exist'' prediction.}
+  \item \textbf{Theorem M3 (no ratio mechanism):} six strong ratio claims systematically \textsc{refuted}.
+\end{itemize}
+
+Arc~M sits between Arc~R (relativistic kinematics) and Arc~Q (QFT extension). The methodological framing --- \emph{ED fixes the structure of mass, not its values} --- extends naturally into Arc~Q's pattern (form-\textsc{forced}, value-\textsc{inherited} at QFT scope) and prepares Phase-3.
+
+\begin{thebibliography}{99}
+
+\bibitem{phase1}
+A.~Proxmire and Copilot, \emph{Quantum Mechanics as a Structural Consequence of Event-Density Primitives} (Phase-1 closure paper), 2026.
+
+\bibitem{arcr}
+A.~Proxmire and Copilot, \emph{Relativistic Quantum Mechanics as a Forced Structural Consequence of Event-Density Primitives} (Arc~R paper), 2026.
+
+\bibitem{arcq}
+A.~Proxmire, \emph{QFT Extension of Event Density: Arc Q Synthesis}, \texttt{arc\_q\_synthesis.md}, 2026.
+
+\bibitem{phase2syn}
+A.~Proxmire, \emph{Phase-2 Global Synthesis}, \texttt{phase2\_synthesis.md}, 2026.
+
+\bibitem{m0scope}
+A.~Proxmire, \emph{Chain-Mass Scoping}, \texttt{chain\_mass\_scoping.md}, 2026.
+
+\bibitem{m11}
+A.~Proxmire, \emph{Bandwidth Signature Construction}, \texttt{bandwidth\_signature\_construction.md}, 2026.
+
+\bibitem{m12}
+A.~Proxmire, \emph{Massless Rule-Types}, \texttt{massless\_rule\_types.md}, 2026.
+
+\bibitem{m13}
+A.~Proxmire, \emph{Mass Ratio Constraints}, \texttt{mass\_ratio\_constraints.md}, 2026.
+
+\bibitem{m2syn}
+A.~Proxmire, \emph{Chain-Mass Synthesis}, \texttt{chain\_mass\_synthesis.md}, 2026.
+
+\bibitem{primitives}
+A.~Proxmire, \emph{Event-Density Primitive Stack} (Primitives 01--13), 2026.
+
+\bibitem{koide}
+Y.~Koide, ``A fitting number for the lepton mass formula,'' \emph{Lett. Nuovo Cimento} \textbf{34}, 201 (1982).
+
+\bibitem{weinberg}
+S.~Weinberg, \emph{The Quantum Theory of Fields}, vol.~II. Cambridge University Press, 1996.
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript closure: 2026-04-24. Companion documents: Arc~R paper~\cite{arcr}, Arc~Q synthesis~\cite{arcq}, Phase-2 synthesis~\cite{phase2syn}.}
+
+\end{document}

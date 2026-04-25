@@ -1,0 +1,1118 @@
+ED-Arch-09: Architectural Symmetry of the Unified ED Cosmology PDE
+===================================================================
+
+Series:    ED Architecture
+Document:  ED-Arch-09
+Title:     Architectural Symmetry
+Author:    Allen Proxmire
+Date:      2026-03-17
+Scope:     Invariances, equivalence classes, symmetry breaking, and
+           transformation rules of the ED architecture
+Sources:   ED-Phys-01 through ED-Phys-34, ED-Arch-01 through ED-Arch-08
+
+
+========================================================================
+1. PURPOSE OF ARCHITECTURAL SYMMETRY
+========================================================================
+
+The previous eight chapters described what the architecture does, what
+patterns it generates, what rules it obeys, what shapes it creates,
+how its field is structured, why it evolves as it does, through what
+pathways influence flows, and what happens to the information it
+carries. This ninth chapter asks the complementary question: what
+remains unchanged? Under what transformations does the architecture
+look the same? What are the invariances that define the architecture's
+identity?
+
+Architectural symmetry is:
+
+  (i)   NOT PHYSICAL SYMMETRY.  The ED cosmology PDE does not
+        describe a system with Lorentz invariance, gauge symmetry,
+        or the symmetry groups of particle physics. Its symmetries
+        are structural, not physical: they describe invariances of
+        the architectural field under transformations of its
+        components, parameters, and states.
+
+  (ii)  INVARIANCE UNDER TRANSFORMATION.  A symmetry exists when a
+        transformation of the architectural field leaves some
+        structurally significant property unchanged. The
+        transformation may act on the density field, the
+        participation field, the operator field, the parameters,
+        the initial conditions, or the geometric objects. The
+        invariant property may be the motif vocabulary, the law
+        structure, the geometric topology, the causal graph, or
+        the information processing pipeline.
+
+  (iii) EQUIVALENCE CLASSIFICATION.  Symmetries define equivalence
+        classes: sets of states, parameter values, or PDE instances
+        that are architecturally indistinguishable. Two states are
+        equivalent if they share the same invariant properties under
+        the relevant symmetry transformation. Equivalence classes
+        partition the architecture's universe into groups of
+        structurally identical configurations.
+
+Architectural symmetry differs from conservation laws and PDE
+invariants in a fundamental way:
+
+  CONSERVATION LAWS describe quantities that are constant along
+  trajectories. The ED architecture has almost no conservation laws
+  (ED-Arch-06): it is purely dissipative, and nearly everything
+  changes.
+
+  PDE INVARIANTS describe properties of the equation itself (e.g.,
+  the equation is second-order, the equation is parabolic). These
+  are trivially invariant and do not constitute architectural
+  symmetries.
+
+  ARCHITECTURAL SYMMETRIES describe structural properties that are
+  preserved under non-trivial transformations. The architecture may
+  look different after a transformation (different parameter values,
+  different initial conditions, different functional forms), but
+  certain structural features remain the same. These preserved
+  features define the architecture's identity: what makes it ED
+  rather than some other dynamical system.
+
+Symmetry is the deepest structural property because it answers the
+question: what is the architecture, fundamentally? The answer is:
+the architecture is whatever is invariant under all admissible
+transformations. Everything else is detail.
+
+
+========================================================================
+2. SYMMETRIES OF THE ARCHITECTURAL FIELD
+========================================================================
+
+The architectural field (rho, v, F[rho]) admits five classes of
+transformations that leave significant structural properties
+invariant. These are the fundamental symmetries of the ED
+architecture.
+
+------------------------------------------------------------------------
+2.1 AMPLITUDE SCALING SYMMETRY
+------------------------------------------------------------------------
+
+Transformation: rho(x,t) -> rho* + lambda * (rho(x,t) - rho*) for
+a positive scaling factor lambda, with corresponding scaling of v
+and adjustment of the operator.
+
+Invariant property: the qualitative dynamics. For sufficiently small
+lambda (within the linear regime near equilibrium), the mode
+structure, convergence rates, cycle counts, and flow topology are
+unchanged. The system's behavior at amplitude A is qualitatively
+identical to its behavior at amplitude lambda*A, provided lambda*A
+does not trigger the Horizon (lambda*A < rho_max - rho*).
+
+Breaking condition: the Horizon. When lambda*A approaches rho_max -
+rho* = 50, the mobility collapse introduces nonlinear effects that
+break the scaling symmetry. The Horizon is the architectural boundary
+at which amplitude scaling symmetry fails.
+
+Evidence: ED-Phys-29 shows convergence rates that vary only modestly
+with amplitude (std/mean = 13-25% across 22 IC types at each
+cosmology), confirming approximate amplitude scaling symmetry in the
+linear regime. The Horizon activation at A >= 40 (D=0) marks the
+symmetry's breakdown.
+
+Domain of validity: rho* - rho_max < lambda*(rho_0 - rho*) <
+rho_max - rho*, where rho_0 is the initial condition's peak
+density. Within this domain, the architecture's motif vocabulary,
+law structure, and geometric topology are all invariant.
+
+------------------------------------------------------------------------
+2.2 SPATIAL TRANSLATION SYMMETRY
+------------------------------------------------------------------------
+
+Transformation: rho(x,t) -> rho(x + a, t) for any shift a, with
+corresponding shift of v(x,t) -> v(x + a, t).
+
+Invariant property: the full dynamics. Under periodic boundary
+conditions (as used in all ED-Phys experiments), the PDE is exactly
+translation-invariant. A Gaussian centered at x=0.3L produces
+identical dynamics (in a shifted frame) to a Gaussian centered at
+x=0.7L.
+
+Breaking condition: none, within the periodic domain. Spatial
+translation is an exact symmetry. It is the only exact continuous
+symmetry of the ED architecture (apart from trivial identity
+transformations).
+
+Significance: spatial translation symmetry means the architecture
+treats all spatial positions equally. There is no preferred location.
+The density field's structure (peaks, troughs, gradients) is
+meaningful, but its absolute position in the domain is not. This
+is the architectural expression of spatial homogeneity: the rules
+of becoming are the same everywhere.
+
+------------------------------------------------------------------------
+2.3 MULTIPLICATIVE CHANNEL SYMMETRY
+------------------------------------------------------------------------
+
+Transformation: the simultaneous multiplicative modification of
+the architectural field's components:
+
+  M(rho) -> M(rho) * g_M(rho)    (mobility rescaling)
+  P(rho) -> P(rho) * g_P(rho)    (penalty rescaling)
+  v_update -> v_update * g_v(rho) (participation rescaling)
+
+where g_M, g_P, g_v are smooth, positive functions.
+
+Invariant property: the complete motif vocabulary, the complete law
+structure, the geometric topology, the causal graph, and the
+information processing pipeline. All eight motifs survive. All nine
+laws hold. All geometric objects retain their qualitative character.
+The causal pathways are preserved. The information processing stages
+operate in the same sequence.
+
+Breaking condition: non-multiplicative (additive) modifications.
+Adding a term s(rho) to the v-equation (rather than multiplying by
+a factor) breaks the channel symmetry and distorts the dynamics
+(ED-Phys-27, 28: cycles jump from 1 to 8-9, amplitudes increase
+by 5.8-6.4x).
+
+Evidence: ED-Phys-25 (penalty variants): all multiplicative variants
+preserve n_cycles = 1, k3_max = 6.36, and boundary structure.
+ED-Phys-26 (mobility variants): all multiplicative variants preserve
+n_cycles = 1, k3_max = 6.44, undershoot within 3%, relaxation time
+within 4%. ED-Phys-28 (combined stress): simultaneous multiplicative
+perturbation of all three channels preserves all structural features.
+
+Significance: multiplicative channel symmetry is the architectural
+analog of gauge invariance. It defines the equivalence class of PDE
+instances that are architecturally identical despite having different
+functional forms. The specific choice of M(rho) = M0*(1-rho/rho_max)^2
+is one representative of this class; any other mobility with the same
+zero structure and positivity would produce the same architecture.
+
+------------------------------------------------------------------------
+2.4 SPECTRAL PHASE SYMMETRY UNDER TRIAD LOCKING
+------------------------------------------------------------------------
+
+Transformation: relabeling of the initial condition's Fourier phase
+distribution. Replacing rho(x,0) = rho* + sum_k a_k*sin(k*pi*x/L +
+phi_k) with the same sum at different phases phi_k.
+
+Invariant property: the amplitude dynamics. The reduced coordinates
+(rho_peak, v_peak) evolve identically regardless of the initial
+phases phi_k, because the phase-space projection onto (rho_peak,
+v_peak) is insensitive to the spatial location of the density peak.
+
+Breaking condition: the Triad coupling has a weak phase dependence
+(the M'|nabla(rho)|^2 term depends on the relative phases between
+modes). However, since the Triad's output is enslaved to k=1, the
+phase dependence affects the spatial shape of the k=3 harmonic but
+not its amplitude. The amplitude dynamics are phase-invariant.
+
+Evidence: ED-Phys-29 shows that Gaussians, sines, and composites
+(which differ primarily in phase structure) converge to the same
+manifold with similar convergence rates. ED-Phys-30 confirms that
+probes with different spatial symmetries (pure density, pure
+velocity, mixed, orthogonal) all reach the same 1D manifold.
+
+Significance: spectral phase symmetry means the architecture cares
+about HOW MUCH modal content exists (amplitudes) but not WHERE it
+is located in space (phases). This is a consequence of the reduction
+to (rho_peak, v_peak) coordinates: the peak value integrates over
+all phases.
+
+------------------------------------------------------------------------
+2.5 TEMPORAL REPARAMETERIZATION SYMMETRY UNDER DAMPING
+------------------------------------------------------------------------
+
+Transformation: tau -> c*tau, zeta -> c*zeta for a positive constant
+c. This rescales the participation time scale and damping
+simultaneously.
+
+Invariant property: the damping ratio zeta/tau, which controls the
+Memory Loop's exponential decay rate, is invariant under this
+transformation. The dynamics are approximately invariant when the
+participation dynamics are much faster than the spatial dynamics
+(tau*lambda_1 << 1).
+
+Breaking condition: when tau becomes comparable to the spatial
+relaxation time 1/lambda_1, the participation dynamics can no longer
+be treated as fast, and the temporal reparameterization symmetry
+breaks. ED-Phys-31 shows that tau has < 5% effect on convergence
+rates, confirming that the symmetry holds approximately across the
+tested range (tau = 0.5 to 2.0).
+
+Evidence: ED-Phys-31 per-tau statistics: mean lambda = 0.035, 0.034,
+0.034 at tau = 0.5, 1.0, 2.0 respectively. Mean cycles = 4.76,
+4.73, 4.96. The near-invariance confirms approximate temporal
+reparameterization symmetry.
+
+Significance: this symmetry means the architecture's qualitative
+behavior depends on the ratio zeta/tau (how fast the Memory Loop
+forgets), not on tau and zeta independently. The effective parameter
+space is lower-dimensional than it appears: (D, zeta/tau) rather
+than (D, zeta, tau).
+
+
+========================================================================
+3. SYMMETRY-MOTIF CORRESPONDENCE
+========================================================================
+
+Each motif has characteristic symmetry properties that define its
+geometric and dynamical character.
+
+------------------------------------------------------------------------
+THE SADDLE: SIGN-INVERSION SYMMETRY OF GRADIENTS
+------------------------------------------------------------------------
+
+The Saddle possesses a discrete sign-inversion symmetry. At a density
+peak, the gradient field nabla(rho) is antisymmetric about the peak
+location: nabla(rho)(x_peak + delta) = -nabla(rho)(x_peak - delta)
+for small delta. The curvature nabla^2(rho) is symmetric
+(even function about the peak).
+
+This symmetry means the Saddle routes information symmetrically:
+the left and right flanks of the peak receive equal and opposite
+gradient influence. The Saddle's causal routing (ED-Arch-07) respects
+this parity: it demultiplexes information into two mirror-image
+streams.
+
+The sign-inversion symmetry is exact for symmetric initial conditions
+(Gaussians centered on the domain) and approximate for asymmetric
+ones (off-center Gaussians, composites). The penalty and diffusion
+terms preserve the symmetry; the Nonlinear Triad can break it
+slightly through the density dependence of M'(rho).
+
+------------------------------------------------------------------------
+THE SPIRAL: ROTATIONAL SYMMETRY IN PHASE SPACE
+------------------------------------------------------------------------
+
+The Spiral possesses an approximate continuous rotational symmetry
+in the (rho_peak, v_peak) phase plane. Near the Attractor Point,
+the linearized dynamics produce a rotation (from the complex
+eigenvalues) combined with a contraction (from the negative real
+part). The rotation component is a continuous symmetry: the
+spiral's shape is approximately invariant under rotation about the
+Attractor Point.
+
+The rotational symmetry is exact in the linear regime (near
+equilibrium) and approximate in the nonlinear regime (far from
+equilibrium). The nonlinear terms (mobility dependence, penalty
+saturation) introduce deviations from perfect rotational symmetry,
+creating a spiral that is not exactly self-similar under rotation.
+
+The rotation angle per unit time is omega = Im(lambda), where lambda
+is the dominant eigenvalue of the damping tensor. The contraction
+rate per unit time is sigma = -Re(lambda). The spiral's self-
+similarity parameter is sigma/omega: the ratio of contraction to
+rotation.
+
+------------------------------------------------------------------------
+THE HORIZON: SATURATION SYMMETRY
+------------------------------------------------------------------------
+
+The Horizon possesses a saturation symmetry: all density values near
+rho_max are treated approximately equally by the mobility collapse.
+Whether rho = 0.95*rho_max or rho = 0.99*rho_max, the mobility is
+extremely small and the diffusive dynamics are effectively frozen.
+The Horizon does not distinguish between different high-density
+states; it treats them all as "saturated."
+
+This saturation symmetry is the informational equivalent of
+quantization: the continuous range of density values near rho_max
+is collapsed into a single effective state ("at the Horizon"). The
+architecture loses the ability to distinguish between different
+high-density configurations, creating an information bottleneck.
+
+------------------------------------------------------------------------
+THE MANIFOLD: REPARAMETERIZATION SYMMETRY ALONG THE CURVE
+------------------------------------------------------------------------
+
+The Manifold possesses a reparameterization symmetry: the dynamics
+along the manifold curve are invariant under reparameterization of
+the curve's coordinate. Whether the manifold is parameterized by
+time t, by the k=1 amplitude a_1, by the distance to the attractor,
+or by the total energy E, the trajectory is the same curve in phase
+space.
+
+This symmetry means the manifold's geometric shape is an intrinsic
+property, independent of how it is traversed. The manifold curve
+is defined by the relationship between rho_peak and v_peak, not by
+the speed at which the system moves along it. Different parameter
+values (different D, zeta, tau) may change the traversal speed but
+not the curve's shape (in the linear regime near equilibrium).
+
+------------------------------------------------------------------------
+THE BOUNDARY: LINEAR SYMMETRY IN (D, ZETA)
+------------------------------------------------------------------------
+
+The Boundary possesses a linear symmetry: it is a straight line (or
+plane) in the (D, zeta) parameter space, with equation D + 2*zeta = 1.
+This linearity means the Boundary is invariant under any affine
+transformation that preserves the linear combination D + 2*zeta.
+
+The linear symmetry reflects the fact that the Critical Damping
+Boundary arises from the linearized dynamics, where the effective
+damping is a linear function of D and zeta. Nonlinear effects near
+the Boundary create a narrow transition zone but do not bend the
+Boundary itself.
+
+------------------------------------------------------------------------
+THE MEMORY LOOP: GAIN-SCALING SYMMETRY
+------------------------------------------------------------------------
+
+The Memory Loop possesses a gain-scaling symmetry: multiplying the
+loop gain H/tau by a constant c while simultaneously dividing zeta
+by c leaves the damping ratio unchanged and preserves the
+oscillatory character. The Memory Loop's qualitative behavior depends
+on the balance between gain and damping, not on their individual
+values.
+
+This symmetry is the architectural basis of the temporal
+reparameterization symmetry (Section 2.5): the loop's behavior
+depends on ratios, not absolutes.
+
+------------------------------------------------------------------------
+THE DISSIPATOR: PARABOLIC SCALING SYMMETRY
+------------------------------------------------------------------------
+
+The Dissipator possesses a parabolic scaling symmetry: the diffusion
+equation drho/dt = D*F[rho] is invariant under the parabolic
+rescaling x -> lambda*x, t -> lambda^2*t. This is the standard
+scaling symmetry of diffusion equations and reflects the diffusive
+character of the D-channel.
+
+The parabolic scaling means that doubling the spatial domain length
+quadruples the relaxation time. This scaling is broken by the
+penalty (which introduces a length scale through rho*) and by the
+domain's finite size (which quantizes the Fourier modes). But it
+holds approximately for the spatial dynamics within the domain.
+
+------------------------------------------------------------------------
+THE NONLINEAR TRIAD: HARMONIC PERMUTATION SYMMETRY
+------------------------------------------------------------------------
+
+The Nonlinear Triad possesses a restricted harmonic symmetry: the
+k=3 output amplitude is invariant under permutations of the
+intermediate coupling steps. Whether the M'|nabla(rho)|^2 term
+generates k=3 through the path k=1 * k=1 -> k=2 -> k=3 or through
+k=1 * k=1 -> k=0 -> k=3, the final k=3 amplitude is the same.
+
+This permutation symmetry of the intermediate steps is a consequence
+of the algebraic structure of the bilinear coupling. The final
+harmonic output depends on the total coupling integral, not on the
+specific sequence of partial products. This is why the k=3 amplitude
+is so robust (< 0.01% variation): it is protected by both the
+multiplicative channel symmetry and the Triad's internal permutation
+symmetry.
+
+
+========================================================================
+4. SYMMETRY-LAW CORRESPONDENCE
+========================================================================
+
+Each architectural law can be understood as the expression of a
+symmetry or the consequence of a symmetry's properties.
+
+------------------------------------------------------------------------
+UNIQUE ATTRACTION -> GLOBAL CONTRACTION SYMMETRY
+------------------------------------------------------------------------
+
+The Law of Unique Attraction expresses a contraction symmetry: the
+architecture contracts phase-space volume at every point, at every
+time, for every state. The contraction is global (no region of state
+space expands) and uniform in sign (always contracting, never
+expanding).
+
+The contraction symmetry is the flow-theoretic statement that the
+Jacobian's trace (the divergence of the flow field) is everywhere
+negative. This is a symmetry in the sense that it is invariant under
+all admissible transformations: multiplicative perturbations, IC
+changes, parameter variations. The contraction never reverses.
+
+------------------------------------------------------------------------
+ONE-DIMENSIONAL RELAXATION -> DIMENSIONAL REDUCTION SYMMETRY
+------------------------------------------------------------------------
+
+The Law of One-Dimensional Relaxation expresses a dimensional
+reduction symmetry: the infinite-dimensional state space is mapped
+to a one-dimensional manifold by the dynamics, and this mapping is
+invariant under changes in initial conditions, parameters (within
+each cosmological regime), and multiplicative perturbations.
+
+The symmetry is that the manifold's dimension (1) is invariant.
+Not its shape, not its embedding, not its parameterization — just
+its dimension. This topological invariant is the most robust
+symmetry in the architecture: it holds in 64/66 runs (ED-Phys-29)
+and 48/48 runs (ED-Phys-30).
+
+------------------------------------------------------------------------
+PROPORTIONAL STABILITY -> MULTIPLICATIVE INVARIANCE CLASS
+------------------------------------------------------------------------
+
+The Law of Proportional Stability IS a symmetry statement: the
+architecture is invariant under the multiplicative transformation
+group. This group consists of all transformations that rescale M, P,
+and the v-coupling by smooth, positive, density-dependent factors.
+
+The invariance class is the orbit of the canonical PDE under this
+transformation group. Every PDE in the orbit has the same motifs,
+laws, geometry, causality, and information processing. The orbit
+is the architecture's equivalence class under multiplicative
+symmetry.
+
+------------------------------------------------------------------------
+CRITICAL DAMPING BOUNDARY -> LINEAR DISCRIMINANT SYMMETRY
+------------------------------------------------------------------------
+
+The Law of Critical Damping Boundary expresses the symmetry of a
+linear discriminant. The boundary D + 2*zeta = 1 is a linear
+function of the parameters, and it divides parameter space into
+exactly two regions. The linear structure is invariant: no
+admissible perturbation can bend the boundary into a curve or
+create additional regions.
+
+The discriminant's linearity is a symmetry of the damping tensor:
+the tensor's eigenvalue structure depends linearly on D and zeta
+(because both enter linearly into the 2x2 matrix). The quadratic
+terms (from the characteristic polynomial) produce the discriminant,
+but the discriminant's zero set is linear because the quadratic
+terms cancel along the critical curve.
+
+------------------------------------------------------------------------
+FINITE CAPACITY -> SATURATION SYMMETRY
+------------------------------------------------------------------------
+
+The Law of Finite Capacity expresses a saturation symmetry: all
+states with rho near rho_max are dynamically equivalent (all have
+M near zero, all are reflected by the penalty). The saturation
+symmetry collapses a continuous range of high-density states into
+a single effective state class.
+
+The saturation symmetry is a consequence of the mobility's
+quadratic vanishing: M = M0*(1 - rho/rho_max)^2 approaches zero
+smoothly, making all near-rho_max states indistinguishable from
+the dynamical perspective of the D-channel.
+
+------------------------------------------------------------------------
+HARMONIC PROTECTION -> INVARIANT TRIAD RATIOS
+------------------------------------------------------------------------
+
+The Law of Harmonic Protection expresses a spectral invariance: the
+k3/k1 amplitude ratio is fixed under all admissible transformations.
+This is a symmetry of the coupling tensor: the Triad's selection
+rules are algebraic (determined by the structure of M'*|nabla(rho)|^2),
+not parametric (not dependent on the values of alpha, gamma, M0,
+etc.).
+
+The invariant ratio is the architectural fingerprint: the one number
+that identifies the architecture across all parameter regimes, all
+initial conditions, and all multiplicative perturbation classes.
+
+------------------------------------------------------------------------
+MODAL HIERARCHY -> ORDERED SPECTRAL SYMMETRY
+------------------------------------------------------------------------
+
+The Law of Modal Hierarchy expresses an ordering symmetry: the decay
+rates are strictly ordered by k^2, and this ordering is invariant
+under all transformations that preserve the Laplacian's structure.
+No perturbation of M, P, or v can reverse the ordering between any
+two modes.
+
+The ordering symmetry means that the Fourier modes form a totally
+ordered set under the decay rate, and this ordering is a structural
+invariant. The k=1 mode is always the slowest, the k=2 mode is
+always the second slowest, and so on.
+
+------------------------------------------------------------------------
+TRANSIENT STRUCTURE -> IRREVERSIBLE SYMMETRY BREAKING
+------------------------------------------------------------------------
+
+The Law of Transient Structure expresses an asymmetry: time-reversal
+symmetry is broken. The forward dynamics (t increasing) always
+simplify the field. The backward dynamics (t decreasing) would
+complicate the field, regenerating structure from equilibrium. But
+the backward dynamics do not occur, because the architecture's
+dissipative structure makes them non-physical.
+
+The irreversible symmetry breaking is the deepest asymmetry in the
+architecture. It is the architectural expression of the second law:
+structural complexity cannot increase. This asymmetry is not a
+property of the equations (which could in principle be run backward)
+but of the architecture (which has no mechanism for generating
+structure from equilibrium).
+
+
+========================================================================
+5. GEOMETRIC SYMMETRIES
+========================================================================
+
+The geometric objects of ED-Arch-04 possess specific symmetries that
+reflect the architecture's structural invariances.
+
+------------------------------------------------------------------------
+SPIRAL SHEET: ROTATIONAL + RADIAL SCALING SYMMETRY
+------------------------------------------------------------------------
+
+The Spiral Sheet has an approximate logarithmic spiral symmetry:
+it is approximately invariant under the combined transformation of
+rotation by angle theta and radial scaling by exp(-sigma*theta/omega),
+where sigma is the contraction rate and omega is the rotation
+frequency.
+
+This combined symmetry means the Spiral Sheet is approximately
+self-similar: a magnified view of the outer revolutions looks like
+the inner revolutions (in the linear regime). The self-similarity
+breaks down near the nonlinear regime (large amplitudes) where
+mobility modulation and penalty saturation distort the spiral.
+
+The Spiral Sheet's symmetry group is the one-parameter group of
+log-spiral transformations, parameterized by the rotation angle.
+This is a continuous symmetry that reflects the phase-space flow's
+rotational character.
+
+------------------------------------------------------------------------
+MONOTONIC CONE: CONICAL SCALING SYMMETRY
+------------------------------------------------------------------------
+
+The Monotonic Cone has an approximate conical scaling symmetry: it
+is approximately invariant under radial scaling from the Attractor
+Point. Trajectories at different initial amplitudes follow
+geometrically similar paths (the same cone with different radii).
+
+The conical scaling is exact in the linear regime and breaks down
+at large amplitudes where the mobility's density dependence creates
+curvature in the cone's surface. At (D=1, zeta=1), the curvature
+is only 10.6 (ED-Phys-32), confirming near-perfect conical symmetry.
+
+------------------------------------------------------------------------
+HORIZON SURFACE: REFLECTIVE SYMMETRY
+------------------------------------------------------------------------
+
+The Horizon Surface has a reflective symmetry in the dynamical
+sense: trajectories approaching the surface are reflected back. The
+reflection is not geometrically specular (the angle of incidence
+does not equal the angle of reflection in phase space), but it
+possesses a topological reflection symmetry: every trajectory that
+reaches the Horizon returns from it. No trajectory crosses through.
+
+The Horizon Surface is the only geometric object with reflective
+symmetry. All other objects are either traversed (Manifold, Spiral
+Sheet, Monotonic Cone) or act as boundaries in parameter space
+(Boundary Surface).
+
+------------------------------------------------------------------------
+BOUNDARY SURFACE: PLANAR LINEAR SYMMETRY
+------------------------------------------------------------------------
+
+The Boundary Surface D + 2*zeta = 1 is a plane (or line in 2D
+parameter space) with the full symmetry of a linear subspace:
+invariant under translations along the plane and under reflections
+within the plane.
+
+The planar symmetry is exact, not approximate. The Boundary does
+not curve, warp, or deform under any tested conditions. Its linearity
+is a structural consequence of the damping tensor's linear dependence
+on D and zeta.
+
+The Boundary Surface is the most symmetric geometric object in the
+architecture: it has the maximal symmetry possible for a codimension-1
+object in a linear space.
+
+------------------------------------------------------------------------
+MODAL FUNNEL: NESTED ELLIPSOIDAL SYMMETRY
+------------------------------------------------------------------------
+
+The Modal Funnel, viewed in modal amplitude space, has the symmetry
+of nested, axis-aligned ellipsoids. At each time t, the accessible
+region of modal space is an ellipsoid with semi-axes proportional to
+exp(-k^2*lambda*t) along the k-th axis.
+
+The ellipsoidal symmetry is the symmetry of the linearized dynamics:
+each mode decays independently at its own rate, creating ellipsoidal
+contraction with different rates along different axes. The nonlinear
+Triad coupling slightly distorts the ellipsoids by introducing
+correlations between the k=1 and k=3 axes, but the distortion is
+small.
+
+------------------------------------------------------------------------
+TRIAD LOCUS: FLANK-REFLECTION SYMMETRY
+------------------------------------------------------------------------
+
+The Triad Locus, located on the flanks of density peaks, has an
+approximate reflection symmetry about the peak center: the
+M'|nabla(rho)|^2 coupling has similar magnitude on both flanks
+(left and right) of a symmetric peak.
+
+This flank-reflection symmetry is a direct consequence of the
+Saddle's sign-inversion symmetry (nabla(rho) is antisymmetric,
+but |nabla(rho)|^2 is symmetric). The Triad's activity is
+symmetric about the Saddle point, even though the gradient itself
+is antisymmetric.
+
+
+========================================================================
+6. SYMMETRY BREAKING
+========================================================================
+
+The ED architecture is not a symmetric system. It is a symmetry-
+breaking system: it starts with high symmetry (the initial condition
+may have many symmetries) and systematically breaks symmetry as it
+evolves toward the unique, maximally symmetric equilibrium.
+
+This statement requires careful parsing: the equilibrium is maximally
+symmetric (rho = rho* everywhere, v = 0 everywhere, with full
+translational, rotational, and reflective symmetry). But the process
+of reaching equilibrium involves breaking the symmetries of the
+transient states. The architecture breaks the symmetries of the
+non-equilibrium dynamics while preserving the symmetries of the
+equilibrium state.
+
+------------------------------------------------------------------------
+6.1 DISSIPATION BREAKS TIME-REVERSAL SYMMETRY
+------------------------------------------------------------------------
+
+The three dissipation channels (D, zeta, P) are all irreversible.
+The diffusion operator smooths gradients (it cannot sharpen them).
+The penalty pulls density toward rho* (it cannot push it away). The
+damping term drains v (it cannot amplify it). None of these
+operations can be inverted by the dynamics.
+
+The time-reversal asymmetry is absolute: there is no parameter
+regime, no initial condition, and no perturbation class that makes
+the dynamics reversible. The architecture is fundamentally
+irreversible.
+
+This is the most important symmetry breaking in the architecture. It
+is the source of the energetic arrow (ED-Arch-06), the causal arrow
+(ED-Arch-07), and the information arrow (ED-Arch-08). All three
+arrows point in the direction of broken time-reversal symmetry.
+
+------------------------------------------------------------------------
+6.2 PENALTY BREAKS TRANSLATIONAL SYMMETRY IN DENSITY
+------------------------------------------------------------------------
+
+Without the penalty, the diffusion equation d(rho)/dt = div(M*nabla(rho))
+would be invariant under the transformation rho -> rho + c for any
+constant c (because nabla(rho + c) = nabla(rho)). The penalty
+P_SY2(rho) breaks this translational symmetry by singling out
+rho = rho* as the preferred density value.
+
+The symmetry breaking creates the Attractor Point: without the
+penalty, the system would relax to any homogeneous state (whatever
+the initial mean density is). With the penalty, it relaxes to a
+specific homogeneous state (rho = rho*). The penalty converts a
+continuous family of equilibria into a unique equilibrium.
+
+------------------------------------------------------------------------
+6.3 MOBILITY COLLAPSE BREAKS AMPLITUDE SCALING SYMMETRY
+------------------------------------------------------------------------
+
+The amplitude scaling symmetry (Section 2.1) holds for small
+deviations from rho* but breaks when rho approaches rho_max. The
+mobility function M(rho) = M0*(1 - rho/rho_max)^2 introduces a
+characteristic density scale (rho_max) that distinguishes large
+amplitudes from small ones.
+
+The symmetry breaking creates the Horizon: without the mobility
+collapse, there would be no upper bound on density, no kinetic
+barrier, and no saturation. With the mobility collapse, high-
+amplitude states are qualitatively different from low-amplitude
+states (they encounter the Horizon).
+
+------------------------------------------------------------------------
+6.4 PARTICIPATION DAMPING BREAKS OSCILLATORY SYMMETRY
+------------------------------------------------------------------------
+
+In the limit zeta -> 0, the participation field v would be an
+undamped integrator of F[rho], and the coupled system would oscillate
+perpetually. The damping term zeta*v breaks this perpetual
+oscillatory symmetry by introducing a preferred direction (decay)
+into the v-dynamics.
+
+The symmetry breaking creates the Critical Damping Boundary: without
+damping, there would be no boundary — the system would always spiral.
+With damping, the spiral regime has a finite extent in parameter
+space, bounded by the D + 2*zeta = 1 surface.
+
+------------------------------------------------------------------------
+6.5 MODAL HIERARCHY BREAKS SPECTRAL PERMUTATION SYMMETRY
+------------------------------------------------------------------------
+
+If all Fourier modes decayed at the same rate, the modes would be
+interchangeable (permutation symmetric). The k^2 decay hierarchy
+breaks this permutation symmetry by assigning each mode a unique
+decay rate. The k=1 mode is distinguished (slowest), the k=2 mode
+is next, and so on.
+
+The symmetry breaking creates the Modal Funnel: without the spectral
+hierarchy, there would be no preferential dimensional reduction (all
+modes would persist equally). With the hierarchy, high-k modes are
+selectively erased, creating the funnel geometry and the 1D manifold.
+
+------------------------------------------------------------------------
+6.6 ED AS A SYMMETRY-BREAKING ARCHITECTURE
+------------------------------------------------------------------------
+
+The pattern of symmetry breaking defines the ED architecture's
+character:
+
+  DISSIPATION  breaks  TIME-REVERSAL  ->  creates the ARROWS
+  PENALTY      breaks  DENSITY TRANSLATION  ->  creates the ATTRACTOR
+  MOBILITY     breaks  AMPLITUDE SCALING  ->  creates the HORIZON
+  DAMPING      breaks  OSCILLATORY PERSISTENCE  ->  creates the BOUNDARY
+  LAPLACIAN    breaks  SPECTRAL PERMUTATION  ->  creates the HIERARCHY
+
+Each symmetry breaking removes a freedom and introduces a constraint.
+The cumulative effect of all five symmetry breakings is the full
+architectural structure: a convergent, directed, bounded, spectrally
+ordered, topologically partitioned dynamical system.
+
+The architecture is thus defined by what it breaks as much as by what
+it preserves. The preserved symmetries (spatial translation,
+multiplicative invariance, spectral phase invariance, temporal
+reparameterization) define what the architecture IS. The broken
+symmetries (time-reversal, density translation, amplitude scaling,
+oscillatory persistence, spectral permutation) define what the
+architecture DOES.
+
+
+========================================================================
+7. EQUIVALENCE CLASSES
+========================================================================
+
+The symmetries of the ED architecture define equivalence classes:
+sets of states, parameters, or PDE instances that are architecturally
+indistinguishable under the relevant symmetry.
+
+------------------------------------------------------------------------
+7.1 MULTIPLICATIVE-EQUIVALENT PDES
+------------------------------------------------------------------------
+
+Definition: Two PDE instances are multiplicative-equivalent if one
+can be obtained from the other by multiplicative rescaling of M, P,
+and the v-coupling.
+
+Members: all PDE instances with the same zero structure of M (vanishing
+at rho_max), the same zero structure of P (vanishing at rho*), and
+the same coupling topology (F drives v, v feeds back to rho).
+
+Invariant properties: the full motif vocabulary, the full law
+structure, the geometric topology, the causal graph, the information
+processing pipeline.
+
+Size: infinite (any smooth positive function g_M, g_P, g_v defines
+a new member).
+
+Significance: this is the architecture's defining equivalence class.
+It contains every PDE instance that "is ED" in the architectural
+sense. The canonical PDE (with specific M0, alpha, gamma, rho_max,
+rho*, rho_0) is one representative. Any other representative has
+the same architecture.
+
+------------------------------------------------------------------------
+7.2 IC-EQUIVALENT STATES (SAME MANIFOLD COORDINATE)
+------------------------------------------------------------------------
+
+Definition: Two initial conditions are IC-equivalent if they produce
+the same point on the 1D manifold after the Modal Funnel has
+collapsed the higher modes.
+
+Members: all initial conditions with the same k=1 mode projection
+(integral of rho(x,0) * sin(pi*x/L) dx) and the same energy
+(V_P + V_M).
+
+Invariant properties: the late-time trajectory, the convergence
+rate, the cycle count, the flow type.
+
+Size: very large. At each manifold point, the set of IC-equivalent
+states includes all density profiles with the same k=1 projection
+but different high-k content. For N_x = 128, this is approximately
+a 63-dimensional family.
+
+Significance: this class explains why diverse initial conditions
+produce similar dynamics. ED-Phys-29 confirms that 22 IC types
+converge to the same manifold with similar convergence rates.
+
+Evidence: convergence rate std/mean = 13% at D=0, 25% at D=0.5,
+5.7% at D=1.0 (ED-Phys-29). The residual variation reflects
+differences in manifold entry point (early-time effects of high-k
+content), not in late-time dynamics.
+
+------------------------------------------------------------------------
+7.3 SPECTRALLY-EQUIVALENT STATES (SAME k=1 AMPLITUDE)
+------------------------------------------------------------------------
+
+Definition: Two field states at time t are spectrally equivalent if
+they have the same k=1 amplitude and are both on the 1D manifold.
+
+Members: at any given manifold point, there is exactly one spectrally-
+equivalent state (the manifold is 1D, so the k=1 amplitude uniquely
+determines the position). This is a trivial equivalence class (each
+class has one member), confirming that k=1 is a complete coordinate
+on the manifold.
+
+Significance: spectral equivalence confirms the Law of One-Dimensional
+Relaxation: on the manifold, one number (the k=1 amplitude) contains
+all the system's dynamical information. Two states with the same k=1
+amplitude are on the same manifold point and have identical future
+evolution.
+
+------------------------------------------------------------------------
+7.4 ENERGETICALLY-EQUIVALENT STATES (SAME TOTAL ENERGY E)
+------------------------------------------------------------------------
+
+Definition: Two field states are energetically equivalent if they
+have the same total architectural energy E = V_P + V_M + V_v.
+
+Members: at each energy level E, the set of energetically-equivalent
+states is a level set (iso-energy surface) in the state space. This
+is a high-dimensional surface (approximately N/2 - 1 dimensional at
+early times, approximately 1-dimensional at late times when the
+system is on the manifold).
+
+Invariant properties: the total energy. NOT the trajectory, the
+mode content, or the flow type (two states with the same energy can
+have very different spatial structures).
+
+Significance: energetic equivalence is a coarse classification. It
+groups states by their distance from equilibrium (measured by E) but
+does not distinguish between different spatial configurations at
+the same distance. The iso-energy surfaces nest inside each other
+(E = 0 is the Attractor Point, E > 0 are increasingly large surfaces
+surrounding it), creating a foliation of state space by energy level.
+
+------------------------------------------------------------------------
+7.5 CAUSALLY-EQUIVALENT STATES (SAME INFLUENCE PATHWAYS)
+------------------------------------------------------------------------
+
+Definition: Two states are causally equivalent if they follow the
+same causal pathway type (spiral or monotonic) and pass through the
+same sequence of motifs.
+
+Members: all states in the spiral regime (D + 2*zeta < 1) form one
+causal equivalence class. All states in the monotonic regime
+(D + 2*zeta > 1) form another. Within the spiral class, states that
+encounter the Horizon form a subclass.
+
+Invariant properties: the causal graph topology (cyclic vs acyclic),
+the motif sequence, the dissipation channel priorities.
+
+Size: two main classes (spiral and monotonic), with one subclass
+(horizon-encountering within the spiral class).
+
+Significance: causal equivalence is the coarsest meaningful
+classification. It says: these states are processed through the
+same architectural pipeline, regardless of their specific values.
+The spiral and monotonic classes are the architecture's two
+fundamental processing modes.
+
+------------------------------------------------------------------------
+7.6 INFORMATIONALLY-EQUIVALENT STATES (SAME COMPRESSED REPRESENTATION)
+------------------------------------------------------------------------
+
+Definition: Two initial conditions are informationally equivalent if
+they produce the same compressed representation on the 1D manifold
+at the same energy level.
+
+Members: this class coincides with the IC-equivalent class (Section
+7.2) at late times. At early times, it is broader: two states are
+informationally equivalent even if they have different high-k content,
+provided their k=1 projections and energies are the same (because the
+high-k content will be erased).
+
+Invariant properties: the late-time trajectory, the manifold
+coordinate, the total energy, the convergence rate, the cycle count.
+
+Significance: informational equivalence is the architectural
+definition of "same initial condition." Two ICs that are
+informationally equivalent are, from the architecture's perspective,
+the same input. The architecture cannot distinguish between them
+because it erases the distinguishing information (the high-k modes)
+before it matters for the late-time dynamics.
+
+------------------------------------------------------------------------
+SUMMARY: HOW EQUIVALENCE CLASSES PARTITION THE ARCHITECTURE
+------------------------------------------------------------------------
+
+The six equivalence classes form a hierarchy from coarse to fine:
+
+  COARSEST: Causal equivalence (2-3 classes: spiral, monotonic,
+    horizon-spiral). Determined by parameter regime.
+
+  INTERMEDIATE: Energetic equivalence (continuous family of iso-energy
+    surfaces). Determined by total deviation from equilibrium.
+
+  FINER: IC equivalence / Informational equivalence (large families
+    sharing the same k=1 projection). Determined by the dominant
+    mode's amplitude.
+
+  FINEST: Spectral equivalence (single states on the manifold).
+    Determined by the complete manifold coordinate.
+
+  TRANSVERSE: Multiplicative equivalence (infinite families of PDE
+    instances). Determined by the architecture's coupling topology.
+
+The hierarchy reveals the architecture's information structure: at
+the coarsest level, the architecture distinguishes only between
+spiral and monotonic processing modes. At the finest level, it
+distinguishes individual manifold positions. The progression from
+coarse to fine corresponds to the progression from parameter-space
+structure (coarse) to state-space structure (fine).
+
+
+========================================================================
+8. UNIFIED INTERPRETATION
+========================================================================
+
+WHAT THE ARCHITECTURE PRESERVES
+
+The ED architecture preserves a small but significant set of
+structural features:
+
+  SPATIAL HOMOGENEITY: the rules of becoming are the same at every
+  spatial point (translation symmetry).
+
+  MULTIPLICATIVE EQUIVALENCE: the architecture is the same for all
+  PDE instances in the multiplicative orbit (channel symmetry).
+
+  SPECTRAL PHASE INDEPENDENCE: the architecture treats phases as
+  irrelevant, caring only about amplitudes (phase symmetry).
+
+  TEMPORAL RATIO INVARIANCE: the architecture depends on zeta/tau,
+  not on zeta and tau independently (reparameterization symmetry).
+
+  MANIFOLD DIMENSION: the late-time dynamics are always one-
+  dimensional (dimensional reduction symmetry).
+
+  HARMONIC RATIO: the k3/k1 ratio is always the same (Triad symmetry).
+
+  ATTRACTOR UNIQUENESS: there is always exactly one equilibrium
+  (contraction symmetry).
+
+These preserved features ARE the architecture. They are what remains
+invariant across all tested variations of parameters, initial
+conditions, and functional forms. They are the irreducible identity
+of the ED cosmology PDE.
+
+WHAT THE ARCHITECTURE BREAKS
+
+The ED architecture breaks five symmetries, and each breaking creates
+a defining feature of the dynamics:
+
+  TIME-REVERSAL       ->  the ARROWS (energetic, causal, informational)
+  DENSITY TRANSLATION ->  the ATTRACTOR (unique equilibrium at rho*)
+  AMPLITUDE SCALING   ->  the HORIZON (saturation boundary)
+  OSCILLATORY FREEDOM ->  the BOUNDARY (spiral-monotonic transition)
+  SPECTRAL PERMUTATION -> the HIERARCHY (ordered modal decay)
+
+The broken symmetries generate the architecture's entire dynamical
+repertoire. Without the breakings, the system would be an unstructured
+diffusion with no preferred equilibrium, no saturation, no boundary,
+and no spectral ordering. The breakings ARE the structure.
+
+WHY ED DYNAMICS SIMPLIFY
+
+The symmetry perspective provides the deepest explanation for why
+ED dynamics always move from complex to simple. The initial state
+may have low symmetry (a complicated density profile with many modes
+and no spatial symmetry). The equilibrium state has high symmetry
+(spatially uniform, temporally static, maximally symmetric).
+
+The dynamics move from low symmetry to high symmetry because the
+architecture's broken symmetries (dissipation, penalty, mobility,
+damping, hierarchy) all act to RESTORE symmetry:
+
+  Dissipation restores time-reversal symmetry locally (by making
+  the system approach a static state where time direction is
+  irrelevant).
+
+  The penalty restores density translational symmetry (by making
+  all points approach the same density rho*).
+
+  Mobility collapse restores amplitude scaling symmetry at
+  equilibrium (by making the equilibrium state independent of
+  the initial amplitude).
+
+  Damping restores oscillatory symmetry (by making v = 0, where
+  the distinction between oscillatory and non-oscillatory is moot).
+
+  The hierarchy restores spectral permutation symmetry (by making
+  all mode amplitudes zero, where the ordering is trivial).
+
+The architecture BREAKS symmetry in its transient dynamics and
+RESTORES symmetry at its equilibrium. The process of becoming is
+the process of symmetry restoration: the system moves from the
+low-symmetry initial state to the high-symmetry equilibrium by
+breaking the symmetries of the non-equilibrium dynamics.
+
+HOW SYMMETRY ORGANIZES THE ENTIRE ONTOLOGY
+
+The symmetry perspective unifies all previous chapters:
+
+  MOTIFS are the characteristic patterns of broken symmetry. The
+  Spiral exists because oscillatory symmetry is only partially
+  broken (zeta is finite but subcritical). The Horizon exists
+  because amplitude scaling symmetry is broken at rho_max. The
+  Manifold exists because spectral permutation symmetry is broken
+  by the k^2 hierarchy.
+
+  LAWS are the invariant constraints under preserved symmetries.
+  Unique Attraction is the invariance of the equilibrium under all
+  transformations. Proportional Stability is the invariance of the
+  architecture under multiplicative transformations. Harmonic
+  Protection is the invariance of the Triad ratio.
+
+  GEOMETRY is the shape of the symmetry-breaking pattern. The
+  Spiral Sheet is the geometric form of partially broken oscillatory
+  symmetry. The Boundary Surface is the geometric locus of the
+  symmetry-breaking transition. The Modal Funnel is the geometric
+  shape of the spectral hierarchy's symmetry breaking.
+
+  FIELD THEORY is the dynamics of symmetry restoration. The field
+  evolves from low symmetry toward high symmetry through the
+  interplay of broken and preserved symmetries.
+
+  ENERGETICS is the cost of asymmetry. The architectural energy
+  E[rho, v] measures how far the system is from maximal symmetry.
+  Dissipation reduces E, restoring symmetry.
+
+  CAUSALITY is the pathway of symmetry restoration. The causal
+  channels carry the system from broken symmetry (non-equilibrium)
+  to restored symmetry (equilibrium).
+
+  INFORMATION is the measure of asymmetry. Architectural information
+  quantifies the structural content (asymmetry) of the field state.
+  Information erasure is symmetry restoration.
+
+Symmetry is therefore not just another perspective on the
+architecture. It is the organizing principle that connects all
+perspectives. The architecture's identity (what it preserves),
+its dynamics (what it breaks), and its fate (what it restores)
+are all symmetry statements. The ED cosmology PDE, viewed through
+the symmetry lens, is a system that takes asymmetric inputs,
+processes them through a sequence of symmetry-breaking motifs, and
+produces a maximally symmetric output, governed by invariant laws
+and constrained to a specific geometric and causal topology.
+
+The nine ED-Arch documents form a complete structural description:
+
+  ED-Arch-01 (Summary):       WHAT the architecture does.
+  ED-Arch-02 (Motifs):        WHAT PATTERNS recur.
+  ED-Arch-03 (Laws):          WHAT RULES govern.
+  ED-Arch-04 (Geometry):      WHAT SHAPES result.
+  ED-Arch-05 (Field Theory):  HOW the field is structured.
+  ED-Arch-06 (Energetics):    WHY the field evolves as it does.
+  ED-Arch-07 (Causality):     THROUGH WHAT PATHWAYS influence flows.
+  ED-Arch-08 (Information):   WHAT HAPPENS TO STRUCTURE as it flows.
+  ED-Arch-09 (Symmetry):      WHAT IS PRESERVED AND WHAT IS BROKEN.
+
+Symmetry completes the foundational layer by providing the
+meta-structural principle that organizes all others. The architecture
+is defined by its symmetries. Its dynamics are the interplay of
+preservation and breaking. And becoming — the ED ontology's central
+concept — is the process of a system moving from broken symmetry
+to restored symmetry, through motifs that are the characteristic
+patterns of that restoration.
+
+
+========================================================================
+END OF DOCUMENT
+========================================================================
+
+ED-Arch-09: Architectural Symmetry
+Series: ED Architecture
+Part 9 of the ED-Arch synthesis series

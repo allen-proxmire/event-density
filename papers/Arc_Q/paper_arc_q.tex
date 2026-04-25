@@ -1,0 +1,512 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\title{A UV-Finite Quantum Field Theory from Event-Density Primitives}
+
+\author{Allen Proxmire \and Copilot (AI collaborator)}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We show that the Event-Density (ED) primitive stack yields a \emph{structurally complete, UV-finite} quantum field framework when extended from single-chain dynamics (Arc~R) and chain-mass structure (Arc~M) to multi-chain field-level content (Arc~Q). Three headline structural theorems carry the load. \textbf{Theorem Q1} (GRH unconditional \textsc{forced}): the gauge connection $A_\mu$ forced by Stage~R.1 minimal coupling is the participation measure of a specific Case-P $(1/2, 1/2)$ gauge rule-type $\tau_g$ with gauge-invariant L3 interface, satisfying $\sigma_{\tau_g} = 0$ via the gauge-masslessness mechanism. All five GRH refinements (lightlike worldlines, gauge-quotient individuation, vertex-anchored commitment, non-Abelian extension, vacuum/particle status) close across Arc~Q sub-stages, promoting GRH to unconditional \textsc{forced} --- ED's first ``particle-class must exist'' prediction. \textbf{Theorem Q2} (canonical (anti-)commutation \textsc{forced}): the standard QFT commutation relations $\{a^\dagger_\tau, a^\dagger_\tau\} = 0$ (Case~R) and $[a^\dagger_\tau, a^\dagger_\tau] = 0$ (Case~P) are forced directly from the spin--statistics theorem (Arc~R) plus Primitive~10 individuation; second quantisation is derived, not postulated. \textbf{Theorem Q3} (UV-FIN \textsc{forced} at primitive level): Primitive~01 event-discreteness, Primitive~13 finite proper-time intervals, and Primitive~04 bounded bandwidth jointly guarantee primitive-level finiteness of all multi-chain participation integrals; renormalisation is \textsc{refuted} as a fundamental requirement (admissible only as continuum-approximation effective machinery), and the cosmological-constant divergence-form puzzle is structurally dissolved while $\Lambda$'s magnitude remains \textsc{inherited}. Supporting structural results include the \textsc{forced} U(1) gauge structure with non-Abelian extensions admissible, the Fierz-basis vertex catalogue with mass-like $\bar\Psi\Psi A^2$ vertices \textsc{refuted} under unbroken gauge, multiple admissible Higgs-like SSB mechanisms, the linear-algebra-forced existence of mixing matrices and CP-violating phases under multi-generation conditions, and lightlike worldlines for $\sigma = 0$ rule-types via the Stage~R.1 Casimir. Specific gauge group, coupling values, generation count, Higgs-mechanism choice, and $\Lambda$ magnitude all remain \textsc{inherited}. ED yields the \emph{form} of QFT structurally; numerical content is empirical.
+\end{abstract}
+
+\section{Introduction}
+
+Quantum field theory (QFT) is built on a layered set of independent postulates: canonical (anti-)commutation relations, gauge invariance as a fundamental symmetry principle, the Higgs mechanism for spontaneous symmetry breaking, renormalisation procedures for ultraviolet divergences, and a fixed gauge group $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ with specific matter content. The framework's empirical success is unparalleled, but its conceptual foundations involve substantial structural inputs not derived from a more fundamental ontology.
+
+The Event-Density (ED) program offers a structural alternative. Phase-1~\cite{phase1} derived non-relativistic single-particle quantum mechanics from $P_K = \sqrt{b_K}\,e^{i\pi_K}$ + four-band decomposition + commitment dynamics. Arc~R~\cite{arcr} extended this to the relativistic regime, deriving Klein--Gordon, the spin--statistics theorem, the Cl(3,1) Clifford-algebra frame, and the Dirac equation. Arc~M~\cite{arcm} addressed the chain-mass problem, establishing that ED forces the \emph{form} of mass content via the bandwidth-signature $\sigma_\tau$ but inherits all numerical mass values, ratios, and hierarchies as empirical content.
+
+Arc~Q, the subject of the present paper, completes the quantum sector by extending ED to the multi-chain, field-level, interaction-level QFT regime. Eight sub-stages address the major structural targets: gauge-group structure (Q.2), interaction vertices (Q.3), Higgs-like SSB (Q.4), radiative corrections (Q.5), generations and flavour (Q.6), second quantisation (Q.7), and vacuum structure (Q.8). The opening Q.1 evaluates the gauge-field-as-rule-type hypothesis (GRH).
+
+Three Arc~Q theorems extend the framework substantively:
+\begin{itemize}
+  \item \textbf{Theorem Q1 (GRH unconditional \textsc{forced}).} ED's first ``particle-class must exist'' prediction.
+  \item \textbf{Theorem Q2 (canonical (anti-)commutation \textsc{forced}).} Second quantisation derived from Arc~R spin--statistics + Primitive~10 individuation.
+  \item \textbf{Theorem Q3 (UV-FIN \textsc{forced} at primitive level).} ED is UV-complete without renormalisation; cosmological-constant divergence-form puzzle structurally dissolved.
+\end{itemize}
+
+UV-FIN is the genuinely novel structural prediction of Arc~Q. It reframes the long-standing UV-divergence problems of QFT as continuum-approximation artefacts rather than fundamental pathologies, with implications for the cosmological-constant problem and high-energy phenomenology near the primitive event-discreteness scale.
+
+The methodological framing established in Arc~M --- \emph{form \textsc{forced}, value \textsc{inherited}} --- extends to Arc~Q at greater scope. ED's primitive structure determines the \emph{form} of QFT (gauge structure, vertex catalogue, second quantisation, vacuum, UV behaviour) while inheriting numerical content (gauge group, couplings, masses, generations, Higgs parameters, $\Lambda$).
+
+\section{Background}
+
+\subsection{ED primitives relevant to QFT}
+
+\begin{itemize}
+  \item \textbf{Primitive 01 (micro-event):} discrete events on the 3+1-dimensional event manifold.
+  \item \textbf{Primitive 02 (chain):} worldlines $\gamma_K$.
+  \item \textbf{Primitive 04 (bandwidth):} four-band decomposition with bounded amplitudes per primitive event.
+  \item \textbf{Primitive 06 (four-gradient):} Lorentz covariance.
+  \item \textbf{Primitive 07 (rule-type):} levers L1--L4.
+  \item \textbf{Primitive 10 (individuation):} threshold separating distinct chains.
+  \item \textbf{Primitive 11 (commitment):} discrete events along $\gamma_K$.
+  \item \textbf{Primitive 13 (relational timing):} proper time $\tau_K$.
+\end{itemize}
+
+\subsection{Rule-type ontology}
+
+Spin--statistics from Arc~R~\cite{arcr} connects L4 to L2 via $\eta = (-1)^{2s}$:
+\begin{itemize}
+  \item \textbf{Case R} ($\eta = -1$, half-integer spin, fermionic). Bilinear: $|\bar\Psi \Gamma_\tau \Psi|$.
+  \item \textbf{Case P} ($\eta = +1$, integer spin, bosonic). Bilinear: $|\Psi|^2$.
+\end{itemize}
+The \textbf{gauge rule-type} $\tau_g$ is a Case-P rule-type carrying the $(1/2, 1/2)$ Lorentz representation with gauge-invariant L3 interface.
+
+\subsection{Multi-chain field structure}
+
+The Phase-1 participation measure extends to multi-chain content via
+\begin{equation}
+\Phi_\tau(x) = \sum_{K \in \tau} P_{K,\tau}(x).
+\end{equation}
+This is the natural extension of Phase-1's coherent-sum to relativistic multi-rule-type content.
+
+\section{Arc Q Stage Q.0 --- Scoping}
+
+The Arc~Q opening memo~\cite{q0scope} frames eight structural targets (Q.1 through Q.8) and records an honest verdict prior of 40\% mixed / 30\% mostly-positive / 20\% Arc-M-style negative-dominant / 10\% surprise. Arc~Q closes in the \textbf{30\% mostly-positive quadrant}, with UV-FIN's promotion to \textsc{forced} constituting the closest thing to a structural surprise.
+
+\section{Arc Q Stage Q.1 --- GRH Evaluation}
+
+\subsection{GRH formal statement}
+
+The gauge-field-as-rule-type hypothesis posits that $A_\mu$ from Stage~R.1 minimal coupling is the participation measure of a specific rule-type $\tau_g$ satisfying:
+\begin{itemize}
+  \item \textbf{(GRH-1)} Case~P (bosonic, integer spin).
+  \item \textbf{(GRH-2)} $(1/2, 1/2)$ Lorentz representation (four-vector).
+  \item \textbf{(GRH-3)} L3 interface enforces local gauge invariance.
+  \item \textbf{(GRH-4)} $\sigma_{\tau_g} = 0$ via MR-P (gauge-masslessness, Arc~M~\cite{arcm}).
+\end{itemize}
+
+\subsection{Q.1 verdict}
+
+Stage~Q.1~\cite{q1grh} verdict: \textbf{CANDIDATE-STRONG REQUIRES REFINEMENT}. All four clauses primitive-compatible; no clause \textsc{refuted}. Five refinements identified for closure:
+\begin{itemize}
+  \item \textbf{R-1.} Lightlike-worldline reformulation.
+  \item \textbf{R-2.} Gauge-quotient individuation.
+  \item \textbf{R-3.} Vertex-anchored commitment.
+  \item \textbf{R-4.} Non-Abelian extension.
+  \item \textbf{R-5.} Vacuum/particle status.
+\end{itemize}
+
+Each refinement is closed across Q.2--Q.8.
+
+\section{Arc Q Stage Q.2 --- Gauge-Group Admissibility}
+
+\subsection{U(1) FORCED at primitive level}
+
+Stage~R.1's local-phase invariance forces the U(1) gauge structure with covariant derivative $D_\mu = \partial_\mu + (iq/\hbar) A_\mu$.
+
+\subsection{Non-Abelian extension admissible}
+
+Stage~Q.2~\cite{q2gauge} establishes that any compact Lie group with finite-dimensional adjoint is structurally admissible. \textbf{The specific Standard-Model gauge group $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ is not forced} --- confirmed \textsc{empirical}.
+
+\subsection{R-2 closure: gauge-quotient individuation}
+
+Stage~Q.2 closes R-2 via the \textbf{adjacency-equivalence-class construction}: individuation is defined on equivalence classes $[A_\mu]$ under gauge transformations.
+
+\subsection{CC-U1 (charge quantisation) CANDIDATE}
+
+A new Q.2 CANDIDATE: U(1) compactness $\Rightarrow$ wavefunction-phase periodicity in $2\pi$ $\Rightarrow$ charge quantisation. Plausible from Primitive~09; remains CANDIDATE.
+
+\section{Arc Q Stage Q.3 --- Vertex Catalogue}
+
+\subsection{Fierz-basis classification}
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Vertex type & Lorentz & Gauge & Admissibility \\
+\hline
+$\bar\Psi\gamma^\mu\Psi A_\mu$ & scalar & invariant & \textsc{forced} (R.1/R.3) \\
+$\bar\Psi\gamma^\mu\gamma^5\Psi A_\mu$ & scalar & invariant & ADMISSIBLE \\
+$\bar\Psi\sigma^{\mu\nu}\Psi F_{\mu\nu}$ & scalar & invariant & ADMISSIBLE (effective) \\
+$\bar\Psi\gamma^5\Psi \cdot$ pseudo-A & scalar & invariant & ADMISSIBLE \\
+$\bar\Psi\Psi A_\mu A^\mu$ & scalar & NOT invariant & \textsc{refuted} (unbroken gauge) \\
+\hline
+\end{tabular}
+\end{center}
+
+The \textsc{refuted} mass-like vertex becomes the structural target of Stage~Q.4 (Higgs SSB).
+
+\subsection{R-4 closure: non-Abelian minimal coupling}
+
+Stage~Q.3~\cite{q3vert} establishes that the gauge-covariant derivative
+\begin{equation}
+D_\mu \Psi = (\partial_\mu + ig A^a_\mu T^a) \Psi
+\end{equation}
+is the unique linear connection making $D_\mu \Psi$ transform covariantly under local SU(N), with $A^a_\mu$ transforming as
+\begin{equation}
+A^a_\mu \to A^a_\mu + \frac{1}{g}\partial_\mu \alpha^a - f^{abc} \alpha^b A^c_\mu.
+\end{equation}
+This closes R-4.
+
+\subsection{Non-Abelian self-couplings}
+
+The field strength
+\begin{equation}
+F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^c_\nu
+\end{equation}
+contains $f^{abc}$ commutator terms producing AAA + AAAA self-interactions. \textsc{forced} conditional on SU(N) admittance.
+
+\subsection{R-3 closure: vertex-anchored commitment}
+
+Stage~Q.3 closes R-3: each commitment event of $\tau_g$ occurs at an interaction vertex with at least one charged-matter rule-type. Between vertices, $\tau_g$ propagates lightlike with no commitment events.
+
+\subsection{Forbidden structures}
+
+\textsc{refuted}:
+\begin{itemize}
+  \item Gauge-non-invariant vertices under unbroken gauge.
+  \item Non-local vertices (Primitive~11 locality).
+  \item Lorentz-non-scalar combinations.
+  \item Anyonic-statistics vertices in 3+1D.
+\end{itemize}
+
+\section{Arc Q Stage Q.4 --- Higgs-Like SSB}
+
+\subsection{Five candidate mechanisms}
+
+Stage~Q.4~\cite{q4higgs}:
+\begin{itemize}
+  \item \textbf{H1 scalar-rule-type Higgs $\tau_H$:} ADMISSIBLE-CLEAN.
+  \item \textbf{H2 bandwidth-shift via spatially-patterned condensate:} CANDIDATE.
+  \item \textbf{H3 composite $\bar\Psi\Psi$ condensate:} ADMISSIBLE-EFFECTIVE.
+  \item \textbf{H4 gauge-fixing artefact:} \textsc{refuted}.
+  \item \textbf{H5 vacuum-anchored:} \textsc{refuted} as distinct (reduces to H1/H2).
+\end{itemize}
+
+\subsection{Notable structural finding: H2 in naive form fails}
+
+Arc~M's $\sigma_\tau$ master formula uses log-derivatives $\partial_\mu \ln b$, which are immune to uniform amplitude shifts $b \to \alpha b$. Therefore a uniform Higgs-VEV-like condensate alone cannot produce mass via H2 in naive form. H2 requires \textbf{spatially-patterned} condensate $\delta b(x)$. This is a non-trivial primitive-level constraint emerging from Arc~M~\cite{arcm}.
+
+\subsection{Verdict}
+
+ED admits multiple structurally-clean SSB routes; specific Higgs mechanism is \textsc{empirical} inheritance.
+
+\section{Arc Q Stage Q.5 --- Radiative Corrections}
+
+\subsection{Loop structure form-level admissible}
+
+Stage~Q.5~\cite{q5rad} establishes that loop-level QFT phenomena have primitive-level analogues via multi-chain commitment dynamics. Numerical coefficients are uniformly \textsc{inherited}.
+
+\subsection{Vacuum-polarisation transversality FORCED}
+
+GRH-3 forces $q_\mu \Pi^{\mu\nu}(q) = 0$ structurally.
+
+\subsection{Tree-level $g = 2$ preserved; only $\sigma^{\mu\nu}$ contributes to $a_\mu$}
+
+\textsc{forced}: only the tensor $\sigma^{\mu\nu}$ Fierz bilinear contributes to anomalous magnetic moment. Axial / pseudoscalar bilinears contribute only to electric dipole moment (CP-violating).
+
+\subsection{UV-FIN CANDIDATE opened}
+
+Stage~Q.5 opens UV-FIN: Primitive~01 event-discreteness suggests primitive-level multi-chain participation integrals are finite. Promoted to CANDIDATE-STRONG at Q.7; promoted to \textsc{forced} at Q.8.
+
+\section{Arc Q Stage Q.6 --- Generations and Mixing}
+
+\subsection{Six generation mechanisms evaluated}
+
+Stage~Q.6~\cite{q6gen}:
+\begin{itemize}
+  \item \textbf{G1 rule-type duplication:} ADMISSIBLE-CLEAN.
+  \item \textbf{G2 bandweight-pattern:} \textsc{refuted} (collapses to G1).
+  \item \textbf{G3 Fierz-class:} \textsc{refuted} (type not generation).
+  \item \textbf{G4 vacuum-anchored:} \textsc{refuted} as mass-differentiation; admissible-as-labelling only.
+  \item \textbf{G5 radiative splitting:} \textsc{refuted} phenomenologically.
+  \item \textbf{G6 no-generation null:} ADMISSIBLE default.
+\end{itemize}
+
+\textbf{Generation count = 3 is \textsc{refuted}-as-forced; confirmed \textsc{empirical}.}
+
+\subsection{Linear-algebra theorems for mixing and CP}
+
+Two structural existence claims survive:
+\begin{itemize}
+  \item \textbf{Mixing matrices \textsc{forced} to exist} under multi-generation + non-diagonal Yukawa (linear-algebra theorem).
+  \item \textbf{CP phases \textsc{forced} to exist} under complex Yukawa + $\geq 3$ generations.
+\end{itemize}
+
+Specific values \textsc{inherited}.
+
+\section{Arc Q Stages Q.7 \& Q.8 --- Second Quantisation and Vacuum Structure}
+
+\subsection{Multi-chain field structure}
+
+Stage~Q.7~\cite{q7q2} establishes
+\begin{equation}
+\Phi_\tau(x) = \sum_{K \in \tau} P_{K,\tau}(x) \qquad \text{\textsc{forced}}.
+\end{equation}
+The vacuum $|0\rangle_\tau$ is the no-commitment configuration. Multi-rule-type vacuum factorises:
+\begin{equation}
+|0\rangle_\mathrm{full} = \bigotimes_\tau |0\rangle_\tau.
+\end{equation}
+
+\subsection{Creation/annihilation events}
+
+Chain-creation and -annihilation events correspond to participation amplitudes crossing the Primitive~10 individuation threshold. These are the primitive-level realisations of QFT creation/annihilation operators, derived from Primitives~01 + 10 + 11.
+
+\subsection{Canonical (anti-)commutation FORCED}
+
+For Case-R, two chain-creation events at coincident points are forbidden by Primitive~10:
+\begin{equation}
+\{a^\dagger_\tau(x), a^\dagger_\tau(x')\}\big|_{x = x'} = 0 \qquad \text{(Case~R)}.
+\end{equation}
+For Case-P, coincidence is admissible:
+\begin{equation}
+[a^\dagger_\tau(x), a^\dagger_\tau(x')] = 0 \qquad \text{(Case~P)}.
+\end{equation}
+\textbf{\textsc{forced}.}
+
+\subsection{R-1 closure: lightlike worldlines for $\sigma = 0$}
+
+Stage~Q.7 closes R-1 via the dispersion-relation argument: $\sigma = 0 \Rightarrow$ Stage~R.1 Casimir $P^2 = 0 \Rightarrow$ null worldline. Lightlike-affine-parameter $\lambda$ replaces proper time. \textbf{R-1 \textsc{closed}.}
+
+\subsection{R-5 closure (Stage Q.8): vacuum/particle dual structure}
+
+Stage~Q.8~\cite{q8vac} closes R-5:
+\begin{itemize}
+  \item \textbf{Strict vacuum} $|0\rangle_\tau^\mathrm{strict}$: no committed chains.
+  \item \textbf{Effective vacuum} $|0\rangle_\tau^\mathrm{eff}$: includes transient $\tau$-participation in $b^\mathrm{env}$ of other rule-types.
+\end{itemize}
+Both well-defined at primitive level. Lorentz + gauge invariance preserved. \textbf{R-5 \textsc{closed}.}
+
+\subsection{GRH unconditional FORCED}
+
+With all five GRH refinements closed, GRH \textbf{promotes from CANDIDATE-STRONG to unconditional \textsc{forced}.} Back-flow to Arc~M~\cite{arcm}: F-M8 promotes from conditional to unconditional \textsc{forced} --- ED's first ``particle-class must exist'' prediction.
+
+\subsection{UV-FIN PROMOTED TO FORCED}
+
+Three-step argument:
+\begin{enumerate}
+  \item Each primitive-level configuration is finite (Primitives~01 + 04).
+  \item Finitely many configurations per region (Primitives~01 + 13).
+  \item Bounded total amplitude (Primitive~04 + flux-continuity).
+\end{enumerate}
+Therefore: any primitive-level multi-chain participation integral is finite. \textbf{Renormalisation \textsc{refuted} as fundamental requirement.} Cosmological-constant divergence-form structurally dissolved; magnitude \textsc{inherited}.
+
+\subsection{G4 final REFUTED; H5 reduces to H1/H2}
+
+\begin{itemize}
+  \item G4 \textsc{refuted} as mass-differentiation; admissible-as-labelling only.
+  \item H5 \textsc{refuted} as distinct mechanism; reduces to H1 or H2.
+\end{itemize}
+
+\section{Structural Theorems}
+
+\subsection{Theorem Q1 (GRH unconditional FORCED)}
+
+\begin{theorem}[GRH unconditional FORCED, Q1]
+The gauge connection $A_\mu$ forced by Stage~R.1 minimal coupling is the participation measure of a specific Case-P $(1/2, 1/2)$ gauge rule-type $\tau_g$ with gauge-invariant L3 interface, satisfying $\sigma_{\tau_g} = 0$ via the gauge-masslessness mechanism MR-P. All four GRH clauses are structurally \textsc{forced} at primitive level. The existence of at least one massless Case-P rule-type is therefore \textsc{forced} --- ED's first ``particle-class must exist'' prediction.
+\end{theorem}
+
+\begin{proof}[Sketch]
+GRH evaluation at Q.1 establishes CANDIDATE-STRONG with five refinements. Each closes:
+\begin{itemize}
+  \item \textbf{R-1} closed at Q.7 via $\sigma = 0 \Rightarrow P^2 = 0 \Rightarrow$ null worldline.
+  \item \textbf{R-2} closed at Q.2 via adjacency-equivalence-class on $[A_\mu]$.
+  \item \textbf{R-3} closed at Q.3 via Primitive~11 commitment-locality at vertices.
+  \item \textbf{R-4} closed at Q.3 via gauge-covariant-derivative uniqueness.
+  \item \textbf{R-5} closed at Q.8 via dual vacuum-particle structure.
+\end{itemize}
+With all five refinements closed, GRH promotes to unconditional \textsc{forced}. F-M8 back-flow promotion follows.
+\end{proof}
+
+\textbf{Dependencies on primitives.} Stage~R.1; Primitive~07 L3; Stage~R.2.2; R.2.5 spin--statistics; Arc~M MR-P; Primitives~01--13 jointly via the five refinement closures.
+
+\subsection{Theorem Q2 (Canonical (anti-)commutation FORCED)}
+
+\begin{theorem}[Canonical (anti-)commutation FORCED, Q2]
+The canonical (anti-)commutation relations of QFT,
+\begin{align}
+\{a^\dagger_\tau(x), a^\dagger_\tau(x')\}\big|_{x = x'} &= 0 \quad \text{(Case R)}, \\
+[a^\dagger_\tau(x), a^\dagger_\tau(x')]\big|_{x = x'} &= 0 \quad \text{(Case P)},
+\end{align}
+are \textsc{forced} at primitive level by Arc~R's spin--statistics theorem $\eta = (-1)^{2s}$ combined with Primitive~10 individuation. Second quantisation is derived, not postulated.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Define chain-creation events as participation-amplitude threshold-crossings (Primitive~10). The corresponding operator-level construction $a^\dagger_\tau(x)$ inherits two properties from Arc~R~\cite{arcr} R.2.5:
+
+(i) For Case R ($\eta = -1$, vanishing-on-coincidence), two chain-creation events at the same event point are excluded by Primitive~10.
+
+(ii) For Case P ($\eta = +1$, coincidence permitted), two chain-creation events at the same point are admissible.
+
+Vanishing-on-coincidence translates to anticommutation; coincidence-admissibility translates to commutation. These are the canonical QFT (anti-)commutation relations.
+\end{proof}
+
+\textbf{Dependencies on primitives.} Arc~R R.2.5 (spin--statistics); Primitive~10 (individuation); Primitive~01 (event-manifold structure); Primitive~11 (commitment events).
+
+\subsection{Theorem Q3 (UV-FIN FORCED at primitive level)}
+
+\begin{theorem}[UV-FIN FORCED, Q3]
+Primitive~01 event-discreteness, Primitive~13 finite proper-time intervals, and Primitive~04 bounded bandwidth jointly guarantee that all multi-chain participation integrals are finite at primitive level. UV divergences in continuum QFT are continuum-approximation artefacts. Renormalisation is \textsc{refuted} as a fundamental requirement; admissible only as continuum-approximation effective machinery. The cosmological-constant divergence-form puzzle is structurally dissolved while $\Lambda$'s magnitude remains \textsc{inherited}.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Consider an arbitrary multi-chain participation integral $\mathcal{A}$. In the continuum approximation:
+\begin{equation}
+\mathcal{A}_\mathrm{cont} = \int d^4 k_1\, d^4 k_2\, \cdots\, (\text{integrand}).
+\end{equation}
+In ED's primitive-level realisation:
+\begin{equation}
+\mathcal{A}_\mathrm{ED} = \sum_{\text{discrete configurations}} (\text{primitive-level amplitudes}).
+\end{equation}
+
+Three-step argument:
+\begin{enumerate}
+  \item Each summand is finite: a primitive-level configuration involves a finite number of micro-events (Primitive~01) with bounded amplitudes (Primitive~04).
+  \item Configuration count is finite per region: Primitive~01 discreteness + Primitive~13 finite intervals.
+  \item Total amplitude bounded: Primitive~04 conservation.
+\end{enumerate}
+
+Therefore $\mathcal{A}_\mathrm{ED}$ is finite for any finite spacetime region. UV divergences of the conventional form $\int d^4 k\, k^2 \to \infty$ \emph{do not arise structurally} --- they are artefacts of the continuum integral over-extending the primitive-level domain. The cosmological-constant naive QFT calculation $\Lambda \sim M_\mathrm{Planck}^4$ is artefactual; primitive-level $\Lambda$ is finite. Magnitude remains \textsc{inherited}.
+\end{proof}
+
+\textbf{Dependencies on primitives.} Primitive~01 (event-manifold discreteness); Primitive~04 (bounded bandwidth); Primitive~13 (finite proper-time intervals); Primitive~11 (commitment-event structure); Stage~Q.7 second-quantisation framework.
+
+\section{Discussion}
+
+\subsection{What Arc Q forces vs what it leaves empirical}
+
+\textbf{\textsc{forced} at primitive level (Arc~Q):} GRH (Theorem~Q1); canonical (anti-)commutation (Theorem~Q2); UV-FIN (Theorem~Q3); U(1) gauge structure; vector vertex; non-Abelian $D_\mu$ + AAA/AAAA conditional on SU(N); vertex locality + gauge-invariance filter; vacuum-polarisation transversality; default gauge masslessness; Goldstone absorption + photon survival under partial SSB; mixing matrices + CP phases existence; lightlike worldlines for $\sigma = 0$; multi-chain field structure; vacuum factorisation; effective-vacuum content; cosmological-$\Lambda$ admissible-as-finite; tree-level $g = 2$; only $\sigma^{\mu\nu}$ contributes to $a_\mu$.
+
+\textbf{\textsc{inherited} (not predicted):} specific gauge group; numerical couplings; charge quantisation pattern; specific Higgs mechanism + parameters; Yukawa values; generation count; CKM/PMNS elements; CP phase values; mass values, ratios, hierarchies; cosmological-$\Lambda$ magnitude; specific zero-point magnitudes; $\beta$-function coefficients.
+
+\textbf{\textsc{refuted} as forced:} SM gauge group as forced; mass-like $\bar\Psi\Psi A^2$ under unbroken gauge; non-local / non-Lorentz-scalar / anyonic vertices; specific Higgs mechanism forced; generation count = 3 forced; renormalisation as fundamental; specific $\Lambda$ value.
+
+\subsection{Why ED yields a UV-finite QFT}
+
+UV finiteness is not an additional primitive but a consequence of Primitives~01, 04, 13 jointly. Each primitive is independently motivated by Phase-1 structural requirements; their joint consequence is automatic UV finiteness. This is structurally cleaner than standard QFT renormalisation but does not predict numerical magnitudes --- the form of UV finiteness is FORCED, the values remain INHERITED.
+
+\subsection{Renormalisation as continuum-approximation artefact}
+
+Standard QFT renormalisation handles UV divergences arising from naive continuum integrals. Under UV-FIN, these divergences arise because the continuum integral over-extends the actual primitive-level domain. This does not invalidate renormalisation as a calculational tool; renormalisation is \textsc{refuted} only as a \emph{fundamental} requirement.
+
+\subsection{Implications for the cosmological constant}
+
+The cosmological-constant problem reframes under UV-FIN:
+\begin{itemize}
+  \item QFT $\Lambda \sim M_\mathrm{Planck}^4$ is artefactual.
+  \item Primitive-level $\Lambda$ is finite, bounded by event-discreteness scale.
+  \item ``Why is the divergence cancelled to $10^{-122}$?'' is replaced by ``what numerical structure determines the finite primitive-level value?''
+\end{itemize}
+ED does not predict $10^{-122}$. Magnitude remains \textsc{inherited}. But the divergence-form puzzle is structurally dissolved.
+
+\subsection{Relationship to standard QFT and effective field theory}
+
+Arc~Q's relationship to standard QFT:
+\begin{itemize}
+  \item Form-level \textsc{forced} content matches standard QFT structure.
+  \item Numerical content matches standard QFT only via empirical fit.
+  \item UV behaviour differs: standard QFT requires renormalisation; ED forces primitive-level UV finiteness.
+  \item Effective field theory is the natural continuum-approximation framework for ED at scales much larger than the event-discreteness scale.
+\end{itemize}
+
+\subsection{Implications for cosmology and Phase-3}
+
+Phase-3 (ED $\to$ GR coupling, cosmological structure) is unblocked. Arc~Q's Phase-3 contributions: UV-FIN reframing of cosmological-$\Lambda$; GRH unconditional \textsc{forced} provides structurally-grounded gauge-mediator class; UV-FIN empirical signatures could probe the divergence-cancellation reframing at high energies.
+
+\section{Conclusion}
+
+Arc~Q completes the quantum sector of ED. Three structural theorems carry the load: GRH unconditional \textsc{forced} (Theorem~Q1); canonical (anti-)commutation \textsc{forced} (Theorem~Q2); UV-FIN \textsc{forced} (Theorem~Q3).
+
+Together with Phase-1, Arc~R, and Arc~M, Arc~Q yields a \textbf{structurally complete, UV-finite quantum field framework}. The form of QFT is forced from primitives. Numerical content is inherited as empirical fit.
+
+The methodological framing --- \emph{form \textsc{forced}, value \textsc{inherited}} --- extends cleanly from Arc~M to Arc~Q at QFT scope. ED's primitive structure produces classifications, dichotomies, and form-relations; it does not produce continuous numerical relationships.
+
+Phase-3 directions --- ED to general-relativistic coupling, cosmological structure via the UV-FIN reframing of cosmological-$\Lambda$, possible high-energy empirical signatures near the primitive event-discreteness scale --- are unblocked by the Phase-2 closure of which Arc~Q is the QFT extension.
+
+\begin{thebibliography}{99}
+
+\bibitem{phase1}
+A.~Proxmire and Copilot, \emph{Quantum Mechanics as a Structural Consequence of Event-Density Primitives} (Phase-1 closure paper), 2026.
+
+\bibitem{arcr}
+A.~Proxmire and Copilot, \emph{Relativistic Quantum Mechanics as a Forced Structural Consequence of Event-Density Primitives} (Arc~R paper), 2026.
+
+\bibitem{arcm}
+A.~Proxmire and Copilot, \emph{Mass and Masslessness as Structural Features of Event-Density Theory} (Arc~M paper), 2026.
+
+\bibitem{q0scope}
+A.~Proxmire, \emph{QFT Extension Scoping}, \texttt{qft\_extension\_scoping.md}, 2026.
+
+\bibitem{q1grh}
+A.~Proxmire, \emph{GRH Evaluation}, \texttt{grh\_evaluation.md}, 2026.
+
+\bibitem{q2gauge}
+A.~Proxmire, \emph{Gauge-Group Scoping}, \texttt{gauge\_group\_scoping.md}, 2026.
+
+\bibitem{q3vert}
+A.~Proxmire, \emph{Interaction Vertex Classification}, \texttt{interaction\_vertex\_classification.md}, 2026.
+
+\bibitem{q4higgs}
+A.~Proxmire, \emph{Higgs Mechanism Scoping}, \texttt{higgs\_mechanism\_scoping.md}, 2026.
+
+\bibitem{q5rad}
+A.~Proxmire, \emph{Radiative Corrections}, \texttt{radiative\_corrections.md}, 2026.
+
+\bibitem{q6gen}
+A.~Proxmire, \emph{Generations and Mixing}, \texttt{generations\_and\_mixing.md}, 2026.
+
+\bibitem{q7q2}
+A.~Proxmire, \emph{Second Quantisation}, \texttt{second\_quantisation.md}, 2026.
+
+\bibitem{q8vac}
+A.~Proxmire, \emph{Vacuum and Zero-Point Structure}, \texttt{vacuum\_and\_zero\_point.md}, 2026.
+
+\bibitem{qsynth}
+A.~Proxmire, \emph{Arc~Q Synthesis}, \texttt{arc\_q\_synthesis.md}, 2026.
+
+\bibitem{p2synth}
+A.~Proxmire, \emph{Phase-2 Global Synthesis}, \texttt{phase2\_synthesis.md}, 2026.
+
+\bibitem{primitives}
+A.~Proxmire, \emph{Event-Density Primitive Stack} (Primitives 01--13), 2026.
+
+\bibitem{weinberg}
+S.~Weinberg, \emph{The Quantum Theory of Fields}, vol.~I--II. Cambridge University Press, 1995--1996.
+
+\bibitem{peskin}
+M.~E.~Peskin and D.~V.~Schroeder, \emph{An Introduction to Quantum Field Theory}. Westview Press, 1995.
+
+\bibitem{streater}
+R.~Streater and A.~Wightman, \emph{PCT, Spin and Statistics, and All That}. Princeton University Press, 1964.
+
+\bibitem{lambda}
+S.~Weinberg, ``The Cosmological Constant Problem,'' \emph{Rev. Mod. Phys.} \textbf{61}, 1 (1989).
+
+\bibitem{eft}
+J.~Polchinski, ``Effective Field Theory and the Fermi Surface,'' in \emph{Recent Directions in Particle Theory} (TASI 1992), eds.\ J.~Harvey and J.~Polchinski. World Scientific, 1993.
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript closure: 2026-04-24. Companion documents: Arc~R paper~\cite{arcr}, Arc~M paper~\cite{arcm}, Arc~Q synthesis~\cite{qsynth}, Phase-2 synthesis~\cite{p2synth}.}
+
+\end{document}

@@ -1,0 +1,150 @@
+================================================================================
+   COSMOLOGICAL STRUCTURE DIAGRAM (Phase-3 GR.4)
+   Theorem GR1 + V1/V5 → 4 structural channels → 4 empirical-signature routes
+================================================================================
+
+
+  THEOREM LAYER (kernel-level + curved-spacetime-kernel-level)
+  ────────────────────────────────────────────────────────────────────────
+
+       ┌──────────────────────┐                    ┌─────────────────────┐
+       │  T8 (N1)             │                    │  V5                 │
+       │  V1 finite-width     │                    │  cross-chain        │
+       │  vacuum kernel       │                    │  correlations       │
+       │  (flat-space)        │                    │  (Arc N, FORCED-    │
+       │  Arc N — N.5         │                    │   conditional)      │
+       └──────────┬───────────┘                    └──────────┬──────────┘
+                  │ Hadamard parametrix                       │
+                  │ (Synge world function σ(x,x')             │ inheritance
+                  │  generalises (x−x')²)                     │ to cross-chain
+                  ▼                                           │ kernel
+       ┌──────────────────────┐                               │
+       │  T9 (GR1)            │                               │
+       │  V1 with Synge       │                               │
+       │  world function      │                               │
+       │  (curved-spacetime)  │                               │
+       │  Phase-3 GR.5 FORCED │                               │
+       └──────────┬───────────┘                               │
+                  │                                           │
+                  │ ┌─────────────┐                           │
+                  │ │  GR-4D      │                           │
+                  │ │  Λ-integral │                           │
+                  │ │  existence  │                           │
+                  │ │ FORCED-cond.│                           │
+                  │ └──────┬──────┘                           │
+                  │        │                                  │
+                  │        │ Λ-integral                       │
+                  │        │ structure                        │
+  ────────────────┼────────┼──────────────────────────────────┼────────────
+  STRUCTURAL CHANNELS (4)  │                                  │
+                  │        │                                  │
+       ┌──────────┴────┐ ┌─┴────────┐  ┌──────────────┐  ┌────┴──────────┐
+       │ Channel 4     │ │Channel 1 │  │ Channel 2    │  │ Channel 3     │
+       │ Curvature–    │ │  Λ as    │  │ V1-induced   │  │ V5-mediated   │
+       │ vacuum        │ │  V1-     │  │ dispersion   │  │ cosmological  │
+       │ coupling      │ │  kernel  │  │ modifications│  │ correlations  │
+       │ FORCED via    │ │  integral│  │ form FORCED  │  │ existence     │
+       │  GR-2A        │ │ FORCED-  │  │ magnitudes   │  │ FORCED-cond.  │
+       │ (Theorem GR1) │ │  cond.   │  │ INHERITED    │  │ amplitudes    │
+       │ refinements   │ │ magnitude│  │              │  │ INHERITED     │
+       │ ADMISSIBLE    │ │ INHERITED│  │              │  │               │
+       └──────┬───┬────┘ └─────┬────┘  └──┬───┬───┬───┘  └───────┬───────┘
+              │   │            │          │   │   │              │
+              │   │            │          │   │   │              │
+              │   │     Λ FIN  │          │   │   │              │
+              │   │     primit.│          │   │   │              │
+              │   │     level  │          │   │   │              │
+              │   │     (mag.  │          │   │   │              │
+              │   │     INHER) │          │   │   │              │
+              │   │            │          │   │   │              │
+              │   │            ▼          │   │   │              │
+              │   │     {dark-energy}     │   │   │              │
+              │   │     {SNeIa / CMB /    │   │   │              │
+              │   │      BAO inputs       │   │   │              │
+              │   │      INHERITED}       │   │   │              │
+              │   │                       │   │   │              │
+              │   │ spatially-varying     │   │   │  curvature-  │
+              │   │ dispersion            │   │   │  modulated   │
+              │   └─────────────┐         │   │   │ correlations │
+              │                 │         │   │   │              │
+              │                 │         │   │   └──────┐       │
+              │                 │         │   │          │       │
+  ────────────┼─────────────────┼─────────┼───┼──────────┼───────┼────────
+  EMPIRICAL-SIGNATURE ROUTES (4)│         │   │          │       │
+              │                 │         │   │          │       │
+              ▼                 ▼         ▼   ▼          ▼       ▼
+       ┌──────────┐      ┌──────────┐ ┌──────────┐  ┌──────────────────┐
+       │  UHECR   │      │   GRB    │ │   GW     │  │  Cosmological-   │
+       │  timing  │      │  photon  │ │ dispers. │  │  correlation     │
+       │ ~10¹⁹ eV │      │  timing  │ │  (LIGO / │  │  persistence     │
+       │  cosmic- │      │  TeV-    │ │  Virgo / │  │  large-scale-    │
+       │  ray     │      │  scale   │ │  KAGRA   │  │  structure       │
+       │ dispers. │      │  Fermi-  │ │  bounds) │  │  power-spectrum  │
+       │ offsets  │      │  LAT     │ │          │  │  modifications   │
+       │          │      │  bounds  │ │          │  │                  │
+       └──────────┘      └──────────┘ └──────────┘  └──────────────────┘
+
+
+  ED-PHYS-10 BASELINE (structural ceiling, preserved throughout Phase-3)
+  ────────────────────────────────────────────────────────────────────────
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  Acoustic effective metric (kinematic).                              │
+  │  No Einstein equations FORCED.   No Schwarzschild solution.          │
+  │  No Newtonian-gravity emergence at long-wavelength.                  │
+  │  No fine-structure constant α from primitives.                       │
+  │  GR-4C acoustic-metric-only baseline retained as structural ceiling. │
+  │  GR-4A (Einstein-equation emergence): NOT REFUTED but SPECULATIVE.   │
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+LEGEND
+================================================================================
+   ───▶   forced / forced-conditional dependency (theorem → channel → signature)
+   ─ ─▶   inherited content / admissible refinement / structural ceiling
+   {…}    inherited inputs (numerical content, observational specifics)
+   FORCED structurally — form / existence forced at primitive level
+   INHER. — magnitude / specific value inherited (empirical / boundary data)
+
+
+================================================================================
+CHANNEL → SIGNATURE MAPPING SUMMARY
+================================================================================
+
+   Channel 1  Λ as V1-kernel integral
+              ──▶  dark-energy observations (SNeIa / CMB / BAO inputs INHERITED)
+              ──▶  scale-stratified Λ structure (UV-FIN protection at primitive
+                   level, effective-theory continuum at long-wavelength)
+
+   Channel 2  V1-induced dispersion modifications
+              ──▶  UHECR timing
+              ──▶  GRB photon timing (Fermi-LAT bounds existing)
+              ──▶  GW dispersion (LIGO / Virgo / KAGRA bounds)
+
+   Channel 3  V5-mediated cosmological correlations
+              ──▶  Cosmological-correlation persistence (LSS power-spectrum
+                   modifications at percent / sub-percent levels)
+
+   Channel 4  Curvature–vacuum coupling (Theorem GR1 itself; GR-2A FORCED)
+              ─ ─▶ all four signatures via spatially-varying dispersion +
+                   curvature-dependent vacuum polarisation + curvature-
+                   modulated correlations (refinements GR-2B/C/E ADMISSIBLE,
+                   not FORCED)
+
+
+================================================================================
+DEPENDENCY ROOT
+================================================================================
+
+   Theorem N1 (V1 flat-space)  ──▶  Theorem GR1 (V1 with Synge world function)
+                                    │
+                                    ├──▶ Channel 1 (Λ-integral via GR-4D)
+                                    ├──▶ Channel 2 (dispersion)
+                                    ├──▶ Channel 3 (V5 inheritance)
+                                    └──▶ Channel 4 (curvature–vacuum, GR-2A)
+
+
+================================================================================
+                  Form-FORCED, value-INHERITED methodology
+                preserved across structural channels and empirical routes
+================================================================================

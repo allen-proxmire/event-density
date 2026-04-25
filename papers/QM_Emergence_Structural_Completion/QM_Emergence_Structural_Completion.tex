@@ -1,0 +1,874 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Quantum Mechanics as a Forced Structural Consequence of Event Density Primitives},
+  pdfauthor={Allen Proxmire},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Quantum Mechanics as a Forced Structural Consequence of Event
+Density Primitives}
+\author{Allen Proxmire}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\setstretch{1.15}
+\section{Quantum Mechanics as a Forced Structural Consequence of Event
+Density
+Primitives}\label{quantum-mechanics-as-a-forced-structural-consequence-of-event-density-primitives}
+
+\textbf{Allen Proxmire}
+
+\textbf{April 2026}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Abstract}\label{abstract}
+
+The non-relativistic quantum mechanics of a single particle is shown to
+arise as a structural consequence of the Event Density (ED) primitive
+stack. A single mathematical object --- the participation measure
+\(P_K(x,t) = \sqrt{b_K(x,t)} \, e^{i \pi_K(x,t)}\), a complex-valued
+distribution over channels \(K\) and positions \(x\) --- fuses two ED
+primitives (bandwidth and tension polarity) into the carrier of
+quantum-mechanical content. In a well-defined thin-participation limit,
+the coherent sum \(\Psi = \sum_K P_K\) satisfies the standard linear
+Schrödinger equation. Environmental phase-randomization at commitment
+events, together with an individuation threshold, forces the Born rule
+in its squared-amplitude form as a definitional consequence of
+\(b_K = |P_K|^2\). Non-factorizable joint participation measures on
+bipartite systems produce Bell-inequality-violating correlations that
+saturate the Tsirelson bound \(2\sqrt{2}\). The Fourier-conjugate
+decomposition of the adjacency-band bandwidth budget, combined with the
+Fourier-uncertainty theorem, yields the Heisenberg uncertainty relation
+\(\Delta x \cdot \Delta p \geq \hbar/2\). A single structural commitment
+--- the identification of bandwidth with squared amplitude,
+\(b_K = |P_K|^2\) --- threads through five otherwise-independent
+appearances of the number two in quantum mechanics: the Born rule, the
+Schrödinger kinetic term, the Madelung amplitude-phase decomposition,
+the sublinear bandwidth-composition rule, and the Fourier-uncertainty
+bound. The program derives the form of quantum-mechanical equations; the
+numerical values of the dimensional constants \(\hbar\) and \(m\) are
+inherited from the Event Density Dimensional Atlas rather than derived
+from primitives, and the primitive-level derivation of particle masses
+is flagged as a frontier research problem. No physical postulate beyond
+the participation-measure structure, the four-band bandwidth
+decomposition, and the commitment dynamics is required. The result is a
+structural reduction of the four independent postulates of standard
+quantum mechanics to consequences of a single primitive-level framework.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. Introduction}\label{introduction}
+
+Standard non-relativistic quantum mechanics rests on four logically
+independent postulates: states are complex vectors in a Hilbert space;
+state evolution is governed by the Schrödinger equation; measurement
+outcomes occur with probabilities given by the Born rule; physical
+observables are represented by self-adjoint operators whose commutation
+relations produce the uncertainty relations. Each postulate has been
+verified to extraordinary empirical precision, and each plays a
+well-defined role in the predictive machinery of the theory. At the
+foundational level, however, no derivation is known within conventional
+formulations that reduces any of the four postulates to consequences of
+the others, and several foundational programs have attempted to supply
+such a reduction from various directions. The Many-Worlds framework
+attempts to derive the Born rule from decision-theoretic rationality
+axioms applied to branching dynamics {[}wallace2012{]}. Gleason's
+theorem derives the Born rule from assumptions of non-contextuality and
+additivity on a Hilbert-space projector lattice, but the Hilbert-space
+structure itself is assumed rather than derived {[}gleason1957{]}.
+Bohmian mechanics reproduces the predictions of non-relativistic quantum
+mechanics using particle positions and a non-local pilot wave
+{[}bohm1952{]}. Relational and QBist programs reinterpret the postulates
+at the interpretive level without modifying the formal content
+{[}rovelli1996, fuchs2002{]}. None of these programs reduces all four
+postulates to consequences of a single underlying structural framework.
+
+This paper presents such a reduction within the Event Density (ED)
+program. The program starts from a discrete ontology of events, chains,
+participation relations, and commitment dynamics. A distinguished object
+--- the participation measure --- is identified as the carrier of
+quantum-mechanical content within this ontology. Under a clearly
+specified thin-participation limit, the five-step derivation presented
+in sections 3 through 7 produces each of the four quantum-mechanical
+postulates as a structural consequence of the participation-measure
+framework.
+
+The argument is organized as follows. Section 2 describes the ED
+primitive stack used in the derivation. Section 3 defines the
+participation measure and establishes its structural properties. Section
+4 derives the Schrödinger equation as the thin-participation limit of a
+linear first-order complex evolution equation for the participation
+measure. Section 5 derives the Born rule by showing that environmental
+phase-randomization at commitment events, combined with an individuation
+threshold, forces channel-selection probabilities to take the
+bandwidth-fraction form, whose squared-amplitude structure is
+definitional. Section 6 derives Bell-inequality-violating correlations
+from non-factorizable joint participation measures and obtains the
+Tsirelson bound from the sesquilinear inner product of the participation
+manifold. Section 7 derives the Heisenberg uncertainty relations from
+the Fourier-conjugate partition of the adjacency-band bandwidth budget.
+Section 8 presents a structural observation --- the exponent-two thread
+--- that connects the Born rule, the Schrödinger kinetic term, the
+Madelung decomposition, the sublinear bandwidth-composition rule, and
+the Fourier-uncertainty bound to a single definitional commitment.
+Section 9 distinguishes structural content, which is derived from
+primitives, from dimensional anchoring, which is inherited through the
+ED Dimensional Atlas. Section 10 catalogues limitations and open
+research frontiers, and section 11 concludes.
+
+\subsection{2. The Event Density
+Framework}\label{the-event-density-framework}
+
+This section summarizes the ED primitive stack used in the derivation. A
+complete account of the primitive stack is available in the companion
+Event Density literature; the presentation here is restricted to the
+structural content directly used in the derivations that follow.
+
+The ED ontology is a graph-theoretic structure whose vertices are
+micro-events and whose edges carry participation relations. A chain is a
+sequence of micro-events held together by a consistent update rule; the
+rule persists across the sequence and constitutes the chain's identity.
+Participation is the relational substrate connecting micro-events; two
+events participate when each integrates the other's becoming into its
+own. Participation is not a force, field, or exchange of information at
+the primitive level, but the relational fabric on which forces, fields,
+and information-bearing structures are coarse-grained.
+
+The scalar magnitude of a participation relation is called the
+participation bandwidth. For a chain \(C\) at position \(x\) and time
+\(t\), the total bandwidth budget \(b_{\mathrm{total}}(C)\) decomposes
+into four distinguished bands: \begin{equation}
+  b_K = b_K^{\mathrm{int}} + b_K^{\mathrm{adj}} + b_K^{\mathrm{env}} + b_K^{\mathrm{com}},
+  \label{eq:fourband}
+\end{equation} where \(b_K^{\mathrm{int}}\) denotes internal
+rule-bandwidth sustaining the chain's own update rule,
+\(b_K^{\mathrm{adj}}\) denotes adjacency bandwidth with the chain's
+immediate participation-adjacent neighborhood, \(b_K^{\mathrm{env}}\)
+denotes environmental bandwidth shared with the broader bath, and
+\(b_K^{\mathrm{com}}\) denotes commitment-reserve bandwidth available
+for commitment events. The index \(K\) ranges over the channels
+available to the chain at the position and time of interest.
+
+A channel is a stable bandwidth-preserving sub-structure of the
+participation graph that supports a chain's update rule repeatedly
+without rule-incompatibility. Channels are discrete at the graph level
+and become a continuous index in the coarse-grained thick-regime
+description. The multiplicity \(M\) of a chain at a position is the
+count of distinct channels available for continuation. A commitment
+event is the discrete selection of a single channel by a chain, together
+with the addition of a new micro-event along the selected channel's
+next-vertex position. The commitment event is local at the participation
+site; its trigger condition is the rapid growth of environmental
+bandwidth past an individuation threshold. Tension polarity is the phase
+relation between the chain's update rule and the local flow direction;
+it takes values in \(S^1\) and provides the phase content that the
+participation bandwidth, a real non-negative scalar, does not carry on
+its own.
+
+The thin-participation regime is the limit in which the effective
+multiplicity satisfies \(M_{\mathrm{eff}} \gg 1\), the environmental
+band satisfies \(b_K^{\mathrm{env}} \to 0\), and the commitment rate
+satisfies \(\Gamma_{\mathrm{commit}} \to 0\). In this regime the chain
+is distributed coherently across many channels with no environmental
+decoherence and no commitment events, constituting the primitive-level
+analogue of an isolated quantum system.
+
+\subsection{3. The Participation
+Measure}\label{the-participation-measure}
+
+The first step of the derivation is the definition of a single
+mathematical object that carries both the amplitude content of the
+participation bandwidth and the phase content of the tension polarity.
+
+\subsubsection{3.1 Definition}\label{definition}
+
+The participation measure is a complex-valued distribution over channels
+and positions, defined by \begin{equation}
+  P_K(x,t) = \sqrt{b_K(x,t)} \, e^{i \pi(K,x,t)},
+  \label{eq:P_def}
+\end{equation} where \(b_K \geq 0\) is the bandwidth in channel \(K\) at
+position \(x\) and time \(t\), and \(\pi(K,x,t) \in [0, 2\pi)\) is the
+tension-polarity phase. By construction, \begin{equation}
+  b_K(x,t) = |P_K(x,t)|^2,
+  \label{eq:b_is_Psquared}
+\end{equation} so the participation bandwidth is the squared amplitude
+of the participation measure. The event density, a scalar field that
+counts micro-events per region, is recovered as the sum over channels:
+\begin{equation}
+  \rho(x,t) = \sum_K |P_K(x,t)|^2 = \sum_K b_K(x,t).
+\end{equation} The coherent sum over channels defines a complex scalar
+field \begin{equation}
+  \Psi(x,t) = \sum_K P_K(x,t),
+\end{equation} which plays the role of the quantum-mechanical
+wavefunction in the thin-participation limit.
+
+\subsubsection{3.2 Structural constraints}\label{structural-constraints}
+
+The participation measure inherits several structural constraints from
+the primitive stack. The measure must carry both amplitude and phase,
+because the Born rule requires bandwidth weighting and interference
+requires phase differences. The measure must support linear
+superposition of the form \(\alpha P^A + \beta P^B\) for complex scalars
+\(\alpha\), \(\beta\), because coherent recombination of channels at
+interferometric junctions preserves the superposed structure. The
+measure must admit a sesquilinear inner product of the form
+\begin{equation}
+  \langle P \, | \, Q \rangle = \sum_K \int dx \, P_K^*(x) \, Q_K(x),
+  \label{eq:inner}
+\end{equation} which yields a real non-negative norm equal to the total
+participation bandwidth. The measure must be decomposable across the
+four bands of equation\textasciitilde{}\eqref{eq:fourband}. Joint
+participation measures on multipartite systems must admit
+non-factorizable configurations, corresponding to entangled states.
+Finally, the measure must be compatible with the commitment dynamics, in
+which the bandwidth-fraction \(|P_{K^*}|^2 / \sum_K |P_K|^2\) provides
+the selection probability at a commitment event.
+
+\subsubsection{3.3 Uniqueness of the algebraic
+structure}\label{uniqueness-of-the-algebraic-structure}
+
+The participation measure must carry amplitude and phase, support linear
+superposition with complex coefficients, and admit a sesquilinear inner
+product. The minimum algebra satisfying these requirements is the
+complex numbers \(\mathbb{C}\). Real scalars alone cannot support phase
+rotations; the natural pair \((b, \pi)\) under custom operations is
+isomorphic to \(\mathbb{C}\) via
+equation\textasciitilde{}\eqref{eq:P_def}. Quaternions support all the
+required operations but introduce non-commutative multiplication, which
+conflicts with the symmetric structure of shared participation between
+endpoints of an entangled pair. Higher-dimensional algebras are
+over-structured relative to the primitive-level requirements. The
+complex numbers constitute the unique minimum algebra for the
+participation measure.
+
+The square-root structure of equation\textasciitilde{}\eqref{eq:P_def}
+is forced by the Madelung-class identification of the event density with
+the squared modulus of the wavefunction in the quantum regime. Under
+this identification, the bandwidth \(b_K\) must equal \(|P_K|^2\) rather
+than \(|P_K|\), and the polar decomposition of a complex number fixes
+the amplitude of \(P_K\) as \(\sqrt{b_K}\).
+
+\subsection{4. The Schrödinger
+Equation}\label{the-schruxf6dinger-equation}
+
+The participation measure evolves in time according to a linear
+first-order complex equation whose specific form is derivable from the
+primitive stack together with the structural properties established in
+section 3.
+
+\subsubsection{4.1 Derivation of the evolution
+equation}\label{derivation-of-the-evolution-equation}
+
+The evolution of the participation measure is linear. Linearity follows
+from the requirement that superposition be preserved under evolution,
+which in turn follows from the multi-channel thin-regime structure and
+the compatibility of the commitment dynamics with the Born rule. A
+non-linear evolution would violate the preservation of superposition,
+produce Born-rule inconsistency at successive commitment events, or
+permit superluminal signaling in entangled systems; each of these
+consequences is structurally excluded by the primitive-level
+commitments.
+
+The evolution is first-order in time. The chain's update rule applies
+one step at a time; the rule's next application depends only on the
+current state of the chain, not on past history. This is the
+primitive-level content of a Markov-type dynamics, and it rules out
+higher-order time derivatives.
+
+The most general linear first-order evolution compatible with these
+constraints is \begin{equation}
+  i\hbar \, \partial_t P_K = H_K \, P_K + \sum_{K'} V_{KK'} \, P_{K'},
+  \label{eq:P_evolution}
+\end{equation} where \(H_K\) is a channel-diagonal term and \(V_{KK'}\)
+represents off-diagonal inter-channel coupling. The factor \(i\hbar\) on
+the left-hand side is forced by the following argument. Total bandwidth
+of an isolated chain is conserved in the thin-participation regime, so
+\begin{equation}
+  \frac{d}{dt} \sum_K |P_K|^2 = 0.
+\end{equation} Substituting
+equation\textasciitilde{}\eqref{eq:P_evolution} and requiring this
+vanishing for arbitrary \(P\) yields the anti-Hermitian condition
+\(L_{KK'} + L_{K'K}^{*} = 0\) on the evolution kernel \(L\). Any
+anti-Hermitian operator can be written as \(L = -iH/\hbar\) with \(H\)
+Hermitian; the prefactor \(i\hbar\) then appears on the time-derivative
+side, yielding equation\textasciitilde{}\eqref{eq:P_evolution}.
+
+The numerical value of \(\hbar\) is inherited from the ED Dimensional
+Atlas through the Madelung-class identification of the quantum regime
+with the free-particle Schrödinger equation, whose diffusion coefficient
+\(D = \hbar/(2m)\) is a mathematical identity under the Madelung
+transformation. The structural form of
+equation\textasciitilde{}\eqref{eq:P_evolution} is derived from
+primitives; the specific numerical value of \(\hbar\) is inherited.
+
+\subsubsection{4.2 Thin-participation
+limit}\label{thin-participation-limit}
+
+In the thin-participation limit the channel index \(K\) becomes
+continuous. Under translation invariance of the participation graph, the
+natural continuous index is the momentum \(k\); Stone's theorem on
+unitary one-parameter groups {[}stone1930{]} identifies the generator of
+translations as the momentum operator \(\hat{P} = -i\hbar \partial_x\).
+In the momentum representation, the diagonal term of
+equation\textasciitilde{}\eqref{eq:P_evolution} takes the form
+\(H_k = \hbar^2 k^2 / (2m) + V\), where the quadratic dependence on
+\(k\) is forced by rotation invariance, analyticity of the dispersion
+relation at \(k=0\), and the non-relativistic regime; linear-in-\(k\)
+and higher-order-in-\(k\) terms are excluded. The coefficient \(1/(2m)\)
+follows from classical-correspondence (Ehrenfest) constraints, with the
+mass parameter \(m\) inherited empirically at the dimensional-anchoring
+level.
+
+Summing equation\textasciitilde{}\eqref{eq:P_evolution} over channels
+and identifying the result with \(\Psi = \sum_K P_K\) yields
+\begin{equation}
+  i\hbar \, \partial_t \Psi(x,t) = \left[-\frac{\hbar^2}{2m} \nabla^2 + V(x)\right] \Psi(x,t),
+  \label{eq:Schrodinger}
+\end{equation} the standard linear Schrödinger equation for a particle
+of mass \(m\) in the potential \(V(x)\).
+
+\subsubsection{4.3 Equivalence to the Madelung
+form}\label{equivalence-to-the-madelung-form}
+
+Polar decomposition of the wavefunction as
+\(\Psi = \sqrt{\rho} \, e^{iS/\hbar}\), substituted into
+equation\textasciitilde{}\eqref{eq:Schrodinger} and split into real and
+imaginary parts, yields the continuity equation \begin{equation}
+  \partial_t \rho + \nabla \cdot (\rho \mathbf{v}_s) = 0,
+  \qquad \mathbf{v}_s = \frac{\nabla S}{m},
+\end{equation} and the Hamilton-Jacobi equation with quantum-pressure
+correction \begin{equation}
+  \partial_t S + \frac{|\nabla S|^2}{2m} + V + Q = 0,
+  \qquad Q = -\frac{\hbar^2}{2m} \frac{\nabla^2 \sqrt{\rho}}{\sqrt{\rho}}.
+\end{equation} This is the Madelung form {[}madelung1927{]} of the
+Schrödinger equation. The continuity equation and the
+Hamilton-Jacobi-with-\(Q\) pair are mathematically equivalent to
+equation\textasciitilde{}\eqref{eq:Schrodinger}.
+
+\subsection{5. The Born Rule}\label{the-born-rule}
+
+A measurement is a commitment event that occurs when environmental
+bandwidth grows rapidly enough to force an individuation boundary
+between the chain and its environment. At the commitment event, the
+chain transitions from a multi-channel coherent state to a
+single-channel state, and a new micro-event is added at the committed
+channel's next-vertex position.
+
+\subsubsection{5.1 Environmental
+phase-randomization}\label{environmental-phase-randomization}
+
+The environmental coupling that triggers a commitment event induces
+random phase shifts on the chain's channels: \begin{equation}
+  P_K(x,t) \;\longmapsto\; P_K(x,t) \, e^{i \delta_K(x,t)},
+  \label{eq:phase_kick}
+\end{equation} where \(\delta_K\) are random phases drawn from the
+environmental-mode distribution. The phases \(\{\delta_K\}\) are
+statistically independent across channels \(K\). Independence is forced
+by three independent primitive-level arguments: the four-band
+decomposition of equation\textasciitilde{}\eqref{eq:fourband} assigns
+the environmental bandwidth of each channel to a distinct subset of
+environmental modes; the locality of commitment events excludes
+long-range environmental correlations between channels; and the
+orthogonality of environmental modes, which are eigenmodes of a
+Hermitian bath Hamiltonian, renders the phases of distinct modes
+independent. Moreover, any correlation between \(\delta_K\) and
+\(\delta_{K'}\) for \(K \neq K'\) would violate bandwidth conservation,
+the locality of commitment, and the no-signaling property of entangled
+bipartite systems; all three violations are structurally excluded.
+
+\subsubsection{5.2 Destruction of inter-channel
+coherence}\label{destruction-of-inter-channel-coherence}
+
+Consider the squared magnitude of the coherent sum, \begin{equation}
+  |\Psi|^2 = \sum_K |P_K|^2 + \sum_{K \neq K'} P_K^* \, P_{K'}.
+\end{equation} Under the phase-kick of
+equation\textasciitilde{}\eqref{eq:phase_kick}, the cross-terms acquire
+random phase factors \(e^{i(\delta_{K'} - \delta_K)}\). Averaging over
+the environmental phase distribution, \begin{equation}
+  \langle e^{i(\delta_{K'} - \delta_K)} \rangle_{\mathrm{env}} = \delta_{K,K'}
+\end{equation} for independent phases, so the cross-terms vanish on
+environmental averaging. The surviving diagonal terms \(\sum_K |P_K|^2\)
+constitute an incoherent mixture in the channel basis.
+
+\subsubsection{5.3 Selection probability}\label{selection-probability}
+
+The incoherent mixture assigns to channel \(K\) a weight \(|P_K|^2\).
+Normalizing this weight by the total bandwidth \(\sum_K |P_K|^2\) yields
+the selection probability \begin{equation}
+  \mathrm{Prob}(K^*) = \frac{|P_{K^*}(x)|^2}{\sum_K |P_K(x)|^2}.
+  \label{eq:Born}
+\end{equation} Equation\textasciitilde{}\eqref{eq:Born} is the Born rule
+{[}born1926{]}. Under the identification \(\Psi = \sum_K P_K\), the
+amplitude in channel \(K\) equals the projection
+\(\langle K | \Psi \rangle\), and
+equation\textasciitilde{}\eqref{eq:Born} reads
+\(\mathrm{Prob}(K^*) = |\langle K^* | \Psi \rangle|^2 / \langle \Psi | \Psi \rangle\),
+recovering the conventional quantum-mechanical statement.
+
+The squared-amplitude form of equation\textasciitilde{}\eqref{eq:Born}
+is definitional rather than postulated. The identification
+\(b_K = |P_K|^2\) from equation\textasciitilde{}\eqref{eq:b_is_Psquared}
+makes the bandwidth-fraction and the squared-amplitude-fraction the same
+quantity. The Born rule's exponent of two is not an independent
+empirical fact requiring its own justification; it is a consequence of
+the structural choice that constructs the bandwidth from the
+participation measure by squaring the amplitude. Had the decomposition
+been \(P_K = b_K e^{i\pi_K}\) with \(b_K = |P_K|\) instead, the Born
+rule would read \(\mathrm{Prob}(K^*) = |P_{K^*}| / \sum_K |P_K|\). The
+empirical consistency of the squared-amplitude form under Madelung
+anchoring forces equation\textasciitilde{}\eqref{eq:b_is_Psquared}.
+
+\subsection{6. Bell Correlations and the Tsirelson
+Bound}\label{bell-correlations-and-the-tsirelson-bound}
+
+Entanglement arises in the ED framework from shared participation
+structure across two or more endpoints of a bipartite or multipartite
+system. The joint participation measure of a bipartite system is a
+complex-valued function \begin{equation}
+  P^{AB}_{K_A, K_B}(x_A, x_B, t) \in \mathbb{C}
+\end{equation} over the product channel space. A joint state is
+factorizable if \(P^{AB}_{K_A K_B} = P^A_{K_A} \cdot P^B_{K_B}\), and
+non-factorizable (entangled) otherwise.
+
+\subsubsection{6.1 The CHSH scenario}\label{the-chsh-scenario}
+
+Consider a bipartite system with subsystems \(A\) and \(B\) spatially
+separated. Each subsystem admits two measurement settings, \(a\) and
+\(a'\) for \(A\) and \(b\) and \(b'\) for \(B\), and each measurement
+produces a binary outcome \(\pm 1\). The correlation functions
+\begin{equation}
+  E(a,b) = \sum_{s_A, s_B = \pm 1} s_A \, s_B \, \mathrm{Prob}(s_A, s_B \,|\, a, b)
+\end{equation} combine into the CHSH statistic \begin{equation}
+  S = E(a,b) + E(a,b') + E(a',b) - E(a',b').
+  \label{eq:CHSH}
+\end{equation} The Bell inequality {[}bell1964{]} states that
+\(|S| \leq 2\) for any local hidden-variable theory; the CHSH
+formulation {[}chsh1969{]} is the specific form of
+equation\textasciitilde{}\eqref{eq:CHSH}. The Tsirelson bound
+{[}tsirelson1980{]} states that \(|S| \leq 2\sqrt{2}\) under standard
+quantum mechanics.
+
+\subsubsection{6.2 Factorizable joint
+participation}\label{factorizable-joint-participation}
+
+For factorizable joint participation, the joint probability factors:
+\(\mathrm{Prob}(K_A, K_B \,|\, a, b) = \mathrm{Prob}_A(K_A \,|\, a) \cdot \mathrm{Prob}_B(K_B \,|\, b)\).
+Each subsystem's outcome depends on local measurements and local
+randomness only. Standard Bell-CHSH algebra gives \begin{equation}
+  S = \langle s_A(a) [s_B(b) + s_B(b')] \rangle + \langle s_A(a') [s_B(b) - s_B(b')] \rangle.
+\end{equation} For realizations of the local random variables with
+\(s_B(\cdot) \in \{-1, +1\}\), one of \(s_B(b) + s_B(b')\) and
+\(s_B(b) - s_B(b')\) vanishes while the other has magnitude two.
+Consequently \(|S| \leq 2\), which is the Bell-CHSH inequality.
+
+\subsubsection{6.3 Non-factorizable joint
+participation}\label{non-factorizable-joint-participation}
+
+For non-factorizable joint participation, the joint probability does not
+factor. Consider the prototypical singlet configuration \begin{equation}
+  P^{AB}_{K_A K_B} = \frac{1}{\sqrt{2}} \bigl( \delta_{K_A,0}\delta_{K_B,1} - \delta_{K_A,1}\delta_{K_B,0} \bigr),
+\end{equation} representing a pair of two-level subsystems in the
+spin-singlet state. With measurement settings corresponding to Pauli
+observables \(\sigma_a, \sigma_b\) on unit vectors
+\(\mathbf{a}, \mathbf{b}\), the correlation function is \begin{equation}
+  E(\mathbf{a}, \mathbf{b}) = -\mathbf{a} \cdot \mathbf{b}.
+\end{equation} Choosing angles \(\mathbf{a} = \hat{\mathbf{x}}\),
+\(\mathbf{a}' = \hat{\mathbf{z}}\),
+\(\mathbf{b} = (\hat{\mathbf{x}} + \hat{\mathbf{z}})/\sqrt{2}\),
+\(\mathbf{b}' = (\hat{\mathbf{x}} - \hat{\mathbf{z}})/\sqrt{2}\) yields
+\(S = -2\sqrt{2}\), so \(|S| = 2\sqrt{2}\), saturating the Tsirelson
+bound.
+
+\subsubsection{6.4 The Tsirelson bound from participation-manifold
+structure}\label{the-tsirelson-bound-from-participation-manifold-structure}
+
+Define the CHSH operator \begin{equation}
+  \hat{S} = \sigma_a \otimes \sigma_b + \sigma_a \otimes \sigma_{b'} + \sigma_{a'} \otimes \sigma_b - \sigma_{a'} \otimes \sigma_{b'}.
+\end{equation} Its square satisfies \begin{equation}
+  \hat{S}^2 = 4 \, I_A \otimes I_B + [\sigma_a, \sigma_{a'}] \otimes [\sigma_b, \sigma_{b'}],
+\end{equation} using \(\sigma_a^2 = I\) for Hermitian unit-norm
+observables. The operator-norm bound \(\|[\sigma, \sigma']\| \leq 2\)
+for such observables gives \(\|\hat{S}^2\| \leq 4 + 2 \cdot 2 = 8\), so
+\(\|\hat{S}\| \leq 2\sqrt{2}\). Since
+\(|S| = |\langle P^{AB} | \hat{S} | P^{AB} \rangle| \leq \|\hat{S}\| \cdot \|P^{AB}\|^2\)
+and the joint participation measure is normalized,
+\(|S| \leq 2\sqrt{2}\). This Landau-Khalfin argument {[}landau1987{]}
+rests on the sesquilinear inner-product structure of
+equation\textasciitilde{}\eqref{eq:inner}, the normalization of the
+joint participation measure, and the unit-norm Hermitian character of
+the measurement observables, all of which are primitive-level or
+U-derived properties of the participation-manifold.
+
+The no-signaling property of the joint participation measure follows
+from the locality of commitment events. The marginal probability on
+\(A\) is independent of the measurement setting at \(B\); this is
+structural rather than postulated.
+
+\subsection{7. The Heisenberg Uncertainty
+Relations}\label{the-heisenberg-uncertainty-relations}
+
+The uncertainty relations arise in the ED framework from the
+Fourier-conjugate decomposition of the adjacency-band bandwidth budget.
+The adjacency bandwidth \(b^{\mathrm{adj}}\) encodes two structurally
+distinct kinds of nearness: spatial nearness, associated with
+localization in the position coordinate \(x\), and phase-propagation
+nearness, associated with localization in the wavenumber \(k\) or
+momentum \(p = \hbar k\). The two kinds of adjacency are connected by
+the Fourier transform of the coherent-sum wavefunction.
+
+\subsubsection{7.1 Adjacency-band
+partition}\label{adjacency-band-partition}
+
+The adjacency band admits a two-component orthogonal decomposition
+\begin{equation}
+  b^{\mathrm{adj}} = b_x + b_p,
+  \label{eq:adj_partition}
+\end{equation} where \(b_x\) is the position-adjacency bandwidth,
+encoded in the spatial density distribution \(|\Psi(x)|^2\), and \(b_p\)
+is the momentum-adjacency bandwidth, encoded in the momentum density
+distribution \(|\tilde\Psi(p)|^2\). The two distributions are related by
+the Fourier transform \begin{equation}
+  \tilde\Psi(p,t) = (2\pi\hbar)^{-1/2} \int dx \, \Psi(x,t) \, e^{-ipx/\hbar}.
+  \label{eq:Fourier}
+\end{equation} Equation\textasciitilde{}\eqref{eq:Fourier} is the unique
+basis-change between position and momentum representations under
+translation invariance of the participation graph; Stone's theorem
+identifies \(\hat{P} = -i\hbar \partial_x\) as the generator of
+translations, and the Fourier transform is the basis-change to the
+eigenbasis of \(\hat{P}\). Parseval's theorem
+\(\int dx |\Psi|^2 = \int dp |\tilde\Psi|^2\) shows that the two
+distributions are complementary decompositions of the same total
+adjacency bandwidth. The Stone-von Neumann theorem establishes that the
+Heisenberg-Weyl algebra generated by \(\hat{x}\) and \(\hat{P}\) is
+irreducible on \(L^2(\mathbb{R})\), so no third independent
+decomposition component exists in one spatial dimension.
+
+\subsubsection{7.2 Derivation of the uncertainty
+relation}\label{derivation-of-the-uncertainty-relation}
+
+The bandwidth-allocation inequality for the orthogonal
+partition\textasciitilde{}\eqref{eq:adj_partition} takes the form
+\begin{equation}
+  (\Delta b_x)(\Delta b_p) \geq K_{xp},
+\end{equation} where \(K_{xp}\) is a structural constant. Under the
+identifications \(b_x(x) \propto |\Psi(x)|^2\) and
+\(b_p(p) \propto |\tilde\Psi(p)|^2\) inherited from the Born-rule
+structure applied within each conjugate partition, the bandwidth spreads
+are the standard position and momentum variances of the wavefunction,
+\begin{equation}
+  (\Delta b_x)^2 = \langle x^2 \rangle_{|\Psi|^2} - \langle x \rangle_{|\Psi|^2}^2 = (\Delta x)^2,
+\end{equation} and similarly \((\Delta b_p)^2 = (\Delta p)^2\). The
+mathematical Fourier-uncertainty theorem applied to the Fourier pair
+\((\Psi, \tilde\Psi)\) with the canonical commutator
+\([\hat{x}, \hat{P}] = i\hbar\) yields {[}heisenberg1927,
+robertson1929{]} \begin{equation}
+  \Delta x \cdot \Delta p \geq \frac{\hbar}{2}.
+  \label{eq:Heisenberg}
+\end{equation} The bound saturates for Gaussian minimum-uncertainty
+wavepackets. Equation\textasciitilde{}\eqref{eq:Heisenberg} is the
+Heisenberg position-momentum uncertainty relation. Unitary evolution
+under equation\textasciitilde{}\eqref{eq:Schrodinger} preserves the
+inequality at all times.
+
+\subsubsection{7.3 Generalizations}\label{generalizations}
+
+The four-band structure supports analogous decompositions for other
+conjugate pairs. The internal rule-bandwidth and the commitment-reserve
+bandwidth form a conjugate pair for which the energy-time uncertainty
+relation holds. The commitment-reserve bandwidth and the rule-phase form
+a conjugate pair for which the number-phase uncertainty relation holds.
+Directional decompositions of the internal rule-bandwidth support the
+angular-momentum uncertainty relations. In each case, the same
+allocation-inequality mechanism within a specific band-pair of the
+four-band structure produces the corresponding uncertainty relation. The
+universal appearance of \(\hbar/2\) as the bound reflects the common
+Fourier-conjugacy content, inherited through the anchoring of \(\hbar\)
+at the dimensional level.
+
+\subsection{8. The Exponent-Two Thread}\label{the-exponent-two-thread}
+
+The five-step derivation of sections 3 through 7 produces the
+quantum-mechanical content through a single structural commitment that
+threads through otherwise-independent appearances of the number two.
+
+\subsubsection{8.1 Five appearances}\label{five-appearances}
+
+The Born rule selection probability
+\(\mathrm{Prob}(K^*) = |P_{K^*}|^2 / \sum_K |P_K|^2\) contains the
+squared amplitude. The Schrödinger kinetic term
+\(\hat{H}_{\mathrm{kin}} = \hbar^2 k^2 / (2m)\) is quadratic in the
+momentum. The Madelung decomposition
+\(\Psi = \sqrt{\rho} \, e^{iS/\hbar}\) contains the square root of the
+density. The sublinear bandwidth-composition rule expresses the combined
+bandwidth of two channels in terms of squared-amplitude-level
+cross-terms
+\(b_{\mathrm{combined}}^2 = b_1^2 + b_2^2 + 2 c_{12} b_1 b_2\). The
+Fourier-uncertainty bound \((\Delta x)^2 (\Delta p)^2 \geq (\hbar/2)^2\)
+is quadratic in the variances. Each of these five appearances involves
+the exponent two in a way that is not, in conventional quantum
+mechanics, tied to a single underlying structural commitment.
+
+\subsubsection{8.2 The single underlying
+commitment}\label{the-single-underlying-commitment}
+
+In the participation-measure framework, each of the five appearances
+arises from the same definitional commitment: bandwidth is the squared
+amplitude of the participation measure, \(b_K = |P_K|^2\)
+(equation\textasciitilde{}\eqref{eq:b_is_Psquared}). The Born rule's
+squared amplitude is the bandwidth fraction by construction. The
+Schrödinger kinetic term's \(\hbar^2 k^2 / (2m)\) is the quadratic
+leading-order dispersion forced by translation and rotation invariance;
+the \(\hbar^2\) factor arises from the square of the momentum operator
+acting on the wavefunction, which is the coherent sum of participation
+amplitudes. The Madelung decomposition's \(\sqrt{\rho}\) is the
+amplitude \(|\Psi|\) whose square is the density. The sublinear
+composition rule's squared-amplitude cross-structure is the composition
+law for the squared magnitudes of the participation measure. The
+Fourier-uncertainty bound's squared variances arise from the
+second-moment structure of the conjugate-partition densities. All five
+are manifestations of the same structural choice.
+
+In conventional quantum mechanics, these five appearances are logically
+independent. The Born exponent could in principle differ from the
+kinetic exponent without immediate empirical inconsistency; Gleason's
+theorem and related arguments fix the Born exponent from Hilbert-space
+axioms, but do not tie it to the kinetic exponent. In the
+participation-measure framework, the five exponents are tied together
+structurally: a change in the definitional identification \(b = |P|^2\)
+would change all five. The structural unification is the program's
+strongest positive claim.
+
+\subsection{9. Structural Content versus Dimensional
+Anchoring}\label{structural-content-versus-dimensional-anchoring}
+
+The derivations of sections 3 through 7 produce the form of the
+quantum-mechanical equations --- the Schrödinger structure, the Born
+probability formula, the Bell-CHSH inequality and Tsirelson bound, and
+the Heisenberg uncertainty relation --- from the primitive-level
+participation-measure framework. The numerical values of the dimensional
+constants that enter these equations are not derived from primitives.
+The constant \(\hbar\) is anchored through the ED Dimensional Atlas via
+the Madelung identification of the quantum regime's diffusion
+coefficient \(D_{\mathrm{phys}} = \hbar/(2m)\) with the free-particle
+Schrödinger equation; \(\hbar\) enters
+equation\textasciitilde{}\eqref{eq:P_evolution} with its empirically
+measured value. The mass parameter \(m\) is anchored empirically at the
+species level; the primitive-level derivation of particle masses from
+chain structure remains an open research problem and is flagged in
+section 10.
+
+The separation is clean at the level of the derivation. All structural
+content --- linearity of the evolution equation, first-order-in-time
+structure, operator-form decomposition of the evolution kernel, norm
+preservation and the associated anti-Hermitian generator,
+complex-valued-ness of the wavefunction, sesquilinear inner-product
+structure, Fourier-conjugate partition of the adjacency band, the
+squared-amplitude form of the Born rule, the Bell-CHSH factorizable
+bound, the Tsirelson bound, the Heisenberg inequality --- is derived
+from primitives combined with standard mathematical theorems (Stone's
+theorem, Parseval's theorem, Stone-von Neumann theorem,
+Fourier-uncertainty theorem, Landau-Khalfin operator-norm algebra). The
+dimensional constants \(\hbar\) and \(m\) are inherited via the
+Dimensional Atlas from empirical measurement. No other content is
+inherited.
+
+The framework does not predict the numerical value of \(\hbar\); it
+inherits it. The framework does not predict the mass spectrum of
+elementary particles; these are inherited at the species level and
+constitute open research questions. The framework does not make
+empirical predictions that differ from standard quantum mechanics within
+the tested thin-participation regime; retrodiction attempts against
+matter-wave interferometry data in the Eibenberger and Fein regimes
+reproduce the standard predictions within the consistent-weak-form
+epistemic category.
+
+\subsection{10. Limitations and Research
+Frontiers}\label{limitations-and-research-frontiers}
+
+The structural reduction presented in this paper has explicit
+limitations and leaves several research problems open for future work.
+
+First, the primitive-level derivation of particle masses from chain
+structure is flagged as speculative. The chain-mass problem asks how the
+specific rule-type bandwidth signature of an electron, proton, or other
+elementary particle is set by the underlying participation-graph
+structure. A first-pass candidate identification of the rest mass with
+the rule-type bandwidth divided by \(c^2\) has been articulated, but a
+rigorous derivation requires a primitive-level derivation of the
+rule-type taxonomy, which is itself an open question. The problem
+connects to the origin of the Standard-Model mass spectrum and is a
+multi-year research frontier.
+
+Second, the numerical value of \(\hbar\) is inherited rather than
+derived. The Dimensional Atlas anchors \(\hbar\) through the
+Madelung-class identification of the quantum regime; a primitive-level
+origin for the specific numerical value of \(\hbar\) would reduce the
+inheritance further but has not been attempted.
+
+Third, the derivation is non-relativistic. The relativistic extension
+would replace the quadratic dispersion \(H_k = \hbar^2 k^2 / (2m)\) with
+the relativistic dispersion \(E = \sqrt{p^2 c^2 + m^2 c^4}\), requiring
+a Lorentz-covariant formulation of the participation measure and a
+corresponding covariant four-band decomposition. The Klein-Gordon and
+Dirac equations would arise as the thin-limit consequences of the
+covariant framework; neither has been derived in the present work.
+
+Fourth, the derivation is single-particle. A multi-particle or
+quantum-field-theoretic extension would require the development of
+second-quantized participation measures, with particle-creation and
+particle-annihilation operators emerging as primitive-level structural
+consequences. The connection to the Standard Model field content would
+require the rule-type taxonomy derivation mentioned above.
+
+Fifth, the evolution equation\textasciitilde{}\eqref{eq:P_evolution} has
+been derived in the isolated-chain thin-participation limit, where
+environmental coupling and commitment events are suppressed. The
+extension to non-isolated chains would produce a
+Lindblad-master-equation-type structure with jump operators
+corresponding to environmental commitment events; the primitive-level
+derivation of this extended dynamics is near-term future work.
+
+Sixth, the framework does not currently make empirical predictions that
+distinguish it from standard quantum mechanics in the regime where
+standard quantum mechanics has been tested. Distinguishing content is
+expected to emerge in regimes where the thin-participation limit breaks
+down, including the quantum-to-classical transition at macroscopic scale
+and cosmological-scale dynamics relevant to baryogenesis; preliminary
+retrodiction attempts in these regimes have been structurally
+informative but not empirically distinguishing within currently
+available data.
+
+\subsection{11. Conclusion}\label{conclusion}
+
+The non-relativistic quantum mechanics of a single particle has been
+shown to arise as a structural consequence of the Event Density
+primitive stack. A single mathematical object --- the participation
+measure \(P_K(x,t) = \sqrt{b_K(x,t)} \, e^{i\pi(K,x,t)}\) --- serves as
+the carrier of quantum-mechanical content. Its thin-participation limit
+produces the Schrödinger equation; commitment events under environmental
+phase-randomization produce the Born rule in its squared-amplitude form;
+non-factorizable joint participation measures produce
+Bell-inequality-violating correlations saturating at the Tsirelson
+bound; Fourier-conjugate partition of the adjacency bandwidth produces
+the Heisenberg uncertainty relations. The five otherwise-independent
+appearances of the exponent two in quantum mechanics --- the Born rule,
+the Schrödinger kinetic term, the Madelung decomposition, the sublinear
+bandwidth-composition rule, and the Fourier-uncertainty bound --- are
+manifestations of a single definitional commitment, the identification
+of bandwidth with squared amplitude. No additional physical postulate
+beyond the participation-measure structure, the four-band bandwidth
+decomposition, and the commitment dynamics is required. The numerical
+values of \(\hbar\) and \(m\) are inherited through the ED Dimensional
+Atlas; the primitive-level derivation of particle masses remains an open
+research problem. The result is a structural reduction of the four
+independent postulates of standard quantum mechanics --- state
+structure, unitary evolution, measurement probability, and
+observable-commutator uncertainty --- to structural consequences of a
+single primitive-level framework.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{References}\label{references}
+
+{[}bell1964{]} Bell, J. S. (1964). On the Einstein-Podolsky-Rosen
+paradox. \emph{Physics Physique Fizika}, \textbf{1}, 195--200.
+
+{[}bohm1952{]} Bohm, D. (1952). A suggested interpretation of the
+quantum theory in terms of ``hidden'' variables. I and II.
+\emph{Physical Review}, \textbf{85}, 166--179, 180--193.
+
+{[}born1926{]} Born, M. (1926). Zur Quantenmechanik der Stoßvorgänge.
+\emph{Zeitschrift für Physik}, \textbf{37}, 863--867.
+
+{[}chsh1969{]} Clauser, J. F., Horne, M. A., Shimony, A., and Holt, R.
+A. (1969). Proposed experiment to test local hidden-variable theories.
+\emph{Physical Review Letters}, \textbf{23}, 880--884.
+
+{[}fuchs2002{]} Fuchs, C. A. (2002). Quantum mechanics as quantum
+information (and only a little more). \emph{arXiv:quant-ph/0205039}.
+
+{[}gleason1957{]} Gleason, A. M. (1957). Measures on the closed
+subspaces of a Hilbert space. \emph{Journal of Mathematics and
+Mechanics}, \textbf{6}, 885--893.
+
+{[}heisenberg1927{]} Heisenberg, W. (1927). Über den anschaulichen
+Inhalt der quantentheoretischen Kinematik und Mechanik.
+\emph{Zeitschrift für Physik}, \textbf{43}, 172--198.
+
+{[}landau1987{]} Landau, L. J. (1987). On the violation of Bell's
+inequality in quantum theory. \emph{Physics Letters A}, \textbf{120},
+54--56.
+
+{[}madelung1927{]} Madelung, E. (1927). Quantentheorie in
+hydrodynamischer Form. \emph{Zeitschrift für Physik}, \textbf{40},
+322--326.
+
+{[}robertson1929{]} Robertson, H. P. (1929). The uncertainty principle.
+\emph{Physical Review}, \textbf{34}, 163--164.
+
+{[}rovelli1996{]} Rovelli, C. (1996). Relational quantum mechanics.
+\emph{International Journal of Theoretical Physics}, \textbf{35},
+1637--1678.
+
+{[}stone1930{]} Stone, M. H. (1930). Linear transformations in Hilbert
+space, III: operational methods and group theory. \emph{Proceedings of
+the National Academy of Sciences}, \textbf{16}, 172--175.
+
+{[}tsirelson1980{]} Tsirelson, B. S. (1980). Quantum generalizations of
+Bell's inequality. \emph{Letters in Mathematical Physics}, \textbf{4},
+93--100.
+
+{[}wallace2012{]} Wallace, D. (2012). \emph{The Emergent Multiverse:
+Quantum Theory according to the Everett Interpretation}. Oxford
+University Press.
+
+\end{document}

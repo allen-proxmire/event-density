@@ -1,0 +1,183 @@
+================================================================================
+   KERNEL ARCHITECTURE DIAGRAM — ED Vacuum-Response Kernel Evolution
+   Theorem N1 (flat) → Theorem GR1 (curved) → cosmological extensions
+================================================================================
+
+
+  FORCING INPUTS (primitives + UV-FIN)
+  ────────────────────────────────────────────────────────────────────────
+
+   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
+   │ UV-FIN   │  │ P01      │  │ P04      │  │ P13      │  │ P11      │
+   │ Theorem  │  │ event-   │  │ bounded  │  │ finite   │  │ commit-  │
+   │ Q3       │  │ discrete-│  │ band-    │  │ proper-  │  │ ment     │
+   │          │  │ ness     │  │ width    │  │ time     │  │ locality │
+   │          │  │ scale    │  │          │  │ intervals│  │          │
+   │          │  │ ℓ_ED     │  │          │  │          │  │          │
+   └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘
+        │             │             │             │             │
+        └──────┬──────┴─────────────┴─────────────┴─────────────┘
+               │  joint forcing argument (3-leg)
+               ▼
+  ────────────────────────────────────────────────────────────────────────
+  THEOREM N1 — FLAT-SPACE V1 KERNEL  (Arc N — N.5 — FORCED)
+  ────────────────────────────────────────────────────────────────────────
+
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │   K_vac (x − x')   — flat-space vacuum-response kernel              │
+   │                                                                     │
+   │   Required properties:                                              │
+   │     (i)   finite width        — K_vac non-singular at x = x'        │
+   │     (ii)  decaying support    — K_vac → 0 at large |x − x'|         │
+   │     (iii) Lorentz-scalar      — K_vac = K_vac((x − x')²)            │
+   │     (iv)  sub-power-law-2     — α < 2 in 3+1D                       │
+   │                                                                     │
+   │   Admissible specific forms within the bounded class:               │
+   │     V2 exponential decay    K_vac ∝ exp(−|Δτ| / τ_vac)              │
+   │     V3 power-law (α < 2)    K_vac ∝ |Δx|^(−2α),  α < 2              │
+   │     V4 multi-scale           K_vac = Σ_i c_i K_i(Δx)                │
+   └────────────────────┬───────────────────────────┬────────────────────┘
+                        │                           │
+       BOUNDED FROM     │                           │      BOUNDED FROM
+       BELOW            │                           │      ABOVE
+                        ▼                           ▼
+
+  ┌────────────────────────────┐         ┌────────────────────────────┐
+  │  V1-δ                      │         │  V1-∞                      │
+  │  zero-width limit          │         │  infinite-width limit      │
+  │  K_vac ∝ δ⁴(x − x')        │         │  K_vac = c_∞ everywhere    │
+  │                            │         │                            │
+  │  REFUTED by C3 (UV-FIN)    │         │  REFUTED by C1 + locality  │
+  │  Reason: δ-response in     │         │  Reason: constant kernel   │
+  │  Fourier space is constant │         │  implies infinite          │
+  │  across all (ω, k) → UV    │         │  correlation length →      │
+  │  amplification             │         │  breaks generally-covariant│
+  │  (Stage N.3 §3.1)          │         │  locality (Stage N.3 §3.2) │
+  └────────────────────────────┘         └────────────────────────────┘
+
+       ↑ V1 admissibility class                   ↑
+       ↑ is BOUNDED BOTH WAYS — kernels must be   ↑
+       ↑ finite, non-zero, decaying. Bounds       ↑
+       ↑ derived from C1 + C3, not postulated.    ↑
+
+
+  ────────────────────────────────────────────────────────────────────────
+  HADAMARD-PARAMETRIX EXTENSION
+  ────────────────────────────────────────────────────────────────────────
+
+      Three-leg argument (extends Theorem N1 to curved spacetime):
+
+      Leg 1 (UV-FIN metric-independent)
+         P01, P04, P13 operate on the underlying event manifold
+         regardless of curvature → UV-FIN extends unchanged
+
+      Leg 2 (general covariance + locality)
+         δ_g(x, x') and constant kernel still pathological in
+         curved spacetime; same argument as flat case applies
+         pointwise via local-inertial-frame analysis
+
+      Leg 3 (3+1D power-counting applies pointwise)
+         Tangent space at every event is locally Minkowski
+         in 3+1D → α < 2 power-counting bound carries over
+
+      Synge world function σ(x, x') is the unique generally-
+      covariant scalar two-point function reducing to ½(x−x')²
+      in the flat limit.
+
+
+  ────────────────────────────────────────────────────────────────────────
+  THEOREM GR1 — CURVED-SPACETIME V1 KERNEL  (Phase-3 GR.5 — FORCED)
+  ────────────────────────────────────────────────────────────────────────
+
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │                                                                     │
+   │      K_vac^curved(x, x') = K_vac^prim ( σ(x, x') / ℓ_ED² )          │
+   │                                                                     │
+   │      σ(x, x')  =  ½ × (squared geodesic distance)                   │
+   │                                                                     │
+   │   Admissibility class identical to flat-space V1 class:             │
+   │     finite, non-zero, decaying, Lorentz-scalar, sub-power-law-2     │
+   │                                                                     │
+   │   Bounded both ways by GR-2A-δ and GR-2A-∞ refutations              │
+   │   (curved-spacetime analogues of V1-δ and V1-∞).                    │
+   │                                                                     │
+   └─────────────────────────┬───────────────────────────────────────────┘
+                             │
+        ┌────────────────────┼─────────────────────┐
+        │                    │                     │
+        ▼                    ▼                     ▼
+
+  ────────────────────────────────────────────────────────────────────────
+  COSMOLOGICAL EXTENSIONS — 4 STRUCTURAL CHANNELS (Phase-3 GR.4)
+  ────────────────────────────────────────────────────────────────────────
+
+  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+  │ Channel 1    │  │ Channel 2    │  │ Channel 3    │  │ Channel 4    │
+  │              │  │              │  │              │  │              │
+  │ Λ as V1-     │  │ V1-induced   │  │ V5-mediated  │  │ Curvature–   │
+  │ kernel       │  │ dispersion   │  │ cosmological │  │ vacuum       │
+  │ integral     │  │ modifications│  │ correlations │  │ coupling     │
+  │              │  │              │  │              │  │              │
+  │ Λ_primitive  │  │ ω² = c²|k|²  │  │ ⟨δb(x₁) ·    │  │ via Synge    │
+  │   ~ ∫ K_vac  │  │     + δω²    │  │   δb(x₂)⟩ =  │  │ world fn —   │
+  │   (σ) ρ_vac  │  │   (k; K_vac) │  │   K_cross(σ) │  │ Theorem GR1  │
+  │   d⁴x'       │  │              │  │              │  │ itself       │
+  │              │  │  form FORCED │  │  existence   │  │  GR-2A —     │
+  │  GR-4D       │  │  magnitudes  │  │  FORCED-cond.│  │  FORCED      │
+  │  FORCED-     │  │  INHERITED   │  │  amplitudes  │  │  refinements │
+  │  conditional │  │              │  │  INHERITED   │  │  GR-2B/C/E   │
+  │              │  │              │  │              │  │  ADMISSIBLE  │
+  │  magnitude   │  │              │  │              │  │              │
+  │  INHERITED   │  │              │  │              │  │              │
+  │              │  │              │  │              │  │              │
+  │  → dissolves │  │  → UHECR     │  │  → LSS power │  │  → spatially-│
+  │    cosmo-Λ   │  │    timing    │  │    spectrum  │  │    varying   │
+  │    diverg.   │  │  → GRB phot. │  │    correc-   │  │    dispersion│
+  │    form      │  │    timing    │  │    tions     │  │  → curv.-dep.│
+  │              │  │  → GW dispn. │  │              │  │    vac. pol. │
+  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘
+
+
+================================================================================
+KERNEL ARCHITECTURE — STRUCTURAL SUMMARY
+================================================================================
+
+   Stage              Object                   Status              Source
+   ─────────────────  ───────────────────────  ──────────────────  ─────────────
+   Forcing inputs     UV-FIN + P01/04/11/13    FORCED              Q.8 + Arc N
+   Flat-space V1      K_vac(x − x')            FORCED              Theorem N1
+                                                                    (Arc N N.5)
+   Bounding-from-     V1-δ zero-width          REFUTED by C3       Stage N.3
+   below
+   Bounding-from-     V1-∞ infinite-width      REFUTED by C1       Stage N.3
+   above              + locality
+   Specific forms     V2 exp / V3 (α<2) / V4   ADMISSIBLE          Arc N
+                                                                    (within class)
+   Curved-spacetime   K_vac^curved (σ(x,x'))   FORCED              Theorem GR1
+   V1                                                               (Phase-3 GR.5)
+   Curved bounding    GR-2A-δ + GR-2A-∞        REFUTED             Stage GR.3
+   Cosmological-Λ    Λ_primitive ~ ∫ K_vac    FORCED-conditional  GR-4D
+                      (σ) ρ_vac d⁴x'
+   Dispersion         ω² + δω²(k; K_vac)       form FORCED         Channel 2
+   Cross-chain        K_cross(σ)               FORCED-conditional  Channel 3
+   correlations                                (existence)
+   Curvature-vacuum   K_vac^curved itself      FORCED              GR-2A
+   coupling                                                         (Channel 4)
+
+
+================================================================================
+KEY STRUCTURAL THEOREMS IN THIS DIAGRAM
+================================================================================
+
+   T8 (N1) flat V1                  ED's first memory-kernel-level theorem
+   T9 (GR1) curved V1               ED's first gravitational-sector theorem
+   UV-FIN (T7)                      metric-independent → forces V1 in any
+                                     spacetime
+   GR-4D                            promotes existence of Λ-integral structure
+
+
+================================================================================
+                 Form-FORCED, value-INHERITED methodology
+       The kernel CLASS is FORCED at every stage; specific functional forms
+            (V2/V3/V4) and numerical parameters remain INHERITED
+================================================================================

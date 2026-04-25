@@ -1,0 +1,82 @@
+flowchart TB
+    classDef thm    fill:#fbbf24,stroke:#92400e,color:#000,stroke-width:1.5px
+    classDef core   fill:#2563eb,stroke:#1e3a8a,color:#fff,stroke-width:2px
+    classDef prop   fill:#dbeafe,stroke:#1e40af,color:#000,stroke-width:1px
+    classDef refuted fill:#fecaca,stroke:#991b1b,color:#000,stroke-width:1.5px,stroke-dasharray:6 4
+    classDef constraint fill:#10b981,stroke:#064e3b,color:#fff,stroke-width:1px
+    classDef ext    fill:#a78bfa,stroke:#5b21b6,color:#fff,stroke-width:1.5px
+
+    %% ---- Forcing inputs (top) ----
+    UVF["UV-FIN<br/>(Theorem Q3)<br/>FORCED"]:::constraint
+    P01["Primitive 01<br/>event-discreteness<br/>scale ℓ_ED"]:::constraint
+    P04["Primitive 04<br/>bounded bandwidth"]:::constraint
+    P13["Primitive 13<br/>finite proper-time<br/>intervals"]:::constraint
+    P11["Primitive 11<br/>commitment<br/>locality"]:::constraint
+    P06["Primitive 06<br/>Lorentz / general<br/>covariance"]:::constraint
+
+    %% ---- Theorem N1: flat-space V1 ----
+    T8["Theorem N1<br/>V1 (flat-space)<br/>K_vac(x − x')<br/>Arc N — N.5 — FORCED"]:::core
+
+    %% Four properties of V1
+    PROP1["(i) finite width<br/>K_vac non-singular at x=x'"]:::prop
+    PROP2["(ii) decaying support<br/>K_vac → 0 at large |x − x'|"]:::prop
+    PROP3["(iii) Lorentz-scalar<br/>K_vac = K_vac((x − x')²)"]:::prop
+    PROP4["(iv) sub-power-law-2<br/>α < 2 in 3+1D"]:::prop
+
+    %% ---- Bounded admissibility class refutations ----
+    REFD["V1-δ<br/>zero-width limit<br/>K_vac ∝ δ⁴(x − x')<br/>REFUTED by C3<br/>(δ-response amplifies UV)"]:::refuted
+    REFI["V1-∞<br/>infinite-width limit<br/>K_vac = c_∞ everywhere<br/>REFUTED by C1 + locality<br/>(constant kernel breaks<br/>generally-covariant locality)"]:::refuted
+
+    %% ---- Theorem GR1: curved-spacetime V1 ----
+    T9["Theorem GR1<br/>V1 with Synge world function<br/>K_vac^curved(x, x') =<br/>K_vac^prim(σ(x, x') / ℓ_ED²)<br/>Phase-3 GR.5 — FORCED"]:::core
+
+    %% Hadamard parametrix arguments
+    HP1["Leg 1: UV-FIN metric-indep.<br/>(P01, P04, P13<br/>operate on event manifold<br/>regardless of curvature)"]:::prop
+    HP2["Leg 2: general covariance<br/>+ locality preserved<br/>(δ_g and constant kernel<br/>still REFUTED)"]:::prop
+    HP3["Leg 3: 3+1D power-counting<br/>applies pointwise<br/>(σ replaces (x − x')²)"]:::prop
+
+    %% ---- Cosmological extensions ----
+    EXT1["Channel 1<br/>Λ as V1-kernel integral<br/>Λ_primitive ~<br/>∫ K_vac^curved(σ) ρ_vac d⁴x'<br/>(GR-4D)<br/>FORCED-conditional<br/>magnitude INHERITED"]:::ext
+    EXT2["Channel 2<br/>V1-induced dispersion<br/>ω² = c²|k|² + δω²(k; K_vac)<br/>(form FORCED)<br/>magnitudes INHERITED"]:::ext
+    EXT3["Channel 3<br/>V5-mediated correlations<br/>⟨δb(x₁)·δb(x₂)⟩ =<br/>K_cross(σ(x₁, x₂))<br/>(existence FORCED-cond.)<br/>amplitudes INHERITED"]:::ext
+    EXT4["Channel 4<br/>Curvature–vacuum<br/>coupling via Synge<br/>(GR-2A — FORCED)<br/>refinements GR-2B/C/E<br/>ADMISSIBLE"]:::ext
+
+    %% ---- Forcing flow ----
+    UVF --> T8
+    P01 --> T8
+    P04 --> T8
+    P13 --> T8
+    P11 --> T8
+
+    %% Theorem N1 → properties
+    T8 --> PROP1
+    T8 --> PROP2
+    T8 --> PROP3
+    T8 --> PROP4
+
+    %% Refutation bounds
+    REFD -.->|bounds<br/>from below| T8
+    REFI -.->|bounds<br/>from above| T8
+    PROP1 -.- REFD
+    PROP2 -.- REFI
+
+    %% Curved extension
+    T8 -->|Hadamard parametrix<br/>extension| T9
+    UVF -.->|metric-independent| T9
+    P06 --> T9
+    P11 --> T9
+
+    %% Three legs of curved-extension argument
+    T9 --- HP1
+    T9 --- HP2
+    T9 --- HP3
+
+    %% Curved-spacetime bounds (carry over)
+    REFD -.->|GR-2A-δ also REFUTED| T9
+    REFI -.->|GR-2A-∞ also REFUTED| T9
+
+    %% Cosmological extensions from T9
+    T9 --> EXT1
+    T9 --> EXT2
+    T9 --> EXT3
+    T9 --> EXT4

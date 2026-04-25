@@ -1,0 +1,64 @@
+flowchart TB
+    classDef phase fill:#1e3a8a,stroke:#0c1e4a,color:#fff,stroke-width:2px
+    classDef arc fill:#2563eb,stroke:#1e3a8a,color:#fff,stroke-width:1.5px
+    classDef thm fill:#fbbf24,stroke:#92400e,color:#000,stroke-width:1px
+
+    %% Phase-1 layer
+    P1[Phase-1<br/>Non-relativistic QM<br/><i>Schrödinger / Born / Bell / Heisenberg</i>]:::phase
+
+    %% Phase-2 layer (four arcs)
+    subgraph P2[Phase-2 Quantum Sector]
+        direction TB
+        AR[Arc R<br/>Relativistic kinematics + dynamics<br/><i>Klein-Gordon / Cl(3,1) / Dirac</i>]:::arc
+        AM[Arc M<br/>Mass structure<br/><i>σ_τ form FORCED, values INHERITED</i><br/><i>H1-dominant</i>]:::arc
+        AQ[Arc Q<br/>QFT extension<br/><i>GRH + canonical comm. + UV-FIN</i><br/><i>30% mostly-positive quadrant</i>]:::arc
+        AN[Arc N<br/>Memory-kernel layer<br/><i>V1 finite-width vacuum kernel</i><br/><i>Markov-compatible, not Markov-forcing</i>]:::arc
+    end
+
+    %% Phase-3 layer
+    P3[Phase-3<br/>Gravitational sector<br/><i>Theorem GR1 + cosmological framework</i><br/><i>partial GR-induce quadrant</i>]:::phase
+
+    %% Arc R theorems
+    T1[Theorem 1<br/>Spin-statistics<br/>η = (−1)^{2s}]:::thm
+    T2[Theorem 2<br/>Cl(3,1) frame uniqueness]:::thm
+    T3[Theorem 3<br/>Anyon prohibition in 3+1D]:::thm
+    T4[Theorem 4<br/>Dirac equation emergence]:::thm
+
+    %% Arc Q theorems
+    T5[Theorem 5<br/>GRH unconditional FORCED]:::thm
+    T6[Theorem 6<br/>Canonical anti-commutation]:::thm
+    T7[Theorem 7<br/>UV-FIN FORCED]:::thm
+
+    %% Arc N theorem
+    T8[Theorem 8 N1<br/>V1 finite-width vacuum kernel<br/>memory-kernel-level]:::thm
+
+    %% Phase-3 theorem
+    T9[Theorem 9 GR1<br/>V1 with Synge world function<br/>curved-spacetime-kernel-level]:::thm
+
+    %% Phase flow
+    P1 ==>|extends to relativistic regime| AR
+    AR ==>|spin-statistics + Cl(3,1) → mass layer| AM
+    AM ==>|massless slot → QFT layer| AQ
+    AQ ==>|UV-FIN → kernel layer| AN
+    AN ==>|V1 + Synge generalisation| P3
+
+    %% Theorem placement (arcs → theorems)
+    AR --> T1
+    AR --> T2
+    AR --> T3
+    AR --> T4
+    AQ --> T5
+    AQ --> T6
+    AQ --> T7
+    AN --> T8
+    P3 --> T9
+
+    %% Cross-layer constraints
+    T1 -.->|preserved at every event| AN
+    T1 -.->|preserved at every cosmological event| P3
+    T7 -.->|metric-independent → V1 forced| T8
+    T7 -.->|metric-independent → V1-curved forced| T9
+    T8 -.->|extends via Hadamard parametrix| T9
+
+    %% Back-flow: GRH closure → F-M8 unconditional
+    T5 -.->|F-M8 promotion back-flow| AM

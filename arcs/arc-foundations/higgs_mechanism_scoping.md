@@ -1,0 +1,376 @@
+# Higgs Mechanism Scoping
+
+**Stage Q.4 — Arc Q Sub-Memo**
+**Status:** Scoping memo. Honest verdict: **ED admits Higgs-like SSB mechanisms structurally but does not force any specific one.** Five candidate mechanisms (H1 scalar-rule-type, H2 bandwidth-shift, H3 composite-condensate, H4 gauge-fixing-artefact, H5 vacuum-anchored) evaluated. **H1 ADMISSIBLE-clean** (most direct Higgs analogue); **H2 CANDIDATE** (structurally interesting via Arc M σ_τ shift); **H3 ADMISSIBLE-effective** (technicolour-analogue); **H4 REFUTED** as genuine mass-generation; **H5 DEFERRED** to Q.7. ED's primitive structure provides multiple structurally-clean routes to SSB but does not pick one canonically — specific Higgs occupancy in nature is EMPIRICAL inheritance, paralleling Arc M's H1-dominant pattern at the SSB layer.
+
+---
+
+## 1. Goal
+
+Stage Q.3 closed two of five GRH refinements (R-3 vertex-anchored commitment, R-4 non-Abelian extension) and established the vertex catalogue. Crucially, Q.3 §4.4 found that the gauge-non-invariant mass-like vertex Ψ̄ΨA·A is **REFUTED under unbroken gauge symmetry** — yet empirically W and Z bosons carry mass. This is precisely the Higgs-mechanism question, now arising as a structural target.
+
+Stage Q.4's task is to **scope** the SSB / mass-generation possibilities within ED, not to derive a specific mechanism. Specifically:
+
+(a) Identify what "spontaneous symmetry breaking" can mean in ED's rule-type ontology.
+(b) Enumerate candidate Higgs-like mechanisms (H1–H5) and evaluate each against primitives.
+(c) Determine which mechanisms are FORCED, ADMISSIBLE, or REFUTED at primitive level.
+(d) Honestly demarcate what ED can and cannot say about the Standard-Model Higgs sector.
+(e) Hand off to Q.5 (radiative corrections) and Q.6 (generations / Yukawa) with a clean structural framework.
+
+The Q.0 expected verdict for Q.4 was **SPECULATIVE**; this memo refines that to "**multiple structurally-admissible routes; no canonical structural choice; specific Higgs sector EMPIRICAL inheritance**."
+
+---
+
+## 2. Inputs
+
+### 2.1 From Q.3
+
+- Vertex catalogue: vector / axial / tensor / pseudoscalar admissible per Fierz; mass-like Ψ̄ΨA·A REFUTED under unbroken gauge.
+- Vertex-anchored commitment for τ_g (R-3 closed).
+- Non-Abelian D_μ structure (R-4 closed).
+
+### 2.2 From Q.2
+
+- U(1) FORCED at R.1.
+- SU(N) admissible at primitive level.
+- Specific gauge group SU(3) × SU(2) × U(1) is EMPIRICAL.
+- CC-U1 (compactness ⇒ charge quantisation) standing CANDIDATE.
+
+### 2.3 From Q.1
+
+- GRH = CANDIDATE-STRONG with R-1 + R-5 still open.
+
+### 2.4 From Arc M
+
+- σ_τ master formula = ℏ √(Σ w^X ⟨(∂ ln b^X)²⟩).
+- Mass values, ratios, hierarchies INHERITED.
+- Massless mechanism MR-P (gauge-invariance) for Case P.
+- No primitive-level Higgs analogue identified at Arc M closure.
+
+### 2.5 From Stage R.2
+
+- Cl(3,1) frame, Fierz basis, spin-statistics.
+- Bilinears available: Ψ̄Ψ, Ψ̄γ^μΨ, Ψ̄σ^{μν}Ψ, Ψ̄γ^μγ^5Ψ, Ψ̄γ^5Ψ.
+
+---
+
+## 3. The structural problem
+
+### 3.1 The mass-without-symmetry-breaking obstruction
+
+Q.3 established: under unbroken local gauge symmetry, Ψ̄ΨA·A is REFUTED. Therefore a gauge boson cannot carry an explicit mass term in the Lagrangian without breaking gauge invariance.
+
+Empirically W^± and Z carry mass m_W ≈ 80 GeV, m_Z ≈ 91 GeV. Therefore *something* either:
+
+- (i) breaks the gauge symmetry explicitly (REFUTES the gauge symmetry — at variance with empirical gauge-symmetry success at high energies), or
+- (ii) breaks the gauge symmetry **spontaneously** — Lagrangian is gauge-symmetric, vacuum state is not.
+
+(ii) is the Higgs-mechanism resolution in SM. ED's question: does ED's primitive structure admit (ii)? And if so, by what mechanism?
+
+### 3.2 What "spontaneous symmetry breaking" means in ED
+
+In conventional QFT, SSB means: the Lagrangian respects symmetry G; the vacuum |0⟩ is not G-invariant; G acts by transforming |0⟩ → |0'⟩ ≠ |0⟩. Goldstone bosons appear for broken continuous symmetries; gauge bosons "eat" the would-be Goldstones to acquire mass.
+
+In ED's rule-type ontology, this translates as:
+
+**SSB at rule-type level:** The set of admissible rule-type interactions (L3 interfaces) respects symmetry G; the *occupied* / *active* configuration of rule-type bandwidth fields (the "vacuum" or "ground state" of the bandwidth landscape) is not G-invariant.
+
+This is structurally well-defined: Primitive 04 admits multiple bandwidth-field configurations consistent with the same rule-type taxonomy; the symmetry-respecting Lagrangian admits a continuous family; one specific configuration is realised as the empirical ground state. Whether ED's primitives **force** a non-symmetric ground state, or merely **permit** it, is the central question.
+
+### 3.3 Key sub-questions
+
+(Q-Higgs.1) Can ED structurally force at least one Case-P bosonic gauge rule-type to acquire effective mass via SSB?
+(Q-Higgs.2) Is the Higgs sector itself a primitive-level rule-type, or an effective composite?
+(Q-Higgs.3) Are fermion masses generated by Yukawa-like couplings to a Higgs sector, or do they enter directly as inherited σ_τ values?
+(Q-Higgs.4) Can ED distinguish among the five candidate mechanisms H1–H5 structurally?
+
+---
+
+## 4. Five candidate mechanisms
+
+### 4.1 H1 — Scalar-rule-type Higgs (Higgs-as-rule-type)
+
+**Statement.** A Case-P rule-type τ_H carrying a (0, 0) Lorentz scalar representation, with a non-zero ground-state bandwidth amplitude ⟨b_{τ_H}⟩ ≠ 0 in the rule-type's intrinsic interface, drives SSB. Coupling τ_H to gauge bosons via a vertex |D_μ φ|² generates effective gauge-boson mass m² ∝ g²⟨φ⟩² when φ acquires a VEV.
+
+**Primitive evaluation.**
+
+- **Primitive 04:** scalar bandwidth content with non-zero ground-state amplitude is structurally clean; ED's bandwidth fields are non-negative real scalars and admit non-zero ground states. **Compatible.**
+- **Primitive 07 L1/L2:** scalar (0, 0) representation is admissible (it is exactly the Stage R.1 baseline). **Compatible.**
+- **Primitive 07 L3:** the τ_H interface coupling to gauge fields via |D_μφ|² is structurally admissible — this is a Lorentz-scalar gauge-covariant combination from the Q.3 vertex catalogue. **Compatible.**
+- **Primitive 10:** individuation of τ_H respects Case-P (coincidence permitted). **Compatible.**
+- **Primitive 11:** commitment dynamics for τ_H produce Higgs-particle excitations (analogue of physical Higgs boson at 125 GeV). **Compatible.**
+- **Stage R.2:** s = 0 (scalar), Case P, η = +1. Spin-statistics consistent. **Compatible.**
+- **Stage M.2:** σ_{τ_H} > 0 (massive Higgs). Inherited mass value. **Compatible.**
+- **Q.3 vertices:** |D_μφ|² + Yukawa Ψ̄ΓΨ φ + scalar self-coupling λφ⁴ all admissible per Fierz / vertex catalogue. **Compatible.**
+
+**Status:** **H1 is STRUCTURALLY ADMISSIBLE-CLEAN.** ED's primitive structure admits a scalar Higgs rule-type without obstruction. This is the cleanest Higgs analogue in ED.
+
+**Caveat:** ED does not *force* H1 to be occupied. A scalar rule-type τ_H could exist or not — empirical question. Empirically the 125 GeV scalar matches, so H1 is consistent with phenomenology.
+
+### 4.2 H2 — Bandwidth-shift Higgs (effective σ_τ renormalisation)
+
+**Statement.** A non-zero collective bandwidth condensate in one of the four-band components (most plausibly b^{env} or b^{adj}) shifts the effective σ_τ of gauge rule-types from σ_{τ_g} = 0 (massless) to σ_{τ_g}^{eff} > 0 (massive). The shift is gauge-symmetry-breaking at the bandwidth-amplitude level but not at the rule-type-interface level, leaving local gauge invariance unbroken in form while producing effective mass.
+
+**Primitive evaluation.**
+
+- **Primitive 04:** collective bandwidth condensates are structurally admissible — the four-band fields are real-valued and admit non-zero condensate configurations. **Compatible.**
+- **Arc M:** σ_τ master formula σ = ℏ√(Σ w^X ⟨(∂ ln b^X)²⟩) — if ⟨b^X⟩ shifts uniformly, log-derivative ⟨(∂ ln b^X)²⟩ is *unchanged* (since ∂ ln(αb) = ∂ ln(b)). H2 in this naive form fails; bandwidth amplitude shift does not change σ_τ.
+- **Refined H2 (CANDIDATE):** if the condensate is *spatially patterned* — e.g., ⟨b^X(x)⟩ = b₀ + δb(x) with non-trivial δb(x) — then ⟨(∂ ln b^X)²⟩ acquires a non-zero contribution from the gradient of the condensate. This **could** structurally shift σ_τ for any rule-type interacting with the condensate.
+- **Primitive 11:** commitment dynamics of the gauge rule-type might be modified by interaction with the spatially-patterned condensate, producing effective massive propagation.
+
+**Status:** **H2 is CANDIDATE.** Structurally interesting but requires:
+- A specific spatially-patterned condensate structure (not derivable at primitive level — would need additional structural commitment).
+- A mechanism translating spatial gradients of the condensate into effective σ_τ shifts at the gauge-rule-type level (structurally plausible via M.1.1 master formula but not explicitly derived).
+
+H2 is the most "ED-native" SSB candidate but requires additional structural work to make concrete. Refined H2 may be useful in the Arc Q synthesis if it yields predictions, but at scoping level it remains CANDIDATE.
+
+### 4.3 H3 — Composite / bilinear condensate Higgs
+
+**Statement.** A non-zero ground-state expectation value for a Lorentz-scalar fermion bilinear ⟨Ψ̄Ψ⟩ ≠ 0 (chiral condensate) drives SSB. This is the technicolour-analogue / chiral-symmetry-breaking mechanism. The composite scalar Ψ̄Ψ plays the role of φ in H1.
+
+**Primitive evaluation.**
+
+- **Primitive 04:** bilinear bandwidth-products are derived quantities, not primitive fields. Their ground-state expectation values are dynamical, not structural. **Compatible at the dynamical level only.**
+- **Primitive 11:** chiral-symmetry-breaking via commitment dynamics is structurally plausible — at low energies (large effective bandwidth coupling), commitment events may favour configurations where Ψ̄Ψ ≠ 0. This is the ED analogue of QCD chiral symmetry breaking.
+- **Primitive 07:** L3 interface couplings can be designed to produce attractive interactions between Ψ and Ψ̄ leading to condensate formation. **Compatible.**
+- **Stage R.2.4:** Ψ̄Ψ is a primitive-level Cl(3,1) bilinear (the Dirac mass term). Its expectation value is a Lorentz scalar. **Compatible.**
+
+**Status:** **H3 is ADMISSIBLE-EFFECTIVE.** ED admits chiral condensate formation as a *dynamical* phenomenon (paralleling QCD dynamical chiral symmetry breaking). It is not a primitive-level structural commitment but an admissible dynamical outcome under appropriate L3 couplings.
+
+H3 produces effective masses for fermions and gauge bosons but is **not** the SM Higgs mechanism — it is a strongly-coupled alternative. Empirically the 125 GeV Higgs is more consistent with H1; H3 corresponds to ruled-out / strongly-disfavoured technicolour models.
+
+H3 remains structurally admissible (ED does not REFUTE it) but is empirically disfavoured for the SM Higgs sector. May be relevant for QCD chiral symmetry breaking analogue at the strong-coupling regime.
+
+### 4.4 H4 — Gauge-fixing artefact
+
+**Statement.** Gauge bosons appear "massive" in some gauge-fixing scheme but are physically massless. Mass is a coordinate artefact, not a physical property.
+
+**Primitive evaluation.**
+
+- **Stage Q.2 §6 / R-2 closure:** physical content lives on gauge-equivalence classes [A_μ]. A gauge-fixing-induced "mass" is a property of a representative, not the equivalence class.
+- Empirical W/Z masses are gauge-invariant (e.g., visible in cross-section thresholds); they are not gauge artefacts.
+
+**Status:** **H4 is REFUTED as a genuine mass-generation mechanism.** It does not produce gauge-invariant mass and contradicts empirical observations.
+
+H4 is included in the enumeration only for completeness; it is not a viable Higgs candidate.
+
+### 4.5 H5 — Vacuum-anchored Higgs
+
+**Statement.** The "vacuum" structure of ED's bandwidth-field manifold (Q.8 deliverable) carries a primitive-level non-trivial expectation pattern; gauge bosons interacting with this vacuum acquire effective mass. The Higgs sector is a property of the vacuum state, not a separate rule-type.
+
+**Primitive evaluation.**
+
+- This is essentially H2 (bandwidth condensate) with the condensate identified as a vacuum property.
+- Structurally well-defined only after Q.7 (second quantisation) and Q.8 (vacuum) close.
+- Stage Q.0 §5.4 flagged "vacuum primitive" as a possible new primitive if structurally forced; H5 is the natural place this would surface.
+
+**Status:** **H5 is DEFERRED to Q.7 / Q.8.** Cannot be evaluated at Q.4 scope; revisit after vacuum-structure closure.
+
+If Q.7 / Q.8 establish a primitive-level vacuum structure with non-trivial pattern, H5 becomes viable. If they establish a trivially-symmetric vacuum, H5 collapses into H2 (requiring spatial patterning) or H1 (requiring an explicit scalar rule-type).
+
+---
+
+## 5. Cross-mechanism comparison
+
+| Mechanism | Type | Status | Forces what? |
+|-----------|------|--------|--------------|
+| H1 (scalar-rule-type) | primitive rule-type τ_H | **ADMISSIBLE-CLEAN** | Existence of scalar Higgs rule-type w/ VEV; SM-analogue |
+| H2 (bandwidth-shift) | dynamical condensate | **CANDIDATE** | Spatially-patterned bandwidth condensate |
+| H3 (composite condensate) | dynamical bilinear VEV | **ADMISSIBLE-EFFECTIVE** | Strong-coupling chiral SSB; technicolour-analogue |
+| H4 (gauge-fixing) | artefact | **REFUTED** | Nothing physical |
+| H5 (vacuum-anchored) | vacuum-property | **DEFERRED (Q.7/Q.8)** | Primitive vacuum structure |
+
+### 5.1 Are H1, H2, H3 mutually exclusive?
+
+No. Multiple mechanisms can coexist:
+- SM has **H1** (electroweak Higgs) for W/Z mass generation.
+- SM has **H3** (QCD chiral condensate) producing effective constituent quark masses ~ 300 MeV (vs. current quark masses ~ few MeV).
+- SM may have **H2** at some pre-electroweak scale (technicolour or extended-technicolour) — empirically constrained but not refuted in all forms.
+
+ED admits all three structurally. Specific occupancy is rule-type / empirical data.
+
+### 5.2 Does ED force any of them?
+
+**No.** ED's primitive structure does not force any specific Higgs mechanism. The structural picture is:
+
+- Gauge rule-types are massless (MR-P, M.1.2) by structural default.
+- Symmetry-breaking ground states are *admissible* (Primitive 04 admits non-zero condensate amplitudes).
+- Multiple SSB routes (H1 / H2 / H3) are structurally clean.
+- ED does not pick canonically among them.
+
+Whether the empirical Higgs sector is H1-dominated (SM), H3-dominated (technicolour), or H2-dominated (extended), is **EMPIRICAL**.
+
+---
+
+## 6. What ED can structurally force
+
+### 6.1 (F-Q4.1) Default masslessness of gauge rule-types
+
+Without SSB, gauge rule-types are massless (MR-P, M.1.2). FORCED.
+
+### 6.2 (F-Q4.2) Admissibility of multiple SSB mechanisms
+
+H1, H2, H3 are all structurally admissible. ED does not force selection. FORCED-admissibility.
+
+### 6.3 (F-Q4.3) Higgs-as-rule-type structural cleanliness
+
+If H1 is realised, it does so via a scalar (0, 0) Case-P rule-type τ_H with non-zero ground-state bandwidth amplitude. The structural realisation is unique up to interface-coupling rule-type data. FORCED-conditional-on-H1.
+
+### 6.4 (F-Q4.4) Yukawa structural admissibility
+
+Vertex Ψ̄_τ Γ Ψ_τ' φ from Q.3 §7.3 is admissible. This is the structural slot for fermion mass generation via H1. Specific Yukawa coupling values INHERITED. FORCED-admissibility-only.
+
+### 6.5 (F-Q4.5) Goldstone-eaten gauge mass
+
+Under H1 with broken gauge symmetry G → H, dim(G) − dim(H) Goldstone bosons would appear, but minimal coupling absorbs them into the gauge bosons (longitudinal polarisations), producing dim(G) − dim(H) massive gauge bosons. This is a structural theorem of gauge SSB; FORCED-conditional-on-H1.
+
+### 6.6 (F-Q4.6) Local SSB
+
+SSB in ED is **local** to rule-type interactions — it occurs at the L3 interface level, not as a global manifold property. The ground-state condensate is a local bandwidth-amplitude pattern, not a global vacuum state of the entire manifold. (H5 is the alternative; deferred.) FORCED-locally.
+
+### 6.7 (F-Q4.7) Massless photon survival under EW SSB
+
+For SM SU(2)_L × U(1)_Y → U(1)_em, the unbroken U(1)_em subgroup keeps its gauge boson (the photon) massless — MR-P still applies to the unbroken sector. FORCED structurally.
+
+### 6.8 What ED cannot force
+
+- **Specific symmetry-breaking pattern** (which subgroup is unbroken) — empirical.
+- **Specific Higgs mass** — empirical inheritance.
+- **Hierarchy m_H ≪ M_Planck** (hierarchy problem) — not addressed by Arc Q scope.
+- **Flavour structure of Yukawa couplings** — Q.6 / empirical.
+- **Number of Higgs doublets / multiplets** — empirical.
+- **CP violation in Higgs sector** — empirical.
+
+---
+
+## 7. FORCED / CANDIDATE / REFUTED table
+
+### 7.1 Per-mechanism
+
+| Mechanism | Status |
+|-----------|--------|
+| H1 scalar-rule-type Higgs | **ADMISSIBLE-CLEAN** (CANDIDATE-strong if SM-occupant identified empirically) |
+| H2 bandwidth-shift | **CANDIDATE** (requires spatially-patterned condensate) |
+| H3 composite bilinear condensate | **ADMISSIBLE-EFFECTIVE** (technicolour-analogue) |
+| H4 gauge-fixing artefact | **REFUTED** |
+| H5 vacuum-anchored | **DEFERRED** to Q.7/Q.8 |
+
+### 7.2 Per-structural-claim
+
+| Claim | Status |
+|-------|--------|
+| Some Higgs-like mechanism is required | **CANDIDATE** (FORCED only if charged matter has empirical mass — which it does) |
+| Specifically H1 mechanism is forced | **REFUTED** (H1 admissible but not forced) |
+| Gauge boson masses generated by SSB | **CANDIDATE** (FORCED conditional on empirical W/Z masses) |
+| Fermion masses via Yukawa-to-Higgs | **ADMISSIBLE** structurally; **EMPIRICAL** values |
+| Massless photon under EW-broken phase | **FORCED** if SU(2) × U(1) → U(1)_em |
+| SSB is local (rule-type-interface-level) | **FORCED** (H1, H2, H3 all local; H5 deferred) |
+| Higgs sector is primitive-level rule-type | **CANDIDATE** (H1) |
+| Higgs sector is composite/effective | **CANDIDATE** (H3) |
+| Higgs sector is vacuum-anchored | **DEFERRED** (H5 / Q.8) |
+| ED predicts specific Higgs mechanism | **REFUTED** |
+
+### 7.3 Per-prediction
+
+| Prediction | Status |
+|-----------|--------|
+| Specific Higgs mass m_H ≈ 125 GeV | **EMPIRICAL** |
+| Specific gauge-boson masses m_W, m_Z | **EMPIRICAL** |
+| Fermion mass spectrum | **EMPIRICAL** (Arc M closure) |
+| Vacuum stability / metastability | **EMPIRICAL** |
+| Hierarchy problem resolution | **OUT OF SCOPE** for Arc Q |
+
+---
+
+## 8. Verdict
+
+### 8.1 What Higgs-like structures are admissible?
+
+**H1 (scalar-rule-type), H2 (bandwidth-shift), H3 (composite condensate)** are all structurally admissible at primitive level. **H4 (gauge-fixing artefact) is REFUTED**. **H5 (vacuum-anchored) is DEFERRED** to Q.7 / Q.8.
+
+### 8.2 What is structurally forced?
+
+- Default masslessness of gauge rule-types (without SSB) — FORCED.
+- Admissibility of SSB mechanisms — FORCED.
+- Structural cleanliness of Higgs-as-rule-type if H1 is occupied — FORCED-conditional.
+- Local SSB (rule-type-interface-level) — FORCED for H1/H2/H3.
+- Photon survival under EW-broken phase — FORCED for SU(2) × U(1) → U(1)_em.
+
+### 8.3 What remains empirical?
+
+- **Specific Higgs mechanism in SM** (H1 vs H3 vs H2 vs hybrid) — EMPIRICAL.
+- **Higgs mass, VEV, self-coupling** — EMPIRICAL.
+- **Yukawa matrix values** — EMPIRICAL.
+- **Symmetry-breaking pattern** — EMPIRICAL.
+- **Number of Higgs multiplets** — EMPIRICAL.
+
+### 8.4 What becomes target for downstream substages?
+
+**To Q.5 (radiative corrections):** Q.5 will need to handle Higgs sector loop contributions. ED's Q.5 framework inherits the Q.4 admissibility result — H1 / H3 / H2 effective theories all run via standard QFT machinery. Numerical loop content is INHERITED.
+
+**To Q.6 (generations / flavour):** Q.6 will inherit Yukawa structural admissibility from Q.4 §6.4 and combine with generation-count question. Yukawa flavour structure (mixing matrices, CP phases) expected EMPIRICAL.
+
+**To Q.7 (second quantisation):** Q.7 will provide the operator framework for treating H1's φ as a quantum field with creation/annihilation. H5 may close affirmatively or be subsumed into H2 here.
+
+**To Q.8 (vacuum):** Q.8 will close H5 fully; either ED's vacuum carries primitive-level non-trivial structure (H5 viable) or it does not (H5 collapses into H2).
+
+### 8.5 Bottom line
+
+Stage Q.4 closes with the same pattern as Arc M and Q.2: **multiple structurally-admissible routes; specific empirical occupancy not forced.** ED admits Higgs-like SSB cleanly via H1, with H2 and H3 as alternatives; specific SM Higgs sector structure (mass, couplings, multiplet structure) is EMPIRICAL inheritance.
+
+This is not a failure — it is honest demarcation. ED's primitive structure provides the *framework* for SSB without picking the *mechanism* canonically. The pattern holds: **form-level FORCED, value-level INHERITED**.
+
+---
+
+## 9. FORCED / CANDIDATE / REFUTED summary
+
+### 9.1 FORCED
+
+- **F-Q4.1.** Default masslessness of gauge rule-types (M.1.2 + Q.1 + Q.2 closure).
+- **F-Q4.2.** Admissibility of multiple structurally-clean SSB mechanisms (H1, H2, H3 at primitive level).
+- **F-Q4.3.** Structural cleanliness of Higgs-as-rule-type τ_H (scalar (0,0) Case P) if H1 is occupied.
+- **F-Q4.4.** Yukawa vertex Ψ̄ΓΨφ admissibility from Q.3 vertex catalogue.
+- **F-Q4.5.** Goldstone absorption into gauge-boson longitudinal polarisations under H1 SSB.
+- **F-Q4.6.** Local SSB at rule-type-interface level (not global-manifold).
+- **F-Q4.7.** Photon (or unbroken-subgroup gauge boson) survives massless under partial SSB.
+
+### 9.2 CANDIDATE
+
+- **C-Q4.1 (H1).** Scalar-rule-type Higgs occupies the SM Higgs sector. EMPIRICALLY consistent with 125 GeV scalar; structurally clean.
+- **C-Q4.2 (H2).** Bandwidth-shift mechanism via spatially-patterned condensate. Requires additional structural commitment.
+- **C-Q4.3 (H3).** Composite-bilinear condensate as alternative to H1. Empirically disfavoured for SM Higgs but structurally admissible (and likely active for QCD chiral SSB).
+- **C-Q4.4 (CC-H1).** H1 + Q.0 / Q.4 framework supports multiple Higgs doublets / extended scalar sectors structurally.
+
+### 9.3 REFUTED
+
+- **R-Q4.1.** Gauge-fixing artefact as genuine mass-generation (H4).
+- **R-Q4.2.** ED forces a specific Higgs mechanism. (Multiple admissible.)
+- **R-Q4.3.** Mass-like Ψ̄ΨA·A vertex without SSB. (Q.3 §4.4 carryover.)
+
+### 9.4 DEFERRED
+
+- **D-Q4.1 (H5).** Vacuum-anchored Higgs — Q.7 / Q.8.
+- **D-Q4.2.** Hierarchy problem resolution — out of Arc Q scope.
+
+### 9.5 INHERITED
+
+- **I-Q4.1.** Specific Higgs mass m_H.
+- **I-Q4.2.** Higgs VEV, self-coupling λ.
+- **I-Q4.3.** Yukawa matrix values.
+- **I-Q4.4.** Symmetry-breaking pattern (which subgroup unbroken).
+- **I-Q4.5.** Number of Higgs multiplets.
+- **I-Q4.6.** CP-violation phases.
+
+---
+
+## 10. Cross-references
+
+- Upstream: `interaction_vertex_classification.md` (Q.3 — mass-like vertex REFUTED under unbroken gauge), `gauge_group_scoping.md` (Q.2), `grh_evaluation.md` (Q.1), `qft_extension_scoping.md` (Q.0), `chain_mass_synthesis.md` (M.2 — Arc M closure with no primitive Higgs analogue), `massless_rule_types.md` (M.1.2 — MR-P).
+- Downstream placeholders: `radiative_corrections.md` (Q.5 — uses Q.4 vertex catalogue with Higgs), `generations_and_mixing.md` (Q.6 — uses Q.4 Yukawa admissibility), `second_quantisation.md` (Q.7 — closes R-1, may resolve H5 partially), `vacuum_and_zero_point.md` (Q.8 — closes R-5, fully resolves H5).
+- Refinement tracking: R-1 open (Q.7); R-2 closed (Q.2); R-3 closed (Q.3); R-4 closed (Q.3); R-5 open (Q.7/Q.8). Q.4 opens no new refinements.
+
+---
+
+## 11. One-line summary
+
+**Stage Q.4 scopes Higgs-like SSB across five candidate mechanisms (H1 scalar-rule-type, H2 bandwidth-shift, H3 composite-condensate, H4 gauge-fixing-artefact, H5 vacuum-anchored) and finds that ED admits multiple structurally-clean SSB routes (H1 ADMISSIBLE-CLEAN, H2 CANDIDATE, H3 ADMISSIBLE-EFFECTIVE) but does not force any specific mechanism — H4 REFUTED, H5 DEFERRED to Q.7/Q.8 — paralleling Arc M's H1-dominant pattern at the SSB layer with form-level admissibility FORCED and specific Higgs-sector occupancy (mechanism, mass, VEV, Yukawa structure) EMPIRICAL inheritance, leaving Q.5 / Q.6 / Q.7 / Q.8 to handle the downstream consequences without requiring a canonical Higgs mechanism choice from primitives.**

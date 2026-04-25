@@ -1,0 +1,459 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\title{Non-Markovian Structure as a Forced Memory-Kernel Layer of Event-Density Theory}
+
+\author{Allen Proxmire \and Copilot (AI collaborator)}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We extend the Event-Density (ED) program from its Phase-2 form-level closure to a kernel-level memory-structure layer. Phase-2 (Arc~R relativistic kinematics, Arc~M chain-mass, Arc~Q QFT extension) closed the structural framework for ED's quantum sector under implicit Markovian assumptions; Arc~N tests whether those assumptions are primitive-derived or merely tractability-driven. We address the central question (Q-N): \emph{does ED admit or require non-Markovian structure in chain evolution or multi-chain interactions?} Through a five-stage analysis (N.0 scoping, N.1 catalogue, N.2 \textsc{forced} evaluation, N.3 \textsc{refuted} evaluation, N.4 cross-arc implications, N.5 synthesis), we establish three principal results. \textbf{Theorem N1 (Finite-Width Vacuum Memory Kernel \textsc{forced}):} the vacuum-response kernel $K_\mathrm{vac}(x - x')$ is structurally forced at primitive level to have finite, non-zero, decaying, Lorentz-scalar, sub-power-law-2 form, by the joint action of UV-FIN (Arc Q Theorem~Q3), Primitive~01 event-discreteness, and Primitive~13 finite proper-time intervals. Three cascading \textsc{forced}-conditional items (vacuum-induced bandwidth memory N1-E, vacuum-modulated commitment memory N2-E, vacuum-mediated adjacency memory N3-D) plus V5 cross-chain-correlation existence inherit forced status via the V1 vacuum-coupling channel. Seven \textsc{refuted} determinations under the C1 (Lorentz covariance), C2 (spin-statistics), C3 (UV-FIN) constraint framework establish that admissible non-Markovianity is bounded, not arbitrary. Eleven catalogue items plus four V-sector specific-form sub-cases remain \textsc{admissible-not-forced}. No Phase-2 verdict is overturned; three Phase-2 closures (Arc~M $\sigma_\tau$, Arc~Q.5 vacuum polarisation, Arc~Q.8 cosmological-$\Lambda$) are structurally enriched; one new \textsc{candidate} (vacuum-mediated additional CP phases beyond the Jarlskog count) is opened. Phase-3 (ED $\to$ GR coupling) is substantively unblocked with three new structural input channels. Theorem N1 takes its place as ED's eighth \textsc{forced} structural theorem and first memory-kernel-level structural prediction, completing the quantum-sector picture at the kernel level alongside Phase-2's form-level theorems while preserving the \emph{form-\textsc{forced}, value-\textsc{inherited}} methodology established across Arcs~R, M, and Q.
+\end{abstract}
+
+\section{Introduction}
+
+The Event-Density (ED) program builds quantum and gravitational physics as forced structural consequences of a small primitive stack on a 3+1-dimensional event manifold. Phase-1~\cite{phase1} derived non-relativistic single-particle quantum mechanics from the participation measure $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$, the four-band bandwidth decomposition (Primitive~04), and commitment dynamics (Primitives 10--11). Phase-2 extended this foundation through three connected arcs: Arc~R~\cite{arcr} derived Klein--Gordon, the spin--statistics theorem, the Cl(3,1) Clifford-algebra frame, and the Dirac equation; Arc~M~\cite{arcm} established that ED forces the \emph{form} of mass structure but inherits all numerical mass values, ratios, and hierarchies; Arc~Q~\cite{arcq} extended ED to the QFT regime, producing GRH (gauge-field-as-rule-type) unconditional \textsc{forced}, canonical (anti-)commutation \textsc{forced}, and UV-FIN (primitive-level UV finiteness) \textsc{forced}.
+
+Phase-2's three arcs closed under implicit \emph{Markovian} assumptions. Stage~R.1's minimal coupling, Arc~M's $\sigma_\tau$ master formula, Arc~Q's canonical equal-time commutation relations, and Arc~Q.8's effective vacuum response were each derived assuming locality in time --- the assumptions were never primitive-derived; they were tractability-driven choices.
+
+Arc~N opens the question of whether those assumptions are required at primitive level. The central question is:
+\begin{quote}
+\textbf{(Q-N)} Does ED admit or require non-Markovian structure in chain evolution or multi-chain interactions?
+\end{quote}
+
+This paper presents Arc~N's five-stage closure: N.0 scoping~\cite{n0}, N.1 catalogue~\cite{n1}, N.2 \textsc{forced} evaluation~\cite{n2}, N.3 \textsc{refuted} evaluation~\cite{n3}, N.4 cross-arc implications~\cite{n4}, and N.5 synthesis~\cite{n5} (the authoritative source for the present manuscript).
+
+The headline verdict, in plain language: \textbf{ED is Markov-compatible but not Markov-forcing.} Most non-Markovian extensions are admissible structurally but not required. One memory-kernel-level structure is, however, structurally \textsc{forced} at primitive level --- the finite-width vacuum-response kernel V1, established as Theorem~N1. The forcing argument is downstream of UV-FIN: a $\delta$-function vacuum response would amplify high-frequency contributions and threaten primitive-level UV finiteness; primitive event-discreteness imposes a natural cutoff. Theorem~N1 specifies the structural form of the resulting finite-width kernel.
+
+Beyond Theorem~N1, four cascading items inherit \textsc{forced}-conditional status via the V1 vacuum-coupling channel: vacuum-induced bandwidth memory (N1-E), vacuum-modulated commitment memory (N2-E), vacuum-mediated adjacency memory (N3-D), and V5 cross-chain correlation existence. Seven \textsc{refuted} determinations under the C1/C2/C3 constraint framework eliminate specific non-Markovian forms --- confirming that admissible non-Markovianity is bounded.
+
+Phase-2 verdicts are unaffected. Three Phase-2 closures are structurally \emph{enriched} with kernel-level detail, but no verdict is overturned. One new \textsc{candidate} --- vacuum-mediated additional CP phases beyond the Jarlskog count --- is opened in Arc~Q.6's territory. Phase-3 (ED $\to$ GR coupling) is substantively unblocked with three new structural input channels arising from Theorem~N1's curved-spacetime extension.
+
+The paper is organised as follows. Section~2 reviews ED primitives and Phase-2 structural theorems relevant to Arc~N. Section~3 presents the Arc~N roadmap and methodology. Section~4 summarises the catalogue of admissible non-Markovian structures. Section~5 states and proves Theorem~N1. Section~6 presents \textsc{refuted} and \textsc{admissible} structures. Section~7 evaluates cross-arc implications. Section~8 presents the Phase-3 hand-off. Section~9 discusses methodological consistency. Section~10 concludes.
+
+\section{Background and Position in the ED Program}
+
+\subsection{ED primitives relevant to Arc N}
+
+\begin{itemize}
+  \item \textbf{Primitive 01 (micro-event):} discrete events on the 3+1-dimensional event manifold; supplies the event-discreteness scale $\ell_\mathrm{ED}$.
+  \item \textbf{Primitive 04 (bandwidth):} four-band decomposition $b_K = b_K^\mathrm{int} + b_K^\mathrm{adj} + b_K^\mathrm{env} + b_K^\mathrm{com}$ with bounded amplitudes per primitive event.
+  \item \textbf{Primitive 06 (four-gradient + Lorentz covariance):} supplies the C1 constraint.
+  \item \textbf{Primitive 10 (individuation):} threshold separating distinct chains; supports Pauli exclusion via vanishing-on-coincidence for Case-R rule-types.
+  \item \textbf{Primitive 11 (commitment):} discrete events along $\gamma_K$. Substrate for the history-bearing process structure.
+  \item \textbf{Primitive 13 (relational timing):} finite proper-time intervals $\tau_K$ along $\gamma_K$. Supplies the second leg of the UV-finiteness argument.
+\end{itemize}
+
+A primitive-by-primitive review confirms ED's general status: \textbf{primitives 01--13 admit non-Markovian structure as a consistent extension but do not generally force it.} The exception, discussed in Section~5, is the joint action of Primitives 01 + 04 + 13 under the UV-FIN constraint, which together force vacuum-response kernels to have finite width.
+
+\subsection{Phase-2 \textsc{forced} theorems}
+
+Arc~N inherits seven \textsc{forced} structural theorems from Phase-1 + Phase-2:
+\begin{center}
+\begin{tabular}{cll}
+\hline
+\# & Theorem & Source / Type \\
+\hline
+1 & Spin--statistics $\eta = (-1)^{2s}$ & R.2.5 / Theorem-level \\
+2 & Cl(3,1) frame uniqueness & R.2.4 / Algebra-level \\
+3 & Anyon prohibition in 3+1D & R.2.3 / Topology-level \\
+4 & Dirac equation emergence & R.3 / Dynamical-equation-level \\
+5 & GRH unconditional \textsc{forced} & Q.1 + Q.2/3/7/8 / Existence-level \\
+6 & Canonical (anti-)commutation \textsc{forced} & Q.7 / Operator-level \\
+7 & UV-FIN \textsc{forced} & Q.8 / Bound-level \\
+\hline
+\end{tabular}
+\end{center}
+
+Each operates at the \textbf{form-level} of ED's quantum sector. None operates at the kernel level --- the specific mechanism by which UV-FIN is realised in vacuum response.
+
+\subsection{Arc N as kernel-level complement to Phase-2}
+
+Arc~N positions itself as a \textbf{kernel-level} complement to Phase-2's form-level theorems. Phase-2 says ``primitive-level multi-chain participation integrals are finite''; Arc~N says ``the kernel mechanism by which finiteness is realised is V1 with finite, non-zero, decaying, sub-power-law-2 form.''
+
+This structural division mirrors the Arc~M precedent --- Arc~M established the form of the $\sigma_\tau$ mass structure but inherited specific values; Arc~N establishes the form of the vacuum-response kernel but inherits specific functional realisations within that form. The methodological framing --- \emph{form-\textsc{forced}, value-\textsc{inherited}} --- extends naturally from Arc~M to Arc~Q to Arc~N.
+
+\section{Arc N Roadmap and Methodology}
+
+Arc~N proceeds through five substages:
+
+\begin{itemize}
+  \item \textbf{N.0 (scoping)~\cite{n0}}: frames (Q-N), enumerates three candidate mechanisms by sector (N1 bandwidth-memory, N2 commitment-memory, N3 adjacency-memory), three potential primitive sources (S1--S3), three potential constraints (C1--C3). Honest expected-verdict prior recorded.
+  \item \textbf{N.1 (catalogue)~\cite{n1}}: enumerates 20 admissible non-Markovian structures across N1, N2, N3, V sectors. No \textsc{forced}/\textsc{refuted} evaluation --- intentional pre-judgment enumeration.
+  \item \textbf{N.2 (\textsc{forced} evaluation)~\cite{n2}}: V1 unconditionally \textsc{forced}; N1-E, N2-E, N3-D \textsc{forced}-conditional-on-V1; V5 existence \textsc{forced}-conditional with amplitudes inherited.
+  \item \textbf{N.3 (\textsc{refuted} evaluation)~\cite{n3}}: 7 \textsc{refuted} determinations under C1/C2/C3.
+  \item \textbf{N.4 (cross-arc implications)~\cite{n4}}: no Phase-2 verdict overturned; three closures structurally enriched; one new \textsc{candidate} C-N4.1 opened.
+  \item \textbf{N.5 (synthesis)~\cite{n5}}: integration of N.0--N.4 into final Arc~N verdict.
+\end{itemize}
+
+Methodological discipline preserved across all five stages: clear separation of \textsc{forced} / \textsc{candidate} / \textsc{refuted} / \textsc{admissible} / \textsc{inherited}; honest prior recorded; \emph{form-\textsc{forced}, value-\textsc{inherited}} framing applied at the kernel level; cross-arc implications explicitly evaluated.
+
+\section{Catalogue of Non-Markovian Structures}
+
+Stage~N.1~\cite{n1} enumerated 20 admissible non-Markovian structures across four sectors. We summarise without re-deriving.
+
+\subsection{Sector N1 --- bandwidth-memory (5 items)}
+
+\begin{itemize}
+  \item \textbf{N1-A} Finite-width memory kernels in $b^\mathrm{env}$.
+  \item \textbf{N1-B} History-weighted spectral-rate terms in $\sigma_\tau$.
+  \item \textbf{N1-C} Multi-scale bandwidth memory.
+  \item \textbf{N1-D} Cross-band memory coupling, including potential Case-P$\leftrightarrow$Case-R cross-band coupling.
+  \item \textbf{N1-E} Vacuum-induced bandwidth memory inheriting kernel structure from V1.
+\end{itemize}
+
+\subsection{Sector N2 --- commitment-memory (5 items)}
+
+\begin{itemize}
+  \item \textbf{N2-A} Thresholds depending on past event density.
+  \item \textbf{N2-B} Hysteresis-style commitment with delayed individuation.
+  \item \textbf{N2-C} Memory-weighted commitment spacing.
+  \item \textbf{N2-D} Multi-chain commitment correlations.
+  \item \textbf{N2-E} Vacuum-modulated commitment memory.
+\end{itemize}
+
+\subsection{Sector N3 --- adjacency-memory (5 items)}
+
+\begin{itemize}
+  \item \textbf{N3-A} Time-lagged adjacency graphs.
+  \item \textbf{N3-B} History-dependent adjacency weights.
+  \item \textbf{N3-C} Multi-chain (3+) correlation kernels.
+  \item \textbf{N3-D} Vacuum-mediated adjacency memory.
+  \item \textbf{N3-E} Non-local adjacency propagation (catalogued for completeness; expected \textsc{refuted}).
+\end{itemize}
+
+\subsection{Sector V --- vacuum-response (5 items)}
+
+\begin{itemize}
+  \item \textbf{V1} Finite-width vacuum memory kernel (general functional form).
+  \item \textbf{V2} Exponential-decay vacuum response.
+  \item \textbf{V3} Power-law vacuum response (admissible only below critical exponent).
+  \item \textbf{V4} Multi-scale vacuum memory.
+  \item \textbf{V5} Vacuum-induced cross-chain correlations.
+\end{itemize}
+
+\section{Theorem N1: Finite-Width Vacuum Memory Kernel \textsc{forced}}
+
+\subsection{Statement}
+
+\begin{theorem}[Finite-Width Vacuum Memory Kernel \textsc{forced}, N1]
+The vacuum-response kernel $K_\mathrm{vac}(x - x')$ acting on chain participation perturbations is structurally \textsc{forced} at primitive level to satisfy:
+\begin{enumerate}
+  \item[(i)] \textbf{Finite width:} $K_\mathrm{vac}(x - x')$ is non-singular at $x = x'$ (rules out $\delta^4$-function form).
+  \item[(ii)] \textbf{Decaying support:} $K_\mathrm{vac}(x - x') \to 0$ as $|x - x'| \to \infty$ (rules out constant kernels).
+  \item[(iii)] \textbf{Lorentz-scalar form:} $K_\mathrm{vac}$ depends only on Lorentz invariants of $x - x'$.
+  \item[(iv)] \textbf{Bounded short-time behaviour:} kernel growth is sub-power-law-2 in the proper-time-invariant separation in 3+1D (rules out $\alpha \geq 2$ power-law forms).
+\end{enumerate}
+Specific functional forms --- exponential decay (V2), restricted power-law $\alpha < 2$ (V3), multi-scale composition (V4) --- are admissible specific realisations within the \textsc{forced} class. Specific values (kernel widths, decay constants, multi-scale weights) are \textsc{inherited}.
+\end{theorem}
+
+\subsection{Proof sketch}
+
+The proof proceeds through three structural-argument legs.
+
+\paragraph{Leg 1 --- UV-FIN forces non-zero finite width.}
+Suppose the kernel were a $\delta$-function: $K_\mathrm{vac}(x - x') = c_0 \delta^4(x - x')$. In Fourier space, $\widetilde{K_\mathrm{vac}}(\omega, \mathbf{k}) = c_0$ --- constant across all frequencies and wavenumbers. In any continuum-approximation loop integral involving the vacuum response, this constant frequency-weighting amplifies high-frequency contributions, threatening UV-FIN (Arc~Q Theorem~Q3~\cite{arcq}).
+
+Primitive~01 event-discreteness imposes a primitive-level event-resolution scale $\ell_\mathrm{ED}$ below which the manifold structure is not continuum-like. Primitive~13 supplies finite proper-time intervals between commitment events. Jointly, vacuum response cannot resolve perturbations at sub-primitive resolution; the kernel must be smoothed at the $\ell_\mathrm{ED}$ scale.
+
+The $\delta$-limit is therefore \textsc{refuted} by C3. The finite-width condition (i) follows.
+
+\paragraph{Leg 2 --- Lorentz covariance + locality forces decaying support.}
+Suppose the kernel were a constant: $K_\mathrm{vac}(x - x') = c_\infty$ for all $x, x'$. While trivially Lorentz-scalar, this implies infinite correlation length: every event is correlated with every other event with equal weight, including arbitrary spacelike separations.
+
+Such a kernel is structurally pathological. It does not respect causal-structure constraints embedded in Lorentz covariance, and is incompatible with Primitive~11 commitment-event locality. Any structurally consistent finite-width kernel must have \emph{some} decay with separation.
+
+The infinite-width limit is therefore \textsc{refuted} by C1 (in its locality-respecting interpretation). The decaying-support condition (ii) follows.
+
+\paragraph{Leg 3 --- UV-FIN refinement forces sub-power-law-2 decay.}
+Power-law kernels $K_\mathrm{vac} \propto |x - x'|^{-2\alpha}$ in 3+1D produce UV-divergent integrals when $2\alpha \geq 4$, i.e., $\alpha \geq 2$. The integral
+\begin{equation}
+\int d^4 z \, |z|^{-2\alpha} \cdot \phi(z),
+\end{equation}
+with $\phi$ a bounded test function, converges at small $|z|$ iff $\alpha < 2$ in 3+1D. Power-law kernels with $\alpha \geq 2$ are \textsc{refuted} by C3.
+
+The sub-power-law-2 condition (iv) follows.
+
+\paragraph{Synthesis.}
+The three legs jointly force $K_\mathrm{vac}$ to satisfy conditions (i)--(iv). The Lorentz-scalar form (iii) follows from C1 directly. Specific functional forms within the bounded class are admissible specific realisations; specific values \textsc{inherited}. $\square$
+
+\subsection{Dependencies}
+
+Theorem~N1 depends on:
+\begin{itemize}
+  \item Primitive~01 (event-discreteness): supplies natural-cutoff scale $\ell_\mathrm{ED}$.
+  \item Primitive~04 (bounded bandwidth): bounds amplitude content for finiteness.
+  \item Primitive~06 (Lorentz covariance): supplies C1 constraint.
+  \item Primitive~11 (commitment-event locality): supplies C1-locality refinement.
+  \item Primitive~13 (finite proper-time intervals): supplies second leg of finiteness.
+  \item Arc~Q Theorem~Q3 (UV-FIN): primitive-level UV finiteness driving V1's necessity.
+  \item Arc~Q Stage~Q.8 (effective-vacuum framework): supplies the structural object on which V1 acts.
+\end{itemize}
+
+V1's forcing is downstream of UV-FIN. UV-FIN is the more general theorem; V1 is its specific realisation at the vacuum-response level.
+
+\subsection{Significance}
+
+Theorem~N1 is \textbf{ED's first memory-kernel-level structural theorem}. It takes its place as the eighth \textsc{forced} structural theorem in the ED inventory, complementing the seven Phase-2 form-level theorems with kernel-level content.
+
+\subsection{Cascading \textsc{forced}-conditional items}
+
+Theorem~N1 propagates \textsc{forced}-conditional status to four secondary catalogue items:
+\begin{itemize}
+  \item \textbf{N1-E (vacuum-induced bandwidth memory):} $b^\mathrm{env}$ band inherits memory-kernel structure from V1.
+  \item \textbf{N2-E (vacuum-modulated commitment memory):} commitment dynamics interact with the local vacuum state.
+  \item \textbf{N3-D (vacuum-mediated adjacency memory):} same-vacuum-sector chains acquire correlated $b^\mathrm{env}$ content.
+  \item \textbf{V5 (vacuum-induced cross-chain correlations):} existence \textsc{forced}-conditional on V1; amplitudes \textsc{inherited}.
+\end{itemize}
+
+Since V1 is unconditionally \textsc{forced}, these conditional statuses are effectively unconditional; the conceptual hierarchy is retained.
+
+\section{\textsc{refuted} and \textsc{admissible} Structures}
+
+\subsection{\textsc{refuted} determinations}
+
+Stage~N.3~\cite{n3} produced seven \textsc{refuted} determinations:
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ID / Sub-case & Constraint & Brief reason \\
+\hline
+N1-D, P$\leftrightarrow$R & C2 & Cross-class kernel produces $\eta$-mixing; $\pi_1 = \mathbb{Z}_2$ forbids intermediate phases \\
+N2-B, Case-R & C2 & Two Case-R chains coexist within delay window; violates Pauli \\
+N3-E, frame-dep. & C1 & Preferred-frame correlations forbidden by Lorentz covariance \\
+V3, $\alpha \geq 2$ & C3 & $\int d^4z |z|^{-2\alpha}$ diverges in 3+1D \\
+V1-$\delta$ & C3 & $\delta$-response amplifies UV \\
+V1-$\infty$ & C1 & Constant kernel breaks locality \\
+V5 large-amp/long-range & C1, C3 & Infinite correlation length / insufficient decay \\
+\hline
+\end{tabular}
+\end{center}
+
+The pattern: 3 C1 violations, 2 C2 violations, 3 C3 violations (with V5 spanning C1+C3). All three constraints are structurally active. The C1/C2/C3 framework is exhaustive.
+
+\subsection{V1 admissibility class is bounded both ways}
+
+V1-$\delta$ and V1-$\infty$ refutations together establish that V1's admissibility class is \textbf{bounded}: kernels must have finite, non-zero, decaying width. The bounds are derived consequences of C1 + C3 --- not additional postulates.
+
+\subsection{\textsc{admissible-not-forced} structures}
+
+Eleven catalogue items plus four V-sector specific-form sub-cases pass Stage~N.3 unrefuted:
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ID & Description & Influences \\
+\hline
+N1-A & Finite-width $b^\mathrm{env}$ kernels & Arc M, Q.5 \\
+N1-B & History-weighted $\sigma_\tau$ spectral-rate & Arc M \\
+N1-C & Multi-scale bandwidth memory & Arc M, Phase-3 \\
+N1-D, same-class & Same-class cross-band coupling & Arc M \\
+N2-A & Density-dependent thresholds & Arc Q.7 \\
+N2-B, Case-P & Hysteresis on Case-P & Arc Q.7 \\
+N2-C & Memory-weighted commitment spacing & Arc Q.5, Q.7 \\
+N2-D & Multi-chain commitment correlations & Arc Q.6, Q.7 \\
+N3-A & Time-lagged adjacency graphs & Arc Q.6, Q.7 \\
+N3-B & History-dep. adjacency weights & Arc Q.6 \\
+N3-C & Multi-chain (3+) kernels & Arc Q.6, Phase-3 \\
+V2 & Exponential-decay vacuum response & Arc Q.5, Q.8, Phase-3 \\
+V3 ($\alpha < 2$) & Restricted power-law & Arc Q.5, Phase-3 \\
+V4 & Multi-scale vacuum memory & Arc Q.5, Phase-3 \\
+V5 (bounded) & Bounded cross-chain correlations & Arc Q.6, Phase-3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Bounded non-Markovianity, not arbitrary}
+
+The combined Stage~N.2 + N.3 result establishes that \textbf{admissible non-Markovianity in ED is bounded, not arbitrary.} Not every memory-kernel form is admissible. The admissibility class is well-defined and bounded; admissible non-Markovian structures inherit Phase-2 structural constraints automatically.
+
+\section{Cross-Arc Implications}
+
+Stage~N.4~\cite{n4} evaluated the impact of \textsc{forced} V1 + cascades + \textsc{admissible} structures on Phase-2 closures. \textbf{No Phase-2 verdict is overturned by Arc~N.}
+
+\subsection{Arc M (mass structure)}
+
+Arc~M's $\sigma_\tau$ master formula~\cite{arcm},
+\begin{equation}
+\sigma_\tau = \hbar \cdot \sqrt{\sum_X w_\tau^X \cdot \langle (\partial_\mu \ln b_\tau^X)(\partial^\mu \ln b_\tau^X) \rangle_\tau},
+\end{equation}
+acquires vacuum-coupled detail under N1-E. The form is preserved (SC1 Lorentz-scalar; SC2 amplitude-invariance). H1-dominant verdict --- \emph{ED fixes the structure of mass but not its values} --- preserved.
+
+\subsection{Arc Q.5 (radiative corrections)}
+
+Vacuum polarisation transversality (\textsc{forced} by GRH-3~\cite{arcq}) preserved under V1 modification. UV-FIN remains \textsc{forced}; V1 is its vacuum-response realisation. Tree-level $g = 2$ unaffected. Schwinger-sign \textsc{candidate}-plausible refined under V1 but not promoted.
+
+\subsection{Arc Q.6 (generations and mixing)}
+
+Generation count = 3 remains \textsc{refuted}-as-forced and \textsc{empirical}~\cite{arcq}. Mixing-matrix existence and CP-phase existence (Jarlskog count) remain \textsc{forced}. The substantive enrichment:
+
+\textbf{(C-N4.1, vacuum-mediated additional CP phases):} \emph{V5 cross-chain correlations under Theorem~N1 introduce complex-phase content into the effective Yukawa coupling matrix at vacuum-coupled scales; for $n \geq 3$ generations, this may force additional CP-violation structure beyond Jarlskog.} \textsc{candidate}; specific number depends on V1/V5 kernel form (\textsc{inherited}).
+
+\subsection{Arc Q.7 (second quantisation)}
+
+Canonical (anti-)commutation \textsc{forced} at equal-time coincident-point level (Theorem~Q2~\cite{arcq}) preserved. Pauli exclusion at every event preserved. Unequal-time commutators acquire memory-kernel content from V1:
+\begin{equation}
+\langle 0 | T\{a_\tau(x) a^\dagger_\tau(x')\} | 0 \rangle = G_F^{(0)}(x - x') + \int K_\mathrm{vac}(x - y) \cdot G_F^{(0)}(y - x') \, d^4 y \cdot \mathcal{O}(\text{higher order}).
+\end{equation}
+This is a structural extension of Arc~Q.7 content.
+
+\subsection{Arc Q.8 (vacuum structure)}
+
+Multi-rule-type vacuum factorisation $|0\rangle_\mathrm{full} = \bigotimes_\tau |0\rangle_\tau$ preserved. GRH unconditional \textsc{forced} unchanged (and reinforced). The cosmological-$\Lambda$ divergence-form dissolution from Arc~Q.8 gains explicit kernel-integral structure under Theorem~N1:
+\begin{equation}
+\Lambda_\mathrm{primitive} \sim \int K_\mathrm{vac}(x - x') \cdot \rho_\mathrm{vac\ energy}(x') \, d^4 x'.
+\end{equation}
+The ``what numerical structure determines $\Lambda$?'' question reframes to ``what is the V1 kernel form, and what is the integration domain at cosmological scales?'' Specific $\Lambda$ value remains \textsc{inherited}.
+
+\section{Phase-3 Hand-Off}
+
+Arc~N supplies three substantive structural-input channels for Phase-3 (ED $\to$ GR coupling).
+
+\subsection{$\Lambda$ as V1-kernel integral}
+
+The cosmological-$\Lambda$ value is identifiable as the integral of V1 vacuum-response kernel over cosmological-scale spacetime. Specific value \textsc{inherited} (depends on V1 kernel form + cosmological-boundary content).
+
+\subsection{Curvature--vacuum coupling \textsc{candidate}}
+
+In curved spacetime, V1 generalises via Synge's world function $\sigma(x, x')$ in place of $(x - x')^2$. The curvature-coupling structure may produce new structural terms in the effective ED-GR action --- a Phase-3 evaluation deliverable.
+
+\subsection{Empirical signatures}
+
+\begin{itemize}
+  \item \textbf{Dispersion-relation modifications.} V1's finite-width kernel introduces frequency-dependent structure into vacuum response, producing small modifications to photon and graviton dispersion at extreme high frequencies. Possibly testable via cosmic-ray observations or extreme-precision photon timing.
+  \item \textbf{Cosmological-correlation persistence.} V5 cross-chain correlations imply vacuum-mediated correlations between distant cosmological structures.
+\end{itemize}
+
+Both routes inherit V1/V5 kernel structure; specific values \textsc{inherited}.
+
+\section{Discussion}
+
+\subsection{ED is Markov-compatible but not Markov-forcing}
+
+Arc~N's primitive-level analysis confirms the opening claim: Primitives 01--13 admit non-Markovian structure as a consistent extension but do not generally force it. Phase-2's implicit Markovian assumptions were tractability-driven choices, not primitive-derived consequences.
+
+The exception is V1: when UV-FIN is taken as a primitive-level constraint, the joint action of UV-FIN + Primitive~01 + Primitive~13 forces vacuum-response kernels to have finite width.
+
+\subsection{Form-\textsc{forced}, value-\textsc{inherited} preserved}
+
+Arc~N preserves the methodological framing established in Arc~M~\cite{arcm} and Arc~Q~\cite{arcq}:
+\begin{itemize}
+  \item \textbf{Form-\textsc{forced}:} V1 kernel class is structurally required; cascading mechanisms structurally required; admissibility bounds structurally derived.
+  \item \textbf{Value-\textsc{inherited}:} specific functional form, timescales, amplitudes, $\Lambda$ magnitude all inherited.
+\end{itemize}
+
+\subsection{Arc N completes the quantum-sector picture at the kernel level}
+
+Pre-Arc-N, the ED quantum-sector picture was structurally complete at the form level but kernel-level unspecified. Arc~N closes this gap: V1 is the kernel mechanism. Together with cascading items, V1 supplies the kernel-level structural detail that makes UV-FIN concrete.
+
+\subsection{Integration into the ED structural inventory}
+
+Theorem~N1 is the eighth \textsc{forced} structural theorem in ED's inventory:
+\begin{center}
+\begin{tabular}{cll}
+\hline
+\# & Theorem & Type \\
+\hline
+1 & Spin--statistics $\eta = (-1)^{2s}$ & Theorem-level \\
+2 & Cl(3,1) frame uniqueness & Algebra-level \\
+3 & Anyon prohibition in 3+1D & Topology-level \\
+4 & Dirac equation emergence & Dynamical-equation-level \\
+5 & GRH unconditional \textsc{forced} & Existence-level \\
+6 & Canonical (anti-)commutation \textsc{forced} & Operator-level \\
+7 & UV-FIN \textsc{forced} & Bound-level \\
+\textbf{8} & \textbf{V1 finite-width vacuum kernel \textsc{forced}} & \textbf{Memory-kernel-level} \\
+\hline
+\end{tabular}
+\end{center}
+
+The five-arc structure --- Phase-1 + Arc~R + Arc~M + Arc~Q + Arc~N --- is \textbf{complete at primitive level} for ED's quantum sector. Phase-3 (ED $\to$ GR coupling) opens with this complete foundation.
+
+\section{Conclusion}
+
+Arc~N closes with one \textsc{forced} structural theorem --- Theorem~N1 (Finite-Width Vacuum Memory Kernel \textsc{forced}) --- established at primitive level by the joint action of UV-FIN, Primitive~01 event-discreteness, and Primitive~13 finite proper-time intervals. The V1 admissibility class is bounded both ways by V1-$\delta$ and V1-$\infty$ refutations to finite, non-zero, decaying, Lorentz-scalar, sub-power-law-2 form. Four cascading \textsc{forced}-conditional items inherit forced status via the V1 vacuum-coupling channel.
+
+Seven \textsc{refuted} determinations under C1/C2/C3 establish that admissible non-Markovianity is bounded, not arbitrary. Eleven catalogue items plus four V-sector specific-form sub-cases remain \textsc{admissible-not-forced}. One new \textsc{candidate} (vacuum-mediated additional CP phases beyond the Jarlskog count for $\geq 3$ generations) is opened.
+
+No Phase-2 verdict is overturned. Three Phase-2 closures are structurally enriched. Phase-3 (ED $\to$ GR coupling) is substantively unblocked with three new structural input channels: $\Lambda$ as V1-kernel integral, curvature-vacuum coupling \textsc{candidate}, and empirical signatures via dispersion-relation modifications and cosmological correlations.
+
+Theorem~N1 is ED's first memory-kernel-level structural theorem and the eighth \textsc{forced} structural theorem in the ED inventory. It completes the quantum-sector picture at the kernel level alongside Phase-2's form-level theorems while preserving the \emph{form-\textsc{forced}, value-\textsc{inherited}} methodology.
+
+\begin{thebibliography}{99}
+
+\bibitem{phase1}
+A.~Proxmire and Copilot, \emph{Quantum Mechanics as a Structural Consequence of Event-Density Primitives} (Phase-1 closure paper), 2026.
+
+\bibitem{arcr}
+A.~Proxmire and Copilot, \emph{Relativistic Quantum Mechanics as a Forced Structural Consequence of Event-Density Primitives} (Arc~R paper), 2026.
+
+\bibitem{arcm}
+A.~Proxmire and Copilot, \emph{Mass and Masslessness as Structural Features of Event-Density Theory} (Arc~M paper), 2026.
+
+\bibitem{arcq}
+A.~Proxmire and Copilot, \emph{A UV-Finite Quantum Field Theory from Event-Density Primitives} (Arc~Q paper), 2026.
+
+\bibitem{n0}
+A.~Proxmire, \emph{Arc~N Scoping}, \texttt{arc\_n\_scoping.md}, 2026.
+
+\bibitem{n1}
+A.~Proxmire, \emph{Catalogue of Admissible Non-Markovian Structures}, \texttt{non\_markov\_catalogue.md}, 2026.
+
+\bibitem{n2}
+A.~Proxmire, \emph{Structurally FORCED Non-Markovian Structures}, \texttt{non\_markov\_forced.md}, 2026.
+
+\bibitem{n3}
+A.~Proxmire, \emph{Structurally REFUTED Non-Markovian Structures}, \texttt{non\_markov\_refuted.md}, 2026.
+
+\bibitem{n4}
+A.~Proxmire, \emph{Cross-Arc Implications of Non-Markovian Structure}, \texttt{non\_markov\_implications.md}, 2026.
+
+\bibitem{n5}
+A.~Proxmire, \emph{Arc~N Synthesis}, \texttt{arc\_n\_synthesis.md}, 2026.
+
+\bibitem{p2syn}
+A.~Proxmire, \emph{Phase-2 Global Synthesis}, \texttt{phase2\_synthesis.md}, 2026.
+
+\bibitem{primitives}
+A.~Proxmire, \emph{Event-Density Primitive Stack} (Primitives 01--13), 2026.
+
+\bibitem{weinberg}
+S.~Weinberg, \emph{The Quantum Theory of Fields}, vol.~I--II. Cambridge University Press, 1995--1996.
+
+\bibitem{dewitt}
+B.~S.~DeWitt, \emph{The Global Approach to Quantum Field Theory}. Oxford University Press, 2003.
+
+\bibitem{wald}
+R.~M.~Wald, \emph{Quantum Field Theory in Curved Spacetime and Black Hole Thermodynamics}. University of Chicago Press, 1994.
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript closure: 2026-04-24. Companion documents: Arc~R paper~\cite{arcr}, Arc~M paper~\cite{arcm}, Arc~Q paper~\cite{arcq}, Arc~N synthesis~\cite{n5}, Phase-2 synthesis~\cite{p2syn}.}
+
+\end{document}
