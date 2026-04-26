@@ -1,0 +1,590 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{U4: The Forced Structure of the Non-Relativistic Hamiltonian}
+
+\author{Allen Proxmire}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present the structural derivation of the non-relativistic single-particle Hamiltonian $\hat{H} = \hbar^2 |\hat{p}|^2 / (2m) + V(\hat{x})$ from the Event-Density (ED) primitive stack and the now-\textsc{forced} upstream items U1, U2, U5, and Theorem~10. Operating under Framing~1 (U4 conditional on the existence of a Hermitian Hamiltonian generator, which is sibling \textsc{candidate} U3's content), we decompose U4 into five sub-features --- channel--momentum identification (F1), plane-wave eigenfunctions (F2), quadratic-in-$|\hat{p}|^2$ kinetic structure (F3), specific coefficient $1/(2m)$ (F4), and kinetic + potential decomposition (F5) --- and derive each from primitive-level inputs plus standard mathematical infrastructure. F1 follows from Stone's theorem applied to translation symmetry on the U2 Hilbert space, transferring directly from the U5 derivation; F2 is mathematical; F5 follows from translation invariance + locality. F3 is established via four constraints (translation, rotation, analyticity, non-relativistic-limit), with all candidate alternatives --- linear-in-$|\hat{p}|$, anisotropic, higher-even-power, full relativistic dispersion --- explicitly dismissed within the non-relativistic scope. F4 is the methodologically distinctive content: \textbf{the factor of 2 in $1/(2m)$ is forced by integration of the Galilean commutator condition $[\hat{H}, \hat{K}_i] = -i\hbar \hat{p}_i$ against the boost generator $\hat{K} = m\hat{x} - t\hat{p}$, with the factor of 2 emerging as the integration Jacobian rather than as a convention borrowed from classical mechanics.} All seven falsifiers are dispatched within the stated scope conditions. The U4 verdict is \textbf{\textsc{forced} with form-\textsc{forced}-value-\textsc{inherited} framing}: the kinetic-energy form is uniquely derived from primitives + symmetry + scope; the mass parameter $m$ is inherited per Arc~M's ``form \textsc{forced}, values \textsc{inherited}'' methodology, and $\hbar$ is inherited via the dimensional-atlas Madelung anchoring. The arc introduces no new structural \textsc{candidate}s; the conditionalities are all inherited. The active upstream-\textsc{candidate} inventory of the QM-emergence Phase-1 program reduces from $\{$U3, U4$\}$ + continuum gauge to \textbf{$\{$U3$\}$ + continuum gauge} --- one upstream item remains to close the entire Phase-1 structural-foundations program. With U4 closed, the Phase-1 theorem inventory stands at 15 forced structural theorems; Schr\"odinger emergence is now \textsc{forced} conditional on U3 alone.
+\end{abstract}
+
+\section{Introduction}
+
+The Schr\"odinger equation is one of the most directly tested structures in physics. Its non-relativistic single-particle form, $i\hbar \partial_t \psi = \hat{H} \psi$ with $\hat{H} = -\hbar^2 \nabla^2 / (2m) + V(\hat{x})$, has been used in calculations of atomic spectra, molecular bonding, semiconductor physics, neutron interferometry, and countless other empirical settings for nearly a century. The Hamiltonian's specific form --- the squared-momentum kinetic energy with the specific factor $1/(2m)$, plus the additive position-dependent potential --- is the structural anchor that connects the abstract evolution equation to physical observables.
+
+In standard quantum mechanics, this Hamiltonian form is \emph{imported} rather than derived. The kinetic-energy expression $T = p^2/(2m)$ is taken from classical mechanics, where it is the kinetic energy of a non-relativistic point particle; the operator-replacement $p \to \hat{p}$ promotes it to operator status. The factor of 2 in $1/(2m)$ is borrowed from the classical formula without further justification.
+
+The Event-Density (ED) program asks whether this structural form can be derived rather than postulated. The QM-emergence Phase-1 framework~\cite{phase1} presents non-relativistic single-particle quantum mechanics as a structural consequence of a primitive ontology. Five arcs of the structural-foundations cycle (born\_gleason~\cite{borngleason}, U2-Discrete~\cite{u2}, U2-Continuum~\cite{u2}, U5~\cite{u5}, U1~\cite{u1}) have promoted the participation-measure carrier, its inner-product structure, the Born rule, the adjacency-band Fourier-conjugate partition, and the participation-measure construction itself from \textsc{candidate} to \textsc{forced} status. With those five arcs closed, two upstream commitments remained: U3 (the participation-measure evolution equation, supplying existence + linear-first-order structure of the time-evolution generator) and U4 (the specific Hamiltonian form, supplying the dynamical content of the kinetic energy). This paper presents the U4 arc and its verdict.
+
+The U4 arc is the sixth and most delicate of the structural-foundations cycle. It is the first arc whose verdict is naturally framed as conditional on a \emph{sibling \textsc{candidate}} (U3) --- methodologically novel for the cycle --- and it is the first arc whose load-bearing content concerns \emph{dynamical structure} (the time-evolution generator's form) rather than kinematic structure. The arc's substantive structural finding is the derivation of the factor of 2 in $1/(2m)$ as an \emph{integration Jacobian} of the Galilean Lie algebra commutator condition, rather than as a convention borrowed from classical mechanics. The arc closes \textsc{forced} at the form level, with the mass parameter $m$ and the constant $\hbar$ inherited per established ED-program methodology.
+
+The paper is organized as follows. Section~\ref{sec:question} states the U4 question precisely. Section~\ref{sec:inputs} inventories the structural inputs available under Framing~1. Section~\ref{sec:decomposition} decomposes U4 into five sub-features. Section~\ref{sec:falsifiers} introduces the seven falsifiers. Sections~\ref{sec:F1}--\ref{sec:F4} derive the five sub-features in turn, with Sections~\ref{sec:F3} and~\ref{sec:F4} carrying the load-bearing content. Section~\ref{sec:falsifier-table} consolidates falsifier dispatches. Section~\ref{sec:conditionality} documents the conditionality ledger. Section~\ref{sec:final-theorem} states the final U4 theorem. Section~\ref{sec:downstream} documents the downstream cascade. Section~\ref{sec:discussion} discusses the result's significance.
+
+\section{Statement of the U4 Question}\label{sec:question}
+
+\subsection{The target form}
+
+The QM-emergence Phase-1 framework's Step 2 (Schr\"odinger emergence) targets the standard non-relativistic single-particle Hamiltonian:
+\begin{equation}
+\hat{H} = \frac{\hbar^2 |\hat{p}|^2}{2m} + V(\hat{x}) \qquad (\text{U4})
+\label{eq:U4target}
+\end{equation}
+with the kinetic operator $T(\hat{p}) = \hbar^2 |\hat{p}|^2 / (2m)$ depending only on momentum and the potential operator $V(\hat{x})$ depending only on position. The participation-measure framework's evolution equation (U3) is
+\[
+i\hbar \partial_t P_K = \hat{H} P_K + \sum_{K'} V_{KK'} P_{K'}.
+\]
+U4 specifies the \emph{form} of $\hat{H}$ entering this equation; U3 supplies the \emph{existence + linear-first-order structure} of the equation itself.
+
+\subsection{The five sub-features}
+
+\begin{itemize}
+  \item \textbf{F1 (Channel--momentum identification).} In the thin/continuum limit, the channel index $K$ admits a continuous momentum-space coordinate $k$ via Stone's theorem on the participation graph's translation group.
+  \item \textbf{F2 (Plane-wave eigenfunctions).} The eigenfunctions of the translation generator $\hat{p}$ in position representation are plane waves $\langle x | k \rangle = (2\pi\hbar)^{-d/2} e^{i k x / \hbar}$.
+  \item \textbf{F3 (Quadratic-in-$|\hat{p}|^2$ kinetic structure).} $T(\hat{p}) \propto |\hat{p}|^2$, with linear-in-$|\hat{p}|$, higher-even-power, anisotropic, and full relativistic alternatives all excluded in the non-relativistic regime.
+  \item \textbf{F4 (Specific coefficient $1/(2m)$).} $T(\hat{p}) = \hbar^2 |\hat{p}|^2 / (2m)$ --- the factor of 2 in the denominator is structural, not conventional.
+  \item \textbf{F5 (Kinetic + potential decomposition).} $\hat{H} = T(\hat{p}) + V(\hat{x})$ with no cross terms, in the gauge-coupling-free scope.
+\end{itemize}
+
+\subsection{The seven falsifiers}
+
+\begin{itemize}
+  \item \textbf{Fal-1.} No momentum-basis identification.
+  \item \textbf{Fal-2.} Linear-in-$|\hat{p}|$ kinetic term (e.g., $T = c |\hat{p}|$, photon-like dispersion).
+  \item \textbf{Fal-3.} Higher-even-power terms (e.g., $T \supset c |\hat{p}|^4$ in the non-relativistic regime).
+  \item \textbf{Fal-4.} Coefficient $\neq 1/(2m)$ --- wrong factor.
+  \item \textbf{Fal-5.} Anisotropic kinetic energy (direction-dependent).
+  \item \textbf{Fal-6.} Position-momentum cross terms in $\hat{H}$.
+  \item \textbf{Fal-7.} Full relativistic dispersion in non-relativistic regime.
+\end{itemize}
+
+\subsection{Framing 1: U4 conditional on sibling \textsc{candidate} U3}
+
+The U4 arc adopts \textbf{Framing~1}: U4 is derived \emph{given} that a Hermitian Hamiltonian generator $\hat{H}$ exists on the participation-measure Hilbert space. The existence question is U3's content; U4 specifies the form. This framing is methodologically novel within the structural-foundations cycle.
+
+Under Framing~1, U3 cannot be invoked as a \emph{derivation input} for U4 (that would be circular), but the existence of a Hermitian generator can be assumed as the starting point. The verdict is then ``U4 \textsc{forced} conditional on U3''; promoting U3 in a subsequent arc would make U4 fully unconditional.
+
+\section{Structural Inputs}\label{sec:inputs}
+
+\subsection{Primitives}
+
+\begin{itemize}
+  \item \textbf{Primitive 03 (Participation):} graph homogeneity, supplying translation symmetry kinematically.
+  \item \textbf{Primitive 06 (ED Gradient):} $\nabla \rho$ supplies a spatial direction with no preferred origin.
+  \item \textbf{Primitive 09 (Tension Polarity):} $U(1)$-valued polarity phase entering the participation-measure construction via U1.
+  \item \textbf{Primitive 13 (Relational Timing):} time-axis structure, used in F4 to combine with spatial translation symmetry into the full Galilean group.
+\end{itemize}
+
+\subsection{Inherited \textsc{forced} upstream items}
+
+The U4 arc has access to all five \textsc{forced} items from prior arcs of the structural-foundations cycle: U1~\cite{u1}, U2-Discrete and U2-Continuum~\cite{u2}, U5~\cite{u5}, Theorem~10~\cite{borngleason}. Particularly, the Stone's-theorem derivation in U5 transfers directly to F1 of the present arc.
+
+\subsection{Mathematical infrastructure}
+
+\begin{itemize}
+  \item Stone's theorem on one-parameter unitary groups (Stone 1932)~\cite{stone}.
+  \item Standard functional calculus on self-adjoint operators.
+  \item Galilean Lie algebra and central extension (Bargmann 1954)~\cite{bargmann}.
+  \item Standard Fourier transform on $L^2(\mathbb{R}^d)$.
+\end{itemize}
+
+\subsection{Scope conditions}
+
+Two scope conditions inherited from Phase-1 Step 2's framing:
+\begin{itemize}
+  \item \textbf{Non-relativistic single-particle scope.} $|\hat{p}|^2 / (mc)^2 \ll 1$.
+  \item \textbf{Gauge-coupling-free scope.} Magnetic vector potentials would couple position and momentum via $T(\hat{p} - eA(\hat{x})/c)$; F5 holds in the absence of such gauge couplings.
+\end{itemize}
+
+\subsection{Inherited values}
+
+\begin{itemize}
+  \item \textbf{Mass $m$:} per Arc~M's ``form \textsc{forced}, values \textsc{inherited}'' methodology~\cite{arcm}.
+  \item \textbf{$\hbar$:} inherited via the dimensional-atlas Madelung anchoring.
+\end{itemize}
+
+\subsection{Forbidden inputs (under Framing 1)}
+
+The following inputs are explicitly forbidden as derivation inputs to U4: U3 (sibling \textsc{candidate}; may be invoked only as conditional); the classical Hamiltonian as a postulate; the Schr\"odinger equation in textbook form; the relativistic dispersion as a derivation input.
+
+\section{Sub-Feature Decomposition}\label{sec:decomposition}
+
+\begin{center}
+\begin{tabular}{p{3.0cm}p{3.5cm}p{6.0cm}p{2.5cm}}
+\hline
+Sub-feature & Status & Structural inputs & Falsifiers \\
+\hline
+F1 & \textsc{forced} & Primitives 03 + 06 + U2 + Stone's theorem; U3-independent & Fal-1 \\
+F2 & \textsc{forced} (automatic given F1) & F1 + standard math & --- \\
+F3 & \textsc{forced} & C1 translation + C2 rotation + C3 analyticity + C4 non-rel limit & Fal-2, Fal-3, Fal-5, Fal-7 \\
+F4 & \textsc{forced} form (factor of 2 derived); $m$, $\hbar$ \textsc{inherited} & Primitives 03 + 13 + non-rel scope + U2 unitarity + Galilean Lie algebra integration & Fal-4 \\
+F5 & \textsc{forced} (gauge-coupling-free scope) & Translation invariance + locality & Fal-6 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Falsifier Inventory}\label{sec:falsifiers}
+
+Each falsifier targets a specific physical alternative:
+\begin{itemize}
+  \item \textbf{Fal-1:} Channel index has no momentum-space interpretation. Tested by Stone's theorem on the U2 Hilbert space.
+  \item \textbf{Fal-2:} Massless photon-like dispersion in a regime supposed to describe massive particles. Tested by C2 + C3 + C4.
+  \item \textbf{Fal-3:} Relativistic corrections in non-relativistic regime. Tested by C4 scope condition.
+  \item \textbf{Fal-4:} Wrong proportionality between kinetic energy and momentum-squared. Tested by Galilean Lie algebra integration.
+  \item \textbf{Fal-5:} Anisotropic kinetic energy. Tested by C2 rotation invariance.
+  \item \textbf{Fal-6:} Position-momentum cross terms. Tested by translation invariance + locality.
+  \item \textbf{Fal-7:} Full relativistic dispersion. Tested by C4 non-relativistic-limit.
+\end{itemize}
+
+\section{Derivation of F1 (Momentum Identification)}\label{sec:F1}
+
+\subsection{The claim}
+
+In the thin/continuum limit, the channel index $K$ admits a continuous momentum-space coordinate $k$ via Stone's theorem on the participation graph's translation group, with the basis-change between channel-representation and momentum-representation the standard Fourier transform.
+
+\subsection{Translation symmetry as a kinematic property}
+
+Define spatial translation $T_a$ acting on the participation-measure space by $(T_a P)_K(u) := P_K(u - a)$. Primitive~03's homogeneity guarantees that the participation relation does not privilege any vertex. The set $\{T_a : a \in \mathbb{R}^d\}$ forms a $d$-parameter abelian Lie group.
+
+\subsection{Translation acts unitarily on the U2 Hilbert space}
+
+For any $P, Q \in \mathcal{H}$ and any translation $a$:
+\[
+\langle T_a P \mid T_a Q \rangle = \sum_K \int du \; P_K^*(u - a) \, Q_K(u - a) = \sum_K \int du' \; P_K^*(u') \, Q_K(u') = \langle P \mid Q \rangle
+\]
+under change of variables $u' = u - a$. The translation group preserves the U2 inner product. Continuity follows from continuity of the participation-measure field. Therefore $\{T_a\}$ is a strongly continuous one-parameter unitary group on $\mathcal{H}$.
+
+\subsection{Stone's theorem identifies the translation generator}
+
+\begin{theorem}[Stone 1932~\cite{stone}]
+Every strongly continuous one-parameter unitary group on a Hilbert space has a unique self-adjoint generator.
+\end{theorem}
+
+Applied to the spatial translation group:
+\begin{equation}
+T_a = \exp\!\left( \frac{i \hat{p} \cdot a}{\hbar} \right). \label{eq:Ta}
+\end{equation}
+The eigenstates $|k\rangle$ of $\hat{p}$ form a complete orthonormal basis on $\mathcal{H}$. \textbf{In the thin/continuum limit, the channel index $K$ is identified with the momentum eigenvalue $k$:}
+\begin{equation}
+K \leftrightarrow k. \label{eq:Kk}
+\end{equation}
+
+\subsection{Explicit U3-independence}
+
+The derivation invokes Primitives 03 + 06, U2, and Stone's theorem. \textbf{No time-evolution operator, no Hamiltonian, no Schr\"odinger equation appears in the argument.} Stone's theorem identifies $\hat{p}$ kinematically on the U2 Hilbert space.
+
+\begin{theorem}[F1]
+Let $\mathcal{H}$ be the U2 Hilbert space of participation measures. Let $\{T_a : a \in \mathbb{R}^d\}$ be the spatial translation group acting on $\mathcal{H}$. Then $\{T_a\}$ is a strongly continuous one-parameter unitary group, and there exists a unique self-adjoint operator $\hat{p}$ such that $T_a = \exp(i \hat{p} \cdot a / \hbar)$. The eigenstates of $\hat{p}$ form a complete orthonormal basis on $\mathcal{H}$, and in the thin/continuum limit the channel index $K$ is identified with the eigenvalue $k$ of $\hat{p}$.
+\end{theorem}
+
+\textbf{Falsifier Fal-1 dispatched.}
+
+\section{Derivation of F2 (Plane-Wave Eigenfunctions)}\label{sec:F2}
+
+\subsection{Position-representation form of $\hat{p}$}
+
+Given F1's identification of $\hat{p}$, the position-representation form is determined by:
+\[
+T_a \psi(x) = \psi(x - a) = \exp\!\left( -a \cdot \nabla \right) \psi(x).
+\]
+Comparing with~\eqref{eq:Ta}:
+\begin{equation}
+\hat{p} = -i \hbar \nabla. \label{eq:p-position}
+\end{equation}
+
+\subsection{Eigenfunctions}
+
+The eigenvalue equation $\hat{p} \, |k\rangle = k \, |k\rangle$ becomes, in position representation, $-i \hbar \nabla \langle x | k \rangle = k \langle x | k \rangle$, with solution
+\begin{equation}
+\langle x | k \rangle = (2\pi\hbar)^{-d/2} \cdot e^{i k \cdot x / \hbar}. \label{eq:planewave}
+\end{equation}
+The normalization $(2\pi\hbar)^{-d/2}$ is fixed by the orthonormality $\langle k | k' \rangle = \delta(k - k')$.
+
+\begin{theorem}[F2]
+In the position representation of the U2 Hilbert space, the translation generator $\hat{p}$ takes the form $\hat{p} = -i \hbar \nabla$. The eigenfunctions of $\hat{p}$ are plane waves $\langle x | k \rangle = (2\pi\hbar)^{-d/2} \cdot e^{i k \cdot x / \hbar}$.
+\end{theorem}
+
+F2 introduces no new structural commitment beyond F1.
+
+\section{Derivation of F5 (Kinetic + Potential Decomposition)}\label{sec:F5}
+
+\subsection{Translation invariance forces the free part to depend only on $\hat{p}$}
+
+In the absence of an external potential, $\hat{H}_\mathrm{free}$ commutes with translations: the participation graph itself is translation-invariant (Primitive~03), and without external coupling, $\hat{H}_\mathrm{free}$ inherits this invariance. Any operator commuting with $\hat{p}$ depends on $\hat{p}$ alone via standard functional calculus. Therefore
+\begin{equation}
+\hat{H}_\mathrm{free} = T(\hat{p}). \label{eq:Hfree}
+\end{equation}
+
+\subsection{Locality forces external potentials to depend only on $\hat{x}$}
+
+Locality is a primitive-level structural property of the participation graph: edges connect adjacent vertices, and external influences couple at specific locations. The local action of a potential takes the form $(V \psi)(x) = V(x) \psi(x)$ --- multiplication by a position-dependent function, depending only on $\hat{x}$.
+
+A potential depending on $\hat{p}$ would be non-local in position representation and is structurally excluded from the standard non-relativistic-single-particle scope.
+
+\subsection{Cross terms forbidden}
+
+Any cross term $\hat{p} \hat{x}$ or $\hat{x} \hat{p}$ violates either translation invariance (free part) or locality (potential part).
+
+\subsection{Scope caveat}
+
+In the presence of magnetic vector potentials $A(\hat{x})$, the kinetic operator becomes $T(\hat{p} - e A(\hat{x})/c)$. The scope condition for U4's F5 is non-relativistic single-particle Schr\"odinger emergence \emph{without} gauge couplings.
+
+\begin{theorem}[F5]
+Within the gauge-coupling-free non-relativistic single-particle scope of Phase-1 Step~2, the Hamiltonian on the U2 Hilbert space admits the unique additive decomposition $\hat{H} = T(\hat{p}) + V(\hat{x})$, with the kinetic part depending only on $\hat{p}$ and the potential part depending only on $\hat{x}$. Cross terms are forbidden.
+\end{theorem}
+
+\textbf{Falsifier Fal-6 dispatched.}
+
+\section{Derivation of F3 (Quadratic Kinetic Structure)}\label{sec:F3}
+
+\subsection{The four constraints}
+
+\begin{itemize}
+  \item \textbf{C1 Translation invariance.} $T = T(\hat{p})$ alone (already established).
+  \item \textbf{C2 Rotation invariance.} The participation graph supports rotations as a kinematic symmetry.
+  \item \textbf{C3 Analyticity.} $T(\hat{p}) = f(|\hat{p}|^2)$ is analytic in $|\hat{p}|^2$ at $\hat{p} = 0$.
+  \item \textbf{C4 Non-relativistic-limit scope.} $|\hat{p}|^2 / (mc)^2 \ll 1$.
+\end{itemize}
+
+\subsection{C1 + C2 reduce to $f(|\hat{p}|^2)$}
+
+By C1, $T = T(\hat{p})$. By C2, $T$ is invariant under rotations of $\hat{p}$. The unique rotational invariant of $\hat{p}$ (up to powers) is $|\hat{p}|^2$:
+\begin{equation}
+T(\hat{p}) = f(|\hat{p}|^2) \label{eq:fhat}
+\end{equation}
+for some function $f : \mathbb{R}_{\geq 0} \to \mathbb{R}$. \textbf{Anisotropic alternatives dismissed --- Fal-5 dispatched.}
+
+\subsection{C3 forces Taylor expansion with no half-integer powers}
+
+By C3:
+\begin{equation}
+f(|\hat{p}|^2) = a_0 + a_1 |\hat{p}|^2 + a_2 (|\hat{p}|^2)^2 + a_3 (|\hat{p}|^2)^3 + \ldots
+\end{equation}
+with $a_0 = 0$ by convention.
+
+A candidate term $a_{1/2} |\hat{p}| = a_{1/2} \sqrt{|\hat{p}|^2}$ is \emph{not analytic} in $|\hat{p}|^2$ at the origin (branch point) and is excluded by C3. The vector linear $\alpha \cdot \hat{p}$ is excluded by C2. \textbf{Falsifier Fal-2 dispatched.}
+
+\subsection{C4 suppresses higher-even-power terms}
+
+In the non-relativistic regime, with the natural dimensional scaling $a_n \sim a_1/(mc)^{2(n-1)}$:
+\[
+\frac{a_n (|\hat{p}|^2)^n}{a_1 |\hat{p}|^2} \sim \left( \frac{|\hat{p}|^2}{(mc)^2} \right)^{n-1} = \left( \frac{v}{c} \right)^{2(n-1)}.
+\]
+Higher-order terms are suppressed by powers of $(v/c)^2$ and vanish in the strict $c \to \infty$ limit. Only $a_1 |\hat{p}|^2$ survives. \textbf{Falsifier Fal-3 dispatched.}
+
+\subsection{Relativistic dispersion in non-relativistic regime}
+
+The full relativistic dispersion $T_\mathrm{rel}(\hat{p}) = \sqrt{|\hat{p}|^2 c^2 + m^2 c^4} - m c^2$ Taylor-expands as
+\[
+T_\mathrm{rel}(\hat{p}) = \frac{|\hat{p}|^2}{2m} - \frac{|\hat{p}|^4}{8 m^3 c^2} + O\!\left( \frac{|\hat{p}|^6}{m^5 c^4} \right).
+\]
+In the strict non-relativistic limit, only the leading $|\hat{p}|^2/(2m)$ term survives. \textbf{Falsifier Fal-7 dispatched.}
+
+\begin{theorem}[F3]
+In the non-relativistic single-particle gauge-coupling-free scope, the kinetic-energy operator $T(\hat{p}) = f(|\hat{p}|^2)$ on the U2 Hilbert space takes the unique form
+\[
+T(\hat{p}) = a_1 |\hat{p}|^2
+\]
+with $a_1 > 0$ a real constant determined by F4. All candidate alternatives --- anisotropic, linear-in-$|\hat{p}|$, higher-even-power, full relativistic --- are excluded by C1 + C2 + C3 + C4.
+\end{theorem}
+
+\textbf{Falsifiers Fal-2, Fal-3, Fal-5, Fal-7 dispatched.}
+
+\section{Derivation of F4 (Coefficient $1/(2m)$)}\label{sec:F4}
+
+\subsection{The factor-of-2 question}
+
+Dimensional analysis fixes $a_1 = c_1 \hbar^2 / m$ with $c_1$ dimensionless. The standard non-relativistic value is $c_1 = 1/2$, but dimensional analysis alone does not fix it. \textbf{The factor of $1/2$ is the load-bearing question} --- to be derived from primitive-level inputs, not borrowed by convention from classical mechanics.
+
+\subsection{Galilean Lie algebra}
+
+The Galilean Lie algebra is generated by spatial translations $\hat{P}_i$, time translation $\hat{H}$, rotations $\hat{J}_i$, and Galilean boosts $\hat{K}_i$. The structurally substantive commutators are:
+\begin{align}
+[\hat{K}_i, \hat{P}_j] &= i \hbar m \, \delta_{ij}, \label{eq:KP}\\
+[\hat{H}, \hat{K}_i] &= -i \hbar \hat{p}_i. \label{eq:HK}
+\end{align}
+The mass $m$ enters as the central-extension structure constant. The boost generator takes the form
+\begin{equation}
+\hat{K}_i = m \hat{x}_i - t \hat{p}_i. \label{eq:K}
+\end{equation}
+
+\subsection{Galilean uniqueness within non-relativistic scope}
+
+Within the non-relativistic scope (C4 + absolute time), the Galilean group is the unique consistent boost-translation algebra. Lorentzian boosts mix space and time (relativistic regime); Galilean boosts preserve absolute time (non-relativistic regime). The non-relativistic-limit scope condition selects Galilean over Lorentzian.
+
+\subsection{Galilean transformations act unitarily on the U2 Hilbert space}
+
+\begin{itemize}
+  \item Translations $\hat{p}$: unitary by F1 (Stone's theorem).
+  \item Time translations $\hat{H}$: assumed self-adjoint under Framing 1.
+  \item Rotations $\hat{J}$: unitary by C2.
+  \item Boosts $\hat{K} = m \hat{x} - t \hat{p}$: self-adjoint as real-coefficient linear combination of self-adjoint operators.
+\end{itemize}
+All Galilean transformations are unitary on the U2 Hilbert space.
+
+\subsection{Momentum transformation under boosts}
+
+Under an infinitesimal Galilean boost with velocity $v$:
+\[
+\hat{p}_j' = \hat{p}_j + \frac{i v_i}{\hbar} [\hat{K}_i, \hat{p}_j] + O(v^2) = \hat{p}_j - m v_j + O(v^2).
+\]
+For a finite boost:
+\begin{equation}
+\hat{p} \to \hat{p} - m v. \label{eq:p-boost}
+\end{equation}
+
+\subsection{The integration that fixes the factor of 2}
+
+The Hamiltonian $\hat{H} = T(\hat{p})$ must satisfy~\eqref{eq:HK}. Substituting~\eqref{eq:K} and using $[\hat{H}, \hat{p}_i] = 0$:
+\[
+[\hat{H}, \hat{K}_i] = m [T(\hat{p}), \hat{x}_i] = -i \hbar m \, \frac{\partial T(\hat{p})}{\partial \hat{p}_i}.
+\]
+Setting equal to $-i\hbar \hat{p}_i$:
+\begin{equation}
+\frac{\partial T(\hat{p})}{\partial \hat{p}_i} = \frac{\hat{p}_i}{m}. \label{eq:Tprime}
+\end{equation}
+
+Using the F3 result $T = f(|\hat{p}|^2)$, so $\partial T / \partial \hat{p}_i = 2 \hat{p}_i f'(|\hat{p}|^2)$:
+\[
+2 \hat{p}_i f'(|\hat{p}|^2) = \frac{\hat{p}_i}{m} \quad \Longrightarrow \quad f'(|\hat{p}|^2) = \frac{1}{2m}.
+\]
+Integrating with $f(0) = 0$:
+\begin{equation}
+f(|\hat{p}|^2) = \frac{|\hat{p}|^2}{2m}. \label{eq:fresult}
+\end{equation}
+
+\textbf{The factor of 2 emerges from the integration.} The coefficient $1/(2m)$ in $T = |\hat{p}|^2/(2m)$ comes from integrating $f'(|\hat{p}|^2) = 1/(2m)$ --- the factor of 2 is the chain-rule \emph{Jacobian} relating $\partial T/\partial \hat{p}_i = 2 \hat{p}_i f'(|\hat{p}|^2)$ to the Galilean commutator condition. \textbf{It is not a convention; it is the result of integrating the differential equation that Galilean invariance demands.}
+
+\subsection{Form-FORCED, value-INHERITED}
+
+Combining F3 and F4, restoring $\hbar$:
+\begin{equation}
+T(\hat{p}) = \frac{\hbar^2 |\hat{p}|^2}{2m} \label{eq:Tfinal}
+\end{equation}
+with $m$ inherited per Arc~M and $\hbar$ inherited per the dimensional-atlas Madelung anchoring. \textbf{Falsifier Fal-4 dispatched.}
+
+\begin{theorem}[F4]
+Under Framing~1 and within the non-relativistic single-particle scope, the kinetic-energy operator $T(\hat{p}) = a_1 |\hat{p}|^2$ established by F3 has
+\[
+a_1 = \frac{\hbar^2}{2m}
+\]
+uniquely. The factor of 2 emerges from integrating the Galilean commutator condition $[\hat{H}, \hat{K}_i] = -i\hbar \hat{p}_i$ against $\hat{K} = m\hat{x} - t\hat{p}$, with the factor of 2 the chain-rule Jacobian. The mass $m$ is inherited per Arc~M; $\hbar$ is inherited via the dimensional-atlas Madelung anchoring.
+\end{theorem}
+
+\section{Falsifier Resolution Table}\label{sec:falsifier-table}
+
+\begin{center}
+\begin{tabular}{p{1.5cm}p{1.0cm}p{8.5cm}p{2.5cm}}
+\hline
+Falsifier & Target & Dispatch argument & Memo \\
+\hline
+Fal-1 & F1 & Stone's theorem on U2 Hilbert space's translation group produces unique self-adjoint $\hat{p}$ & Memo 02 \S 1 \\
+Fal-2 & F3 & Vector $\alpha \cdot \hat{p}$ excluded by C2; scalar $|\hat{p}| c$ excluded by C3 (branch-point) + C4 & Memo 03 \S 2.4 \\
+Fal-3 & F3 & C4 non-rel limit suppresses all $a_n |\hat{p}|^{2n}$ for $n \geq 2$ by $(v/c)^{2(n-1)}$ & Memo 03 \S 2.5 \\
+Fal-4 & F4 & Galilean commutator integration: $f'(|\hat{p}|^2) = 1/(2m)$; factor of 2 is integration Jacobian & Memo 03 \S 3.7 \\
+Fal-5 & F3 & C2 forces $T(\hat{p}) = f(|\hat{p}|^2)$ & Memo 03 \S 2.3 \\
+Fal-6 & F5 & Translation invariance + locality forbid cross terms (gauge-coupling-free scope) & Memo 02 \S 3 \\
+Fal-7 & F3 & C4 scope: relativistic dispersion reduces to U4 form in $c \to \infty$ limit & Memo 03 \S 2.6 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{All seven falsifiers dispatched within the stated scope conditions.}
+
+\section{Conditionality Ledger}\label{sec:conditionality}
+
+The U4 verdict is \textsc{forced}, conditional on:
+
+\begin{enumerate}
+  \item \textbf{U3 (sibling \textsc{candidate}; Framing 1).} U3 supplies the existence of a Hermitian Hamiltonian generator. U4 specifies the form. Promoting U3 makes U4 fully unconditional.
+  \item \textbf{Non-relativistic single-particle scope.} Inherited from Phase-1 Step 2; conditions F3 and F4.
+  \item \textbf{Gauge-coupling-free scope.} F5's clean decomposition; gauge field theory is downstream content.
+  \item \textbf{Inherited values.} Mass $m$ per Arc~M; $\hbar$ per dimensional-atlas Madelung.
+\end{enumerate}
+
+\textbf{U4 introduces no new structural \textsc{candidate}s.} All four conditionalities are inherited from prior structural commitments.
+
+\section{Final U4 Theorem}\label{sec:final-theorem}
+
+\begin{theorem}[U4; Specific Hamiltonian Form]
+Let the ED primitive stack supply: bandwidth (Primitive~04), spatial structure (Primitive~06), participation relations (Primitive~03), channel index (Primitive~07), tension polarity (Primitive~09), and relational timing (Primitive~13), together with the now-\textsc{forced} upstream items U1, U2-Discrete, U2-Continuum, U5, and Theorem~10. Within the non-relativistic single-particle scope of Phase-1 Step 2 (gauge-coupling-free), and conditional on the existence of a Hermitian Hamiltonian generator (sibling \textsc{candidate} U3, Framing~1), the Hamiltonian operator on the participation-measure Hilbert space takes the unique form
+\[
+\hat{H} = \frac{\hbar^2 |\hat{p}|^2}{2m} + V(\hat{x})
+\]
+with the following structural properties:
+\begin{enumerate}
+  \item \textbf{Channel--momentum identification.} In the thin/continuum limit, $K \leftrightarrow k$ via Stone's theorem.
+  \item \textbf{Kinetic + potential decomposition.} $\hat{H} = T(\hat{p}) + V(\hat{x})$; cross terms forbidden.
+  \item \textbf{Quadratic-in-$|\hat{p}|^2$ kinetic structure.} $T(\hat{p}) = a_1 |\hat{p}|^2$ uniquely.
+  \item \textbf{Specific coefficient $\hbar^2/(2m)$.} $a_1 = \hbar^2/(2m)$, with the factor of 2 forced by Galilean commutator integration. $m$ inherited per Arc~M; $\hbar$ inherited per dimensional-atlas Madelung.
+  \item \textbf{Form $V(\hat{x})$.} Scalar function of position; specific $V$ inherited from external context.
+\end{enumerate}
+\end{theorem}
+
+\textbf{Status:} \textsc{forced} with form-\textsc{forced}-value-\textsc{inherited} framing.
+
+\section{Downstream Consequences}\label{sec:downstream}
+
+\subsection{Updated structural-foundations ledger}
+
+\begin{center}
+\begin{tabular}{cll}
+\hline
+\# & Theorem & Status \\
+\hline
+10 & Born rule (Gleason--Busch) & \textsc{forced} \\
+11 & U2-Discrete & \textsc{forced} \\
+12 & U2-Continuum & \textsc{forced} (with conformal gauge) \\
+13 & U5 & \textsc{forced} \\
+14 & U1 & \textsc{forced} \\
+15 & U4 (this paper) & \textsc{forced} (form; values inherited) \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Active CANDIDATE inventory}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Pre-U4 & Post-U4 \\
+\hline
+$\{$U3, U4$\}$ + continuum gauge & $\{$U3$\}$ + continuum gauge \\
+\hline
+\end{tabular}
+\end{center}
+
+One upstream \textsc{candidate} remains. Promoting U3 closes the QM-emergence Phase-1 program except for the description-level continuum gauge convention.
+
+\subsection{Schr\"odinger emergence}
+
+The Phase-1 Step 2 chain reads:
+\begin{verbatim}
+Primitives 03, 04, 06, 07, 09, 13
+              |
+              v
+        U1 (FORCED) -> P_K = sqrt(b) * exp(i pi)
+              |
+              v
+        U2 (FORCED) -> <P|Q> inner product
+              |
+              v
+        U5 (FORCED) -> adjacency partition b = b_x + b_p
+              |
+              v
+        U4 (FORCED, this paper) -> H = h^2 |p|^2/(2m) + V(x)
+              |
+              v
+        U3 (CANDIDATE) -> i h dt P = H P
+              |
+              v
+      Schrodinger emergence (Step 2)
+\end{verbatim}
+
+\textbf{Schr\"odinger evolution is \textsc{forced} conditional on U3 alone.}
+
+\subsection{Preparation for the U3 arc}
+
+The U3 arc would address: existence of self-adjoint $\hat{H}$ via Stone's theorem on time-translation symmetry (Primitive~13); linearity; first-order-in-time character. The U3 arc inherits all six \textsc{forced} upstream items. Anticipated arc structure: 4 memos parallel to U4.
+
+\section{Discussion and Outlook}\label{sec:discussion}
+
+\subsection{Position in the Phase-1 program}
+
+U4 is the sixth and most delicate arc of the structural-foundations cycle. The cycle (born\_gleason $\to$ U2-Discrete $\to$ U2-Continuum $\to$ U5 $\to$ U1 $\to$ U4) has demonstrated the structural-derivation methodology against six substantively different structural questions, including the dynamical-content question handled here.
+
+\subsection{Why the factor-of-2 result matters}
+
+The factor of 2 in $1/(2m)$ has appeared in classical mechanics for centuries. In standard quantum mechanics, it is borrowed from the classical formula via $p \to \hat{p}$. The connection is left as a postulate.
+
+The U4 result establishes that this connection is structurally derivable. The factor of 2 is forced by integration of the Galilean Lie algebra commutator condition --- the integration Jacobian of the differential equation $\partial T/\partial \hat{p}_i = \hat{p}_i / m$ produced by the Galilean commutator condition. The factor is not a feature of classical mechanics that quantum mechanics happens to inherit; it is a feature of \emph{Galilean kinematics} that both classical and quantum mechanics inherit.
+
+\subsection{How U4 + U5 + U2 form the dynamical backbone}
+
+The structural-foundations cycle decomposes into three layers:
+\begin{itemize}
+  \item \textbf{Layer 1 (carrier):} U1.
+  \item \textbf{Layer 2 (Hilbert-space arena):} U2-Discrete + U2-Continuum + Theorem~10 + U5.
+  \item \textbf{Layer 3 (dynamical):} U3 + U4.
+\end{itemize}
+
+U2 + U5 + U4 supply the kinematic + dynamical structural backbone of the Schr\"odinger equation. With U3 closed in the next arc, the full dynamical equation would be structurally complete.
+
+\subsection{Next steps}
+
+\begin{enumerate}
+  \item Open the U3 arc.
+  \item Revise the QM-emergence Phase-1 synthesis paper.
+  \item Draft the U5 publication paper (the missing fourth in the structural-foundations publication series).
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+\bibitem{phase1}
+A.~Proxmire, \emph{Phase-1: QM Emergence Structural Completion}, \texttt{papers/QM\_Emergence\_Structural\_Completion/}, 2026.
+
+\bibitem{borngleason}
+A.~Proxmire, \emph{The Born Rule as a Forced Theorem of Event Density: A Gleason--Busch Reconstruction from First Principles}, \texttt{papers/Born\_Gleason/}, 2026.
+
+\bibitem{u2}
+A.~Proxmire, \emph{The Inner Product as Forced Structure in Event Density: Discrete Derivation, Continuum Lift, and Gauge-Invariant Completion}, \texttt{papers/U2\_Inner\_Product/}, 2026.
+
+\bibitem{u5}
+A.~Proxmire, \emph{U5 arc on the adjacency-band Fourier-conjugate partition}, \texttt{arcs/U5/}, 2026.
+
+\bibitem{u1}
+A.~Proxmire, \emph{The U1 Theorem: Deriving the Participation Measure from Primitive Structure}, \texttt{papers/U1\_Participation\_Measure/}, 2026.
+
+\bibitem{stone}
+M.~H.~Stone, ``On one-parameter unitary groups in Hilbert space,'' \emph{Annals of Mathematics} \textbf{33}, 643--648 (1932).
+
+\bibitem{bargmann}
+V.~Bargmann, ``On unitary ray representations of continuous groups,'' \emph{Annals of Mathematics} \textbf{59}, 1--46 (1954).
+
+\bibitem{arcm}
+A.~Proxmire, \emph{Arc M: Chain-Mass Structure in Event Density}, \texttt{papers/Arc\_M/}, 2026.
+
+\bibitem{arcn}
+A.~Proxmire, \emph{Arc N: Non-Markovian Structure as a Forced Memory-Kernel Layer of Event-Density Theory}, \texttt{papers/Arc\_N/}, 2026.
+
+\bibitem{arcr}
+A.~Proxmire, \emph{Arc R: Relativistic Kinematics and Dynamics in Event Density}, \texttt{papers/Arc\_R/}, 2026.
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript prepared April 2026. Source materials: \texttt{arcs/U4/} four-memo arc and closure memo, integrated into a single publishable document. The U4 arc is the sixth and most delicate of the structural-foundations cycle.}
+
+\noindent\emph{Draft complete. Pausing for revision.}
+
+\end{document}

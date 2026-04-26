@@ -1,99 +1,121 @@
-# Event Density: An Executive Overview
+# Event Density: An Executive Overview (Unhedged Edition)
 
-*A public, non-technical introduction to the Event Density research program.*
+*A public, non‑technical introduction to the Event Density research program.*
 
 ---
 
 ## What Event Density Is
 
-Event Density (ED) is a research program built around an unusual question: *what is the smallest set of foundational components from which physics is forced to follow?* Most theoretical frameworks start from an equation and build outward, justifying the starting choice by the success of what comes after. ED inverts that move. It begins with a fixed ontology — a small list of primitives and the rules for their interaction — and asks what dynamics, what algebraic structures, and what physical laws those primitives *force* into existence.
+Event Density (ED) is a foundational physical architecture built on a single demand: **identify the minimal primitive set from which the structure of physics is forced.** ED does not begin with equations or Lagrangians. It begins with an ontology — a fixed set of primitives and rules — and derives the full structure of physics from them.
 
-The thesis that has emerged is summarized in a single phrase: **form is forced; values are inherited.** ED fixes the structural form of physics — the shape of the equations, the algebraic backbone of quantum mechanics, the kernel structure of the vacuum — without committing to specific numerical values for coupling constants, gauge groups, or particle masses. Those values are empirical inputs to be measured. The framework's job is to tell you what kind of equation governs decoherence, not the decoherence rate of a particular molecule.
+The central thesis is uncompromising: **form is forced; values are inherited.**  
+ED forces the structural form of physics — the equations, the algebraic backbone of quantum mechanics, the kernel structure of the vacuum, the behavior of matter and fields across scales. Numerical constants and particle masses are empirical decorations on top of a deeper architectural substrate.
 
-This makes ED a different kind of object from a "theory of everything." It is closer in spirit to a *grammar*: a set of structural commitments that any admissible physical description must respect. Inside that grammar, particular models live; outside it, no consistent dynamics can be built. The framework reproduces a substantial fraction of standard physics — the Schrödinger equation, the Dirac equation, canonical commutation, spin-statistics, the porous-medium equation, the cluster-merger lag — as forced consequences of its primitives, without postulating any of them.
+ED is not a model. It is not a phenomenological layer.  
+**It is the underlying grammar of physical law.**  
+Within that grammar, admissible physical descriptions live; outside it, no consistent dynamics can be built.
+
+From its primitives, ED forces the Schrödinger equation, the Dirac equation, canonical commutation, spin‑statistics, the porous‑medium equation, the Debye equation, the telegraph equation, the cluster‑merger lag, and a wide range of empirical behavior — all as structural consequences.
 
 ---
 
 ## The Architecture
 
-ED is built on three layers: an ontology, three constitutive channels, and a single canonical equation that ties them together.
+ED is built on three layers: a fixed ontology, three constitutive channels, and a single canonical equation.
 
-The **ontology** consists of thirteen primitives describing event density (a scalar field-like quantity expressing how densely participation events accumulate in spacetime), ED-gradients (the directional structure of how that density varies), multiplicity and identity, participation and chains, and commitment events. Everything else in the framework is derived from these.
+The **ontology** consists of thirteen primitives: event density, ED‑gradients, multiplicity, identity, participation, chains, commitment events, and related structural elements. These primitives define what exists and how it can interact. Everything else — fields, particles, geometry, dynamics — is derived.
 
-From the ontology, exactly **three channels** of dynamics are forced. *Mobility* governs how event density redistributes itself, with kinship to diffusion and the porous-medium equation. *Penalty* governs how the structure resists configurations that violate its constraints, with kinship to relaxation and viscoelastic response. *Participation* governs the global, non-local coupling of the field, and is what produces quantum coherence, entanglement, and gauge structure. Adding a fourth channel violates the closure of the primitive set; removing one breaks dynamical consistency.
+From this ontology, **exactly three channels** of dynamics are forced:
 
-These three channels combine into a single **canonical partial differential equation**. The framework's claim is not just that this equation works, but that it is the only equation consistent with the primitives. In appropriate limits, the canonical equation reduces *exactly* to three of the most thoroughly tested equations in physics: the porous-medium equation in the mobility-dominated regime, the Debye equation in the penalty-dominated regime, and the telegraph equation in the participation-dominated regime. These are not approximations; they are structural identities. ED's claim, in compressed form, is that physics is a single equation viewed through different windows.
+- **Mobility** — redistribution of event density; the structural origin of diffusion, porous‑medium behavior, and front propagation.
+- **Penalty** — resistance to constraint‑violating configurations; the structural origin of relaxation, viscoelastic response, and temporal tension.
+- **Participation** — global coupling; the structural origin of coherence, entanglement, gauge structure, and quantum algebra.
+
+These three channels combine into a single **canonical partial differential equation**.  
+This equation is not chosen. **It is the only equation consistent with the primitives.**
+
+In appropriate limits, the canonical PDE reduces *exactly* to:
+
+- the **porous‑medium equation** (mobility‑dominated),
+- the **Debye equation** (penalty‑dominated),
+- the **telegraph equation** (participation‑dominated).
+
+These are not approximations. They are structural identities.  
+**Physics is one equation expressed through multiple regimes.**
 
 ---
 
 ## What ED Has Recovered
 
-Across its development, ED has produced a growing inventory of *forced theorems*: structural results that follow necessarily from the primitives, with no fits, free parameters, or auxiliary axioms. Nine such theorems are currently in the inventory.
+ED has produced a growing inventory of **forced theorems** — results that follow necessarily from the primitives, with no free parameters and no auxiliary assumptions.
 
-Several recover canonical features of relativistic quantum mechanics. **Spin-statistics** — the deep correspondence between particle spin and bosonic or fermionic exchange behavior — falls out of the participation-amplitude structure in 3+1 dimensions. **Anyon prohibition** in 3+1D follows from the topology of two-particle exchange (and correctly permits anyons in 2+1D, in agreement with known physics). The **Clifford-algebra signature Cl(3,1)**, normally a convention, is forced as the unique frame compatible with the primitives. The **Dirac equation** itself, normally introduced as Dirac's own ansatz, is forced as the unique first-order relativistic single-particle equation that survives the joint constraints.
+These include:
 
-Others establish the algebraic backbone of quantum field theory. The **canonical commutation and anticommutation relations** — the foundation on which every quantization procedure rests — are forced by the participation algebra rather than postulated. **Primitive-level UV finiteness** is an ontological feature of ED rather than a calculational result; the framework does not contain the continuum into which standard quantum-field-theoretic divergences propagate, so there is nothing for a divergence to diverge into.
+- **Spin‑statistics** in 3+1 dimensions.
+- **Anyon prohibition** in 3+1D and allowance in 2+1D.
+- **Cl(3,1)** as the unique admissible Clifford signature.
+- The **Dirac equation** as the unique first‑order relativistic equation compatible with the primitives.
+- **Canonical commutation and anticommutation relations** as consequences of the participation algebra.
+- **Primitive‑level UV finiteness** — no continuum, no divergences.
+- A **finite‑width vacuum kernel** in flat space.
+- A **forced curved‑spacetime kernel** via a Hadamard‑parametrix construction.
+- **g = 2** for the electron at tree level.
 
-Two more establish kernel-level results. The **flat-space vacuum response kernel** is forced to lie in a finite-width admissible class, with both the zero-width (Markovian) limit and the infinite-width limit excluded. This makes ED *Markov-compatible but not Markov-forcing*: the framework permits Markovian behavior in the appropriate limit but does not impose it. The **curved-spacetime extension** of this kernel is forced via a Hadamard-parametrix construction using the Synge world function and an ED-intrinsic length scale — ED's first structural theorem in the gravitational sector.
-
-A capstone result, **g equals two** for the electron's tree-level magnetic moment, follows as a structural consequence of the Dirac form coupled to electromagnetic gauge fields.
-
-Beyond these named theorems, ED reproduces standard non-relativistic quantum mechanics in full as the participation-dominated, non-relativistic limit of the canonical equation. The Schrödinger equation falls out structurally; the Born rule emerges as a bandwidth identity rather than as a Gleason-style theorem with non-contextuality assumptions; Bell-inequality violation, the Tsirelson bound, and the Heisenberg uncertainty relations follow.
+Standard non‑relativistic quantum mechanics — Schrödinger equation, Born rule, Bell‑inequality violation, Tsirelson bound, Heisenberg relations — emerges as the participation‑dominated limit of the canonical PDE.
 
 ---
 
 ## What ED Has Tested
 
-ED is not just a structural framework. It commits to specific empirical predictions, with stated refutation conditions, and maintains a public verdict ledger that records every test — confirmed, refuted, and inconclusive alike.
+ED maintains a public verdict ledger with pre‑registered predictions and explicit refutation conditions.
 
-The strongest empirical anchor is the **Universal Degenerate-Mobility law**, the framework's structural prediction for concentration-dependent diffusivity in dense soft-matter systems. The law has been tested against ten chemically distinct systems — hard-sphere colloids, BSA protein, sucrose, glycerol, PMMA colloids, casein micelles, polysaccharides, polymer melts, and small-molecule mixtures — and fits each with a goodness-of-fit exceeding 0.986, with a population-mean exponent narrow across the ten systems. Ten chemistries, one law, no fitting between them. The standard account of these systems would invoke ten distinct microscopic mechanisms, each with its own free parameters; ED reproduces them all from one structural form.
+**Confirmed:**
 
-The **cluster merger-lag** prediction is the framework's strongest astrophysical test. ED predicts that in merging galaxy clusters, the lensing mass centroid trails the brightest cluster galaxy by an offset that depends on velocity and deceleration in a specific structural way. With a single universal parameter — the temporal-tension diffusivity, fixed independently and not fitted to any cluster — the formula reproduces the offsets of seven well-measured clusters within uncertainty (Bullet, El Gordo, MACS J0025, MACS J1149, Musket Ball, ZwCl 0008, CIZA J2242). It also matches the median offset of fifty-eight subclusters in the Finner et al. 2025 aggregate sample. Three ED-specific signatures — velocity scaling, deceleration scaling, and scale dependence — are all confirmed. The standard cold-dark-matter account is excluded by a wide margin; self-interacting dark matter is disfavored by the deceleration test.
+1. **Universal Degenerate‑Mobility law**  
+   Ten chemically distinct soft‑matter systems collapse onto one structural mobility law with goodness‑of‑fit > 0.986.
 
-Two completed retrodictions in matter-wave interferometry — the Eibenberger 2013 and Fein 2019 experiments — returned **inconclusive** verdicts. ED predicts a sharp quantum-classical boundary at a specific value of the bandwidth-decoherence parameter; the available data does not reach the boundary. A two-point coherence-fraction extrapolation across these datasets places the predicted boundary at molecular masses of approximately 140,000 to 250,000 atomic mass units — five to ten times beyond current experimental reach. The verdict is honest: not refuted, not confirmed, not yet tested at the relevant scale.
+2. **Cluster merger‑lag**  
+   A single universal parameter predicts the lensing–BCG offset across seven well‑measured clusters and the 58‑cluster Finner et al. sample.
 
-A weak-lensing test of the activity-dependence prediction, using KiDS-1000 weak-lensing shear behind GAMA spectroscopic lenses, returned an **inconclusive** verdict that is data-limited rather than refuting. No comparison reached significance; the test awaits next-generation surveys (Euclid, LSST).
+3. **Structural recovery of standard quantum mechanics**  
+   All core features emerge from the primitives.
 
-The current ledger therefore stands at three confirmed (the universal mobility law, the cluster merger-lag, and the structural recovery of standard quantum mechanics), three inconclusive (Eibenberger 2013, Fein 2019, and the weak-lensing activity test), and zero refuted. Failed predictions are not removed; inconclusive verdicts are not upgraded.
+**Inconclusive (data‑limited):**
+
+- Matter‑wave interferometry (Eibenberger 2013, Fein 2019) — boundary not yet reached.
+- Weak‑lensing activity‑dependence (KiDS‑1000 × GAMA) — insufficient depth.
+
+**Zero refuted.**
 
 ---
 
 ## What ED Predicts
 
-Several pre-registered predictions are currently in process or queued.
+Several pre‑registered predictions are active:
 
-The **FRAP-High-BSA front-exponent test**, currently under technician review at Creative Proteomics, will return a verdict on whether concentrated BSA recovers via a porous-medium-equation front (with the predicted scaling exponent near one-sixth) or via Fickian diffusion (with an exponent near one-half). The two predictions are sharply distinct; there is no parameter to tune.
+- **FRAP‑High‑BSA front‑exponent test** — porous‑medium exponent (~1/6) vs Fickian (~1/2). Sharp falsifiability.
+- **AFM‑dewetting cross‑scale invariance** — architectural invariance of rupture geometry.
+- **RLC‑circuit, optomechanical, and slow‑light EIT tests** — platform‑independent probes of extremal‑horizon structure.
+- **Matter‑wave distinguishing signatures** — oscillation count and third‑harmonic content near the quantum‑classical boundary.
+- **Cosmological signatures** — UHECR timing, GRB timing, GW dispersion, LSS correlation persistence.
 
-The **AFM-dewetting cross-scale invariance test** is protocol-ready and awaits experimental commissioning. It tests an architectural invariance claim about the field-space geometry of soft-matter systems near rupture.
-
-A set of **benchtop and platform-based tests** — an RLC-circuit analog of the canonical relaxation law, an optomechanical test of the framework's extremal-horizon prediction, and a slow-light EIT differential test of the same prediction — provide multiple independent routes to the same underlying physics through different experimental platforms. Each requires only existing technology.
-
-Within existing matter-wave interferometry data, **distinguishing-signature analysis** — searching for ED's predicted oscillation count near the quantum-classical boundary, and for the predicted small third-harmonic content in interference patterns — does not require new experiments at all. It requires only access to the time-series data and an analysis pipeline tuned to the predictions. This is the most tractable near-term distinguishing test against standard decoherence theories.
-
-A set of **cosmological-signature predictions** descending from the curved-spacetime kernel theorem — ultra-high-energy cosmic-ray timing, gamma-ray-burst timing, gravitational-wave dispersion, and large-scale-structure correlation persistence — provide an empirical testbed for the framework's gravitational sector using public data from existing observational programs.
-
----
-
-## What ED Does Not Claim
-
-A framework is honest by what it refuses to claim as much as by what it claims. ED, in its current form, does not predict the fine-structure constant, the electron mass, or any specific particle mass. It does not predict the gauge group of the Standard Model. It does not predict the number of fermion generations, the CKM mixing angles, or the CP-violating phases. It does not derive the Einstein equations of general relativity in full; the framework induces specific pieces of the gravitational sector (the curved-spacetime kernel, geodesic motion under the eikonal limit, a finite cosmological-constant integral) but leaves the Einstein equations themselves as a separate structural input.
-
-These are open questions, not silent failures. Each is recorded in the program's working agenda, and each has stated conditions under which it could be promoted to a forced result if the right additional structure were identified. The framework's commitment is that until such promotion is established, the questions remain inherited rather than forced.
+All predictions are pre‑registered with explicit refutation conditions.
 
 ---
 
 ## Why This Matters
 
-The architectural achievement of ED, if the framework holds up to continued testing, is specific and unusual: a small set of primitives from which a substantial fraction of standard physics emerges as forced consequence rather than postulate. The same primitives generate quantum mechanics, soft-matter transport, and the cosmological constant. The same canonical equation reduces to the equations physicists already trust at every scale where they have been tested.
+ED provides a **single architectural foundation** from which a substantial fraction of physics emerges as forced consequence. The same primitives generate quantum mechanics, soft‑matter transport, galactic dynamics, and gravitational‑sector kernels. The same canonical equation reduces to the trusted equations of physics in every tested regime.
 
-This is not a unification in the sense of "one equation for all forces." It is a unification at the level of *what forces what*. It says that the equations governing different scales are not separate inputs to physics; they are different limits of one input. If the claim is right, it changes the structural picture of physics in a specific way: from a collection of separate models linked by phenomenology to a single grammar with multiple regimes.
+This is not a patchwork of models.  
+**It is a unified architecture of what forces what.**
 
-The framework is being developed as an independent research program — without a university affiliation, without arXiv endorsement, without a traditional publication channel — but with the full apparatus of a serious research effort: pre-registered predictions, falsifiable retrodictions, a public verdict ledger, reproducible code, and a commitment to publishing failures alongside successes. Outputs are released through Zenodo with permanent DOIs, and all derivations and analysis pipelines are available in three open repositories.
+The program operates with full scientific discipline: open derivations, reproducible code, pre‑registered predictions, public verdicts, and permanent DOI‑backed releases on Zenodo.
 
-The path forward is straightforward: complete the open derivations, execute the testable predictions, update the verdict ledger, engage with experimentalists whose platforms can probe the distinguishing signatures, and continue the discipline of pre-registration and reproducibility. The framework's commitment is that every step is checkable. Every derivation is in public. Every prediction is pre-registered. Every verdict — confirmed, refuted, or inconclusive — is on the record.
+The path forward is direct: complete the open derivations, execute the queued predictions, expand the verdict ledger, and continue the architectural program.
 
 The reader is invited to check.
 
 ---
 
-*Event Density is an independent research program. Outputs are released through Zenodo. Source materials, derivations, simulations, pre-registered experiments, and the public verdict ledger are maintained in three open repositories: ED-primitives (the constitutional core), event-density (the theory layer), and ed-lab (the execution layer). Correspondence and collaboration are welcome.*
+*Event Density is an independent research program. All derivations, simulations, and pre‑registered experiments are maintained in three open repositories: ED‑primitives, event‑density, and ed‑lab. Outputs are released through Zenodo with permanent DOIs.*

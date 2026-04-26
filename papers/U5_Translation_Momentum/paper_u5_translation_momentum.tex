@@ -1,0 +1,509 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{U5: The Forced Structure of Translation Symmetry and the Momentum Operator}
+
+\author{Allen Proxmire}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present the structural derivation of the spatial translation generator and the momentum operator on the participation-measure Hilbert space from the Event-Density (ED) primitive stack and the now-\textsc{forced} upstream items U1, U2-Discrete, U2-Continuum, and Theorem~10 (Born). Operating strictly outside Framing~1 --- i.e., \textbf{without invoking U3} in any role, derivation input or otherwise --- we decompose U5 into three sub-features: existence of a strongly continuous one-parameter unitary representation of spatial translations on the U2 Hilbert space (F1); uniqueness of its self-adjoint generator (F2); and identification of that generator with the standard momentum operator $\hat{p} = -i\hbar\nabla$, with plane waves as eigenfunctions and the standard $L^2$ Fourier transform as the unique unitary intertwiner of position and momentum representations (F3). F1 follows from Primitive~03 (graph homogeneity) and Primitive~06 (admissibility of translations along the spatial axis), with unitarity inherited from the U2 inner product. F2 follows from Stone's theorem on one-parameter unitary groups. F3 follows from the position-representation form of the translation generator together with the standard Fourier theory on $L^2(\mathbb{R}^d)$, with the principal alternatives --- fractional-Fourier, wavelet, and Mellin transforms --- explicitly dismissed by structural inconsistency with translation-driven conjugacy. All four falsifiers are dispatched. The U5 verdict is \textbf{\textsc{forced}}, with no new structural \textsc{candidate}s introduced and no dependence whatever on the sibling \textsc{candidate} U3. The arc closes the kinematic backbone of the QM-emergence Phase-1 program: U5 supplies the momentum operator that U4's Galilean integration acts upon, and the Fourier-conjugacy that Phase-1 Step~5 needs to derive the Heisenberg bound $\Delta x \cdot \Delta p \geq \hbar/2$. The U5 derivation is what makes U4's ``form-\textsc{forced}--value-\textsc{inherited}'' closure possible while preserving acyclicity. The active upstream-\textsc{candidate} inventory is unchanged by U5 alone (U5 was promoted in the 2026-04-26 cycle); the present paper documents and formalizes the result for the publication-series record.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{What U5 is}
+
+U5 is the structural commitment that the participation-measure Hilbert space $\mathcal{H}$ --- established by the U2-Discrete and U2-Continuum theorems --- carries a strongly continuous one-parameter unitary representation of spatial translations whose unique self-adjoint generator is the momentum operator $\hat{p}$. Equivalently, U5 supplies the kinematic translation-conjugate of position and identifies it as the operator whose eigenfunctions are plane waves and whose position-representation form is $\hat{p} = -i\hbar\nabla$.
+
+The earlier framing of U5 in the QM-emergence Phase-1 inventory was as the \emph{adjacency-band Fourier-conjugate partition}, $b^{\mathrm{adj}} = b_x + b_p$. The two framings are equivalent: the partition exists, is two-component, is Fourier-conjugate, and is orthogonal exactly when the translation group on $\mathcal{H}$ admits a unique self-adjoint generator and the standard $L^2$ Fourier transform supplies the basis-change between its position and momentum eigenbases. The present paper adopts the translation-symmetry framing because it makes the U5 result structurally transparent: U5 is, at root, \emph{Stone's theorem applied to translation symmetry on the U2 Hilbert space}.
+
+\subsection{Why U5 matters}
+
+Three of the four foundational postulates of non-relativistic single-particle quantum mechanics --- the Born rule, the Bell--Tsirelson bound, and the Heisenberg uncertainty inequality --- depend on U5 either directly or via the inner-product structure that U5's translation operators preserve. The fourth foundational postulate --- Schr\"odinger evolution --- depends on U5 indirectly: the Hamiltonian $\hat{H} = \hbar^2|\hat{p}|^2/(2m) + V(\hat{x})$ derived in U4 contains the momentum operator that U5 supplies.
+
+U5 is therefore the \emph{kinematic backbone} of the structural-foundations program. U2 builds the Hilbert space; Theorem~10 (Born) installs the probabilistic interpretation; U5 supplies the translation generator and the position-momentum conjugacy; U1 derives the participation-measure that lives in the space; U4 derives the specific Hamiltonian form that acts on it. U3, the sole remaining upstream \textsc{candidate}, supplies the time-evolution generator's existence + linear-first-order structure; U5 is its spatial-translation analog and methodologically prefigures it.
+
+\subsection{Relationship to U1, U2, U4, and U3}
+
+\begin{itemize}
+  \item \textbf{U1.} U5 takes the participation-measure construction $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$ as input. The polarity-phase factor $e^{i\pi_K}$ supplies the $U(1)$-valued phase whose gradient identifies the momentum-conjugate direction.
+  \item \textbf{U2.} U5 takes the U2 Hilbert space and its sesquilinear inner product as input. Translation operators are unitary on the U2 Hilbert space; Stone's theorem applies.
+  \item \textbf{U4.} U5 supplies the momentum operator $\hat{p}$ that appears in U4's Hamiltonian form. U4's Galilean Lie algebra integration acts on $\hat{p}$ and would not even be statable without it.
+  \item \textbf{U3.} U5 is \emph{strictly independent} of U3. The U5 derivation invokes no time-evolution operator, no Hamiltonian, no Schr\"odinger equation. This is the central methodological feature of the present derivation and the principal sharpening over the earlier 2026-04-24 tightening-program memo, which had derived the Fourier conjugacy via U3.
+\end{itemize}
+
+\subsection{Summary of the U5 verdict}
+
+The U5 verdict is \textbf{\textsc{forced}}. The three sub-features F1, F2, F3 close uniquely under the available structural inputs. All four falsifiers (Fal-1 through Fal-4) dispatch. No new structural \textsc{candidate} is introduced. The derivation is U3-independent. The U5 verdict is unconditional in both the discrete and continuum regimes; the U2-Continuum conformal gauge acts trivially on the translation representation and preserves the partition structure pointwise.
+
+\subsection{Organization}
+
+Section~\ref{sec:question} states the U5 question precisely and inventories its sub-features and falsifiers. Section~\ref{sec:inputs} inventories the structural inputs and the inputs explicitly forbidden under the U3-independence discipline. Section~\ref{sec:decomposition} decomposes U5 into F1, F2, F3 with status assignments. Section~\ref{sec:falsifiers} introduces the four falsifiers. Sections~\ref{sec:F1}--\ref{sec:F3} derive F1, F2, F3 in turn. Section~\ref{sec:falsifier-table} consolidates the falsifier dispatches. Section~\ref{sec:conditionality} documents the conditionality ledger. Section~\ref{sec:final-theorem} states the final U5 theorem. Section~\ref{sec:downstream} documents the downstream cascade. Section~\ref{sec:discussion} discusses the result's significance and identifies the U3 arc as the natural successor.
+
+\section{Statement of the U5 Question}\label{sec:question}
+
+\subsection{The target structure}
+
+The target structural content of U5 is the existence and uniqueness of the self-adjoint generator of spatial translations on the U2 Hilbert space, together with its identification as the momentum operator with the standard plane-wave eigenfunctions.
+
+Formally: let $\mathcal{H}$ denote the U2 Hilbert space of participation measures (discrete or continuum regime, gauge-class equivalent under the U2-Continuum conformal redundancy). Let $T_a$ for $a \in \mathbb{R}^d$ denote the spatial translation operator $T_a P(x) = P(x - a)$ acting componentwise on the participation-measure components. The U5 question is whether $\{T_a : a \in \mathbb{R}^d\}$ is a strongly continuous one-parameter unitary group whose unique self-adjoint generator is the standard momentum operator $\hat{p} = -i\hbar\nabla$ in the position representation, with plane waves $\langle x | k \rangle = (2\pi\hbar)^{-d/2} e^{ikx/\hbar}$ as eigenfunctions.
+
+\subsection{The three sub-features}
+
+\begin{itemize}
+  \item \textbf{F1 (Existence of translation representation).} $\{T_a : a \in \mathbb{R}^d\}$ is a well-defined, strongly continuous, one-parameter (per spatial axis) unitary group on $\mathcal{H}$.
+  \item \textbf{F2 (Uniqueness of the self-adjoint generator).} There exists a unique self-adjoint operator $\hat{p}$ on $\mathcal{H}$ such that $T_a = \exp(i\hat{p} \cdot a / \hbar)$.
+  \item \textbf{F3 (Identification with the momentum operator).} In the position representation of the U2 Hilbert space, $\hat{p} = -i\hbar\nabla$, with eigenfunctions $\langle x | k \rangle = (2\pi\hbar)^{-d/2} e^{ikx/\hbar}$, and the unique unitary intertwiner of position and momentum representations is the standard $L^2$ Fourier transform.
+\end{itemize}
+
+\subsection{The four falsifiers}
+
+\begin{itemize}
+  \item \textbf{Fal-1 (Non-unitary translations).} $T_a$ acts on $\mathcal{H}$ but does not preserve the U2 inner product.
+  \item \textbf{Fal-2 (Multiple inequivalent generators).} The translation group admits more than one self-adjoint generator (Stone's theorem fails on $\mathcal{H}$).
+  \item \textbf{Fal-3 (Non-self-adjoint generator).} A generator exists but is not self-adjoint, precluding interpretation as a physical observable.
+  \item \textbf{Fal-4 (Non-linear translation action).} The translation action on participation-measure components is non-linear, excluding representation-theoretic treatment.
+\end{itemize}
+
+\subsection{Methodological framing: U3 forbidden}
+
+The U5 arc adopts the discipline that \textbf{U3 may not appear in the derivation in any role}: not as a derivation input, not as an existence assumption, not as scope conditioning. This is \emph{not} Framing~1 (which appeared in U4 to handle a sibling-\textsc{candidate} sibling-conditionality structure). U5 is structurally upstream of U3: the spatial translation generator must be installed before the time-translation generator can be identified as its temporal analog (which is U3's content). To derive U5 conditional on U3 would invert the dependency and re-introduce the methodological flaw of the 2026-04-24 tightening-program memo.
+
+The forbidden-input discipline is enforced by an explicit circularity audit (\S\ref{sec:forbidden}).
+
+\section{Structural Inputs}\label{sec:inputs}
+
+\subsection{Primitives}
+
+\begin{itemize}
+  \item \textbf{Primitive 03 (Participation):} graph homogeneity. The participation relation does not privilege any vertex of the participation graph. This supplies translation symmetry as a kinematic feature of the graph.
+  \item \textbf{Primitive 06 (ED Gradient):} $\nabla \rho$ supplies a continuous spatial axis. Translations along this axis are well-defined and admissible. No preferred origin.
+  \item \textbf{Primitive 09 (Tension Polarity):} $U(1)$-valued polarity phase $\pi(K, x)$. The gradient $\nabla \pi$ identifies the phase-propagation rate $k$, which is the wavenumber Fourier-conjugate to position.
+  \item \textbf{Primitive 04 (Bandwidth):} supplies the four-band decomposition; the adjacency band $b^{\mathrm{adj}}$ is the band on which the F1--F3 partition acts.
+\end{itemize}
+
+\subsection{Inherited \textsc{forced} upstream items}
+
+The U5 arc has access to the following theorem-grade upstream items established in the prior arc cycle:
+
+\begin{itemize}
+  \item \textbf{U2-Discrete (Theorem 11).} Sesquilinear inner product on the discrete participation-measure Hilbert space.
+  \item \textbf{U2-Continuum (Theorem 12).} Continuum lift of the U2 inner product, with explicit conformal gauge structure.
+  \item \textbf{Theorem 10 (Born rule, Gleason--Busch).} Bandwidth-density identifications $b_x \propto |\Psi(x)|^2$ and $b_p \propto |\widetilde{\psi}(p)|^2$ inherit from Theorem~10 applied per band.
+\end{itemize}
+
+\subsection{Participation-graph kinematics}
+
+The participation graph $G = (V, E)$ supplies vertices (Primitive~01), edges (Primitive~03), and bandwidth on the edges (Primitive~04). The translation group $\{T_a : a \in \mathbb{R}^d\}$ acts on participation-measure components by $T_a P_K(x) = P_K(x - a)$. This action is well-defined on $\mathcal{H}$ at the kinematic level --- no dynamical evolution required.
+
+\subsection{Mathematical infrastructure}
+
+\begin{itemize}
+  \item Stone's theorem on one-parameter unitary groups (Stone 1932)~\cite{stone}.
+  \item Standard $L^2$ Fourier transform on $L^2(\mathbb{R}^d)$, with Parseval's identity and the inversion formula~\cite{reedsimon}.
+  \item Standard functional calculus on self-adjoint operators.
+\end{itemize}
+
+\subsection{Forbidden inputs (circularity audit)}\label{sec:forbidden}
+
+The following inputs are explicitly forbidden as derivation inputs to U5:
+
+\begin{itemize}
+  \item \textbf{U3} (the participation-measure evolution equation $i\hbar \partial_t P_K = \hat{H} P_K + \cdots$). Forbidden in any role.
+  \item \textbf{The Schr\"odinger equation in textbook form.} Forbidden as a derivation input.
+  \item \textbf{Any time-evolution operator or Hamiltonian.} Specifically, $\hat{H}$ does not appear in the U5 derivation.
+  \item \textbf{U4} (the specific Hamiltonian form). Forbidden, since U4 is structurally downstream of U5.
+\end{itemize}
+
+Each subsequent derivation (\S\S\ref{sec:F1}--\ref{sec:F3}) operates strictly within the primitive-input scope of the present arc and references the forbidden-input list explicitly to confirm acyclicity. This audit follows the canonical templates of U1 Memo~01 \S4 and U4 Memo~01 \S2.
+
+\subsection{Scope conditions}
+
+\begin{itemize}
+  \item \textbf{Non-relativistic single-particle scope.} Inherited from Phase-1 Step~2's framing. The U5 derivation does not assume relativistic kinematics; the translation group is the abelian $\mathbb{R}^d$ group, not a Galilean or Lorentzian boost group (those enter U4).
+  \item \textbf{Spatial-translation scope.} The U5 arc treats spatial translations only. Time translations (which would invoke Primitive~13 in addition to Primitives~03, 06) are U3's content.
+\end{itemize}
+
+\section{Sub-Feature Decomposition}\label{sec:decomposition}
+
+\begin{center}
+\begin{tabular}{p{2.5cm}p{1.8cm}p{6.5cm}p{3.5cm}}
+\hline
+Sub-feature & Status & Structural inputs & Falsifiers \\
+\hline
+F1 (translation representation) & \textsc{forced} & Primitives 03 + 06 + U2 inner product & Fal-1, Fal-4 \\
+F2 (uniqueness of generator) & \textsc{forced} & F1 + Stone's theorem & Fal-2, Fal-3 \\
+F3 (momentum identification) & \textsc{forced} & F1 + F2 + U1 polarity-phase + standard $L^2$ Fourier theory & (consequence of F1--F2; structural specificity via dismissal of fractional-Fourier / wavelet / Mellin) \\
+\hline
+\end{tabular}
+\end{center}
+
+All three sub-features are forced-via-derivation. None is automatic; none is load-bearing in the sense of requiring a fresh primitive-level commitment. The closure of F3 requires explicit dismissal of three classes of alternative conjugacies (\S\ref{sec:alternatives}).
+
+\section{Falsifier Inventory}\label{sec:falsifiers}
+
+Each falsifier targets a specific physical alternative and a specific failure mode of the U5 commitment.
+
+\begin{itemize}
+  \item \textbf{Fal-1 (Non-unitary translations).} Spatial translations exist as set-theoretic operators on $\mathcal{H}$ but fail to preserve the U2 inner product. Physical interpretation: ``translating'' a state would not preserve probability amplitudes, contradicting the homogeneity of physical space. Resolved in \S\ref{sec:F1} by direct verification that $T_a$ preserves the U2 inner product.
+  \item \textbf{Fal-2 (Multiple inequivalent generators).} The translation group admits two or more inequivalent self-adjoint generators on $\mathcal{H}$, leaving the momentum operator structurally ambiguous. Physical interpretation: there would be no unique momentum observable, undermining its operational meaning. Resolved in \S\ref{sec:F2} by Stone's theorem.
+  \item \textbf{Fal-3 (Non-self-adjoint generator).} A generator exists but is not self-adjoint. Physical interpretation: momentum would not be a physical observable; eigenvalues need not be real. Resolved in \S\ref{sec:F2}: Stone's theorem produces a self-adjoint generator from a strongly continuous unitary group.
+  \item \textbf{Fal-4 (Non-linear translation action).} Translations do not act linearly on participation-measure components, precluding representation-theoretic treatment. Physical interpretation: superposition would not be preserved under translation. Resolved in \S\ref{sec:F1} by linearity of the translation action $T_a P_K(x) = P_K(x - a)$.
+\end{itemize}
+
+\section{Derivation of F1 (Translation Representation)}\label{sec:F1}
+
+\subsection{The claim}
+
+The spatial translation group $\{T_a : a \in \mathbb{R}^d\}$ is a well-defined, strongly continuous, abelian $d$-parameter unitary group on the U2 Hilbert space $\mathcal{H}$.
+
+\subsection{Translation symmetry as a kinematic feature}
+
+Define the translation operator $T_a$ acting componentwise on participation-measure components:
+\begin{equation}
+(T_a P)_K(x) := P_K(x - a), \qquad a \in \mathbb{R}^d. \label{eq:Ta-def}
+\end{equation}
+Three primitive-level observations:
+
+\begin{itemize}
+  \item[\textbf{(i)}] Primitive~03's graph-homogeneity guarantees that no vertex is privileged; the participation relation is invariant under graph automorphisms induced by spatial translations.
+  \item[\textbf{(ii)}] Primitive~06's gradient axis $\nabla\rho$ is continuous and unbounded; translations along this axis are well-defined for all $a \in \mathbb{R}^d$.
+  \item[\textbf{(iii)}] No primitive-level structure singles out a privileged origin or a privileged translation magnitude.
+\end{itemize}
+
+These three observations together establish translation symmetry as a \emph{kinematic} property of the participation graph --- a symmetry of the static structure, not of any dynamical evolution. \textbf{No reference to U3, to time evolution, or to a Hamiltonian appears in this argument.}
+
+\subsection{Linearity}
+
+Translation acts linearly:
+\[
+T_a (\alpha P + \beta Q)_K(x) = \alpha P_K(x - a) + \beta Q_K(x - a) = \alpha (T_a P)_K(x) + \beta (T_a Q)_K(x)
+\]
+for all $\alpha, \beta \in \mathbb{C}$ and all $P, Q \in \mathcal{H}$. \textbf{Falsifier Fal-4 dispatched.}
+
+\subsection{Unitarity}
+
+For $P, Q \in \mathcal{H}$ and $a \in \mathbb{R}^d$:
+\[
+\langle T_a P \mid T_a Q \rangle_{\mathcal{H}} = \sum_K \int_{\mathbb{R}^d} P_K^*(x - a) \, Q_K(x - a) \, d\mu(x).
+\]
+Substituting $x' = x - a$, with $d\mu(x') = d\mu(x)$ since the U2 measure is translation-invariant (Primitive~06 supplies a translation-invariant Lebesgue measure on the spatial axis; the U2-Continuum gauge acts as a conformal rescaling that does not depend on $x$ in the flat baseline):
+\[
+\langle T_a P \mid T_a Q \rangle_{\mathcal{H}} = \sum_K \int_{\mathbb{R}^d} P_K^*(x') \, Q_K(x') \, d\mu(x') = \langle P \mid Q \rangle_{\mathcal{H}}.
+\]
+The translation operators preserve the U2 inner product. \textbf{Falsifier Fal-1 dispatched.}
+
+\subsection{Group structure}
+
+Direct calculation: $T_a T_b = T_{a+b}$, $T_0 = I$, $T_{-a} = T_a^{-1}$. The translation group is abelian and isomorphic to $(\mathbb{R}^d, +)$.
+
+\subsection{Strong continuity}
+
+For any $P \in \mathcal{H}$ with components $P_K$ in $L^2(d\mu)$, the map $a \mapsto T_a P$ is strongly continuous because $L^2$-translation is strongly continuous. (This is a standard property of $L^2$, inherited by the direct sum / direct integral structure of the U2 Hilbert space across the channel index $K$.)
+
+\begin{theorem}[F1 --- Translation Representation]
+Let $\mathcal{H}$ denote the U2 Hilbert space of participation measures established by the U2-Discrete and U2-Continuum theorems. Then the spatial translation operators $T_a P_K(x) := P_K(x - a)$ for $a \in \mathbb{R}^d$ form a strongly continuous abelian $d$-parameter unitary group on $\mathcal{H}$, derived from Primitives~03 and 06 plus the U2 inner-product structure, with no input from U3 or any time-evolution operator.
+\end{theorem}
+
+\section{Derivation of F2 (Uniqueness of the Generator)}\label{sec:F2}
+
+\subsection{Stone's theorem}
+
+\begin{theorem}[Stone 1932~\cite{stone}]
+Every strongly continuous one-parameter unitary group $\{U(t) : t \in \mathbb{R}\}$ on a Hilbert space has a unique self-adjoint generator $A$ such that $U(t) = \exp(itA)$.
+\end{theorem}
+
+\subsection{Application to F1's translation group}
+
+By Theorem~F1, $\{T_a : a \in \mathbb{R}^d\}$ is a strongly continuous unitary group on $\mathcal{H}$. Apply Stone's theorem to each spatial direction $\hat{e}_i$ with $a = a_i \hat{e}_i$: there exists a unique self-adjoint generator $\hat{p}_i$ on $\mathcal{H}$ such that
+\[
+T_{a_i \hat{e}_i} = \exp\!\left(\frac{i \hat{p}_i a_i}{\hbar}\right).
+\]
+The $d$ generators $\hat{p}_i$ commute pairwise (by the abelian structure of the translation group, $T_a T_b = T_{a+b} = T_b T_a$), so the joint exponentiation is well-defined:
+\begin{equation}
+T_a = \exp\!\left(\frac{i \hat{p} \cdot a}{\hbar}\right), \qquad \hat{p} := (\hat{p}_1, \ldots, \hat{p}_d). \label{eq:Ta-stone}
+\end{equation}
+The generator $\hat{p}$ is unique. \textbf{Falsifier Fal-2 dispatched.}
+
+\subsection{Self-adjointness}
+
+Stone's theorem produces a self-adjoint generator from a strongly continuous unitary group. The self-adjointness is automatic from the theorem and does not require separate verification. \textbf{Falsifier Fal-3 dispatched.}
+
+\subsection{Why this does not require U3}
+
+Stone's theorem is a statement about strongly continuous one-parameter unitary groups on Hilbert spaces. The translation group $\{T_a\}$ is one such group on $\mathcal{H}$. The hypotheses of Stone's theorem are entirely kinematic: the existence of $\mathcal{H}$ (supplied by U2), the unitarity of $T_a$ (Theorem~F1), and the strong continuity of $T_a$ (Theorem~F1). At no point does the theorem require the existence of a \emph{time}-evolution operator, a Hamiltonian, or any dynamical input. The translation generator $\hat{p}$ is identified as a \emph{spatial} self-adjoint operator on $\mathcal{H}$ at fixed time, with no reference to the participation-measure evolution equation.
+
+\begin{theorem}[F2 --- Uniqueness of the Translation Generator]
+Under the hypotheses of Theorem~F1, there exists a unique self-adjoint operator $\hat{p}$ on $\mathcal{H}$ such that $T_a = \exp(i\hat{p} \cdot a / \hbar)$ for all $a \in \mathbb{R}^d$. The identification is via Stone's theorem applied to the strongly continuous unitary group $\{T_a\}$, and is U3-independent.
+\end{theorem}
+
+\section{Derivation of F3 (Momentum Operator Identification)}\label{sec:F3}
+
+\subsection{The position-representation form}
+
+In the position representation of $\mathcal{H}$, the translation operator acts on a wavefunction $\psi(x)$ by $T_a \psi(x) = \psi(x - a)$. Taylor-expansion in $a$ for analytic $\psi$:
+\begin{equation}
+T_a \psi(x) = \psi(x - a) = \sum_{n=0}^{\infty} \frac{(-a \cdot \nabla)^n}{n!} \psi(x) = \exp(-a \cdot \nabla) \psi(x). \label{eq:Ta-taylor}
+\end{equation}
+Comparing with~\eqref{eq:Ta-stone}:
+\[
+\exp\!\left(\frac{i \hat{p} \cdot a}{\hbar}\right) = \exp(-a \cdot \nabla)
+\]
+which is satisfied by
+\begin{equation}
+\boxed{\hat{p} = -i\hbar\nabla.} \label{eq:p-position}
+\end{equation}
+
+\subsection{Plane-wave eigenfunctions}
+
+The eigenvalue equation $\hat{p} \, |k\rangle = k |k\rangle$ in the position representation reads $-i\hbar\nabla \langle x | k \rangle = k \langle x | k \rangle$, with solution
+\begin{equation}
+\langle x | k \rangle = (2\pi\hbar)^{-d/2} \, e^{i k \cdot x / \hbar}. \label{eq:planewave}
+\end{equation}
+The normalization $(2\pi\hbar)^{-d/2}$ is fixed by the orthonormality $\langle k | k' \rangle = \delta(k - k')$ via the standard Fourier convention.
+
+\subsection{The thin-limit / continuum identification}
+
+In the discrete regime, the channel index $K$ runs over a discrete set; in the continuum / thin limit, $K$ is replaced by a continuous wavenumber $k \in \mathbb{R}^d$. The identification is:
+\begin{equation}
+K \xleftrightarrow{\text{thin limit}} k. \label{eq:Kk}
+\end{equation}
+The U1 polarity-phase factor $e^{i\pi_K(x)}$ in the participation-measure construction $P_K = \sqrt{b_K} \, e^{i\pi_K}$ is what makes this identification natural: in the continuum limit, $\pi_K(x) \to k \cdot x / \hbar$, so the polarity phase is precisely the plane-wave phase. The U1-supplied phase structure is the structural bridge between the channel index and the momentum eigenvalue.
+
+\subsection{The role of the U2 inner product}
+
+The U2 inner product $\langle P | Q \rangle = \sum_K \int P_K^* Q_K \, d\mu$ supplies the Hilbert-space structure on which:
+
+\begin{itemize}
+  \item[\textbf{(i)}] The Fourier transform $\widetilde{\psi}(k) = (2\pi\hbar)^{-d/2} \int e^{-ikx/\hbar} \psi(x) \, dx$ is an isometry: $\langle \psi | \phi \rangle_x = \langle \widetilde{\psi} | \widetilde{\phi} \rangle_k$ (Parseval).
+  \item[\textbf{(ii)}] The position eigenstates $\{|x\rangle\}$ and momentum eigenstates $\{|k\rangle\}$ are both complete orthonormal bases.
+  \item[\textbf{(iii)}] The standard Fourier transform is the unique unitary intertwiner between the two bases.
+\end{itemize}
+
+\subsection{Dismissal of alternative conjugacies}\label{sec:alternatives}
+
+Three classes of alternative integral transforms might in principle have served as the conjugacy between position and momentum representations. Each is dismissed:
+
+\begin{itemize}
+  \item \textbf{Fractional-Fourier transforms.} Diagonalize rotated phase-space operators (specifically, the operator $\cos\theta \cdot \hat{x} + \sin\theta \cdot \hat{p}$ for fractional angle $\theta$). Not the translation generator $\hat{p}$. Fail to provide the \emph{translation}-conjugate basis. Inconsistent with the Stone's-theorem identification.
+  \item \textbf{Wavelet transforms.} Multi-scale resolutions; not Stone's-theorem intertwiners of any one-parameter unitary group. Provide a different mathematical structure (overcomplete frames, time-frequency tilings) that is not the translation-conjugate basis.
+  \item \textbf{Mellin transforms.} Intertwine the dilation group $\{x \to e^t x\}$, not the translation group. Dilations are not a primitive-level kinematic symmetry of the participation graph (the participation graph has no preferred scale; dilation symmetry is not supplied by any primitive). Mellin transforms therefore do not arise structurally.
+\end{itemize}
+
+The standard $L^2$ Fourier transform is the \textbf{unique} unitary intertwiner of position and translation-conjugate momentum representations. It is forced by (a) the translation symmetry of the participation graph, (b) the Stone's-theorem identification of the unique self-adjoint generator, and (c) the standard $L^2$ Fourier theory.
+
+\begin{theorem}[F3 --- Momentum Operator Identification]
+Let $\hat{p}$ be the unique self-adjoint translation generator on the U2 Hilbert space $\mathcal{H}$ supplied by Theorem~F2. Then in the position representation of $\mathcal{H}$, $\hat{p} = -i\hbar\nabla$. The eigenfunctions of $\hat{p}$ are plane waves $\langle x | k \rangle = (2\pi\hbar)^{-d/2} \, e^{ikx/\hbar}$. The unique unitary intertwiner of position and momentum representations is the standard $L^2$ Fourier transform; fractional-Fourier, wavelet, and Mellin alternatives are dismissed by structural inconsistency with the translation-driven conjugacy.
+\end{theorem}
+
+\section{Falsifier Resolution Table}\label{sec:falsifier-table}
+
+\begin{center}
+\begin{tabular}{p{2.0cm}p{1.0cm}p{8.5cm}p{1.8cm}}
+\hline
+Falsifier & Target & Dispatch argument & Section \\
+\hline
+Fal-1 & F1 & Direct calculation: $\langle T_a P \mid T_a Q \rangle = \langle P \mid Q \rangle$ via translation-invariance of the U2 measure & \S\ref{sec:F1}.4 \\
+Fal-2 & F2 & Stone's theorem on the strongly continuous unitary group $\{T_a\}$ produces a unique self-adjoint generator & \S\ref{sec:F2}.2 \\
+Fal-3 & F2 & Stone's theorem produces a self-adjoint generator from a strongly continuous unitary group & \S\ref{sec:F2}.3 \\
+Fal-4 & F1 & Direct linearity of $T_a$ on participation-measure components & \S\ref{sec:F1}.3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{All four falsifiers dispatched within the stated scope conditions and forbidden-input discipline.}
+
+\section{Conditionality Ledger}\label{sec:conditionality}
+
+The U5 verdict is \textbf{\textsc{forced}} with the following inherited conditionalities and zero new ones:
+
+\begin{enumerate}
+  \item \textbf{Non-relativistic single-particle scope.} Inherited from Phase-1 Step~2; conditions the use of the abelian $(\mathbb{R}^d, +)$ translation group rather than a Galilean or Lorentzian boost group.
+  \item \textbf{U2 structure (inner product, both regimes).} Inherited from the U2-Discrete and U2-Continuum theorems; supplies the Hilbert space on which Stone's theorem applies.
+  \item \textbf{U1 participation-measure construction.} Inherited from the U1 theorem (\textsc{forced}); supplies the polarity-phase structure that natural-identifies the channel index with the momentum eigenvalue in the continuum limit (\S\ref{sec:F3}.3).
+  \item \textbf{Theorem~10 (Born) for downstream use only.} Used in the bandwidth-density identifications $b_x \propto |\Psi|^2$, $b_p \propto |\widetilde{\psi}|^2$ in the equivalence to the adjacency-band-partition framing; not used in the F1--F3 derivations themselves.
+\end{enumerate}
+
+\textbf{No dependence on U3.} The U5 derivation invokes no time-evolution operator, no Hamiltonian, no Schr\"odinger equation. The translation symmetry is kinematic (Primitives~03 + 06), the unitary representation is established at fixed time on the U2 Hilbert space (Theorem~F1), Stone's theorem identifies the generator without dynamical input (Theorem~F2), and the position-representation form (Theorem~F3) follows from comparison of operator exponentials. \textbf{U5 is structurally upstream of U3 and remains so under the present derivation.}
+
+\textbf{No new structural \textsc{candidate}s introduced.} All four conditionalities are inherited from prior structural commitments.
+
+\section{Final U5 Theorem}\label{sec:final-theorem}
+
+\begin{theorem}[U5; Translation Symmetry and the Momentum Operator]
+Let the ED primitive stack supply: graph homogeneity (Primitive~03), bandwidth (Primitive~04), spatial gradient (Primitive~06), and tension polarity (Primitive~09). Let the participation-measure carrier (U1, \textsc{forced}) and the U2 inner product on the participation-measure Hilbert space (U2-Discrete + U2-Continuum, both \textsc{forced}) supply the Hilbert space $\mathcal{H}$. Then:
+
+\begin{enumerate}
+  \item \textbf{Translation representation.} The spatial translation operators $T_a P_K(x) := P_K(x - a)$ for $a \in \mathbb{R}^d$ form a strongly continuous abelian $d$-parameter unitary group on $\mathcal{H}$.
+
+  \item \textbf{Unique self-adjoint generator.} By Stone's theorem, there exists a unique self-adjoint operator $\hat{p}$ on $\mathcal{H}$ such that
+  \[
+  T_a = \exp\!\left(\frac{i \hat{p} \cdot a}{\hbar}\right), \qquad a \in \mathbb{R}^d.
+  \]
+
+  \item \textbf{Momentum operator identification.} In the position representation of $\mathcal{H}$, $\hat{p} = -i\hbar\nabla$. The eigenfunctions of $\hat{p}$ are plane waves $\langle x | k \rangle = (2\pi\hbar)^{-d/2} e^{ikx/\hbar}$, with the standard $L^2$ Fourier transform as the unique unitary intertwiner of position and momentum representations.
+\end{enumerate}
+
+The derivation invokes no U3 input, no Hamiltonian, no time-evolution operator, and no Schr\"odinger equation. All four falsifiers (non-unitary translations, multiple inequivalent generators, non-self-adjoint generator, non-linear translation action) are dispatched.
+\end{theorem}
+
+\textbf{Status:} \textsc{forced}, unconditional in both discrete and continuum regimes; gauge-compatible with the U2-Continuum conformal redundancy (the gauge acts uniformly on both partition components and trivially on the translation representation); U3-independent.
+
+\section{Downstream Consequences}\label{sec:downstream}
+
+\subsection{How U5 feeds into U4 (momentum identification $\to$ kinetic term)}
+
+U4's Hamiltonian form $\hat{H} = \hbar^2 |\hat{p}|^2 / (2m) + V(\hat{x})$ requires the prior identification of the momentum operator $\hat{p}$. U5 supplies $\hat{p}$ as a self-adjoint operator on the U2 Hilbert space with plane-wave eigenfunctions. U4's Galilean Lie algebra integration acts on this $\hat{p}$:
+\[
+[\hat{H}, \hat{K}_i] = -i\hbar \hat{p}_i
+\]
+with $\hat{K}_i = m\hat{x}_i - t\hat{p}_i$. The integration of this commutator condition (yielding $\partial T / \partial \hat{p}_i = \hat{p}_i / m$ and thus $T = |\hat{p}|^2 / (2m)$) presupposes that $\hat{p}_i$ is a well-defined self-adjoint operator. \textbf{U5 supplies that operator.} Without U5, the U4 Galilean integration is not statable.
+
+\subsection{How U5 feeds into U1 (complex structure compatibility)}
+
+The U1 participation-measure construction $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$ supplies the polarity-phase factor $e^{i\pi_K}$ whose gradient identifies the wavenumber $k = \nabla \pi$. U5 closes the loop: the wavenumber $k$ is the eigenvalue of the translation generator $\hat{p}$, and the complex-valued structure of the participation measure is precisely what makes the plane-wave eigenfunctions $e^{ikx/\hbar}$ available as a basis. The U1 complex structure and the U5 momentum operator are mutually compatible --- neither was designed assuming the other, but both close consistently within the same Hilbert-space framework.
+
+\subsection{Updated structural-foundations ledger}
+
+Following the 2026-04-26 cycle, the inventory of structural-foundations theorems stands at fifteen forced items, with U5 occupying position \#13:
+
+\begin{center}
+\begin{tabular}{cll}
+\hline
+\# & Theorem & Status \\
+\hline
+10 & Born rule (Gleason--Busch) & \textsc{forced} \\
+11 & U2-Discrete (sesquilinear inner product) & \textsc{forced} \\
+12 & U2-Continuum (with conformal gauge) & \textsc{forced} \\
+\textbf{13} & \textbf{U5 (translation generator + momentum operator; this paper)} & \textbf{\textsc{forced}} \\
+14 & U1 (participation-measure construction) & \textsc{forced} \\
+15 & U4 (specific Hamiltonian form; form-\textsc{forced}--value-\textsc{inherited}) & \textsc{forced} cond.\ on U3 (Framing 1) \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Forced theorem count and active CANDIDATE inventory}
+
+The U5 paper formalizes a result already promoted in the 2026-04-26 cycle. The active upstream-\textsc{candidate} inventory therefore reads, post-cycle:
+\[
+\{U3\} + \text{continuum gauge convention.}
+\]
+One upstream \textsc{candidate} remains. Three of the four foundational QM postulates (Born rule, Bell--Tsirelson bound, Heisenberg uncertainty) are \textsc{forced}-unconditional. Schr\"odinger evolution is \textsc{forced} conditional on U3 alone.
+
+\section{Discussion and Outlook}\label{sec:discussion}
+
+\subsection{Why U5 is the kinematic backbone of the structural-foundations program}
+
+The structural-foundations cycle decomposes into three layers:
+
+\begin{itemize}
+  \item \textbf{Layer 1 (carrier):} U1 --- the participation-measure construction.
+  \item \textbf{Layer 2 (Hilbert-space arena):} U2-Discrete + U2-Continuum + Theorem~10 + \textbf{U5}.
+  \item \textbf{Layer 3 (dynamical):} U3 + U4.
+\end{itemize}
+
+U5 occupies the Hilbert-space layer alongside U2 and Theorem~10. Within that layer, U5 is what installs the \emph{kinematic} generators: spatial translations have a unique self-adjoint generator (the momentum operator), with plane-wave eigenfunctions and a well-defined Fourier-conjugate position basis. Without U5, the Hilbert space exists but carries no identified momentum observable; with U5, the kinematic skeleton of standard quantum mechanics is in place at fixed time.
+
+The ``kinematic backbone'' framing is precise: U5 supplies everything needed to do single-time quantum kinematics --- observables, eigenbases, conjugate-pair structure, Fourier conjugacy --- without invoking time evolution. Time evolution is U3's content; the Hamiltonian's specific form is U4's content. U5 is the structural boundary between kinematics and dynamics.
+
+\subsection{How U5 + U2 + U4 jointly force the Schr\"odinger form}
+
+The dynamical content of non-relativistic single-particle quantum mechanics is the Schr\"odinger equation $i\hbar \partial_t \psi = \hat{H} \psi$ with $\hat{H} = \hbar^2|\hat{p}|^2/(2m) + V(\hat{x})$. Three structural commitments suffice to force it:
+
+\begin{itemize}
+  \item \textbf{U2} supplies the Hilbert space.
+  \item \textbf{U5} supplies the momentum operator $\hat{p}$ on that Hilbert space.
+  \item \textbf{U4} supplies the Hamiltonian form $\hat{H} = \hbar^2|\hat{p}|^2/(2m) + V(\hat{x})$ via Galilean Lie algebra integration.
+\end{itemize}
+
+The remaining commitment --- U3, the existence and linear-first-order structure of the time-evolution generator --- is what binds these three pieces into a dynamical equation. With U3 closed, the Schr\"odinger equation is structurally complete: U2 supplies the arena, U5 supplies the kinematic generator, U4 supplies the dynamical generator's form, U3 supplies the existence and linearity of dynamical evolution.
+
+The U5 derivation is what makes the U4 closure acyclic: U4's Galilean integration acts on the U5 momentum operator, and U5 was derived without invoking U4 or U3. Promoting U3 in the next arc would close the entire QM-emergence Phase-1 program.
+
+\subsection{Sharpening over earlier work}
+
+The earlier 2026-04-24 tightening-program memo \texttt{arcs/arc-foundations/u5\_adjacency\_partition\_derivation.md} derived the Fourier conjugacy via U3 --- invoking the participation-measure evolution equation as a derivation input. The present derivation removes that dependency: translation symmetry is established as a kinematic property of the participation graph (Primitives~03 + 06), Stone's theorem applies on the U2 Hilbert space without time-evolution input, and the Fourier conjugacy follows from the position-representation form of the translation generator together with the standard $L^2$ Fourier theory.
+
+The methodological consequence is decoupling: U5's verdict is independent of whatever conditionality U3 carries. Promoting U3 in a future arc does not retroactively change the U5 result, and U5's promotion does not feed back into U3's derivation chain.
+
+\subsection{Next steps}
+
+\begin{enumerate}
+  \item \textbf{Open the U3 arc.} The natural and final foundational target. U3 inherits all six \textsc{forced} upstream items (U1, U2-Discrete, U2-Continuum, U5, Theorem~10, U4) and applies Stone's theorem to time-translation symmetry (Primitive~13) --- paralleling F1 of the present paper applied to spatial translations. Headline result if it closes: all four foundational QM postulates structurally derived from ED primitives.
+  \item \textbf{Synthesis paper revision.} With U5 now formalized as a publication paper, the QM-emergence Phase-1 synthesis paper \S\S3.3/3.4/3.5/4 can be revised to reflect the four-paper publication series (Born\_Gleason, U2\_Inner\_Product, U1\_Participation\_Measure, U4\_Hamiltonian\_Form) plus this paper. Recommend deferring the synthesis revision until U3 closes (single editorial pass).
+  \item \textbf{Public-facing U5 explainer.} A natural fifth in the public-explainer ladder, sitting between the U2 explainer (Hilbert space) and the U4 explainer (Hamiltonian form). The arc closure memo \S6 supplies a draft.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+\bibitem{phase1}
+A.~Proxmire, \emph{Phase-1: QM Emergence Structural Completion}, \texttt{papers/QM\_Emergence\_Structural\_Completion/}, 2026.
+
+\bibitem{borngleason}
+A.~Proxmire, \emph{The Born Rule as a Forced Theorem of Event Density: A Gleason--Busch Reconstruction from First Principles}, \texttt{papers/Born\_Gleason/}, 2026.
+
+\bibitem{u2}
+A.~Proxmire, \emph{The Inner Product as Forced Structure in Event Density: Discrete Derivation, Continuum Lift, and Gauge-Invariant Completion}, \texttt{papers/U2\_Inner\_Product/}, 2026.
+
+\bibitem{u1}
+A.~Proxmire, \emph{The U1 Theorem: Deriving the Participation Measure from Primitive Structure}, \texttt{papers/U1\_Participation\_Measure/}, 2026.
+
+\bibitem{u4}
+A.~Proxmire, \emph{U4: The Forced Structure of the Non-Relativistic Hamiltonian}, \texttt{papers/U4\_Hamiltonian\_Form/}, 2026.
+
+\bibitem{arcm}
+A.~Proxmire, \emph{Arc M: Chain-Mass Structure in Event Density}, \texttt{papers/Arc\_M/}, 2026.
+
+\bibitem{u5arc}
+A.~Proxmire, \emph{U5 arc memos (decomposition, F1+F2+F4 derivations, F3+F5 verdict, closure)}, \texttt{arcs/U5/}, 2026.
+
+\bibitem{stone}
+M.~H.~Stone, ``On one-parameter unitary groups in Hilbert space,'' \emph{Annals of Mathematics} \textbf{33}, 643--648 (1932).
+
+\bibitem{bargmann}
+V.~Bargmann, ``On unitary ray representations of continuous groups,'' \emph{Annals of Mathematics} \textbf{59}, 1--46 (1954).
+
+\bibitem{reedsimon}
+M.~Reed and B.~Simon, \emph{Methods of Modern Mathematical Physics, Volume I: Functional Analysis}, Academic Press, 1980.
+
+\bibitem{prugovecki}
+E.~Prugove\v{c}ki, \emph{Quantum Mechanics in Hilbert Space}, 2nd ed., Academic Press, 1981.
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript prepared April 2026. Source materials: \texttt{arcs/U5/} four-memo arc and closure memo, formalized into a single publishable document. The U5 arc is the third of the structural-foundations cycle (chronologically the fourth, drafted as the fifth publication paper after Born\_Gleason, U2\_Inner\_Product, U1\_Participation\_Measure, and U4\_Hamiltonian\_Form).}
+
+\noindent\emph{Draft complete. Pausing for revision.}
+
+\end{document}
