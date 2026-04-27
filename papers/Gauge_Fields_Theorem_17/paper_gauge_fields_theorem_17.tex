@@ -1,0 +1,453 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}
+
+\title{Gauge Fields as Forced Rule-Type Structure:\\ The Closure of Arc Q and Theorem 17}
+
+\author{Allen Proxmire \and Claude (AI collaborator)}
+
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We close Arc~Q of the Event-Density (ED) program by promoting the Gauge-field-as-Rule-Type Hypothesis (GRH) from form-level structural commitment to a \textsc{forced}-unconditional structural theorem (Theorem~17). Earlier Arc~Q work established GRH at the form level (Theorem~5), canonical (anti-)commutation (Theorem~6), and primitive-level UV-finiteness UV-FIN (Theorem~7), but left five refinement axes unresolved: lightlike worldline structure (R-1), gauge-quotient individuation (R-2), commitment-axis structure (R-3), non-Abelian extension (R-4), and the vacuum-vs-particle vacuum-side classification (R-5). We present a four-substage closure trajectory --- Q.2 (gauge group + quotient), Q.3 (vertex taxonomy + minimal coupling), Q.7 (worldline + second-quantisation), Q.8 (vacuum + zero-point) --- followed by a synthesis stage (global integration + falsifier audit + Theorem~17 statement). All seven refinement items close substage-\textsc{candidate-forced} with all twelve substage-level falsifiers and all six synthesis-level falsifiers dispatched dark; in particular, the Arc~M circularity check (SFal-5) verifies that the Theorem~17 derivation chain invokes no downstream input. \textbf{Theorem~17 (GRH \textsc{forced}-unconditional)} asserts that the gauge field $A_\mu$ is the participation measure of a structural rule-type $\tau_g$ whose group / vertex / worldline / vacuum content is forced across all four channels under a single unified gauge-quotient identification, with form \textsc{forced} by ED primitives plus Theorems 1--16 and numerical magnitudes (specific gauge group, coupling values, V1 kernel parameters, vacuum energy density) inherited from the value layer. Theorem~17 advances the \textsc{forced}-theorem inventory from sixteen to seventeen, closes Arc~Q, and unblocks the Arc~M F-M8 cascade.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{Motivation: gauge invariance as structural consequence}
+
+In standard quantum field theory, gauge invariance is \emph{postulated}. One selects a Lie group, declares a gauge field with prescribed transformation behaviour, and constructs the matter sector in representations of the group. The procedure is operationally successful but structurally opaque: nothing in the foundational machinery \emph{forces} the existence of a gauge field, \emph{forces} its non-Abelian capability, or \emph{forces} its vacuum structure to take any particular form. Each commitment is a modelling choice.
+
+Event-Density (ED) takes the opposite stance. The ED programme begins from a small primitive stack (the thirteen primitives P-01 through P-13) on a 3+1-dimensional event manifold, and asks which physical structures are \emph{forced} by those primitives plus the consequences derived from them. A ``\textsc{forced}-unconditional'' structural theorem in ED is one whose statement is derivable from primitives and prior \textsc{forced} theorems alone, without introducing any new \textsc{candidate} assumption.
+
+Arc~Q opens the question whether \emph{gauge invariance itself} --- the existence and structure of the gauge field $A_\mu$ --- is \textsc{forced} in this sense.
+
+\subsection{Historical framing: from postulate to derived property}
+
+Earlier Arc~Q work established three foundational \textsc{forced} theorems:
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Theorem~5} --- GRH unconditional at the \emph{form level}: the gauge field is a participation measure of a rule-type $\tau_g$.
+  \item \textbf{Theorem~6} --- canonical (anti-)commutation relations \textsc{forced}.
+  \item \textbf{Theorem~7} --- primitive-level UV-finiteness (UV-FIN) \textsc{forced}.
+\end{itemize}
+
+These results established the form-level identification of the gauge field with a rule-type, but five refinement items remained open: R-1 lightlike worldline; R-2 gauge-quotient individuation; R-3 commitment-axis structure; R-4 non-Abelian extension; R-5 vacuum-vs-particle classification.
+
+\subsection{Arc~Q's role in the ED programme}
+
+Within the broader ED programme, Arc~Q occupies the gauge-and-vacuum position in the Phase-2 form-level sector: alongside Arc~R (relativistic kinematics), Arc~M (chain-mass), and Arc~N (kernel-level memory structure), Arc~Q owns the gauge-field structural sector.
+
+\subsection{Summary of results}
+
+This paper presents \textbf{Theorem~17 (GRH \textsc{forced}-unconditional)}: the seventeenth \textsc{forced} structural theorem in the ED inventory. The result is reached via a four-substage closure trajectory followed by a synthesis stage:
+
+\begin{verbatim}
+   Q.1 (form-level baseline, Theorem 5) ---+
+                                           |
+   Q.2 (gauge-group + quotient)            |
+   Q.3 (vertex + minimal coupling)         |--> Synthesis --> Theorem 17
+   Q.7 (worldline + second-quantisation)   |    (Memos 00-02)
+   Q.8 (vacuum + zero-point)               |
+                                           +---> Arc M F-M8 cascade
+\end{verbatim}
+
+All twelve substage-level falsifiers and all six synthesis-level falsifiers were dispatched without trigger. The refinement-closure map advances to 7/7.
+
+\section{Background and Preliminaries}
+
+\subsection{ED primitives load-bearing in Arc Q}
+
+The seven primitives load-bearing in Arc~Q's closure are:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Primitive} & \textbf{Statement} \\
+\midrule
+P-02 & Rule-types are structural carriers with participation measures. \\
+P-04 & Bandwidth additivity over independent rule-type sectors. \\
+P-06 & Commitment events are the fundamental ontology. \\
+P-07 & Commitments require an anchor: vertex-anchored at excitation. \\
+P-10 & Gauge-quotient identification at primitive level. \\
+P-11 & UV-finiteness of structural envelopes. \\
+P-13 & Continuous-time evolution closure. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Prior \textsc{forced} theorems 1--16}
+
+Most directly load-bearing for Arc~Q's closure: Theorem~5 (GRH form-level), Theorem~6 (canonical (anti-)commutation), Theorem~7 (UV-FIN), Theorem~8 (V1 finite-width vacuum kernel from Arc~N), Theorem~16 (time-translation Schr\"odinger evolution from Phase-1 Arc~U3).
+
+\subsection{Refinement structure (R-1 through R-5)}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{R-1.} Lightlike worldline for $\tau_g$ excitations.
+  \item \textbf{R-2.} Gauge-quotient individuation across all channels (FULL = partial + completion).
+  \item \textbf{R-3.} Commitment-axis structure (FULL = Q.3-side + Q.7-side + Q.8-side).
+  \item \textbf{R-4.} Non-Abelian extension capability.
+  \item \textbf{R-5.} Vacuum-vs-particle classification (FULL = excitation + vacuum sides).
+\end{itemize}
+
+\subsection{Rule-types and participation measures}
+
+The ED ontology assigns to each rule-type $\tau$ a \emph{participation measure} encoding its contribution to commitment-rate ledgers across the event manifold. GRH asserts $A_\mu$ is identified with the participation measure of $\tau_g$.
+
+\section{Arc Q Architecture}
+
+Arc~Q's closure trajectory is a four-substage program followed by a three-memo synthesis. Each substage was structured as Memo~00 (scoping) + Memos~01--02 (substantive derivations) + Memo~03 (verdict + falsifier dispatch).
+
+\subsection{Q.2 --- Gauge-group admissibility and quotient structure}
+\textit{Refinements owned: R-2 partial, R-4.} Q.2 delivers a non-Abelian-capable gauge-group structure for $\tau_g$ with Killing-form and Jacobi closure, gauge-quotient identification at the group level, and structure-constant admissibility.
+
+\subsection{Q.3 --- Vertex taxonomy and minimal coupling}
+\textit{Refinements owned: R-2 completion, R-3 Q.3-side.} Q.3 delivers a vertex taxonomy with the minimal-coupling structural vertex, vertex-quotient extension that pulls back the group-quotient through coupling, and vertex-anchored commitment.
+
+\subsection{Q.7 --- Worldline and second-quantised structure}
+\textit{Refinements owned: R-1, R-3 Q.7-side, R-5 partial.} Q.7 delivers the eikonal/null-geodesic limit forcing lightlike worldlines for $\tau_g$ excitations, lifts vertex commitments to an ordered worldline ledger $\{v_i\}$, and supplies second-quantised excitation lifting via Theorem~6.
+
+\subsection{Q.8 --- Vacuum and zero-point structure}
+\textit{Refinements owned: R-3 Q.8-side, R-5 completion.} Q.8 delivers a gauge-invariant, UV-finite, V1-form, stationary vacuum kernel for $\tau_g$ (VQ1); three vacuum classes (VQ2); strict non-commitment at vacuum + V1-form additive background functional $B[v;\tau_g]$ contributing to vertex-anchored commitment rates (VQ3); full vacuum-sector gauge-quotient certification (VQ4).
+
+\subsection{Synthesis --- global integration, falsifier audit, Theorem 17}
+
+Three memos: Memo~00 (scoping); Memo~01 (global integration; constructs unified four-axis structural object, unified commitment ledger
+\[
+\Gamma_{\text{global}}[v;s] = \Gamma_{\text{excitation}}[v;\tau_g,s] + B[v;\tau_g],
+\]
+unified gauge-quotient ledger; dispatches SFal-1, SFal-2, SFal-3, SFal-4, SFal-6); Memo~02 (Theorem~17 statement, per-clause proof sketch, SFal-5 dispatch, \textsc{forced}-unconditional verdict, Arc~M cascade map).
+
+\section{Statement of Theorem 17 (GRH)}
+
+\subsection{Physics-facing statement}
+
+\begin{theorem}[Gauge-field-as-Rule-Type Hypothesis, \textsc{forced}-unconditional]
+\label{thm:grh}
+In the Event-Density framework, the gauge field $A_\mu$ is the participation measure of a structural rule-type $\tau_g$. The rule-type $\tau_g$ admits a non-Abelian-capable gauge-group structure with Killing-form and Jacobi closure; its excitations propagate on lightlike worldlines with second-quantised excitation lifting; commitments are vertex-anchored at the excitation level via a structural minimal-coupling vertex; the vacuum sector carries a gauge-invariant, UV-finite, V1-form, stationary fluctuation envelope, is strict-non-committing, and contributes a gauge-invariant V1-form background functional $B[v;\tau_g]$ additively to vertex-anchored commitment rates in non-vacuum states; all four channels (group, vertex, worldline, vacuum) respect a single unified gauge-quotient identification under the gauge group. The form is forced by ED primitives P-02, P-04, P-06, P-07, P-10, P-11, P-13 and Theorems 1--16; the numerical magnitudes are inherited from the value layer.
+\end{theorem}
+
+\subsection{Structural / refinement-indexed statement}
+
+The theorem decomposes into nine clauses (C1)--(C9):
+
+\begin{description}[leftmargin=2em]
+  \item[(C1) Carrier.] $\tau_g$ is a rule-type (P-02) with non-empty participation measure on the gauge-Lie-algebra fibre (Theorem~5 baseline).
+  \item[(C2) Group structure.] Non-Abelian-capable group with Killing-form and Jacobi closure; gauge-equivalent group elements identified (R-2 partial + R-4; Q.2).
+  \item[(C3) Vertex.] Vertex-anchored commitments; minimal-coupling structural vertex; vertex-quotient as pullback of group-quotient (R-2 completion + R-3 Q.3-side; Q.3).
+  \item[(C4) Worldline.] Lightlike worldlines (R-1); vertex ledger lifts to worldline ledger $\{v_i\}$; Fock-style count via Theorem~6 (Q.7).
+  \item[(C5) Vacuum kernel.] Gauge-invariant, UV-finite, V1-form, stationary fluctuation envelope (R-5 completion form-side; Q.8 Memo~01; Theorems 7, 8).
+  \item[(C6) Vacuum classification.] Three classes (background / excitation / mixed); excitation-vacuum minimal \textsc{forced} (Q.8 Memo~01).
+  \item[(C7) Vacuum commitment.] Strict non-commitment + additive $B[v;\tau_g]$:
+  \[
+  \Gamma_{\text{global}}[v;s] = \Gamma_{\text{excitation}}[v;\tau_g,s] + B[v;\tau_g]
+  \]
+  in non-vacuum states (R-3 Q.8-side; Q.8 Memo~02; Synthesis Memo~01 \S3).
+  \item[(C8) Unified quotient.] All four channels respect a single unified gauge-quotient identification (Q.8 VQ4 + Synthesis Memo~01 \S4).
+  \item[(C9) Acyclic derivability.] (C1)--(C8) derivable from primitives + Theorems 1--16 + Q-substage verdicts alone (Synthesis Memo~01 \S6.5 + Synthesis Memo~02 \S4).
+\end{description}
+
+\noindent\textbf{Status:} form \textsc{forced}, value \textsc{inherited}. \textbf{\textsc{forced}-unconditional at the structural level.}
+
+\section{Proof Sketch of Theorem 17}
+
+The proof traces each clause to its primitive-level, theorem-level, and Q-substage provenance.
+
+\subsection{(C1) Carrier} \textit{Provenance:} P-02 + GRH-1 + GRH-2 + Theorem~5. Form-level identification established by Theorem~5 baseline. \textbf{No additional \textsc{candidate}.}
+
+\subsection{(C2) Group structure} \textit{Provenance:} P-10 + Q.2 verdict + R-2 partial + R-4. Q.2 Memo~01 closes R-4 via Killing form, Jacobi identity, and structure-constant admissibility. Q.2 Memo~02 closes R-2 partial via the gauge-quotient extension at group level.
+
+\subsection{(C3) Vertex} \textit{Provenance:} P-06 + P-07 + P-10 + Q.3 verdict + R-2 completion + R-3 Q.3-side. Q.3 Memo~01 derives the vertex taxonomy and the minimal-coupling structural vertex; Q.3 Memo~02 closes R-2 completion and R-3 Q.3-side.
+
+\subsection{(C4) Worldline} \textit{Provenance:} P-13 + Q.7 verdict + Theorem~6 + R-1 + R-3 Q.7-side + R-5 partial. Q.7 Memo~01 closes R-1 via the eikonal/null-geodesic limit; Q.7 Memo~02 lifts the vertex ledger and supplies second-quantised excitation lifting via Theorem~6.
+
+\subsection{(C5) Vacuum kernel} \textit{Provenance:} P-02 + P-04 + P-10 + P-11 + P-13 + Theorem~7 + Theorem~8 + Q.8 Memo~01. Six constraints: non-vacuity (P-02 + GRH-2); UV-finiteness (P-11 + Theorem~7); V1 form (Theorem~8); gauge invariance (R-2 + P-10); bandwidth additivity (P-04); stationarity (P-13 + Theorem~16).
+
+\subsection{(C6) Vacuum classification} \textit{Provenance:} Q.7 worldline + VQ1 + R-2 + Q.8 Memo~01. Two orthogonal axes (background expectation $\times$ worldline support) yield three admissible classes; excitation-vacuum minimal \textsc{forced}.
+
+\subsection{(C7) Vacuum commitment} \textit{Provenance:} P-04 + P-06 + P-07 + Q.8 Memo~02 + Synthesis Memo~01 \S3. P-07 forces strict non-commitment at vacuum; P-04 forces additive composition; $B[v;\tau_g]$ inherits from VQ1.
+
+\subsection{(C8) Unified quotient} \textit{Provenance:} P-10 + Q.8 Memo~02 + Synthesis Memo~01 \S4 + R-2 + R-4. Synthesis Memo~01 \S4 dispatches the global six-pair cross-channel audit; all PASS.
+
+\subsection{(C9) Acyclic derivability} \textit{Provenance:} Synthesis Memo~02 \S4. Per-clause trace verifies that every input traces to a primitive, a Theorem 1--16, or a Q-substage verdict. F-M8 is a \emph{consequence} of Theorem~17, not input. \textbf{SFal-5 NOT TRIGGERED.}
+
+\subsection{Falsifier-level provenance}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Falsifier source} & \textbf{Status} \\
+\midrule
+Q.2 substage F-falsifiers & All NOT TRIGGERED \\
+Q.3 substage V-falsifiers & All NOT TRIGGERED \\
+Q.7 substage W-falsifiers (incl. WFal-5 circularity) & All NOT TRIGGERED \\
+Q.8 substage VQ-falsifiers (incl. VQFal-4 circularity) & All NOT TRIGGERED \\
+Synthesis SFal-1 (cross-substage) & NOT TRIGGERED \\
+Synthesis SFal-2 (global quotient) & NOT TRIGGERED \\
+Synthesis SFal-3 (commitment-ledger) & NOT TRIGGERED \\
+Synthesis SFal-4 (primitive global) & NOT TRIGGERED \\
+Synthesis SFal-5 (Arc M circularity) & NOT TRIGGERED \\
+Synthesis SFal-6 (acyclicity) & NOT TRIGGERED \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent All eighteen falsifiers dispatched dark. \textbf{No falsifier blocks Theorem 17.} $\square$
+
+\section{Structural Consequences}
+
+\subsection{Gauge invariance as interface property of $\tau_g$}
+Gauge invariance is the \emph{interface property} of $\tau_g$: the equivalence relation under which structurally-identical $\tau_g$ configurations are identified at primitive level (P-10). Transformation freedom is not a redundancy; it is the absence of distinction between structurally-identical primitive-level objects.
+
+\subsection{Masslessness as structural, not contingent}
+Form-level masslessness (C4) is \textsc{forced}; value-level mass corrections are \textsc{inherited} via Arc~M's chain-mass ledger (F-M8 cascade). No Higgs mechanism is invoked or excluded.
+
+\subsection{Unified quotient structure}
+Clause (C8) certifies a single gauge-quotient identification across all four channels. Channel-specific gauge fixings are structurally inadmissible.
+
+\subsection{Vacuum-level commitment rule}
+The structural form of the commitment-rate ledger:
+\[
+\Gamma_{\text{global}}[v;s] = \Gamma_{\text{excitation}}[v;\tau_g,s] + B[v;\tau_g].
+\]
+The vacuum is strict-non-committing in pure vacuum states; in non-vacuum states the vacuum kernel contributes additively.
+
+\subsection{Worldline / vacuum / vertex consistency}
+The four-axis $\times$ three-branch $\times$ four-channel global object is internally consistent. The worldline degenerates cleanly into the vacuum; the vacuum kernel feeds back into the vertex commitment rate; the vertex commits anchor the worldline ledger.
+
+\section{Implications for Arc M}
+
+\subsection{F-M8 promotion}
+Theorem~17 satisfies F-M8's antecedent via clauses (C5), (C7), (C8), (C9). \textbf{F-M8 promotes from \textsc{candidate} to \textsc{forced}-unconditional within Arc~M cascade scope.}
+
+\subsection{Massless-slot resolution}
+M.1 will resolve whether $\tau_g$ itself acquires mass through the F-M8 channel. Anticipated answer: $\tau_g$ remains massless at form level; F-M8 fires on other rule-types via cross-sector coupling.
+
+\subsection{Cross-sector coupling constraints}
+The unified quotient (C8) constrains how $B[v;\tau_g]$ couples to other rule-types' commitment rates. M.3 will derive the structural coupling rule.
+
+\subsection{Downstream M.1--M.4 cascade}
+M.1 (massless-slot resolution), M.2 (mass-form additivity), M.3 ($\tau_g$ cross-sector coupling), M.4 (Arc M synthesis verdict refresh). Acyclicity preserved.
+
+\section{Discussion}
+
+\subsection{Conceptual shift: gauge fields as rule-types}
+Theorem~17 reframes the gauge field as a derived structural object. The form-level content is forced from the primitive layer; the numerical value layer remains inherited.
+
+\subsection{Comparison with traditional gauge theory}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Traditional QFT} & \textbf{Event-Density (Theorem 17)} \\
+\midrule
+Gauge group postulated & Non-Abelian-capable structure \textsc{forced} (C2). \\
+$A_\mu$ postulated & Participation measure of $\tau_g$ (C1). \\
+Minimal coupling postulated & \textsc{Forced} as structural vertex (C3). \\
+Vacuum via path integral & Vacuum kernel \textsc{forced} as gauge-inv.\ V1 form (C5--C7). \\
+Gauge invariance postulated & Unified gauge-quotient as primitive identification (C8). \\
+Higgs mechanism postulated & Form masslessness (C4) + value-layer F-M8 (Arc M). \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The shift is ontological: gauge structure is \emph{derived}, not \emph{imposed}.
+
+\subsection{Implications for unification and emergent structure}
+A single unified gauge-quotient (C8) across all four channels: structural unification at the rule-type level. Empirical-unification implications are value-layer questions.
+
+\subsection{Limitations and open questions}
+Theorem~17 does \emph{not} derive: the specific gauge group of nature, specific coupling magnitudes, representation content, the Higgs mechanism, vacuum-energy magnitudes, anomaly cancellation, or RG running. Open questions: M.1--M.4 cascade closure; Phase-3 GR integration of $B[v;\tau_g]$; empirical signatures; multi-rule-type gauge sectors.
+
+\section{Conclusion}
+
+Arc~Q closes via a four-substage trajectory (Q.2, Q.3, Q.7, Q.8) plus a three-memo synthesis. All seven refinement items close at substage level with all eighteen falsifiers dispatched dark. The synthesis stage promotes GRH from form-level (Theorem~5) to \textsc{forced}-unconditional (Theorem~17), the seventeenth \textsc{forced} structural theorem in the ED inventory.
+
+Theorem~17 supplies the structural foundation for ED's gauge-and-vacuum sector, completing the Phase-2 form-level closure (with Arc~R, Arc~M, Arc~Q) plus the kernel-level closure (Arc~N) plus the Phase-1 emergence layer. The immediate downstream consequence is the Arc~M F-M8 cascade; beyond that, Phase-3 GR inherits $B[v;\tau_g]$ as a candidate channel for vacuum-mediated curvature corrections.
+
+\appendix
+
+\section{Detailed Refinement-Closure Map}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Refinement item} & \textbf{Status} & \textbf{Closing substage} \\
+\midrule
+R-1 (lightlike worldline) & CLOSED & Q.7 (Memo 01, W1+W2) \\
+R-2 partial (group-level quotient) & CLOSED & Q.2 (Memo 02, F3) \\
+R-2 completion (vertex-quotient) & CLOSED & Q.3 (Memo 02, V3+V4) \\
+\textbf{R-2 FULL} & CLOSED & Q.2 + Q.3 \\
+R-3 Q.3-side (vertex commitment) & CLOSED & Q.3 (Memo 02) \\
+R-3 Q.7-side (worldline commitment) & CLOSED & Q.7 (Memo 02, W3+W4) \\
+R-3 Q.8-side (vacuum commitment) & CLOSED & Q.8 (Memo 02, VQ3) \\
+\textbf{R-3 FULL} & CLOSED & Q.3 + Q.7 + Q.8 \\
+R-4 (non-Abelian extension) & CLOSED & Q.2 (Memo 01, F2) \\
+R-5 partial (excitation-side) & CLOSED & Q.7 (Memo 02, W3+W4) \\
+R-5 completion (vacuum-side) & CLOSED & Q.8 (Memos 01 + 02) \\
+\textbf{R-5 FULL} & CLOSED & Q.7 + Q.8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent \textbf{Map: 7/7 refinement items CLOSED; 5/5 top-level refinement axes FULLY CLOSED.}
+
+\section{Primitive-Level Audits}
+
+\subsection{Per-substage primitive load}
+
+\begin{center}
+\small
+\begin{tabular}{lllllll}
+\toprule
+\textbf{Primitive} & \textbf{Q.2} & \textbf{Q.3} & \textbf{Q.7} & \textbf{Q.8} & \textbf{Synth.} & \textbf{Forbidden?} \\
+\midrule
+P-02 & supports & supports & supports & constrains & supports & No. \\
+P-04 & neutral & constrains & constrains & constrains & constrains & No. \\
+P-06 & neutral & constrains & constrains & constrains & constrains & No. \\
+P-07 & neutral & constrains & constrains & constrains (decisive) & constrains & No. \\
+P-10 & constrains & constrains & constrains & constrains & constrains & No. \\
+P-11 & neutral & neutral & neutral & constrains & constrains & No. \\
+P-13 & neutral & neutral & constrains & constrains & constrains & No. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent No primitive forbids any Arc~Q result; no new \textsc{candidate} introduced.
+
+\section{Falsifier Tables}
+
+\subsection{Substage falsifier ledger}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Falsifier set} & \textbf{Substage} & \textbf{Status} \\
+\midrule
+F-1 through F-5 & Q.2 & All NOT TRIGGERED \\
+V-1 through V-5 & Q.3 & All NOT TRIGGERED \\
+WFal-1 through WFal-8 (incl. WFal-5) & Q.7 & All NOT TRIGGERED \\
+VQFal-1 through VQFal-7 (incl. VQFal-4) & Q.8 & All NOT TRIGGERED \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Synthesis falsifier ledger}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Falsifier} & \textbf{Tested in} & \textbf{Status} \\
+\midrule
+SFal-1 (cross-substage) & Synth. Memo 01 \S6.1 & NOT TRIGGERED \\
+SFal-2 (global quotient) & Synth. Memo 01 \S6.2 & NOT TRIGGERED \\
+SFal-3 (commitment-ledger) & Synth. Memo 01 \S6.3 & NOT TRIGGERED \\
+SFal-4 (primitive global) & Synth. Memo 01 \S6.4 & NOT TRIGGERED \\
+SFal-5 (Arc M circularity) & Synth. Memo 02 \S4 & NOT TRIGGERED \\
+SFal-6 (acyclicity) & Synth. Memo 01 \S6.5 & NOT TRIGGERED \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent \textbf{Cumulative: 18 falsifiers, all NOT TRIGGERED.}
+
+\section{Worldline / Field Correspondence Derivation}
+
+The lightlike-worldline structure for $\tau_g$ excitations (clause C4 / R-1) is derived in Q.7 Memo~01 via the eikonal limit:
+\begin{enumerate}[leftmargin=2em]
+  \item By P-13 and Theorem~16, every rule-type carrier admits a continuous-time evolution generator.
+  \item By the form-level vanishing of structural mass-form for $\tau_g$, the eikonal-limit dispersion is null: $g^{\mu\nu} k_\mu k_\nu = 0$.
+  \item The associated worldline is a null geodesic: $g^{\mu\nu} \dot{x}_\mu \dot{x}_\nu = 0$.
+  \item The vertex-anchored commitment ledger lifts onto the null worldline as ordered events $\{v_i\}$ along the affine parameter.
+  \item Second-quantised excitation lifting inherits Theorem~6, supplying a Fock-style count.
+\end{enumerate}
+The field-side correspondence is the standard map between worldline ledger and participation measure $A_\mu$.
+
+\section{Synthesis Falsifier Dispatch Ledger}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{SFal-1:} all six pairs and four triples PASS.
+  \item \textbf{SFal-2:} all six cross-channel pairs PASS; non-Abelian global consistency PASSES.
+  \item \textbf{SFal-3:} unified rule consistent; no double-counting; acyclicity preserved.
+  \item \textbf{SFal-4:} all seven primitives consistent globally.
+  \item \textbf{SFal-5:} per-clause trace verifies no Arc~M input invoked.
+  \item \textbf{SFal-6:} dependency graph has no back-edges.
+\end{itemize}
+All six dispatched dark.
+
+\begin{thebibliography}{99}
+
+\bibitem{primitives}
+A.~Proxmire, \emph{Event-Density Primitive Stack} (Primitives 01--13), 2026.
+
+\bibitem{phase1}
+A.~Proxmire, \emph{Phase-1 Synthesis: Non-Relativistic QM-Emergence}, 2026.
+
+\bibitem{arcr}
+A.~Proxmire, \emph{Why the Universe is Structurally Mandatory: Arc R}, 2026.
+
+\bibitem{arcm}
+A.~Proxmire, \emph{Chain-Mass Synthesis: Arc M}, 2026.
+
+\bibitem{arcn}
+A.~Proxmire, \emph{Non-Markovian Structure as a Forced Memory-Kernel Layer of Event-Density Theory}, 2026.
+
+\bibitem{arcq_baseline}
+A.~Proxmire, \emph{Quantum Field Theory from Event-Density Primitives: Arc Q form-level baseline}, 2026.
+
+\bibitem{q2}
+A.~Proxmire, \emph{Arc Q Substage Q.2 Memos 00--03}, \texttt{arcs/arc-Q/01--04}, 2026.
+
+\bibitem{q3}
+A.~Proxmire, \emph{Arc Q Substage Q.3 Memos 00--03}, \texttt{arcs/arc-Q/05--08}, 2026.
+
+\bibitem{q7}
+A.~Proxmire, \emph{Arc Q Substage Q.7 Memos 00--03}, \texttt{arcs/arc-Q/09--12}, 2026.
+
+\bibitem{q8}
+A.~Proxmire, \emph{Arc Q Substage Q.8 Memos 00--03}, \texttt{arcs/arc-Q/13--16}, 2026.
+
+\bibitem{synth}
+A.~Proxmire, \emph{Arc Q Synthesis Memos 00--02}, \texttt{arcs/arc-Q/17--19}, 2026.
+
+\bibitem{m_cascade}
+A.~Proxmire, \emph{Arc M F-M8 Cascade Memo}, \texttt{arcs/arc-M/cascade\_memo\_F\_M8\_promotion.md}, 2026.
+
+\bibitem{u3}
+A.~Proxmire, \emph{U3 Time-Translation and Schr\"odinger Evolution} (Theorem 16), 2026.
+
+\bibitem{inventory}
+A.~Proxmire, \emph{ED Forced-Theorem Inventory (Theorems 1--17)}, \texttt{memory/project\_qm\_emergence\_arc.md}, 2026.
+
+\end{thebibliography}
+
+\vspace{1em}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.2em}
+
+\noindent\emph{Manuscript closure: 2026-04-27. Companion documents: Arc R paper, Arc M paper, Arc N paper, U3 paper, Phase-1 synthesis.}
+
+\end{document}

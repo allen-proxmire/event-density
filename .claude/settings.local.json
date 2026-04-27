@@ -19,11 +19,10 @@
       "Bash(python)",
       "Bash(python _patch_notebook.py)",
       "Bash(rm _patch_notebook.py)",
-      "Bash(pdflatex -interaction=nonstopmode born_gleason_paper.tex)",
-      "Bash(pdflatex -interaction=nonstopmode paper_u2_inner_product.tex)",
-      "Bash(pdflatex -interaction=nonstopmode paper_u1_participation_measure.tex)",
-      "Bash(pdflatex -interaction=nonstopmode paper_u4_hamiltonian_form.tex)",
-      "Bash(pdflatex -interaction=nonstopmode paper_u5_translation_momentum.tex)"
+      "Bash(python _prep_sparc_data.py)",
+      "Bash(python -m pytest simulations/edsim/dm/tests/ -m \"not slow\" -q)",
+      "Bash(tasklist)",
+      "Read(//c/Users/allen/GitHub/event-density/**)"
     ]
   }
 }
