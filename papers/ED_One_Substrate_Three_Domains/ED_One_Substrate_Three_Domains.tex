@@ -1,0 +1,330 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  urlcolor=blue!50!black,
+  citecolor=blue!50!black
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{rule*}{Rule}
+
+\title{Event Density: One Substrate, Three Domains\\[4pt]
+\large A Structural Account of Quantum Mechanics, Galactic Gravity, and Universal Soft-Matter Mobility}
+
+\author{Allen Proxmire}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present Event Density (ED), a single substrate ontology of discrete events and relational adjacency from which the foundational structures of three nominally separate domains of physics are derived rather than postulated. From substrate primitives alone we obtain: (i) the four foundational postulates of non-relativistic quantum mechanics --- Born's rule, the Schr\"odinger equation, the Heisenberg uncertainty bound, and the Bell--Tsirelson bound --- as forced structural theorems, together with gauge fields, canonical (anti-)commutation, UV-finiteness, and the kernel-level arrow of time; (ii) Newton's gravitational law with $G = c^3 \ell_P^2 / \hbar$, the MOND transition acceleration $a_0 = c H_0 / (2\pi)$, the deep-regime combination law $a = \sqrt{a_N \cdot a_0}$, and the slope-4 baryonic Tully--Fisher relation $v^4 = G M a_0$, all parameter-free; and (iii) a universal degenerate-mobility law $D(c) = D_0 (1 - c/c_\mathrm{max})^\beta$ that fits diffusion data from ten chemically unrelated soft-matter systems with $R^2 > 0.986$ at a common exponent $\beta = 1.72 \pm 0.37$. The framework predicts no laboratory result that differs from standard physics in the regimes where standard physics has been tested. What it does is replace a long list of independent postulates with a smaller list of substrate commitments, from which those postulates follow as theorems. We tabulate twenty-one forced structural theorems plus one foundational substrate rule, derive the load-bearing results, and close with the framework's pre-registered empirical falsifiers.
+\end{abstract}
+
+\section{Introduction}
+
+Modern physics is organized around three nominally separate problems: the very small, the very large, and the messy middle. Quantum mechanics describes particles and fields. General relativity (with a dark-matter patch) describes galaxies and cosmology. A sprawl of phenomenological models describes soft matter, glasses, and biological transport. Each domain has its own postulates, its own constants, and its own characteristic puzzles. Walk into any one of them and ask why the rules are the rules, and the answer is the same: \emph{because we postulate them, and the postulates work.}
+
+This paper argues that a single substrate underlies all three domains, and that the postulates of each can be derived rather than assumed.
+
+The substrate is \emph{Event Density} (ED): a relational ontology in which discrete micro-events are the fundamental constituents, and physics is what their participation structure makes possible. There are no fundamental fields, no fundamental spacetime, no fundamental wavefunction. Particles are stable chains of micro-events; spacetime is an emergent geometry of the relational structure; the wavefunction is a participation measure on a graph. From this minimal toolkit and a small set of structural commitments, the foundational structures of the three domains follow as theorems.
+
+The paper is organized as follows. Section~\ref{sec:substrate} lays out the substrate primitives, the participation measure, the chain stability landscape, and the canonical ED partial differential equation. Section~\ref{sec:theorems} catalogs the twenty-one forced structural theorems plus the one foundational substrate rule that constitute the program's current results. Sections~\ref{sec:qm}, \ref{sec:gr}, and \ref{sec:cm} derive the load-bearing results in quantum mechanics, gravity, and soft matter respectively. Section~\ref{sec:empirical} states the framework's pre-registered empirical falsifiers. Section~\ref{sec:conclusion} concludes.
+
+The framework predicts no current laboratory result that differs from standard physics. It replaces a long list of independent postulates with a smaller list of substrate commitments from which those postulates follow. That is the only claim being made. Whether the substrate commitments are right is the empirical question, addressed by the falsifiers in Section~\ref{sec:empirical}.
+
+\section{The ED Substrate}\label{sec:substrate}
+
+\subsection{Primitives}
+
+The ED ontology rests on a small set of primitives. We list those load-bearing for the present paper.
+
+\begin{description}[leftmargin=1em, itemsep=2pt]
+\item[Micro-events.] Reality consists of discrete acts of becoming. The local rate of micro-event production at $x$ is the event density $\rho(x,t)$.
+\item[Participation and adjacency.] Micro-events do not exist in isolation; they participate in one another's becoming. Two micro-events are \emph{adjacent} when they integrate each other's becoming, share participation bandwidth, and maintain coherent relational timing.
+\item[Channels.] A channel $K$ is a stable subgraph along which micro-events propagate. Channels carry edge weights $b_K$ called \emph{bandwidth}.
+\item[Chains.] A chain is a sequence of micro-events maintaining coherent participation across its extent. Chains are the substrate-level objects we call particles.
+\item[Decoupling surfaces.] Participation thresholds where reciprocal participation between two regions becomes one-sided. The cosmic decoupling surface lies at radius $R_H = c/H_0$. An accelerating chain induces a decoupling surface at distance $d_a = c^2/a$ behind it.
+\item[Commitment irreversibility (P11).] Every commitment event is irreversible. Once made, never unmade.
+\end{description}
+
+\subsection{The participation measure}
+
+A channel's participation in becoming is described by the \emph{participation measure}
+\begin{equation}
+P_K(x,t) = \sqrt{b_K(x,t)} \cdot e^{i \pi_K(x,t)},
+\label{eq:Pmeas}
+\end{equation}
+where $b_K$ is the channel's bandwidth and $\pi_K$ a $U(1)$-valued phase. The form of \eqref{eq:Pmeas} is forced (Theorem T14): the magnitude exponent is fixed by the Cauchy functional equation on bandwidth additivity, and the phase structure by Frobenius. The participation measure is the substrate object whose continuum limit standard quantum mechanics names $\psi$.
+
+\subsection{The chain stability landscape}
+
+A chain at substrate position $x$ with current micro-event state $s$ evaluates its next propagation step against the available local participation environment by maximizing the \emph{stability score}
+\begin{equation}
+\Sigma(e') = \mathrm{Coh}(e', s) - \mathrm{Str}(e', \rho_\mathrm{local}) - \mathrm{Grad}(e', \nabla \rho),
+\label{eq:Sigma}
+\end{equation}
+where $\mathrm{Coh}$ measures coherence with the current state, $\mathrm{Str}$ the participation strain against the surrounding environment, and $\mathrm{Grad}$ the strain accumulated against the surrounding ED-gradient. The chain extends to the next state with maximum $\Sigma$. The gradient of $\Sigma$ experienced by the chain manifests as force.
+
+\subsection{The canonical ED PDE}
+
+Coarse-grained over many chain steps, the substrate dynamics for a participation density $\rho(x,t)$ on a bounded domain reduces to a single quasilinear parabolic PDE with three constitutive channels:
+\begin{align}
+\partial_t \rho &= D \bigl[\, M(\rho) \, \nabla^2 \rho + M'(\rho) |\nabla\rho|^2 - P(\rho) \,\bigr] + H \, v, \label{eq:PDE1}\\
+\dot{v} &= \tau^{-1}\bigl(\bar F - \zeta\, v\bigr). \label{eq:PDE2}
+\end{align}
+The three channels are:
+\begin{description}[leftmargin=1em, itemsep=2pt]
+\item[Mobility ($M$).] A degenerate nonlinear mobility producing porous-medium-equation behavior. Closes Section~\ref{sec:cm}.
+\item[Penalty ($P$).] A monostable penalty producing exponential (Debye) relaxation toward equilibrium.
+\item[Participation ($v$).] A global participation variable obeying a damped first-order law and producing telegraph oscillation when coupled to the density channel.
+\end{description}
+The canonical degenerate mobility is $M(\rho) = (1 - \rho/\rho_\mathrm{max})^\beta$, which produces the universal soft-matter law of Section~\ref{sec:cm}. The PDE's existence, well-posedness, three-channel decomposition, and exponential stability of equilibrium are established in the foundational ED corpus and not re-derived here.
+
+\section{Forced Theorem Inventory}\label{sec:theorems}
+
+The substrate-level program has produced twenty-one forced structural theorems plus one foundational substrate rule. Theorems are FORCED-unconditional unless otherwise noted. Table~\ref{tab:theorems} catalogs them. Sections~\ref{sec:qm} through \ref{sec:cm} derive the load-bearing results.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}p{0.8cm}p{6.0cm}p{6.0cm}@{}}
+\toprule
+\textbf{T} & \textbf{Statement} & \textbf{Origin} \\
+\midrule
+T1 & Spin--statistics: $\eta = (-1)^{2s}$ & Arc R; from Cl(3,1) uniqueness \\
+T2 & Cl(3,1) uniqueness & Arc R \\
+T3 & Anyon prohibition in 3+1D & Arc R \\
+T4 & Dirac equation + $g = 2$ emergence & Arc R \\
+T5 & Gauge-field-as-rule-type (form-level) & Arc Q --- \emph{subsumed by T17} \\
+T6 & Canonical (anti-)commutation $[\phi,\pi]=i\hbar\delta$ & Arc Q \\
+T7 & UV-finiteness & Arc Q \\
+T8 & V$_1$ finite-width vacuum kernel & Arc N \\
+T9 & V$_1$ with Synge world function (curved spacetime) & Phase 3 \\
+T10 & Born rule via Gleason--Busch & Phase 1 (born\_gleason) \\
+T11 & U2-Discrete: sesquilinear inner product & Phase 1 (U2) \\
+T12 & U2-Continuum: with conformal gauge & Phase 1 (U2-c) \\
+T13 & U5: momentum operator from translation & Phase 1 (U5) \\
+T14 & U1: $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$ & Phase 1 (U1) \\
+T15 & U4: $\hat H = \hat p^2 / 2m + V$ & Phase 1 (U4) \\
+T16 & U3: Schr\"odinger evolution $i\hbar \partial_t \psi = \hat H \psi$ & Phase 1 (U3); $\star$ Phase-1 closure \\
+T17 & Gauge-field-as-rule-type (synthesis, supersedes T5) & Arc Q closure \\
+T18 & V$_1$ kernel retardation: kernel-level arrow of time & Arc B closure \\
+T19 & Newton's law from substrate; $G = c^3 \ell_P^2 / \hbar$ & arc-SG \\
+T20 & Transition acceleration; $a_0 = c H_0/(2\pi)$ & arc-SG \\
+\textbf{R} & ED Combination Rule (substrate rule, no number) & arc-SG \\
+T21 & Slope-4 BTFR: $v^4 = G M a_0$ & arc-SG; $\star$ substrate-gravity closure \\
+\bottomrule
+\end{tabular}
+\caption{Forced structural inventory as of April 2026. ``R'' marks the foundational ED Combination Rule (substrate rule rather than numbered theorem). Stars mark closure points: $\star$ Phase-1 = T16 (all four QM postulates derived); $\star$ substrate-gravity closure = T21 (galactic phenomenology fully derived).}
+\label{tab:theorems}
+\end{table}
+
+\section{Quantum Mechanics from the Substrate}\label{sec:qm}
+
+\subsection{The Born rule (T10) and the Hilbert-space arena (T11, T12)}
+
+The Born rule states that the probability of measuring outcome $K$ is
+\begin{equation}
+\mathrm{Prob}(K) = \frac{|P_K|^2}{\sum_{K'} |P_{K'}|^2} = \frac{b_K}{\sum_{K'} b_{K'}}.
+\end{equation}
+The squared form has been a postulate of quantum mechanics for a hundred years. ED derives it. The participation-graph ontology forces \emph{non-contextuality} from below: channels are real structural features of the substrate, bandwidth is an intrinsic edge weight on those channels, and probability is bandwidth share at the measurement locus. The ``context'' --- which other channels happen to be enumerated alongside a given one --- is an external organizational choice, and external choices cannot reach intrinsic structure. With non-contextuality forced rather than postulated, Gleason's theorem (extended by Busch's POVM result for two-state systems) yields the squared form as a derivation.
+
+The discrete-channel inner product on participation measures is forced by the same logic to be sesquilinear (T11):
+\begin{equation}
+\langle P | Q \rangle = \sum_K \overline{P_K} \, Q_K,
+\end{equation}
+and lifts uniquely to the continuum under one description-level convention (the conformal gauge of T12). The Bell--Tsirelson bound $|S| \leq 2\sqrt{2}$ follows as a structural consequence of this inner product. The Hilbert space is no longer postulated; it is the Hilbert space the substrate forces.
+
+\subsection{Momentum, Hamiltonian, and Schr\"odinger evolution (T13, T15, T16)}
+
+Stone's theorem applied to spatial-translation symmetry on the participation-measure Hilbert space yields a unique self-adjoint generator, the momentum operator $\hat p = -i\hbar \nabla$ (T13). Plane waves are its eigenfunctions; the standard $L^2$ Fourier transform is the unique unitary intertwiner of position and momentum; the Heisenberg uncertainty bound $\Delta x \cdot \Delta p \geq \hbar/2$ is a structural consequence.
+
+The Hamiltonian is forced by Galilean Lie-algebra closure. The boost generator $\hat K = m\hat x - t \hat p$ together with the commutator condition $[\hat H, \hat K] = -i\hbar \hat p$ integrate uniquely to
+\begin{equation}
+\hat H = \frac{|\hat p|^2}{2m} + V(\hat x), \qquad
+\boxed{\;\text{factor of 2 = chain-rule integration Jacobian}\;}
+\end{equation}
+The factor of 2 in $1/(2m)$ is not a convention borrowed from classical mechanics. It is the chain-rule coefficient that emerges when integrating the Galilean commutator condition (T15). With the Hamiltonian fixed, Stone's theorem on time-translation symmetry produces the Schr\"odinger equation
+\begin{equation}
+i\hbar \, \partial_t \psi = \hat H \psi
+\end{equation}
+as the unique evolution rule the substrate supports (T16). The U3--U4 acyclicity discipline (identification not derivation) closes the loop without circularity. With T16 in hand, all four foundational postulates of non-relativistic quantum mechanics --- Born, Bell--Tsirelson, Heisenberg, Schr\"odinger --- are forced structural consequences of the substrate.
+
+\subsection{Gauge fields (T17)}
+
+Beyond the foundational postulates, the gauge field $A_\mu$ is forced as the participation measure of a structural rule-type $\tau_g$ (T17). The four-channel content of any non-Abelian gauge theory --- group structure, the connection $A_\mu$, minimal coupling $\partial \to \partial - igA$, and gauge invariance itself --- is derived under a single unified gauge-quotient identification, with all 7/7 GRH refinements closed and 18/18 falsifiers dispatched dark. Gauge invariance is not imposed as a symmetry of an action; it is the interface property of a rule-type --- the absence of distinction between structurally identical configurations. T17 supersedes the form-level statement T5.
+
+\subsection{The kernel-level arrow of time (T18)}
+
+The vacuum response kernel $V_1$ that mediates how perturbations propagate is uniquely forced to have support restricted to the forward causal cone (T18). Symmetric, advanced, and hybrid kernels are not refuted by an external constraint; they are \emph{non-constructible} from the chain ensemble. The argument runs through P11 (commitment irreversibility) plus locality: each chain's commitments are forward-only in proper time, each commitment can only reach its own causal future, and the chain-summed kernel therefore has forward-cone-only support. The retarded Green's function of standard QFT is the continuum correspondent of $V_1^\mathrm{ret}$; the Wightman correlator and Feynman propagator remain unaffected as distinct continuum objects.
+
+\section{Gravity from the Substrate}\label{sec:gr}
+
+\subsection{Newton's law (T19)}
+
+Consider a chain at radius $R$ from a baryonic mass $M$. The strain term $\mathrm{Str}$ in the chain stability landscape \eqref{eq:Sigma} is determined by the integrated environmental gradient from the chain outward. For a point mass,
+\begin{equation}
+\int_R^\infty \rho_\mathrm{grad}(R')\, dR' \propto \frac{M}{R}, \qquad
+a \propto \frac{\partial}{\partial R}\!\left(\frac{M}{R}\right) \propto \frac{M}{R^2},
+\end{equation}
+recovering the inverse-square law structurally. To fix the proportionality constant, apply the substrate's holographic participation count to a 2-sphere at radius $R$:
+\begin{equation}
+N_R = \frac{4\pi R^2}{\ell_\mathrm{ED}^2}.
+\end{equation}
+A substrate-level equipartition $\tfrac{1}{2} N_R k_B T_R = M c^2$ together with the Unruh-analog inversion $T_R = \hbar a / (2\pi k_B c)$ yields, after the $2\pi$ factors cancel,
+\begin{equation}
+a = \frac{M c^3 \ell_\mathrm{ED}^2}{R^2 \hbar} = \frac{GM}{R^2}, \qquad
+\boxed{\; G = \frac{c^3 \ell_P^2}{\hbar}, \qquad \ell_\mathrm{ED} = \ell_P. \;}
+\end{equation}
+The substrate's UV cutoff is forced by Newton-recovery to coincide with the Planck length. Newton's gravitational constant is now expressed in fundamental substrate quantities; it is no longer a free parameter.
+
+\subsection{The transition acceleration (T20)}
+
+When a chain accelerates, the three-dimensional isotropy of its participation environment breaks. The chain has a privileged axis along the acceleration direction, with full reciprocal participation forward and progressively-thinned participation backward (decoupled at $d_a = c^2/a$). The cosmic decoupling surface, which contributes to the chain's stability landscape, projects onto this anisotropic accessible region not as an isotropic full-sphere fact but as a directional projection along the acceleration axis. Decomposing in spherical harmonics aligned with the acceleration axis, the leading anisotropic mode coupling to the chain's adjacency structure is the dipole $(l = 1, m = 0)$, whose only non-trivial spatial periodicity is the $2\pi$ azimuthal cycle. The chain integrates the cosmic-horizon contribution at the effective rate
+\begin{equation}
+\gamma_\mathrm{cosmic}^\mathrm{eff} = \frac{H_0}{2\pi}.
+\end{equation}
+Setting this equal to the chain's experienced rate $\gamma_\mathrm{chain} = a/c$ yields the transition acceleration:
+\begin{equation}
+\boxed{\; a_0 = \frac{c \cdot H_0}{2\pi} \approx 1.08 \times 10^{-10}\,\mathrm{m/s^2}. \;}
+\end{equation}
+The empirical MOND constant is $a_0^\mathrm{emp} \approx 1.2 \times 10^{-10}\,\mathrm{m/s^2}$. The structural prediction matches to within $10\%$, parameter-free, robust to the Hubble tension at the $15\%$ level. The factor of $2\pi$ is geometric --- the azimuthal period of the leading anisotropic projection mode --- not phenomenological.
+
+\subsection{The ED Combination Rule}
+
+In the joint weak-gradient regime, where neither local-mass nor cosmic-horizon contribution dominates the chain's accessible region, the chain stability landscape \eqref{eq:Sigma} acquires a logarithmic cross-term:
+\begin{equation}
+\Sigma_\mathrm{cross}(R) = \sqrt{G M a_0} \cdot \log(R/R_0) + \mathrm{const},
+\end{equation}
+with $R_0$ a substrate-internal reference scale. The coefficient $\sqrt{G M a_0}$ reflects multiplicative participation between the two source contributions: it is their geometric mean rather than their sum. The cross-term is not a perturbative correction; it is the substrate's structural response in the regime where both contributions co-shape the chain's accessible region. Differentiating yields the chain's effective acceleration:
+\begin{equation}
+\boxed{\; a = \sqrt{a_N \cdot a_0}. \;}
+\end{equation}
+This is the foundational \emph{ED Combination Rule}, registered as a substrate rule rather than a numbered theorem.
+
+\subsection{Flat rotation curves and the slope-4 BTFR (T21)}
+
+A chain in circular orbit at radius $R$ from baryonic mass $M$, in the deep-acceleration regime ($a_N \ll a_0$), has effective acceleration $a = \sqrt{GMa_0}/R$ by the Combination Rule. Centripetal balance $a = v^2/R$ gives:
+\begin{equation}
+\boxed{\; v^2 = \sqrt{G M a_0}, \qquad v_\mathrm{flat}^4 = G \cdot M \cdot a_0. \;}
+\end{equation}
+The orbital velocity is constant in $R$: \emph{flat rotation curves derived structurally from the substrate}. Squaring yields the slope-4 baryonic Tully--Fisher relation, with prefactor
+\begin{equation}
+G \cdot a_0 = \frac{c^4 \ell_P^2 H_0}{2\pi \hbar}
+\end{equation}
+expressed entirely in fundamental substrate constants. No free parameters appear at any step. Theorem T21 closes the substrate-gravity arc: Newton, transition scale, combination rule, and flat-curve / Tully--Fisher phenomenology are all structural consequences of the substrate.
+
+\section{Universal Soft-Matter Mobility from the Canonical PDE}\label{sec:cm}
+
+The mobility channel of the canonical ED PDE \eqref{eq:PDE1} produces a single universal law for diffusion in concentrated soft matter. We isolate the mobility channel by setting $P \equiv 0$ and decoupling the participation variable, leaving
+\begin{equation}
+\partial_t \rho = D\,\nabla \cdot \bigl[\, M(\rho) \nabla \rho \,\bigr]
+\end{equation}
+with the canonical degenerate mobility
+\begin{equation}
+M(\rho) = \left(1 - \frac{\rho}{\rho_\mathrm{max}}\right)^\beta.
+\end{equation}
+This is a porous-medium-equation form. Recasting in terms of an effective diffusion coefficient $D_\mathrm{eff}(\rho) = D \cdot M(\rho)$ and switching to volume fraction $c = \rho/\rho_\mathrm{max}$:
+\begin{equation}
+\boxed{\; D(c) = D_0 \left(1 - \frac{c}{c_\mathrm{max}}\right)^\beta. \;}
+\label{eq:UDM}
+\end{equation}
+Equation \eqref{eq:UDM} is the \emph{universal degenerate-mobility law}.
+
+The substrate prediction is structural: \eqref{eq:UDM} should fit diffusion data across systems whose microscopic mechanisms differ, with the same functional form and similar exponents, because the substrate's mobility channel produces this form regardless of the underlying material. The exponent $\beta$ reflects the substrate's coarse-graining, not material-specific microphysics; it should cluster across chemically unrelated systems.
+
+\subsection{Empirical anchor: ten chemically unrelated systems}
+
+We fit \eqref{eq:UDM} to diffusion data from ten chemically and microscopically unrelated soft-matter systems: hard-sphere colloids, sucrose--water, BSA protein solutions, lysozyme, PMMA colloids, Ludox silica, PEG--water, dextran, casein micelles, and glycerol--water. The fits give:
+\begin{equation}
+\beta = 1.72 \pm 0.37, \qquad R^2 > 0.986\ \text{across all ten systems.}
+\end{equation}
+A single law, a single clustered exponent, ten chemically unrelated substrates. The substrate prediction of structural universality is realized: the form is universal, the exponent is universal to within $\pm 0.37$, and no material-specific machinery is required to fit any of the ten systems. The full data and per-system fit parameters are given in the companion paper \emph{Universal Degenerate-Mobility Scaling in Crowded Soft Matter}.
+
+\section{Empirical Falsifiers}\label{sec:empirical}
+
+The framework's structural commitments are sharp, and the predictions they generate expose them to laboratory verdict. We enumerate the pre-registered falsifiers:
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+\item \textbf{FRAP in concentrated protein solutions.} Equation \eqref{eq:UDM} predicts a recovery profile distinct from the standard Fickian exponential. Specifically, for concentrated BSA the front-radius scaling is $R(t) \propto t^{1/6}$ rather than the Fickian $t^{1/2}$. The full predicted profile has an RLC-analogue ringing structure absent from any exponential model.
+\item \textbf{AFM force--distance spectroscopy.} The chain stability landscape \eqref{eq:Sigma} predicts a specific signature on substrate-resolved force curves at the canonical operating point.
+\item \textbf{Optomechanical envelope.} Theorem N1 (V$_1$ finite-width vacuum kernel) predicts a ringdown envelope at $\omega \approx 8\, \gamma_\mathrm{dec}$ that re-analysis of existing optomechanical data should either confirm or falsify.
+\item \textbf{Quantum-classical boundary in matter-wave interferometry.} The framework predicts a sharp transition in the 140--250\,kDa mass range, five to ten times beyond what current matter-wave interferometers can reach.
+\item \textbf{Galactic Tully--Fisher with substrate-derived $G \cdot a_0$.} T21 predicts $v^4 = G \cdot M \cdot a_0$ with prefactor $G \cdot a_0 = c^4 \ell_P^2 H_0 / (2\pi \hbar)$ entirely in substrate constants. This is testable to high precision against the SPARC catalog and similar surveys.
+\item \textbf{The radial-acceleration relation.} For arbitrary $(a_N, a_0)$ the framework predicts a single-valued function $a(a_N)$ interpolating between Newtonian ($a \to a_N$ for $a_N \gg a_0$) and deep-MOND ($a \to \sqrt{a_N a_0}$ for $a_N \ll a_0$) limits. Any galactic system departing from this curve falsifies T19, T20, or the Combination Rule.
+\end{enumerate}
+
+These predictions are sharp, parameter-free, and directly testable. The framework is exposed to falsification at the laboratory level as well as the observational level. The pre-registered structure is not a hedge; it is the instrument.
+
+\section{Conclusion}\label{sec:conclusion}
+
+Three nominally separate domains of physics rest on independent collections of postulates. Standard quantum mechanics postulates the Born rule, the Schr\"odinger equation, the Heisenberg bound, and the gauge structure, and treats their numerical values as inputs. Standard cosmology postulates Newton's law plus a dark-matter patch and treats the MOND transition acceleration as an empirical fit. Standard soft-matter physics treats every diffusing system as its own model. In each case, the question \emph{why must it be that way?} has been deferred.
+
+Event Density takes the question on. From substrate primitives --- micro-events, participation, adjacency, channels, decoupling surfaces, commitment irreversibility --- it derives, as forced theorems, the four foundational postulates of non-relativistic quantum mechanics; gauge fields and canonical commutation; UV-finiteness and the kernel-level arrow of time; Newton's gravitational law with $G$ expressed in $c$, $\hbar$, and the Planck length; the MOND transition acceleration with the famous $2\pi$ as a geometric period; the deep-regime combination law; and the slope-4 baryonic Tully--Fisher relation. The same canonical PDE that produces the quantum and gravitational structures produces a universal degenerate-mobility law that fits ten chemically unrelated soft-matter systems with $R^2 > 0.986$ at a common exponent.
+
+Twenty-one forced structural theorems plus one foundational substrate rule. No new laboratory predictions for the regimes where standard physics has been tested. New structural answers underneath the old postulates --- and a small list of falsifiers exposing the framework to verdict in regimes standard physics has not yet reached.
+
+The framework's case is on the table. The empirical program will dispose of it.
+
+\begin{thebibliography}{99}
+
+\bibitem{ed06} Proxmire, A. (2026). \emph{Horizons as Event Density Decoupling Surfaces.} ED foundational paper.
+
+\bibitem{ed07} Proxmire, A. (2026). \emph{Event Density and Relativistic Phenomena.} ED foundational paper.
+
+\bibitem{ed10} Proxmire, A. (2026). \emph{Event Density and the Emergence of Spacetime.} ED foundational paper.
+
+\bibitem{edI06} Proxmire, A. (2026). \emph{Fields and Forces in Event Density.} ED foundational paper.
+
+\bibitem{edsg} Proxmire, A. (2026). \emph{Structural Foundations of ED-Substrate Gravity: Newton, the Transition Scale, the Combination Rule, and the Baryonic Tully--Fisher Relation.} ED substrate-gravity foundations paper.
+
+\bibitem{edqm} Proxmire, A. (2026). \emph{Quantum Mechanics as a Forced Structural Consequence of Event Density Primitives.} ED foundational paper.
+
+\bibitem{edrqm} Proxmire, A. (2026). \emph{Relativistic Quantum Mechanics as a Forced Structural Consequence of Event-Density Primitives.} ED foundational paper.
+
+\bibitem{edborn} Proxmire, A. (2026). \emph{The Born Rule as a Forced Theorem of Event Density: A Gleason--Busch Reconstruction from First Principles.} ED structural-arc paper.
+
+\bibitem{edu3} Proxmire, A. (2026). \emph{U3 --- Time-Translation, Schr\"odinger Evolution, and the Closure of Phase 1.} ED structural-arc paper.
+
+\bibitem{edt17} Proxmire, A. (2026). \emph{Gauge Fields as Forced Rule-Type Structure: Theorem 17.} ED structural-arc paper.
+
+\bibitem{edt18} Proxmire, A. (2026). \emph{The Primitive-Level Arrow of Time in Event Density: The Closure of Arc B and Theorem 18.} ED structural-arc paper.
+
+\bibitem{eduvfin} Proxmire, A. (2026). \emph{A UV-Finite Quantum Field Theory from Event-Density Primitives.} ED structural-arc paper.
+
+\bibitem{edudm} Proxmire, A. (2026). \emph{Universal Degenerate-Mobility Scaling in Crowded Soft Matter.} ED empirical-anchor paper.
+
+\bibitem{mcgaugh2016} McGaugh, S.~S., Lelli, F., \& Schombert, J.~M. (2016). \emph{Radial Acceleration Relation in Rotationally Supported Galaxies.} Phys. Rev. Lett. \textbf{117}, 201101.
+
+\bibitem{mcgaugh2012} McGaugh, S.~S. (2012). \emph{The Baryonic Tully--Fisher Relation of Gas-Rich Galaxies as a Test of $\Lambda$CDM and MOND.} Astron. J. \textbf{143}, 40.
+
+\bibitem{milgrom1983} Milgrom, M. (1983). \emph{A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis.} Astrophys. J. \textbf{270}, 365.
+
+\bibitem{gleason1957} Gleason, A.~M. (1957). \emph{Measures on the closed subspaces of a Hilbert space.} J. Math. Mech. \textbf{6}, 885.
+
+\bibitem{busch2003} Busch, P. (2003). \emph{Quantum states and generalized observables: a simple proof of Gleason's theorem.} Phys. Rev. Lett. \textbf{91}, 120403.
+
+\end{thebibliography}
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}\\
+\textit{Event Density is an open research framework being developed publicly by independent physicist Allen Proxmire. The full technical program --- primitives, derivations, simulations, twenty-one forced theorems plus the ED Combination Rule, and pre-registered experimental tests across all three domains --- is available at \texttt{github.com/allen-proxmire}, with archival DOIs through Zenodo. April 2026.}
+
+\end{document}

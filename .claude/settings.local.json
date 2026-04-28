@@ -29,7 +29,13 @@
       "WebFetch(domain:philarchive.org)",
       "Bash(xargs -I {} ls -la \"{}\")",
       "Bash(sort -k5 -n -r)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "PowerShell(gh release create version.eleventy --title \"Substrate Gravity Arc Closure - Newton + a0 Derived, Inventory at T20\" --notes \"\")",
+      "Read(//c/Program Files/**)",
+      "Bash(where.exe gh *)",
+      "Bash(git tag *)",
+      "Read(//tmp/**)",
+      "Bash(pdflatex -interaction=nonstopmode ED_One_Substrate_Three_Domains.tex)"
     ]
   }
 }
