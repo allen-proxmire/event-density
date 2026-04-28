@@ -22,7 +22,14 @@
       "Bash(python _prep_sparc_data.py)",
       "Bash(python -m pytest simulations/edsim/dm/tests/ -m \"not slow\" -q)",
       "Bash(tasklist)",
-      "Read(//c/Users/allen/GitHub/event-density/**)"
+      "Read(//c/Users/allen/GitHub/event-density/**)",
+      "Bash(pdflatex -interaction=nonstopmode ED_substrate_gravity_foundations.tex)",
+      "WebFetch(domain:philpeople.org)",
+      "WebSearch",
+      "WebFetch(domain:philarchive.org)",
+      "Bash(xargs -I {} ls -la \"{}\")",
+      "Bash(sort -k5 -n -r)",
+      "Bash(git mv *)"
     ]
   }
 }
