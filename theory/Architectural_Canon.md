@@ -158,6 +158,7 @@ This is the architectural meaning of *equivalence*: **different equations, same 
 - Parameter values `D ∈ [0,1]`, `ζ ≥ 0`, `τ > 0`, `ρ_max > ρ*`
 - Domain geometry (1D, 2D, 3D; periodic / reflective / open)
 - Time rescaling and multiplicative factors on the operator
+- **Field type (scalar / vector / tensor)** — P1–P7 are field-type agnostic; vector and tensor PDEs satisfying P1–P7 component-wise are architecturally ED (clarified 2026-04-30; see [`Architectural_Canon_Vector_Extension.md`](Architectural_Canon_Vector_Extension.md) for vector-extension conditions and the three-tier "canonical / fully ED-architectural / partially ED-architectural" classification)
 
 What cannot vary:
 - The three-term operator structure (P1)

@@ -81,6 +81,8 @@ A full statement (with proofs of independence and sufficiency) is in `papers/Fou
 
 **Uniqueness theorem.** Constraints C1–C7 select the canonical PDE uniquely among all evolution equations on $\rho$. See `papers/Foundations_of_Event_Density/Appendices/appendix_D_Universality Class.md`, Theorem D.19.
 
+**Note on C5 scope (2026-04-30).** C5 binds at the *concrete-PDE level* — it is a constraint on the canonical PDE exemplar in this document, not on the architectural canon. The architectural canon (P1–P7 in [`Architectural_Canon.md`](Architectural_Canon.md)) is field-type agnostic; vector and tensor extensions of the ED architecture that satisfy P1–P7 component-wise are architecturally ED even though they violate C5. The vector-extension framework — including the conditions under which a non-scalar PDE is "fully ED-architectural" vs. "partially ED-architectural" — is articulated in [`Architectural_Canon_Vector_Extension.md`](Architectural_Canon_Vector_Extension.md). The Navier-Stokes equation is treated there as a paradigm partial-vector-extension case.
+
 ---
 
 ## 4. The three channels
