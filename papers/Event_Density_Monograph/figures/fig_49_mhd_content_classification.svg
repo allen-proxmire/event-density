@@ -1,0 +1,90 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 9.1 — MHD content classification: 6 : 2 : 3</text>
+  <text x="450" y="50" text-anchor="middle" font-size="12" fill="#666" font-style="italic">eleven MHD items decomposed into three ED-architectural categories</text>
+
+  <!-- Three category columns -->
+
+  <!-- Canonical-ED (6 items) -->
+  <rect x="40" y="80" width="270" height="430" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="175" y="108" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">Canonical-ED  (6)</text>
+  <text x="175" y="125" text-anchor="middle" font-size="11" fill="#444" font-style="italic">substrate-derived via DCGT</text>
+  <line x1="55" y1="138" x2="295" y2="138" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <g fill="#444" font-size="12">
+    <text x="60" y="165">1. ν ∇²v viscous term</text>
+    <text x="60" y="190">2. R1 hyperviscous −κ μ_V1 ℓ_P² ∇⁴v</text>
+    <text x="60" y="215">3. ohmic dissipation η ∇²B</text>
+    <text x="60" y="240">4. magnetic-pressure gradient ∇p_B</text>
+    <text x="60" y="265">5. Lorentz force coupling (T17 U(1))</text>
+    <text x="60" y="290">6. mass conservation ∂ₜρ + ∇·(ρv)=0</text>
+  </g>
+
+  <text x="175" y="335" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Common origin:</text>
+  <text x="175" y="355" text-anchor="middle" font-size="11" fill="#444">DCGT multi-scale expansion</text>
+  <text x="175" y="372" text-anchor="middle" font-size="11" fill="#444">+ T17 minimal-coupling</text>
+
+  <text x="175" y="408" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a4f8b">H1 / H2 / H3 hold</text>
+  <text x="175" y="425" text-anchor="middle" font-size="10" fill="#666" font-style="italic">all three turbulence hypotheses</text>
+  <text x="175" y="442" text-anchor="middle" font-size="10" fill="#666" font-style="italic">apply to canonical-ED MHD</text>
+
+  <text x="175" y="478" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">→ form-FORCED structurally;</text>
+  <text x="175" y="496" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">prefactors INHERITED</text>
+
+  <!-- Transport-kinematic (2 items) -->
+  <rect x="320" y="80" width="270" height="430" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="455" y="108" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="14">Transport-kinematic  (2)</text>
+  <text x="455" y="125" text-anchor="middle" font-size="11" fill="#444" font-style="italic">frame artifact, non-ED</text>
+  <line x1="335" y1="138" x2="575" y2="138" stroke="#a05a00" stroke-width="0.8"/>
+
+  <g fill="#444" font-size="12">
+    <text x="340" y="165">1. (v · ∇)v fluid advection</text>
+    <text x="340" y="190">2. (v · ∇)B  +  (B · ∇)v induction</text>
+    <text x="340" y="217">    [kinematic-coupling pattern]</text>
+  </g>
+
+  <text x="455" y="265" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">Common origin:</text>
+  <text x="455" y="285" text-anchor="middle" font-size="11" fill="#444">Eulerian-frame transport</text>
+  <text x="455" y="302" text-anchor="middle" font-size="11" fill="#444">material-derivative artifact</text>
+
+  <text x="455" y="338" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">Three-angle convergence:</text>
+  <text x="455" y="358" text-anchor="middle" font-size="11" fill="#444">frame-kinematic + DCGT + ED-I-06</text>
+  <text x="455" y="376" text-anchor="middle" font-size="11" fill="#444">all classify these as non-ED</text>
+
+  <text x="455" y="412" text-anchor="middle" font-weight="bold" font-size="11" fill="#a05a00">Kinematic-coupling pattern</text>
+  <text x="455" y="429" text-anchor="middle" font-size="10" fill="#666" font-style="italic">induction equation parallels</text>
+  <text x="455" y="445" text-anchor="middle" font-size="10" fill="#666" font-style="italic">advection — same classification</text>
+
+  <text x="455" y="478" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">→ load-bearing finding</text>
+  <text x="455" y="496" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">for MHD program closure</text>
+
+  <!-- ED-coupled (3 items) -->
+  <rect x="600" y="80" width="270" height="430" fill="#f0e8ff" stroke="#5a2090" stroke-width="2" rx="6"/>
+  <text x="735" y="108" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="14">ED-coupled  (3)</text>
+  <text x="735" y="125" text-anchor="middle" font-size="11" fill="#444" font-style="italic">substrate-coupled, not pure-ED</text>
+  <line x1="615" y1="138" x2="855" y2="138" stroke="#5a2090" stroke-width="0.8"/>
+
+  <g fill="#444" font-size="12">
+    <text x="620" y="165">1. −∇p / ρ pressure gradient</text>
+    <text x="620" y="190">2. ∇·v incompressibility constraint</text>
+    <text x="620" y="215">3. magnetic-flux conservation ∇·B = 0</text>
+  </g>
+
+  <text x="735" y="265" text-anchor="middle" font-weight="bold" font-size="12" fill="#5a2090">Common origin:</text>
+  <text x="735" y="285" text-anchor="middle" font-size="11" fill="#444">substrate ρ coupled to</text>
+  <text x="735" y="302" text-anchor="middle" font-size="11" fill="#444">kinematic gradients</text>
+
+  <text x="735" y="338" text-anchor="middle" font-weight="bold" font-size="12" fill="#5a2090">Constraint vs. dynamical:</text>
+  <text x="735" y="358" text-anchor="middle" font-size="11" fill="#444">items 2, 3 are constraints;</text>
+  <text x="735" y="376" text-anchor="middle" font-size="11" fill="#444">item 1 is dynamical coupling</text>
+
+  <text x="735" y="412" text-anchor="middle" font-weight="bold" font-size="11" fill="#5a2090">H1 / H2 / H3 status:</text>
+  <text x="735" y="429" text-anchor="middle" font-size="10" fill="#666" font-style="italic">consistent with all three</text>
+  <text x="735" y="445" text-anchor="middle" font-size="10" fill="#666" font-style="italic">hypotheses (NS-MHD arc)</text>
+
+  <text x="735" y="478" text-anchor="middle" font-size="11" fill="#5a2090" font-style="italic">→ structural classification</text>
+  <text x="735" y="496" text-anchor="middle" font-size="11" fill="#5a2090" font-style="italic">required for closure</text>
+
+  <!-- Footer -->
+  <text x="450" y="555" text-anchor="middle" font-size="11" fill="#444" font-style="italic">11 MHD items, 3 categories, 1 substrate framework. The 6 : 2 : 3 split is the load-bearing classification of the NS-MHD arc.</text>
+  <text x="450" y="572" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Canonical source: papers/Navier Stokes_Synthesis_Paper/ Appendix C (MHD)</text>
+</svg>

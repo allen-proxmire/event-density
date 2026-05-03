@@ -1,0 +1,69 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 4.3 — The CR framing: forward-cone-only V1 kernel support</text>
+
+  <!-- Two side-by-side panels: standard time-symmetric vs ED forward-cone-only -->
+
+  <!-- Panel A: standard symmetric -->
+  <rect x="40" y="60" width="380" height="430" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="4"/>
+  <text x="230" y="84" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">Conventional construction</text>
+  <text x="230" y="102" text-anchor="middle" font-size="11" fill="#666" font-style="italic">retarded chosen as boundary condition</text>
+
+  <!-- Spacetime axes A -->
+  <line x1="230" y1="140" x2="230" y2="430" stroke="#444" stroke-width="1.5"/>
+  <line x1="80" y1="285" x2="380" y2="285" stroke="#444" stroke-width="1.5"/>
+  <text x="240" y="148" font-size="11" fill="#444">t (future)</text>
+  <text x="240" y="425" font-size="11" fill="#444">t (past)</text>
+  <text x="375" y="278" font-size="11" fill="#444">x</text>
+
+  <!-- Origin (event) -->
+  <circle cx="230" cy="285" r="5" fill="#1a4f8b"/>
+  <text x="244" y="289" font-size="10" fill="#1a4f8b">event</text>
+
+  <!-- Forward and backward cones (both shaded) -->
+  <path d="M 230,285 L 130,160 L 330,160 z" fill="#fff4e0" stroke="#a05a00" stroke-width="1.2" opacity="0.7"/>
+  <path d="M 230,285 L 130,410 L 330,410 z" fill="#fff4e0" stroke="#a05a00" stroke-width="1.2" opacity="0.7"/>
+
+  <text x="230" y="200" text-anchor="middle" font-size="11" fill="#a05a00">forward cone</text>
+  <text x="230" y="380" text-anchor="middle" font-size="11" fill="#a05a00">backward cone</text>
+
+  <!-- Both kernels constructable -->
+  <text x="230" y="460" text-anchor="middle" font-size="11" fill="#444">retarded, advanced, symmetric</text>
+  <text x="230" y="476" text-anchor="middle" font-size="11" fill="#444">all admissible at this level</text>
+
+  <!-- Panel B: ED CR framing -->
+  <rect x="480" y="60" width="380" height="430" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="4"/>
+  <text x="670" y="84" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">ED CR framing (Theorem 18)</text>
+  <text x="670" y="102" text-anchor="middle" font-size="11" fill="#666" font-style="italic">forward-cone-only FORCED at primitive level</text>
+
+  <!-- Spacetime axes B -->
+  <line x1="670" y1="140" x2="670" y2="430" stroke="#444" stroke-width="1.5"/>
+  <line x1="520" y1="285" x2="820" y2="285" stroke="#444" stroke-width="1.5"/>
+  <text x="680" y="148" font-size="11" fill="#444">t (future)</text>
+  <text x="680" y="425" font-size="11" fill="#444">t (past)</text>
+  <text x="815" y="278" font-size="11" fill="#444">x</text>
+
+  <!-- Origin (event) -->
+  <circle cx="670" cy="285" r="5" fill="#1a4f8b"/>
+  <text x="684" y="289" font-size="10" fill="#1a4f8b">event</text>
+
+  <!-- Forward cone shaded; backward cone with X -->
+  <path d="M 670,285 L 570,160 L 770,160 z" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" opacity="0.85"/>
+  <text x="670" y="200" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">V1 support</text>
+  <text x="670" y="220" text-anchor="middle" font-size="11" fill="#fff">(forward cone only)</text>
+
+  <!-- Backward cone with X (forbidden) -->
+  <path d="M 670,285 L 570,410 L 770,410 z" fill="none" stroke="#888" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="595" y1="320" x2="745" y2="395" stroke="#a05a00" stroke-width="2"/>
+  <line x1="745" y1="320" x2="595" y2="395" stroke="#a05a00" stroke-width="2"/>
+  <text x="670" y="380" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">forbidden</text>
+
+  <!-- Bottom note B -->
+  <text x="670" y="460" text-anchor="middle" font-size="11" fill="#444">no advanced or symmetric kernel</text>
+  <text x="670" y="476" text-anchor="middle" font-size="11" fill="#444">constructable at primitive level</text>
+
+  <!-- Footer -->
+  <rect x="40" y="510" width="820" height="80" fill="#fff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="450" y="535" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a4f8b">CR (Causality-Retardation) framing</text>
+  <text x="60" y="558" font-size="11" fill="#444">The CR framing identifies V1's forward-cone-only support not as a chosen boundary condition but as a structural property:</text>
+  <text x="60" y="576" font-size="11" fill="#444">P11 commitment-irreversibility + P02 chain forward-propagator structure jointly forbid backward kernel support.</text>
+</svg>

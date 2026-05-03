@@ -1,0 +1,142 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="24" text-anchor="middle" font-size="14" font-weight="bold">Figure 1.1 — Dependency graph: primitives to first-tier theorems</text>
+
+  <!-- Top row: P01..P13 -->
+  <g id="primitives">
+    <text x="450" y="60" text-anchor="middle" font-size="12" fill="#444">Substrate primitives</text>
+    <!-- 13 nodes evenly spaced from x=60 to x=840 -->
+    <g fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5">
+      <circle cx="60"  cy="100" r="18"/>
+      <circle cx="125" cy="100" r="18"/>
+      <circle cx="190" cy="100" r="18"/>
+      <circle cx="255" cy="100" r="18"/>
+      <circle cx="320" cy="100" r="18"/>
+      <circle cx="385" cy="100" r="18"/>
+      <circle cx="450" cy="100" r="18"/>
+      <circle cx="515" cy="100" r="18"/>
+      <circle cx="580" cy="100" r="18"/>
+      <circle cx="645" cy="100" r="18"/>
+      <circle cx="710" cy="100" r="18"/>
+      <circle cx="775" cy="100" r="18"/>
+      <circle cx="840" cy="100" r="18"/>
+    </g>
+    <g text-anchor="middle" fill="#1a4f8b">
+      <text x="60"  y="104">P01</text>
+      <text x="125" y="104">P02</text>
+      <text x="190" y="104">P03</text>
+      <text x="255" y="104">P04</text>
+      <text x="320" y="104">P05</text>
+      <text x="385" y="104">P06</text>
+      <text x="450" y="104">P07</text>
+      <text x="515" y="104">P08</text>
+      <text x="580" y="104">P09</text>
+      <text x="645" y="104">P10</text>
+      <text x="710" y="104">P11</text>
+      <text x="775" y="104">P12</text>
+      <text x="840" y="104">P13</text>
+    </g>
+  </g>
+
+  <!-- Bottom row: theorems -->
+  <g id="theorems">
+    <text x="450" y="430" text-anchor="middle" font-size="12" fill="#444">First-tier theorems</text>
+    <!-- 10 nodes from x=80 to x=820 -->
+    <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+      <rect x="55"  y="465" width="60" height="32" rx="4"/>
+      <rect x="135" y="465" width="60" height="32" rx="4"/>
+      <rect x="215" y="465" width="60" height="32" rx="4"/>
+      <rect x="295" y="465" width="60" height="32" rx="4"/>
+      <rect x="375" y="465" width="60" height="32" rx="4"/>
+      <rect x="455" y="465" width="60" height="32" rx="4"/>
+      <rect x="535" y="465" width="60" height="32" rx="4"/>
+      <rect x="615" y="465" width="60" height="32" rx="4"/>
+      <rect x="695" y="465" width="60" height="32" rx="4"/>
+      <rect x="775" y="465" width="60" height="32" rx="4"/>
+    </g>
+    <g text-anchor="middle" fill="#a05a00" font-weight="bold">
+      <text x="85"  y="486">T1–T16</text>
+      <text x="165" y="486">T17</text>
+      <text x="245" y="486">T18</text>
+      <text x="325" y="486">T19</text>
+      <text x="405" y="486">T20</text>
+      <text x="485" y="486">ECR</text>
+      <text x="565" y="486">T21</text>
+      <text x="645" y="486">N1</text>
+      <text x="725" y="486">GR1</text>
+      <text x="805" y="486">DCGT</text>
+    </g>
+    <!-- UR-1 below -->
+    <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+      <rect x="415" y="520" width="70" height="32" rx="4"/>
+    </g>
+    <text x="450" y="541" text-anchor="middle" fill="#a05a00" font-weight="bold">UR-1</text>
+  </g>
+
+  <!-- Edges (primitives -> theorems). Use stroke="#888" stroke-width="1" for light edges. Heavy primitives (P04 idx=4 cx=255, P11 idx=11 cx=710) get darker thicker edges. -->
+  <g stroke="#bbb" stroke-width="1" fill="none">
+    <!-- P01 (60) feeds: T1-T16 (85), T18 (245), N1 (645) -->
+    <line x1="60" y1="118" x2="85" y2="465"/>
+    <line x1="60" y1="118" x2="245" y2="465"/>
+    <line x1="60" y1="118" x2="645" y2="465"/>
+    <!-- P02 (125) feeds: T1-T16, T18, N1 -->
+    <line x1="125" y1="118" x2="85" y2="465"/>
+    <line x1="125" y1="118" x2="245" y2="465"/>
+    <line x1="125" y1="118" x2="645" y2="465"/>
+    <!-- P03 (190) feeds: DCGT -->
+    <line x1="190" y1="118" x2="805" y2="465"/>
+    <!-- P05 (320) feeds: DCGT, T17 -->
+    <line x1="320" y1="118" x2="165" y2="465"/>
+    <line x1="320" y1="118" x2="805" y2="465"/>
+    <!-- P06 (385) feeds: T19 -->
+    <line x1="385" y1="118" x2="325" y2="465"/>
+    <!-- P07 (450) feeds: T19, T20 -->
+    <line x1="450" y1="118" x2="325" y2="465"/>
+    <line x1="450" y1="118" x2="405" y2="465"/>
+    <!-- P08 (515) feeds: T17, ECR -->
+    <line x1="515" y1="118" x2="165" y2="465"/>
+    <line x1="515" y1="118" x2="485" y2="465"/>
+    <!-- P09 (580) feeds: T17 -->
+    <line x1="580" y1="118" x2="165" y2="465"/>
+    <!-- P10 (645) feeds: T20, GR1 -->
+    <line x1="645" y1="118" x2="405" y2="465"/>
+    <line x1="645" y1="118" x2="725" y2="465"/>
+    <!-- P12 (775) feeds: GR1 -->
+    <line x1="775" y1="118" x2="725" y2="465"/>
+    <!-- P13 (840) feeds: T18, T1-T16 (specialized) -->
+    <line x1="840" y1="118" x2="245" y2="465"/>
+    <line x1="840" y1="118" x2="85" y2="465"/>
+  </g>
+
+  <!-- Heavy edges from P04 (cx=255) -->
+  <g stroke="#1a4f8b" stroke-width="2" fill="none" opacity="0.85">
+    <line x1="255" y1="118" x2="85"  y2="465"/>
+    <line x1="255" y1="118" x2="245" y2="465"/>
+    <line x1="255" y1="118" x2="325" y2="465"/>
+    <line x1="255" y1="118" x2="645" y2="465"/>
+    <line x1="255" y1="118" x2="805" y2="465"/>
+    <line x1="255" y1="118" x2="450" y2="520"/>
+  </g>
+  <!-- Heavy edges from P11 (cx=710) -->
+  <g stroke="#1a4f8b" stroke-width="2" fill="none" opacity="0.85">
+    <line x1="710" y1="118" x2="85"  y2="465"/>
+    <line x1="710" y1="118" x2="245" y2="465"/>
+    <line x1="710" y1="118" x2="725" y2="465"/>
+    <line x1="710" y1="118" x2="450" y2="520"/>
+    <line x1="710" y1="118" x2="805" y2="465"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(40,560)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#bbb" stroke-width="1"/>
+    <text x="38" y="4" fill="#444">specialized primitive</text>
+    <line x1="200" y1="0" x2="230" y2="0" stroke="#1a4f8b" stroke-width="2"/>
+    <text x="238" y="4" fill="#444">heavy-load primitive (P04, P11)</text>
+    <text x="500" y="4" fill="#444">edges: primitive feeds theorem</text>
+  </g>
+</svg>

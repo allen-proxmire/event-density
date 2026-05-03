@@ -1,0 +1,73 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 12.3 — Acoustic metric as kinematic-summary of participation density</text>
+
+  <!-- Two side-by-side panels: ED acoustic metric vs Einstein metric -->
+
+  <!-- LEFT: ED acoustic metric -->
+  <rect x="40" y="60" width="380" height="450" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="230" y="86" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">ED acoustic metric  g^μν_ac</text>
+  <text x="230" y="104" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">kinematic-summary object</text>
+  <line x1="55" y1="115" x2="405" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="230" y="148" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Construction</text>
+  <text x="230" y="172" text-anchor="middle" font-size="11" fill="#444">built from substrate participation</text>
+  <text x="230" y="190" text-anchor="middle" font-size="11" fill="#444">density gradients ∇ρ</text>
+  <text x="230" y="208" text-anchor="middle" font-size="11" fill="#444">via DCGT coarse-graining</text>
+
+  <text x="230" y="245" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Status</text>
+  <text x="230" y="269" text-anchor="middle" font-size="11" fill="#444">kinematic — encodes how</text>
+  <text x="230" y="287" text-anchor="middle" font-size="11" fill="#444">substrate signals propagate</text>
+  <text x="230" y="305" text-anchor="middle" font-size="11" fill="#444">through participation density</text>
+
+  <text x="230" y="342" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">No dynamical equation</text>
+  <text x="230" y="366" text-anchor="middle" font-size="11" fill="#444">no Einstein equation;</text>
+  <text x="230" y="384" text-anchor="middle" font-size="11" fill="#444">no Hilbert action;</text>
+  <text x="230" y="402" text-anchor="middle" font-size="11" fill="#444">no curvature dynamics</text>
+
+  <text x="230" y="438" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">analogy: phonon dispersion</text>
+  <text x="230" y="456" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">in a fluid medium</text>
+  <text x="230" y="478" text-anchor="middle" font-size="10" fill="#666">(Unruh's acoustic analogue)</text>
+
+  <text x="230" y="498" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ ED-10 guardrails preserved</text>
+
+  <!-- Distinction: not equal to Einstein metric -->
+  <text x="450" y="280" text-anchor="middle" font-size="14" fill="#a05a00" font-weight="bold">≠</text>
+
+  <!-- RIGHT: Einstein metric -->
+  <rect x="480" y="60" width="380" height="450" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="670" y="86" text-anchor="middle" font-weight="bold" fill="#444" font-size="14">Einstein metric  g_μν</text>
+  <text x="670" y="104" text-anchor="middle" font-size="11" fill="#666" font-style="italic">dynamical object in standard GR</text>
+  <line x1="495" y1="115" x2="845" y2="115" stroke="#888" stroke-width="0.8"/>
+
+  <text x="670" y="148" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Construction</text>
+  <text x="670" y="172" text-anchor="middle" font-size="11" fill="#444">satisfies Einstein field equation</text>
+  <text x="670" y="190" text-anchor="middle" font-size="11" fill="#444">G_μν + Λ g_μν = 8πG T_μν</text>
+  <text x="670" y="208" text-anchor="middle" font-size="11" fill="#444">— curvature is dynamical</text>
+
+  <text x="670" y="245" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Status</text>
+  <text x="670" y="269" text-anchor="middle" font-size="11" fill="#444">geometric / dynamical —</text>
+  <text x="670" y="287" text-anchor="middle" font-size="11" fill="#444">spacetime itself curves</text>
+  <text x="670" y="305" text-anchor="middle" font-size="11" fill="#444">in response to mass-energy</text>
+
+  <text x="670" y="342" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Has dynamical equation</text>
+  <text x="670" y="366" text-anchor="middle" font-size="11" fill="#444">Einstein–Hilbert action;</text>
+  <text x="670" y="384" text-anchor="middle" font-size="11" fill="#444">Bianchi identities;</text>
+  <text x="670" y="402" text-anchor="middle" font-size="11" fill="#444">curvature propagates GW</text>
+
+  <text x="670" y="438" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">not derived in current ED scope</text>
+  <text x="670" y="456" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">(GR-4A is long-horizon target)</text>
+  <text x="670" y="478" text-anchor="middle" font-size="10" fill="#666">— Einstein equation</text>
+  <text x="670" y="494" text-anchor="middle" font-size="10" fill="#666">would emerge as separate</text>
+  <text x="670" y="510" text-anchor="middle" font-size="10" fill="#666">downstream program</text>
+
+  <!-- Footer -->
+  <text x="450" y="545" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Acoustic metric is the kinematic-summary substrate object; Einstein metric is the dynamical GR object.</text>
+  <text x="450" y="563" text-anchor="middle" font-size="11" fill="#444" font-style="italic">ED's curvature emergence (Arc ED-10) constructs the acoustic metric, not the Einstein metric.</text>
+  <text x="450" y="581" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Recovery of the Einstein equation in any limit is open work (GR-4A in long-horizon roadmap).</text>
+</svg>

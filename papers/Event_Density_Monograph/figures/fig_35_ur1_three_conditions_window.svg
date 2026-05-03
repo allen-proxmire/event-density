@@ -1,0 +1,72 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 7.2 — UR-1 three conditions and the QC operating window</text>
+  <text x="450" y="50" text-anchor="middle" font-size="11" fill="#666" font-style="italic">τ_QC = min ( τ_(i), τ_(ii), τ_(iii) )</text>
+
+  <!-- Plot area: x = 100..820, y = 90..410 -->
+  <!-- Y axis = 𝓤 (unresolvedness, 1 at top, 0 at bottom) -->
+  <line x1="100" y1="90" x2="100" y2="430" stroke="#444" stroke-width="1.5"/>
+  <text x="60" y="100" font-size="11" fill="#444" text-anchor="middle">𝓤</text>
+  <text x="65" y="92" font-size="10" fill="#666" text-anchor="end">1</text>
+  <text x="65" y="412" font-size="10" fill="#666" text-anchor="end">0</text>
+
+  <!-- X axis = time -->
+  <line x1="100" y1="410" x2="820" y2="410" stroke="#444" stroke-width="1.5" marker-end="url(#arrR)"/>
+  <text x="830" y="414" font-size="11" fill="#444">t</text>
+  <text x="100" y="430" text-anchor="middle" font-size="10" fill="#666">0</text>
+
+  <!-- Three condition curves descending from 1 to 0 at different rates -->
+
+  <!-- Condition (i): bounded multiplicity — fastest (red, falls earliest) -->
+  <!-- Falls fast around x=250 (early failure) -->
+  <path d="M 100,92 C 200,92 220,92 250,200 C 280,360 350,406 820,408"
+        fill="none" stroke="#a05a00" stroke-width="2.5"/>
+  <text x="290" y="155" font-size="11" fill="#a05a00" font-weight="bold">μ(𝓜/𝓜_crit)</text>
+  <text x="290" y="172" font-size="10" fill="#a05a00">condition (i)</text>
+
+  <!-- Vertical drop line at τ_(i) -->
+  <line x1="290" y1="200" x2="290" y2="410" stroke="#a05a00" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle cx="290" cy="200" r="4" fill="#a05a00"/>
+  <text x="290" y="430" text-anchor="middle" font-size="11" font-weight="bold" fill="#a05a00">τ_(i)</text>
+
+  <!-- Condition (ii): cross-bandwidth — middle -->
+  <path d="M 100,92 C 280,92 380,92 430,200 C 480,360 600,406 820,408"
+        fill="none" stroke="#1a4f8b" stroke-width="2.5"/>
+  <text x="450" y="125" font-size="11" fill="#1a4f8b" font-weight="bold">κ(Γ_cross/Γ_min)</text>
+  <text x="450" y="142" font-size="10" fill="#1a4f8b">condition (ii)</text>
+
+  <!-- Vertical drop line at τ_(ii) -->
+  <line x1="490" y1="225" x2="490" y2="410" stroke="#1a4f8b" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle cx="490" cy="225" r="4" fill="#1a4f8b"/>
+  <text x="490" y="430" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a4f8b">τ_(ii)</text>
+
+  <!-- Condition (iii): commitment-injection — slowest (falls latest) -->
+  <path d="M 100,92 C 380,92 530,92 600,200 C 660,360 760,406 820,408"
+        fill="none" stroke="#5a2090" stroke-width="2.5"/>
+  <text x="630" y="125" font-size="11" fill="#5a2090" font-weight="bold">exp(−∫Λ ds)</text>
+  <text x="630" y="142" font-size="10" fill="#5a2090">condition (iii)</text>
+
+  <!-- Vertical drop line at τ_(iii) -->
+  <line x1="660" y1="240" x2="660" y2="410" stroke="#5a2090" stroke-width="1" stroke-dasharray="3,3"/>
+  <circle cx="660" cy="240" r="4" fill="#5a2090"/>
+  <text x="660" y="430" text-anchor="middle" font-size="11" font-weight="bold" fill="#5a2090">τ_(iii)</text>
+
+  <!-- Operating window highlight: from t=0 to τ_(i), shaded -->
+  <rect x="100" y="90" width="190" height="320" fill="#e8f0ff" opacity="0.4"/>
+  <text x="195" y="265" text-anchor="middle" font-size="13" fill="#1a4f8b" font-weight="bold">τ_QC</text>
+  <text x="195" y="285" text-anchor="middle" font-size="11" fill="#1a4f8b">operating window</text>
+  <text x="195" y="302" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">= min(τ_(i), τ_(ii), τ_(iii))</text>
+
+  <!-- Footer -->
+  <rect x="40" y="460" width="820" height="120" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="485" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Three independent failure modes</text>
+  <text x="60" y="508" font-size="11" fill="#444">(i) Bounded multiplicity: when 𝓜 grows beyond 𝓜_crit, the multiplicity-headroom factor μ collapses.</text>
+  <text x="60" y="526" font-size="11" fill="#444">(ii) Cross-endpoint connectivity: when Γ_cross drops below Γ_min, the connectivity factor κ collapses.</text>
+  <text x="60" y="544" font-size="11" fill="#444">(iii) Bounded commitment-injection: when ∫Λ ds grows large, the commitment-survival exponential collapses.</text>
+  <text x="60" y="568" font-size="11" fill="#444" font-style="italic">QC operating window τ_QC is bounded by the earliest of these failures. No two are jointly sufficient — all three must hold.</text>
+</svg>

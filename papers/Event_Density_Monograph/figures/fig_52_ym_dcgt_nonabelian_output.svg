@@ -1,0 +1,49 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 9.4 — Yang–Mills as DCGT non-Abelian output</text>
+
+  <!-- Two upstream inputs -->
+  <rect x="40" y="80" width="380" height="130" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="230" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">DCGT non-Abelian extension  (Ch. 3, 9)</text>
+  <line x1="55" y1="115" x2="405" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="230" y="140" text-anchor="middle" font-size="11" fill="#444">multi-scale expansion of substrate</text>
+  <text x="230" y="158" text-anchor="middle" font-size="11" fill="#444">participation rules with non-commutative</text>
+  <text x="230" y="176" text-anchor="middle" font-size="11" fill="#444">relabeling group</text>
+  <text x="230" y="200" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate-cutoff at ℓ_P preserved</text>
+
+  <rect x="480" y="80" width="380" height="130" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="670" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">T17 generalized minimal coupling  (Ch. 6)</text>
+  <line x1="495" y1="115" x2="845" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="670" y="140" text-anchor="middle" font-size="11" fill="#444">label-carrying rule-types</text>
+  <text x="670" y="158" text-anchor="middle" font-size="11" fill="#444">participation measure A_μ^a</text>
+  <text x="670" y="176" text-anchor="middle" font-size="11" fill="#444">with internal index a</text>
+  <text x="670" y="200" text-anchor="middle" font-size="10" fill="#666" font-style="italic">compact-simple-group rule-types</text>
+
+  <!-- Composition arrow -->
+  <line x1="230" y1="210" x2="380" y2="280" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <line x1="670" y1="210" x2="520" y2="280" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <text x="450" y="250" text-anchor="middle" font-size="11" fill="#1a4f8b" font-weight="bold">composed</text>
+
+  <!-- Output: YM equation -->
+  <rect x="180" y="290" width="540" height="110" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="318" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Yang–Mills continuum equation</text>
+  <line x1="200" y1="328" x2="700" y2="328" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="358" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">D_μ F^μν  =  J^ν</text>
+  <text x="450" y="385" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">substrate-derived continuum YM equation; covariant derivative encodes non-Abelian structure</text>
+
+  <!-- Bottom: structural notes -->
+  <rect x="40" y="430" width="820" height="150" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="455" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the YM derivation</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="478">• DCGT non-Abelian extension takes the substrate's non-commuting rule-relabelings and propagates them to the continuum.</text>
+    <text x="60" y="496">• T17 generalized minimal coupling supplies A_μ^a (gauge-field-as-rule-type) with internal index over the gauge group.</text>
+    <text x="60" y="514">• Composition produces the field-strength F^μν^a = ∂^μA^ν^a − ∂^νA^μ^a + g f^abc A^μ^b A^ν^c and the YM equation above.</text>
+    <text x="60" y="534">• No new substrate primitive invoked at YM step; all content composes existing closed-arc machinery (Phase-1, T17, DCGT).</text>
+  </g>
+  <text x="450" y="565" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Architectural cleanliness: 4 canonical-ED + 2 non-ED items, no transport-kinematic obstruction class as in NS or MHD.</text>
+</svg>

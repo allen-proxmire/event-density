@@ -1,0 +1,77 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 11.1 — Three substrate machinery pieces for galactic gravity</text>
+
+  <!-- Three machinery boxes -->
+
+  <!-- Machine 1: Cumulative-strain -->
+  <rect x="40" y="80" width="265" height="280" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="108" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">1. Cumulative-strain</text>
+  <text x="172" y="125" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">substrate response to stable mass</text>
+  <line x1="55" y1="138" x2="290" y2="138" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="172" y="170" text-anchor="middle" font-size="11" fill="#444">stable participation structure</text>
+  <text x="172" y="188" text-anchor="middle" font-size="11" fill="#444">at mass M deforms substrate</text>
+  <text x="172" y="206" text-anchor="middle" font-size="11" fill="#444">cumulatively over a sphere</text>
+  <text x="172" y="224" text-anchor="middle" font-size="11" fill="#444">of radius R</text>
+
+  <text x="172" y="258" text-anchor="middle" font-size="11" fill="#444">+ holographic count bound:</text>
+  <text x="172" y="276" text-anchor="middle" font-size="11" fill="#444">substrate cells ~ R²/ℓ_P²</text>
+
+  <text x="172" y="307" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a4f8b">→ T19</text>
+  <text x="172" y="325" text-anchor="middle" font-size="11" fill="#444">G = c³ ℓ_P² / ℏ</text>
+  <text x="172" y="345" text-anchor="middle" font-size="10" fill="#666" font-style="italic">inverse-square Newton recovered</text>
+
+  <!-- Machine 2: Cosmic-horizon dipole -->
+  <rect x="320" y="80" width="265" height="280" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="452" y="108" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">2. Cosmic-horizon dipole</text>
+  <text x="452" y="125" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">acceleration-axis projection</text>
+  <line x1="335" y1="138" x2="570" y2="138" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="452" y="170" text-anchor="middle" font-size="11" fill="#444">cosmic horizon contributes</text>
+  <text x="452" y="188" text-anchor="middle" font-size="11" fill="#444">background participation density;</text>
+  <text x="452" y="206" text-anchor="middle" font-size="11" fill="#444">accelerating chain breaks</text>
+  <text x="452" y="224" text-anchor="middle" font-size="11" fill="#444">isotropy in its own frame</text>
+
+  <text x="452" y="258" text-anchor="middle" font-size="11" fill="#444">leading anisotropic mode:</text>
+  <text x="452" y="276" text-anchor="middle" font-size="11" fill="#444">dipole, azimuthal period 2π</text>
+
+  <text x="452" y="307" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a4f8b">→ T20</text>
+  <text x="452" y="325" text-anchor="middle" font-size="11" fill="#444">a₀ = c H₀ / (2π)</text>
+  <text x="452" y="345" text-anchor="middle" font-size="10" fill="#666" font-style="italic">≈ 1.08 × 10⁻¹⁰ m/s² (matches MOND)</text>
+
+  <!-- Machine 3: Logarithmic stability landscape -->
+  <rect x="600" y="80" width="265" height="280" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="732" y="108" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">3. Log-stability landscape</text>
+  <text x="732" y="125" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">substrate cross-term composition</text>
+  <line x1="615" y1="138" x2="850" y2="138" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="732" y="170" text-anchor="middle" font-size="11" fill="#444">substrate landscape</text>
+  <text x="732" y="188" text-anchor="middle" font-size="11" fill="#444">supplies cross-term</text>
+  <text x="732" y="208" text-anchor="middle" font-size="11" fill="#444">√(GMa₀) · log(R/R₀)</text>
+
+  <text x="732" y="244" text-anchor="middle" font-size="11" fill="#444">connects T19's a_N regime</text>
+  <text x="732" y="262" text-anchor="middle" font-size="11" fill="#444">to T20's a₀ regime</text>
+  <text x="732" y="280" text-anchor="middle" font-size="11" fill="#444">via geometric mean</text>
+
+  <text x="732" y="307" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a4f8b">→ ECR</text>
+  <text x="732" y="325" text-anchor="middle" font-size="11" fill="#444">a = √(a_N · a₀)</text>
+  <text x="732" y="345" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ T21 BTFR slope-4</text>
+
+  <!-- Combined output -->
+  <rect x="40" y="395" width="820" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="423" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Combined output: substrate-gravity closure at galactic scale</text>
+  <line x1="60" y1="433" x2="840" y2="433" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="460" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">T19  +  T20  +  ECR  →  T21:  v⁴ = G M a₀</text>
+  <text x="450" y="482" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">slope-4 baryonic Tully–Fisher relation, parameter-free up to substrate inputs (ℏ, c, H₀)</text>
+
+  <!-- Footer -->
+  <text x="450" y="530" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Three independent substrate machinery pieces, each substrate-derived from primitives + standard mathematics.</text>
+  <text x="450" y="548" text-anchor="middle" font-size="11" fill="#444" font-style="italic">No phenomenological inputs at galactic scale; G, a₀, BTFR all derived.</text>
+  <text x="450" y="566" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Canonical source: papers/Substrate_Gravity_Foundations/</text>
+</svg>

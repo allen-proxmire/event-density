@@ -1,0 +1,80 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 10.4 — P4-NN: one substrate principle, four state-variable applications</text>
+
+  <!-- Top: P4 substrate principle -->
+  <rect x="240" y="60" width="420" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="88" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">P4 substrate principle</text>
+  <line x1="260" y1="98" x2="640" y2="98" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="120" text-anchor="middle" fill="#fff" font-size="12">substrate participation-rule modification</text>
+  <text x="450" y="138" text-anchor="middle" fill="#fff" font-size="12">under flow-induced microstructural change</text>
+  <text x="450" y="155" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">canonical-ED bandwidth update (P04)</text>
+
+  <!-- Four downward arrows to four applications -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="320" y1="160" x2="125" y2="225"/>
+    <line x1="400" y1="160" x2="320" y2="225"/>
+    <line x1="500" y1="160" x2="525" y2="225"/>
+    <line x1="580" y1="160" x2="730" y2="225"/>
+  </g>
+
+  <!-- Four state-variable applications -->
+  <rect x="40" y="235" width="180" height="245" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="130" y="260" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">1. Density ρ</text>
+  <line x1="55" y1="270" x2="205" y2="270" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="130" y="293" text-anchor="middle" font-size="11" fill="#444">UDM mobility:</text>
+  <text x="130" y="311" text-anchor="middle" font-size="11" fill="#444">M(ρ) = M₀ (1 − ρ/ρ_max)^β</text>
+  <text x="130" y="335" text-anchor="middle" font-size="11" fill="#444">substrate participation</text>
+  <text x="130" y="353" text-anchor="middle" font-size="11" fill="#444">density modulates</text>
+  <text x="130" y="371" text-anchor="middle" font-size="11" fill="#444">flow capacity</text>
+  <text x="130" y="402" text-anchor="middle" font-size="10" fill="#666" font-style="italic">scalar channel</text>
+  <text x="130" y="430" text-anchor="middle" font-size="10" fill="#a05a00">→ Universal Mobility Law</text>
+  <text x="130" y="448" text-anchor="middle" font-size="10" fill="#a05a00">PASSED across 10 systems</text>
+
+  <rect x="235" y="235" width="180" height="245" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="325" y="260" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. Shear rate γ̇</text>
+  <line x1="250" y1="270" x2="400" y2="270" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="325" y="293" text-anchor="middle" font-size="11" fill="#444">shear-thinning /</text>
+  <text x="325" y="311" text-anchor="middle" font-size="11" fill="#444">shear-thickening:</text>
+  <text x="325" y="333" text-anchor="middle" font-size="11" fill="#444">η(γ̇) = η₀ f(γ̇/γ̇_c)</text>
+  <text x="325" y="355" text-anchor="middle" font-size="11" fill="#444">microstructure responds</text>
+  <text x="325" y="371" text-anchor="middle" font-size="11" fill="#444">to flow gradients</text>
+  <text x="325" y="402" text-anchor="middle" font-size="10" fill="#666" font-style="italic">tensor-rate channel</text>
+  <text x="325" y="430" text-anchor="middle" font-size="10" fill="#a05a00">→ DST + power-law</text>
+  <text x="325" y="448" text-anchor="middle" font-size="10" fill="#a05a00">non-Newtonian families</text>
+
+  <rect x="430" y="235" width="190" height="245" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="525" y="260" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">3. Stress σ</text>
+  <line x1="445" y1="270" x2="610" y2="270" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="525" y="293" text-anchor="middle" font-size="11" fill="#444">yield-stress threshold:</text>
+  <text x="525" y="311" text-anchor="middle" font-size="11" fill="#444">flow only for σ &gt; σ_y</text>
+  <text x="525" y="335" text-anchor="middle" font-size="11" fill="#444">substrate rule must</text>
+  <text x="525" y="353" text-anchor="middle" font-size="11" fill="#444">commit to flow regime</text>
+  <text x="525" y="371" text-anchor="middle" font-size="11" fill="#444">via P11-irreversibility</text>
+  <text x="525" y="402" text-anchor="middle" font-size="10" fill="#666" font-style="italic">threshold channel</text>
+  <text x="525" y="430" text-anchor="middle" font-size="10" fill="#a05a00">→ Bingham + Herschel–</text>
+  <text x="525" y="448" text-anchor="middle" font-size="10" fill="#a05a00">Bulkley plasticity</text>
+
+  <rect x="640" y="235" width="180" height="245" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="730" y="260" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">4. Time t</text>
+  <line x1="655" y1="270" x2="805" y2="270" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="730" y="293" text-anchor="middle" font-size="11" fill="#444">viscoelastic memory:</text>
+  <text x="730" y="311" text-anchor="middle" font-size="11" fill="#444">τ_R = ⟨t⟩_V5</text>
+  <text x="730" y="335" text-anchor="middle" font-size="11" fill="#444">substrate cross-chain</text>
+  <text x="730" y="353" text-anchor="middle" font-size="11" fill="#444">memory kernel V5</text>
+  <text x="730" y="371" text-anchor="middle" font-size="11" fill="#444">first temporal moment</text>
+  <text x="730" y="402" text-anchor="middle" font-size="10" fill="#666" font-style="italic">memory channel</text>
+  <text x="730" y="430" text-anchor="middle" font-size="10" fill="#a05a00">→ Maxwell + thixotropic</text>
+  <text x="730" y="448" text-anchor="middle" font-size="10" fill="#a05a00">relaxation</text>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="525" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading P4-NN as one principle, four channels</text>
+  <text x="60" y="548" font-size="11" fill="#444">All five non-Newtonian families (Figure 10.1) compose from these four state-variable channels of one substrate principle.</text>
+  <text x="60" y="566" font-size="11" fill="#444" font-style="italic">No new substrate primitive needed; P4-NN composes P04 + V5 + DCGT + P11. Source: papers/P4_NonNewtonian_Paper_Draft/</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Figure 128 — ED program architecture: one page</text>
+
+  <!-- Layer 1: substrate primitives (P01–P13) -->
+  <rect x="40" y="50" width="820" height="50" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="4"/>
+  <text x="450" y="74" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Substrate primitives  P01–P13</text>
+  <text x="450" y="92" text-anchor="middle" font-size="10" fill="#444" font-style="italic">Part I, Chapter 1 — irreducible structural commitments</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="100" x2="450" y2="115" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Layer 2: load-bearing invariants -->
+  <rect x="40" y="120" width="820" height="50" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="4"/>
+  <text x="450" y="144" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Load-bearing invariants:  𝓜  ·  σ  ·  Γ_cross  ·  V1  ·  P11</text>
+  <text x="450" y="162" text-anchor="middle" font-size="10" fill="#444" font-style="italic">Chapter 2 — derived substrate quantities</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="170" x2="450" y2="185" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Layer 3: DCGT bridge -->
+  <rect x="240" y="190" width="420" height="50" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="4"/>
+  <text x="450" y="213" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">DCGT  —  substrate-to-continuum bridge</text>
+  <text x="450" y="231" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">Chapters 3, 4 — hydrodynamic-window scale separation, kernel-arrow</text>
+
+  <!-- Arrow fanning down -->
+  <line x1="450" y1="240" x2="450" y2="260" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Layer 4: nine closed-arc sectors (3×3 grid) -->
+  <text x="450" y="278" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">Nine closed-arc sectors</text>
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="40" y="290" width="170" height="55" rx="4"/>
+    <rect x="220" y="290" width="170" height="55" rx="4"/>
+    <rect x="400" y="290" width="170" height="55" rx="4"/>
+    <rect x="580" y="290" width="170" height="55" rx="4"/>
+    <rect x="40" y="355" width="170" height="55" rx="4"/>
+    <rect x="220" y="355" width="170" height="55" rx="4"/>
+    <rect x="400" y="355" width="170" height="55" rx="4"/>
+    <rect x="580" y="355" width="170" height="55" rx="4"/>
+    <rect x="220" y="420" width="170" height="55" rx="4"/>
+  </g>
+
+  <g text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="12">
+    <text x="125" y="313">QM  (Ch. 5)</text>
+    <text x="305" y="313">QFT  (Ch. 6)</text>
+    <text x="485" y="313">QC  (Ch. 7)</text>
+    <text x="665" y="313">NS  (Ch. 8)</text>
+    <text x="125" y="378">MHD/YM  (Ch. 9)</text>
+    <text x="305" y="378">Soft-matter  (Ch. 10)</text>
+    <text x="485" y="378">Subst. gravity  (Ch. 11)</text>
+    <text x="665" y="378">Curvature  (Ch. 12)</text>
+    <text x="305" y="443">BH  (Ch. 13)</text>
+  </g>
+  <g text-anchor="middle" fill="#444" font-size="10">
+    <text x="125" y="332">T1–T16</text>
+    <text x="305" y="332">T17 + UV-fin</text>
+    <text x="485" y="332">UR-1 + M</text>
+    <text x="665" y="332">R1 + Path C</text>
+    <text x="125" y="397">T17 + V1 mass-gap</text>
+    <text x="305" y="397">UDM + P4-NN</text>
+    <text x="485" y="397">T19/T20/ECR/T21</text>
+    <text x="665" y="397">Arc ED-10</text>
+    <text x="305" y="462">Σ_H + area-law + δ_ℓm</text>
+  </g>
+
+  <!-- Empirical interface line -->
+  <text x="450" y="495" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">Empirical anchors</text>
+
+  <!-- Layer 5: anchors and open frontiers -->
+  <g fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5">
+    <rect x="40" y="505" width="200" height="60" rx="4"/>
+    <rect x="260" y="505" width="200" height="60" rx="4"/>
+    <rect x="480" y="505" width="200" height="60" rx="4"/>
+    <rect x="700" y="505" width="160" height="60" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#5a2090" font-weight="bold" font-size="11">
+    <text x="140" y="528">3 PASSED</text>
+    <text x="360" y="528">13 ANCHORED</text>
+    <text x="580" y="528">17 ACTIVE</text>
+    <text x="780" y="528">4 OPEN</text>
+  </g>
+  <g text-anchor="middle" fill="#444" font-size="10">
+    <text x="140" y="548">dwarf-gal Active &gt; Quiet</text>
+    <text x="140" y="562">UDM β + photonics</text>
+    <text x="360" y="548">across all 9 sectors</text>
+    <text x="360" y="562">empirical fits within band</text>
+    <text x="580" y="548">across QM/QC/gravity</text>
+    <text x="580" y="562">+ condensed-matter, photonics</text>
+    <text x="780" y="548">B4 Hawking,</text>
+    <text x="780" y="562">GR-4A, Class B exp</text>
+  </g>
+
+  <!-- Arrows from sectors down to anchors (representative, sector → status) -->
+  <g stroke="#5a2090" stroke-width="0.8" fill="none" stroke-dasharray="3,3">
+    <line x1="305" y1="475" x2="140" y2="505"/>
+    <line x1="305" y1="475" x2="360" y2="505"/>
+    <line x1="305" y1="475" x2="580" y2="505"/>
+    <line x1="305" y1="475" x2="780" y2="505"/>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="585" text-anchor="middle" font-size="10" fill="#666" font-style="italic">one substrate, nine sectors, 40 predictions — see Chapters 14–15 for cross-platform unifications + empirical synthesis</text>
+</svg>

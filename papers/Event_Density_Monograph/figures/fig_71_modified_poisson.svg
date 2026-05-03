@@ -1,0 +1,63 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 11.6 — Modified Poisson equation: substrate-gravity flat-background field equation</text>
+
+  <!-- Equation banner -->
+  <rect x="60" y="60" width="780" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="105" text-anchor="middle" fill="#fff" font-weight="bold" font-size="20">∇ · [ μ(|∇Φ|/a₀) ∇Φ ]  =  4π G ρ_m</text>
+  <text x="450" y="135" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">substrate-derived flat-background gravity (consolidates T19 + T20 + ECR + T21 via DCGT)</text>
+  <text x="450" y="152" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">canonical source: papers/Substrate_Gravity_Foundations/</text>
+
+  <!-- Three asymptotic regimes -->
+  <text x="450" y="195" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Asymptotic limits of μ(x)</text>
+
+  <!-- Newtonian regime -->
+  <rect x="40" y="215" width="265" height="195" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="240" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Newtonian regime</text>
+  <text x="172" y="258" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">|∇Φ| ≫ a₀</text>
+  <line x1="55" y1="270" x2="290" y2="270" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="172" y="298" text-anchor="middle" font-size="13" fill="#444" font-weight="bold">μ(x) → 1</text>
+  <text x="172" y="328" text-anchor="middle" font-size="13" fill="#444" font-weight="bold">∇²Φ = 4π G ρ_m</text>
+  <text x="172" y="358" text-anchor="middle" font-size="11" fill="#444">standard Poisson</text>
+  <text x="172" y="376" text-anchor="middle" font-size="11" fill="#444">recovered</text>
+  <text x="172" y="397" text-anchor="middle" font-size="10" fill="#666" font-style="italic">a_N regime (T19)</text>
+
+  <!-- Transition regime -->
+  <rect x="320" y="215" width="265" height="195" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="452" y="240" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">Transition regime</text>
+  <text x="452" y="258" text-anchor="middle" font-size="11" fill="#5a2090" font-style="italic">|∇Φ| ≈ a₀</text>
+  <line x1="335" y1="270" x2="570" y2="270" stroke="#5a2090" stroke-width="0.8"/>
+  <text x="452" y="305" text-anchor="middle" font-size="13" fill="#444" font-weight="bold">μ(x) interpolates</text>
+  <text x="452" y="333" text-anchor="middle" font-size="11" fill="#444">smooth crossover between</text>
+  <text x="452" y="351" text-anchor="middle" font-size="11" fill="#444">two asymptotic limits</text>
+  <text x="452" y="380" text-anchor="middle" font-size="11" fill="#444">specific shape INHERITED</text>
+  <text x="452" y="397" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate-derived corrections</text>
+
+  <!-- Deep-MOND regime -->
+  <rect x="600" y="215" width="265" height="195" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="732" y="240" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Deep-MOND regime</text>
+  <text x="732" y="258" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">|∇Φ| ≪ a₀</text>
+  <line x1="615" y1="270" x2="850" y2="270" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="732" y="298" text-anchor="middle" font-size="13" fill="#444" font-weight="bold">μ(x) → x</text>
+  <text x="732" y="328" text-anchor="middle" font-size="13" fill="#444" font-weight="bold">v⁴ = G M a₀</text>
+  <text x="732" y="358" text-anchor="middle" font-size="11" fill="#444">BTFR slope-4 emerges</text>
+  <text x="732" y="376" text-anchor="middle" font-size="11" fill="#444">via T21</text>
+  <text x="732" y="397" text-anchor="middle" font-size="10" fill="#666" font-style="italic">a₀ + ECR regime</text>
+
+  <!-- Footer / structural note -->
+  <rect x="40" y="430" width="820" height="150" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="455" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Reading the modified Poisson equation</text>
+  <line x1="60" y1="465" x2="840" y2="465" stroke="#bbb" stroke-width="0.5"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="488">• Form-FORCED: equation structure recovers Newton in strong-gravity limit and BTFR slope-4 in weak-gravity limit.</text>
+    <text x="60" y="506">• Value-INHERITED: specific shape of μ(x) interpolation function across the transition.</text>
+    <text x="60" y="524">• Both substrate constants — G (T19) and a₀ (T20) — appear in the equation; both are substrate-derived (not phenomenological).</text>
+    <text x="60" y="546">• Same equation in flat-spacetime context. Curvature emergence via Arc ED-10 covariantizes this form (Chapter 12).</text>
+    <text x="60" y="567">• ED predicts zero intrinsic scatter in the deep-MOND BTFR; observed scatter dominated by mass-measurement uncertainty.</text>
+  </g>
+</svg>

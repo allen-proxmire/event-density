@@ -1,0 +1,79 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 12.9 — GR-4A status: long-horizon Einstein-equation emergence</text>
+
+  <!-- Status banner -->
+  <rect x="280" y="60" width="340" height="60" fill="#a05a00" stroke="#a05a00" stroke-width="2" rx="8"/>
+  <text x="450" y="88" text-anchor="middle" fill="#fff" font-weight="bold" font-size="16">SPECULATIVE — long-horizon</text>
+  <text x="450" y="108" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">GR-4A: Einstein-equation derivation</text>
+
+  <!-- Three-pillar status: what's done, what's open, why hard -->
+
+  <!-- What's done -->
+  <rect x="40" y="150" width="265" height="280" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="178" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">What's done (current scope)</text>
+  <line x1="55" y1="188" x2="290" y2="188" stroke="#1a4f8b" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="215">• T19  G derived from substrate</text>
+    <text x="60" y="235">• T20  a₀ derived</text>
+    <text x="60" y="255">• ECR  composition rule derived</text>
+    <text x="60" y="275">• T21  BTFR slope-4 derived</text>
+    <text x="60" y="295">• flat-background mod. Poisson</text>
+    <text x="60" y="315">• Arc ED-10 covariantization</text>
+    <text x="60" y="335">  (acoustic metric, RAQUAL-class)</text>
+    <text x="60" y="358">• GR1  curved-spacetime V1</text>
+    <text x="60" y="378">  via Hadamard parametrix</text>
+  </g>
+  <text x="172" y="408" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">galactic + curvature emergence</text>
+  <text x="172" y="423" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">structurally complete</text>
+
+  <!-- What's open (GR-4A) -->
+  <rect x="320" y="150" width="265" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="452" y="178" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">What's open (GR-4A)</text>
+  <line x1="335" y1="188" x2="570" y2="188" stroke="#a05a00" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="340" y="215">• full Einstein equation</text>
+    <text x="340" y="235">  G_μν + Λ g_μν = 8πG T_μν</text>
+    <text x="340" y="262">• Einstein–Hilbert action</text>
+    <text x="340" y="282">  derivation from substrate</text>
+    <text x="340" y="305">• gravitational-wave structure</text>
+    <text x="340" y="325">  beyond acoustic-metric scope</text>
+    <text x="340" y="350">• post-Newtonian / strong-field</text>
+    <text x="340" y="370">  predictions in curved regime</text>
+    <text x="340" y="395">• cosmological-scale dynamics</text>
+    <text x="340" y="415">  (Arc COSMO long-horizon)</text>
+  </g>
+
+  <!-- Why hard -->
+  <rect x="600" y="150" width="265" height="280" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="732" y="178" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">Why hard</text>
+  <line x1="615" y1="188" x2="850" y2="188" stroke="#5a2090" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="620" y="215">• curvature is dynamical in GR;</text>
+    <text x="620" y="233">  acoustic metric is kinematic</text>
+    <text x="620" y="260">• no clear substrate route to</text>
+    <text x="620" y="278">  Einstein–Hilbert variational</text>
+    <text x="620" y="296">  principle at present</text>
+    <text x="620" y="320">• tensor mode dynamics</text>
+    <text x="620" y="338">  require new substrate content</text>
+    <text x="620" y="360">• may require new substrate</text>
+    <text x="620" y="378">  primitive — would violate</text>
+    <text x="620" y="396">  no-new-primitives discipline</text>
+  </g>
+  <text x="732" y="423" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">structural barrier identified;</text>
+  <text x="732" y="438" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">resolution path unclear</text>
+
+  <!-- Footer -->
+  <rect x="40" y="450" width="820" height="130" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="475" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the GR-4A status</text>
+  <text x="60" y="498" font-size="11" fill="#444">ED's gravity program is structurally complete at galactic-scale + curvature-emergence levels (Chapters 11, 12). Full Einstein-equation</text>
+  <text x="60" y="516" font-size="11" fill="#444">derivation (GR-4A) remains a long-horizon target on the program's roadmap, and is currently SPECULATIVE.</text>
+  <text x="60" y="538" font-size="11" fill="#444" font-style="italic">Next-arc roadmap: B4 Hawking spectrum (concrete near-term arc); Arc COSMO + GR-4A (long-horizon speculative).</text>
+  <text x="60" y="556" font-size="11" fill="#444" font-style="italic">Closing GR-4A may require either (a) closed-form-substrate-constants progress unlocking new mechanisms, or (b) a new substrate primitive.</text>
+  <text x="60" y="574" font-size="11" fill="#444" font-style="italic">The program does not currently commit to either route.</text>
+</svg>

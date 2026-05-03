@@ -1,11 +1,11 @@
-# ED Mobility Saturation Predicts Non-Newtonian Rheology — A Fluid-Mechanical Extension of the Universal Mobility Law
-
-**Author:** Allen Proxmire
-**Collaborator:** Claude (AI collaborator)
-**Date:** 30 April 2026
-**Series:** Event-Density Foundational Theorems — P4 Non-Newtonian Arc
-
 ---
+title: |
+  ED Mobility Saturation Predicts Non-Newtonian Rheology\
+  \large A Fluid-Mechanical Extension of the Universal Mobility Law
+author: Allen Proxmire
+date: April 2026
+---
+
 
 ## Abstract
 

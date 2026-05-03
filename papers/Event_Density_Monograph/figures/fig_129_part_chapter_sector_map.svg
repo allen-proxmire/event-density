@@ -1,0 +1,79 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Figure 129 — Part / chapter / sector map (companion to TOC)</text>
+
+  <!-- Five rows for the five Parts -->
+
+  <!-- Part I -->
+  <rect x="40" y="50" width="120" height="90" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="100" y="78" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Part I</text>
+  <text x="100" y="98" text-anchor="middle" fill="#fff" font-size="11">Substrate</text>
+  <text x="100" y="115" text-anchor="middle" fill="#fff" font-size="11">Foundations</text>
+  <text x="100" y="132" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">Chs. 1–4</text>
+
+  <rect x="180" y="50" width="680" height="90" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.2" rx="4"/>
+  <g font-size="11">
+    <text x="195" y="78" fill="#1a4f8b" font-weight="bold">Ch. 1</text> <text x="240" y="78" fill="#444">Substrate Ontology (P1–P13)</text>
+    <text x="195" y="98" fill="#1a4f8b" font-weight="bold">Ch. 2</text> <text x="240" y="98" fill="#444">Load-Bearing Invariants  (𝓜, σ, Γ_cross, V1, P11)</text>
+    <text x="195" y="118" fill="#1a4f8b" font-weight="bold">Ch. 3</text> <text x="240" y="118" fill="#444">Coarse-Graining Bridge (DCGT)</text>
+    <text x="195" y="135" fill="#1a4f8b" font-weight="bold">Ch. 4</text> <text x="240" y="135" fill="#444">Kernel-Level Arrow of Time (N1 + T18)</text>
+  </g>
+
+  <!-- Part II -->
+  <rect x="40" y="150" width="120" height="90" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="100" y="178" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Part II</text>
+  <text x="100" y="198" text-anchor="middle" fill="#fff" font-size="11">Quantum</text>
+  <text x="100" y="215" text-anchor="middle" fill="#fff" font-size="11">Sector</text>
+  <text x="100" y="232" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">Chs. 5–7</text>
+
+  <rect x="180" y="150" width="680" height="90" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.2" rx="4"/>
+  <g font-size="11">
+    <text x="195" y="178" fill="#1a4f8b" font-weight="bold">Ch. 5</text> <text x="240" y="178" fill="#444">Phase-1 Closure of QM (T1–T16)</text>
+    <text x="195" y="198" fill="#1a4f8b" font-weight="bold">Ch. 6</text> <text x="240" y="198" fill="#444">Form-Level QFT + Quantum Information (T17, UV-FIN, ED-I-13)</text>
+    <text x="195" y="218" fill="#1a4f8b" font-weight="bold">Ch. 7</text> <text x="240" y="218" fill="#444">Quantum Computation (UR-1, M, A/B/C taxonomy)</text>
+  </g>
+
+  <!-- Part III -->
+  <rect x="40" y="250" width="120" height="90" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="100" y="278" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Part III</text>
+  <text x="100" y="298" text-anchor="middle" fill="#fff" font-size="11">Continuum</text>
+  <text x="100" y="315" text-anchor="middle" fill="#fff" font-size="11">+ Dynamics</text>
+  <text x="100" y="332" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">Chs. 8–10</text>
+
+  <rect x="180" y="250" width="680" height="90" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.2" rx="4"/>
+  <g font-size="11">
+    <text x="195" y="278" fill="#1a4f8b" font-weight="bold">Ch. 8</text> <text x="240" y="278" fill="#444">Navier–Stokes Architectural Foundations  (R1, Path C)</text>
+    <text x="195" y="298" fill="#1a4f8b" font-weight="bold">Ch. 9</text> <text x="240" y="298" fill="#444">MHD + Yang–Mills  (T17 coupling, mass-gap)</text>
+    <text x="195" y="318" fill="#1a4f8b" font-weight="bold">Ch. 10</text> <text x="240" y="318" fill="#444">Soft-Matter Mobility + Non-Newtonian Rheology  (UDM, P4-NN, V5)</text>
+  </g>
+
+  <!-- Part IV -->
+  <rect x="40" y="350" width="120" height="90" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="100" y="378" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Part IV</text>
+  <text x="100" y="398" text-anchor="middle" fill="#fff" font-size="11">Gravity +</text>
+  <text x="100" y="415" text-anchor="middle" fill="#fff" font-size="11">Cosmology</text>
+  <text x="100" y="432" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">Chs. 11–13</text>
+
+  <rect x="180" y="350" width="680" height="90" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.2" rx="4"/>
+  <g font-size="11">
+    <text x="195" y="378" fill="#1a4f8b" font-weight="bold">Ch. 11</text> <text x="240" y="378" fill="#444">Substrate Gravity (galactic) — T19, T20, ECR, T21</text>
+    <text x="195" y="398" fill="#1a4f8b" font-weight="bold">Ch. 12</text> <text x="240" y="398" fill="#444">Curvature Emergence (Arc ED-10, acoustic-metric covariantization)</text>
+    <text x="195" y="418" fill="#1a4f8b" font-weight="bold">Ch. 13</text> <text x="240" y="418" fill="#444">Black-Hole Architecture (Arc BH, Σ_H, area law, BHPT)</text>
+  </g>
+
+  <!-- Part V -->
+  <rect x="40" y="450" width="120" height="90" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="100" y="478" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Part V</text>
+  <text x="100" y="498" text-anchor="middle" fill="#fff" font-size="11">Empirical</text>
+  <text x="100" y="515" text-anchor="middle" fill="#fff" font-size="11">Synthesis</text>
+  <text x="100" y="532" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">Chs. 14–15</text>
+
+  <rect x="180" y="450" width="680" height="90" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.2" rx="4"/>
+  <g font-size="11">
+    <text x="195" y="478" fill="#1a4f8b" font-weight="bold">Ch. 14</text> <text x="240" y="478" fill="#444">Cross-Platform Unifications + Methodology</text>
+    <text x="195" y="498" fill="#1a4f8b" font-weight="bold">Ch. 15</text> <text x="240" y="498" fill="#444">Public Test Inventory + Open Extensions</text>
+    <text x="240" y="525" fill="#666" font-style="italic">+ Appendices A (provenance), B (notation), C (paper-to-chapter), D (constants)</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="575" text-anchor="middle" font-size="10" fill="#666" font-style="italic">five Parts, fifteen chapters, four appendices — companion to the linear table of contents</text>
+</svg>

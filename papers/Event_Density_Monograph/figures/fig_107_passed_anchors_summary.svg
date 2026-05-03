@@ -1,0 +1,80 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 15.4 — Three PASSED-status empirical anchors</text>
+
+  <!-- Header banner -->
+  <rect x="40" y="60" width="820" height="50" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="450" y="88" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">PASSED predictions: empirical match achieved</text>
+  <text x="450" y="105" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">structural form FORCED at substrate level; empirical confirmation across distinct platforms</text>
+
+  <!-- Three anchors -->
+
+  <!-- Anchor 1: dwarf-galaxy Active>Quiet -->
+  <rect x="40" y="135" width="265" height="380" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="160" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">1. Dwarf-galaxy Active &gt; Quiet</text>
+  <text x="172" y="178" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">substrate-gravity sector (Ch. 11)</text>
+  <line x1="55" y1="190" x2="290" y2="190" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="172" y="218" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Prediction</text>
+  <text x="172" y="238" text-anchor="middle" font-size="11" fill="#444">Active dwarfs rotate</text>
+  <text x="172" y="256" text-anchor="middle" font-size="11" fill="#444">faster than Quiet dwarfs</text>
+  <text x="172" y="274" text-anchor="middle" font-size="11" fill="#444">in deep-MOND asymptote</text>
+
+  <text x="172" y="310" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Empirical anchor</text>
+  <text x="172" y="330" text-anchor="middle" font-size="13" fill="#1a4f8b" font-weight="bold">53% ratio</text>
+  <text x="172" y="350" text-anchor="middle" font-size="11" fill="#444">SPARC-class dwarf sample</text>
+
+  <text x="172" y="395" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Substrate route</text>
+  <text x="172" y="415" text-anchor="middle" font-size="11" fill="#444">T20 + ECR + T21</text>
+  <text x="172" y="433" text-anchor="middle" font-size="11" fill="#444">galactic-environment</text>
+  <text x="172" y="451" text-anchor="middle" font-size="11" fill="#444">dependence FORCED</text>
+
+  <text x="172" y="490" text-anchor="middle" font-size="10" fill="#666" font-style="italic">papers/Substrate_Gravity_Foundations/</text>
+
+  <!-- Anchor 2: UDM β -->
+  <rect x="320" y="135" width="265" height="380" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="452" y="160" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. Universal Mobility Law β</text>
+  <text x="452" y="178" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">soft-matter sector (Ch. 10)</text>
+  <line x1="335" y1="190" x2="570" y2="190" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="452" y="218" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Prediction</text>
+  <text x="452" y="238" text-anchor="middle" font-size="11" fill="#444">universal power-law</text>
+  <text x="452" y="256" text-anchor="middle" font-size="11" fill="#444">M(ρ) = M₀(1 − ρ/ρ_max)^β</text>
+  <text x="452" y="274" text-anchor="middle" font-size="11" fill="#444">canonical β = 2</text>
+
+  <text x="452" y="310" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Empirical anchor</text>
+  <text x="452" y="330" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">β = 1.72 ± 0.37</text>
+  <text x="452" y="350" text-anchor="middle" font-size="11" fill="#444">across 10 systems</text>
+
+  <text x="452" y="395" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Substrate route</text>
+  <text x="452" y="415" text-anchor="middle" font-size="11" fill="#444">P4-NN scalar channel</text>
+  <text x="452" y="433" text-anchor="middle" font-size="11" fill="#444">+ DCGT bandwidth-</text>
+  <text x="452" y="451" text-anchor="middle" font-size="11" fill="#444">capacity FORCED</text>
+
+  <text x="452" y="490" text-anchor="middle" font-size="10" fill="#666" font-style="italic">papers/Universal_Mobility_Law/</text>
+
+  <!-- Anchor 3: multi-timescale photonics -->
+  <rect x="600" y="135" width="265" height="380" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="732" y="160" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">3. Multi-timescale photonics</text>
+  <text x="732" y="178" text-anchor="middle" font-size="11" fill="#5a2090" font-style="italic">QC sector (Ch. 7) via ED-I-18</text>
+  <line x1="615" y1="190" x2="850" y2="190" stroke="#5a2090" stroke-width="0.8"/>
+
+  <text x="732" y="218" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Prediction</text>
+  <text x="732" y="238" text-anchor="middle" font-size="11" fill="#444">distinct-timescale relaxation</text>
+  <text x="732" y="256" text-anchor="middle" font-size="11" fill="#444">in photonic systems consistent</text>
+  <text x="732" y="274" text-anchor="middle" font-size="11" fill="#444">with V1 + V5 substrate kernels</text>
+
+  <text x="732" y="310" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Empirical anchor</text>
+  <text x="732" y="330" text-anchor="middle" font-size="13" fill="#5a2090" font-weight="bold">Hafezi 2025</text>
+  <text x="732" y="350" text-anchor="middle" font-size="11" fill="#444">multi-timescale data</text>
+
+  <text x="732" y="395" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Substrate route</text>
+  <text x="732" y="415" text-anchor="middle" font-size="11" fill="#444">V1 + V5 kernel</text>
+  <text x="732" y="433" text-anchor="middle" font-size="11" fill="#444">temporal-moment</text>
+  <text x="732" y="451" text-anchor="middle" font-size="11" fill="#444">structure FORCED</text>
+
+  <text x="732" y="490" text-anchor="middle" font-size="10" fill="#666" font-style="italic">ED-I-18 (Multi-timescale photonics)</text>
+
+  <!-- Footer -->
+  <text x="450" y="555" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Three PASSED anchors span three sectors (substrate gravity, soft-matter, QC); each via a distinct substrate route.</text>
+  <text x="450" y="572" text-anchor="middle" font-size="11" fill="#444" font-style="italic">FORCED structural form + empirical match across independent observational platforms.</text>
+</svg>

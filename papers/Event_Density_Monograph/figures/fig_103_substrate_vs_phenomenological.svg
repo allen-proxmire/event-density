@@ -1,0 +1,80 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 14.9 — Substrate-level framework vs phenomenological assembly</text>
+
+  <!-- Two side-by-side panels -->
+
+  <!-- LEFT: Phenomenological assembly -->
+  <rect x="40" y="60" width="380" height="500" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="230" y="86" text-anchor="middle" font-weight="bold" fill="#444" font-size="14">Phenomenological assembly</text>
+  <text x="230" y="104" text-anchor="middle" font-size="11" fill="#666" font-style="italic">standard / non-ED approach</text>
+  <line x1="55" y1="115" x2="405" y2="115" stroke="#888" stroke-width="0.8"/>
+
+  <text x="230" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Methodology</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="165">• each sector formulated independently</text>
+    <text x="60" y="183">• constants empirical / phenomenological</text>
+    <text x="60" y="201">• cross-sector consistency by construction</text>
+  </g>
+
+  <text x="230" y="232" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Predictions</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="255">• tightly fitted to within-sector data</text>
+    <text x="60" y="273">• cross-sector predictions weak</text>
+    <text x="60" y="291">• no structural basis for cross-domain ties</text>
+  </g>
+
+  <text x="230" y="322" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Constants</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="345">• 𝓞(20+) free parameters across all sectors</text>
+    <text x="60" y="363">• G, a₀, β, m_gap, log g, … all empirical</text>
+    <text x="60" y="381">• closed-form derivation typically absent</text>
+  </g>
+
+  <text x="230" y="412" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Falsifiability</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="435">• per-sector falsifiability strong</text>
+    <text x="60" y="453">• program-level structure rarely tested</text>
+  </g>
+
+  <text x="230" y="495" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">strength: empirical fit</text>
+  <text x="230" y="513" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">weakness: cross-domain coherence</text>
+
+  <!-- RIGHT: ED substrate-level framework -->
+  <rect x="480" y="60" width="380" height="500" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="670" y="86" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">ED substrate-level framework</text>
+  <text x="670" y="104" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">this monograph</text>
+  <line x1="495" y1="115" x2="845" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="670" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Methodology</text>
+  <g fill="#444" font-size="11">
+    <text x="500" y="165">• one substrate (P01–P13) feeding nine sectors</text>
+    <text x="500" y="183">• constants form-FORCED / value-INHERITED</text>
+    <text x="500" y="201">• cross-sector consistency structurally derived</text>
+  </g>
+
+  <text x="670" y="232" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Predictions</text>
+  <g fill="#444" font-size="11">
+    <text x="500" y="255">• cross-platform identities (matter-wave ↔ qubit)</text>
+    <text x="500" y="273">• cross-scale identities (Γ_cross over 50 orders)</text>
+    <text x="500" y="291">• cross-channel identities (P04, V1)</text>
+  </g>
+
+  <text x="670" y="322" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Constants</text>
+  <g fill="#444" font-size="11">
+    <text x="500" y="345">• 4 substrate inputs (ℏ, c, H₀, ℓ_P)</text>
+    <text x="500" y="363">• G, a₀ DERIVED; INHERITED constants</text>
+    <text x="500" y="381">  targeted by closed-form program (Fig. 14.7)</text>
+  </g>
+
+  <text x="670" y="412" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Falsifiability</text>
+  <g fill="#444" font-size="11">
+    <text x="500" y="435">• per-sector + cross-sector + program-level</text>
+    <text x="500" y="453">• one substrate change cascades through arcs</text>
+  </g>
+
+  <text x="670" y="495" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">strength: cross-domain coherence</text>
+  <text x="670" y="513" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">cost: empirical fit by INHERITED constants</text>
+
+  <!-- Footer -->
+  <text x="450" y="585" text-anchor="middle" font-size="11" fill="#444" font-style="italic">The two approaches are complementary — ED is upstream of any phenomenological assembly that respects substrate primitives.</text>
+</svg>

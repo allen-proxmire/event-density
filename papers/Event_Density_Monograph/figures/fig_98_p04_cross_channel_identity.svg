@@ -1,0 +1,62 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrSm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 14.4 — P04 cross-channel identity: bandwidth bound across UDM and Class A QC</text>
+
+  <!-- Top: shared substrate primitive -->
+  <rect x="280" y="60" width="340" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="92" text-anchor="middle" fill="#fff" font-weight="bold" font-size="16">P04 bandwidth update</text>
+  <line x1="300" y1="102" x2="600" y2="102" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="122" text-anchor="middle" fill="#fff" font-size="11">substrate primitive: bounded participation-rule update rate</text>
+  <text x="450" y="138" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">FORCED at primitive level (Chapter 1)</text>
+
+  <!-- Two arrows -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrSm)">
+    <line x1="380" y1="140" x2="220" y2="200"/>
+    <line x1="520" y1="140" x2="680" y2="200"/>
+  </g>
+
+  <!-- LEFT: UDM mobility -->
+  <rect x="40" y="210" width="380" height="270" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="230" y="236" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">UDM mobility (Ch. 10)</text>
+  <text x="230" y="254" text-anchor="middle" font-size="11" fill="#444" font-style="italic">soft-matter mobility law</text>
+  <line x1="55" y1="264" x2="405" y2="264" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="230" y="296" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">M(ρ) = M₀ (1 − ρ/ρ_max)^β</text>
+
+  <text x="230" y="332" text-anchor="middle" font-size="11" fill="#444">P04 channels mobility:</text>
+  <text x="230" y="350" text-anchor="middle" font-size="11" fill="#444">substrate participation</text>
+  <text x="230" y="368" text-anchor="middle" font-size="11" fill="#444">density modulates</text>
+  <text x="230" y="386" text-anchor="middle" font-size="11" fill="#444">bandwidth-update capacity</text>
+
+  <text x="230" y="425" text-anchor="middle" font-size="11" fill="#444">empirical anchor:</text>
+  <text x="230" y="443" text-anchor="middle" font-size="11" fill="#444">β ≈ 1.72 ± 0.37</text>
+  <text x="230" y="461" text-anchor="middle" font-size="11" fill="#444" font-style="italic">PASSED across 10 systems</text>
+
+  <!-- RIGHT: Class A QC -->
+  <rect x="480" y="210" width="380" height="270" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="670" y="236" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Class A QC (Ch. 7)</text>
+  <text x="670" y="254" text-anchor="middle" font-size="11" fill="#444" font-style="italic">engineered-low-multiplicity QC</text>
+  <line x1="495" y1="264" x2="845" y2="264" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="670" y="296" text-anchor="middle" font-size="13" fill="#1a4f8b" font-weight="bold">τ_(iii) ~ 1 / Λ_V1</text>
+
+  <text x="670" y="332" text-anchor="middle" font-size="11" fill="#444">P04 channels coherence:</text>
+  <text x="670" y="350" text-anchor="middle" font-size="11" fill="#444">isolated low-𝓜 region's</text>
+  <text x="670" y="368" text-anchor="middle" font-size="11" fill="#444">bandwidth-update bound</text>
+  <text x="670" y="386" text-anchor="middle" font-size="11" fill="#444">sets gate-time ceiling</text>
+
+  <text x="670" y="425" text-anchor="middle" font-size="11" fill="#444">empirical anchor:</text>
+  <text x="670" y="443" text-anchor="middle" font-size="11" fill="#444">SC qubit T_2 / gate-time wall</text>
+  <text x="670" y="461" text-anchor="middle" font-size="11" fill="#444" font-style="italic">IN PROGRESS</text>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="523" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Cross-channel identity (Type 3 unification)</text>
+  <text x="60" y="545" font-size="11" fill="#444">Same substrate primitive (P04) governs two empirically independent phenomena: soft-matter mobility (UDM) and Class A QC ceiling.</text>
+  <text x="60" y="563" font-size="11" fill="#444" font-style="italic">Different sectors of the program; one substrate primitive. P04's structural role is multi-sector cross-validated.</text>
+</svg>

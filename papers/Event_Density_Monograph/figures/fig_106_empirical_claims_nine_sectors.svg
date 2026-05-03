@@ -1,0 +1,90 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 15.3 — Empirical-claim distribution across nine sectors</text>
+
+  <!-- Header row -->
+  <g fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="40" y="60" width="200" height="36"/>
+    <rect x="240" y="60" width="100" height="36"/>
+    <rect x="340" y="60" width="100" height="36"/>
+    <rect x="440" y="60" width="100" height="36"/>
+    <rect x="540" y="60" width="100" height="36"/>
+    <rect x="640" y="60" width="100" height="36"/>
+    <rect x="740" y="60" width="120" height="36"/>
+  </g>
+  <g text-anchor="middle" fill="#fff" font-weight="bold" font-size="11">
+    <text x="140" y="83">Sector</text>
+    <text x="290" y="83">PASSED</text>
+    <text x="390" y="83">ANCHORED</text>
+    <text x="490" y="83">IN PROG.</text>
+    <text x="590" y="83">ACTIVE</text>
+    <text x="690" y="83">OPEN</text>
+    <text x="800" y="83">Total</text>
+  </g>
+
+  <!-- Data rows -->
+  <!-- Each row: 40 wide. Y-step = 40 -->
+  <g fill="#fff" stroke="#888" stroke-width="1">
+    <rect x="40" y="96" width="200" height="40"/><rect x="240" y="96" width="100" height="40"/><rect x="340" y="96" width="100" height="40"/><rect x="440" y="96" width="100" height="40"/><rect x="540" y="96" width="100" height="40"/><rect x="640" y="96" width="100" height="40"/><rect x="740" y="96" width="120" height="40"/>
+    <rect x="40" y="136" width="200" height="40"/><rect x="240" y="136" width="100" height="40"/><rect x="340" y="136" width="100" height="40"/><rect x="440" y="136" width="100" height="40"/><rect x="540" y="136" width="100" height="40"/><rect x="640" y="136" width="100" height="40"/><rect x="740" y="136" width="120" height="40"/>
+    <rect x="40" y="176" width="200" height="40"/><rect x="240" y="176" width="100" height="40"/><rect x="340" y="176" width="100" height="40"/><rect x="440" y="176" width="100" height="40"/><rect x="540" y="176" width="100" height="40"/><rect x="640" y="176" width="100" height="40"/><rect x="740" y="176" width="120" height="40"/>
+    <rect x="40" y="216" width="200" height="40"/><rect x="240" y="216" width="100" height="40"/><rect x="340" y="216" width="100" height="40"/><rect x="440" y="216" width="100" height="40"/><rect x="540" y="216" width="100" height="40"/><rect x="640" y="216" width="100" height="40"/><rect x="740" y="216" width="120" height="40"/>
+    <rect x="40" y="256" width="200" height="40"/><rect x="240" y="256" width="100" height="40"/><rect x="340" y="256" width="100" height="40"/><rect x="440" y="256" width="100" height="40"/><rect x="540" y="256" width="100" height="40"/><rect x="640" y="256" width="100" height="40"/><rect x="740" y="256" width="120" height="40"/>
+    <rect x="40" y="296" width="200" height="40"/><rect x="240" y="296" width="100" height="40"/><rect x="340" y="296" width="100" height="40"/><rect x="440" y="296" width="100" height="40"/><rect x="540" y="296" width="100" height="40"/><rect x="640" y="296" width="100" height="40"/><rect x="740" y="296" width="120" height="40"/>
+    <rect x="40" y="336" width="200" height="40"/><rect x="240" y="336" width="100" height="40"/><rect x="340" y="336" width="100" height="40"/><rect x="440" y="336" width="100" height="40"/><rect x="540" y="336" width="100" height="40"/><rect x="640" y="336" width="100" height="40"/><rect x="740" y="336" width="120" height="40"/>
+    <rect x="40" y="376" width="200" height="40"/><rect x="240" y="376" width="100" height="40"/><rect x="340" y="376" width="100" height="40"/><rect x="440" y="376" width="100" height="40"/><rect x="540" y="376" width="100" height="40"/><rect x="640" y="376" width="100" height="40"/><rect x="740" y="376" width="120" height="40"/>
+    <rect x="40" y="416" width="200" height="40"/><rect x="240" y="416" width="100" height="40"/><rect x="340" y="416" width="100" height="40"/><rect x="440" y="416" width="100" height="40"/><rect x="540" y="416" width="100" height="40"/><rect x="640" y="416" width="100" height="40"/><rect x="740" y="416" width="120" height="40"/>
+  </g>
+
+  <!-- Row data -->
+  <g font-size="11" text-anchor="middle">
+    <!-- QM (Ch. 5) -->
+    <text x="140" y="120" fill="#444">QM closure (Ch. 5)</text>
+    <text x="290" y="120" fill="#666">0</text><text x="390" y="120" fill="#a05a00" font-weight="bold">3</text><text x="490" y="120" fill="#666">0</text><text x="590" y="120" fill="#1a4f8b" font-weight="bold">2</text><text x="690" y="120" fill="#666">0</text><text x="800" y="120" fill="#444" font-weight="bold">5</text>
+
+    <!-- QFT -->
+    <text x="140" y="160" fill="#444">QFT (Ch. 6)</text>
+    <text x="290" y="160" fill="#666">0</text><text x="390" y="160" fill="#a05a00" font-weight="bold">2</text><text x="490" y="160" fill="#666">0</text><text x="590" y="160" fill="#1a4f8b" font-weight="bold">2</text><text x="690" y="160" fill="#666">0</text><text x="800" y="160" fill="#444" font-weight="bold">4</text>
+
+    <!-- QC -->
+    <text x="140" y="200" fill="#444">QC (Ch. 7)</text>
+    <text x="290" y="200" fill="#1a4f8b" font-weight="bold">1</text><text x="390" y="200" fill="#a05a00" font-weight="bold">2</text><text x="490" y="200" fill="#5a2090" font-weight="bold">2</text><text x="590" y="200" fill="#1a4f8b" font-weight="bold">3</text><text x="690" y="200" fill="#888" font-weight="bold">1</text><text x="800" y="200" fill="#444" font-weight="bold">9</text>
+
+    <!-- NS -->
+    <text x="140" y="240" fill="#444">NS (Ch. 8)</text>
+    <text x="290" y="240" fill="#666">0</text><text x="390" y="240" fill="#a05a00" font-weight="bold">2</text><text x="490" y="240" fill="#666">0</text><text x="590" y="240" fill="#1a4f8b" font-weight="bold">1</text><text x="690" y="240" fill="#666">0</text><text x="800" y="240" fill="#444" font-weight="bold">3</text>
+
+    <!-- MHD/YM -->
+    <text x="140" y="280" fill="#444">MHD / YM (Ch. 9)</text>
+    <text x="290" y="280" fill="#666">0</text><text x="390" y="280" fill="#a05a00" font-weight="bold">1</text><text x="490" y="280" fill="#666">0</text><text x="590" y="280" fill="#1a4f8b" font-weight="bold">2</text><text x="690" y="280" fill="#666">0</text><text x="800" y="280" fill="#444" font-weight="bold">3</text>
+
+    <!-- Soft-matter -->
+    <text x="140" y="320" fill="#444">Soft-matter (Ch. 10)</text>
+    <text x="290" y="320" fill="#1a4f8b" font-weight="bold">1</text><text x="390" y="320" fill="#a05a00" font-weight="bold">1</text><text x="490" y="320" fill="#5a2090" font-weight="bold">1</text><text x="590" y="320" fill="#1a4f8b" font-weight="bold">2</text><text x="690" y="320" fill="#666">0</text><text x="800" y="320" fill="#444" font-weight="bold">5</text>
+
+    <!-- Substrate gravity -->
+    <text x="140" y="360" fill="#444">Subst. gravity (Ch. 11)</text>
+    <text x="290" y="360" fill="#1a4f8b" font-weight="bold">1</text><text x="390" y="360" fill="#a05a00" font-weight="bold">1</text><text x="490" y="360" fill="#666">0</text><text x="590" y="360" fill="#1a4f8b" font-weight="bold">2</text><text x="690" y="360" fill="#666">0</text><text x="800" y="360" fill="#444" font-weight="bold">4</text>
+
+    <!-- Curvature -->
+    <text x="140" y="400" fill="#444">Curvature (Ch. 12)</text>
+    <text x="290" y="400" fill="#666">0</text><text x="390" y="400" fill="#a05a00" font-weight="bold">1</text><text x="490" y="400" fill="#666">0</text><text x="590" y="400" fill="#1a4f8b" font-weight="bold">2</text><text x="690" y="400" fill="#888" font-weight="bold">1</text><text x="800" y="400" fill="#444" font-weight="bold">4</text>
+
+    <!-- BH -->
+    <text x="140" y="440" fill="#444">BH (Ch. 13)</text>
+    <text x="290" y="440" fill="#666">0</text><text x="390" y="440" fill="#666">0</text><text x="490" y="440" fill="#666">0</text><text x="590" y="440" fill="#1a4f8b" font-weight="bold">1</text><text x="690" y="440" fill="#888" font-weight="bold">2</text><text x="800" y="440" fill="#444" font-weight="bold">3</text>
+  </g>
+
+  <!-- Total row -->
+  <rect x="40" y="456" width="820" height="40" fill="#fff" stroke="#1a4f8b" stroke-width="2"/>
+  <text x="140" y="480" text-anchor="middle" font-weight="bold" fill="#444" font-size="12">All sectors</text>
+  <text x="290" y="480" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">3</text>
+  <text x="390" y="480" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">13</text>
+  <text x="490" y="480" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="12">3</text>
+  <text x="590" y="480" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">17</text>
+  <text x="690" y="480" text-anchor="middle" font-weight="bold" fill="#888" font-size="12">4</text>
+  <text x="800" y="480" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">40</text>
+
+  <!-- Footer -->
+  <text x="450" y="540" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Empirical coverage is broad: every sector contributes at least one prediction. QC is the most active sector by entry count.</text>
+  <text x="450" y="560" text-anchor="middle" font-size="11" fill="#444" font-style="italic">PASSED entries: dwarf-galaxy Active>Quiet (Ch. 11), UDM β (Ch. 10), multi-timescale photonics (Ch. 7).</text>
+</svg>

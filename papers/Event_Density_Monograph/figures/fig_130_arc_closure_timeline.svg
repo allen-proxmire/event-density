@@ -1,0 +1,108 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Figure 130 — Arc-closure timeline (~30 months of program development)</text>
+
+  <!-- Timeline axis (horizontal) -->
+  <line x1="80" y1="320" x2="820" y2="320" stroke="#444" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="830" y="324" font-size="11" fill="#444">time</text>
+
+  <!-- Tick marks for months 0..30, every 5 months -->
+  <g stroke="#444" stroke-width="1">
+    <line x1="80" y1="316" x2="80" y2="324"/>
+    <line x1="200" y1="316" x2="200" y2="324"/>
+    <line x1="320" y1="316" x2="320" y2="324"/>
+    <line x1="440" y1="316" x2="440" y2="324"/>
+    <line x1="560" y1="316" x2="560" y2="324"/>
+    <line x1="680" y1="316" x2="680" y2="324"/>
+    <line x1="800" y1="316" x2="800" y2="324"/>
+  </g>
+  <g text-anchor="middle" font-size="10" fill="#666">
+    <text x="80" y="340">m 0</text>
+    <text x="200" y="340">m 5</text>
+    <text x="320" y="340">m 10</text>
+    <text x="440" y="340">m 15</text>
+    <text x="560" y="340">m 20</text>
+    <text x="680" y="340">m 25</text>
+    <text x="800" y="340">m 30</text>
+  </g>
+
+  <!-- Arc closure events (above and below timeline, alternating) -->
+  <!-- Phase-1 / B / D early closures (m 6-12) -->
+  <g fill="#1a4f8b">
+    <circle cx="200" cy="320" r="6"/>
+    <circle cx="280" cy="320" r="6"/>
+    <circle cx="360" cy="320" r="6"/>
+    <circle cx="430" cy="320" r="6"/>
+    <circle cx="540" cy="320" r="6"/>
+    <circle cx="600" cy="320" r="6"/>
+    <circle cx="660" cy="320" r="6"/>
+    <circle cx="720" cy="320" r="6"/>
+    <circle cx="800" cy="320" r="6"/>
+  </g>
+
+  <!-- Annotation lines from timeline to upper/lower labels -->
+  <g stroke="#1a4f8b" stroke-width="1" stroke-dasharray="3,3" fill="none">
+    <line x1="200" y1="314" x2="200" y2="240"/>
+    <line x1="280" y1="326" x2="280" y2="400"/>
+    <line x1="360" y1="314" x2="360" y2="180"/>
+    <line x1="430" y1="326" x2="430" y2="400"/>
+    <line x1="540" y1="314" x2="540" y2="240"/>
+    <line x1="600" y1="326" x2="600" y2="400"/>
+    <line x1="660" y1="314" x2="660" y2="180"/>
+    <line x1="720" y1="326" x2="720" y2="460"/>
+    <line x1="800" y1="314" x2="800" y2="240"/>
+  </g>
+
+  <!-- Upper labels (closures) -->
+  <g text-anchor="middle">
+    <rect x="120" y="200" width="160" height="40" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1" rx="3"/>
+    <text x="200" y="218" font-weight="bold" fill="#1a4f8b" font-size="11">Phase-1 closure (T1–T16)</text>
+    <text x="200" y="234" fill="#666" font-size="10">QM postulates closed</text>
+
+    <rect x="280" y="140" width="160" height="40" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1" rx="3"/>
+    <text x="360" y="158" font-weight="bold" fill="#1a4f8b" font-size="11">Arc D — DCGT</text>
+    <text x="360" y="174" fill="#666" font-size="10">substrate-to-continuum bridge</text>
+
+    <rect x="460" y="200" width="160" height="40" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1" rx="3"/>
+    <text x="540" y="218" font-weight="bold" fill="#1a4f8b" font-size="11">Arc B — T18 + N1</text>
+    <text x="540" y="234" fill="#666" font-size="10">kernel-arrow closure</text>
+
+    <rect x="580" y="140" width="160" height="40" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1" rx="3"/>
+    <text x="660" y="158" font-weight="bold" fill="#1a4f8b" font-size="11">Arcs Q + Q-COMPUTE</text>
+    <text x="660" y="174" fill="#666" font-size="10">T17 + UR-1 + M</text>
+
+    <rect x="720" y="200" width="160" height="40" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1" rx="3"/>
+    <text x="800" y="218" font-weight="bold" fill="#1a4f8b" font-size="11">Arc BH</text>
+    <text x="800" y="234" fill="#666" font-size="10">7 memos closed (BH-1..BH-7)</text>
+  </g>
+
+  <!-- Lower labels -->
+  <g text-anchor="middle">
+    <rect x="200" y="385" width="160" height="40" fill="#fff4e0" stroke="#a05a00" stroke-width="1" rx="3"/>
+    <text x="280" y="403" font-weight="bold" fill="#a05a00" font-size="11">Arc NS  (NS-1..NS-Q)</text>
+    <text x="280" y="419" fill="#666" font-size="10">NS Synthesis Paper</text>
+
+    <rect x="350" y="385" width="160" height="40" fill="#fff4e0" stroke="#a05a00" stroke-width="1" rx="3"/>
+    <text x="430" y="403" font-weight="bold" fill="#a05a00" font-size="11">Arc YM</text>
+    <text x="430" y="419" fill="#666" font-size="10">Yang-Mills + mass-gap</text>
+
+    <rect x="520" y="385" width="160" height="40" fill="#fff4e0" stroke="#a05a00" stroke-width="1" rx="3"/>
+    <text x="600" y="403" font-weight="bold" fill="#a05a00" font-size="11">Arc SG + Arc ED-10</text>
+    <text x="600" y="419" fill="#666" font-size="10">Substrate gravity + curvature</text>
+
+    <rect x="640" y="445" width="160" height="40" fill="#fff4e0" stroke="#a05a00" stroke-width="1" rx="3"/>
+    <text x="720" y="463" font-weight="bold" fill="#a05a00" font-size="11">Q-COMPUTE final</text>
+    <text x="720" y="479" fill="#666" font-size="10">UR-1 + 3-class taxonomy</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="510" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="533" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the timeline</text>
+  <text x="60" y="555" font-size="11" fill="#444">Schematic. Roughly 30 months of arc closures, producing 9 publication-grade Foundations / Synthesis papers.</text>
+  <text x="60" y="573" font-size="11" fill="#444" font-style="italic">All four major closures (Phase-1, DCGT, T18, Q-COMPUTE) feed every later closed arc through the dependency graph (Appendix A).</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 15.1 — Status taxonomy: PASSED / ANCHORED / IN PROGRESS / ACTIVE / OPEN</text>
+
+  <!-- Status taxonomy ladder -->
+  <!-- Five rows, color-coded by certainty / progress -->
+
+  <!-- PASSED (highest) -->
+  <rect x="40" y="60" width="820" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="120" y="90" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">PASSED</text>
+  <line x1="195" y1="70" x2="195" y2="130" stroke="#fff" stroke-width="0.8"/>
+  <text x="220" y="88" fill="#fff" font-size="12" font-weight="bold">empirical match achieved</text>
+  <text x="220" y="108" fill="#fff" font-size="11">substrate prediction confirmed against empirical data</text>
+  <text x="220" y="125" fill="#fff" font-size="11" font-style="italic">three current entries: dwarf-galaxy Active>Quiet, UDM β, multi-timescale photonics</text>
+
+  <!-- ANCHORED -->
+  <rect x="40" y="155" width="820" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="120" y="185" text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="15">ANCHORED</text>
+  <line x1="195" y1="165" x2="195" y2="225" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="220" y="183" fill="#a05a00" font-size="12" font-weight="bold">empirical anchor present, full match awaiting precision</text>
+  <text x="220" y="203" fill="#444" font-size="11">structural prediction matches available data within current measurement uncertainty</text>
+  <text x="220" y="220" fill="#444" font-size="11" font-style="italic">thirteen current entries across nine sectors</text>
+
+  <!-- IN PROGRESS -->
+  <rect x="40" y="250" width="820" height="80" fill="#f0e8ff" stroke="#5a2090" stroke-width="2" rx="6"/>
+  <text x="120" y="280" text-anchor="middle" fill="#5a2090" font-weight="bold" font-size="15">IN PROGRESS</text>
+  <line x1="195" y1="260" x2="195" y2="320" stroke="#5a2090" stroke-width="0.8"/>
+  <text x="220" y="278" fill="#5a2090" font-size="12" font-weight="bold">active experimental investigation underway</text>
+  <text x="220" y="298" fill="#444" font-size="11">prediction has identified test platform; experimental campaign open</text>
+  <text x="220" y="315" fill="#444" font-size="11" font-style="italic">three current entries: SC-qubit wall, FRAP t^(1/6), QEC composition</text>
+
+  <!-- ACTIVE -->
+  <rect x="40" y="345" width="820" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="120" y="375" text-anchor="middle" fill="#1a4f8b" font-weight="bold" font-size="15">ACTIVE</text>
+  <line x1="195" y1="355" x2="195" y2="415" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="220" y="373" fill="#1a4f8b" font-size="12" font-weight="bold">prediction made, no test campaign yet</text>
+  <text x="220" y="393" fill="#444" font-size="11">structural prediction articulated; experimental design pending</text>
+  <text x="220" y="410" fill="#444" font-size="11" font-style="italic">seventeen current entries across QM, QC, gravity, condensed-matter, photonics, phononics</text>
+
+  <!-- OPEN -->
+  <rect x="40" y="440" width="820" height="80" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="120" y="470" text-anchor="middle" fill="#444" font-weight="bold" font-size="15">OPEN</text>
+  <line x1="195" y1="450" x2="195" y2="510" stroke="#888" stroke-width="0.8"/>
+  <text x="220" y="468" fill="#444" font-size="12" font-weight="bold">prediction stated, derivation incomplete or speculative</text>
+  <text x="220" y="488" fill="#444" font-size="11">structural prediction stands but downstream derivation steps remain</text>
+  <text x="220" y="505" fill="#444" font-size="11" font-style="italic">four current entries: Class B exp., Hawking spectrum, no-singularity interior, ED-entrainment universality</text>
+
+  <!-- Footer -->
+  <rect x="40" y="535" width="820" height="50" fill="#fff" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="555" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Total: 3 PASSED + 13 ANCHORED + 3 IN PROGRESS + 17 ACTIVE + 4 OPEN  =  40 predictions</text>
+  <text x="450" y="575" text-anchor="middle" font-size="10" fill="#666" font-style="italic">canonical source: Desktop/ED_Public_Test_Inventory.md (living test catalog)</text>
+</svg>

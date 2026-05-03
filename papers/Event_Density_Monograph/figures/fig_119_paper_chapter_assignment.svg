@@ -1,0 +1,83 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Table C.1 — Paper-to-chapter assignment matrix</text>
+  <text x="450" y="40" text-anchor="middle" font-size="10" fill="#666" font-style="italic">each publication-grade paper assigned to exactly one chapter</text>
+
+  <!-- Headers: chapter columns 1..15 + "Sources" -->
+  <g fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="40" y="55" width="320" height="32"/>
+    <rect x="360" y="55" width="500" height="32"/>
+  </g>
+  <g text-anchor="middle" fill="#fff" font-weight="bold" font-size="12">
+    <text x="200" y="76">Chapter</text>
+    <text x="610" y="76">Canonical-source paper(s)</text>
+  </g>
+
+  <!-- Rows -->
+  <g fill="#fff" stroke="#888" stroke-width="1">
+    <rect x="40" y="87" width="320" height="32"/><rect x="360" y="87" width="500" height="32"/>
+    <rect x="40" y="119" width="320" height="32"/><rect x="360" y="119" width="500" height="32"/>
+    <rect x="40" y="151" width="320" height="32"/><rect x="360" y="151" width="500" height="32"/>
+    <rect x="40" y="183" width="320" height="32"/><rect x="360" y="183" width="500" height="32"/>
+    <rect x="40" y="215" width="320" height="32"/><rect x="360" y="215" width="500" height="32"/>
+    <rect x="40" y="247" width="320" height="32"/><rect x="360" y="247" width="500" height="32"/>
+    <rect x="40" y="279" width="320" height="32"/><rect x="360" y="279" width="500" height="32"/>
+    <rect x="40" y="311" width="320" height="32"/><rect x="360" y="311" width="500" height="32"/>
+    <rect x="40" y="343" width="320" height="32"/><rect x="360" y="343" width="500" height="32"/>
+    <rect x="40" y="375" width="320" height="32"/><rect x="360" y="375" width="500" height="32"/>
+    <rect x="40" y="407" width="320" height="32"/><rect x="360" y="407" width="500" height="32"/>
+    <rect x="40" y="439" width="320" height="32"/><rect x="360" y="439" width="500" height="32"/>
+    <rect x="40" y="471" width="320" height="32"/><rect x="360" y="471" width="500" height="32"/>
+    <rect x="40" y="503" width="320" height="32"/><rect x="360" y="503" width="500" height="32"/>
+    <rect x="40" y="535" width="320" height="32"/><rect x="360" y="535" width="500" height="32"/>
+  </g>
+
+  <g font-size="11" fill="#444">
+    <text x="55" y="107">Ch. 1 — Substrate Ontology</text>
+    <text x="375" y="107" font-style="italic">papers/Event_Density_Ontology_and_Axioms/, Foundations_of_Event_Density/</text>
+
+    <text x="55" y="139">Ch. 2 — Load-Bearing Invariants</text>
+    <text x="375" y="139" font-style="italic">ED-I-01, ED-I-23, ED-I-29, ED-I-06</text>
+
+    <text x="55" y="171">Ch. 3 — DCGT Bridge</text>
+    <text x="375" y="171" font-style="italic">NS Synthesis Paper App. D, theory/Arc_D/, ED_QFT_Overview/</text>
+
+    <text x="55" y="203">Ch. 4 — Kernel-Level Arrow of Time</text>
+    <text x="375" y="203" font-style="italic">papers/Time_Arrow_Theorem_18/, N1 paper, arcs/arc-B/</text>
+
+    <text x="55" y="235">Ch. 5 — Phase-1 QM (T1–T16)</text>
+    <text x="375" y="235" font-style="italic">papers/Phase_1/, QM_Emergence_*, Born_Gleason/, U1–U5_*</text>
+
+    <text x="55" y="267">Ch. 6 — Form-Level QFT (T17, UV-FIN)</text>
+    <text x="375" y="267" font-style="italic">papers/Gauge_Fields_Theorem_17/, Arc_Q/, Arc_R/, ED-I-13</text>
+
+    <text x="55" y="299">Ch. 7 — Quantum Computation (UR-1, M)</text>
+    <text x="375" y="299" font-style="italic">papers/Quantum_Computing_Foundations/, ED-I-12, ED-I-14, ED-I-18</text>
+
+    <text x="55" y="331">Ch. 8 — Navier–Stokes Foundations</text>
+    <text x="375" y="331" font-style="italic">papers/Navier Stokes_Synthesis_Paper/ (main + App. C), ED-I-06</text>
+
+    <text x="55" y="363">Ch. 9 — MHD + Yang–Mills</text>
+    <text x="375" y="363" font-style="italic">NS Synthesis Paper App. C + App. E, theory/Yang_Mills/</text>
+
+    <text x="55" y="395">Ch. 10 — Soft-matter mobility</text>
+    <text x="375" y="395" font-style="italic">papers/Universal_Mobility_Law/, P4_NonNewtonian_Paper_Draft/</text>
+
+    <text x="55" y="427">Ch. 11 — Substrate Gravity (galactic)</text>
+    <text x="375" y="427" font-style="italic">papers/Substrate_Gravity_Foundations/ (main + companion)</text>
+
+    <text x="55" y="459">Ch. 12 — Curvature Emergence (Arc ED-10)</text>
+    <text x="375" y="459" font-style="italic">papers/Substrate_Gravity_Foundations/, theory/Substrate_Gravity/</text>
+
+    <text x="55" y="491">Ch. 13 — Black-Hole Architecture</text>
+    <text x="375" y="491" font-style="italic">papers/Black_Hole_Foundations/, theory/Black_Holes/ (BH-1..BH-7)</text>
+
+    <text x="55" y="523">Ch. 14 — Cross-Platform Unifications</text>
+    <text x="375" y="523" font-style="italic">papers/ED_QFT_Overview/, ED_One_Substrate_Three_Domains/</text>
+
+    <text x="55" y="555">Ch. 15 — Public Test Inventory</text>
+    <text x="375" y="555" font-style="italic">Desktop/ED_Public_Test_Inventory.md, docs/Investigation_Priority_List.md</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="585" text-anchor="middle" font-size="10" fill="#666" font-style="italic">every publication-grade paper assigned to exactly one chapter; cross-references in chapter sources may overlap</text>
+</svg>

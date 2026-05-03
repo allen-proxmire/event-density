@@ -1,0 +1,96 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 14.6 — Form-FORCED / Value-INHERITED methodology as cross-domain signature</text>
+
+  <!-- Top: methodology statement -->
+  <rect x="40" y="60" width="820" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="90" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">"Structural form derived from substrate primitives;</text>
+  <text x="450" y="110" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">specific numerical thresholds calibrated empirically rather than computed in closed form."</text>
+  <text x="450" y="130" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">— the program's signature methodological pattern</text>
+
+  <!-- Sector-by-sector tagging table -->
+  <text x="450" y="170" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Sectorial application</text>
+
+  <g fill="#fff" stroke="#888" stroke-width="1">
+    <rect x="40" y="185" width="280" height="35"/>
+    <rect x="320" y="185" width="270" height="35"/>
+    <rect x="590" y="185" width="270" height="35"/>
+  </g>
+  <g text-anchor="middle" fill="#444" font-weight="bold" font-size="12">
+    <text x="180" y="208">Sector</text>
+    <text x="455" y="208">Form-FORCED</text>
+    <text x="725" y="208">Value-INHERITED</text>
+  </g>
+
+  <g fill="#fff" stroke="#888" stroke-width="1">
+    <rect x="40" y="220" width="280" height="32"/>
+    <rect x="320" y="220" width="270" height="32"/>
+    <rect x="590" y="220" width="270" height="32"/>
+    <rect x="40" y="252" width="280" height="32"/>
+    <rect x="320" y="252" width="270" height="32"/>
+    <rect x="590" y="252" width="270" height="32"/>
+    <rect x="40" y="284" width="280" height="32"/>
+    <rect x="320" y="284" width="270" height="32"/>
+    <rect x="590" y="284" width="270" height="32"/>
+    <rect x="40" y="316" width="280" height="32"/>
+    <rect x="320" y="316" width="270" height="32"/>
+    <rect x="590" y="316" width="270" height="32"/>
+    <rect x="40" y="348" width="280" height="32"/>
+    <rect x="320" y="348" width="270" height="32"/>
+    <rect x="590" y="348" width="270" height="32"/>
+    <rect x="40" y="380" width="280" height="32"/>
+    <rect x="320" y="380" width="270" height="32"/>
+    <rect x="590" y="380" width="270" height="32"/>
+    <rect x="40" y="412" width="280" height="32"/>
+    <rect x="320" y="412" width="270" height="32"/>
+    <rect x="590" y="412" width="270" height="32"/>
+    <rect x="40" y="444" width="280" height="32"/>
+    <rect x="320" y="444" width="270" height="32"/>
+    <rect x="590" y="444" width="270" height="32"/>
+    <rect x="40" y="476" width="280" height="32"/>
+    <rect x="320" y="476" width="270" height="32"/>
+    <rect x="590" y="476" width="270" height="32"/>
+  </g>
+
+  <g font-size="11" fill="#444">
+    <text x="55" y="240">QM closure (Ch. 5)</text>
+    <text x="335" y="240">Born squared, Schrödinger linear</text>
+    <text x="605" y="240">absolute ℏ, specific spectra</text>
+
+    <text x="55" y="272">QFT (Ch. 6)</text>
+    <text x="335" y="272">T17 gauge-as-rule-type, UV-finiteness</text>
+    <text x="605" y="272">couplings, gauge-group choice</text>
+
+    <text x="55" y="304">QC (Ch. 7)</text>
+    <text x="335" y="304">UR-1 three-condition exhaustiveness</text>
+    <text x="605" y="304">𝓜_crit, μ(x) shape, f-functions</text>
+
+    <text x="55" y="336">NS (Ch. 8)</text>
+    <text x="335" y="336">R1 form, advection-non-ED</text>
+    <text x="605" y="336">ν, κ μ_V1, Re thresholds</text>
+
+    <text x="55" y="368">MHD/YM (Ch. 9)</text>
+    <text x="335" y="368">D_μF^μν, mass-gap mechanism</text>
+    <text x="605" y="368">m_gap, η, Λ_QCD</text>
+
+    <text x="55" y="400">Soft-matter (Ch. 10)</text>
+    <text x="335" y="400">UDM power-law, P4-NN unification</text>
+    <text x="605" y="400">β empirical, ρ_max, τ_R, σ_y</text>
+
+    <text x="55" y="432">Substrate gravity (Ch. 11)</text>
+    <text x="335" y="432">G, a₀, ECR, T21 BTFR-4</text>
+    <text x="605" y="432">μ-shape, intrinsic-scatter band</text>
+
+    <text x="55" y="464">Curvature (Ch. 12)</text>
+    <text x="335" y="464">covariantized scalar-tensor + GR1</text>
+    <text x="605" y="464">μ-shape, V1 expansion, GR-4A open</text>
+
+    <text x="55" y="496">BH (Ch. 13)</text>
+    <text x="335" y="496">Σ_H + area-law form + δ_ℓm structure</text>
+    <text x="605" y="496">log g (O2), Hawking spectrum, τ_gap-stab</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="540" text-anchor="middle" font-size="11" fill="#444" font-style="italic">All nine closed sectors share the same FORCED/INHERITED methodology — the program's cross-domain signature.</text>
+  <text x="450" y="558" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Form-FORCED column: structural results derived. Value-INHERITED column: numerical content calibrated downstream.</text>
+  <text x="450" y="576" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Closed-form-substrate-constants program (Figs. 14.7, D.1) targets the INHERITED column from below.</text>
+</svg>

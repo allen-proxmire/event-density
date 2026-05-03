@@ -1,0 +1,81 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 9.7 — Intermediate Path C verdict structure for Yang–Mills</text>
+
+  <!-- Three paths overview -->
+  <text x="450" y="62" text-anchor="middle" font-size="12" fill="#444">Three closure-status paths for YM-existence + mass-gap (Clay)</text>
+
+  <!-- Path A: full proof -->
+  <rect x="40" y="80" width="270" height="110" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="6"/>
+  <text x="175" y="105" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">Path A — Constructive proof</text>
+  <line x1="55" y1="115" x2="295" y2="115" stroke="#888" stroke-width="0.8"/>
+  <text x="175" y="138" text-anchor="middle" font-size="11" fill="#444">Wightman / Osterwalder–Schrader</text>
+  <text x="175" y="156" text-anchor="middle" font-size="11" fill="#444">axiom verification</text>
+  <text x="175" y="178" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">not achieved (Clay open)</text>
+
+  <!-- Path B: lattice → continuum -->
+  <rect x="320" y="80" width="270" height="110" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="6"/>
+  <text x="455" y="105" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">Path B — Lattice continuum limit</text>
+  <line x1="335" y1="115" x2="575" y2="115" stroke="#888" stroke-width="0.8"/>
+  <text x="455" y="138" text-anchor="middle" font-size="11" fill="#444">rigorous OS-positive limit</text>
+  <text x="455" y="156" text-anchor="middle" font-size="11" fill="#444">from lattice formulation</text>
+  <text x="455" y="178" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">not achieved (Clay open)</text>
+
+  <!-- Path C: structural -->
+  <rect x="600" y="80" width="270" height="110" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="735" y="105" text-anchor="middle" font-weight="bold" fill="#fff" font-size="13">Path C — Structural / Intermediate</text>
+  <line x1="615" y1="115" x2="855" y2="115" stroke="#fff" stroke-width="0.8"/>
+  <text x="735" y="138" text-anchor="middle" font-size="11" fill="#fff">substrate-derived YM equation</text>
+  <text x="735" y="156" text-anchor="middle" font-size="11" fill="#fff">+ FORCED mass-gap mechanism</text>
+  <text x="735" y="178" text-anchor="middle" font-size="11" fill="#fff" font-style="italic">closure achieved (this monograph)</text>
+
+  <!-- Arrow down -->
+  <line x1="735" y1="190" x2="735" y2="220" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <text x="450" y="240" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Path C closure structure for YM</text>
+
+  <!-- Three blocks -->
+  <rect x="40" y="260" width="270" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="175" y="285" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">1. YM equation derived</text>
+  <line x1="55" y1="295" x2="295" y2="295" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="175" y="318" text-anchor="middle" font-size="11" fill="#444">D_μ F^μν = J^ν</text>
+  <text x="175" y="336" text-anchor="middle" font-size="11" fill="#444">via DCGT non-Abelian +</text>
+  <text x="175" y="354" text-anchor="middle" font-size="11" fill="#444">T17 generalized coupling</text>
+  <text x="175" y="376" text-anchor="middle" font-size="11" fill="#444">(Figure 9.4)</text>
+  <text x="175" y="408" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate-existence</text>
+  <text x="175" y="422" text-anchor="middle" font-size="10" fill="#666" font-style="italic">structurally established</text>
+
+  <rect x="320" y="260" width="270" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="455" y="285" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. Mass-gap mechanism</text>
+  <line x1="335" y1="295" x2="575" y2="295" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="455" y="318" text-anchor="middle" font-size="11" fill="#444">V1 second-moment +</text>
+  <text x="455" y="336" text-anchor="middle" font-size="11" fill="#444">non-Abelian quartic</text>
+  <text x="455" y="354" text-anchor="middle" font-size="11" fill="#444">stabilization</text>
+  <text x="455" y="376" text-anchor="middle" font-size="11" fill="#444">(Figure 9.5)</text>
+  <text x="455" y="408" text-anchor="middle" font-size="10" fill="#666" font-style="italic">spectral gap form-FORCED;</text>
+  <text x="455" y="422" text-anchor="middle" font-size="10" fill="#666" font-style="italic">m_gap value INHERITED</text>
+
+  <rect x="600" y="260" width="270" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="735" y="285" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">3. OS-positivity audit</text>
+  <line x1="615" y1="295" x2="855" y2="295" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="735" y="318" text-anchor="middle" font-size="11" fill="#444">channel-by-channel</text>
+  <text x="735" y="336" text-anchor="middle" font-size="11" fill="#444">structural-suggestive</text>
+  <text x="735" y="354" text-anchor="middle" font-size="11" fill="#444">positive verdict</text>
+  <text x="735" y="376" text-anchor="middle" font-size="11" fill="#444">(YM-3 / YM-6 arc)</text>
+  <text x="735" y="408" text-anchor="middle" font-size="10" fill="#666" font-style="italic">not full OS-positivity proof,</text>
+  <text x="735" y="422" text-anchor="middle" font-size="10" fill="#666" font-style="italic">but substrate-positive signal</text>
+
+  <!-- Footer -->
+  <rect x="40" y="455" width="820" height="125" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="478" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the Path C verdict for YM</text>
+  <text x="60" y="500" font-size="11" fill="#444">Path C delivers a structurally-positive verdict on YM-existence + mass-gap at the level of substrate-derived continuum content.</text>
+  <text x="60" y="518" font-size="11" fill="#444">It does not constructively verify Wightman / OS axioms in standard formal-QFT terms; that is Path A or Path B work.</text>
+  <text x="60" y="540" font-size="11" fill="#444" font-style="italic">Conditional-positive verdict: YM-existence + mass-gap FORCED in substrate-faithful continuum extensions.</text>
+  <text x="60" y="558" font-size="11" fill="#444" font-style="italic">Same Path-C structural-positive pattern as NS smoothness (Figure 8.4) and curvature emergence (Ch. 12).</text>
+  <text x="60" y="576" font-size="11" fill="#444" font-style="italic">Conditional on kernel-profile rescaling consistent with substrate-cutoff continuum limit (YM-2 in Yang–Mills arc).</text>
+</svg>

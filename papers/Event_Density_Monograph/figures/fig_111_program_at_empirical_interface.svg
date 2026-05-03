@@ -1,0 +1,86 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+    <marker id="arrL" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M10,0 L0,5 L10,10 z" fill="#a05a00"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 15.8 — The program at empirical interface</text>
+
+  <!-- LEFT: substrate side -->
+  <rect x="40" y="80" width="350" height="430" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="215" y="106" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">Substrate-level program</text>
+  <text x="215" y="124" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">FORCED structural form</text>
+  <line x1="55" y1="135" x2="375" y2="135" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="215" y="162" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Outputs</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="185">• 13 substrate primitives (Ch. 1)</text>
+    <text x="60" y="203">• Foundational theorems  N1, T18, DCGT, GR1</text>
+    <text x="60" y="221">• 21 named substrate theorems  T1–T21</text>
+    <text x="60" y="239">• ECR + UR-1 + multiplicity-cap M</text>
+    <text x="60" y="257">• Nine closed-arc sectors</text>
+  </g>
+
+  <text x="215" y="292" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Cross-domain identities</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="315">• Type 1: cross-platform (𝓜_crit, Λ_V1)</text>
+    <text x="60" y="333">• Type 2: cross-scale (Γ_cross over 50 orders)</text>
+    <text x="60" y="351">• Type 3: cross-channel (P04, V1)</text>
+  </g>
+
+  <text x="215" y="392" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Methodology</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="415">• form-FORCED at substrate level</text>
+    <text x="60" y="433">• value-INHERITED at numerical level</text>
+    <text x="60" y="451">• closed-form-substrate-constants program</text>
+    <text x="60" y="469">• cross-domain consistency requirement</text>
+    <text x="60" y="487">• no-new-primitives discipline</text>
+  </g>
+
+  <!-- INTERFACE arrows -->
+  <line x1="395" y1="220" x2="500" y2="220" stroke="#1a4f8b" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="447" y="208" text-anchor="middle" font-size="11" fill="#1a4f8b" font-weight="bold">predicts</text>
+
+  <line x1="500" y1="320" x2="395" y2="320" stroke="#a05a00" stroke-width="2.5" marker-end="url(#arrL)"/>
+  <text x="447" y="338" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">anchors</text>
+
+  <!-- RIGHT: empirical side -->
+  <rect x="510" y="80" width="350" height="430" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="685" y="106" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="14">Empirical interface</text>
+  <text x="685" y="124" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">PASSED + ANCHORED + ACTIVE + OPEN</text>
+  <line x1="525" y1="135" x2="845" y2="135" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="685" y="162" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Inputs from observation</text>
+  <g fill="#444" font-size="11">
+    <text x="530" y="185">• PASSED ×3</text>
+    <text x="530" y="203">  dwarf-galaxy, UDM β, multi-timescale photonics</text>
+    <text x="530" y="225">• ANCHORED ×13</text>
+    <text x="530" y="243">  per-sector empirical fits</text>
+    <text x="530" y="265">• IN PROGRESS ×3 (active campaigns)</text>
+  </g>
+
+  <text x="685" y="295" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Calibrates INHERITED</text>
+  <g fill="#444" font-size="11">
+    <text x="530" y="318">• 𝓜_crit (matter-wave + qubit identity)</text>
+    <text x="530" y="336">• log g (Bekenstein–Hawking)</text>
+    <text x="530" y="354">• τ_R, σ_y, m_gap, etc. per sector</text>
+  </g>
+
+  <text x="685" y="392" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Falsifiable predictions</text>
+  <g fill="#444" font-size="11">
+    <text x="530" y="415">• ACTIVE ×17 awaiting test campaigns</text>
+    <text x="530" y="433">• OPEN ×4 derivation-incomplete</text>
+    <text x="530" y="455">• 40 total predictions, ~38% empirically</text>
+    <text x="530" y="473">  anchored or PASSED today</text>
+    <text x="530" y="491">• cross-domain identity tests pending</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="545" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Bidirectional interface: substrate program predicts; empirical observations anchor INHERITED constants and test predictions.</text>
+  <text x="450" y="565" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Cross-domain identities are the program's distinctive empirical posture — sharp prediction, multi-platform falsifiability.</text>
+  <text x="450" y="585" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Canonical sources: Desktop/ED_Public_Test_Inventory.md, docs/Investigation_Priority_List.md</text>
+</svg>

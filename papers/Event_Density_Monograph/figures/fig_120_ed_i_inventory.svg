@@ -1,0 +1,86 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Table C.2 — ED-I interpretation paper inventory</text>
+  <text x="450" y="40" text-anchor="middle" font-size="10" fill="#666" font-style="italic">load-bearing ED-I papers and their primary chapter assignments</text>
+
+  <!-- Headers -->
+  <g fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="40" y="55" width="100" height="32"/>
+    <rect x="140" y="55" width="280" height="32"/>
+    <rect x="420" y="55" width="100" height="32"/>
+    <rect x="520" y="55" width="340" height="32"/>
+  </g>
+  <g text-anchor="middle" fill="#fff" font-weight="bold" font-size="12">
+    <text x="90" y="76">ED-I #</text>
+    <text x="280" y="76">Title</text>
+    <text x="470" y="76">Primary Ch.</text>
+    <text x="690" y="76">Sectorial role</text>
+  </g>
+
+  <!-- Rows -->
+  <g fill="#fff" stroke="#888" stroke-width="1">
+    <rect x="40" y="87" width="100" height="32"/><rect x="140" y="87" width="280" height="32"/><rect x="420" y="87" width="100" height="32"/><rect x="520" y="87" width="340" height="32"/>
+    <rect x="40" y="119" width="100" height="32"/><rect x="140" y="119" width="280" height="32"/><rect x="420" y="119" width="100" height="32"/><rect x="520" y="119" width="340" height="32"/>
+    <rect x="40" y="151" width="100" height="32"/><rect x="140" y="151" width="280" height="32"/><rect x="420" y="151" width="100" height="32"/><rect x="520" y="151" width="340" height="32"/>
+    <rect x="40" y="183" width="100" height="32"/><rect x="140" y="183" width="280" height="32"/><rect x="420" y="183" width="100" height="32"/><rect x="520" y="183" width="340" height="32"/>
+    <rect x="40" y="215" width="100" height="32"/><rect x="140" y="215" width="280" height="32"/><rect x="420" y="215" width="100" height="32"/><rect x="520" y="215" width="340" height="32"/>
+    <rect x="40" y="247" width="100" height="32"/><rect x="140" y="247" width="280" height="32"/><rect x="420" y="247" width="100" height="32"/><rect x="520" y="247" width="340" height="32"/>
+    <rect x="40" y="279" width="100" height="32"/><rect x="140" y="279" width="280" height="32"/><rect x="420" y="279" width="100" height="32"/><rect x="520" y="279" width="340" height="32"/>
+    <rect x="40" y="311" width="100" height="32"/><rect x="140" y="311" width="280" height="32"/><rect x="420" y="311" width="100" height="32"/><rect x="520" y="311" width="340" height="32"/>
+  </g>
+
+  <g font-size="11">
+    <text x="90" y="107" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-01</text>
+    <text x="155" y="107" fill="#444">Superconductivity</text>
+    <text x="470" y="107" text-anchor="middle" font-weight="bold" fill="#444">Ch. 2</text>
+    <text x="535" y="107" fill="#444" font-style="italic">multiplicity-as-entropy reading</text>
+
+    <text x="90" y="139" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-06</text>
+    <text x="155" y="139" fill="#444">Fields and Forces in ED</text>
+    <text x="470" y="139" text-anchor="middle" font-weight="bold" fill="#444">Ch. 2 / Ch. 8</text>
+    <text x="535" y="139" fill="#444" font-style="italic">ontological roof for non-ED classification</text>
+
+    <text x="90" y="171" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-12</text>
+    <text x="155" y="171" fill="#444">Photonics</text>
+    <text x="470" y="171" text-anchor="middle" font-weight="bold" fill="#444">Ch. 7</text>
+    <text x="535" y="171" fill="#444" font-style="italic">photonic-platform substrate reading (Class A/C)</text>
+
+    <text x="90" y="203" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-13</text>
+    <text x="155" y="203" fill="#444">Quantum Information channel-geom</text>
+    <text x="470" y="203" text-anchor="middle" font-weight="bold" fill="#444">Ch. 6</text>
+    <text x="535" y="203" fill="#444" font-style="italic">QI vocabulary via channel-geometry</text>
+
+    <text x="90" y="235" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-14</text>
+    <text x="155" y="235" fill="#444">Topological Effects</text>
+    <text x="470" y="235" text-anchor="middle" font-weight="bold" fill="#444">Ch. 7</text>
+    <text x="535" y="235" fill="#444" font-style="italic">Class B (global-geometric-rigidity) reading</text>
+
+    <text x="90" y="267" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-18</text>
+    <text x="155" y="267" fill="#444">Multi-Timescale Photonics</text>
+    <text x="470" y="267" text-anchor="middle" font-weight="bold" fill="#444">Ch. 7</text>
+    <text x="535" y="267" fill="#444" font-style="italic">Hafezi 2025 anchor (PASSED)</text>
+
+    <text x="90" y="299" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-23</text>
+    <text x="155" y="299" fill="#444">Josephson Junctions</text>
+    <text x="470" y="299" text-anchor="middle" font-weight="bold" fill="#444">Ch. 2</text>
+    <text x="535" y="299" fill="#444" font-style="italic">multiplicity at engineered low-𝓜 regions</text>
+
+    <text x="90" y="331" text-anchor="middle" font-weight="bold" fill="#1a4f8b">ED-I-29</text>
+    <text x="155" y="331" fill="#444">Tunneling</text>
+    <text x="470" y="331" text-anchor="middle" font-weight="bold" fill="#444">Ch. 2</text>
+    <text x="535" y="331" fill="#444" font-style="italic">sparse-σ regions + global rule reconfiguration</text>
+  </g>
+
+  <!-- Note section -->
+  <rect x="40" y="380" width="820" height="180" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="405" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Notes on the ED-I series</text>
+  <line x1="60" y1="415" x2="840" y2="415" stroke="#bbb" stroke-width="0.5"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="438">• ED-I papers supply sector-specific substrate-level interpretations of canonical physics phenomena.</text>
+    <text x="60" y="456">• Eight ED-I papers are load-bearing in the monograph (assigned above); additional ED-I papers in the program</text>
+    <text x="60" y="474">  cover sectors not load-bearing in any chapter and contribute to Chapter 15's prediction inventory only.</text>
+    <text x="60" y="498">• Numbering follows the program's sectorial cataloging; the index is not contiguous because some ED-I numbers</text>
+    <text x="60" y="516">  belong to interpretation papers in sectors not load-bearing within this monograph.</text>
+    <text x="60" y="540">• Each ED-I paper is a structural reading, not a derivation; derivations live in the corresponding closed-arc papers.</text>
+    <text x="60" y="558">  ED-I-06 is the ontological roof grounding the field/force taxonomy throughout the program.</text>
+  </g>
+</svg>

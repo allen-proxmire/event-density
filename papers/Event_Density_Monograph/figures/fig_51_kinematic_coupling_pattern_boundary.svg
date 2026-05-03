@@ -1,0 +1,64 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 9.3 — The kinematic-coupling pattern: a boundary between ED and non-ED</text>
+
+  <!-- Vertical divider with label "non-ED boundary" -->
+  <line x1="450" y1="80" x2="450" y2="490" stroke="#a05a00" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <text x="450" y="74" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">classification boundary (non-ED)</text>
+
+  <!-- LEFT: Two kinematic-coupling instances -->
+  <text x="225" y="108" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Two kinematic-coupling instances</text>
+
+  <!-- NS advection -->
+  <rect x="40" y="125" width="380" height="155" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="230" y="150" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">NS advection</text>
+  <line x1="55" y1="160" x2="405" y2="160" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="230" y="187" text-anchor="middle" font-size="14" fill="#a05a00" font-weight="bold">(v · ∇)v</text>
+  <text x="230" y="210" text-anchor="middle" font-size="11" fill="#444">flow couples to its own gradient</text>
+  <text x="230" y="228" text-anchor="middle" font-size="11" fill="#444">in Eulerian frame</text>
+  <text x="230" y="252" text-anchor="middle" font-size="11" fill="#444" font-style="italic">three-angle convergence: non-ED</text>
+  <text x="230" y="270" text-anchor="middle" font-size="10" fill="#666">— Figure 8.3, Chapter 8</text>
+
+  <!-- MHD induction -->
+  <rect x="40" y="305" width="380" height="155" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="230" y="330" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">MHD induction equation</text>
+  <line x1="55" y1="340" x2="405" y2="340" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="230" y="367" text-anchor="middle" font-size="14" fill="#a05a00" font-weight="bold">∂ₜB = ∇ × (v × B) + η ∇²B</text>
+  <text x="230" y="390" text-anchor="middle" font-size="11" fill="#444">advective term (v × B):</text>
+  <text x="230" y="408" text-anchor="middle" font-size="11" fill="#444">B couples kinematically to v</text>
+  <text x="230" y="432" text-anchor="middle" font-size="11" fill="#444" font-style="italic">parallels NS advection: non-ED</text>
+  <text x="230" y="450" text-anchor="middle" font-size="10" fill="#666">— Chapter 9, Appendix C</text>
+
+  <!-- RIGHT: shared structural diagnosis -->
+  <text x="675" y="108" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Shared structural diagnosis</text>
+
+  <rect x="480" y="125" width="380" height="335" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="670" y="150" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Both terms exhibit:</text>
+  <line x1="495" y1="160" x2="845" y2="160" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <g fill="#444" font-size="12">
+    <text x="495" y="187">• kinematic transport in</text>
+    <text x="510" y="205">  Eulerian-frame derivative</text>
+
+    <text x="495" y="232">• no DCGT route at any order ε^n</text>
+    <text x="510" y="250">  produces them from substrate</text>
+
+    <text x="495" y="277">• ED-I-06 gives them no field/force</text>
+    <text x="510" y="295">  classification under taxonomy</text>
+
+    <text x="495" y="322">• vanish in Lagrangian frame —</text>
+    <text x="510" y="340">  not coordinate-invariant content</text>
+
+    <text x="495" y="367">• couple two existing ED objects</text>
+    <text x="510" y="385">  (v with v, or v with B) without</text>
+    <text x="510" y="403">  introducing new substrate content</text>
+  </g>
+
+  <text x="670" y="437" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a4f8b">→ "kinematic-coupling pattern"</text>
+  <text x="670" y="453" text-anchor="middle" font-size="10" fill="#666" font-style="italic">load-bearing finding for NS-MHD arc closure</text>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="525" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Why the pattern is load-bearing</text>
+  <text x="60" y="548" font-size="11" fill="#444">Two domain-specific phenomena (NS advection, MHD induction) share the same structural diagnosis. The pattern lifts the</text>
+  <text x="60" y="566" font-size="11" fill="#444">classification from a single-instance verdict (advection non-ED) to a class-level verdict (kinematic couplings non-ED).</text>
+</svg>

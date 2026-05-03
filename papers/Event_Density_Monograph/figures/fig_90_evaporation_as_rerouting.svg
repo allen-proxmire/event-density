@@ -1,0 +1,65 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrSm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a05a00"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 13.6 — Evaporation as participation re-routing through V1</text>
+
+  <!-- Central BH -->
+  <circle cx="450" cy="290" r="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2"/>
+  <text x="450" y="285" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Σ_H</text>
+  <text x="450" y="305" text-anchor="middle" fill="#fff" font-size="11">decoupling surface</text>
+
+  <!-- Inner: substrate participation pre-existing before horizon -->
+  <text x="450" y="270" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">interior:</text>
+  <text x="450" y="325" text-anchor="middle" fill="#fff" font-size="10">substrate participation</text>
+
+  <!-- V1 vacuum kernel symbol around horizon -->
+  <circle cx="450" cy="290" r="125" fill="none" stroke="#a05a00" stroke-width="1.5" stroke-dasharray="3,4"/>
+  <text x="450" y="160" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">V1 vacuum kernel</text>
+  <text x="450" y="178" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">finite-width temporal smearing</text>
+
+  <!-- Outgoing radiation arrows around horizon -->
+  <g stroke="#a05a00" stroke-width="1.5" fill="none" marker-end="url(#arrSm)">
+    <line x1="500" y1="195" x2="555" y2="170"/>
+    <line x1="395" y1="195" x2="340" y2="170"/>
+    <line x1="555" y1="290" x2="620" y2="290"/>
+    <line x1="345" y1="290" x2="280" y2="290"/>
+    <line x1="500" y1="385" x2="555" y2="410"/>
+    <line x1="395" y1="385" x2="340" y2="410"/>
+    <line x1="380" y1="240" x2="320" y2="225"/>
+    <line x1="520" y1="240" x2="580" y2="225"/>
+    <line x1="380" y1="340" x2="320" y2="355"/>
+    <line x1="520" y1="340" x2="580" y2="355"/>
+  </g>
+
+  <text x="640" y="295" font-size="10" fill="#a05a00">Hawking-class</text>
+  <text x="640" y="310" font-size="10" fill="#a05a00">radiation</text>
+
+  <!-- Side annotations -->
+  <rect x="40" y="435" width="380" height="155" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="230" y="460" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Mechanism</text>
+  <line x1="55" y1="470" x2="405" y2="470" stroke="#a05a00" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="492">• participation flow re-routes</text>
+    <text x="60" y="510">  through V1 finite-width kernel</text>
+    <text x="60" y="528">• outward modes inherit T_H spectrum</text>
+    <text x="60" y="546">  via kernel-modulated emission</text>
+    <text x="60" y="564">• T_H = κ / (2π) where κ is</text>
+    <text x="60" y="582">  surface gravity at Σ_H</text>
+  </g>
+
+  <rect x="480" y="435" width="380" height="155" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="670" y="460" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Key feature</text>
+  <line x1="495" y1="470" x2="845" y2="470" stroke="#1a4f8b" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="500" y="492">• no information loss in standard sense</text>
+    <text x="500" y="510">• outward radiation correlates with</text>
+    <text x="500" y="528">  pre-existing substrate participation rules</text>
+    <text x="500" y="546">  via shared-rule-coherence</text>
+    <text x="500" y="564">• B4 Hawking spectrum derivation:</text>
+    <text x="500" y="582">  next concrete arc on roadmap</text>
+  </g>
+</svg>

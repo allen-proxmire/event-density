@@ -1,0 +1,151 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="26" text-anchor="middle" font-size="14" font-weight="bold">Figure 2.1 — Five load-bearing invariants × chapters: cross-arc incidence</text>
+
+  <!-- Layout: column headers (chapters 3..13) at top, row headers (5 invariants) at left, filled cells = load-bearing -->
+  <!-- Origin: row labels x=40..160, columns x=180..880 (11 columns of width ~63 each) -->
+
+  <!-- Column headers -->
+  <g text-anchor="middle" font-weight="bold" fill="#444">
+    <text x="215" y="78">Ch3</text>
+    <text x="278" y="78">Ch4</text>
+    <text x="341" y="78">Ch5</text>
+    <text x="404" y="78">Ch6</text>
+    <text x="467" y="78">Ch7</text>
+    <text x="530" y="78">Ch8</text>
+    <text x="593" y="78">Ch9</text>
+    <text x="656" y="78">Ch10</text>
+    <text x="719" y="78">Ch11</text>
+    <text x="782" y="78">Ch12</text>
+    <text x="845" y="78">Ch13</text>
+  </g>
+  <g text-anchor="middle" font-size="10" fill="#888">
+    <text x="215" y="92">DCGT</text>
+    <text x="278" y="92">arrow</text>
+    <text x="341" y="92">QM</text>
+    <text x="404" y="92">QFT</text>
+    <text x="467" y="92">QC</text>
+    <text x="530" y="92">NS</text>
+    <text x="593" y="92">YM</text>
+    <text x="656" y="92">soft-m.</text>
+    <text x="719" y="92">SG</text>
+    <text x="782" y="92">curve</text>
+    <text x="845" y="92">BH</text>
+  </g>
+
+  <!-- Grid: 5 rows × 11 cols, cell 60×60 starting (185,110) -->
+  <g stroke="#bbb" stroke-width="1" fill="#fff">
+    <!-- Row 1 𝓜 (multiplicity) y=110..170 -->
+    <rect x="185" y="110" width="60" height="60"/>
+    <rect x="248" y="110" width="60" height="60"/>
+    <rect x="311" y="110" width="60" height="60"/>
+    <rect x="374" y="110" width="60" height="60"/>
+    <rect x="437" y="110" width="60" height="60"/>
+    <rect x="500" y="110" width="60" height="60"/>
+    <rect x="563" y="110" width="60" height="60"/>
+    <rect x="626" y="110" width="60" height="60"/>
+    <rect x="689" y="110" width="60" height="60"/>
+    <rect x="752" y="110" width="60" height="60"/>
+    <rect x="815" y="110" width="60" height="60"/>
+    <!-- Row 2 σ y=180..240 -->
+    <rect x="185" y="180" width="60" height="60"/>
+    <rect x="248" y="180" width="60" height="60"/>
+    <rect x="311" y="180" width="60" height="60"/>
+    <rect x="374" y="180" width="60" height="60"/>
+    <rect x="437" y="180" width="60" height="60"/>
+    <rect x="500" y="180" width="60" height="60"/>
+    <rect x="563" y="180" width="60" height="60"/>
+    <rect x="626" y="180" width="60" height="60"/>
+    <rect x="689" y="180" width="60" height="60"/>
+    <rect x="752" y="180" width="60" height="60"/>
+    <rect x="815" y="180" width="60" height="60"/>
+    <!-- Row 3 Γ_cross y=250..310 -->
+    <rect x="185" y="250" width="60" height="60"/>
+    <rect x="248" y="250" width="60" height="60"/>
+    <rect x="311" y="250" width="60" height="60"/>
+    <rect x="374" y="250" width="60" height="60"/>
+    <rect x="437" y="250" width="60" height="60"/>
+    <rect x="500" y="250" width="60" height="60"/>
+    <rect x="563" y="250" width="60" height="60"/>
+    <rect x="626" y="250" width="60" height="60"/>
+    <rect x="689" y="250" width="60" height="60"/>
+    <rect x="752" y="250" width="60" height="60"/>
+    <rect x="815" y="250" width="60" height="60"/>
+    <!-- Row 4 V1 y=320..380 -->
+    <rect x="185" y="320" width="60" height="60"/>
+    <rect x="248" y="320" width="60" height="60"/>
+    <rect x="311" y="320" width="60" height="60"/>
+    <rect x="374" y="320" width="60" height="60"/>
+    <rect x="437" y="320" width="60" height="60"/>
+    <rect x="500" y="320" width="60" height="60"/>
+    <rect x="563" y="320" width="60" height="60"/>
+    <rect x="626" y="320" width="60" height="60"/>
+    <rect x="689" y="320" width="60" height="60"/>
+    <rect x="752" y="320" width="60" height="60"/>
+    <rect x="815" y="320" width="60" height="60"/>
+    <!-- Row 5 P11 y=390..450 -->
+    <rect x="185" y="390" width="60" height="60"/>
+    <rect x="248" y="390" width="60" height="60"/>
+    <rect x="311" y="390" width="60" height="60"/>
+    <rect x="374" y="390" width="60" height="60"/>
+    <rect x="437" y="390" width="60" height="60"/>
+    <rect x="500" y="390" width="60" height="60"/>
+    <rect x="563" y="390" width="60" height="60"/>
+    <rect x="626" y="390" width="60" height="60"/>
+    <rect x="689" y="390" width="60" height="60"/>
+    <rect x="752" y="390" width="60" height="60"/>
+    <rect x="815" y="390" width="60" height="60"/>
+  </g>
+
+  <!-- Filled cells (load-bearing) using accent color -->
+  <g fill="#1a4f8b">
+    <!-- 𝓜 row: heavy in QM, QC, soft-m, BH -->
+    <rect x="311" y="110" width="60" height="60"/>
+    <rect x="437" y="110" width="60" height="60"/>
+    <rect x="626" y="110" width="60" height="60"/>
+    <rect x="815" y="110" width="60" height="60"/>
+    <!-- σ row: DCGT, NS, BH, curve -->
+    <rect x="185" y="180" width="60" height="60"/>
+    <rect x="500" y="180" width="60" height="60"/>
+    <rect x="752" y="180" width="60" height="60"/>
+    <rect x="815" y="180" width="60" height="60"/>
+    <!-- Γ_cross row: DCGT, QFT, QC, NS, YM, SG, BH -->
+    <rect x="185" y="250" width="60" height="60"/>
+    <rect x="374" y="250" width="60" height="60"/>
+    <rect x="437" y="250" width="60" height="60"/>
+    <rect x="500" y="250" width="60" height="60"/>
+    <rect x="563" y="250" width="60" height="60"/>
+    <rect x="689" y="250" width="60" height="60"/>
+    <rect x="815" y="250" width="60" height="60"/>
+    <!-- V1 row: arrow, QFT, NS, YM, soft-m, BH, curve -->
+    <rect x="248" y="320" width="60" height="60"/>
+    <rect x="374" y="320" width="60" height="60"/>
+    <rect x="500" y="320" width="60" height="60"/>
+    <rect x="563" y="320" width="60" height="60"/>
+    <rect x="626" y="320" width="60" height="60"/>
+    <rect x="752" y="320" width="60" height="60"/>
+    <rect x="815" y="320" width="60" height="60"/>
+    <!-- P11 row: arrow, QM, QC, BH -->
+    <rect x="248" y="390" width="60" height="60"/>
+    <rect x="311" y="390" width="60" height="60"/>
+    <rect x="437" y="390" width="60" height="60"/>
+    <rect x="815" y="390" width="60" height="60"/>
+  </g>
+
+  <!-- Row labels -->
+  <g text-anchor="end" font-weight="bold" fill="#1a4f8b" font-size="13">
+    <text x="175" y="145">𝓜  (multiplicity)</text>
+    <text x="175" y="215">σ  (gradient sparsity)</text>
+    <text x="175" y="285">Γ_cross</text>
+    <text x="175" y="355">V1  (kernel)</text>
+    <text x="175" y="425">P11  (commitment)</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(40, 510)">
+    <rect x="0" y="0" width="20" height="20" fill="#1a4f8b" stroke="#1a4f8b"/>
+    <text x="28" y="14" fill="#444">load-bearing</text>
+    <rect x="160" y="0" width="20" height="20" fill="#fff" stroke="#bbb"/>
+    <text x="188" y="14" fill="#444">not load-bearing</text>
+  </g>
+  <text x="450" y="565" text-anchor="middle" font-size="11" fill="#666" font-style="italic">All five invariants recur across multiple sectors. P11 and Γ_cross are the most cross-cutting.</text>
+</svg>

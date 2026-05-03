@@ -1,0 +1,65 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 8.1 — Four-fold architectural decomposition of Navier–Stokes</text>
+
+  <!-- NS equation banner -->
+  <rect x="80" y="60" width="740" height="60" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="450" y="86" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">∂ₜv  +  (v · ∇)v  =  −∇p / ρ  +  ν ∇²v  +  R1  +  f</text>
+  <text x="450" y="108" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">decomposed into four ED-architectural categories</text>
+
+  <!-- Four boxes -->
+  <!-- Top-left: canonical-ED -->
+  <rect x="40" y="155" width="400" height="180" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="240" y="180" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">1. Canonical-ED</text>
+  <text x="240" y="198" text-anchor="middle" font-size="11" fill="#444" font-style="italic">substrate-derived via DCGT</text>
+  <line x1="55" y1="208" x2="425" y2="208" stroke="#1a4f8b" stroke-width="0.8"/>
+  <g fill="#444" font-size="12">
+    <text x="60" y="232">• ν ∇²v  viscous term</text>
+    <text x="60" y="252">  (directional viscosity from chain-momentum)</text>
+    <text x="60" y="278">• R1 = −κ μ_V1 ℓ_P² ∇⁴v</text>
+    <text x="60" y="298">  (substrate-cutoff hyperviscous regularization)</text>
+    <text x="60" y="324">• ∂ₜv leading-order time evolution</text>
+  </g>
+
+  <!-- Top-right: transport-kinematic -->
+  <rect x="460" y="155" width="400" height="180" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="660" y="180" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. Transport-kinematic (non-ED)</text>
+  <text x="660" y="198" text-anchor="middle" font-size="11" fill="#444" font-style="italic">frame artifact, not substrate-fundamental</text>
+  <line x1="475" y1="208" x2="845" y2="208" stroke="#a05a00" stroke-width="0.8"/>
+  <g fill="#444" font-size="12">
+    <text x="480" y="232">• (v · ∇)v  advection term</text>
+    <text x="480" y="252">  (Galilean-frame transport, three-angle proof)</text>
+    <text x="480" y="278">• material-derivative structure</text>
+    <text x="480" y="298">  (kinematic, not dynamical content)</text>
+    <text x="480" y="324">• arises from Eulerian frame choice</text>
+  </g>
+
+  <!-- Bottom-left: ED-coupled -->
+  <rect x="40" y="355" width="400" height="180" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="240" y="380" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">3. ED-coupled</text>
+  <text x="240" y="398" text-anchor="middle" font-size="11" fill="#444" font-style="italic">substrate-coupled but not pure-ED</text>
+  <line x1="55" y1="408" x2="425" y2="408" stroke="#5a2090" stroke-width="0.8"/>
+  <g fill="#444" font-size="12">
+    <text x="60" y="432">• −∇p / ρ  pressure-gradient acceleration</text>
+    <text x="60" y="452">  (couples substrate ρ with kinematic gradient)</text>
+    <text x="60" y="478">• incompressibility ∇·v = 0</text>
+    <text x="60" y="498">  (constraint at coarse-grained scale)</text>
+    <text x="60" y="524">• boundary terms / surface tractions</text>
+  </g>
+
+  <!-- Bottom-right: continuum-imposed -->
+  <rect x="460" y="355" width="400" height="180" fill="#f5f5f5" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="660" y="380" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">4. Continuum-imposed</text>
+  <text x="660" y="398" text-anchor="middle" font-size="11" fill="#666" font-style="italic">imposed at continuum level, not substrate</text>
+  <line x1="475" y1="408" x2="845" y2="408" stroke="#888" stroke-width="0.8"/>
+  <g fill="#444" font-size="12">
+    <text x="480" y="432">• f  external forcing</text>
+    <text x="480" y="452">  (problem-specific input, not derived)</text>
+    <text x="480" y="478">• boundary / initial conditions</text>
+    <text x="480" y="498">  (continuum-level closure)</text>
+    <text x="480" y="524">• constitutive Newtonian assumption</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="565" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Only category 1 is canonical-ED; categories 2–4 are non-ED in the ED-I-06 ontological sense.</text>
+  <text x="450" y="582" text-anchor="middle" font-size="11" fill="#444" font-style="italic">The Intermediate Path C closure (Ch. 8) operates on category 1; categories 2–4 are kinematic / continuum-imposed framing.</text>
+</svg>

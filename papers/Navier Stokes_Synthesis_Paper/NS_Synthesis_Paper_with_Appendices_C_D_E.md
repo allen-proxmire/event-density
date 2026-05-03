@@ -1,11 +1,9 @@
-# The Architectural Foundations of Navier–Stokes in Event Density
-## Form Derivation, Clay-Relevance Decomposition, and the Structural Status of Turbulence
-
-**Allen Proxmire**
-**Collaborator:** Claude (AI collaborator)
-**April 2026**
-**Series:** Event-Density Foundational Theorems — Navier–Stokes Synthesis
-
+---
+title: |
+  The Architectural Foundations of Navier–Stokes in Event Density\
+  \large Form Derivation, Clay-Relevance Decomposition, and the Structural Status of Turbulence
+author: Allen Proxmire
+date: April 2026
 ---
 
 ## Abstract

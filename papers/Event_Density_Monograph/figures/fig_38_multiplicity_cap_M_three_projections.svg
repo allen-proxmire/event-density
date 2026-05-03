@@ -1,0 +1,82 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 7.5 — Multiplicity-cap function M(𝓢, K, 𝓔, 𝓞) and its three architectural projections</text>
+
+  <!-- Central object: M with arguments -->
+  <rect x="240" y="65" width="420" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="100" text-anchor="middle" fill="#fff" font-weight="bold" font-size="20">M ( 𝓢, K, 𝓔, 𝓞 )</text>
+  <text x="450" y="125" text-anchor="middle" fill="#fff" font-size="11">one substrate object — the multiplicity-cap function</text>
+  <line x1="260" y1="135" x2="640" y2="135" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="155" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">𝓢: substrate region   K: class A/B/C   𝓔: environment   𝓞: meta-overlay</text>
+
+  <!-- Three projections fanning out below -->
+
+  <!-- Projection A -->
+  <line x1="380" y1="170" x2="170" y2="245" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="265" y="205" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">K = A</text>
+
+  <rect x="40" y="250" width="260" height="280" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="170" y="278" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="14">Class A projection</text>
+  <text x="170" y="297" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">M_A(𝓢, 𝓔, 𝓞)</text>
+  <line x1="55" y1="307" x2="285" y2="307" stroke="#1a4f8b" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="332">f_int(M_mol)</text>
+    <text x="60" y="350">— internal-mode scaling</text>
+    <text x="60" y="375">f_xy(N_qubits)</text>
+    <text x="60" y="393">— qubit-count scaling</text>
+    <text x="60" y="418">𝓜_floor, γ_floor</text>
+    <text x="60" y="436">— architectural floors</text>
+    <text x="60" y="461">A_S architectural restoring rate</text>
+  </g>
+  <text x="170" y="498" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">failure mode: τ_(iii)</text>
+  <text x="170" y="515" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">isolation ceiling Λ_V1</text>
+
+  <!-- Projection B -->
+  <line x1="450" y1="170" x2="450" y2="245" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="465" y="210" font-size="11" fill="#1a4f8b" font-style="italic">K = B</text>
+
+  <rect x="320" y="250" width="260" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="278" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="14">Class B projection</text>
+  <text x="450" y="297" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">M_B(𝓢, 𝓔, 𝓞)</text>
+  <line x1="335" y1="307" x2="565" y2="307" stroke="#a05a00" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="340" y="332">Δ_top topological gap</text>
+    <text x="340" y="350">— protective gap structure</text>
+    <text x="340" y="375">𝓣 topological structure label</text>
+    <text x="340" y="393">— per-topology classification</text>
+    <text x="340" y="418">τ_gap-stab(𝓣)</text>
+    <text x="340" y="436">— gap-perturbation rate</text>
+    <text x="340" y="461">global-geometric rigidity</text>
+  </g>
+  <text x="450" y="498" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">failure mode: τ_(i)</text>
+  <text x="450" y="515" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">topological gap closure</text>
+
+  <!-- Projection C -->
+  <line x1="520" y1="170" x2="730" y2="245" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="635" y="205" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">K = C</text>
+
+  <rect x="600" y="250" width="260" height="280" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="730" y="278" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="14">Class C projection</text>
+  <text x="730" y="297" text-anchor="middle" font-size="11" fill="#5a2090" font-style="italic">M_C(𝓢, 𝓔, 𝓞)</text>
+  <line x1="615" y1="307" x2="845" y2="307" stroke="#5a2090" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="620" y="332">g(N) redundancy modifier</text>
+    <text x="620" y="350">— redundant-channel scaling</text>
+    <text x="620" y="375">h(N) hybridization modifier</text>
+    <text x="620" y="393">— code-composition scaling</text>
+    <text x="620" y="418">c(N) correlation modifier</text>
+    <text x="620" y="436">— correlation budget N_corr</text>
+    <text x="620" y="461">f_sys^(A) system-size scaling</text>
+  </g>
+  <text x="730" y="498" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">failure mode: τ_(ii)</text>
+  <text x="730" y="515" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">correlation-budget plateau</text>
+
+  <!-- Footer -->
+  <text x="450" y="560" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Three projections of one substrate function. Each shares the same 𝓢, 𝓔, 𝓞 inputs but unfolds different INHERITED scaling structure.</text>
+  <text x="450" y="578" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Form-FORCED: existence of M and its three-class projection structure. Value-INHERITED: specific shapes of f_int, f_xy, g, h, c.</text>
+</svg>

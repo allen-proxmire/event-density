@@ -1,0 +1,108 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 15.6 — Open-extensions roadmap</text>
+
+  <!-- Three columns: near-term / mid-term / long-horizon -->
+
+  <!-- Near-term -->
+  <rect x="40" y="60" width="265" height="500" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="86" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Near-term concrete arcs</text>
+  <text x="172" y="104" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">substrate-level closure expected</text>
+  <line x1="55" y1="115" x2="290" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="172" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">B4: Hawking spectrum</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="165">• closed-form T_H spectrum</text>
+    <text x="60" y="183">  via V1 kernel modulation</text>
+    <text x="60" y="201">• next concrete arc on roadmap</text>
+    <text x="60" y="219">• Chapter 13 (BH)</text>
+  </g>
+
+  <text x="172" y="252" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">O-QC items (six)</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="275">• O-QC-1 𝓜_crit closed form</text>
+    <text x="60" y="293">• O-QC-2 architecture-platform</text>
+    <text x="60" y="311">  calibration f-functions</text>
+    <text x="60" y="329">• O-QC-3 Class C N_corr</text>
+    <text x="60" y="347">• O-QC-4 topology-stability</text>
+    <text x="60" y="365">• O-QC-5 meta-overlay theorems</text>
+    <text x="60" y="383">• O-QC-6 hybrid composition</text>
+  </g>
+
+  <text x="172" y="416" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">BH O items (three)</text>
+  <g fill="#444" font-size="11">
+    <text x="60" y="439">• O1 superradiance amplitude</text>
+    <text x="60" y="457">• O2 closed-form log g</text>
+    <text x="60" y="475">• O3 full Kerr-interior audit</text>
+  </g>
+
+  <text x="172" y="510" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">substrate routes identified;</text>
+  <text x="172" y="528" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">derivation steps tractable</text>
+  <text x="172" y="546" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">in current scope</text>
+
+  <!-- Mid-term -->
+  <rect x="320" y="60" width="265" height="500" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="452" y="86" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Mid-term targets</text>
+  <text x="452" y="104" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">closed-form-substrate-constants</text>
+  <line x1="335" y1="115" x2="570" y2="115" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="452" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Three structurally similar</text>
+  <text x="452" y="160" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">closed-form targets</text>
+  <g fill="#444" font-size="11">
+    <text x="340" y="190">• 𝓜_crit  (O-QC-1)</text>
+    <text x="340" y="208">  cross-platform identity anchor</text>
+    <text x="340" y="232">• log g  (O2)</text>
+    <text x="340" y="250">  BH motif counting closed form</text>
+    <text x="340" y="274">• κ / |N̂'|  (E4)</text>
+    <text x="340" y="292">  cross-scale invariance ratio</text>
+  </g>
+
+  <text x="452" y="325" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Cross-domain consistency</text>
+  <text x="452" y="345" text-anchor="middle" font-size="11" fill="#444">closed-form derivation in any one</text>
+  <text x="452" y="363" text-anchor="middle" font-size="11" fill="#444">constrains the others via</text>
+  <text x="452" y="381" text-anchor="middle" font-size="11" fill="#444">substrate counting machinery</text>
+
+  <text x="452" y="415" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Topology-stability theorem</text>
+  <text x="452" y="435" text-anchor="middle" font-size="11" fill="#444">τ_gap-stab(𝓣) Class B route</text>
+  <text x="452" y="453" text-anchor="middle" font-size="11" fill="#444">+ architecture-to-platform</text>
+  <text x="452" y="471" text-anchor="middle" font-size="11" fill="#444">calibration</text>
+
+  <text x="452" y="510" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">substrate routes identified;</text>
+  <text x="452" y="528" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">closed-form derivation in</text>
+  <text x="452" y="546" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">multi-session scope</text>
+
+  <!-- Long-horizon -->
+  <rect x="600" y="60" width="265" height="500" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="732" y="86" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">Long-horizon speculative</text>
+  <text x="732" y="104" text-anchor="middle" font-size="11" fill="#5a2090" font-style="italic">structural barriers identified</text>
+  <line x1="615" y1="115" x2="850" y2="115" stroke="#5a2090" stroke-width="0.8"/>
+
+  <text x="732" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">GR-4A: Einstein equation</text>
+  <g fill="#444" font-size="11">
+    <text x="620" y="165">• full G_μν + Λ g_μν =</text>
+    <text x="620" y="183">  8πG T_μν derivation</text>
+    <text x="620" y="201">• curvature dynamics from</text>
+    <text x="620" y="219">  acoustic-metric kinematics</text>
+    <text x="620" y="237">• may require new primitive</text>
+    <text x="620" y="255">  (no-new-primitives discipline</text>
+    <text x="620" y="273">  currently rules this out)</text>
+  </g>
+
+  <text x="732" y="312" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Arc COSMO</text>
+  <g fill="#444" font-size="11">
+    <text x="620" y="335">• cosmological-scale dynamics</text>
+    <text x="620" y="353">• large-scale structure</text>
+    <text x="620" y="371">• inflation / Big Bang</text>
+    <text x="620" y="389">• beyond current substrate scope</text>
+  </g>
+
+  <text x="732" y="425" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">ED-entrainment universality</text>
+  <g fill="#444" font-size="11">
+    <text x="620" y="448">• universal cross-platform</text>
+    <text x="620" y="466">  entrainment signature</text>
+    <text x="620" y="484">• OPEN — derivation incomplete</text>
+  </g>
+
+  <text x="732" y="510" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">SPECULATIVE; structural</text>
+  <text x="732" y="528" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">barriers identified;</text>
+  <text x="732" y="546" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">resolution path unclear</text>
+</svg>

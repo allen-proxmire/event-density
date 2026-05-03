@@ -1,0 +1,75 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 6.5 — Form-level QFT closure as a structural waypoint</text>
+
+  <!-- Linear timeline showing upstream foundations → form-level QFT (this chapter) → downstream extensions -->
+
+  <!-- Upstream stage -->
+  <rect x="40" y="80" width="220" height="220" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="150" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Upstream foundations</text>
+  <line x1="55" y1="115" x2="245" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="140">• P01–P13 substrate primitives</text>
+    <text x="60" y="160">• Phase-1 QM closure (T1–T16)</text>
+    <text x="60" y="180">• N1 finite-width V1 kernel</text>
+    <text x="60" y="200">• T18 kernel-arrow</text>
+    <text x="60" y="220">• DCGT bridge</text>
+    <text x="60" y="240">• U1–U5 paper chain</text>
+  </g>
+  <text x="150" y="280" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Chapters 1–5</text>
+
+  <!-- Waypoint: form-level QFT -->
+  <rect x="320" y="80" width="260" height="380" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="110" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">Form-level QFT closure</text>
+  <text x="450" y="128" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">this chapter (6)</text>
+  <line x1="340" y1="138" x2="560" y2="138" stroke="#fff" stroke-width="0.8"/>
+  <g fill="#fff" font-size="12">
+    <text x="340" y="165">• T17 gauge-fields-as-rule-types</text>
+    <text x="340" y="185">  (Abelian + non-Abelian)</text>
+    <text x="340" y="210">• minimal-coupling Lorentz</text>
+    <text x="340" y="230">  derived from interface property</text>
+    <text x="340" y="255">• substrate UV-finiteness</text>
+    <text x="340" y="275">  P01 + N1 V1 finite width</text>
+    <text x="340" y="300">• ED-I-13 channel-geometry</text>
+    <text x="340" y="320">  reading of QI</text>
+    <text x="340" y="345">• retarded propagator from</text>
+    <text x="340" y="365">  T18 kernel-arrow</text>
+  </g>
+  <line x1="340" y1="385" x2="560" y2="385" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="408" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">structural form FORCED;</text>
+  <text x="450" y="425" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">specific spectra,</text>
+  <text x="450" y="442" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">couplings INHERITED</text>
+
+  <!-- Downstream stage -->
+  <rect x="640" y="80" width="220" height="220" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="750" y="105" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Downstream extensions</text>
+  <line x1="655" y1="115" x2="845" y2="115" stroke="#a05a00" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="660" y="140">• QC architecture (Ch. 7)</text>
+    <text x="660" y="160">• MHD via T17 U(1) (Ch. 9)</text>
+    <text x="660" y="180">• Yang–Mills (Ch. 9)</text>
+    <text x="660" y="200">• YM mass-gap mechanism</text>
+    <text x="660" y="220">• T17 in soft-matter EM (Ch. 10)</text>
+    <text x="660" y="240">• curved-spacetime QFT</text>
+    <text x="660" y="260">  (Chs. 12–13 via GR1)</text>
+  </g>
+  <text x="750" y="290" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Chapters 7–13</text>
+
+  <!-- Connecting arrows -->
+  <g stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)">
+    <line x1="260" y1="200" x2="320" y2="200"/>
+    <line x1="580" y1="200" x2="640" y2="200"/>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="490" width="820" height="90" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="514" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the waypoint</text>
+  <text x="60" y="538" font-size="11" fill="#444">Form-level QFT is the structural junction between Phase-1 QM and the broader program. It is not a stopping point: every</text>
+  <text x="60" y="556" font-size="11" fill="#444">downstream sector (QC, MHD, YM, curved-spacetime BH) routes through Chapter 6's content. The closure is form-level only —</text>
+  <text x="60" y="572" font-size="11" fill="#444">specific dynamical content (spectra, couplings, scattering amplitudes) is value-INHERITED in each downstream sector.</text>
+</svg>

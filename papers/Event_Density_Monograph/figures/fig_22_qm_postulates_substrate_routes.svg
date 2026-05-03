@@ -1,0 +1,103 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 5.1 — Four QM postulates and their substrate-level derivation routes</text>
+
+  <!-- Column headers -->
+  <text x="155" y="62" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Substrate inputs</text>
+  <text x="450" y="62" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Mathematical bridge</text>
+  <text x="745" y="62" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">QM postulate (DERIVED)</text>
+
+  <!-- Row 1: Born rule -->
+  <rect x="40" y="80" width="230" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="155" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">P04 + non-contextuality</text>
+  <text x="155" y="125" text-anchor="middle" font-size="11" fill="#444">bandwidth conservation across</text>
+  <text x="155" y="142" text-anchor="middle" font-size="11" fill="#444">orthogonal decompositions</text>
+
+  <rect x="335" y="80" width="230" height="80" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="4"/>
+  <text x="450" y="105" text-anchor="middle" font-weight="bold" fill="#444" font-size="12">Gleason (1957)</text>
+  <text x="450" y="125" text-anchor="middle" font-size="11" fill="#444">measure on Hilbert subspaces</text>
+  <text x="450" y="142" text-anchor="middle" font-size="11" fill="#444">forced to squared form</text>
+
+  <rect x="630" y="80" width="230" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="745" y="105" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Born rule</text>
+  <text x="745" y="128" text-anchor="middle" font-size="11" fill="#444">P(outcome) = |⟨ψ|φ⟩|²</text>
+  <text x="745" y="148" text-anchor="middle" font-size="10" fill="#666" font-style="italic">squared form FORCED</text>
+
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrR)">
+    <line x1="270" y1="120" x2="335" y2="120"/>
+    <line x1="565" y1="120" x2="630" y2="120"/>
+  </g>
+
+  <!-- Row 2: Schrödinger -->
+  <rect x="40" y="195" width="230" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="155" y="220" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">substrate time-translation</text>
+  <text x="155" y="240" text-anchor="middle" font-size="11" fill="#444">symmetry on closed systems</text>
+  <text x="155" y="257" text-anchor="middle" font-size="11" fill="#444">+ continuity</text>
+
+  <rect x="335" y="195" width="230" height="80" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="4"/>
+  <text x="450" y="220" text-anchor="middle" font-weight="bold" fill="#444" font-size="12">Stone (1932)</text>
+  <text x="450" y="240" text-anchor="middle" font-size="11" fill="#444">one-parameter unitary group</text>
+  <text x="450" y="257" text-anchor="middle" font-size="11" fill="#444">→ self-adjoint generator</text>
+
+  <rect x="630" y="195" width="230" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="745" y="220" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Schrödinger evolution</text>
+  <text x="745" y="243" text-anchor="middle" font-size="11" fill="#444">iℏ ∂ₜ ψ = H ψ</text>
+  <text x="745" y="263" text-anchor="middle" font-size="10" fill="#666" font-style="italic">linear, first-order FORCED</text>
+
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrR)">
+    <line x1="270" y1="235" x2="335" y2="235"/>
+    <line x1="565" y1="235" x2="630" y2="235"/>
+  </g>
+
+  <!-- Row 3: Heisenberg -->
+  <rect x="40" y="310" width="230" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="155" y="335" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">P04 finite bandwidth +</text>
+  <text x="155" y="355" text-anchor="middle" font-size="11" fill="#444">orthogonal-component</text>
+  <text x="155" y="372" text-anchor="middle" font-size="11" fill="#444">conjugacy</text>
+
+  <rect x="335" y="310" width="230" height="80" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="4"/>
+  <text x="450" y="335" text-anchor="middle" font-weight="bold" fill="#444" font-size="12">Robertson commutator bound</text>
+  <text x="450" y="355" text-anchor="middle" font-size="11" fill="#444">ΔA ΔB ≥ ½|⟨[A,B]⟩|</text>
+  <text x="450" y="372" text-anchor="middle" font-size="11" fill="#444">applied to canonical conjugates</text>
+
+  <rect x="630" y="310" width="230" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="745" y="335" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Heisenberg uncertainty</text>
+  <text x="745" y="358" text-anchor="middle" font-size="11" fill="#444">Δx Δp ≥ ℏ/2</text>
+  <text x="745" y="378" text-anchor="middle" font-size="10" fill="#666" font-style="italic">factor ℏ/2 FORCED</text>
+
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrR)">
+    <line x1="270" y1="350" x2="335" y2="350"/>
+    <line x1="565" y1="350" x2="630" y2="350"/>
+  </g>
+
+  <!-- Row 4: Measurement -->
+  <rect x="40" y="425" width="230" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="155" y="450" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">P11 commitment-irreversibility</text>
+  <text x="155" y="470" text-anchor="middle" font-size="11" fill="#444">+ participation-recording step</text>
+  <text x="155" y="487" text-anchor="middle" font-size="11" fill="#444">at substrate level</text>
+
+  <rect x="335" y="425" width="230" height="80" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="4"/>
+  <text x="450" y="450" text-anchor="middle" font-weight="bold" fill="#444" font-size="12">substrate asymmetry</text>
+  <text x="450" y="470" text-anchor="middle" font-size="11" fill="#444">recording is structurally</text>
+  <text x="450" y="487" text-anchor="middle" font-size="11" fill="#444">one-directional</text>
+
+  <rect x="630" y="425" width="230" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="745" y="450" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Measurement (no collapse)</text>
+  <text x="745" y="473" text-anchor="middle" font-size="11" fill="#444">irreversible recording, not</text>
+  <text x="745" y="490" text-anchor="middle" font-size="11" fill="#444">a collapse mechanism</text>
+
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrR)">
+    <line x1="270" y1="465" x2="335" y2="465"/>
+    <line x1="565" y1="465" x2="630" y2="465"/>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="540" text-anchor="middle" font-size="11" fill="#444" font-style="italic">All four standard postulates DERIVED from substrate primitives + standard mathematical theorems.</text>
+  <text x="450" y="560" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Form-FORCED at every step; absolute scales of ℏ and any concrete spectrum are value-INHERITED.</text>
+  <text x="450" y="580" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Canonical sources: papers/Phase_1/, papers/Born_Gleason/, papers/U1–U5_*</text>
+</svg>

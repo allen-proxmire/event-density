@@ -1,0 +1,92 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Figure B.1 — Symbol-reuse map: three convention-shared symbols (μ, M, κ)</text>
+
+  <!-- Three rows: μ, M, κ. Each row: symbol on left, three sectorial usages on right. -->
+
+  <!-- μ row -->
+  <text x="100" y="100" text-anchor="middle" font-weight="bold" font-size="22" fill="#1a4f8b">μ</text>
+  <text x="100" y="125" text-anchor="middle" font-size="11" fill="#444" font-style="italic">three sector usages</text>
+
+  <rect x="190" y="60" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="300" y="84" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">μ(x)  multiplicity-headroom</text>
+  <line x1="205" y1="94" x2="395" y2="94" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="300" y="115" text-anchor="middle" font-size="11" fill="#444">UR-1 condition (i) factor</text>
+  <text x="300" y="133" text-anchor="middle" font-size="11" fill="#444">in unresolvedness 𝓤</text>
+  <text x="300" y="151" text-anchor="middle" font-size="10" fill="#666" font-style="italic">QC sector (Ch. 7)</text>
+
+  <rect x="430" y="60" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="540" y="84" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">μ(|∇Φ|/a₀)  interpolation</text>
+  <line x1="445" y1="94" x2="635" y2="94" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="540" y="115" text-anchor="middle" font-size="11" fill="#444">in modified Poisson eq.</text>
+  <text x="540" y="133" text-anchor="middle" font-size="11" fill="#444">substrate-gravity sector</text>
+  <text x="540" y="151" text-anchor="middle" font-size="10" fill="#666" font-style="italic">(Chs. 11–12)</text>
+
+  <rect x="670" y="60" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="780" y="84" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">μ_V1  V1-amplitude prefactor</text>
+  <line x1="685" y1="94" x2="875" y2="94" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="780" y="115" text-anchor="middle" font-size="11" fill="#444">in R1 hyperviscous term</text>
+  <text x="780" y="133" text-anchor="middle" font-size="11" fill="#444">−κ μ_V1 ℓ_P² ∇⁴v</text>
+  <text x="780" y="151" text-anchor="middle" font-size="10" fill="#666" font-style="italic">NS sector (Ch. 8)</text>
+
+  <!-- M row -->
+  <text x="100" y="265" text-anchor="middle" font-weight="bold" font-size="22" fill="#1a4f8b">M</text>
+  <text x="100" y="290" text-anchor="middle" font-size="11" fill="#444" font-style="italic">three sector usages</text>
+
+  <rect x="190" y="225" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="300" y="249" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">M(𝓢, K, 𝓔, 𝓞)  multiplicity-cap</text>
+  <line x1="205" y1="259" x2="395" y2="259" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="300" y="280" text-anchor="middle" font-size="11" fill="#444">QC architectural function</text>
+  <text x="300" y="298" text-anchor="middle" font-size="11" fill="#444">three-class projections</text>
+  <text x="300" y="316" text-anchor="middle" font-size="10" fill="#666" font-style="italic">QC sector (Ch. 7)</text>
+
+  <rect x="430" y="225" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="540" y="249" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">M(ρ)  mobility</text>
+  <line x1="445" y1="259" x2="635" y2="259" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="540" y="280" text-anchor="middle" font-size="11" fill="#444">UDM mobility law</text>
+  <text x="540" y="298" text-anchor="middle" font-size="11" fill="#444">M(ρ) = M₀(1 − ρ/ρ_max)^β</text>
+  <text x="540" y="316" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Soft-matter sector (Ch. 10)</text>
+
+  <rect x="670" y="225" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="780" y="249" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">M_b  baryonic mass</text>
+  <line x1="685" y1="259" x2="875" y2="259" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="780" y="280" text-anchor="middle" font-size="11" fill="#444">in BTFR slope-4</text>
+  <text x="780" y="298" text-anchor="middle" font-size="11" fill="#444">v⁴ = G M_b a₀</text>
+  <text x="780" y="316" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate-gravity (Ch. 11)</text>
+
+  <!-- κ row -->
+  <text x="100" y="430" text-anchor="middle" font-weight="bold" font-size="22" fill="#1a4f8b">κ</text>
+  <text x="100" y="455" text-anchor="middle" font-size="11" fill="#444" font-style="italic">three sector usages</text>
+
+  <rect x="190" y="390" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="300" y="414" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">κ(x)  connectivity factor</text>
+  <line x1="205" y1="424" x2="395" y2="424" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="300" y="445" text-anchor="middle" font-size="11" fill="#444">UR-1 condition (ii) factor</text>
+  <text x="300" y="463" text-anchor="middle" font-size="11" fill="#444">in unresolvedness 𝓤</text>
+  <text x="300" y="481" text-anchor="middle" font-size="10" fill="#666" font-style="italic">QC sector (Ch. 7)</text>
+
+  <rect x="430" y="390" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="540" y="414" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">κ  surface gravity</text>
+  <line x1="445" y1="424" x2="635" y2="424" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="540" y="445" text-anchor="middle" font-size="11" fill="#444">in BH Hawking temp.</text>
+  <text x="540" y="463" text-anchor="middle" font-size="11" fill="#444">T_H = κ / (2π)</text>
+  <text x="540" y="481" text-anchor="middle" font-size="10" fill="#666" font-style="italic">BH sector (Ch. 13)</text>
+
+  <rect x="670" y="390" width="220" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="780" y="414" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">κ  R1 prefactor</text>
+  <line x1="685" y1="424" x2="875" y2="424" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="780" y="445" text-anchor="middle" font-size="11" fill="#444">in R1 hyperviscous term</text>
+  <text x="780" y="463" text-anchor="middle" font-size="11" fill="#444">−κ μ_V1 ℓ_P² ∇⁴v</text>
+  <text x="780" y="481" text-anchor="middle" font-size="10" fill="#666" font-style="italic">NS sector (Ch. 8)</text>
+
+  <!-- Footer -->
+  <rect x="40" y="510" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="535" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Convention-reused symbols across sectors</text>
+  <text x="60" y="558" font-size="11" fill="#444">Three symbols (μ, M, κ) follow source-paper convention with three distinct usages each. Sectorial context disambiguates.</text>
+  <text x="60" y="576" font-size="11" fill="#444" font-style="italic">No symbol redefinition occurs in the monograph; usages are documented in Appendix B §B.11 (Convention Notes).</text>
+</svg>

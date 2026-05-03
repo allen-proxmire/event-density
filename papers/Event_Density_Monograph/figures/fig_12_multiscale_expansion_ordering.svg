@@ -1,0 +1,75 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrD" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L5,9 L10,0 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 3.3 — Multi-scale expansion: ordering by powers of ℓ_P / R_cg</text>
+  <text x="450" y="48" text-anchor="middle" font-size="11" fill="#666" font-style="italic">small parameter ε = ℓ_P / R_cg ; each row is one order in ε</text>
+
+  <!-- Vertical axis label "decreasing magnitude" -->
+  <g transform="translate(60,330) rotate(-90)">
+    <text text-anchor="middle" font-size="12" fill="#444" font-style="italic">decreasing magnitude  →</text>
+  </g>
+
+  <!-- Vertical "small parameter" axis on left with arrow -->
+  <line x1="100" y1="80" x2="100" y2="540" stroke="#444" stroke-width="1.5" marker-end="url(#arrD)"/>
+
+  <!-- Row layout: x=130..830, h=80 each, y starts 80 -->
+  <!-- Row 1: Leading order (ε^0) -->
+  <rect x="140" y="80" width="700" height="90" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="160" y="105" font-weight="bold" font-size="13" fill="#fff">ε⁰  —  leading order</text>
+  <text x="160" y="123" font-size="11" fill="#fff" font-style="italic">recovers standard continuum equations</text>
+  <g fill="#fff" font-size="11">
+    <text x="160" y="148">• Navier–Stokes (without R1)</text>
+    <text x="370" y="148">• Yang–Mills classical</text>
+    <text x="560" y="148">• modified Poisson</text>
+    <text x="160" y="165">• Schrödinger / Maxwell</text>
+    <text x="370" y="165">• Maxwell viscoelastic</text>
+    <text x="560" y="165">• acoustic-metric scalar-tensor</text>
+  </g>
+
+  <!-- Row 2: First subleading (ε^2) -->
+  <rect x="140" y="190" width="700" height="90" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="160" y="215" font-weight="bold" font-size="13" fill="#a05a00">ε²  —  first subleading order</text>
+  <text x="160" y="233" font-size="11" fill="#a05a00" font-style="italic">substrate-cutoff corrections — distinctive ED content</text>
+  <g fill="#a05a00" font-size="11">
+    <text x="160" y="258">• R1  (NS hyperviscous)</text>
+    <text x="370" y="258">• YM mass-gap mechanism</text>
+    <text x="560" y="258">• BH motif-correlation</text>
+    <text x="160" y="275">• V1 propagator width</text>
+    <text x="370" y="275">• V5 → Maxwell relaxation τ_R</text>
+    <text x="560" y="275">• area-law form (with log g)</text>
+  </g>
+
+  <!-- Row 3: Second subleading (ε^4) -->
+  <rect x="140" y="300" width="700" height="80" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="160" y="325" font-weight="bold" font-size="13" fill="#5a2090">ε⁴  —  second subleading order</text>
+  <text x="160" y="343" font-size="11" fill="#5a2090" font-style="italic">small substrate-cutoff content; rarely empirically distinguishable</text>
+  <g fill="#5a2090" font-size="11">
+    <text x="160" y="368">• higher-derivative corrections</text>
+    <text x="420" y="368">• kernel second-moment terms</text>
+    <text x="640" y="368">• propagator dressing</text>
+  </g>
+
+  <!-- Row 4: Higher subleading (ε^6+) -->
+  <rect x="140" y="400" width="700" height="60" fill="#f5f5f5" stroke="#888" stroke-width="1.2" rx="6"/>
+  <text x="160" y="425" font-weight="bold" font-size="13" fill="#444">ε⁶  and higher orders</text>
+  <text x="160" y="445" font-size="11" fill="#444" font-style="italic">vanishing contributions; not load-bearing for any current empirical anchor</text>
+
+  <!-- Order labels on left axis -->
+  <g text-anchor="middle" font-weight="bold" fill="#444" font-size="13">
+    <text x="115" y="130">O(1)</text>
+    <text x="115" y="240">O(ε²)</text>
+    <text x="115" y="345">O(ε⁴)</text>
+    <text x="115" y="435">O(ε⁶)</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="60" y="490" width="780" height="90" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="514" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the expansion</text>
+  <text x="80" y="538" font-size="11" fill="#444">Standard continuum physics is recovered at leading order. The distinctive ED content — R1, mass-gap, area law,</text>
+  <text x="80" y="556" font-size="11" fill="#444">τ_R viscoelasticity — appears at first subleading order, where the substrate cutoff ℓ_P enters the continuum equations.</text>
+  <text x="80" y="574" font-size="11" fill="#444" font-style="italic">Form-FORCED at every order; specific prefactors (κ for R1, V1 width, log g for BH) are value-INHERITED.</text>
+</svg>

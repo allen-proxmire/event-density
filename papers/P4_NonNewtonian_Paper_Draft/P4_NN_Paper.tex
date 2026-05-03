@@ -2,8 +2,9 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
-]{article}
+  11pt,a4paper]{article}
 \usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
@@ -19,6 +20,7 @@
 \usepackage{lmodern}
 \ifPDFTeX\else
   % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -50,27 +52,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
+  pdftitle={ED Mobility Saturation Predicts Non-Newtonian Rheology A Fluid-Mechanical Extension of the Universal Mobility Law},
+  pdfauthor={Allen Proxmire},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\author{}
-\date{}
+\title{ED Mobility Saturation Predicts Non-Newtonian Rheology\\
+\large A Fluid-Mechanical Extension of the Universal Mobility Law}
+\author{Allen Proxmire}
+\date{April 2026}
 
 \begin{document}
-
-\section{ED Mobility Saturation Predicts Non-Newtonian Rheology --- A
-Fluid-Mechanical Extension of the Universal Mobility
-Law}\label{ed-mobility-saturation-predicts-non-newtonian-rheology-a-fluid-mechanical-extension-of-the-universal-mobility-law}
-
-\textbf{Author:} Allen Proxmire \textbf{Collaborator:} Claude (AI
-collaborator) \textbf{Date:} 30 April 2026 \textbf{Series:}
-Event-Density Foundational Theorems --- P4 Non-Newtonian Arc
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\maketitle
 
 \subsection{Abstract}\label{abstract}
 

@@ -1,0 +1,69 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 9.6 — Gribov ambiguity reframed via T17 C8 substrate gauge-quotient</text>
+
+  <!-- LEFT panel: standard Gribov problem -->
+  <rect x="40" y="60" width="380" height="490" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="230" y="86" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">Standard Gribov problem</text>
+  <text x="230" y="104" text-anchor="middle" font-size="11" fill="#666" font-style="italic">continuum gauge-fixing obstruction</text>
+  <line x1="55" y1="115" x2="405" y2="115" stroke="#888" stroke-width="0.8"/>
+
+  <text x="230" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Setup</text>
+  <text x="230" y="162" text-anchor="middle" font-size="11" fill="#444">Yang–Mills configuration space:</text>
+  <text x="230" y="180" text-anchor="middle" font-size="11" fill="#444">A_μ field configurations</text>
+  <text x="230" y="200" text-anchor="middle" font-size="11" fill="#444">modulo gauge group G</text>
+
+  <text x="230" y="240" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Gribov copies</text>
+  <text x="230" y="260" text-anchor="middle" font-size="11" fill="#444">gauge-fixing condition</text>
+  <text x="230" y="278" text-anchor="middle" font-size="11" fill="#444">∂_μ A^μ = 0 has multiple</text>
+  <text x="230" y="296" text-anchor="middle" font-size="11" fill="#444">gauge-equivalent solutions</text>
+
+  <text x="230" y="335" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Consequence</text>
+  <text x="230" y="355" text-anchor="middle" font-size="11" fill="#444">no global section across</text>
+  <text x="230" y="373" text-anchor="middle" font-size="11" fill="#444">configuration space</text>
+  <text x="230" y="395" text-anchor="middle" font-size="11" fill="#444">→ path-integral measure</text>
+  <text x="230" y="413" text-anchor="middle" font-size="11" fill="#444">non-perturbatively ambiguous</text>
+
+  <text x="230" y="455" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">obstruction unresolved</text>
+  <text x="230" y="475" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">in standard QFT</text>
+
+  <!-- Reframing arrow -->
+  <line x1="430" y1="300" x2="475" y2="300" stroke="#1a4f8b" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+  <text x="452" y="285" text-anchor="middle" font-size="11" fill="#1a4f8b" font-weight="bold">reframed</text>
+  <text x="452" y="320" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">via T17 C8</text>
+
+  <!-- RIGHT panel: ED reframing -->
+  <rect x="480" y="60" width="380" height="490" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="670" y="86" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">ED substrate reframing  (T17 C8)</text>
+  <text x="670" y="104" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">substrate gauge-quotient</text>
+  <line x1="495" y1="115" x2="845" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="670" y="142" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Setup</text>
+  <text x="670" y="162" text-anchor="middle" font-size="11" fill="#444">substrate participation rules</text>
+  <text x="670" y="180" text-anchor="middle" font-size="11" fill="#444">with rule-relabelings</text>
+  <text x="670" y="200" text-anchor="middle" font-size="11" fill="#444">forming the gauge group</text>
+
+  <text x="670" y="240" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Substrate quotient</text>
+  <text x="670" y="260" text-anchor="middle" font-size="11" fill="#444">physical content lives in the</text>
+  <text x="670" y="278" text-anchor="middle" font-size="11" fill="#444">quotient {rule configurations}/G</text>
+  <text x="670" y="296" text-anchor="middle" font-size="11" fill="#444">at substrate level</text>
+
+  <text x="670" y="335" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Consequence</text>
+  <text x="670" y="355" text-anchor="middle" font-size="11" fill="#444">gauge-fixing is not needed</text>
+  <text x="670" y="373" text-anchor="middle" font-size="11" fill="#444">at substrate level —</text>
+  <text x="670" y="395" text-anchor="middle" font-size="11" fill="#444">the quotient is well-defined</text>
+  <text x="670" y="413" text-anchor="middle" font-size="11" fill="#444">without choosing a section</text>
+
+  <text x="670" y="455" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">obstruction reframed,</text>
+  <text x="670" y="475" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">not solved</text>
+  <text x="670" y="500" text-anchor="middle" font-size="10" fill="#666">— continuum-level gauge-fixing</text>
+  <text x="670" y="515" text-anchor="middle" font-size="10" fill="#666">remains a separate question</text>
+
+  <!-- Footer -->
+  <text x="450" y="580" text-anchor="middle" font-size="11" fill="#444" font-style="italic">T17 C8 establishes the substrate gauge-quotient. Continuum-level gauge-fixing obstruction is a coordinate-choice issue, not substrate.</text>
+</svg>

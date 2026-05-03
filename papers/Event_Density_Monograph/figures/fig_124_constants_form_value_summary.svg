@@ -1,0 +1,90 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Table D.2 — Form-FORCED / Value-INHERITED tagging summary (constants)</text>
+
+  <!-- Three columns: SUBSTRATE INPUT / FORCED+DERIVED / INHERITED -->
+  <rect x="40" y="50" width="265" height="40" fill="#a05a00"/>
+  <text x="172" y="76" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">SUBSTRATE INPUT</text>
+
+  <rect x="320" y="50" width="265" height="40" fill="#1a4f8b"/>
+  <text x="452" y="76" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">FORCED + DERIVED</text>
+
+  <rect x="600" y="50" width="265" height="40" fill="#5a2090"/>
+  <text x="732" y="76" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">INHERITED</text>
+
+  <text x="172" y="106" text-anchor="middle" font-size="11" fill="#444" font-style="italic">taken as given</text>
+  <text x="452" y="106" text-anchor="middle" font-size="11" fill="#444" font-style="italic">value computed from inputs</text>
+  <text x="732" y="106" text-anchor="middle" font-size="11" fill="#444" font-style="italic">empirically anchored</text>
+
+  <!-- Substrate inputs panel -->
+  <rect x="40" y="120" width="265" height="430" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <g fill="#444" font-size="12">
+    <text x="172" y="148" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">ℏ</text>
+    <text x="172" y="166" text-anchor="middle" font-size="10" fill="#666">Planck's constant</text>
+
+    <text x="172" y="200" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">c</text>
+    <text x="172" y="218" text-anchor="middle" font-size="10" fill="#666">speed of light</text>
+
+    <text x="172" y="252" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">H₀</text>
+    <text x="172" y="270" text-anchor="middle" font-size="10" fill="#666">Hubble rate</text>
+
+    <text x="172" y="304" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">P01–P13</text>
+    <text x="172" y="322" text-anchor="middle" font-size="10" fill="#666">substrate primitives</text>
+
+    <text x="172" y="356" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">ℓ_P  (also DERIVED via T19)</text>
+    <text x="172" y="374" text-anchor="middle" font-size="10" fill="#666">substrate length scale</text>
+  </g>
+  <text x="172" y="425" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">irreducible inputs</text>
+  <text x="172" y="443" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">no closed-form derivation</text>
+  <text x="172" y="461" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">within the program</text>
+
+  <!-- FORCED+DERIVED panel -->
+  <rect x="320" y="120" width="265" height="430" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <g fill="#444" font-size="12">
+    <text x="452" y="148" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">G = c³ ℓ_P² / ℏ</text>
+    <text x="452" y="166" text-anchor="middle" font-size="10" fill="#666">via T19</text>
+
+    <text x="452" y="200" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">a₀ = c H₀ / (2π)</text>
+    <text x="452" y="218" text-anchor="middle" font-size="10" fill="#666">via T20</text>
+
+    <text x="452" y="252" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">a = √(a_N · a₀)</text>
+    <text x="452" y="270" text-anchor="middle" font-size="10" fill="#666">ECR composition rule</text>
+
+    <text x="452" y="304" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">v⁴ = G M_b a₀</text>
+    <text x="452" y="322" text-anchor="middle" font-size="10" fill="#666">T21 BTFR slope-4</text>
+
+    <text x="452" y="356" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">canonical β = 2 (UDM)</text>
+    <text x="452" y="374" text-anchor="middle" font-size="10" fill="#666">substrate prediction</text>
+
+    <text x="452" y="408" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">ℏ/2 (Heisenberg ½)</text>
+    <text x="452" y="426" text-anchor="middle" font-size="10" fill="#666">via T1–T16</text>
+  </g>
+  <text x="452" y="475" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">value derived from inputs;</text>
+  <text x="452" y="493" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">no separate empirical input</text>
+
+  <!-- INHERITED panel -->
+  <rect x="600" y="120" width="265" height="430" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <g fill="#444" font-size="12">
+    <text x="732" y="148" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">𝓜_crit  (O-QC-1)</text>
+    <text x="732" y="166" text-anchor="middle" font-size="10" fill="#666">matter-wave 140–250 kDa anchor</text>
+
+    <text x="732" y="200" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">log g  (O2)</text>
+    <text x="732" y="218" text-anchor="middle" font-size="10" fill="#666">≈ 1/4 (BH match)</text>
+
+    <text x="732" y="252" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">κ/|N̂'|  (E4)</text>
+    <text x="732" y="270" text-anchor="middle" font-size="10" fill="#666">≈ 0.001766 ± 10.78%</text>
+
+    <text x="732" y="304" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">α (DCGT prefactor)</text>
+    <text x="732" y="322" text-anchor="middle" font-size="10" fill="#666">cross-bandwidth scale</text>
+
+    <text x="732" y="356" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">Γ_min, Λ_V1, β_crit, N_corr</text>
+    <text x="732" y="374" text-anchor="middle" font-size="10" fill="#666">UR-1 thresholds</text>
+
+    <text x="732" y="408" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">μ(x), κ(x), g/h/c, f-functions</text>
+    <text x="732" y="426" text-anchor="middle" font-size="10" fill="#666">UR-1 + multiplicity-cap shapes</text>
+  </g>
+  <text x="732" y="475" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">closed-form derivation</text>
+  <text x="732" y="493" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">downstream / open</text>
+
+  <!-- Footer -->
+  <text x="450" y="580" text-anchor="middle" font-size="10" fill="#666" font-style="italic">three INHERITED targets — 𝓜_crit, log g, κ/|N̂'| — form the closed-form-substrate-constants program (Fig. D.1)</text>
+</svg>

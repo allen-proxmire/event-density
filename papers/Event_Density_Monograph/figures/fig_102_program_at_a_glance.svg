@@ -1,0 +1,106 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrU" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,10 L5,0 L10,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 14.8 — The substrate-level program at a glance</text>
+
+  <!-- Substrate primitives layer (foundation) -->
+  <rect x="40" y="500" width="820" height="60" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="450" y="525" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Substrate primitives  (P01–P13)</text>
+  <text x="450" y="545" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">irreducible commitments — Chapter 1</text>
+
+  <!-- Load-bearing invariants + DCGT layer -->
+  <rect x="40" y="430" width="820" height="55" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="450" y="453" text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="12">Load-bearing invariants ( 𝓜, σ, Γ_cross, V1, P11 )  +  DCGT bridge</text>
+  <text x="450" y="473" text-anchor="middle" fill="#444" font-size="10" font-style="italic">Chapters 2 + 3</text>
+
+  <!-- Foundational theorems layer -->
+  <rect x="40" y="360" width="820" height="55" fill="#fff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="450" y="383" text-anchor="middle" fill="#1a4f8b" font-weight="bold" font-size="12">Foundational theorems:  N1 · T18 · DCGT · GR1</text>
+  <text x="450" y="402" text-anchor="middle" fill="#444" font-size="10" font-style="italic">Chapter 4 + cross-arc</text>
+
+  <!-- Nine closed-arc sectors (3 columns × 3 rows arrangement) -->
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="40" y="220" width="170" height="120" rx="4"/>
+    <rect x="220" y="220" width="170" height="120" rx="4"/>
+    <rect x="400" y="220" width="170" height="120" rx="4"/>
+    <rect x="580" y="220" width="170" height="120" rx="4"/>
+    <rect x="760" y="220" width="100" height="120" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="12">
+    <text x="125" y="245">QM (Ch. 5)</text>
+    <text x="305" y="245">QFT (Ch. 6)</text>
+    <text x="485" y="245">QC (Ch. 7)</text>
+    <text x="665" y="245">NS (Ch. 8)</text>
+    <text x="810" y="245">MHD/YM</text>
+  </g>
+  <g text-anchor="middle" fill="#444" font-size="10">
+    <text x="125" y="265">T1–T16</text>
+    <text x="125" y="282">Born + Schröd</text>
+    <text x="125" y="299">+ Heis + Meas</text>
+
+    <text x="305" y="265">T17 + UV-fin</text>
+    <text x="305" y="282">+ ED-I-13</text>
+    <text x="305" y="299">channel-geom</text>
+
+    <text x="485" y="265">UR-1 + M</text>
+    <text x="485" y="282">3-class A/B/C</text>
+    <text x="485" y="299">+ overlays</text>
+
+    <text x="665" y="265">R1 + Path C</text>
+    <text x="665" y="282">3-angle adv.</text>
+    <text x="665" y="299">non-ED</text>
+
+    <text x="810" y="265">(Ch. 9)</text>
+    <text x="810" y="282">DCGT non-Ab</text>
+    <text x="810" y="299">+ V1 mass-gap</text>
+  </g>
+
+  <!-- Second row: 4 more sectors -->
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="40" y="80" width="200" height="120" rx="4"/>
+    <rect x="250" y="80" width="200" height="120" rx="4"/>
+    <rect x="460" y="80" width="200" height="120" rx="4"/>
+    <rect x="670" y="80" width="190" height="120" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="12">
+    <text x="140" y="105">Soft-matter (Ch. 10)</text>
+    <text x="350" y="105">Subst. gravity (Ch. 11)</text>
+    <text x="560" y="105">Curvature (Ch. 12)</text>
+    <text x="765" y="105">BH (Ch. 13)</text>
+  </g>
+  <g text-anchor="middle" fill="#444" font-size="10">
+    <text x="140" y="128">UDM β-law</text>
+    <text x="140" y="145">+ P4-NN</text>
+    <text x="140" y="162">+ V5-Maxwell</text>
+    <text x="140" y="180">τ_R viscoelastic</text>
+
+    <text x="350" y="128">T19  G derived</text>
+    <text x="350" y="145">T20  a₀ derived</text>
+    <text x="350" y="162">ECR + T21</text>
+    <text x="350" y="180">BTFR slope-4</text>
+
+    <text x="560" y="128">Arc ED-10</text>
+    <text x="560" y="145">scalar-tensor</text>
+    <text x="560" y="162">acoustic metric</text>
+    <text x="560" y="180">cond.-positive</text>
+
+    <text x="765" y="128">Σ_H decoupling</text>
+    <text x="765" y="145">no singularity</text>
+    <text x="765" y="162">area law form</text>
+    <text x="765" y="180">+ BHPT δ_ℓm</text>
+  </g>
+
+  <!-- Empirical anchors strip at top -->
+  <rect x="40" y="60" width="820" height="2" fill="#1a4f8b"/>
+  <text x="450" y="50" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">Empirical anchors:  3 PASSED  +  13 ANCHORED  +  17 ACTIVE  +  4 OPEN</text>
+
+  <!-- Vertical arrow showing layered emergence -->
+  <line x1="20" y1="475" x2="20" y2="160" stroke="#1a4f8b" stroke-width="2" marker-end="url(#arrU)"/>
+  <g transform="translate(15, 320) rotate(-90)">
+    <text text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">emergence</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 11.9 — Four-result substrate-gravity closure</text>
+
+  <!-- Substrate inputs at top -->
+  <rect x="280" y="55" width="340" height="50" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="450" y="78" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Substrate inputs</text>
+  <text x="450" y="95" text-anchor="middle" font-size="12" fill="#444">ℏ , c , H₀ , ℓ_P  +  substrate primitives</text>
+
+  <!-- Step 1: T19 -->
+  <line x1="380" y1="105" x2="200" y2="155" stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <line x1="450" y1="105" x2="450" y2="155" stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <rect x="40" y="165" width="320" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="200" y="190" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="14">1.  T19</text>
+  <line x1="55" y1="200" x2="345" y2="200" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="200" y="225" text-anchor="middle" font-size="14" fill="#a05a00" font-weight="bold">G  =  c³ ℓ_P² / ℏ</text>
+  <text x="200" y="248" text-anchor="middle" font-size="11" fill="#444">Newton's gravitational constant</text>
+
+  <!-- Step 2: T20 -->
+  <rect x="540" y="165" width="320" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="700" y="190" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="14">2.  T20</text>
+  <line x1="555" y1="200" x2="845" y2="200" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="700" y="225" text-anchor="middle" font-size="14" fill="#a05a00" font-weight="bold">a₀  =  c H₀ / (2π)</text>
+  <text x="700" y="248" text-anchor="middle" font-size="11" fill="#444">MOND transition acceleration</text>
+
+  <!-- Convergence to Step 3: ECR -->
+  <line x1="200" y1="265" x2="380" y2="305" stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <line x1="700" y1="265" x2="520" y2="305" stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <rect x="280" y="315" width="340" height="100" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="340" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="14">3.  ECR (ED Combination Rule)</text>
+  <line x1="295" y1="350" x2="605" y2="350" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="450" y="375" text-anchor="middle" font-size="14" fill="#a05a00" font-weight="bold">a  =  √( a_N · a₀ )</text>
+  <text x="450" y="398" text-anchor="middle" font-size="11" fill="#444">geometric-mean composition</text>
+
+  <!-- Step 4: T21 -->
+  <line x1="450" y1="415" x2="450" y2="455" stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <text x="475" y="438" font-size="11" fill="#444" font-style="italic">+ circular-orbit balance</text>
+
+  <rect x="180" y="465" width="540" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="492" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">4.  T21 — Baryonic Tully–Fisher (slope-4)</text>
+  <line x1="200" y1="502" x2="700" y2="502" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="528" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">v⁴  =  G  M_b  a₀</text>
+  <text x="450" y="550" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">PASSED + zero-intrinsic-scatter prediction</text>
+
+  <!-- Footer -->
+  <text x="450" y="585" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Substrate-gravity closure complete at galactic scale: four substrate-derived results, no phenomenological inputs.</text>
+</svg>

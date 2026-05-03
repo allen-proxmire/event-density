@@ -1,0 +1,100 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 3.4 — The five leading-order DCGT consequences</text>
+
+  <!-- DCGT central node -->
+  <rect x="370" y="60" width="160" height="64" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="86" text-anchor="middle" fill="#fff" font-weight="bold" font-size="16">DCGT</text>
+  <text x="450" y="106" text-anchor="middle" fill="#fff" font-size="11">multi-scale expansion</text>
+
+  <!-- Five consequence boxes, fanned out below -->
+  <!-- Layout: 5 boxes evenly spaced, top edge y=210 -->
+
+  <!-- Box 1: Scalar diffusion -->
+  <rect x="40" y="210" width="155" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="117" y="235" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">1. Scalar diffusion</text>
+  <line x1="55" y1="248" x2="180" y2="248" stroke="#a05a00" stroke-width="0.8"/>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="117" y="270">canonical-ED</text>
+    <text x="117" y="287">participation density</text>
+    <text x="117" y="304">∂_t ρ = D ∇² ρ</text>
+  </g>
+  <text x="117" y="335" text-anchor="middle" font-size="11" fill="#666" font-style="italic">substrate origin:</text>
+  <text x="117" y="352" text-anchor="middle" font-size="11" fill="#666" font-style="italic">P04 + Γ_cross</text>
+  <text x="117" y="370" text-anchor="middle" font-size="10" fill="#a05a00">→ Ch. 3, 10</text>
+
+  <!-- Box 2: Directional viscosity -->
+  <rect x="210" y="210" width="155" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="287" y="235" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. Directional viscosity</text>
+  <line x1="225" y1="248" x2="350" y2="248" stroke="#a05a00" stroke-width="0.8"/>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="287" y="270">chain-aligned substrate</text>
+    <text x="287" y="287">momentum transport</text>
+    <text x="287" y="304">→ NS viscous term</text>
+  </g>
+  <text x="287" y="335" text-anchor="middle" font-size="11" fill="#666" font-style="italic">substrate origin:</text>
+  <text x="287" y="352" text-anchor="middle" font-size="11" fill="#666" font-style="italic">chain-momentum P02</text>
+  <text x="287" y="370" text-anchor="middle" font-size="10" fill="#a05a00">→ Ch. 8</text>
+
+  <!-- Box 3: V1 → R1 -->
+  <rect x="380" y="210" width="155" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="457" y="235" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">3. V1 → R1</text>
+  <line x1="395" y1="248" x2="520" y2="248" stroke="#a05a00" stroke-width="0.8"/>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="457" y="270">substrate-cutoff</text>
+    <text x="457" y="287">hyperviscous regularization</text>
+    <text x="457" y="307">−κ μ_V1 ℓ_P² ∇⁴ v</text>
+  </g>
+  <text x="457" y="335" text-anchor="middle" font-size="11" fill="#666" font-style="italic">substrate origin:</text>
+  <text x="457" y="352" text-anchor="middle" font-size="11" fill="#666" font-style="italic">V1 finite width</text>
+  <text x="457" y="370" text-anchor="middle" font-size="10" fill="#a05a00">→ Ch. 4, 8, 9</text>
+
+  <!-- Box 4: V5 → Maxwell -->
+  <rect x="550" y="210" width="155" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="627" y="235" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">4. V5 → Maxwell</text>
+  <line x1="565" y1="248" x2="690" y2="248" stroke="#a05a00" stroke-width="0.8"/>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="627" y="270">viscoelastic memory</text>
+    <text x="627" y="287">τ_R = ⟨t⟩_V5</text>
+    <text x="627" y="304">Maxwell relaxation</text>
+  </g>
+  <text x="627" y="335" text-anchor="middle" font-size="11" fill="#666" font-style="italic">substrate origin:</text>
+  <text x="627" y="352" text-anchor="middle" font-size="11" fill="#666" font-style="italic">V5 cross-chain kernel</text>
+  <text x="627" y="370" text-anchor="middle" font-size="10" fill="#a05a00">→ Ch. 10</text>
+
+  <!-- Box 5: T17 minimal coupling -->
+  <rect x="720" y="210" width="155" height="170" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="797" y="235" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">5. T17 coupling</text>
+  <line x1="735" y1="248" x2="860" y2="248" stroke="#a05a00" stroke-width="0.8"/>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="797" y="270">minimal-coupling</text>
+    <text x="797" y="287">Lorentz interaction;</text>
+    <text x="797" y="304">non-Abelian extension</text>
+  </g>
+  <text x="797" y="335" text-anchor="middle" font-size="11" fill="#666" font-style="italic">substrate origin:</text>
+  <text x="797" y="352" text-anchor="middle" font-size="11" fill="#666" font-style="italic">label-carrying rule-types</text>
+  <text x="797" y="370" text-anchor="middle" font-size="10" fill="#a05a00">→ Ch. 6, 9</text>
+
+  <!-- Connecting arrows DCGT -> 5 boxes -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="400" y1="124" x2="125" y2="210"/>
+    <line x1="425" y1="124" x2="290" y2="210"/>
+    <line x1="450" y1="124" x2="455" y2="210"/>
+    <line x1="475" y1="124" x2="620" y2="210"/>
+    <line x1="500" y1="124" x2="785" y2="210"/>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="430" width="820" height="150" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="455" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the consequence map</text>
+  <text x="60" y="478" font-size="11" fill="#444">All five outputs are first-order DCGT consequences of the multi-scale expansion at scale R_cg.</text>
+  <text x="60" y="496" font-size="11" fill="#444">Their structural form is FORCED by substrate primitives + scale-separation; specific prefactors (D, κ, μ_V1, τ_R, coupling)</text>
+  <text x="60" y="514" font-size="11" fill="#444">are value-INHERITED. The same multi-scale machinery feeds NS, MHD, YM, soft-matter, substrate-gravity, and BH sectors.</text>
+  <text x="60" y="540" font-size="11" fill="#444" font-style="italic">Cross-bandwidth Γ_cross ~ exp[−α σ] is the master form underlying the leading-order content of every output above.</text>
+  <text x="60" y="560" font-size="11" fill="#444" font-style="italic">No new substrate primitive is invoked at any of these five outputs; all five compose existing closed-arc machinery.</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a05a00"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Figure D.1 — Closed-form-substrate-constants program (Appendix D view)</text>
+
+  <!-- Three target nodes arranged as a triangle (top, lower-left, lower-right) -->
+  <!-- Node 1: 𝓜_crit (top) -->
+  <ellipse cx="450" cy="130" rx="120" ry="60" fill="#fff4e0" stroke="#a05a00" stroke-width="2"/>
+  <text x="450" y="120" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="16">𝓜_crit</text>
+  <text x="450" y="140" text-anchor="middle" font-size="11" fill="#444">critical multiplicity</text>
+  <text x="450" y="158" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">O-QC-1</text>
+  <text x="450" y="175" text-anchor="middle" font-size="10" fill="#666" font-style="italic">QC sector — Ch. 7</text>
+
+  <!-- Node 2: log g (lower-left) -->
+  <ellipse cx="200" cy="380" rx="120" ry="60" fill="#fff4e0" stroke="#a05a00" stroke-width="2"/>
+  <text x="200" y="370" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="16">log g</text>
+  <text x="200" y="390" text-anchor="middle" font-size="11" fill="#444">BH area-law coefficient</text>
+  <text x="200" y="408" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">O2 (Arc BH)</text>
+  <text x="200" y="425" text-anchor="middle" font-size="10" fill="#666" font-style="italic">BH sector — Ch. 13</text>
+
+  <!-- Node 3: κ/|N̂'| (lower-right) -->
+  <ellipse cx="700" cy="380" rx="120" ry="60" fill="#fff4e0" stroke="#a05a00" stroke-width="2"/>
+  <text x="700" y="370" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="16">κ / |N̂'|</text>
+  <text x="700" y="390" text-anchor="middle" font-size="11" fill="#444">cross-scale invariance</text>
+  <text x="700" y="408" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">E4 (ED-SC)</text>
+  <text x="700" y="425" text-anchor="middle" font-size="10" fill="#666" font-style="italic">cross-reference</text>
+
+  <!-- Cross-domain consistency edges (bidirectional, dashed for "constrains") -->
+  <g stroke="#1a4f8b" stroke-width="1.8" fill="none" stroke-dasharray="6,4">
+    <!-- top to lower-left -->
+    <line x1="370" y1="180" x2="265" y2="335"/>
+    <!-- top to lower-right -->
+    <line x1="530" y1="180" x2="635" y2="335"/>
+    <!-- lower-left to lower-right -->
+    <line x1="320" y1="380" x2="580" y2="380"/>
+  </g>
+
+  <!-- Mid-edge labels -->
+  <text x="290" y="265" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">substrate</text>
+  <text x="290" y="280" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">multiplicity counting</text>
+
+  <text x="610" y="265" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">substrate motif</text>
+  <text x="610" y="280" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">enumeration</text>
+
+  <text x="450" y="375" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">scale-invariance</text>
+  <text x="450" y="390" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">signature</text>
+
+  <!-- Center mutual-constraint label -->
+  <rect x="370" y="270" width="160" height="40" fill="#fff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="450" y="288" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">cross-domain</text>
+  <text x="450" y="304" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="12">consistency</text>
+
+  <!-- Footer -->
+  <rect x="40" y="475" width="820" height="105" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="498" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the program</text>
+  <text x="60" y="520" font-size="11" fill="#444">Three INHERITED constants are dimensionless / dimensional substrate counting quantities. They are mutually constraining:</text>
+  <text x="60" y="538" font-size="11" fill="#444">a closed-form derivation of any one fixes the substrate counting machinery and constrains the others.</text>
+  <text x="60" y="558" font-size="11" fill="#444" font-style="italic">No such derivation exists today. Empirical anchors stand: 𝓜_crit at 140–250 kDa, log g ≈ 1/4, κ/|N̂'| ≈ 0.001766.</text>
+  <text x="60" y="575" font-size="11" fill="#444" font-style="italic">Closing any one of these is the program's near-term path from anchored to derived constants.</text>
+</svg>

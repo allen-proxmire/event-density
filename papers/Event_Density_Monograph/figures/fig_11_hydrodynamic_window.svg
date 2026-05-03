@@ -1,0 +1,92 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="tick" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6">
+      <circle cx="3" cy="3" r="3" fill="#1a4f8b"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 3.2 — The hydrodynamic-window scale separation</text>
+  <text x="450" y="50" text-anchor="middle" font-size="12" fill="#666" font-style="italic">DCGT requires ℓ_P  ≪  R_cg  ≪  L_flow</text>
+
+  <!-- Log axis baseline -->
+  <line x1="80" y1="320" x2="820" y2="320" stroke="#444" stroke-width="2" marker-end="url(#arrR)"/>
+  <text x="830" y="324" font-size="12" fill="#444">log(length)</text>
+  <text x="80" y="345" text-anchor="middle" font-size="11" fill="#666">smaller</text>
+  <text x="800" y="345" text-anchor="middle" font-size="11" fill="#666">larger</text>
+
+  <!-- Three zones (shaded background bands) -->
+  <rect x="80" y="170" width="200" height="100" fill="#e8f0ff" opacity="0.6"/>
+  <rect x="350" y="170" width="200" height="100" fill="#fff4e0" opacity="0.7"/>
+  <rect x="620" y="170" width="200" height="100" fill="#f0e8ff" opacity="0.6"/>
+
+  <!-- Zone borders -->
+  <g stroke="#888" stroke-width="1" stroke-dasharray="3,3" fill="none">
+    <line x1="280" y1="170" x2="280" y2="320"/>
+    <line x1="350" y1="170" x2="350" y2="320"/>
+    <line x1="550" y1="170" x2="550" y2="320"/>
+    <line x1="620" y1="170" x2="620" y2="320"/>
+  </g>
+
+  <!-- Zone labels -->
+  <g text-anchor="middle">
+    <text x="180" y="195" font-weight="bold" fill="#1a4f8b" font-size="13">Substrate scale</text>
+    <text x="180" y="215" fill="#1a4f8b" font-size="12">discrete events,</text>
+    <text x="180" y="232" fill="#1a4f8b" font-size="12">chains, V1 width</text>
+    <text x="180" y="258" fill="#1a4f8b" font-size="11" font-style="italic">below DCGT validity</text>
+
+    <text x="450" y="195" font-weight="bold" fill="#a05a00" font-size="13">Coarse-graining scale</text>
+    <text x="450" y="215" fill="#a05a00" font-size="12">multi-scale expansion</text>
+    <text x="450" y="232" fill="#a05a00" font-size="12">at this scale</text>
+    <text x="450" y="258" fill="#a05a00" font-size="11" font-style="italic">DCGT operates here</text>
+
+    <text x="720" y="195" font-weight="bold" fill="#5a2090" font-size="13">Continuum-flow scale</text>
+    <text x="720" y="215" fill="#5a2090" font-size="12">emergent fields,</text>
+    <text x="720" y="232" fill="#5a2090" font-size="12">PDE dynamics</text>
+    <text x="720" y="258" fill="#5a2090" font-size="11" font-style="italic">DCGT output regime</text>
+  </g>
+
+  <!-- Three tick marks: ℓ_P, R_cg, L_flow -->
+  <g stroke="#1a4f8b" stroke-width="2" fill="#1a4f8b">
+    <circle cx="180" cy="320" r="6"/>
+    <circle cx="450" cy="320" r="6"/>
+    <circle cx="720" cy="320" r="6"/>
+  </g>
+
+  <!-- Tick labels below axis -->
+  <g text-anchor="middle" font-weight="bold" font-size="14" fill="#1a4f8b">
+    <text x="180" y="378">ℓ_P</text>
+    <text x="450" y="378">R_cg</text>
+    <text x="720" y="378">L_flow</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="180" y="397">Planck length</text>
+    <text x="180" y="412">(substrate)</text>
+    <text x="450" y="397">coarse-graining</text>
+    <text x="450" y="412">radius</text>
+    <text x="720" y="397">continuum-flow</text>
+    <text x="720" y="412">length</text>
+  </g>
+
+  <!-- Separation arrows showing ≪ relations -->
+  <g stroke="#444" stroke-width="1.5" fill="none">
+    <line x1="200" y1="450" x2="430" y2="450" marker-end="url(#arrR)"/>
+    <line x1="470" y1="450" x2="700" y2="450" marker-end="url(#arrR)"/>
+  </g>
+  <g text-anchor="middle" font-size="13" font-weight="bold" fill="#444">
+    <text x="315" y="442">≪</text>
+    <text x="585" y="442">≪</text>
+  </g>
+  <g text-anchor="middle" font-size="10" fill="#666" font-style="italic">
+    <text x="315" y="468">many orders</text>
+    <text x="585" y="468">many orders</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="80" y="500" width="740" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="523" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the window</text>
+  <text x="100" y="546" font-size="11" fill="#444">DCGT applies only when both inequalities hold simultaneously. The two separations are independent:</text>
+  <text x="100" y="564" font-size="11" fill="#444">substrate-cutoff corrections (R1, mass-gap) come from the lower one; continuum dynamics from the upper.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 4.4 — N1-E directionality is over-determined: multiple substrate routes converge on the same forcing</text>
+
+  <!-- Three independent forcing routes on the left, all pointing to a single conclusion on the right -->
+
+  <!-- Route 1 -->
+  <rect x="40" y="80" width="320" height="100" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="200" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Route 1: P11 commitment-irreversibility</text>
+  <line x1="60" y1="115" x2="340" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="200" y="138" text-anchor="middle" font-size="11" fill="#444">irreversible recording cannot</text>
+  <text x="200" y="155" text-anchor="middle" font-size="11" fill="#444">be undone — kernel forward-only</text>
+  <text x="200" y="172" text-anchor="middle" font-size="10" fill="#666" font-style="italic">commitment route</text>
+
+  <!-- Route 2 -->
+  <rect x="40" y="200" width="320" height="100" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="200" y="225" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Route 2: P02 chain forward-propagator</text>
+  <line x1="60" y1="235" x2="340" y2="235" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="200" y="258" text-anchor="middle" font-size="11" fill="#444">U_K(n,m) = 0 for n &lt; m</text>
+  <text x="200" y="275" text-anchor="middle" font-size="11" fill="#444">chain-contribution sum forward</text>
+  <text x="200" y="292" text-anchor="middle" font-size="10" fill="#666" font-style="italic">chain-structure route</text>
+
+  <!-- Route 3 -->
+  <rect x="40" y="320" width="320" height="100" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="200" y="345" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Route 3: P13 proper-time ordering</text>
+  <line x1="60" y1="355" x2="340" y2="355" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="200" y="378" text-anchor="middle" font-size="11" fill="#444">substrate event-ordering</text>
+  <text x="200" y="395" text-anchor="middle" font-size="11" fill="#444">defines past/future asymmetry</text>
+  <text x="200" y="412" text-anchor="middle" font-size="10" fill="#666" font-style="italic">ordering route</text>
+
+  <!-- Conclusion node -->
+  <rect x="540" y="200" width="320" height="200" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="700" y="232" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">N1-E directionality</text>
+  <line x1="560" y1="244" x2="840" y2="244" stroke="#fff" stroke-width="0.8"/>
+  <text x="700" y="270" text-anchor="middle" fill="#fff" font-size="12">V1 kernel support</text>
+  <text x="700" y="288" text-anchor="middle" fill="#fff" font-size="12">restricted to forward cone</text>
+  <text x="700" y="320" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">directionality fixed by any one</text>
+  <text x="700" y="338" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">of the three routes;</text>
+  <text x="700" y="360" text-anchor="middle" fill="#fff" font-weight="bold" font-size="12">over-determined → FORCED</text>
+  <text x="700" y="382" text-anchor="middle" fill="#fff" font-size="11">no kernel choice survives</text>
+
+  <!-- Arrows from each route to conclusion -->
+  <g stroke="#1a4f8b" stroke-width="1.8" fill="none" marker-end="url(#arr)">
+    <line x1="360" y1="130" x2="540" y2="265"/>
+    <line x1="360" y1="250" x2="540" y2="290"/>
+    <line x1="360" y1="370" x2="540" y2="320"/>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="450" width="820" height="130" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="475" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Why "over-determined"?</text>
+  <text x="60" y="500" font-size="11" fill="#444">Each route on the left, taken alone, forces V1 forward-cone-only support. The three routes are independent in the sense</text>
+  <text x="60" y="518" font-size="11" fill="#444">that no one route is derivable from the others without invoking the very directionality at issue.</text>
+  <text x="60" y="540" font-size="11" fill="#444">Removing any single route still leaves the conclusion FORCED. The kernel-arrow is therefore robust against</text>
+  <text x="60" y="558" font-size="11" fill="#444">substrate-level relaxations of any one of P02, P11, or P13 — a structural feature not present in any standard account.</text>
+  <text x="60" y="578" font-size="11" fill="#444" font-style="italic">This is what "over-determined-forced" means: structurally robust under removal of one substrate input.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 12.4 — RAQUAL-class scalar-tensor structure of the covariantized equation</text>
+
+  <!-- Top: covariantized equation banner -->
+  <rect x="40" y="60" width="820" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="92" text-anchor="middle" fill="#fff" font-weight="bold" font-size="17">∇_μ [ μ(√(g^αβ ∇_α Φ ∇_β Φ)/a₀) ∇^μ Φ ]  =  4π G T</text>
+  <text x="450" y="120" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">covariantized substrate-gravity field equation (RAQUAL-class)</text>
+
+  <!-- Three structural pieces -->
+  <text x="450" y="170" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Three structural ingredients</text>
+
+  <!-- Scalar field Φ -->
+  <rect x="40" y="190" width="265" height="200" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="215" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Scalar field  Φ</text>
+  <line x1="55" y1="225" x2="290" y2="225" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="172" y="252" text-anchor="middle" font-size="11" fill="#444">substrate-derived</text>
+  <text x="172" y="270" text-anchor="middle" font-size="11" fill="#444">gravitational potential</text>
+  <text x="172" y="298" text-anchor="middle" font-size="11" fill="#444">single propagating</text>
+  <text x="172" y="316" text-anchor="middle" font-size="11" fill="#444">scalar degree of freedom</text>
+  <text x="172" y="350" text-anchor="middle" font-size="10" fill="#666" font-style="italic">no extra modes;</text>
+  <text x="172" y="367" text-anchor="middle" font-size="10" fill="#666" font-style="italic">no separate vector or tensor</text>
+
+  <!-- Acoustic metric g^αβ_ac -->
+  <rect x="320" y="190" width="265" height="200" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="452" y="215" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Acoustic metric  g^αβ_ac</text>
+  <line x1="335" y1="225" x2="570" y2="225" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="452" y="252" text-anchor="middle" font-size="11" fill="#444">tensor structure for</text>
+  <text x="452" y="270" text-anchor="middle" font-size="11" fill="#444">covariant derivatives</text>
+  <text x="452" y="298" text-anchor="middle" font-size="11" fill="#444">kinematic-summary,</text>
+  <text x="452" y="316" text-anchor="middle" font-size="11" fill="#444">not Einstein metric</text>
+  <text x="452" y="350" text-anchor="middle" font-size="10" fill="#666" font-style="italic">supplies tensor-level structure</text>
+  <text x="452" y="367" text-anchor="middle" font-size="10" fill="#666" font-style="italic">without GR dynamical equation</text>
+
+  <!-- Interpolation function μ -->
+  <rect x="600" y="190" width="265" height="200" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="732" y="215" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">Interpolation function  μ(x)</text>
+  <line x1="615" y1="225" x2="850" y2="225" stroke="#5a2090" stroke-width="0.8"/>
+  <text x="732" y="252" text-anchor="middle" font-size="11" fill="#444">Newtonian limit μ(x) → 1</text>
+  <text x="732" y="270" text-anchor="middle" font-size="11" fill="#444">deep-MOND limit μ(x) → x</text>
+  <text x="732" y="298" text-anchor="middle" font-size="11" fill="#444">non-linear scaling</text>
+  <text x="732" y="316" text-anchor="middle" font-size="11" fill="#444">in scalar-field gradient</text>
+  <text x="732" y="350" text-anchor="middle" font-size="10" fill="#666" font-style="italic">limits FORCED;</text>
+  <text x="732" y="367" text-anchor="middle" font-size="10" fill="#666" font-style="italic">specific shape INHERITED</text>
+
+  <!-- RAQUAL classification -->
+  <rect x="40" y="415" width="820" height="80" fill="#fff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="450" y="440" text-anchor="middle" font-weight="bold" font-size="13" fill="#1a4f8b">Classification: RAQUAL-class scalar-tensor (Bekenstein–Milgrom 1984 family)</text>
+  <line x1="60" y1="450" x2="840" y2="450" stroke="#1a4f8b" stroke-width="0.5"/>
+  <text x="450" y="473" text-anchor="middle" font-size="11" fill="#444">single-scalar-field theory with non-linear coupling to acoustic-metric gradients</text>
+  <text x="450" y="488" text-anchor="middle" font-size="11" fill="#444" font-style="italic">— established RAQUAL class enables direct stability / OS-positivity audit (Figure 12.6)</text>
+
+  <!-- Footer -->
+  <rect x="40" y="510" width="820" height="70" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="60" y="533" font-size="11" fill="#444">• ED-derived RAQUAL class shares structural form with phenomenological RAQUAL theories but with substrate-derived μ.</text>
+  <text x="60" y="551" font-size="11" fill="#444">• Substrate origin: cumulative-strain four-index object (Figure 12.2) contracted with acoustic metric.</text>
+  <text x="60" y="569" font-size="11" fill="#444" font-style="italic">• Form-FORCED structure; specific μ-shape value-INHERITED.</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 9.5 — YM mass-gap mechanism: V1 second-moment + non-Abelian quartic stabilization</text>
+
+  <!-- Two upstream substrate ingredients -->
+  <rect x="40" y="80" width="380" height="130" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="230" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">V1 second-moment ⟨t²⟩_V1</text>
+  <line x1="55" y1="115" x2="405" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="230" y="140" text-anchor="middle" font-size="11" fill="#444">finite kernel width supplies a</text>
+  <text x="230" y="158" text-anchor="middle" font-size="11" fill="#444">substrate length-scale ~ ℓ_P</text>
+  <text x="230" y="178" text-anchor="middle" font-size="11" fill="#444">in propagator structure</text>
+  <text x="230" y="200" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate-cutoff origin</text>
+
+  <rect x="480" y="80" width="380" height="130" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="670" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Non-Abelian quartic interaction</text>
+  <line x1="495" y1="115" x2="845" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="670" y="140" text-anchor="middle" font-size="11" fill="#444">F^μν^a F_μν^a contains</text>
+  <text x="670" y="158" text-anchor="middle" font-size="11" fill="#444">A⁴ self-interaction term</text>
+  <text x="670" y="178" text-anchor="middle" font-size="11" fill="#444">via [A_μ, A_ν]² structure</text>
+  <text x="670" y="200" text-anchor="middle" font-size="10" fill="#666" font-style="italic">non-commutative rule-types</text>
+
+  <!-- Composition arrow -->
+  <line x1="230" y1="210" x2="380" y2="270" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <line x1="670" y1="210" x2="520" y2="270" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Stabilization mechanism -->
+  <rect x="180" y="280" width="540" height="170" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="308" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Stabilization at scale m_gap</text>
+  <line x1="200" y1="318" x2="700" y2="318" stroke="#fff" stroke-width="0.8"/>
+
+  <g fill="#fff" font-size="12">
+    <text x="200" y="345">• Long-wavelength gauge fluctuations are stabilized at scale m_gap by</text>
+    <text x="200" y="365">  competition between V1-suppressed propagation and quartic self-coupling.</text>
+    <text x="200" y="395">• Massless excitations would require diverging long-wavelength amplitude;</text>
+    <text x="200" y="415">  quartic stabilization forbids it.</text>
+  </g>
+  <text x="450" y="438" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">→ spectrum has a gap</text>
+
+  <!-- Bottom: form-FORCED conclusion -->
+  <rect x="40" y="475" width="820" height="105" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="500" text-anchor="middle" font-weight="bold" font-size="13" fill="#a05a00">Verdict: form-FORCED mass-gap; coefficient INHERITED</text>
+  <line x1="60" y1="510" x2="840" y2="510" stroke="#a05a00" stroke-width="0.8"/>
+  <g fill="#444" font-size="11">
+    <text x="60" y="533">• Form-FORCED: the spectral gap exists structurally; massless YM excitations are forbidden at substrate level.</text>
+    <text x="60" y="551">• Value-INHERITED: the absolute scale m_gap depends on V1 width function and group-theoretic prefactors.</text>
+    <text x="60" y="569">• Conditional on kernel-profile rescaling consistent with substrate-cutoff continuum limit (YM-2 in Yang–Mills arc).</text>
+  </g>
+</svg>

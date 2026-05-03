@@ -1,0 +1,59 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 13.5 — Information vs entanglement at the horizon</text>
+
+  <!-- Central horizon line + interior/exterior labels -->
+  <text x="195" y="62" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Exterior</text>
+  <text x="450" y="62" text-anchor="middle" font-size="12" fill="#1a4f8b" font-weight="bold">Σ_H decoupling surface</text>
+  <text x="705" y="62" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Interior</text>
+
+  <line x1="450" y1="80" x2="450" y2="490" stroke="#1a4f8b" stroke-width="3"/>
+
+  <!-- Two rows: classical information (top), entanglement (bottom) -->
+
+  <!-- Row 1: classical information -->
+  <rect x="40" y="80" width="820" height="180" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="105" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Row 1: Classical information transfer</text>
+  <line x1="55" y1="115" x2="845" y2="115" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="195" y="145" text-anchor="middle" font-size="11" fill="#444">classical signal</text>
+  <text x="195" y="163" text-anchor="middle" font-size="11" fill="#444">propagates outward</text>
+
+  <!-- Blocked arrow at horizon -->
+  <line x1="290" y1="195" x2="380" y2="195" stroke="#a05a00" stroke-width="2.5"/>
+  <line x1="380" y1="195" x2="430" y2="195" stroke="#a05a00" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <line x1="430" y1="180" x2="455" y2="210" stroke="#a05a00" stroke-width="2"/>
+  <line x1="455" y1="180" x2="430" y2="210" stroke="#a05a00" stroke-width="2"/>
+  <text x="375" y="220" text-anchor="middle" font-size="10" fill="#a05a00" font-weight="bold">BLOCKED at Σ_H</text>
+
+  <text x="705" y="145" text-anchor="middle" font-size="11" fill="#444">classical signal generated</text>
+  <text x="705" y="163" text-anchor="middle" font-size="11" fill="#444">in interior</text>
+
+  <text x="450" y="245" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">Γ_cross collapse severs classical-information channel exterior ↔ interior</text>
+
+  <!-- Row 2: entanglement -->
+  <rect x="40" y="280" width="820" height="200" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="450" y="305" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Row 2: Entanglement straddling</text>
+  <line x1="55" y1="315" x2="845" y2="315" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <!-- Two entangled chains spanning horizon -->
+  <circle cx="290" cy="365" r="8" fill="#1a4f8b"/>
+  <circle cx="610" cy="365" r="8" fill="#1a4f8b"/>
+  <path d="M 290,365 Q 450,335 610,365" fill="none" stroke="#1a4f8b" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="290" y="395" text-anchor="middle" font-size="10" fill="#1a4f8b">chain A</text>
+  <text x="290" y="410" text-anchor="middle" font-size="10" fill="#444">(exterior)</text>
+  <text x="610" y="395" text-anchor="middle" font-size="10" fill="#1a4f8b">chain B</text>
+  <text x="610" y="410" text-anchor="middle" font-size="10" fill="#444">(interior)</text>
+
+  <text x="450" y="345" text-anchor="middle" font-size="11" fill="#1a4f8b" font-weight="bold">shared-rule-coherence</text>
+
+  <text x="450" y="445" text-anchor="middle" font-size="11" fill="#1a4f8b" font-style="italic">PRESERVED across Σ_H</text>
+  <text x="450" y="463" text-anchor="middle" font-size="10" fill="#666">substrate rules pre-existing before horizon formation persist —</text>
+  <text x="450" y="478" text-anchor="middle" font-size="10" fill="#666">they do not require classical-information channel to maintain</text>
+
+  <!-- Footer -->
+  <rect x="40" y="495" width="820" height="85" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="518" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the distinction</text>
+  <text x="60" y="540" font-size="11" fill="#444">Classical information transfer requires Γ_cross — blocked at Σ_H. Entanglement is shared-rule-coherence — substrate-level structure</text>
+  <text x="60" y="558" font-size="11" fill="#444">that persists across the decoupling surface independent of classical channels.</text>
+  <text x="60" y="576" font-size="11" fill="#444" font-style="italic">→ no firewall paradox: information blocking and entanglement straddling are independently substrate-derived properties.</text>
+</svg>

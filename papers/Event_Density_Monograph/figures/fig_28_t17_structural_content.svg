@@ -1,0 +1,59 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 6.1 — T17: gauge-field-as-rule-type, gauge invariance as interface property</text>
+
+  <!-- Top: Substrate level (label-carrying participation rule) -->
+  <text x="450" y="62" text-anchor="middle" font-size="12" fill="#1a4f8b" font-weight="bold">Substrate level</text>
+  <rect x="120" y="80" width="660" height="100" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="450" y="105" text-anchor="middle" fill="#1a4f8b" font-weight="bold" font-size="13">Label-carrying participation rule (rule-type)</text>
+  <line x1="140" y1="115" x2="760" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <!-- Schematic: rule-type with labels visualised as colored dots on a rule structure -->
+  <g fill="#444" font-size="11">
+    <text x="160" y="140">• rule has internal labels (group elements)</text>
+    <text x="160" y="158">• rules of relabelings preserve substrate structure</text>
+    <text x="500" y="140">• Abelian (e.g. U(1)) or non-Abelian (e.g. SU(N))</text>
+    <text x="500" y="158">• relabeling group acts on the rule's labels</text>
+  </g>
+
+  <!-- Arrow down through DCGT -->
+  <line x1="450" y1="190" x2="450" y2="240" stroke="#1a4f8b" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="465" y="220" font-size="11" fill="#444" font-style="italic">DCGT coarse-graining</text>
+
+  <!-- Middle: T17 main result -->
+  <text x="450" y="265" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Continuum / form level</text>
+
+  <!-- Two side-by-side concept boxes -->
+  <rect x="60" y="285" width="380" height="160" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="250" y="312" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Gauge field A_μ as rule-measure</text>
+  <line x1="80" y1="322" x2="420" y2="322" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="250" y="346" text-anchor="middle" font-size="11" fill="#444">A_μ is the participation measure of</text>
+  <text x="250" y="364" text-anchor="middle" font-size="11" fill="#444">label-carrying rule activity at scale R_cg</text>
+  <text x="250" y="392" text-anchor="middle" font-size="11" fill="#444" font-style="italic">not a fundamental object</text>
+  <text x="250" y="410" text-anchor="middle" font-size="11" fill="#444" font-style="italic">— derived from rule-type structure</text>
+  <text x="250" y="432" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">→ minimal coupling to matter (Lorentz)</text>
+
+  <rect x="460" y="285" width="380" height="160" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="650" y="312" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Gauge invariance as interface property</text>
+  <line x1="480" y1="322" x2="820" y2="322" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="650" y="346" text-anchor="middle" font-size="11" fill="#444">relabelings that preserve the substrate</text>
+  <text x="650" y="364" text-anchor="middle" font-size="11" fill="#444">rule are exactly the gauge transformations</text>
+  <text x="650" y="392" text-anchor="middle" font-size="11" fill="#444" font-style="italic">not a postulated symmetry</text>
+  <text x="650" y="410" text-anchor="middle" font-size="11" fill="#444" font-style="italic">— derived from interface preservation</text>
+  <text x="650" y="432" text-anchor="middle" font-size="11" fill="#a05a00" font-weight="bold">→ A_μ → A_μ + ∂_μ Λ  ↔  rule relabel</text>
+
+  <!-- Bottom: Both Abelian and non-Abelian extension -->
+  <rect x="60" y="465" width="780" height="115" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="490" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Coverage: compact-simple-group rule-types</text>
+  <line x1="80" y1="500" x2="820" y2="500" stroke="#fff" stroke-width="0.8"/>
+  <g fill="#fff" font-size="12">
+    <text x="80" y="525">• U(1):  electromagnetism — Maxwell + minimal-coupling Lorentz force on charged matter</text>
+    <text x="80" y="544">• non-Abelian compact simple groups (e.g. SU(N)):  Yang–Mills D_μ F^μν = J^ν  (Ch. 9)</text>
+    <text x="80" y="563">• same structural argument; non-commutative relabeling group → non-Abelian gauge structure FORCED</text>
+  </g>
+</svg>

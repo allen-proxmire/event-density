@@ -1,0 +1,49 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 12.7 — The structural cost: deep-MOND superluminality FORCED</text>
+
+  <!-- Top: structural cost statement -->
+  <rect x="40" y="60" width="820" height="80" fill="#a05a00" stroke="#a05a00" stroke-width="2" rx="8"/>
+  <text x="450" y="92" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">In the deep-MOND asymptote |∇Φ| ≪ a₀ , scalar mode propagates faster than c</text>
+  <text x="450" y="118" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">— and substrate-cumulative-strain consistency forbids any avoidance route</text>
+
+  <!-- Two avoidance routes (both forbidden) -->
+  <text x="450" y="170" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Avoidance routes considered</text>
+
+  <!-- Route 1: avoid via different μ shape -->
+  <rect x="40" y="190" width="400" height="180" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="240" y="215" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Route 1: redesign μ-shape</text>
+  <line x1="55" y1="225" x2="425" y2="225" stroke="#888" stroke-width="0.8"/>
+  <text x="240" y="248" text-anchor="middle" font-size="11" fill="#444">choose μ(x) such that propagation</text>
+  <text x="240" y="266" text-anchor="middle" font-size="11" fill="#444">speed remains ≤ c at all x</text>
+  <text x="240" y="296" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">verdict:</text>
+  <rect x="115" y="305" width="250" height="32" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5"/>
+  <text x="240" y="326" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">INADMISSIBLE</text>
+  <text x="240" y="358" text-anchor="middle" font-size="10" fill="#666" font-style="italic">would require shape contradicting</text>
+  <text x="240" y="372" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate cumulative-strain mechanism</text>
+
+  <!-- Route 2: avoid via additional fields -->
+  <rect x="460" y="190" width="400" height="180" fill="#f9f9f9" stroke="#888" stroke-width="1.5" rx="6"/>
+  <text x="660" y="215" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Route 2: add new substrate primitive</text>
+  <line x1="475" y1="225" x2="845" y2="225" stroke="#888" stroke-width="0.8"/>
+  <text x="660" y="248" text-anchor="middle" font-size="11" fill="#444">introduce vector / tensor field</text>
+  <text x="660" y="266" text-anchor="middle" font-size="11" fill="#444">to absorb superluminal modes</text>
+  <text x="660" y="296" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">verdict:</text>
+  <rect x="535" y="305" width="250" height="32" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5"/>
+  <text x="660" y="326" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">INADMISSIBLE</text>
+  <text x="660" y="358" text-anchor="middle" font-size="10" fill="#666" font-style="italic">would violate substrate-primitive</text>
+  <text x="660" y="372" text-anchor="middle" font-size="10" fill="#666" font-style="italic">no-new-primitives discipline</text>
+
+  <!-- Verdict -->
+  <rect x="180" y="395" width="540" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="423" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Verdict: structural cost ACCEPTED</text>
+  <line x1="200" y1="433" x2="700" y2="433" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="455" text-anchor="middle" fill="#fff" font-size="12">deep-MOND superluminality is the only structural cost of substrate gravity;</text>
+  <text x="450" y="473" text-anchor="middle" fill="#fff" font-size="12">no admissible avoidance route exists within ED methodological discipline</text>
+  <text x="450" y="490" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">— substrate-FORCED consequence of T20 + ECR + acoustic-metric structure</text>
+
+  <!-- Footer -->
+  <rect x="40" y="510" width="820" height="70" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="533" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the structural cost</text>
+  <text x="60" y="555" font-size="11" fill="#444">Substrate gravity recovers Newtonian limit + BTFR slope-4 at the cost of permitting superluminal scalar propagation in the deep-MOND limit.</text>
+  <text x="60" y="572" font-size="11" fill="#444" font-style="italic">No causal-paradox empirical signature predicted; superluminality remains within scalar mode, not observable matter signals.</text>
+</svg>

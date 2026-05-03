@@ -1,0 +1,87 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 4.6 — Empirical posture of Theorem 18</text>
+
+  <!-- Three columns: what T18 predicts (FORCED), what it does NOT predict (INHERITED / out of scope), what is currently testable -->
+
+  <!-- Column 1: What T18 forces (predictions) -->
+  <rect x="40" y="60" width="270" height="500" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="175" y="90" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">FORCED structurally</text>
+  <text x="175" y="108" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">what T18 commits the program to</text>
+  <line x1="60" y1="120" x2="290" y2="120" stroke="#fff" stroke-width="0.8"/>
+
+  <g fill="#fff" font-size="12">
+    <text x="60" y="150">• V1 forward-cone-only</text>
+    <text x="76" y="167">support at primitive level</text>
+    <text x="60" y="200">• no advanced or symmetric</text>
+    <text x="76" y="217">substrate-level kernel</text>
+    <text x="60" y="250">• microscopic causal structure</text>
+    <text x="76" y="267">in QFT propagators (Ch. 6)</text>
+    <text x="60" y="300">• R1 hyperviscous regularization</text>
+    <text x="76" y="317">in NS via DCGT (Ch. 8)</text>
+    <text x="60" y="350">• YM mass-gap mechanism</text>
+    <text x="76" y="367">via V1 second moment (Ch. 9)</text>
+    <text x="60" y="400">• curved-spacetime V1</text>
+    <text x="76" y="417">retardation in BH (Chs. 12–13)</text>
+    <text x="60" y="450">• consistency with all four</text>
+    <text x="76" y="467">standard arrow-of-time accounts</text>
+  </g>
+
+  <text x="175" y="525" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">structural form, not</text>
+  <text x="175" y="540" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">numerical magnitude</text>
+
+  <!-- Column 2: What T18 does NOT fix (INHERITED / out of scope) -->
+  <rect x="320" y="60" width="270" height="500" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="455" y="90" text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="14">INHERITED / out of scope</text>
+  <text x="455" y="108" text-anchor="middle" fill="#a05a00" font-size="11" font-style="italic">what T18 does NOT fix</text>
+  <line x1="340" y1="120" x2="570" y2="120" stroke="#a05a00" stroke-width="0.8"/>
+
+  <g fill="#a05a00" font-size="12">
+    <text x="340" y="150">• exact width function of V1</text>
+    <text x="356" y="167">  (kernel-shape INHERITED)</text>
+    <text x="340" y="200">• magnitude of first temporal</text>
+    <text x="356" y="217">  moment ⟨t⟩_V1</text>
+    <text x="340" y="250">• absolute amplitude of V1</text>
+    <text x="356" y="267">  vacuum residual Λ_V1</text>
+    <text x="340" y="300">• cosmological boundary</text>
+    <text x="356" y="317">  conditions (Big Bang)</text>
+    <text x="340" y="350">• thermodynamic 2nd law</text>
+    <text x="356" y="367">  (downstream consistency only)</text>
+    <text x="340" y="400">• psychological / phenomenal</text>
+    <text x="356" y="417">  experience of time-flow</text>
+    <text x="340" y="450">• universe-scale CPT structure</text>
+    <text x="356" y="467">  (out of monograph scope)</text>
+  </g>
+
+  <text x="455" y="525" text-anchor="middle" fill="#a05a00" font-size="11" font-style="italic">downstream programs,</text>
+  <text x="455" y="540" text-anchor="middle" fill="#a05a00" font-size="11" font-style="italic">empirical anchors, or out of scope</text>
+
+  <!-- Column 3: Currently testable -->
+  <rect x="600" y="60" width="270" height="500" fill="#f9f9f9" stroke="#888" stroke-width="2" rx="6"/>
+  <text x="735" y="90" text-anchor="middle" fill="#444" font-weight="bold" font-size="14">Currently testable</text>
+  <text x="735" y="108" text-anchor="middle" fill="#666" font-size="11" font-style="italic">empirical interface points</text>
+  <line x1="620" y1="120" x2="850" y2="120" stroke="#888" stroke-width="0.8"/>
+
+  <g fill="#444" font-size="12">
+    <text x="620" y="150">• retardation in EM:</text>
+    <text x="636" y="167">  consistent (PASSED)</text>
+    <text x="620" y="200">• microscopic CP-violation:</text>
+    <text x="636" y="217">  not at substrate level</text>
+    <text x="620" y="250">• cross-correlation tests</text>
+    <text x="636" y="267">  on V1 width: open</text>
+    <text x="620" y="300">• YM spectral gap:</text>
+    <text x="636" y="317">  conjectural anchor</text>
+    <text x="620" y="350">• BH no-singularity:</text>
+    <text x="636" y="367">  structural prediction</text>
+    <text x="620" y="400">• kernel-symmetry tests</text>
+    <text x="636" y="417">  in optomechanical systems</text>
+    <text x="620" y="450">• IN PROGRESS:</text>
+    <text x="636" y="467">  multi-timescale photonics</text>
+    <text x="636" y="484">  (Hafezi 2025 — PASSED)</text>
+  </g>
+
+  <text x="735" y="525" text-anchor="middle" fill="#444" font-size="11" font-style="italic">PASSED, ANCHORED, or</text>
+  <text x="735" y="540" text-anchor="middle" fill="#444" font-size="11" font-style="italic">in active investigation</text>
+
+  <!-- Footer -->
+  <text x="450" y="585" text-anchor="middle" font-size="11" fill="#444" font-style="italic">T18's empirical posture is mixed by design: structural form FORCED; numerical content INHERITED.</text>
+</svg>

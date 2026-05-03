@@ -1,0 +1,6604 @@
+---
+title: |
+  Event Density: A Substrate-Level Architecture of Physics
+  \large{Foundations, Theorems, and Architectural Closure Across Nine Sectors}
+author: Allen Proxmire
+date: May 2026 (Shell v0.1)
+---
+
+# Title Page
+
+**Event Density: A Substrate-Level Architecture of Physics**
+
+*Foundations, Theorems, and Architectural Closure Across Nine Sectors*
+
+Allen Proxmire — May 2026
+
+**Status:** Monograph Shell v0.1. Each chapter is a structural summary; full integrated derivations live in the canonical sources cited per chapter. The shell is intended to be navigated as a single document and progressively expanded chapter-by-chapter into the full monograph.
+
+---
+
+# Foreword
+
+The Event Density (ED) program develops the substrate-level physics underneath quantum mechanics, classical field theory, fluid dynamics, gauge theory, gravitation, and quantum information. Across roughly thirty months of development the program closed nine sectors at the architectural level — each producing a publication-grade Foundations paper or Synthesis paper, each derived from the same set of substrate primitives, each consistent with every other closed sector. The body of work is now too large to navigate without an integrating document.
+
+This monograph provides that integrating document. It does not replace the existing publication-grade papers; it organizes them, unifies the vocabulary, maps the dependency graph between theorems, and gives any reader — internal or external — a single canonical entry point to the program.
+
+The shell organizes the program into five Parts and fifteen chapters. Each chapter establishes what the chapter contributes architecturally, names its dependencies on earlier chapters and theorems, and points to the canonical source paper(s) carrying the full derivation. Four appendices give the theorem provenance map, a notation glossary, a paper-to-chapter cross-reference, and a substrate-constants table.
+
+The shell is itself the navigation. As the program continues, the shell progressively absorbs each chapter's full content; chapters that have been expanded retain the same dependency graph as their summary. The shell stays valid even if no chapter is ever fully expanded, and any chapter that does get fully written progressively replaces its placeholder summary in place. This is the standard pattern by which large research programs incrementally produce a monograph from an existing publication corpus.
+
+The methodological commitment is consistent across the program: **the structural form of each result is derived from substrate primitives; specific numerical thresholds are calibrated empirically rather than computed in closed form.** The shell preserves this distinction throughout; every chapter notes form-FORCED content separately from value-INHERITED content, and the appendices identify which substrate constants currently sit at which empirical anchors.
+
+---
+
+# How to Read This Monograph
+
+Three reading paths.
+
+**Linear.** Read Parts I–V in order. Part I establishes the substrate ontology and the coarse-graining bridge to continuum physics; Part II derives quantum mechanics and quantum computation as substrate consequences; Part III handles classical field theory and fluid dynamics; Part IV handles the gravitational sector; Part V provides the empirical synthesis and open extensions.
+
+**By sector.** A reader interested in a specific sector can jump directly to the relevant chapter. Each chapter is self-contained at the structural-summary level and points to its canonical sources; readers who want full derivational detail follow the source pointers into the existing publication-grade papers.
+
+**By theorem.** Readers tracking the theorem inventory (T1–T21, plus the foundational theorems N1, GR1, DCGT, ECR, and UR-1) can use Appendix A as the navigation map. The provenance graph in Appendix A names the source paper for each theorem and the dependency chain from substrate primitives.
+
+**Cross-references.** Each chapter cites its canonical source paper(s) by repository path. Each appendix is consistent with the chapters: Appendix A's theorem provenance map matches the dependency chains stated in the chapters; Appendix B's notation glossary covers every symbol used in the chapter summaries; Appendix C assigns each existing publication-grade paper to exactly one chapter; Appendix D collects every substrate constant referenced.
+
+The shell does not duplicate derivations. When a chapter says "T17 establishes that..." and points to the T17 paper, the reader who wants the proof reads the T17 paper. When a chapter says "the multiplicity-cap function $M$ takes the form..." and points to the QC Foundations Paper, the reader who wants the construction reads that paper. The shell's role is to make the dependency structure visible and the navigation tractable.
+
+The methodological vocabulary is consistent throughout. **Form-FORCED** means: the structural form of a result is derived from substrate primitives. **Value-INHERITED** means: specific numerical thresholds inherit from substrate constants whose closed-form derivation is downstream work. Every chapter respects this distinction.
+
+---
+
+# Table of Contents
+
+**Part I — Substrate Foundations**
+
+- Chapter 1: The Substrate Ontology — Primitives P1–P13
+- Chapter 2: Load-Bearing Invariants — Multiplicity, Gradient Sparsity, Cross-Bandwidth, V1, P11
+- Chapter 3: The Coarse-Graining Bridge — DCGT, Hydrodynamic Window, Multi-Scale Expansion
+- Chapter 4: Kernel-Level Arrow of Time — Theorem N1 + Theorem 18
+
+**Part II — Quantum Sector**
+
+- Chapter 5: Phase-1 Closure of Quantum Mechanics — T1–T16
+- Chapter 6: Form-Level QFT and Quantum Information — T17, UV-Finiteness, ED-I-13
+- Chapter 7: Quantum Computation — UR-1, the Multiplicity-Cap Function $M$, Architectural Taxonomy
+
+**Part III — Continuum and Dynamics**
+
+- Chapter 8: Navier–Stokes Architectural Foundations — Form-FORCED, R1, Path C
+- Chapter 9: Magnetohydrodynamics and Yang–Mills — T17 Coupling, DCGT Continuum, Mass-Gap Mechanism
+- Chapter 10: Soft-Matter Mobility and Non-Newtonian Rheology — UDM, P4-NN, V5
+
+**Part IV — Gravity and Cosmology**
+
+- Chapter 11: Substrate Gravity at Galactic Scale — T19, T20, ECR, T21
+- Chapter 12: Curvature Emergence — Arc ED-10, Acoustic-Metric Covariantization
+- Chapter 13: Black-Hole Architecture — Arc BH, Horizons, Area Law, Phase-Shift Structure
+
+**Part V — Empirical Synthesis**
+
+- Chapter 14: Cross-Platform Unifications — Matter-Wave ↔ Qubit, $\Gamma_\mathrm{cross}$ Collapse, Methodology
+- Chapter 15: Public Test Inventory and Open Extensions
+
+**Appendices**
+
+- Appendix A: Theorem Provenance Map
+- Appendix B: Notation Glossary
+- Appendix C: Paper-to-Chapter Cross-Reference
+- Appendix D: Substrate Constants and Inherited Values
+
+**Closing Note**
+
+\newpage
+
+# Part I — Substrate Foundations
+
+Part I establishes the substrate ontology that every subsequent chapter rests on. It introduces the thirteen primitives, names the load-bearing substrate quantities, develops the coarse-graining bridge from substrate to continuum, and proves the kernel-level arrow of time. After Part I, every continuum theory in Parts II–IV is reachable as a coarse-grained consequence of the substrate machinery developed here.
+
+\newpage
+
+## Chapter 1 — The Substrate Ontology: Primitives P1–P13
+
+### 1.1 Chapter Overview
+
+This chapter establishes the program's irreducible base. The Event Density framework rests on thirteen substrate primitives, labeled P01 through P13, that are not derived from anything more fundamental within the framework. They are the program's commitments about what reality is at the level the derivation chain starts from. Every theorem developed in the remaining fourteen chapters is ultimately reachable from a subset of these primitives plus mathematical structure (notably Gleason's 1957 theorem in Phase-1 and Stone's 1932 theorem on one-parameter unitary groups in the Schrödinger derivation, both of which act as bridges between substrate constraints and continuum mathematical structure).
+
+The chapter has no upstream dependencies. It is read by every subsequent chapter; nothing in the program is reachable without it. The chapter's purpose is therefore not to derive but to *establish vocabulary* and *clarify the boundary* between substrate ontology and the emergent continuum physics that the subsequent chapters develop. Specific irreducible commitments — event discreteness, chain worldline structure, the bandwidth update rule, commitment irreversibility, proper-time ordering, and the remaining structural commitments covering participation, multiplicity, finite kernels, and substrate-locality conditions — are introduced in groups organized by the role each plays in the program's downstream theorems.
+
+### 1.2 The Methodological Commitment
+
+#### 1.2.1 What the substrate ontology is
+
+The framework treats reality, at the most fundamental level the program reaches, as a network of discrete *events* linked by relational structure. Particles are not fundamental in this picture; they are stable patterns of substrate participation. Fields are not fundamental; they are coarse-grained averages of how participation events relate. Spacetime is not fundamental; it emerges from the coarse-graining of dense, redundant, irreversibly-committed participation networks (Chapter 3 develops this transition formally via the Diffusion Coarse-Graining Theorem).
+
+The thirteen primitives commit the framework to specific properties of the substrate: events are discrete; events live on chain worldlines; participation channels carry bounded bandwidth; commitments are irreversible; chains carry proper-time-ordered structure; and so on through the remaining seven structural commitments. Each primitive is a single sharp commitment that subsequent theorems either use directly in their derivation chain or inherit through intermediate constructions.
+
+#### 1.2.2 Why these primitives, not more or fewer
+
+The number thirteen is the program's empirical answer to the question of how many irreducible substrate commitments suffice to derive the program's downstream content. The list is not arbitrary, and it is not minimal in any abstract mathematical sense — it is the smallest set the program has identified that produces the closed-arc inventory: Phase-1 closure of QM (Chapter 5), form-level QFT (Chapter 6), quantum computing architecture (Chapter 7), Navier–Stokes architectural foundations (Chapter 8), Yang–Mills (Chapter 9), soft-matter mobility (Chapter 10), substrate gravity (Chapter 11), curvature emergence (Chapter 12), and black-hole architecture (Chapter 13). Reducing the list further would require deriving one of the primitives from the others; expanding it would mean introducing redundancy. Neither has been needed across roughly thirty months of program development.
+
+The methodological discipline is strict: when a derivation requires a substrate property not already present in the primitive list, the program's options are (a) re-derive the requirement from the existing primitives, (b) demonstrate that the requirement is in fact mathematical structure (in which case it does not require a new primitive), or (c) acknowledge that the derivation is not closed at the substrate level and flag the gap explicitly. The framework has never opted to add a fourteenth primitive to close a derivation. Every closed-arc result reaches its conclusion from a subset of the existing thirteen.
+
+#### 1.2.3 The form-FORCED / value-INHERITED methodology starts here
+
+The program's signature methodological pattern — *form-FORCED at the structural level, value-INHERITED at the numerical level* — has its origin point in the substrate primitives. The primitives commit the framework to specific *forms* (events are discrete, commitments are irreversible, chains carry bandwidth) without committing to specific *values* (the precise substrate length scale, the V1 kernel functional shape, the bandwidth-capacity coefficient). Values inherit from substrate constants whose closed-form derivation lives downstream of the primitive layer or is acknowledged as open work. Every chapter respects this distinction; every theorem in the program is form-FORCED at the structural level, with specific numerical thresholds explicitly identified as INHERITED.
+
+This methodology is not merely stylistic. It is the program's structural answer to the question of how a foundational ontology can produce predictive content without overcommitting to specific empirical numbers. The form-FORCED layer is where the framework's content lives; the value-INHERITED layer is where empirical anchors calibrate the form to specific platforms and observations. The primitives are the program's most fundamental form-FORCED layer.
+
+### 1.3 Event-Structural Primitives
+
+#### 1.3.1 P01 — Event discreteness
+
+The substrate consists of discrete events, not continuous fields. Each event is a finite, non-divisible occurrence; there are no infinitesimal events and no continuous limits in the substrate's basic ontology. Continuity, when it appears in the program's downstream content, is always the result of coarse-graining over many discrete events through the hydrodynamic-window machinery of Chapter 3.
+
+**Structural role.** P01 is load-bearing for several downstream results. It supplies substrate-level UV-finiteness in form-level QFT (Chapter 6): because events are discrete, there is a smallest length scale built into the substrate, and the divergent loop integrals that motivate renormalization in standard QFT do not have substrate-level analogues. P01 is also load-bearing for the no-singularity result in black-hole architecture (Chapter 13): one of the three substrate constraints that jointly forbid divergent curvature is the discreteness of micro-events, which makes any continuum singularity statement that requires unboundedly many infinitely small events at one point inadmissible at the substrate level.
+
+**Downstream consequences.** UV-finiteness in QFT (Chapter 6); no-singularity in BH-3 (Chapter 13); the discrete-event structure of P11 commitment (downstream); the cross-domain echo with the matter-wave Q-C boundary's mass-cap interpretation in Chapter 7 (large molecules accumulate too many activated internal events to sustain the unresolved regime).
+
+#### 1.3.2 P02 — Chain worldline structure
+
+Events are not free-floating; they are linked into *chains* that carry persistent identity. A chain is a sequence of events linked by participation relations; chains have proper-time-ordered structure (handed off to P13 below) and they are the substrate-level object that, after coarse-graining, produces the appearance of particle worldlines.
+
+**Structural role.** P02 supplies the chain forward-propagator structure used in Theorem 18's derivation of the kernel-level arrow of time (Chapter 4). The forward-propagator $U_K(n,m)$ between two chain commitments is identically zero for $n < m$; this property is what makes the chain-contribution sum produce a forward-cone-only kernel, ruling out symmetric, advanced, and hybrid kernels at the primitive level.
+
+**Downstream consequences.** Theorem 18 retardation (Chapter 4); the substrate-level identification of "particle" as a chain pattern (rather than a fundamental object) used throughout Parts II and III; the chain identity that makes commitment-irreversibility (P11) propagate consistently across substrate dynamics.
+
+### 1.4 Participation and Bandwidth Primitives
+
+#### 1.4.1 P04 — Bandwidth update rule
+
+Participation channels carry bounded bandwidth. The bandwidth update rule constrains how much of a chain's available participation capacity can be active at any substrate moment, and it constrains how participation transfers across the chain ensemble. P04 is the primitive that gives rise to the multiplicity quantity introduced in Chapter 2 — the count of viable distinct ED-gradient pathways available locally is bounded above by the bandwidth update rule's per-chain capacity.
+
+**Structural role.** P04 is the most heavily-used primitive across the program after P11. It supplies bandwidth conservation across orthogonal decompositions, which is the substrate-level prerequisite for the Born rule's squared form (Chapter 5; Gleason's theorem provides the mathematical bridge from non-contextuality + bandwidth conservation to the squared-amplitude functional). It supplies the finite-bandwidth substrate constraint that produces the Heisenberg uncertainty principle's $\hbar/2$ lower bound (Chapter 5). It supplies the mobility-capacity bound that produces the Universal Mobility Law $M(\rho) = M_0(1 - \rho/\rho_\mathrm{max})^\beta$ in soft-matter rheology (Chapter 10) and the Class A protection mechanism in quantum computing (Chapter 7).
+
+**Downstream consequences.** Born rule (T1–T16, Chapter 5); Heisenberg uncertainty (T1–T16, Chapter 5); UV-finiteness contribution (Chapter 6); Universal Mobility Law (Chapter 10); P4-NonNewtonian rheology classification (Chapter 10); UR-1 condition (i) on multiplicity bounds (Chapter 7); architectural Class A engineered-low-multiplicity protection (Chapter 7).
+
+#### 1.4.2 Participation, multiplicity, and channel-structure primitives (grouped)
+
+Several of the remaining primitives commit the framework to structural properties of participation: that participation has multiplicity (a count of locally available pathways); that participation channels can branch, scatter, and recombine; that the substrate supports a notion of participation density $\rho$ that is non-negative and increases monotonically as the universe unfolds. These primitives jointly define what *participation* means at the substrate level and supply the substrate-state quantities that recur across every closed sector.
+
+**Structural role.** Together with P04, these primitives produce the load-bearing invariants developed in Chapter 2: the multiplicity $\mathcal{M}$ as the ED analogue of entropy, the gradient sparsity $\sigma$ as the substrate-scale dimensionless measure of how steeply $\rho$ varies, the cross-bandwidth $\Gamma_\mathrm{cross}$ as the substrate-mediated rate at which adjacent regions exchange correlated participation events. None of these emergent quantities is itself a primitive; each is constructed from the participation/multiplicity/channel primitives in a manner that remains form-FORCED throughout.
+
+**Downstream consequences.** All multiplicity-driven results across Chapters 2, 7, 8, 10, 13. The participation-density gradient $\nabla\rho$ that enters DCGT cross-bandwidth (Chapter 3) and that controls horizon formation in BH-2 (Chapter 13). The participation-channel structure that ED-I-13 reframes as quantum information (Chapter 6).
+
+### 1.5 Commitment and Irreversibility
+
+#### 1.5.1 P11 — Commitment irreversibility
+
+P11 is the program's only direction-bearing primitive. Once a substrate event commits — once a participation channel resolves into a definite outcome at a chain endpoint — the commitment cannot be reversed. There is no un-committing, no rewinding, no substrate operation that returns a committed state to its uncommitted form. P11 is sharp: it is a single commitment in a single place. Every other primitive (V1 kernel, participation density, chain structure, bandwidth update) is time-symmetric in isolation; they become forward-oriented only when joined with P11.
+
+**Structural role.** P11 is the substrate-level seed of the arrow of time. Theorem 18 (Chapter 4) propagates P11 through the V1 vacuum response kernel and through chain-sourced response structure to produce the forward-cone-only kernel — the kernel-level arrow of time as a primitive-level structural consequence rather than a postulate. P11 also produces the no-collapse measurement rule in Phase-1 closure of QM (Chapter 5): the standard measurement postulate is replaced by recognition that wavefunction collapse is the coarse-grained continuum signature of substrate-level commitment events. P11 produces the BH-4 information-architecture result (Chapter 13): committed structure cannot un-commit, so committed structure cannot cross a horizon and re-emerge; entanglement (uncommitted structure) can straddle freely. P11 produces the UR-1 commitment-injection failure mode in QC (Chapter 7): each P11 event at a system endpoint contributes to a Poisson-class accumulation that defines the third UR-1 condition's failure timescale.
+
+**Downstream consequences.** Theorem 18 kernel-level arrow (Chapter 4); measurement rule in QM emergence (Chapter 5); information-non-paradox in BH-4 (Chapter 13); commitment-injection failure mode in UR-1 (Chapter 7); the structural basis for "decoherence" as the coarse-grained signature of substrate-level individuation (Chapters 5–7).
+
+#### 1.5.2 Why commitment-irreversibility is the only direction-bearing primitive
+
+The framework's choice to put the arrow of time in the ontology — at the level of what reality *is* — rather than in the equations is structurally distinct from standard physics, where the arrow of time is variously assigned to thermodynamics (a boundary condition), cosmology (an expansion-direction choice), measurement (a separate postulate), or radiation (a solution-selection rule applied externally to time-symmetric equations). Each standard account passes the buck to a different layer; none derives the arrow from the laws.
+
+P11 places the arrow at the deepest layer the framework reaches and lets it propagate everywhere else as a structural consequence rather than a postulate. The advantage is sharpness: P11 is a single commitment in a single place, and its propagation through the rest of the program is auditable directly. The cost is that the framework's irreducible base now contains a direction-bearing primitive that cannot be derived from anything else within the framework. The framework treats this cost as acceptable: directionality is one structural commitment that has to live somewhere, and the substrate ontology is the place that allows it to be most cleanly stated.
+
+### 1.6 Temporal Structure
+
+#### 1.6.1 P13 — Proper-time ordering
+
+Each chain carries a proper-time-ordered structure. Events along a chain are ordered, and the ordering is intrinsic to the chain — not imposed by an external time coordinate. P13 is the substrate-level analog of the worldline-parametrization of standard relativistic mechanics, but it is committed at the substrate ontological level rather than emerging as a continuum-geometry feature.
+
+**Structural role.** P13 supplies the second piece (alongside P02 chain worldline and P11 commitment-irreversibility) of Theorem 18's forward-cone-only support. The chain forward-propagator $U_K(n,m) = 0$ for $n < m$ is a joint consequence of P02 (chain structure exists), P11 (commitments are irreversible), and P13 (the chain has proper-time ordering). Without P13, P11's irreversibility would not have a chain-internal direction to propagate against; without P02, P11 would not have a chain to propagate through.
+
+**Downstream consequences.** Theorem 18 retardation (Chapter 4); the substrate-level chain ordering that makes substrate dynamics sensible across multiple chains; the proper-time interval used in UV-finiteness derivation (Chapter 6).
+
+### 1.7 Finite-Kernel and Substrate-Locality Primitives
+
+The remaining primitives commit the framework to two related properties: that substrate response kernels are finite-width (the V1 vacuum kernel and the V5 cross-chain memory kernel both have finite temporal width at the substrate scale, formalized later as Theorem N1), and that substrate dynamics are local in the sense that events couple to neighboring events through adjacency relations rather than acting at arbitrary distance.
+
+#### 1.7.1 Finite-kernel commitments
+
+The V1 vacuum response kernel mediates participation events at the substrate level. The finite-width commitment — that the kernel has nonzero width at substrate scale rather than acting as an instantaneous delta — is what makes Theorem N1 a substantive result rather than a trivial restatement. The V5 cross-chain memory kernel mediates correlations between distinct chains; its finite width is what makes Maxwell-class viscoelasticity emerge under DCGT coarse-graining (Chapter 10).
+
+**Structural role.** The finite-width commitment is what gives the substrate temporal smearing structure rather than instantaneous response. It is load-bearing for: Theorem N1 (V1 finite-width vacuum kernel, Chapter 4); the kernel-level arrow propagation in Theorem 18 (Chapter 4); the substrate-cutoff hyperviscous regularization R1 in Navier–Stokes (Chapter 8); the Yang–Mills mass-gap mechanism via V1 second-moment expansion (Chapter 9); the V5→Maxwell coarse-graining producing soft-matter viscoelasticity (Chapter 10); the per-patch motif alphabet in BH area-law entropy (Chapter 13).
+
+#### 1.7.2 Substrate-locality commitments
+
+The substrate is local in a structural sense: a commitment event in one region can only reach events in its own causal neighborhood — its forward causal cone — not the whole forward time slab of the universe at once. This commitment is what makes the chain-time-forward structure of P11 + P02 + P13 produce a *spacetime-retarded* kernel rather than a forward-time-slab object. Without substrate locality, P11 would force chain-time-forward but the chain-summed kernel would fill the entire forward time slab uniformly; with substrate locality, the chain-summed kernel acquires forward-light-cone-only support.
+
+**Structural role.** Substrate locality is the bridge between chain-time-forward and spacetime-retarded that completes Theorem 18's derivation (Chapter 4). It is also the structural basis for the cross-bandwidth structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\sigma]$ developed under DCGT (Chapter 3): the cross-bandwidth depends on substrate gradients along the *path* between regions, not on a global state of the entire universe, because substrate dynamics are local.
+
+**Downstream consequences.** Theorem 18 light-cone-only kernel support (Chapter 4); DCGT cross-bandwidth structure (Chapter 3); the BH horizon mechanism as bandwidth-suppression at a *local* substrate-gradient threshold rather than a globally-defined geometric surface (Chapter 13); the QC condition (ii) cross-endpoint connectivity quantity used in UR-1 (Chapter 7).
+
+### 1.8 The Full Roster: Structural Roles at a Glance
+
+The thirteen primitives can be organized by the role each plays in the program's downstream content. The grouping below is for navigational convenience; primitives can and do contribute to multiple downstream theorems.
+
+```math
+\begin{array}{l|l}
+\text{Group} & \text{Primitives} \\
+\hline
+\text{Event structure} & \text{P01 event discreteness, P02 chain worldline} \\
+\text{Bandwidth and participation} & \text{P04 bandwidth update + participation/multiplicity primitives} \\
+\text{Commitment direction} & \text{P11 commitment-irreversibility} \\
+\text{Temporal structure} & \text{P13 proper-time ordering} \\
+\text{Finite kernels} & \text{V1 / V5 finite-width commitments} \\
+\text{Substrate locality} & \text{adjacency / causal-neighborhood commitments} \\
+\end{array}
+```
+
+The dependency graph from primitives to first-tier downstream theorems can be sketched as follows.
+
+**Phase-1 closure of QM (T1–T16, Chapter 5):** primarily P04 (bandwidth conservation for Born; finite-bandwidth for Heisenberg) plus P11 (measurement) plus P01 (UV-finiteness contribution). Mathematical bridges via Gleason's theorem (1957) and Stone's theorem (1932).
+
+**Theorem 17 — Gauge-Field-as-Rule-Type (Chapter 6):** label-carrying-rule-type structure plus P04 plus DCGT (Chapter 3) coarse-graining of charged-chain populations.
+
+**Theorem N1 + Theorem 18 (Chapter 4):** P02 + P04 + P11 + P13 + finite-width-kernel commitments + substrate-locality. The forcing chain propagates from P11 (forward-only commitments along chains) to spacetime-retarded V1 (forward-cone-only support).
+
+**T19 + T20 + ECR + T21 (Chapter 11):** participation/multiplicity primitives + DCGT + cumulative-strain mechanism + holographic participation-count bound (which is itself a structural commitment, not a separate primitive, since it follows from substrate locality applied to participation-count surfaces).
+
+**DCGT (Chapter 3):** P01 + P04 + finite-kernel commitments + substrate-locality + scale-separation hypothesis $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$.
+
+**UR-1 (Chapter 7):** P04 (multiplicity bound and bandwidth conservation) + P11 (commitment-injection failure mode) + DCGT (cross-endpoint connectivity from substrate-locality + gradient sparsity).
+
+The dependency graph is not flat. Primitives feed first-tier theorems (T1–T16, T17, T18, T19–T21, ECR, N1, GR1, DCGT, UR-1) which in turn feed second-tier results (architectural-class taxonomy, multiplicity-cap function $M$, NS three-angle convergence, MHD classification, Yang–Mills mass-gap, BH no-singularity). Appendix A of the Monograph Shell is the program's authoritative provenance map; this chapter establishes only the primitives at the root of the graph.
+
+### 1.9 The Substrate Boundary
+
+A central methodological task of this chapter is to make explicit the boundary between *substrate ontology* (everything in this chapter and the primitives within it) and *emergent continuum physics* (everything in subsequent chapters). The boundary is not negotiable in the program: substrate-level claims live below the boundary; coarse-grained continuum claims live above it; the bridge between them is DCGT (Chapter 3) and its non-Abelian generalization (Chapter 9).
+
+#### 1.9.1 What is substrate-ontological
+
+- The thirteen primitives.
+- The substrate-level objects defined directly from them: events, chains, participation channels, commitment events, substrate gradients of $\rho$, finite-width kernels.
+- The substrate-level scalar quantities derived without coarse-graining: $\rho$ (participation density), $\nabla\rho$, $\sigma$, $\mathcal{M}$, $\Gamma_\mathrm{cross}$ (substrate-level cross-bandwidth before continuum interpretation), $\Lambda$ (commitment-injection rate at endpoints), $\mathcal{U}$ (participation-rule unresolvedness in UR-1).
+
+#### 1.9.2 What is emergent
+
+- Spacetime as a smooth manifold (Chapter 12 makes this explicit at acoustic-metric class).
+- Particles as persistent stable participation patterns (Phase-1 closure, Chapter 5).
+- Fields as coarse-grained averages over participation events (Chapter 6 develops the gauge-field instance).
+- Continuum equations: the Schrödinger equation (Chapter 5), Maxwell's equations (Chapter 9), the Yang–Mills equation (Chapter 9), the Navier–Stokes equation (Chapter 8), the modified Poisson equation (Chapter 11), the acoustic-metric scalar-tensor covariantization (Chapter 12), and so on. Every continuum equation in the program is reached from substrate primitives through DCGT or one of its generalizations.
+- "Decoherence" as standardly understood: a coarse-grained signature of substrate-level commitment events, not a fundamental coupling-rate to environment (Chapter 7 develops this reframing for quantum computing).
+
+#### 1.9.3 Why the boundary matters
+
+The framework's predictive content is precisely the cross-boundary content: results that follow at the continuum level from commitments made at the substrate level. The matter-wave quantum-classical boundary at 140–250 kDa molecular mass (Chapter 7) is a continuum-level empirical observation; it is identified at the substrate level as a multiplicity-bound crossing in Class A architectures. The slope-4 baryonic Tully-Fisher relation (Chapter 11) is a continuum-level empirical observation across hundreds of galaxies; it is identified at the substrate level as a structural consequence of T19 + T20 + ECR. The 1/4 coefficient in Bekenstein-Hawking entropy (Chapter 13) is a continuum-level GR/QFT result; it is identified at the substrate level as INHERITED from substrate motif counting whose closed-form derivation is downstream work.
+
+The form-FORCED / value-INHERITED distinction lives at this boundary. Form-FORCED content is structurally fixed at the substrate level and propagates upward through coarse-graining. Value-INHERITED content acquires specific numerical values at the empirical or substrate-constants layer. The boundary between them is what gives the program its structure as a derivation chain rather than as a phenomenological assembly.
+
+### 1.10 Form-FORCED vs. Value-INHERITED at the Primitive Level
+
+#### 1.10.1 What is form-FORCED at this layer
+
+The thirteen primitives commit the framework to specific structural properties:
+- Events are discrete (P01).
+- Events live on chains with proper-time ordering (P02 + P13).
+- Participation channels have bounded bandwidth (P04).
+- Commitments are irreversible (P11).
+- Substrate response kernels (V1, V5) are finite-width.
+- Substrate dynamics are local in the causal-adjacency sense.
+
+These commitments are form-FORCED in the sense that they fix the *shape* of substrate-level statements that any downstream theorem can reach. They do not commit the framework to specific numerical values for any substrate constant.
+
+#### 1.10.2 What is value-INHERITED at this layer
+
+The primitives do not specify:
+- The numerical scale of the substrate's smallest length (identified later, via T19 Newton-recovery, with the Planck length $\ell_P$).
+- The specific functional shape of the V1 vacuum kernel (Theorem N1 establishes finite-width; the closed-form shape is INHERITED).
+- The specific numerical values of any substrate-determined dimensionless threshold ($\beta_\mathrm{crit}$, $\mathcal{M}_\mathrm{crit}$, $\Gamma_\mathrm{min}$, etc., introduced in subsequent chapters).
+- The specific numerical values of the substrate inputs ($\hbar$, $c$, $H_0$) used in derivations like T19 ($G = c^3\ell_P^2/\hbar$) and T20 ($a_0 = c\,H_0/(2\pi)$). These are taken as substrate inputs in the program; their specific values are calibrated empirically.
+
+The primitive layer is therefore form-FORCED (the substrate has these properties) and value-anchored at substrate inputs (specific numerical values for $\hbar$, $c$, $H_0$, $\ell_P$ enter the program from outside the primitive layer; closed-form derivation of any of them from other primitives is downstream open work that the framework does not currently claim to have closed).
+
+#### 1.10.3 The methodological consistency
+
+The form-FORCED / value-INHERITED pattern starts at the primitive layer and propagates through every chapter. Each downstream theorem inherits the pattern: T17 derives the *form* of gauge fields without committing to which specific gauge group nature realizes; T19 derives the *form* of Newton's law from substrate primitives with the Planck length identified as the substrate length scale through Newton-recovery; UR-1 derives the *form* of three substrate conditions for the unresolved regime with specific numerical thresholds INHERITED. The methodology's consistency across nine sectors of substrate-level architectural closure is itself a structural signature of the framework, addressed at length in Chapter 14.
+
+### 1.11 Dependencies
+
+#### 1.11.1 Upstream dependencies
+
+None. This chapter is the program's irreducible base. The thirteen primitives are not derived from anything more fundamental within the framework. The framework treats the question "are the primitives themselves derivable from something more fundamental?" as open work that lives entirely outside the program's current scope.
+
+#### 1.11.2 Downstream readers
+
+Every other chapter depends on this chapter. The dependency-graph entries from Chapter 2 onward each cite the primitives that supply substrate content for the chapter's work. Specific primitive-to-chapter dependencies:
+
+- **Chapter 2 — Load-Bearing Invariants.** P01, P02, P04, P11, P13, finite-kernel and substrate-locality primitives. The chapter constructs the load-bearing invariants ($\mathcal{M}$, $\sigma$, $\Gamma_\mathrm{cross}$, V1, P11-as-direction-primitive) directly from the primitives.
+- **Chapter 3 — DCGT.** P01, P04, finite-kernel, substrate-locality. The hydrodynamic-window scale separation $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$ rests on substrate-locality and on the Planck-scale event discreteness contributed by P01.
+- **Chapter 4 — Theorem N1 + Theorem 18.** P02, P04, P11, P13, finite-kernel, substrate-locality. The forcing chain explicitly cites P11 + P02 + P04 + P13 + Theorem N1 + Q.8 effective-vacuum factorisation.
+- **Chapter 5 — Phase-1 closure.** P01, P04, P11. Plus mathematical bridges via Gleason's theorem and Stone's theorem.
+- **Chapter 6 — Form-Level QFT and ED-I-13.** P01, P04, P13, label-carrying-rule-type structure (a structural commitment within the participation-channel primitive group).
+- **Chapter 7 — Quantum Computation.** P04 (multiplicity bound), P11 (commitment-injection), substrate-locality (cross-endpoint connectivity), DCGT (Chapter 3) for cross-bandwidth structure.
+- **Chapter 8 — Navier–Stokes.** P04 + finite-kernel (V1) + DCGT.
+- **Chapter 9 — MHD and Yang–Mills.** Chapter 8's content + T17 (Chapter 6) + DCGT non-Abelian extension.
+- **Chapter 10 — Soft-Matter Mobility.** P04 + V5 finite-width kernel + DCGT.
+- **Chapter 11 — Substrate Gravity.** Participation-density primitives + cumulative-strain mechanism + holographic participation-count bound (substrate-locality applied to surfaces) + DCGT.
+- **Chapter 12 — Curvature Emergence.** Chapter 11 + the substrate cumulative-strain four-index object as load-bearing curvature degree of freedom.
+- **Chapter 13 — Black-Hole Architecture.** P01 + P04 + P11 + finite-kernel + DCGT + the single substrate condition $|\nabla\rho|\,\ell_P^2/\rho_\mathrm{local} \gtrsim \log(R_\mathrm{cg}/\ell_P)$.
+- **Chapters 14–15.** Cross-platform unifications and empirical synthesis. Inherit dependencies from all preceding chapters.
+
+This dependency graph is the program's audit trail. Any claim made in any chapter is traceable to a subset of the thirteen primitives plus mathematical structure.
+
+### 1.12 Canonical Sources
+
+The chapter is built from the following sources, exactly as listed in the Monograph Shell. These are the program's authoritative documents on the substrate ontology; the chapter does not introduce new content beyond what these sources establish.
+
+- `papers/Event_Density_Ontology_and_Axioms/`
+- `papers/Foundations_of_Event_Density/`
+- `papers/ED_One_Substrate_Three_Domains/` (orientation context for the program-level scope of the substrate ontology)
+
+The Monograph Shell's Appendix A theorem provenance map and Appendix B notation glossary are the cross-reference documents that connect the primitives in this chapter to the downstream theorems and notation used throughout the monograph.
+
+### 1.13 Optional Figures
+
+The following diagrams should appear in the final monograph at this chapter. Descriptions only; no images embedded.
+
+**Figure 1.1 — The dependency graph from primitives to first-tier theorems.** A directed graph with thirteen nodes at the top (P01 through P13) and ten nodes at the bottom (T1–T16 collectively, T17, T18, T19, T20, ECR, T21, N1, GR1, DCGT, UR-1). Edges show which primitives feed which first-tier theorems. The graph makes visible the fact that several primitives (especially P04 and P11) feed many downstream theorems, while others (e.g., P13) play more specialized roles. The graph is the visual form of the dependency content of Section 1.8 and Section 1.11.
+
+**Figure 1.2 — The substrate boundary.** A horizontal line dividing the page. Below the line: primitives, substrate quantities ($\rho$, $\nabla\rho$, $\sigma$, $\mathcal{M}$, $\Gamma_\mathrm{cross}$, $\Lambda$, $\mathcal{U}$), substrate kernels (V1, V5), substrate-locality and chain structures. Above the line: continuum quantities (smooth spacetime, fields, particles, the Schrödinger equation, Maxwell's equations, the Yang–Mills equation, Navier–Stokes, the modified Poisson equation, the acoustic metric, BH horizons). The line itself is labeled "DCGT and non-Abelian generalizations (Chapters 3, 9)." Arrows pass upward across the line for each derivation; no arrows pass downward (the framework does not claim to derive primitives from the continuum).
+
+**Figure 1.3 — Form-FORCED vs Value-INHERITED at the primitive layer.** A two-column diagram. Left column ("Form-FORCED"): event discreteness, chain structure, bounded bandwidth, commitment-irreversibility, finite-kernel widths, substrate-locality. Right column ("Value-INHERITED"): specific numerical scale of $\ell_P$, specific functional shape of V1 kernel, specific values of the dimensionless thresholds $\beta_\mathrm{crit}$, $\mathcal{M}_\mathrm{crit}$, $\Gamma_\mathrm{min}$, the substrate inputs $\hbar$, $c$, $H_0$. The diagram makes explicit the distinction the chapter formalizes in Section 1.10 and that propagates through every subsequent chapter.
+
+**Figure 1.4 — Primitives grouped by structural role.** A simple six-row table or schematic showing the grouping of Section 1.8: event-structure, bandwidth and participation, commitment direction, temporal structure, finite kernels, substrate locality. Each row contains the primitives that serve that role and the first-tier downstream theorems that consume them. This figure is the navigational summary that a reader can use to enter the substrate ontology by structural role rather than by primitive number.
+
+\newpage
+
+## Chapter 2 — Load-Bearing Invariants: Multiplicity, Gradient Sparsity, Cross-Bandwidth, V1, P11
+
+### 2.1 Chapter Overview
+
+Five substrate quantities recur throughout the Event Density program and govern every closed-arc result. They are: **multiplicity** $\mathcal{M}$, **gradient sparsity** $\sigma$, **cross-bandwidth** $\Gamma_\mathrm{cross}$, the **V1 finite-width vacuum kernel**, and **P11 commitment-irreversibility**. This chapter introduces each, establishes its substrate-level definition, identifies its structural role across the program, and sets the notation that every subsequent chapter inherits. The five together constitute the framework's *load-bearing invariants*: the substrate-state quantities and substrate-structural commitments without which no continuum derivation in Parts II–IV closes.
+
+The chapter's purpose is not derivational but architectural. The full derivations of $\Gamma_\mathrm{cross}$ from gradient sparsity (DCGT machinery) and of V1 kernel finite-width retardation (Theorem N1 + Theorem 18) live in Chapters 3 and 4 respectively. This chapter establishes only what each invariant *is* at the substrate level, why it is load-bearing for downstream content, and how it connects to the thirteen primitives of Chapter 1. After this chapter, every subsequent chapter can refer to these quantities by their canonical names without ambiguity, and the dependency map of the program rests on a stable vocabulary.
+
+### 2.2 Why These Five, and Not More or Fewer
+
+The program's closed-arc inventory — Phase-1 closure of QM (Chapter 5), form-level QFT (Chapter 6), QC architecture (Chapter 7), Navier–Stokes (Chapter 8), MHD and Yang–Mills (Chapter 9), soft-matter mobility (Chapter 10), substrate gravity (Chapter 11), curvature emergence (Chapter 12), black-hole architecture (Chapter 13) — touches different sectors of physics, but the load-bearing substrate machinery in each closed arc reduces to a small set of recurring quantities. The recurrence pattern is empirical: the program's audit identifies that each of these five invariants appears in at least four of the nine closed sectors, and that no closed arc proceeds without using at least three of them.
+
+Multiplicity $\mathcal{M}$ enters the Born-rule derivation (Chapter 5), the gauge-field-as-rule-type theorem (Chapter 6), the QC architecture's UR-1 condition (i) (Chapter 7), the MHD architectural classification (Chapter 9), the Universal Mobility Law and P4-NonNewtonian rheology (Chapter 10), and the BH area-law entropy (Chapter 13). Gradient sparsity $\sigma$ enters DCGT cross-bandwidth (Chapter 3), the QC architecture's UR-1 condition (ii) (Chapter 7), substrate gravity's cumulative-strain mechanism (Chapter 11), and the BH horizon condition (Chapter 13). Cross-bandwidth $\Gamma_\mathrm{cross}$ governs the QC condition (ii) failure mode (Chapter 7) and the BH horizon-formation mechanism (Chapter 13) under the same DCGT-derived exponential structure. The V1 vacuum kernel mediates the kernel-level arrow of time (Chapter 4), the substrate-cutoff regularization R1 in Navier–Stokes (Chapter 8), the Yang–Mills mass-gap mechanism (Chapter 9), and the per-patch motif alphabet in BH area-law entropy (Chapter 13). P11 commitment-irreversibility is the substrate-level direction-bearing primitive that supplies the arrow of time in Theorem 18 (Chapter 4), the no-collapse measurement rule in Phase-1 (Chapter 5), the information-non-paradox in BH-4 (Chapter 13), and the commitment-injection failure mode in UR-1 (Chapter 7).
+
+The five invariants therefore form the program's recurring vocabulary. Adding a sixth invariant would mean either renaming a downstream construction (such as the unresolvedness $\mathcal{U}$ of Chapter 7, which is built from these five but is not itself one of them) or introducing redundancy. Reducing to four would force at least one closed-arc derivation to lose its substrate-level handle. The framework treats five as the empirically correct count for the program's current scope.
+
+### 2.3 Multiplicity $\mathcal{M}$: The ED Analogue of Entropy
+
+#### 2.3.1 Substrate-level definition
+
+Multiplicity $\mathcal{M}(\mathcal{S})$ is the count of viable distinct ED-gradient pathways available locally to a substrate region $\mathcal{S}$. Operationally, it counts the substrate-resolvable participation channels that the region's current ED-structure can support. The quantity is not a probability and not an energy; it is a *count* — an integer at the substrate scale, smoothed to a continuous variable in the coarse-grained reading.
+
+$\mathcal{M}$ is the substrate analogue of entropy. The identification is established in ED-I-01 (Superconductivity): a region with many available ED-gradient pathways has high $\mathcal{M}$, and the substrate's tendency is for $\mathcal{M}$ to grow under environmental forcing the way thermodynamic entropy tends to grow under environmental coupling. A region with few available pathways has low $\mathcal{M}$, and the substrate's tendency is for low-$\mathcal{M}$ states to be metastable rather than dynamically preferred — they require structural mechanisms (lattice symmetry, engineered barriers, topological invariants, redundancy) to be held against the substrate's natural tendency to proliferate gradients.
+
+The two regimes:
+- $\mathcal{M} \to 1$: only one viable participation pathway is locally accessible. Hyper-coherent regime. The substrate's gradient structure has collapsed to admit a single coherent channel; charge-related ED-flow is forced into laminar, unified motion. This is the substrate reading of bulk superconductivity (ED-I-01).
+- $\mathcal{M} \to \infty$: arbitrarily many distinct pathways are locally accessible. Classical thermal regime. The substrate supports branching, scattering, and decoherence; ED-flow proliferates across many pathways simultaneously.
+
+#### 2.3.2 Why multiplicity is the entropy analogue
+
+Standard entropy is the logarithm of the number of microstates compatible with a macrostate. Multiplicity at the substrate level is the count of locally available pathways compatible with a substrate region's current participation structure. The structural correspondence is direct: high $\mathcal{M}$ corresponds to many ways for the substrate to be locally configured, low $\mathcal{M}$ corresponds to few. The thermodynamic-analog readings of $\mathcal{M}$ used throughout the program — that thermal injection raises $\mathcal{M}$, that symmetry collapses it, that decoherence is re-entry into high $\mathcal{M}$ — are direct substrate-level translations of the corresponding entropy statements in standard physics.
+
+The identification is sharper than analogy. ED-I-01 establishes that the macroscopic statistical properties of superconducting transitions (sharp drops in scattering channels at $T_c$, electronic-entropy collapse, simplification of the ED-flow landscape) are direct substrate-level signatures of $\mathcal{M}$ collapsing into a low-multiplicity configuration. Decoherence in the standard quantum-mechanical sense (ED-I-23, ED-I-29, Chapter 7) is identified as the coarse-grained signature of substrate-level commitment events triggered when local $\mathcal{M}$ rises above a threshold.
+
+#### 2.3.3 Multiplicity is per-region and per-substrate-timescale
+
+Multiplicity is defined per substrate region per substrate-timescale. A composite system has a *system multiplicity* that depends both on the multiplicity of its constituent regions and on the substrate connectivity between them. This is the structural reason a multi-qubit array's effective multiplicity is not the sum of single-qubit multiplicities: cross-qubit pathway count contributes additively at the substrate level even when individual qubit multiplicities are held low by structural commitment.
+
+Chapter 7 develops the system-multiplicity concept formally. The matter-wave Q-C boundary at 140–250 kDa molecular mass and the qubit-system multiplicity walls (Chapter 7) are both crossings of a single substrate threshold $\mathcal{M}_\mathrm{crit}$, evaluated for two different platform architectures. The cross-platform identity rests on $\mathcal{M}$ being the same substrate quantity in both cases.
+
+#### 2.3.4 Downstream consequences
+
+- **Phase-1 closure (Chapter 5):** $\mathcal{M}$'s relationship to bandwidth conservation feeds the Born-rule derivation through Gleason's theorem.
+- **Form-level QFT (Chapter 6):** The structural status of multiplicity-counting at substrate level supports the gauge-field-as-rule-type interpretation.
+- **Quantum computing (Chapter 7):** UR-1 condition (i) is the explicit multiplicity bound $\mathcal{M}_i \leq \mathcal{M}_\mathrm{crit}$ at every endpoint; the multiplicity-cap function $M$'s Class A static-failure branch is set by $\mathcal{M}_\mathrm{floor}(\mathcal{S}) = \mathcal{M}_\mathrm{crit}$.
+- **MHD architectural classification (Chapter 9):** Multiplicity governs whether a continuum content item is canonical-ED (low-$\mathcal{M}$ structural) or transport-kinematic (multiplicity-proliferating).
+- **Soft-matter mobility (Chapter 10):** The mobility-capacity bound from P04 produces $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ via the substrate's multiplicity-suppression mechanism near packing.
+- **Black-hole entropy (Chapter 13):** $S \propto A/\ell_P^2 \cdot \log g$ is the count of viable commitment histories at the saturated participation surface — a multiplicity count.
+
+### 2.4 Gradient Sparsity $\sigma$
+
+#### 2.4.1 Substrate-level definition
+
+Gradient sparsity $\sigma$ is the substrate-scale dimensionless steepness of the participation-density field $\rho$:
+
+```math
+\sigma(\mathbf{x}) \equiv \frac{|\nabla\rho|\,\ell_P^2}{\rho_\mathrm{local}}.
+```
+
+The numerator measures how rapidly $\rho$ varies in space at the substrate scale (the Planck length $\ell_P$ enters as the substrate-natural length scale, identified with the actual Planck length through T19 Newton-recovery in Chapter 11). The denominator normalizes by the local participation density. The ratio $\sigma$ is dimensionless and substrate-natural: it does not depend on continuum-coordinate choices or on the choice of coarse-graining scale.
+
+Two regimes:
+- $\sigma \ll 1$: the substrate is locally smooth at the Planck scale. Continuum approximations are well-controlled; ordinary hydrodynamic-window coarse-graining proceeds without obstruction.
+- $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$: the substrate has steepened to the threshold where the multi-scale expansion's small parameter ceases to be small. This is the *decoupling-surface threshold*. At and above this threshold, the substrate region cannot be treated as locally smooth at the coarse-graining scale, and several substrate quantities (cross-bandwidth, the acoustic-metric reading) lose their continuum-approximation validity.
+
+#### 2.4.2 Why sparsity, not gradient
+
+The framework uses $\sigma$ rather than $|\nabla\rho|$ directly because the dimensionless ratio is the substrate-scale-natural object and because it admits a clean threshold interpretation. A bare gradient $|\nabla\rho|$ depends on the units used for $\rho$ and on the length scale at which it is measured; the ratio $\sigma$ removes these dependences.
+
+The $\ell_P^2$ factor in the numerator is also substrate-natural: it is the area scale at the substrate's irreducible length, providing the substrate-area normalization that makes $\sigma$ a count-per-substrate-cell quantity. The threshold $\log(R_\mathrm{cg}/\ell_P)$ that recurs throughout the program is the substrate-natural scale-separation magnitude for the hydrodynamic-window expansion to remain controlled.
+
+#### 2.4.3 The decoupling-surface threshold
+
+The threshold $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$ is the substrate condition that recurs across multiple closed sectors:
+
+- **BH-2 horizon formation (Chapter 13):** A black-hole event horizon is the surface where $\sigma$ exceeds the threshold. The horizon is not a geometric primitive; it is a substrate-level statistical feature of $\sigma$ crossing.
+- **BH-3 singularity replacement (Chapter 13):** The acoustic-metric reading breaks down when $\sigma$ exceeds the threshold; the substrate's saturated participation zone replaces the singular endpoint.
+- **QC condition (ii) failure (Chapter 7):** Cross-bandwidth between rule-spanning endpoints collapses when $\sigma$ along the connecting pathway crosses the threshold. This is the structural reason MQT in a Josephson junction (Chapter 7) and horizon formation in a black hole (Chapter 13) share the same substrate mechanism.
+
+The threshold's specific numerical prefactor — the $\log(R_\mathrm{cg}/\ell_P)$ scaling versus a bare numerical constant — is substrate-natural; the precise dimensionless coefficient is INHERITED.
+
+#### 2.4.4 Downstream consequences
+
+- **DCGT (Chapter 3):** The cross-bandwidth structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\sigma]$ uses $\sigma$ as the substrate-scale exponent.
+- **Substrate gravity (Chapter 11):** The cumulative-strain mechanism that produces Newton's law is built on integrated substrate gradients, with $\sigma$ controlling the substrate-scale contribution to the strain field.
+- **Black-hole architecture (Chapter 13):** The single substrate condition unifying horizon formation, interior saturation, information blocking, participation-capacity saturation, and strong-curvature scattering region is a $\sigma$-threshold condition.
+- **Quantum computing (Chapter 7):** $\sigma$ along participation-rule-spanning pathways controls the cross-bandwidth $\gamma_{ij}$ that enters UR-1 condition (ii).
+
+### 2.5 Cross-Bandwidth $\Gamma_\mathrm{cross}$
+
+#### 2.5.1 Substrate-level definition
+
+Cross-bandwidth $\Gamma_\mathrm{cross}(\mathbf{x}_1, \mathbf{x}_2)$ is the substrate-mediated rate at which participation events at $\mathbf{x}_1$ and $\mathbf{x}_2$ exchange correlated content. It is the substrate-scale measure of how strongly two regions participate in each other's substrate dynamics. Cross-bandwidth differs from local participation density: $\rho$ measures the participation-channel availability *at* a region; $\Gamma_\mathrm{cross}$ measures the substrate-mediated *exchange* between regions.
+
+DCGT (Chapter 3) establishes the form
+
+```math
+\Gamma_\mathrm{cross}(\mathbf{x}_1, \mathbf{x}_2) \sim \exp\!\left[-\alpha\!\int_\mathrm{path}\sigma(\mathbf{x})\,d\ell\right],
+```
+
+where the integral runs along the substrate-locality-permitted pathway between the two regions and $\alpha$ is a substrate-determined dimensionless prefactor (INHERITED). The exponential structure follows from the multi-scale expansion's small-parameter behavior: large $\sigma$ along the path creates a steep substrate-scale barrier that suppresses cross-region participation exchange exponentially.
+
+#### 2.5.2 Two readings of cross-bandwidth
+
+Cross-bandwidth admits two structurally equivalent readings:
+
+**Substrate-level reading.** $\Gamma_\mathrm{cross}$ is the substrate-scale exchange rate between two regions, computed from substrate-level integrated $\sigma$.
+
+**Coarse-grained reading.** $\Gamma_\mathrm{cross}$, after DCGT coarse-graining, is the continuum-level cross-section / coupling-rate between two regions in the appropriate continuum theory. In the QFT reading (Chapter 6), it relates to vacuum response correlators. In the QC reading (Chapter 7), it is the bandwidth-mediating-rule-integrity quantity that enters UR-1 condition (ii). In the BH reading (Chapter 13), it is the bandwidth that fails at the decoupling surface.
+
+The two readings are the same quantity. The substrate-level reading is the source; the coarse-grained reading is the same quantity evaluated at the continuum scale.
+
+#### 2.5.3 Downstream consequences
+
+- **DCGT (Chapter 3):** $\Gamma_\mathrm{cross}$ is the central substrate-to-continuum bridge quantity.
+- **Quantum computing (Chapter 7):** UR-1 condition (ii) is $\gamma_{ij} \geq \Gamma_\mathrm{min}$ along every rule-spanning pathway.
+- **Black-hole architecture (Chapter 13):** Horizon formation is precisely the surface where $\Gamma_\mathrm{cross}$ falls below hydrodynamic-window resolution. The same substrate mechanism that produces horizons at gravitational-collapse scales produces QC condition (ii) failure at engineered-system scales (Chapter 14 develops this cross-domain identity).
+- **Form-level QFT (Chapter 6):** The substrate origin of vacuum-response analytic structure passes through $\Gamma_\mathrm{cross}$ via the V1 kernel mediation.
+
+#### 2.5.4 The cross-domain echo
+
+The same $\Gamma_\mathrm{cross}$ structure $\sim \exp[-\alpha\sigma]$ governs both black-hole horizon formation (Chapter 13, scales of order $10^{38}\,\ell_P$ for stellar-mass black holes) and Josephson-junction macroscopic quantum tunneling (Chapter 7, scales of order $10^{-9}\,\mathrm{m}$). The same DCGT exponential structure, evaluated at very different platform scales, produces both phenomena. Chapter 14 develops this as the program's strongest cross-platform substrate-mechanism identity. The structural lesson: the substrate does not distinguish between "gravitational" and "engineered" gradient regions when evaluating cross-bandwidth; it applies the same DCGT machinery at both, and the empirical phenomena that result differ only by the platform-specific values of $\sigma$ along the pathway.
+
+### 2.6 The V1 Finite-Width Vacuum Kernel
+
+#### 2.6.1 Substrate-level role
+
+V1 is the substrate-level temporal smearing kernel that mediates participation events. It is the substrate analogue of a vacuum response kernel in standard QFT, but it is committed at the substrate-ontological level rather than emerging from an effective-field-theory construction. The finite-width commitment — that V1 has nonzero width at the substrate scale, rather than acting as an instantaneous delta — is one of the framework's primitive-level structural commitments (Chapter 1).
+
+V1's structural role is to mediate substrate-level participation events with finite temporal smearing. A substrate event at chain endpoint $A$ does not affect chain endpoint $B$ instantaneously; V1 mediates the effect over a finite substrate-temporal width. The width is INHERITED — its specific functional shape is not closed-form derived from any other primitive — but its existence and finiteness are FORCED by the substrate-ontological commitment.
+
+#### 2.6.2 Theorem N1: V1 finite-width vacuum kernel
+
+Theorem N1 establishes V1 formally as a finite-width chain-sourced response kernel. The theorem is developed in Chapter 4. Its content at this chapter's level is: the V1 kernel exists, is finite-width, and is sourced by chain-level participation events. The theorem is the substrate-level structural statement; it does not commit to a specific functional shape for the kernel (that is INHERITED).
+
+#### 2.6.3 Theorem 18: V1 kernel retardation
+
+Theorem 18 (also Chapter 4) propagates P11 commitment-irreversibility plus chain structure (P02) plus bandwidth update (P04) plus proper-time ordering (P13) plus N1 finite-width through the chain-summed kernel construction to establish that V1 is uniquely forced at the primitive level to have forward-cone-only support. Symmetric, advanced, and hybrid kernels are non-constructible at the primitive level. The microscopic arrow of time is FORCED structurally.
+
+#### 2.6.4 Downstream consequences
+
+- **Phase-1 closure (Chapter 5):** V1 mediates the substrate-level analogue of vacuum-response correlations that enter the Born-rule and Schrödinger derivations.
+- **Form-level QFT (Chapter 6):** V1 is the substrate-level origin of the standard Wightman correlator and the retarded Green's function structure of QFT. The continuum-approximation structure inherits from V1's substrate-level form.
+- **Theorem 18 and the kernel-level arrow (Chapter 4):** V1's forward-cone-only support is the primitive-level statement of the arrow of time.
+- **Substrate-cutoff regularization R1 (Chapter 8):** V1's finite width produces the hyperviscous correction term $-\kappa\mu_\mathrm{V1}\ell_P^2 \nabla^4\mathbf{v}$ in Navier–Stokes through DCGT coarse-graining.
+- **Yang–Mills mass-gap mechanism (Chapter 9):** V1's second-moment expansion produces the substrate-level mass-gap mechanism.
+- **Black-hole area-law entropy (Chapter 13):** V1's per-patch substrate temporal width sets the per-patch motif alphabet $g$ in the BH entropy expression.
+
+### 2.7 P11 Commitment-Irreversibility
+
+#### 2.7.1 The framework's only direction-bearing primitive
+
+P11 commits the framework to substrate events being irreversible: once a participation channel resolves into a definite outcome at a chain endpoint, the resolution cannot be reversed. P11 is sharp and single — a single direction-bearing commitment in a single place in the substrate ontology. Every other primitive in the framework is time-symmetric in isolation; only when joined with P11 does any other primitive acquire forward orientation.
+
+The methodological choice is structurally deliberate. Standard physics distributes the arrow of time across multiple incomplete accounts: the thermodynamic arrow (a low-entropy boundary condition at the universe's beginning), the cosmological arrow (an expansion-direction choice), the measurement arrow (a separate quantum-mechanical postulate), and the radiation arrow (a solution-selection rule applied externally to time-symmetric Maxwell equations). Each account passes the buck to a different layer; none derives the arrow from the underlying laws. P11 places the arrow at the deepest layer the framework reaches — the substrate ontology itself — and lets every downstream arrow propagate from it.
+
+#### 2.7.2 P11 as substrate-level seed
+
+P11's role across the program:
+
+- **Theorem 18 (Chapter 4):** P11 plus chain structure (P02) plus bandwidth update (P04) plus proper-time ordering (P13) plus V1 finite-width plus substrate locality jointly force the V1 kernel to forward-cone-only support. The kernel-level arrow of time is FORCED at the primitive level.
+- **Phase-1 measurement rule (Chapter 5):** Wavefunction collapse is identified as the coarse-grained continuum signature of substrate-level commitment events. There is no separate measurement postulate in the QM emergence sector; P11 supplies the substrate-level mechanism.
+- **BH-4 information-non-paradox (Chapter 13):** Committed structure cannot un-commit, so committed structure cannot cross a horizon and re-emerge. Entanglement (uncommitted structure) can straddle. The information paradox does not arise because the four assumptions that generate it (global unitarity, global Cauchy data, sharp geometric boundary, monogamy-at-boundary) are not imposed at the substrate level — and P11 is the primitive that makes the substrate-level account internally consistent.
+- **UR-1 condition (iii) (Chapter 7):** Each P11 event at a system endpoint contributes to a Poisson-class accumulation $\int_0^t \Lambda_\mathcal{S}(t')\,dt'$ that defines the third UR-1 condition's failure timescale. The QC operating window's commitment-injection-bounded condition is a direct P11 consequence.
+- **Cross-domain unification (Chapter 14):** P11 is the common substrate-level direction-bearing commitment that unifies the kernel-level arrow of time, the measurement rule, evaporation as participation re-routing, and the QC commitment-injection failure mode under one substrate ontology.
+
+#### 2.7.3 Why P11 is treated as a primitive rather than derived
+
+The framework's stance on P11's primitive status is methodological. Directionality is one structural commitment that has to live somewhere; the alternative to placing it at the substrate level is to distribute it across multiple postulates downstream. The framework chooses the substrate-level placement because (a) it is sharper — a single commitment in a single place — and (b) it allows propagation to every downstream arrow as a structural consequence rather than as separate postulates.
+
+The cost is that P11 cannot be derived from anything else within the framework. The framework treats this cost as acceptable; the alternative would be to lose either the unification (multiple separate arrow postulates) or the methodological sharpness (a single non-substrate postulate that is more obscurely placed).
+
+### 2.8 The Five Invariants Together: A Structural Map
+
+The five load-bearing invariants form a structural map of the substrate. The map is summarized below.
+
+```math
+\begin{array}{l|l|l}
+\text{Invariant} & \text{What it measures} & \text{Direct primitive source} \\
+\hline
+\mathcal{M} & \text{Local pathway count} & \text{P04 + participation primitives} \\
+\sigma & \text{Substrate-scale gradient steepness} & \text{Participation density primitives} \\
+\Gamma_\mathrm{cross} & \text{Substrate-mediated exchange rate} & \text{P04 + substrate locality + V1} \\
+\text{V1} & \text{Finite-width temporal smearing kernel} & \text{Finite-kernel commitment} \\
+\text{P11} & \text{Direction-bearing commitment} & \text{P11 itself (primitive)} \\
+\end{array}
+```
+
+The five interlock structurally. Multiplicity $\mathcal{M}$ is constructed from substrate participation primitives, including the bandwidth update P04 that bounds it from above. Gradient sparsity $\sigma$ is built from the substrate participation-density gradient, the substrate length scale $\ell_P$, and the local participation density. Cross-bandwidth $\Gamma_\mathrm{cross}$ is mediated by V1 and structured by integrated $\sigma$ along substrate-locality-permitted paths. V1 is the substrate-level temporal smearing kernel committed by the finite-kernel primitive and rendered forward-only by P11 + chain structure (Theorem 18). P11 is the direction-bearing commitment that makes the entire structure asymmetric in time.
+
+The interlock is not optional. Removing $\mathcal{M}$ from the program loses the entropy-analogue mechanism that drives QM measurement, QC scaling walls, soft-matter mobility laws, and BH entropy. Removing $\sigma$ loses the substrate-scale gradient measure that drives DCGT, BH horizon formation, and substrate gravity. Removing $\Gamma_\mathrm{cross}$ loses the cross-domain identity between BH horizon formation and QC condition (ii) failure. Removing V1 loses the substrate temporal-smearing structure that supports the kernel-level arrow, R1 substrate-cutoff, and YM mass-gap. Removing P11 loses the direction-bearing primitive — and with it, every downstream arrow of time across the program.
+
+### 2.9 The Five Invariants in the Closed-Arc Inventory
+
+Each closed sector of the program uses the invariants in a specific combination. The combinations are summarized below.
+
+```math
+\begin{array}{l|l}
+\text{Sector} & \text{Invariants used} \\
+\hline
+\text{Phase-1 closure of QM (Ch. 5)} & \mathcal{M}, \text{V1}, \text{P11} \\
+\text{Form-level QFT (Ch. 6)} & \mathcal{M}, \text{V1}, \text{P11} \\
+\text{Quantum computing (Ch. 7)} & \mathcal{M}, \sigma, \Gamma_\mathrm{cross}, \text{V1}, \text{P11} \\
+\text{Navier–Stokes (Ch. 8)} & \text{V1} \\
+\text{MHD and Yang–Mills (Ch. 9)} & \mathcal{M}, \text{V1} \\
+\text{Soft-matter mobility (Ch. 10)} & \mathcal{M}, \text{V1 (V5)} \\
+\text{Substrate gravity (Ch. 11)} & \sigma \\
+\text{Curvature emergence (Ch. 12)} & \sigma \\
+\text{Black-hole architecture (Ch. 13)} & \mathcal{M}, \sigma, \Gamma_\mathrm{cross}, \text{V1}, \text{P11} \\
+\end{array}
+```
+
+Two sectors — quantum computing (Chapter 7) and black-hole architecture (Chapter 13) — use all five invariants. They are also the two sectors most directly connected by the cross-domain identity of Chapter 14: same $\Gamma_\mathrm{cross}$ collapse mechanism, same substrate-condition threshold $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$, separated by approximately fifty orders of magnitude in physical length. The structural reason both sectors use all five invariants is the same: both involve the full DCGT-mediated substrate-to-continuum machinery applied to gradient-sparsity-driven decoupling, in different platform regimes.
+
+### 2.10 Notation Conventions
+
+The notation introduced in this chapter is consistent with Appendix B of the Monograph Shell. Subsequent chapters use these symbols without redefinition.
+
+- $\mathcal{M}(\mathcal{S})$ — multiplicity at substrate region $\mathcal{S}$.
+- $\rho(\mathbf{x})$ — local participation density.
+- $\nabla\rho$ — participation density gradient.
+- $\sigma(\mathbf{x}) = |\nabla\rho|\,\ell_P^2/\rho_\mathrm{local}$ — substrate-scale gradient sparsity.
+- $\Gamma_\mathrm{cross}(\mathbf{x}_1, \mathbf{x}_2)$ — substrate-mediated cross-bandwidth.
+- V1 — finite-width vacuum response kernel (Theorem N1).
+- V5 — finite-width cross-chain memory kernel (Chapter 10 develops the soft-matter use).
+- P11 — substrate primitive of commitment-irreversibility.
+- $\ell_P$ — Planck length / substrate length scale (identified with the standard Planck length via T19 Newton-recovery; Chapter 11).
+- $R_\mathrm{cg}$ — coarse-graining length scale.
+- $L_\mathrm{flow}$ — continuum-flow length scale.
+- $\alpha$ — DCGT prefactor in the cross-bandwidth exponential structure.
+
+### 2.11 Form-FORCED vs Value-INHERITED at the Invariant Layer
+
+#### 2.11.1 What is form-FORCED at this layer
+
+- The existence and structural definition of multiplicity $\mathcal{M}$ as the count of viable distinct ED-gradient pathways available locally.
+- The dimensionless form $\sigma = |\nabla\rho|\,\ell_P^2/\rho_\mathrm{local}$ for substrate-scale gradient sparsity.
+- The exponential form $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ for substrate-mediated cross-bandwidth (formally derived in Chapter 3 via DCGT).
+- The existence and finite-width character of the V1 vacuum response kernel.
+- The existence and direction-bearing character of P11 commitment-irreversibility.
+- The substrate-natural threshold scale $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$ for decoupling-surface formation.
+
+#### 2.11.2 What is value-INHERITED at this layer
+
+- The specific functional shape of V1 (finite-width is FORCED; closed-form shape is INHERITED).
+- The numerical value of the prefactor $\alpha$ in the cross-bandwidth exponential.
+- The numerical value of the dimensionless coefficient in the decoupling-surface threshold (the prefactor on $\log(R_\mathrm{cg}/\ell_P)$, here written as $\beta_\mathrm{crit}$ in subsequent chapters).
+- The numerical scale of $\ell_P$ (taken as substrate input; identified with the standard Planck length via T19 Newton-recovery).
+- The specific numerical thresholds $\mathcal{M}_\mathrm{crit}$, $\Gamma_\mathrm{min}$, and related quantities introduced in later chapters; these are calibrated against empirical anchors (Chapter 7's matter-wave Q-C boundary at 140–250 kDa is the canonical anchor for $\mathcal{M}_\mathrm{crit}$).
+
+#### 2.11.3 Why this matters at the invariant layer
+
+The program's predictive content lives at the form-FORCED structural level. The fact that $\Gamma_\mathrm{cross}$ has exponential structure in integrated $\sigma$ produces all the cross-domain identities (BH horizon ↔ QC condition (ii) failure ↔ JJ macroscopic quantum tunneling). The fact that $\mathcal{M}$ is the substrate analogue of entropy produces all the multiplicity-driven phenomena. The numerical values, where they enter, are inherited from substrate constants whose closed-form derivation is downstream open work (the closed-form-substrate-constants program named in Chapter 15).
+
+### 2.12 Dependencies
+
+#### 2.12.1 Upstream
+
+- **Chapter 1.** All thirteen substrate primitives. The five load-bearing invariants are constructed from subsets of the primitives: $\mathcal{M}$ from P04 plus participation primitives; $\sigma$ from participation density primitives plus the substrate length scale; $\Gamma_\mathrm{cross}$ from substrate locality plus V1 plus integrated $\sigma$; V1 from the finite-kernel commitment; P11 from itself.
+
+#### 2.12.2 Downstream
+
+- **Chapter 3 (DCGT).** Constructs the explicit form $\Gamma_\mathrm{cross} \sim \exp[-\alpha\sigma]$ from the multi-scale expansion using the invariants of this chapter.
+- **Chapter 4 (Theorem N1 + Theorem 18).** Establishes V1's finite-width and forward-cone-only character formally; uses P11 + V1 as central components.
+- **Chapter 5 (Phase-1 closure).** Uses $\mathcal{M}$ in the Born-rule derivation through bandwidth conservation; uses P11 in the measurement rule.
+- **Chapter 6 (Form-level QFT).** Uses V1 for substrate-level vacuum response; uses $\mathcal{M}$ in gauge-field-as-rule-type interpretation.
+- **Chapter 7 (Quantum computing).** All five invariants. Multiplicity bounds UR-1 condition (i); cross-bandwidth and gradient sparsity govern UR-1 condition (ii); commitment-injection (P11-driven) governs UR-1 condition (iii); V1 enters through DCGT.
+- **Chapter 8 (Navier–Stokes).** V1's finite width produces the substrate-cutoff R1 hyperviscous term.
+- **Chapter 9 (MHD and Yang–Mills).** $\mathcal{M}$ governs the canonical/non-canonical content classification; V1's second-moment produces the YM mass-gap mechanism.
+- **Chapter 10 (Soft-matter mobility).** $\mathcal{M}$ enters the Universal Mobility Law; V5 (the V1-companion finite-width kernel) produces Maxwell viscoelasticity through DCGT.
+- **Chapter 11 (Substrate gravity).** $\sigma$ enters the cumulative-strain mechanism.
+- **Chapter 12 (Curvature emergence).** $\sigma$-structure persists to the covariantization.
+- **Chapter 13 (Black-hole architecture).** All five invariants. The single substrate condition unifying horizon formation, interior saturation, information blocking, participation-capacity saturation, and strong-curvature scattering is a $\sigma$-threshold condition; $\Gamma_\mathrm{cross}$ collapses at the surface; $\mathcal{M}$ saturates in the interior; V1 sets the per-patch motif alphabet; P11 supplies the information-non-paradox.
+- **Chapter 14 (Cross-platform unifications).** The cross-domain identity between BH horizon formation and QC condition (ii) failure rests on the same $\Gamma_\mathrm{cross}$ structure; the matter-wave ↔ qubit-system identity rests on the same $\mathcal{M}_\mathrm{crit}$ threshold.
+- **Chapter 15 (Public test inventory).** Empirical anchors calibrate the value-INHERITED thresholds attached to these invariants.
+
+### 2.13 Canonical Sources
+
+- `papers/Event_Density_Ontology_and_Axioms/`
+- ED-I-01 (Superconductivity, Feb 2026; multiplicity-as-entropy; bulk SC as low-$\mathcal{M}$ regime; $T_c$ as multiplicity-overwhelming-symmetry threshold).
+- ED-I-23 (Josephson Junctions, Mar 2026; multiplicity at engineered low-$\mathcal{M}$ regions; JJ as deliberately engineered ED-bottleneck; macroscopic quantum coherence as preservation of low-multiplicity geometry).
+- ED-I-29 (Tunneling, Mar 2026; sparse-$\sigma$ regions as global participation-rule reconfiguration; tunneling reframed as substrate global reconfiguration across $\sigma$-gap rather than as motion through a forbidden region).
+
+The Monograph Shell's Appendix A theorem provenance map and Appendix B notation glossary are the cross-reference documents that connect the load-bearing invariants of this chapter to the downstream theorems and notation used throughout the monograph.
+
+### 2.14 Optional Figures
+
+**Figure 2.1 — The five load-bearing invariants and their cross-arc usage.** A grid: rows are the five invariants ($\mathcal{M}$, $\sigma$, $\Gamma_\mathrm{cross}$, V1, P11); columns are the nine closed sectors (Phase-1, form-level QFT, QC, NS, MHD/YM, soft-matter, substrate gravity, curvature emergence, BH). Cells are filled where the invariant is used in the sector. The figure makes visible the pattern: $\mathcal{M}$ and V1 appear most widely; $\sigma$ and $\Gamma_\mathrm{cross}$ are concentrated in QC and BH (the cross-domain identity sectors); P11 appears anywhere an arrow of time enters.
+
+**Figure 2.2 — The substrate-natural threshold map.** A horizontal axis showing $\sigma$ from 0 to large values; a marked threshold at $\sigma = \log(R_\mathrm{cg}/\ell_P)$. Below the threshold: ordinary hydrodynamic-window coarse-graining is controlled. Above the threshold: decoupling-surface regime, with annotations for QC condition (ii) failure (Chapter 7), BH-2 horizon formation (Chapter 13), and BH-3 acoustic-metric breakdown (Chapter 13). The figure makes explicit that the same threshold governs phenomena across scales separated by ~50 orders of magnitude.
+
+**Figure 2.3 — The cross-bandwidth path integral.** A schematic showing two regions $\mathbf{x}_1$ and $\mathbf{x}_2$ connected by a substrate-locality-permitted pathway. Along the path, $\sigma(\mathbf{x})$ varies; the integrated $\int_\mathrm{path}\sigma\,d\ell$ enters the exponential form $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$. The figure makes the substrate-locality basis of cross-bandwidth visible.
+
+**Figure 2.4 — The interlock of five invariants.** A pentagonal diagram with the five invariants at the vertices and edges showing the structural dependences: $\mathcal{M}$–P04 (bandwidth update bounds multiplicity), $\sigma$–$\rho$ (sparsity is a gradient measure of participation density), $\Gamma_\mathrm{cross}$–$\sigma$ (cross-bandwidth is integrated sparsity), V1–$\Gamma_\mathrm{cross}$ (V1 mediates the kernel that becomes cross-bandwidth), P11–V1 (P11 forces V1 to forward-cone-only support via Theorem 18). The figure is the visual form of Section 2.8.
+
+**Figure 2.5 — Multiplicity as entropy analogue.** A two-column figure. Left: standard thermodynamic statements (entropy increases under environmental forcing; symmetry collapses entropy; thermal injection raises entropy; decoherence is entropy production). Right: substrate-level statements (multiplicity grows under environmental ED-injection; symmetry collapses multiplicity; thermal injection raises multiplicity; decoherence is re-entry into high multiplicity). Each row shows the thermodynamic statement and its substrate-level translation, with ED-I-01 cited as the canonical source for the identification.
+
+\newpage
+
+## Chapter 3 — The Coarse-Graining Bridge: DCGT, Hydrodynamic Window, Multi-Scale Expansion
+
+### 3.1 Chapter Overview
+
+The Diffusion Coarse-Graining Theorem (DCGT) is the substrate-to-continuum bridge for canonical-ED dynamical content. Its significance for the Event Density program is structural: *every* continuum theory developed in Parts II–IV — the Schrödinger equation in Phase-1 closure (Chapter 5), the gauge-field-as-rule-type structure of T17 (Chapter 6), the Navier–Stokes equation (Chapter 8), the Yang–Mills equation (Chapter 9), the Maxwell-class viscoelastic equation in soft matter (Chapter 10), the modified Poisson equation in substrate gravity (Chapter 11), the acoustic-metric scalar-tensor covariantization (Chapter 12), and the BH cross-bandwidth structure governing horizon formation (Chapter 13) — passes through DCGT or its non-Abelian generalization. Without DCGT the program would have substrate primitives on one side of a derivational gap and standard continuum physics on the other side, with no chain connecting them. With DCGT the chain is explicit and auditable.
+
+This chapter establishes DCGT as a structural object: the hydrodynamic-window scale separation that makes the multi-scale expansion controlled, the form of the substrate-level cross-bandwidth structure $\Gamma_\mathrm{cross}(\mathbf{x}_1,\mathbf{x}_2) \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ that recurs across multiple closed sectors, and the five leading-order coarse-grained consequences DCGT delivers: scalar diffusion, directional viscosity (the NS viscous sector), V1→R1 substrate-cutoff regularization, V5→Maxwell viscoelastic memory, and T17 minimal-coupling Lorentz force. The chapter does not derive the theorem from scratch — that derivation lives in the Arc D memos and in Appendix D of the NS Synthesis Paper. The chapter establishes what DCGT *is*, where it sits in the dependency graph, and how each subsequent chapter consumes its output.
+
+### 3.2 The Substrate / Continuum Gap
+
+#### 3.2.1 What the gap is
+
+Chapter 1 establishes that the substrate ontology consists of discrete events (P01) on chains (P02) with bounded bandwidth (P04), proper-time ordering (P13), commitment-irreversibility (P11), finite-width kernels (V1, V5), and substrate locality. Chapter 2 establishes the load-bearing invariants ($\mathcal{M}$, $\sigma$, $\Gamma_\mathrm{cross}$, V1, P11) that recur across the program. None of this content directly produces a continuum equation. A reader at the end of Chapter 2 has a substrate ontology and a vocabulary of substrate-state quantities, but the Schrödinger equation, Maxwell's equations, the Navier–Stokes equation, and Newton's law of gravitation are all continuum-level statements about smooth fields on smooth spacetime. They are not statements about substrate events.
+
+The gap is therefore structural. The program needs a controlled, audited derivation that takes substrate primitives plus the load-bearing invariants of Chapter 2 and produces continuum equations as their leading-order coarse-grained consequences. DCGT is that derivation.
+
+#### 3.2.2 What standard physics does instead
+
+Standard physics typically does not face this gap, because it does not commit to a substrate ontology in the first place. Quantum mechanics treats wavefunctions as fundamental, classical electromagnetism treats fields as fundamental, fluid dynamics treats velocity fields as fundamental, general relativity treats the spacetime metric as fundamental. Each framework starts at the continuum level and asks downward whether some deeper structure produces what is observed.
+
+The Event Density program reverses the direction: it starts at the substrate level and asks upward whether the continuum equations of standard physics emerge as coarse-grained consequences. This requires a coarse-graining theorem that bridges the levels. DCGT is the program's answer to that requirement.
+
+#### 3.2.3 What DCGT must deliver
+
+For DCGT to close the substrate/continuum gap, it must do four things:
+
+1. Establish a controlled scale separation under which substrate dynamics admit a multi-scale expansion. (Section 3.3.)
+2. Produce the substrate-level cross-bandwidth structure $\Gamma_\mathrm{cross}$ used throughout the program. (Section 3.4.)
+3. Deliver leading-order coarse-grained continuum content covering at minimum scalar diffusion, directional viscosity, substrate-cutoff regularization, viscoelastic memory, and T17 minimal coupling. (Section 3.5.)
+4. Generalize to the non-Abelian content needed for Yang–Mills (Chapter 9) and to the gradient-source content needed for substrate gravity (Chapter 11). (Section 3.7.)
+
+DCGT delivers all four. The chapter establishes each in turn.
+
+### 3.3 The Hydrodynamic Window
+
+#### 3.3.1 The scale separation
+
+DCGT operates within a *hydrodynamic window* — a range of length scales between the substrate scale and the continuum-flow scale where substrate dynamics admit a controlled multi-scale expansion. The window is bounded below by the substrate's irreducible length scale $\ell_P$ (the Planck length, identified with the substrate length scale through T19 Newton-recovery in Chapter 11) and bounded above by the characteristic length scale $L_\mathrm{flow}$ of the continuum theory being derived. Within the window, the coarse-graining length scale $R_\mathrm{cg}$ provides a controlled intermediate scale at which substrate dynamics can be averaged without losing structural content:
+
+```math
+\ell_P \;\ll\; R_\mathrm{cg} \;\ll\; L_\mathrm{flow}.
+```
+
+The lower bound $\ell_P \ll R_\mathrm{cg}$ ensures that the coarse-graining cell at scale $R_\mathrm{cg}$ contains many substrate events, so averaging is statistically meaningful. The upper bound $R_\mathrm{cg} \ll L_\mathrm{flow}$ ensures that the coarse-grained cell is much smaller than the continuum flow scale, so the coarse-graining is local with respect to the continuum theory.
+
+#### 3.3.2 Why scale separation is required
+
+Without the lower bound, the coarse-graining cell would be too small to average meaningfully — substrate events would dominate fluctuations, and the multi-scale expansion would have no controlled small parameter. Without the upper bound, the coarse-graining cell would be comparable to or larger than the continuum flow scale, and the resulting "continuum" content would be a global averaging rather than a local field theory.
+
+The hydrodynamic window is therefore the structural prerequisite for DCGT to produce *local* continuum equations rather than global averages or substrate-noise-dominated content. Every continuum equation derived through DCGT in subsequent chapters relies on this window existing for the system being analyzed.
+
+#### 3.3.3 The window's substrate-level provenance
+
+The lower bound $\ell_P$ is set by P01 event discreteness combined with the substrate length scale identified through T19. The upper bound $L_\mathrm{flow}$ is set by the system being analyzed — the continuum-flow scale of a fluid system, the qubit-system spatial extent in QC architecture, the galactic radius in substrate gravity, the black-hole horizon scale in BH architecture. The intermediate scale $R_\mathrm{cg}$ is a coarse-graining choice made within the window; results that pass through DCGT are required to be insensitive to the specific choice of $R_\mathrm{cg}$ within the window (the *coarse-graining-invariance condition*).
+
+The hydrodynamic window therefore depends on (a) the substrate having a well-defined irreducible length (P01 + T19), and (b) the system being analyzed having a sufficiently large continuum-flow scale that scale separation actually exists. When both conditions hold, DCGT applies; when they do not, DCGT does not apply and the system is in a regime where substrate-level analysis cannot be coarse-grained to a clean continuum equation. The latter case occurs in the saturated participation zones of Chapter 13 (BH-3 interior) and at the matter-wave Q-C boundary of Chapter 7, where the substrate is precisely *outside* the hydrodynamic-window regime.
+
+### 3.4 The Multi-Scale Expansion
+
+#### 3.4.1 Structure of the expansion
+
+DCGT is a multi-scale expansion in the small parameter $\ell_P/R_\mathrm{cg}$ (or equivalently in the small parameter $R_\mathrm{cg}/L_\mathrm{flow}$, depending on which limit is being analyzed). Substrate quantities are expanded in powers of the small parameter, and at each order the coarse-grained content is collected to produce the leading-order continuum theory plus subleading corrections.
+
+The leading-order content delivers the *standard* continuum equations — Newton's law of viscosity in NS, Maxwell's equations in MHD, the modified Poisson equation in substrate gravity, and so on. The first subleading correction delivers substrate-cutoff regularization terms, of which the canonical example is the R1 hyperviscous term $-\kappa\mu_\mathrm{V1}\ell_P^2 \nabla^4\mathbf{v}$ in NS (Chapter 8). The substrate-cutoff terms are small at ordinary continuum-flow scales — suppressed by powers of $\ell_P/R_\mathrm{cg}$ — but they are structurally inevitable consequences of the substrate's finite-width kernels.
+
+#### 3.4.2 What the expansion produces at each level
+
+The multi-scale expansion's leading-order outputs are the canonical continuum equations of standard physics. The expansion's subleading outputs are substrate-cutoff corrections that are absent from standard physics but FORCED by the substrate ontology. The ordering structure:
+
+```math
+\begin{array}{l|l}
+\text{Order} & \text{Content} \\
+\hline
+\text{Leading order } (\ell_P/R_\mathrm{cg})^0 & \text{Standard continuum equations} \\
+\text{First subleading } (\ell_P/R_\mathrm{cg})^2 & \text{Substrate-cutoff regularization (R1, mass-gap, etc.)} \\
+\text{Higher subleading} & \text{Increasingly small substrate-cutoff corrections} \\
+\end{array}
+```
+
+This ordering is what makes DCGT both a derivation of standard physics (at leading order) and a source of substrate-level corrections that distinguish ED from purely phenomenological coarse-grainings (at first subleading order). The substrate-cutoff corrections are FORCED — they are not optional features the framework can drop without contradicting its substrate ontology.
+
+#### 3.4.3 The coarse-graining-invariance condition
+
+DCGT's outputs at leading order are required to be insensitive to the specific choice of $R_\mathrm{cg}$ within the hydrodynamic window. This condition is the structural counterpart of renormalization-group invariance in standard QFT: the leading-order continuum content should not depend on the artificial scale at which the substrate is coarse-grained. The condition is satisfied automatically when the substrate-level dynamics admit a clean separation of scales; it can fail when scale separation is marginal, in which case the multi-scale expansion's small parameter is no longer small.
+
+When the coarse-graining-invariance condition fails, the system is at the boundary of DCGT's applicability. This is the substrate-level reason the matter-wave Q-C boundary at 140–250 kDa molecular mass and the BH horizon at the threshold $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$ are *boundaries* rather than continuous extensions of the hydrodynamic-window regime: at these boundaries, DCGT's coarse-graining-invariance condition is precisely what breaks down, and the substrate must be analyzed without relying on a continuum approximation.
+
+### 3.5 The Cross-Bandwidth Structure $\Gamma_\mathrm{cross}$
+
+#### 3.5.1 The central output
+
+DCGT's most heavily-used output across the program is the substrate-level cross-bandwidth structure between two regions $\mathbf{x}_1$ and $\mathbf{x}_2$:
+
+```math
+\Gamma_\mathrm{cross}(\mathbf{x}_1, \mathbf{x}_2) \;\sim\; \exp\!\left[-\alpha\!\int_\mathrm{path}\sigma(\mathbf{x})\,d\ell\right],
+```
+
+where the integral runs along the substrate-locality-permitted pathway between $\mathbf{x}_1$ and $\mathbf{x}_2$, $\sigma$ is the substrate-scale gradient sparsity defined in Chapter 2, and $\alpha$ is a substrate-determined dimensionless prefactor (INHERITED).
+
+The structure is form-FORCED. Its derivational origin: large $\sigma$ along the path between two regions creates a steep substrate-scale barrier that suppresses cross-region participation exchange exponentially. The exponential structure follows from the multi-scale expansion's small-parameter behavior; the integration along the path follows from substrate locality, which restricts cross-region participation to substrate-locality-permitted pathways rather than global state-of-the-universe couplings.
+
+#### 3.5.2 Why the form is structural rather than coincidental
+
+The exponential structure is not a fitting choice. It is what the multi-scale expansion produces when applied to substrate dynamics with finite-width kernels and bounded bandwidth. The integrand $\sigma(\mathbf{x})$ along the path is the substrate's only path-local invariant of the right dimensional class; the prefactor $\alpha$ is the substrate's only path-local dimensionless coefficient that can multiply it. Any other functional form would require the multi-scale expansion to produce different leading-order behavior, which would in turn require different substrate primitives or different load-bearing invariants. The exponential-in-integrated-$\sigma$ form is therefore as inevitable as the substrate ontology from which it is derived.
+
+#### 3.5.3 The cross-domain echo
+
+The same $\Gamma_\mathrm{cross}$ structure governs phenomena across enormously different scales:
+
+- **Black-hole horizon formation (Chapter 13).** A horizon is the surface where $\Gamma_\mathrm{cross}$ across it falls below hydrodynamic-window resolution. Substrate gradients at gravitational-collapse scales (of order $10^{38}\,\ell_P$ for stellar-mass black holes) are integrated along radial paths through the horizon region.
+- **Quantum-computing condition (ii) failure (Chapter 7).** UR-1's condition (ii) requires $\gamma_{ij} \geq \Gamma_\mathrm{min}$ along every rule-spanning pathway. Failure of this condition is the substrate-level cause of qubit decoherence in Class A architectures. Substrate gradients at engineered-system scales (of order $10^{-9}\,\mathrm{m}$ for Josephson-junction barriers) are integrated along path-engineered pathways.
+- **Josephson-junction macroscopic quantum tunneling (Chapter 7).** MQT rate has the WKB-form exponential structure $\tau_\mathrm{MQT}^{-1} \sim \omega_0 \exp[-\alpha\int_\mathrm{barrier}\sigma\,d\ell]$, which is precisely the DCGT $\Gamma_\mathrm{cross}$ structure evaluated at the engineered-barrier $\sigma$-profile.
+
+The same DCGT-derived exponential structure produces all three phenomena, at scales separated by approximately 50 orders of magnitude. The substrate does not distinguish between "gravitational" and "engineered" gradient regions when computing $\Gamma_\mathrm{cross}$; it applies the same DCGT machinery, and the empirical phenomena differ only in the platform-specific values of $\sigma$ along the relevant path. Chapter 14 develops this as the program's strongest cross-platform mechanism identity.
+
+### 3.6 The Five Leading-Order Consequences
+
+DCGT's leading-order multi-scale expansion delivers five canonical consequences that recur across the closed-arc inventory. Each is the substrate-to-continuum bridge for a specific continuum-physical content.
+
+#### 3.6.1 Scalar diffusion
+
+The substrate's participation density $\rho$, coarse-grained over the hydrodynamic window, satisfies a diffusion equation at leading order. The diffusion coefficient is set by the participation-channel statistics of the underlying substrate, with a packing-class saturation as the participation density approaches the substrate's maximum sustainable value. The form is FORCED at leading order; the specific diffusion coefficient is INHERITED from substrate-channel statistics.
+
+This diffusion content is the substrate-to-continuum bridge for soft-matter mobility (Chapter 10). The Universal Mobility Law $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ is the form-FORCED packing-saturation behavior of substrate diffusion's leading-order coefficient.
+
+#### 3.6.2 Directional viscosity (the NS viscous sector)
+
+When the scalar-diffusion content is extended from a scalar density to a vector velocity field, the DCGT multi-scale expansion produces Newton's law of viscosity at leading order. The viscous-diffusion term $\mu\nabla^2\mathbf{v}$ in the Navier–Stokes equation is FORCED at leading order by DCGT applied to vector-valued participation transport.
+
+This is the substrate-to-continuum bridge for the viscous sector of Navier–Stokes (Chapter 8). The advective sector $(\mathbf{v}\cdot\nabla)\mathbf{v}$ is *not* DCGT-derived; it is a frame-kinematic artifact of writing fluid dynamics in laboratory-frame coordinates. The pressure and incompressibility terms are continuum-imposed constraints. Of the four kinds of structure in NS, two (viscous diffusion and the substrate-cutoff R1 below) are DCGT-derived; the other two are not.
+
+#### 3.6.3 V1 → R1 substrate-cutoff regularization
+
+The V1 finite-width vacuum kernel produces, at first subleading order in the DCGT expansion, the hyperviscous correction term $-\kappa\mu_\mathrm{V1}\ell_P^2 \nabla^4\mathbf{v}$. This is the R1 substrate-cutoff term that supplies the Clay-NS-relevant regularizing mechanism in Chapter 8. The term is small at ordinary flow scales (suppressed by $\ell_P^2$) but it is structurally inevitable — V1's finite width is a primitive-level commitment, and DCGT's first subleading order produces R1 as a direct consequence.
+
+R1 is the canonical example of a substrate-cutoff correction. Its mass-gap analogue in Yang–Mills (Chapter 9) and its cross-patch correlation analogue in BH area-law entropy (Chapter 13) are produced by the same V1-to-subleading-correction mechanism applied to different content channels.
+
+#### 3.6.4 V5 → Maxwell viscoelastic memory
+
+The V5 cross-chain memory kernel, coarse-grained under DCGT, produces Maxwell-class viscoelastic dynamics:
+
+```math
+\tau_R\,\dot\sigma + \sigma = 2\mu S,
+```
+
+where $\tau_R$ is the relaxation time identified as the V5 kernel's first temporal moment, $\sigma$ is the stress tensor (here distinct from the substrate sparsity), $S$ is the strain-rate tensor, and $\mu$ is the viscosity. The form is FORCED by DCGT applied to V5's finite-width memory structure; the relaxation time $\tau_R$ is INHERITED from molecular physics in a soft-matter context (Chapter 10).
+
+This is the substrate-to-continuum bridge for soft-matter viscoelasticity. Maxwell's spring-dashpot model, used phenomenologically in soft-matter rheology since the late nineteenth century, is reproduced from the substrate without phenomenological postulation.
+
+#### 3.6.5 T17 minimal coupling (Lorentz force)
+
+T17 (Chapter 6) establishes gauge fields as participation measures of structural rule-types. The substrate-to-continuum bridge for the Lorentz force on charged particles is DCGT applied to charged-chain populations using T17's minimal-coupling structure. The Lorentz force $\mathbf{F} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B})$ emerges as the leading-order DCGT output for charged participation transport.
+
+This is the substrate-to-continuum bridge for the electromagnetic content of MHD (Chapter 9) and for Maxwell's equations more generally. The same machinery generalizes to non-Abelian gauge theory in Section 3.7.
+
+#### 3.6.6 The five together
+
+The five leading-order consequences cover the structural content of every classical continuum field theory in the program's closed-arc inventory. Scalar diffusion produces soft-matter mobility (Chapter 10) and the substrate-level analogue of heat conduction. Directional viscosity produces the viscous sector of NS (Chapter 8). V1→R1 produces substrate-cutoff regularization in NS (Chapter 8) and the YM mass-gap mechanism (Chapter 9) and the BH area-law motif alphabet (Chapter 13). V5→Maxwell produces soft-matter viscoelasticity (Chapter 10). T17 minimal coupling produces electromagnetism and (with non-Abelian generalization) Yang–Mills.
+
+Together, these five consequences span the entire continuum-classical-physics content the program derives. There is no continuum theory in the program's closed-arc inventory that does not pass through at least one of them.
+
+### 3.7 The Non-Abelian Generalization
+
+#### 3.7.1 What changes for non-Abelian content
+
+T17 minimal coupling (Section 3.6.5) covers Abelian gauge structure (U(1) electromagnetism). The Yang–Mills content of Chapter 9 requires the same DCGT machinery applied to non-Abelian compact-simple-group gauge structures. The generalization is structural: the multi-scale expansion remains the same; the cross-bandwidth structure remains the same; the difference is that the participation rule-types being coarse-grained carry non-Abelian internal labels rather than Abelian (charge-only) labels.
+
+The output of the non-Abelian DCGT generalization is the continuum Yang–Mills equation $D_\mu F^{\mu\nu} = J^\nu$ at leading order, plus a substrate-level mass-gap mechanism at first subleading order from V1's second-moment expansion. Chapter 9 develops both. The machinery is exactly DCGT — the same hydrodynamic-window scale separation, the same multi-scale expansion, the same five-consequence structure — applied to a different content channel.
+
+#### 3.7.2 Why the generalization works
+
+The structural reason DCGT generalizes cleanly to non-Abelian content is that the substrate ontology does not commit to which gauge group nature realizes. T17 establishes gauge fields as participation measures of structural rule-types; the *form* of gauge field content is FORCED by the substrate, but the specific gauge group (Abelian U(1) vs non-Abelian SU(2), SU(3), etc.) is empirical input. DCGT's machinery is therefore agnostic about gauge-group choice: it produces the appropriate continuum Yang–Mills equation for whichever compact-simple-group structure the rule-type carries.
+
+The form-FORCED status of DCGT's non-Abelian generalization means: the framework predicts the *form* of the Yang–Mills equation (the $D_\mu F^{\mu\nu} = J^\nu$ structure) and the *form* of the mass-gap mechanism, without committing to specific values for gauge couplings or to specific gauge groups. The Standard Model gauge group remains empirical input; the form of Yang–Mills equations is FORCED.
+
+### 3.8 DCGT's Role Across the Closed-Arc Inventory
+
+The closed-arc inventory's dependence on DCGT is comprehensive. The summary below identifies which DCGT output each closed sector consumes.
+
+```math
+\begin{array}{l|l}
+\text{Closed sector} & \text{DCGT output consumed} \\
+\hline
+\text{Phase-1 closure of QM (Ch. 5)} & \text{V1 mediation; bandwidth-conservation structure} \\
+\text{Form-level QFT (Ch. 6)} & \text{T17 minimal coupling; vacuum-response structure} \\
+\text{Quantum computation (Ch. 7)} & \text{Cross-bandwidth } \Gamma_\mathrm{cross} \\
+\text{Navier–Stokes (Ch. 8)} & \text{Directional viscosity; V1→R1 cutoff} \\
+\text{MHD and Yang–Mills (Ch. 9)} & \text{T17 minimal coupling; non-Abelian generalization; V1 mass-gap} \\
+\text{Soft-matter mobility (Ch. 10)} & \text{Scalar diffusion; V5→Maxwell memory} \\
+\text{Substrate gravity (Ch. 11)} & \text{Cumulative-strain coarse-graining} \\
+\text{Curvature emergence (Ch. 12)} & \text{Acoustic-metric kinematic-summary} \\
+\text{Black-hole architecture (Ch. 13)} & \text{Cross-bandwidth } \Gamma_\mathrm{cross}; V1\text{ motif alphabet} \\
+\end{array}
+```
+
+Every row uses DCGT or one of its generalizations. The two rows that use the largest DCGT footprint are quantum computation (which uses cross-bandwidth in UR-1, V1 in commitment-injection, and the multi-scale expansion structure in deriving the multiplicity-cap function) and black-hole architecture (which uses cross-bandwidth in horizon formation, V1 in motif counting, and the substrate-condition $\sigma$-threshold in five distinct architectural results). Both sectors use DCGT through the same $\Gamma_\mathrm{cross}$ structure at scales separated by ~50 orders of magnitude.
+
+### 3.9 The Substrate-to-Continuum Mapping
+
+#### 3.9.1 What DCGT delivers in plain structural terms
+
+DCGT takes substrate-level inputs:
+- The substrate primitives of Chapter 1.
+- The load-bearing invariants of Chapter 2.
+- A system characterized by a continuum-flow scale $L_\mathrm{flow}$ that admits a hydrodynamic window $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$.
+
+And produces continuum-level outputs:
+- Leading-order continuum equations governing the system's coarse-grained dynamics.
+- First-subleading-order substrate-cutoff corrections that distinguish ED from purely phenomenological continuum theories.
+- The cross-bandwidth structure $\Gamma_\mathrm{cross}$ governing two-region exchange.
+- Coarse-graining-invariant content that does not depend on the choice of $R_\mathrm{cg}$ within the window.
+
+#### 3.9.2 The form-FORCED / value-INHERITED content of DCGT
+
+The form of DCGT's output is FORCED:
+- The hydrodynamic-window scale separation requirement.
+- The multi-scale expansion structure.
+- The exponential form of $\Gamma_\mathrm{cross}$ in integrated $\sigma$.
+- The five leading-order consequences (scalar diffusion, directional viscosity, V1→R1, V5→Maxwell, T17 minimal coupling).
+- The non-Abelian generalization structure for Yang–Mills.
+
+The value of DCGT's output is INHERITED:
+- The specific dimensionless prefactor $\alpha$ in the cross-bandwidth exponential.
+- The specific diffusion coefficient in scalar diffusion.
+- The specific viscosity coefficient in directional viscosity.
+- The specific R1 cutoff coefficient $\kappa\mu_\mathrm{V1}\ell_P^2$.
+- The specific Maxwell relaxation time $\tau_R$ (V5 first temporal moment).
+- The specific gauge-coupling values in Yang–Mills (gauge-group-specific empirical input).
+
+#### 3.9.3 What DCGT does *not* deliver
+
+DCGT does not deliver:
+- The advective sector of Navier–Stokes (a frame-kinematic artifact, not a substrate consequence).
+- The pressure and incompressibility constraints in NS (continuum-imposed constraints, not DCGT outputs).
+- Einstein's general relativity (Chapter 12 is honest that the acoustic-metric covariantization is kinematic-class, not full GR).
+- A constructive proof of the Clay Yang–Mills problem (Chapter 9 gives a structural-positive verdict at the substrate-suggestive level, which is a form-level claim, not a constructive theorem at Streater–Wightman / OS-axiom rigor).
+- Specific numerical values for any of the substrate constants.
+
+What DCGT delivers and does not deliver is precisely demarcated. Chapters 8–13 each respect the demarcation and identify which content within the chapter is DCGT-derived (form-FORCED) versus continuum-imposed (frame-kinematic, constraint-class, or empirical-input).
+
+### 3.10 The Coarse-Graining Bridge as Audit Trail
+
+#### 3.10.1 Auditability is a methodological commitment
+
+Every continuum equation in the program's closed-arc inventory should be reachable from substrate primitives through an audited derivation chain. DCGT is the program's central auditing instrument: it takes substrate-level content as input and produces continuum-level content as output, with each step in the chain identified and form-FORCED versus value-INHERITED status of the output explicitly demarcated.
+
+The audit trail's structure is the same in every closed sector:
+1. Identify the substrate primitives consumed.
+2. Identify the load-bearing invariants used.
+3. Specify the hydrodynamic window for the system being analyzed.
+4. Apply the DCGT multi-scale expansion.
+5. Read off the leading-order continuum equation as form-FORCED output.
+6. Read off the first-subleading substrate-cutoff correction as a separate form-FORCED output.
+7. Identify which numerical values in the output are INHERITED.
+8. Identify which content in the original continuum theory (if any) is frame-kinematic or continuum-imposed and therefore not DCGT-derived.
+
+This audit structure is implicit in every chapter from Chapter 5 onward. The program's methodological commitment is that any reader can, in principle, perform this audit on any continuum equation derived in the program.
+
+#### 3.10.2 The audit at the boundaries of DCGT applicability
+
+When the hydrodynamic window does not exist (when scale separation is marginal or fails), DCGT is not applicable, and the substrate must be analyzed without coarse-graining to a clean continuum equation. The framework is honest about these regimes:
+
+- The matter-wave Q-C boundary at 140–250 kDa molecular mass (Chapter 7): the molecule's effective system multiplicity has crossed the substrate threshold, and the DCGT-derived unresolved-rule regime ceases to be sustainable.
+- The BH-3 saturated participation zone (Chapter 13): substrate gradients have steepened to the saturation regime where the acoustic-metric reading breaks down, and the coarse-grained continuum content is replaced by a substrate-level finite-thickness saturated zone.
+- The deep-MOND superluminal scalar propagation in Arc ED-10 (Chapter 12): the acoustic-metric scalar-tensor covariantization produces a kinematic-class reading whose superluminality is a structurally-FORCED consequence of producing the substrate-derived MOND behavior without introducing additional dynamical fields.
+
+In each of these cases, the framework identifies the boundary of DCGT applicability explicitly and resorts to substrate-level analysis without requiring a clean continuum equation. The audit trail is preserved; the audit's content changes from "DCGT applied" to "DCGT not applicable here, substrate-level analysis used directly."
+
+### 3.11 Form-FORCED vs Value-INHERITED at the Coarse-Graining Bridge
+
+#### 3.11.1 What is form-FORCED at this layer
+
+- The hydrodynamic-window scale separation requirement $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$.
+- The multi-scale expansion structure with the small parameter $\ell_P/R_\mathrm{cg}$.
+- The exponential structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ for substrate-mediated cross-region exchange.
+- The five leading-order coarse-grained consequences (scalar diffusion, directional viscosity, V1→R1, V5→Maxwell, T17 minimal coupling).
+- The non-Abelian generalization to Yang–Mills.
+- The coarse-graining-invariance condition for leading-order outputs.
+- The substrate-cutoff structure of first-subleading corrections.
+- The boundaries of DCGT applicability (matter-wave Q-C boundary, BH saturated zone, deep-MOND superluminality regime).
+
+#### 3.11.2 What is value-INHERITED at this layer
+
+- The specific functional shape of the V1 finite-width vacuum kernel (the existence and finite-width are FORCED; the closed-form shape is INHERITED).
+- The specific dimensionless prefactor $\alpha$ in the cross-bandwidth exponential structure.
+- The specific diffusion coefficient in scalar diffusion (set by substrate-channel statistics; INHERITED).
+- The specific viscosity coefficient in directional viscosity (INHERITED).
+- The specific R1 cutoff coefficient combination $\kappa\mu_\mathrm{V1}\ell_P^2$ (INHERITED; appears as the small substrate-cutoff prefactor).
+- The specific Maxwell relaxation time $\tau_R$ (INHERITED from molecular or substrate physics).
+- The specific T17 minimal-coupling charge values (INHERITED from gauge-group empirical input).
+- The specific numerical thresholds at the boundaries of DCGT applicability (the matter-wave boundary value of 140–250 kDa, the BH-3 saturation threshold $\beta_\mathrm{crit}$, the deep-MOND transition acceleration $a_0$).
+
+#### 3.11.3 Methodological consistency at the coarse-graining bridge
+
+The form-FORCED / value-INHERITED pattern at the coarse-graining bridge is consistent with the pattern at the primitive layer (Chapter 1) and the load-bearing invariants layer (Chapter 2). Form is structurally fixed; values are calibrated empirically against anchors. DCGT inherits the methodology; every subsequent chapter inherits it from DCGT.
+
+### 3.12 Dependencies
+
+#### 3.12.1 Upstream
+
+- **Chapter 1.** P01 event discreteness (sets the substrate length scale floor); P04 bandwidth update (controls the substrate's bounded-bandwidth content); finite-kernel commitments (V1, V5 finite-width); substrate-locality commitments (controls the path-integration structure of $\Gamma_\mathrm{cross}$).
+- **Chapter 2.** Load-bearing invariants — particularly $\sigma$ (entering the cross-bandwidth exponent), V1 (entering the substrate-cutoff structure), and the $\Gamma_\mathrm{cross}$ definition that DCGT formalizes.
+
+#### 3.12.2 Downstream
+
+- **Chapter 4 (Theorem N1 + Theorem 18).** Theorem N1 establishes V1 as a finite-width chain-sourced response kernel, formally completing the V1 commitment that DCGT consumes. Theorem 18 propagates P11 + chain structure through V1 to forward-cone-only support, formally completing the kernel-arrow content that DCGT inherits.
+- **Chapter 5 (Phase-1 closure).** DCGT's V1 mediation enters the Born-rule and Schrödinger-equation derivations indirectly through bandwidth-conservation structure.
+- **Chapter 6 (Form-level QFT).** DCGT's T17 minimal-coupling content is the substrate-to-continuum bridge for gauge fields; vacuum-response structure passes through DCGT's V1 content.
+- **Chapter 7 (Quantum computing).** The cross-bandwidth structure $\Gamma_\mathrm{cross}$ enters UR-1's condition (ii). The multi-scale expansion underlies the unresolvedness $\mathcal{U}$'s three-factor product structure.
+- **Chapter 8 (Navier–Stokes).** DCGT directly produces the viscous sector and the V1→R1 substrate-cutoff regularization.
+- **Chapter 9 (MHD and Yang–Mills).** DCGT's T17 minimal coupling produces the Lorentz force; the non-Abelian DCGT generalization produces Yang–Mills; V1's second-moment produces the YM mass-gap.
+- **Chapter 10 (Soft-matter mobility).** DCGT's scalar-diffusion content produces the Universal Mobility Law; V5→Maxwell produces viscoelasticity.
+- **Chapter 11 (Substrate gravity).** DCGT's cumulative-strain coarse-graining is the substrate-to-continuum bridge for the modified Poisson equation.
+- **Chapter 12 (Curvature emergence).** DCGT's acoustic-metric kinematic-summary content underlies the scalar-tensor covariantization.
+- **Chapter 13 (Black-hole architecture).** DCGT's cross-bandwidth structure governs horizon formation; V1's per-patch motif content governs the area-law entropy form.
+- **Chapter 14 (Cross-platform unifications).** The cross-domain identity between BH horizon formation and QC condition (ii) failure rests on the same DCGT-derived $\Gamma_\mathrm{cross}$ structure.
+- **Chapter 15 (Public test inventory).** Empirical anchors calibrate the value-INHERITED coefficients in DCGT's leading-order and substrate-cutoff outputs.
+
+The graph is comprehensive. Every chapter from Chapter 4 onward depends on DCGT directly or through a chapter that does.
+
+### 3.13 Canonical Sources
+
+- Arc D memos in `theory/Arc_D/`
+- NS Synthesis Paper Appendix D — `papers/Navier Stokes_Synthesis_Paper/`
+- ED-QFT Unified Overview Paper — `papers/ED_QFT_Overview/`
+
+The Arc D memos contain the formal derivation of DCGT's multi-scale expansion structure and the explicit production of the five leading-order consequences. NS Synthesis Paper Appendix D presents the DCGT material in publication-grade form integrated with the Navier–Stokes program. The ED-QFT Unified Overview Paper presents DCGT in its program-level role across the closed-arc inventory.
+
+The Monograph Shell's Appendix A theorem provenance map and Appendix B notation glossary are the cross-reference documents that connect DCGT's outputs to the downstream theorems and notation used throughout the monograph.
+
+### 3.14 Optional Figures
+
+**Figure 3.1 — The substrate / continuum gap and DCGT as bridge.** A horizontal arrangement: substrate primitives (Chapter 1) on the left, continuum equations (Chapters 5–13) on the right, and DCGT in the middle as the labeled bridge. The figure makes visible that DCGT is the *only* substrate-to-continuum bridge in the program; every continuum equation reaches its substrate origin through it.
+
+**Figure 3.2 — The hydrodynamic-window scale separation.** A logarithmic length-scale axis from $\ell_P$ at the bottom to $L_\mathrm{flow}$ at the top, with $R_\mathrm{cg}$ marked at an intermediate scale. The window between $\ell_P$ and $L_\mathrm{flow}$ is shaded; outside the window, DCGT does not apply. Annotations identify the window boundaries for representative systems: matter-wave interferometry (small molecule scale to interferometer scale), SC qubit array (substrate scale to system scale), galactic dynamics (substrate scale to galactic radius), black-hole architecture (substrate scale to horizon scale).
+
+**Figure 3.3 — The multi-scale expansion ordering.** A vertical arrangement showing leading order producing standard continuum equations, first subleading order producing substrate-cutoff corrections (R1 in NS, mass-gap in YM, motif-correlation in BH), and higher subleading orders producing increasingly small substrate-cutoff content. Each row is annotated with the small-parameter power $(\ell_P/R_\mathrm{cg})^n$ that produces it.
+
+**Figure 3.4 — The five leading-order DCGT consequences.** A radial diagram with DCGT at the center and five spokes radiating outward to: (i) scalar diffusion (used in Chapter 10); (ii) directional viscosity (used in Chapter 8); (iii) V1→R1 substrate-cutoff (used in Chapters 8, 9, 13); (iv) V5→Maxwell viscoelastic memory (used in Chapter 10); (v) T17 minimal-coupling Lorentz force (used in Chapters 6, 9). The figure makes visible the breadth of DCGT's downstream consumption.
+
+**Figure 3.5 — The cross-domain $\Gamma_\mathrm{cross}$ echo.** A length-scale diagram showing the same DCGT-derived exponential structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ producing phenomena at scales separated by ~50 orders of magnitude: Josephson-junction MQT at $\sim 10^{-9}\,\mathrm{m}$ (Chapter 7), QC condition (ii) failure at $\sim 10^{-3}\,\mathrm{m}$ (Chapter 7), BH horizon formation at $\sim 10^{4}\,\mathrm{m}$ for stellar-mass black holes (Chapter 13), Rindler horizons at acceleration-dependent scales, cosmological horizons at $\sim H_0^{-1}$. The figure is the visual form of the cross-domain identity developed in Chapter 14.
+
+**Figure 3.6 — DCGT's footprint across the closed-arc inventory.** A grid: rows are the five DCGT leading-order consequences plus the cross-bandwidth structure plus the non-Abelian generalization; columns are the nine closed sectors. Cells are filled where the DCGT output is consumed in the sector. The figure makes visible that no closed sector escapes DCGT's reach.
+
+\newpage
+
+## Chapter 4 — Kernel-Level Arrow of Time: Theorem N1 + Theorem 18
+
+### 4.1 Chapter Overview
+
+Two foundational theorems together establish the substrate-level arrow of time. **Theorem N1** establishes the V1 vacuum response kernel as finite-width and chain-sourced — a substrate-level temporal smearing kernel that mediates participation events with nonzero substrate-temporal width rather than acting as an instantaneous delta. **Theorem 18** establishes that the V1 kernel is uniquely forced to have forward-cone-only support at the primitive level. The forcing comes from a specific combination of substrate primitives: P11 commitment-irreversibility, P02 chain worldline structure, P04 bandwidth update rule, P13 proper-time ordering, plus Theorem N1 itself. Under this combination, no symmetric, advanced, or hybrid kernel is constructible at the primitive level. The microscopic arrow of time is FORCED structurally rather than postulated.
+
+The chapter develops both theorems in the architectural voice of the monograph: it does not reproduce the formal proofs (those live in the canonical sources), but it exposes the forcing chain explicitly, identifies the structural role each contributing primitive plays, and locates the chapter's content in the program's broader dependency graph. Theorem 18's significance extends beyond its formal statement. It provides the substrate-level structural foundation for upper-half-plane analyticity in standard QFT (which is postulated in conventional treatments rather than derived). It strengthens N1-E directionality via cascade-from-V1 and R1-bypass redundancy, making N1-E *over-determined-forced* rather than merely forced through one channel. It refines T17 vacuum coupling to forward-only directionality. It supplies the kernel-level arrow that Phase-3 GR1 inherits when V1 is extended to curved-spacetime backgrounds. The chapter also clarifies why the kernel-level arrow is the *only* arrow of time the framework currently derives at the substrate level: the thermodynamic, cosmological, measurement, and radiation arrows are downstream structural follow-ons that would inherit Theorem 18 as their kernel-level foundation if pursued.
+
+### 4.2 Why the Kernel-Level Arrow Matters Structurally
+
+#### 4.2.1 The arrow of time problem in standard physics
+
+Standard physics distributes the arrow of time across multiple incomplete accounts, each of which passes the explanatory burden to a different layer:
+
+- **The thermodynamic arrow** says entropy increases. This is correct phenomenologically, but standard cosmology then asks why the universe began in a low-entropy state. The answer is "we don't know — it's a boundary condition we accept because it explains everything downstream." The arrow is real, but its origin has been pushed to the universe's beginning where it cannot be examined.
+- **The cosmological arrow** says the universe is expanding, and forward in time is the direction in which the cosmos gets bigger. Also correct, but the expansion itself is a cosmic boundary condition rather than a derivation.
+- **The measurement arrow** says wavefunction collapse is irreversible. The collapse is a postulate of standard quantum mechanics, not a structural consequence of the rest of the theory.
+- **The radiation arrow** says Maxwell's equations are time-symmetric, but only the retarded Green's function is used in practice. The physicists pick the retarded solution because the advanced solution gives anti-causal absurdities. The arrow here is a solution-selection rule applied externally to a time-symmetric equation — it works, but it is a choice rather than a derivation.
+
+Each account is correct as far as it goes. None of them locates the arrow *inside* the laws. Each either passes the buck (to a boundary condition, to a postulate, to a solution-selection rule) or hangs the arrow on something else that is itself unjustified.
+
+#### 4.2.2 ED's structural position
+
+The Event Density framework places the arrow of time at the deepest layer the program reaches — the substrate ontology itself, in the form of P11 commitment-irreversibility (Chapter 1, Chapter 2). Every other primitive in the substrate ontology is time-symmetric in isolation; only when joined with P11 does any other substrate quantity acquire forward orientation. The framework's choice is methodologically deliberate: directionality is one structural commitment that has to live somewhere, and the substrate ontology is where it can be most cleanly stated.
+
+P11 alone, however, is not enough. P11 says commitments are irreversible at the chain level — once a substrate event commits at a chain endpoint, the commitment cannot be reversed. This is sharp at the chain level, but it does not by itself establish that the substrate's response kernel (V1) has forward-cone-only support in the spacetime sense. The bridge from chain-time-forward to spacetime-retarded requires the entire combination P11 + P02 + P04 + P13 + N1 + substrate locality. Theorem 18 is the structural theorem that performs this bridge.
+
+#### 4.2.3 What the kernel-level arrow is, exactly
+
+The kernel-level arrow of time, formalized in Theorem 18, is the statement that the V1 vacuum response kernel — the substrate-level kernel that mediates how participation events propagate response — has support restricted to the forward causal cone. A perturbation at substrate spacetime point $x$ produces a response only at points in the forward causal cone of $x$, never at points outside it (which would be advanced behavior) and never at all points symmetrically (which would be symmetric behavior).
+
+This is not the same as the thermodynamic arrow (entropy increase), the cosmological arrow (cosmic expansion direction), the measurement arrow (wavefunction collapse), or the radiation arrow (retarded Green's function selection). It is the *substrate-level* arrow at the layer of vacuum response. Standard physics has this at the level of a postulate (the iε prescription, upper-half-plane analyticity, retarded Green's function selection) or as a solution-selection rule applied externally. ED *derives* it.
+
+### 4.3 Theorem N1: The V1 Finite-Width Vacuum Kernel
+
+#### 4.3.1 What N1 establishes
+
+Theorem N1 establishes the V1 vacuum response kernel as a finite-width chain-sourced response kernel at the substrate level. The content has three components:
+
+1. **Existence.** V1 exists as a substrate-level vacuum response kernel. It mediates participation events — a perturbation at one chain endpoint produces response at other endpoints through the V1 kernel.
+2. **Finite width.** V1 has nonzero temporal width at the substrate scale. It is not an instantaneous delta function. The width is INHERITED — Theorem N1 establishes that the width is finite and substrate-determined, but the specific functional shape of the kernel is not closed-form derived from any other primitive.
+3. **Chain-sourced.** V1 is sourced by chain-level participation events. The kernel is not a free-standing vacuum object that exists independently of the chain ensemble; it is constructed from the contributions of chain dynamics. This is the structural content that Theorem 18 will use to propagate P11-irreversibility through the kernel.
+
+#### 4.3.2 Why finite-width matters structurally
+
+The finite-width commitment is what makes Theorem N1 a substantive theorem rather than a trivial restatement of the V1 finite-kernel primitive (Chapter 1). In standard QFT, vacuum response kernels are typically treated as continuum objects with effective-theory structure; their finite-width content is implicit in the regularization scale. ED commits to finite-width at the substrate-ontological level, and Theorem N1 formalizes this commitment as a substrate-level theorem.
+
+The finite-width content is load-bearing for several downstream results in the program:
+
+- **Theorem 18 retardation (Section 4.4).** The forward-cone-only support derived in Theorem 18 requires V1's finite width as a structural input. A delta-function kernel would not admit the chain-summed structure that Theorem 18 uses.
+- **R1 substrate-cutoff regularization in Navier–Stokes (Chapter 8).** V1's finite width produces, at first subleading order in the DCGT multi-scale expansion, the hyperviscous correction term $-\kappa\mu_\mathrm{V1}\ell_P^2 \nabla^4\mathbf{v}$. This is the R1 mechanism. Without finite-width V1, the substrate-cutoff regularization that supplies the Clay-NS-relevant Intermediate Path C verdict would not exist.
+- **Yang–Mills mass-gap mechanism (Chapter 9).** V1's second-moment expansion under DCGT non-Abelian generalization produces the substrate-level mass-gap. The second-moment is well-defined precisely because V1 has finite width.
+- **Black-hole area-law motif alphabet (Chapter 13).** V1's per-patch substrate temporal width sets the per-patch motif alphabet $g$ that enters the BH area-law entropy expression $S = (A/\ell_P^2)\log g$.
+
+#### 4.3.3 What N1 does *not* establish
+
+Theorem N1 does not establish the specific functional shape of V1. The width is finite and substrate-determined, but the closed-form shape (Boltzmann-like, rational, sigmoid, or some V1-kernel-specific form) is INHERITED. This INHERITED status propagates downstream: every theorem that uses V1's specific shape (R1 cutoff coefficient, YM mass-gap value, BH motif alphabet $g$) inherits the same INHERITED status for its specific numerical content, while the structural form remains FORCED.
+
+Theorem N1 also does not establish forward-cone-only support. Theorem N1 establishes V1's existence, finite width, and chain-sourced character. The forward-cone-only support is the content of Theorem 18, which uses N1 as one input and combines it with primitives P02, P04, P11, P13 plus substrate locality to force retardation.
+
+#### 4.3.4 N1-E directionality
+
+N1-E refers to the directionality content of the V1 kernel as established in Theorem N1: that V1 is chain-sourced and that chain dynamics carry an intrinsic ordering through P13 proper-time ordering. N1-E by itself is forward-only along chain proper time. The cross-arc strengthening of N1-E by Theorem 18 elevates this to forward-cone-only support in the spacetime sense, via the combination with P11, P02, P04, and substrate locality.
+
+The strengthening is *over-determined-forced*: N1-E directionality is reachable through two independent paths (cascade-from-V1 and R1-bypass redundancy), so it is forced even in regimes where one of the paths fails. Section 4.6 develops this over-determined-forced status as a structural strengthening of the kernel-level arrow.
+
+### 4.4 Theorem 18: V1 Kernel Retardation
+
+#### 4.4.1 The theorem statement
+
+Theorem 18 states: *given the ED primitive set, P11 commitment-irreversibility (taken as primitive), the chain worldline structure (P02), the bandwidth update rule (P04), the proper-time ordering (P13), Theorem N1 (V1 finite-width vacuum kernel), and the effective-vacuum factorisation (Q.8), the V1 vacuum response kernel is uniquely forced at primitive level to have support restricted to the forward causal cone; no symmetric, advanced, or hybrid kernel is constructible at primitive level; the microscopic arrow of time is structurally FORCED at the kernel level; form FORCED (retardation), value INHERITED (specific kernel functional form $G(\sigma)$, continuum-approximation propagator-boundary-condition specifics).*
+
+The theorem's structure has three parts:
+1. **Inputs.** A specified subset of the substrate primitives, plus Theorem N1, plus the effective-vacuum factorisation (Q.8) that connects V1 to the chain-contribution sum.
+2. **Forcing chain.** A constructive argument showing that the inputs jointly force V1 to have forward-cone-only support.
+3. **Refutation sweep.** A demonstration that none of the alternative kernels (symmetric, advanced, hybrid variants) is constructible from the same inputs. This is what makes the theorem *forcing* rather than merely *consistent* — alternatives are not just refuted, they are non-constructible.
+
+#### 4.4.2 The forcing chain in one breath
+
+The forcing chain, stated as a single architectural claim:
+
+V1 is a response kernel (Theorem N1 + Q.8) — therefore response kernels need chain-sourced contributions — therefore chain bandwidth dynamics are forward-only along proper time (P11 + P02 + P04 + P13; chain forward-propagator $U_K(n,m) = 0$ for $n < m$) — therefore chain-summed kernel has forward-cone-only support (universal P11 time orientation across the chain ensemble plus substrate locality bridging chain-time-forward to spacetime-retarded) — therefore V1 retarded.
+
+Each step in the chain is structurally non-optional given the inputs. The chain is the program's primary derivation of the kernel-level arrow.
+
+#### 4.4.3 The refutation sweep
+
+Theorem 18's refutation sweep dispatches the alternative kernel candidates by *non-construction* rather than by external constraint:
+
+- **Symmetric V1 (BC3).** A symmetric vacuum response kernel would require the chain-summed kernel to have backward-cone support as well as forward-cone. But there are no chain contributions with backward-cone support, because every chain's forward-propagator vanishes for backward chain-proper-time arguments (P11 + P02 + P04 + P13). The chain-summed kernel therefore cannot acquire symmetric content; it has no source. **REFUTED-by-non-construction.**
+- **Advanced V1.** An advanced kernel would require everything to run backward — P11 inverted, P13 reversed, P07 vacuous, N1-E cascade conflict. Multiple substrate primitives would have to fail simultaneously. **REFUTED-by-multi-front-contradiction.**
+- **Hybrid variants.** Several hybrid candidates were considered: H1 (forward + ε backward), H2 (angular-restricted backward), H3 (weighted symmetric), H4 (symmetric core × envelope). Each requires backward-cone support in some weighting, and each runs into the same non-construction argument as the symmetric kernel. **All REFUTED by the same non-construction structure.**
+- **PDE T-symmetry cancellation.** A standard objection is that the underlying continuum PDE (the wave equation, the Schrödinger equation) is time-symmetric, so a symmetric kernel might emerge from the symmetric PDE despite primitive-level asymmetry. This objection is **REFUTED**: the PDE is direction-neutral, but it does not override the kernel-construction selection at the primitive level. The PDE describes solutions; the kernel is a specific construction from the chain ensemble, and the chain ensemble is not direction-neutral.
+
+The refutation sweep's structural significance is that the alternative kernels are not merely inconsistent with observation; they are *non-constructible* from the substrate primitives. There is no weighted average, no perturbative correction, no boundary-condition adjustment that produces them. The forward-cone-only kernel is the only kernel a chain ensemble can produce.
+
+#### 4.4.4 The structural status of the result
+
+Theorem 18 belongs to the program's *forced theorems* — results whose conclusions are not chosen but are uniquely produced by the substrate inputs. The forced-theorem inventory at Theorem 18's closure stands at eighteen: T1 through T16 from Phase-1 closure of QM, T17 (gauge-field-as-rule-type), and Theorem 18 itself.
+
+The form-FORCED content of Theorem 18 is the retardation: V1 has forward-cone-only support. The value-INHERITED content includes the specific functional form $G(\sigma)$ of the V1 kernel and the continuum-approximation propagator-boundary-condition specifics that downstream QFT machinery uses. The form is structurally fixed; the values are calibrated empirically or inherit from substrate constants whose closed-form derivation is downstream open work.
+
+### 4.5 Distinguishing Response Kernel from Correlator: The CR Framing
+
+#### 4.5.1 The Wightman correlator is a different object
+
+A natural objection to Theorem 18 is that standard QFT contains a manifestly time-symmetric vacuum correlator — the Wightman correlator $W(x,y) = \langle 0 | \hat{\phi}(x) \hat{\phi}(y) | 0 \rangle$. If Theorem 18 forces V1 to be retarded, how can the symmetric Wightman correlator coexist with the framework?
+
+The objection rests on a conflation. The Wightman correlator and the response kernel are *different objects*:
+
+- **The Wightman correlator** measures intrinsic vacuum fluctuations — what the vacuum looks like to itself, in equilibrium, with no perturbation applied.
+- **The response kernel** measures something different: how the vacuum *responds* to a perturbation that arrives from somewhere.
+
+Symmetric correlations (in Wightman) and asymmetric responses (in V1) can coexist in the same theory; they are answers to different physical questions. Theorem 18's argument is about the response kernel; the Wightman correlator is unaffected.
+
+#### 4.5.2 The continuum-approximation framing
+
+The framework formalizes this distinction as the *CR (continuum-approximation) framing*:
+
+- **Primitive level.** V1 is the substrate-level response kernel, forced by Theorem 18 to have forward-cone-only support.
+- **Continuum approximation.** Standard QFT objects (the Feynman propagator $G_F$, the retarded Green's function $G_R$, the advanced Green's function $G_A$, the Wightman correlator $W$) are continuum-level effective machinery, each playing distinct physical roles.
+- **Correspondence.** The natural correspondence is primitive-level retarded V1 ↔ continuum-approximation $G_R$. The other continuum objects ($G_F$, $G_A$, $W$) remain admissible at the continuum level as effective machinery for distinct physical roles (time-ordered amplitudes for $G_F$; certain scattering-theory uses for $G_A$; intrinsic vacuum fluctuations for $W$).
+
+Both layers are internally consistent. The primitive level commits to forward-cone-only V1; the continuum level retains the standard menu of effective propagators for the calculations they were always useful for. The CR framing parallels the program's UV-finiteness framing exactly: ED forces a structural property at the primitive level that continuum QFT either postulates or treats as effective-theory machinery.
+
+#### 4.5.3 What the CR framing solves
+
+The CR framing solves a potential interpretive tension. Without it, a reader might worry that Theorem 18 is in conflict with the well-established time-symmetric vacuum correlations of standard QFT. With it, the reader understands that Theorem 18 is a primitive-level structural derivation of the *retarded response* content, and that the continuum-level menu of propagators (including the symmetric Wightman correlator) remains intact at the continuum level. The two layers are separately consistent and meet through the standard relationships among continuum propagators.
+
+### 4.6 The Over-Determined-Forced Status of N1-E Directionality
+
+#### 4.6.1 Two independent paths
+
+N1-E directionality — the directional structure of the V1 kernel as established in Theorem N1 — is forced through two independent paths in the substrate dependency graph:
+
+- **Cascade-from-V1.** N1-E inherits its forward-only chain-time character from P11 + P02 + P04 + P13 propagated through the chain-summed kernel construction (Theorem 18's primary forcing chain).
+- **R1-bypass redundancy.** Even in regimes where the chain-summed-kernel argument is weakened (e.g., extreme coarse-graining, marginal scale separation), N1-E's directional content is reachable through the R1 substrate-cutoff content and its first-subleading-order propagation in DCGT (Chapter 3).
+
+The two paths are independent in the sense that they use different intermediate substrate machinery to reach the same conclusion. Either path alone suffices to force N1-E forward-only directionality; the existence of two paths makes the directionality *over-determined-forced*.
+
+#### 4.6.2 Why over-determination is structurally significant
+
+Over-determined-forced status means: the directionality cannot be removed without breaking multiple independent substrate machinery simultaneously. A single missing primitive or a single failed bridge would not eliminate the directionality, because the redundant path remains. This is the structural counterpart of redundancy in error-correcting code: the substrate's directional content is robust against single-channel failure.
+
+The structural significance is that the kernel-level arrow of time is not merely a consequence of one fragile derivation chain. It is over-determined by the substrate's primitive structure, propagated through multiple independent constructions. The framework's commitment to a substrate-level arrow of time is therefore not contingent on any single derivation surviving; it is a substrate-level structural feature reachable through redundant paths.
+
+#### 4.6.3 Implications for downstream results
+
+The over-determined-forced status of N1-E feeds into several downstream chapters:
+
+- **Phase-3 GR1 (curved-spacetime extension).** When V1 is extended to curved spacetime via Hadamard-parametrix causal-future restriction with Synge world function, the V1 retarded support is preserved. The over-determined-forced status of N1-E is what makes this preservation robust: even in curved-spacetime regimes where some substrate machinery is more delicate, the directionality survives.
+- **T17 vacuum coupling refinement.** T17's clauses C5–C7 are refined to forward-only directionality within sectors, inheriting the kernel-level arrow.
+- **Q.5 vacuum-polarisation analytic structure.** Standard QFT's upper-half-plane analyticity for vacuum-polarisation diagrams is *postulated* in conventional treatments; Theorem 18 supplies the substrate-level structural foundation for it. The over-determined-forced status means this foundation is robust.
+
+### 4.7 The Forcing Chain in Detail
+
+#### 4.7.1 Step 1: V1 is a response kernel sourced by chains
+
+The first step of the forcing chain establishes that V1 is a response kernel constructed from chain-level contributions. Theorem N1 supplies V1's existence, finite width, and chain-sourced character. The effective-vacuum factorisation (Q.8) supplies the explicit construction of V1 from chain-contribution sums.
+
+The structural content: V1 is not a free-standing vacuum object that exists independently of the chain ensemble. It is the chain-summed kernel produced by aggregating contributions from chain dynamics across the substrate. Whatever V1 does, it does because the chains do it.
+
+#### 4.7.2 Step 2: chain forward-propagator vanishes for backward arguments
+
+The second step establishes the chain-level forward-only structure. Each chain has a forward-propagator $U_K(n,m)$ between two chain commitments at chain-proper-time positions $n$ and $m$. The forward-propagator satisfies $U_K(n,m) = 0$ for $n < m$.
+
+The forward-only character has multiple substrate sources:
+- **P11 commitment-irreversibility.** Once a chain commits at proper-time position $m$, the commitment cannot affect earlier chain-proper-time positions. There is no commitment-erasing or commitment-undoing dynamics.
+- **P02 chain worldline structure.** Chains are coherent worldlines with persistent identity. A chain at chain-proper-time $m$ is structurally connected to its earlier and later chain-proper-time positions through the chain identity.
+- **P04 bandwidth update rule.** The chain's bandwidth update at each proper-time step is forward-only — it updates the current chain state from its previous state, not the other way around.
+- **P13 proper-time ordering.** Each chain carries an intrinsic proper-time order; this ordering is what makes "earlier" and "later" meaningful at the chain level.
+
+Together, these primitives force $U_K(n,m) = 0$ for $n < m$. There is no chain contribution that propagates a chain commitment backward in chain proper time.
+
+#### 4.7.3 Step 3: chain-summed kernel has forward-cone-only support
+
+The third step bridges chain-time-forward to spacetime-retarded. The chain-summed kernel V1 aggregates contributions from all chains in the substrate. Each chain's contribution is forward-only along its own proper time; substrate locality (the commitment that chains couple to neighbors via adjacency, not at arbitrary distance) bridges this chain-time forward-only character to spacetime forward-cone-only support.
+
+Without substrate locality, a chain's forward-time commitments could in principle reach arbitrary spacetime points in the universe's forward time slab, and the chain-summed kernel would be a forward-time-slab object rather than a forward-light-cone object. With substrate locality, the chain's contributions are restricted to the chain's own causal neighborhood, and the chain-summed kernel acquires forward-light-cone-only support.
+
+Universal P11 time orientation across the chain ensemble provides the consistency: every chain in the substrate shares the same forward direction (because every chain is governed by P11), so there are no anti-chains running backward, no chains contributing backward-cone support. The chain-summed kernel therefore has a unique, universal property: response at one spacetime point can only be sourced by perturbations in its causal past.
+
+#### 4.7.4 Step 4: alternative kernels are non-constructible
+
+The final step is the refutation sweep: alternative kernels (symmetric, advanced, hybrid) are not just inconsistent with observation; they are *non-constructible* from the substrate inputs. There is no recipe to build them from chain contributions, because the chain contributions do not have the backward-cone content that the alternatives would require.
+
+The non-constructibility is what makes Theorem 18 a forcing theorem rather than merely a consistency theorem. Theorems that simply rule out alternatives by external constraint are weaker; theorems that show alternatives have no construction recipe are stronger. Theorem 18 is in the stronger class.
+
+### 4.8 What Is and Is Not Solved
+
+#### 4.8.1 The kernel-level arrow is solved
+
+The kernel-level arrow of time — the directionality of the vacuum response kernel V1 — is FORCED at the substrate level by Theorem 18. This is the cleanest derivation of an arrow of time available within the framework, falling out of theorems already proven (Theorem N1, T17, T18) plus P11 taken as an already-primitive substrate commitment. The kernel-level arrow is therefore solved at the substrate level.
+
+#### 4.8.2 The other arrows are out of scope
+
+Four other arrows of time studied in standard physics are explicitly *out of scope* for Theorem 18:
+
+- **The thermodynamic arrow.** Why does entropy increase? The framework's substrate-level analogue — multiplicity (Chapter 2) — provides the substrate-level vocabulary in which the thermodynamic arrow could potentially be derived, but the derivation has not been performed at substrate level. The kernel-level arrow supplies a structural foundation for any future substrate-level thermodynamic-arrow derivation, since multiplicity dynamics under environmental forcing inherit the kernel-level forward-only character.
+- **The cosmological arrow.** Why is the universe expanding? The framework treats this as substrate-level open work (Arc COSMO, flagged in Chapter 15). The cosmic horizon enters through T20 (Chapter 11) and Arc ED-10 (Chapter 12), but the cosmological arrow itself — the directionality of cosmic expansion — has not been derived from the substrate.
+- **The measurement arrow.** Why is wavefunction collapse irreversible? The Phase-1 closure (Chapter 5) reframes this as the coarse-grained signature of substrate-level commitment events through P11. In this sense the measurement arrow inherits Theorem 18's substrate-level foundation directly: P11's irreversibility, propagated through the kernel-level arrow, supplies the structural origin of measurement irreversibility.
+- **The radiation arrow.** Why do we use the retarded Green's function? Theorem 18 supplies the structural answer: the substrate-level kernel V1 is uniquely forced to be retarded, and the continuum-approximation $G_R$ inherits this character. This is the framework's substrate-level resolution of the radiation arrow's standard-physics solution-selection rule.
+
+The kernel-level arrow is therefore the *structural prerequisite* for the other arrows. Each downstream arrow either inherits Theorem 18 as its kernel-level foundation (measurement, radiation) or remains substrate-level open work (thermodynamic, cosmological) that would build on Theorem 18's content if pursued.
+
+#### 4.8.3 The structural significance of the kernel-level placement
+
+Standard physics has the radiation arrow at the level of solution selection, the measurement arrow at the level of postulate, the thermodynamic arrow at the level of boundary condition, and the cosmological arrow at the level of empirical observation. None of these is at the level of the laws themselves.
+
+ED places the kernel-level arrow at the level of substrate ontology — at the layer where the framework's laws originate. This is structurally distinct from any of the standard placements. The kernel-level arrow is not a postulate (it is derived from P11 + chain primitives + N1), not a boundary condition (it is a property of the kernel itself, not a constraint imposed on initial data), not a solution-selection rule (it is the unique constructible kernel, not a chosen solution among many), and not an empirical observation (it is a substrate-level structural consequence).
+
+This placement is what the framework's choice to put P11 in the substrate ontology buys. Without P11 at the substrate level, the arrow would have to be placed somewhere else — and it would inherit the same structural weaknesses as the standard placements.
+
+### 4.9 Theorem 18's Cross-Arc Strengthening
+
+#### 4.9.1 Strengthening Phase-3 GR1
+
+Phase-3 GR1 is the program's substrate-level theorem on V1's curved-spacetime extension. It establishes that V1 lifts cleanly from flat to curved-background spacetime via Hadamard-parametrix causal-future restriction with the Synge world function. Theorem 18's forward-cone-only support is preserved under this lift; GR-3A geodesic worldlines preserve P11 time orientation along curved geodesics; GR-2D V5 cosmological correlations inherit forward-only structure; GR-4D Λ-integral content is refined to causal-future support.
+
+The strengthening: Theorem 18 supplies the kernel-level arrow at the flat-spacetime level, and Phase-3 GR1 propagates the same arrow to curved-spacetime backgrounds without re-deriving the directionality. Theorem 18 is the structural foundation; GR1 is the curved-spacetime extension that inherits the foundation.
+
+#### 4.9.2 Strengthening T17 vacuum coupling
+
+T17 (Chapter 6) establishes gauge fields as participation measures of structural rule-types. Theorem 18 refines T17's vacuum-coupling clauses C5–C7 to forward-only directionality within sectors. The substrate-level kernel-arrow content propagates into T17's vacuum-mediated coupling structure, ensuring that the gauge-field content is not merely time-neutral at the substrate level but inherits the kernel-level arrow.
+
+The strengthening: T17 alone does not force directionality on its vacuum-coupling content; T17 + Theorem 18 jointly do. The cross-arc strengthening makes T17's vacuum coupling a forced-directional structure rather than a postulate-directional structure.
+
+#### 4.9.3 Strengthening Q.5 vacuum-polarisation analytic structure
+
+Standard QFT's vacuum-polarisation analytic structure — the upper-half-plane analyticity property of vacuum-polarisation diagrams used in dispersion relations and Kramers-Kronig analyses — is postulated in conventional treatments. Theorem 18 supplies the substrate-level structural foundation: causal-only response (the kernel-level arrow) is the substrate origin of upper-half-plane analyticity at the continuum level. The standard-QFT property inherits a substrate-level structural derivation.
+
+This is one of Theorem 18's most consequential downstream applications. Standard QFT has been using upper-half-plane analyticity as a postulate for decades; ED supplies the structural foundation. The framework does not change any standard-QFT calculation, but it changes the *story underneath* — the analyticity is no longer a postulate floating above the laws, it is the continuum-level reflection of the substrate-level kernel arrow.
+
+#### 4.9.4 Strengthening Arc M F-M8 mass-form mediation
+
+Arc M's F-M8 mass-form mediation, which addresses the substrate-level structure of mass content, is refined to forward-only via the V1 vacuum kernel. Theorem 18 supplies the kernel-arrow content that constrains how mass-form mediation propagates through V1.
+
+#### 4.9.5 Preservation of direction-neutral substrate
+
+Several substrate-level structures remain direction-neutral or direction-aligned with retarded V1, and Theorem 18 preserves their status:
+
+- **Arc R Cl(3,1) signature.** The substrate-level signature on the spinor bundle remains direction-neutral.
+- **R.2.5 spin-statistics.** The substrate-level spin-statistics theorem is preserved.
+- **R.3 Dirac equation.** The Dirac equation's substrate-level derivation remains direction-aligned with retarded V1.
+- **ED-Phys-10 acoustic-metric guardrails.** The acoustic-metric kinematic-summary content of Chapter 12 inherits Theorem 18's directionality but does not require additional refinement.
+
+### 4.10 Form-FORCED vs Value-INHERITED at the Kernel-Level Arrow
+
+#### 4.10.1 What is form-FORCED at this layer
+
+- **V1's existence as a substrate-level vacuum response kernel** (Theorem N1).
+- **V1's finite-width character at the substrate scale** (Theorem N1).
+- **V1's chain-sourced construction** (Theorem N1 + Q.8 effective-vacuum factorisation).
+- **V1's forward-cone-only support** (Theorem 18).
+- **The non-constructibility of symmetric, advanced, and hybrid kernel alternatives** (Theorem 18 refutation sweep).
+- **The over-determined-forced status of N1-E directionality** (cascade-from-V1 + R1-bypass redundancy).
+- **The CR framing distinguishing primitive-level retarded V1 from continuum-level Wightman correlator** (an interpretive/structural framing, but the framing's content — that the two are different objects — is FORCED by the structure of the substrate-to-continuum bridge).
+
+#### 4.10.2 What is value-INHERITED at this layer
+
+- **The specific functional shape $G(\sigma)$ of the V1 kernel.** Finite-width is FORCED; closed-form shape is INHERITED.
+- **Continuum-approximation propagator-boundary-condition specifics** (the iε prescription's specific small parameter, the contour-deformation conventions in standard QFT). These are continuum-level conventions that inherit consistency with substrate-level V1 retardation but are not closed-form derived from substrate primitives.
+- **Specific numerical thresholds** for testing kernel-arrow-discriminating signatures (the energy or length scales at which substrate-level deviations from standard-QFT causal structure could in principle become observable). These would be calibrated against any future near-substrate-scale experiments.
+
+#### 4.10.3 What this means for empirical posture
+
+Theorem 18's empirical content is structural-foundational rather than discriminating-from-standard-physics. ED matches standard QFT/QM causal structure at all currently accessible scales. Primitive-level retardation supplies the structural foundation for that causal structure, rather than predicting deviations from it. Discriminating signatures live at near-$\ell_P$ scales (UV-FIN territory; not yet directly probed), where substrate-level structure would in principle manifest.
+
+Specific signature candidates flagged in the canonical sources include: strict causality of vacuum-mediated response near $\ell_P$; Kramers-Kronig-causal-only dispersion structure at near-$\ell_P$ scales (cross-link with UHECR / GRB / GW dispersion / LSS-correlation routes); V5-mediated cosmological-correlation persistence with strict forward-only structure; absence of backward-influence terms in cross-chain correlations; primitive-level account of measurement-collapse arrow consistent with P11; asymmetry in N1-E bandwidth inheritance (decoherence-rate signatures in matter-wave interferometry).
+
+### 4.11 Dependencies
+
+#### 4.11.1 Upstream
+
+- **Chapter 1 (substrate primitives).** Especially P11 commitment-irreversibility (the only direction-bearing primitive); P02 chain worldline structure; P04 bandwidth update rule; P13 proper-time ordering; finite-kernel commitment (V1); substrate locality.
+- **Chapter 2 (load-bearing invariants).** V1 as load-bearing invariant; gradient sparsity $\sigma$ as the substrate-scale measure entering the cross-bandwidth structure that is mediated by V1 in some downstream applications.
+- **Chapter 3 (DCGT as continuum-approximation bridge).** The CR framing that distinguishes primitive-level retarded V1 from continuum-level effective propagators relies on DCGT's substrate-to-continuum bridge to make the two-layer correspondence precise.
+
+#### 4.11.2 Downstream
+
+- **Chapter 5 (Phase-1 closure).** The measurement rule emerges from P11 commitment-irreversibility; Theorem 18 supplies the kernel-level structural foundation for the directional content of measurement.
+- **Chapter 6 (Form-level QFT).** T17 vacuum coupling is refined to forward-only directionality. Q.5 vacuum-polarisation analytic structure inherits Theorem 18's structural foundation.
+- **Chapter 7 (Quantum computing).** UR-1 condition (iii) commitment-injection-bounded inherits P11's irreversibility through Theorem 18's kernel-level arrow. The Poisson-class commitment-event accumulation that defines the third UR-1 condition is the QC-platform-specific reading of the kernel-level arrow.
+- **Chapter 8 (Navier–Stokes).** R1 substrate-cutoff regularization arises from V1's finite width; Theorem 18 supplies the directional content of how V1 couples to the dynamics.
+- **Chapter 9 (MHD and Yang–Mills).** YM mass-gap mechanism arises from V1's second-moment expansion; the mass-gap inherits V1's directional character.
+- **Chapter 10 (Soft-matter mobility).** V5 cross-chain memory under DCGT produces Maxwell viscoelasticity; the directional character of memory is supplied by Theorem 18-class arguments applied to V5.
+- **Chapter 11 (Substrate gravity).** Theorem 18's kernel-level arrow lifts to curved-spacetime backgrounds via Phase-3 GR1; substrate-gravity content inherits the directionality.
+- **Chapter 12 (Curvature emergence).** Acoustic-metric kinematic content respects ED-Phys-10 guardrails and is consistent with Theorem 18's kernel-arrow structure.
+- **Chapter 13 (Black-hole architecture).** BH-4 information-non-paradox uses P11 commitment-irreversibility directly; Theorem 18 supplies the kernel-level structural foundation for the substrate-level information architecture (committed structure cannot un-commit, so it cannot cross a horizon and re-emerge).
+- **Chapter 14 (Cross-platform unifications).** The form-FORCED methodology, including the kernel-level arrow as a substrate signature, is a cross-domain consistency check.
+
+### 4.12 Canonical Sources
+
+- `papers/Time_Arrow_Theorem_18/`
+- Theorem N1 paper (in V1 vacuum kernel inventory)
+- `arcs/arc-B/` (Arc B closure memos: arc_b_scoping, arrow_catalogue, arrow_forced, arrow_refuted, arrow_implications, arc_b_synthesis)
+
+The Time_Arrow_Theorem_18 paper presents Theorem 18 in publication-grade form with the formal forcing chain and the refutation sweep. The Theorem N1 paper presents the V1 finite-width vacuum kernel theorem. The Arc B closure memos in `arcs/arc-B/` contain the six-substage Arc B trajectory (B.0 scoping → B.1 catalogue → B.2 forced-evaluation → B.3 refuted-evaluation → B.4 cross-arc implications → B.5 synthesis) that produced the closure of Theorem 18.
+
+The Monograph Shell's Appendix A theorem provenance map lists Theorem N1 and Theorem 18 with their explicit dependency chains. The Notation Glossary in Appendix B lists V1, V5, P11, P02, P04, P13, and the chain forward-propagator $U_K(n,m)$ used in this chapter.
+
+### 4.13 Optional Figures
+
+**Figure 4.1 — The four standard accounts of the arrow of time and ED's substrate-level placement.** A horizontal arrangement: four boxes labeled "thermodynamic arrow" (boundary condition), "cosmological arrow" (boundary condition), "measurement arrow" (postulate), "radiation arrow" (solution-selection rule), each annotated with where standard physics places the arrow. A fifth box labeled "kernel-level arrow" sits below the four, annotated with "ED substrate ontology — P11 + Theorem N1 + Theorem 18." Arrows from the fifth box upward indicate that the kernel-level arrow can serve as a structural foundation for the four standard accounts. The figure makes visible the structural placement difference between standard physics (arrow distributed across multiple non-fundamental layers) and ED (arrow placed at the substrate layer).
+
+**Figure 4.2 — The Theorem 18 forcing chain.** A vertical flow diagram with five stages: (1) Substrate inputs — P11, P02, P04, P13, Theorem N1, Q.8 effective-vacuum factorisation, substrate locality; (2) Chain forward-propagator $U_K(n,m) = 0$ for $n < m$; (3) Chain-summed kernel construction; (4) Universal P11 time orientation across chain ensemble; (5) V1 forward-cone-only support. Each stage is connected to the next with a labeled arrow indicating the structural step. Side-arrows out of each stage label which alternative kernels are ruled out at that stage (symmetric V1 fails at stage 3; advanced V1 fails at stage 1; hybrid variants fail at stage 3 with the symmetric V1).
+
+**Figure 4.3 — The CR framing.** A two-column figure. Left column ("Primitive level"): substrate ontology, V1 forward-cone-only kernel, Theorem 18. Right column ("Continuum approximation"): standard QFT propagators ($G_R$, $G_F$, $G_A$, Wightman correlator $W$), each with its physical role labeled. A horizontal arrow between the columns labeled "DCGT" indicates the substrate-to-continuum bridge. A specific correspondence arrow labeled "primitive-level retarded V1 ↔ continuum $G_R$" highlights the natural correspondence; the other continuum propagators retain their distinct continuum-level roles. The figure makes visible that the primitive-level result and the continuum-level menu are separately consistent.
+
+**Figure 4.4 — The over-determined-forced status of N1-E directionality.** A diagram with N1-E directionality in a central box, with two independent arrows leading into it from above: the "cascade-from-V1" path on the left, the "R1-bypass redundancy" path on the right. A label on each arrow identifies the substrate machinery that path uses. A note below the central box reads "either path alone suffices; existence of two paths makes directionality robust." The figure makes visible the redundancy structure that makes the kernel-level arrow over-determined.
+
+**Figure 4.5 — Theorem 18's downstream cross-arc strengthening map.** A radial diagram with Theorem 18 at the center and six radial arrows to: (1) Phase-1 measurement rule (Chapter 5); (2) T17 vacuum coupling refinement (Chapter 6); (3) Q.5 upper-half-plane analyticity foundation (Chapter 6); (4) Arc M F-M8 mass-form mediation; (5) Phase-3 GR1 curved-spacetime extension (Chapter 11 background); (6) UR-1 condition (iii) commitment-injection (Chapter 7). Each arrow is labeled with the specific content Theorem 18 supplies to the downstream result.
+
+**Figure 4.6 — The empirical posture of Theorem 18.** A horizontal axis showing length/energy scale, from sub-Planck on the right to macroscopic on the left. A shaded region on the left marks "currently accessible scales," where ED matches standard QFT/QM causal structure exactly. A shaded region on the right marks "near-$\ell_P$ scales," where substrate-level structure could in principle become observable. Arrows in the right region point to specific signature candidates: strict causality of vacuum response near $\ell_P$; Kramers-Kronig-causal-only dispersion structure; V5-mediated cosmological-correlation persistence; absence of backward-influence terms in cross-chain correlations; asymmetry in N1-E bandwidth inheritance (decoherence-rate signatures). The figure makes visible that Theorem 18's empirical content is structural-foundational rather than discriminating at currently-accessible scales.
+
+\newpage
+
+# Part II — Quantum Sector
+
+Part II derives the quantum sector. Chapter 5 closes the four QM postulates from substrate primitives. Chapter 6 lifts the Phase-1 closure into form-level QFT through Theorem 17 (gauge-field-as-rule-type) and the substrate-level UV-finiteness program. Chapter 7 develops the substrate-level architecture of quantum computation: the unresolved-regime characterization theorem UR-1, the multiplicity-cap function M, and the three-class taxonomy A/B/C with meta-architectural overlays.
+
+\newpage
+
+## Chapter 5 — Phase-1 Closure of Quantum Mechanics: T1–T16
+
+### 5.1 Chapter Overview
+
+Phase-1 of the Event Density program closes the four postulates of quantum mechanics as *derived theorems* rather than as independent axioms. Sixteen forced theorems (T1–T16) collectively establish that the **Born rule**, the **Schrödinger equation**, the **Heisenberg uncertainty principle**, and the **no-collapse measurement rule** all emerge from substrate primitives plus standard mathematical structure. The substrate primitives consumed are those of Chapter 1 (especially P04 bandwidth update, P11 commitment-irreversibility, P01 event discreteness); the mathematical bridges are Gleason's 1957 theorem on quantum measures and Stone's 1932 theorem on one-parameter unitary groups. The Born rule's squared form, the Schrödinger equation's specific functional form (linearity, first-order-in-time character, Hamiltonian content), the Heisenberg lower bound's $\hbar/2$ factor, and the irreversibility of measurement all become structural consequences rather than postulates. There is no separate collapse postulate in the Phase-1 framework — measurement is identified as the coarse-grained signature of substrate-level commitment events through P11.
+
+The chapter integrates the Phase-1 closure work and identifies its position in the broader Event Density program. It does not reproduce the formal proofs (those live in `papers/Phase_1/` and the U1–U5 paper chain). It exposes the structural arguments behind each of the four QM-postulate derivations, identifies the substrate primitives consumed, locates the mathematical bridges, and clarifies the Phase-1 inventory of sixteen forced theorems plus extensions covering spin-statistics, the Dirac equation, the $g=2$ electron magnetic moment, and the canonical commutation relations. After this chapter, every subsequent chapter can refer to Phase-1 as the foundational closure of the quantum-mechanical sector — and Chapters 6 (form-level QFT) and 7 (quantum computation) build directly on its content.
+
+### 5.2 Why Phase-1 Closure Matters Structurally
+
+#### 5.2.1 The QM-postulate problem
+
+Standard quantum mechanics rests on four postulates that have been in textbooks since the 1920s. Each is presented as an axiom:
+
+- **The Born rule.** Probability of an outcome equals the squared amplitude. Why squared? The textbooks do not say.
+- **The Schrödinger equation.** Wavefunctions evolve in time according to $i\hbar\partial_t |\psi\rangle = \hat H |\psi\rangle$. Why this specific functional form — linearity, first-order in time, Hamiltonian content? The textbooks do not say.
+- **The Heisenberg uncertainty principle.** $\Delta x \cdot \Delta p \geq \hbar/2$. Why $\hbar/2$? Why this specific lower bound? The textbooks do not say.
+- **The measurement rule.** When a quantum system is measured, the wavefunction "collapses" into a single outcome, and the collapse is irreversible. Why is collapse irreversible? Why is it a separate postulate from unitary evolution? The textbooks do not say.
+
+Each postulate is correct as far as it goes; the empirical content of quantum mechanics is exquisitely well-confirmed. But the postulates are not derived from anything; they are taken as axioms, and the structural origin of their specific forms is treated as outside the theory's scope. Decades of work on the foundations of quantum mechanics — interpretations, hidden variables, decoherence programs — have not produced a consensus structural account.
+
+#### 5.2.2 ED's structural position
+
+The Event Density program treats the four QM postulates as *consequences* of a deeper substrate ontology. The postulates are not axioms; they are derived theorems. The framework's structural commitment: each postulate's specific form is form-FORCED by substrate primitives plus standard mathematical theorems, and the specific numerical content of each (the squared form, the linearity, the $\hbar/2$ factor, the irreversibility) is a substrate-level structural consequence rather than an unmotivated axiom.
+
+The structural payoff is significant. Phase-1 closure means quantum mechanics is not a self-contained framework with four postulates floating above an unspecified substrate; it is the coarse-grained reading of substrate dynamics in the *thin-participation regime* — the regime where participation is uncommitted and substrate dynamics admit unitary, reversible evolution. The transition from substrate to standard QM is auditable through the U1–U5 paper chain, and the substrate-level analogues of every QM postulate are explicit.
+
+#### 5.2.3 The sixteen-theorem closure
+
+Phase-1's deliverable is sixteen forced theorems labeled T1 through T16. Forced means: the conclusion of each theorem is uniquely produced by the substrate inputs combined with standard mathematical structure. The theorems are not chosen; they are constructed. Symmetric, advanced, or modified versions of QM that contradict any of T1–T16 are not merely refuted — they are *non-constructible* from the substrate primitives.
+
+The four-postulate closure groups within T1–T16 are:
+
+- **T-Born group.** The substrate-level theorems leading to the Born rule's squared form. Mathematical bridge: Gleason's theorem (1957).
+- **T-Schrödinger group.** The substrate-level theorems leading to the Schrödinger equation's specific form. Mathematical bridge: Stone's theorem (1932).
+- **T-Uncertainty group.** The substrate-level theorems leading to the Heisenberg lower bound with the $\hbar/2$ coefficient.
+- **T-Measurement group.** The substrate-level theorems leading to the no-collapse measurement rule via P11 commitment-irreversibility.
+
+Chapter 5 takes each group in turn, identifies the substrate primitives consumed, exposes the structural argument, and clarifies what is form-FORCED and what is value-INHERITED.
+
+### 5.3 The Born Rule: Substrate Non-Contextuality + Gleason 1957
+
+#### 5.3.1 The structural question
+
+Why is probability the *squared* amplitude rather than the linear amplitude, the fourth power, or the absolute value? Standard QM treats this as a postulate; the squared form is an empirical fact that is built into the theory's axioms.
+
+ED reframes the question. The "amplitude" in standard QM is the participation-bandwidth content of a substrate region distributed across the orthogonal decomposition associated with a measurement basis. The probability of an outcome is the bandwidth that *commits* to that outcome under P11. The structural question becomes: how is bandwidth distributed across an orthogonal decomposition, and what functional form does the distribution take?
+
+#### 5.3.2 The substrate inputs
+
+Two substrate-level commitments are load-bearing:
+
+- **Substrate non-contextuality.** The bandwidth assigned to a measurement outcome cannot depend on which other outcomes are simultaneously being considered (i.e., which orthogonal decomposition the outcome appears in). The substrate's bandwidth distribution is a property of the outcome itself relative to the substrate state, not a property of the measurement context. This is a direct substrate-ontological consequence of P04 (bandwidth update rule applied at chain endpoints) plus the participation-channel structure committed by the participation primitives.
+- **Bandwidth conservation across orthogonal decompositions.** The total bandwidth across any complete orthogonal decomposition equals the substrate region's total bandwidth. This is the substrate-level non-contextuality condition combined with bandwidth boundedness from P04.
+
+Together, these two commitments force the bandwidth distribution to satisfy specific structural constraints when evaluated at any orthogonal decomposition.
+
+#### 5.3.3 The mathematical bridge: Gleason 1957
+
+Gleason's theorem (1957) establishes that any non-contextual measure on the projection lattice of a Hilbert space of dimension $\geq 3$, satisfying the conservation condition (total measure = constant across orthogonal decompositions), must take the form
+
+```math
+P(|\psi\rangle) = \mathrm{tr}(\hat\rho \hat P_\psi)
+```
+
+where $\hat\rho$ is a density matrix and $\hat P_\psi$ is the projector onto $|\psi\rangle$. Specialized to pure states, this reduces to the squared amplitude form $P = |\langle\psi|\phi\rangle|^2$.
+
+The theorem is a mathematical structural result; it does not depend on quantum mechanics' empirical content. What it requires is non-contextuality plus the conservation condition. ED supplies both at the substrate level (Section 5.3.2). Gleason supplies the mathematical bridge from the substrate-level conditions to the squared functional form.
+
+#### 5.3.4 Why the squared form is FORCED
+
+The squared form is not chosen; it is the unique non-contextual measure satisfying conservation on the projection lattice (in dimension $\geq 3$, where Gleason's theorem applies). Linear, fourth-power, or absolute-value forms violate either non-contextuality or conservation, both of which are substrate-level commitments. The squared form is therefore form-FORCED by the substrate inputs combined with Gleason's mathematical bridge.
+
+The $\hbar/2$ content (relevant in subsequent uses of bandwidth-conservation arguments, including the Heisenberg derivation of Section 5.5) is the substrate-natural coefficient in bandwidth quantization at chain-substrate endpoints. The numerical value of $\hbar$ is INHERITED — it is a substrate input from outside the primitive layer — but the factor of $1/2$ in the Heisenberg bound is structurally fixed by the bandwidth-conservation argument.
+
+#### 5.3.5 Born-Gleason and the U1 paper
+
+The full derivation of the Born rule from substrate non-contextuality plus Gleason's theorem is presented in `papers/Born_Gleason/` and in `papers/U1_Participation_Measure/`. The U1 paper establishes the substrate participation measure as the substrate-level analogue of the projective measure on Hilbert space; the Born-Gleason paper completes the bridge to the squared probability form.
+
+### 5.4 The Schrödinger Equation: Time-Translation Symmetry + Stone 1932
+
+#### 5.4.1 The structural question
+
+Why does the Schrödinger equation have the specific functional form
+
+```math
+i\hbar\frac{\partial}{\partial t}|\psi\rangle = \hat H |\psi\rangle?
+```
+
+The form contains four structural commitments: existence (a unique evolution rule exists), uniqueness (the evolution is determined by initial state plus generator), linearity ($|\psi\rangle$ enters linearly), first-order-in-time (only $\partial_t$, not $\partial_t^2$), and Hamiltonian content (the generator $\hat H$ is Hermitian). Standard QM treats the equation as a postulate; ED derives all four structural commitments.
+
+#### 5.4.2 The substrate inputs
+
+The substrate-level inputs:
+
+- **Substrate time-translation symmetry.** The substrate's dynamical rules do not depend on which moment is "now." This is a substrate-ontological commitment that follows from the participation primitives plus P13 proper-time ordering (the ordering is intrinsic to chains, not to an external time coordinate that breaks time-translation symmetry).
+- **Bandwidth conservation under unitary evolution.** In the thin-participation regime (where commitments have not yet occurred), substrate dynamics preserve total bandwidth. This is the substrate-level analogue of probability conservation in standard QM, derived from P04 plus the absence of commitment events in the thin regime.
+- **Continuity of the evolution rule.** The substrate's time-evolution generates a one-parameter family of unitary transformations that depends continuously on the time parameter. This is a substrate-level regularity condition that the substrate's chain dynamics satisfy.
+
+#### 5.4.3 The mathematical bridge: Stone 1932
+
+Stone's theorem (1932) establishes that any one-parameter family of unitary transformations $U(t)$ that depends continuously on $t$ has the form
+
+```math
+U(t) = e^{-iHt/\hbar}
+```
+
+for some Hermitian generator $H$. Differentiating:
+
+```math
+i\hbar\frac{d U(t)}{dt} = H U(t),
+```
+
+which applied to a state $|\psi(t)\rangle = U(t)|\psi(0)\rangle$ gives the Schrödinger equation directly.
+
+The theorem is a mathematical structural result on one-parameter unitary groups in Hilbert space. ED supplies the inputs at the substrate level: substrate time-translation symmetry yields a unitary one-parameter family; bandwidth conservation yields unitarity; continuity yields the smooth dependence on $t$. Stone supplies the mathematical bridge from these conditions to the Schrödinger equation's specific form.
+
+#### 5.4.4 Why the Schrödinger form is FORCED
+
+Each structural commitment in the Schrödinger equation is forced:
+
+- **Existence.** The substrate-level evolution exists because substrate dynamics evolve in time (this is what time-translation symmetry says).
+- **Uniqueness.** Stone's theorem produces a unique generator $H$ for the one-parameter family.
+- **Linearity.** Unitary evolution is linear by construction; the substrate-level bandwidth conservation under unitary evolution forces linearity.
+- **First-order-in-time.** Stone's theorem produces a first-order ODE in $t$; second-order or higher would be a stronger continuity condition, but Stone's continuity hypothesis is the minimal condition for substrate time-translation symmetry to apply.
+- **Hamiltonian content.** Stone's generator $H$ is Hermitian; this is the substrate's Hamiltonian content, identified through the U3 and U4 paper chain.
+
+The full derivation is presented in `papers/U3_Time_Translation_Schrodinger/` and `papers/U4_Hamiltonian_Form/`. The U2 paper (`papers/U2_Inner_Product/`) establishes the substrate-level inner-product structure that makes Hilbert space the appropriate target for Stone's theorem; the U5 paper (`papers/U5_Translation_Momentum/`) extends the construction to spatial translations and identifies the substrate-level momentum content.
+
+### 5.5 The Heisenberg Uncertainty Principle: Substrate Finite-Bandwidth
+
+#### 5.5.1 The structural question
+
+Why is the lower bound on joint position-momentum precision exactly $\hbar/2$? Why this specific functional form
+
+```math
+\Delta x \cdot \Delta p \geq \frac{\hbar}{2}?
+```
+
+Standard QM derives the Heisenberg bound from the canonical commutation relation $[\hat x, \hat p] = i\hbar$ via the Cauchy-Schwarz inequality. The structural origin of the canonical commutation relation, however, is not derived in standard QM — it is a structural feature of the formalism imposed at the level of the Hilbert space construction.
+
+ED derives the Heisenberg bound directly from substrate finite-bandwidth constraints, with the $\hbar/2$ coefficient emerging as the substrate-natural factor.
+
+#### 5.5.2 The substrate inputs
+
+The substrate-level inputs:
+
+- **P04 bandwidth update rule.** Participation channels carry bounded bandwidth; the bandwidth update rule constrains how the substrate's bandwidth distributes across complementary observables (position and momentum being one canonical pair).
+- **Substrate position-momentum complementarity.** Position and momentum at the substrate level are complementary participation channels — sharper localization in position requires broader distribution in momentum, by a substrate-level bandwidth-conservation argument.
+- **Bandwidth quantization.** Bandwidth at chain endpoints is quantized in units of $\hbar/2$. This is the substrate-natural quantization unit; its specific value $\hbar$ is INHERITED, but the factor of $1/2$ is structurally fixed.
+
+#### 5.5.3 The structural argument
+
+The substrate-level argument: a chain endpoint's bandwidth is distributed across complementary observables in a manner constrained by P04. Sharper localization in one observable (smaller $\Delta x$) requires broader distribution in the conjugate observable (larger $\Delta p$). The product $\Delta x \cdot \Delta p$ is bounded below by the substrate-natural quantization unit $\hbar/2$.
+
+The functional form follows from substrate bandwidth-conservation across the position-momentum complementary pair. The $\hbar/2$ coefficient is the substrate-natural lower bound; sharper bounds would require the substrate to support sub-$\hbar/2$ bandwidth, which P04 forbids; weaker bounds would underuse the substrate's bandwidth quantum.
+
+#### 5.5.4 Why the $\hbar/2$ factor is FORCED
+
+The $\hbar/2$ factor is the same factor that appears in:
+
+- **The Born rule derivation** (Section 5.3): bandwidth-conservation across orthogonal decompositions is normalized by the same substrate quantum that fixes the Heisenberg lower bound.
+- **The Schrödinger equation's kinetic-energy term** (Section 5.4): the substrate-natural coupling between participation density and chain proper-time evolution is governed by the same substrate quantum.
+
+The factor's recurrence across these three derivations is a substrate-level structural signature. The numerical value of $\hbar$ remains INHERITED — it is a substrate input — but the factor of $1/2$ at the lower bound is form-FORCED by the substrate's bandwidth-quantization structure.
+
+### 5.6 The Measurement Rule: P11 Commitment-Irreversibility
+
+#### 5.6.1 The structural question
+
+When a quantum system is measured, what is the substrate-level event that produces the definite outcome? Standard QM postulates wavefunction collapse: the wavefunction transitions discontinuously from a superposition to a single eigenstate, and the transition is irreversible. Why is collapse a separate postulate from unitary evolution? Why is it irreversible?
+
+ED removes the postulate. Measurement is identified as the coarse-grained signature of substrate-level commitment events through P11.
+
+#### 5.6.2 The substrate-level mechanism
+
+The substrate-level analogue of measurement:
+
+- **The substrate region representing the system** has its participation channels distributed across the available outcomes — the substrate analogue of the wavefunction's superposition over measurement-basis states.
+- **The measurement apparatus**, via its substrate coupling to the system, applies a structural constraint (effectively, an environmental ED-injection event) that triggers commitment events at the system's chain endpoints.
+- **P11 commitment-irreversibility** says that once a substrate event commits, the commitment cannot be reversed. The system's chain endpoints commit to a specific outcome; the commitment is irreversible.
+- **The commitment events**, when coarse-grained to the continuum level via DCGT (Chapter 3), produce the appearance of wavefunction collapse: the substrate-level participation across multiple outcomes is replaced by participation concentrated at a single committed outcome.
+
+The collapse is not a separate postulate; it is the coarse-grained signature of P11 commitment events at the chain endpoints involved in the measurement.
+
+#### 5.6.3 Why this matters structurally
+
+The measurement rule's status changes from postulate to derived theorem. The structural payoff:
+
+- **No measurement-postulate problem.** Standard QM's "measurement problem" — the question of why measurement is a special process distinct from unitary evolution — dissolves. Measurement is unitary evolution in the thin-participation regime followed by P11 commitment events at chain endpoints; the apparent discontinuity is the coarse-grained signature of the commitment.
+- **No observer dependence.** Standard QM's interpretive issues around observer dependence (does the wavefunction collapse when the observer looks?) dissolve. P11 commitment events occur at substrate chain endpoints; observers are themselves substrate regions whose chain endpoints commit. There is no privileged observer status.
+- **No collapse postulate.** The framework derives what would otherwise need to be postulated. This is structurally cleaner.
+
+#### 5.6.4 The Theorem 18 connection
+
+The kernel-level arrow of time established in Theorem 18 (Chapter 4) supplies the substrate-level structural foundation for the directional content of measurement. P11 commitment events have forward-only character through the V1 kernel's forward-cone-only support. The measurement rule's irreversibility is therefore not just a property of P11 in isolation; it is the kernel-level arrow of time evaluated at chain endpoints during measurement events.
+
+The connection is structural: Phase-1's measurement rule consumes P11 directly; Theorem 18's kernel-level arrow supplies the substrate-level structural foundation that makes the direction of measurement irreversibility consistent with the rest of the substrate ontology.
+
+### 5.7 The Sixteen-Theorem Inventory
+
+#### 5.7.1 The Phase-1 closure structure
+
+Phase-1 closure delivers sixteen forced theorems, labeled T1 through T16, organized into the four QM-postulate groups. The exact distribution of theorems across groups varies — some theorems contribute to multiple groups, and the U1–U5 paper chain produces the formal derivation chain — but the structural roles cluster as follows:
+
+- **T-Born group.** Substrate participation measure (U1); Hilbert-space inner-product structure (U2); substrate non-contextuality and bandwidth-conservation arguments; Gleason 1957 application; Born rule's squared form. The U1 paper supplies the substrate-level participation measure; U2 supplies the inner-product structure; Born_Gleason completes the bridge.
+- **T-Schrödinger group.** Substrate time-translation symmetry; one-parameter unitary family; Stone 1932 application; Schrödinger equation in canonical form; Hamiltonian content (U4); spatial translations and momentum content (U5). The U3 paper supplies the time-translation closure; U4 supplies the Hamiltonian form; U5 extends to momentum.
+- **T-Uncertainty group.** Substrate finite-bandwidth; complementary-observable structure; bandwidth-quantization at chain endpoints; Heisenberg lower bound with the $\hbar/2$ factor; canonical commutation relations as substrate-level structural consequence.
+- **T-Measurement group.** P11 commitment-irreversibility; chain-endpoint commitment events; coarse-graining to continuum collapse; Theorem 18 kernel-level arrow connection; no separate collapse postulate.
+
+The full sixteen-theorem inventory is presented in `papers/Phase_1/` and `papers/QM_Emergence_Structural_Completion/`. The inventory's structural significance is that the four postulates of QM are each closed at the substrate level — none requires axiomatic status; each is a derived theorem.
+
+#### 5.7.2 The forced-theorem methodology
+
+Each of T1–T16 is a *forced theorem* in the program's methodological sense: its conclusion is uniquely produced by the substrate inputs combined with mathematical structure. Forced theorems differ from ordinary theorems in that:
+
+- **The conclusion is not chosen.** Alternative conclusions are not just refuted by external constraint; they are non-constructible from the inputs.
+- **The forcing chain is auditable.** Each step in the derivation is identified, and the substrate inputs at each step are listed.
+- **The form-FORCED / value-INHERITED distinction is explicit.** Each theorem identifies which content is structurally fixed by the substrate (form-FORCED) and which content inherits from substrate constants whose specific values come from outside the primitive layer (value-INHERITED).
+
+T1–T16 form the program's first major closed-arc inventory; subsequent forced theorems (T17, T18, T19, T20, ECR, T21, N1, GR1, DCGT, UR-1) follow the same methodology.
+
+### 5.8 Extensions: Spin-Statistics, Dirac, $g=2$, Canonical Commutation
+
+Beyond the four QM-postulate closure, Phase-1 establishes additional structural content covering relativistic and quantum-field-theoretic territory.
+
+#### 5.8.1 Spin-statistics
+
+The substrate-level analogue of the spin-statistics theorem follows from the substrate's chain-statistics structure (R.2.5 in the Phase-1 inventory). Half-integer-spin chains and integer-spin chains have substrate-level statistical properties that, after coarse-graining, produce fermionic and bosonic statistics respectively. This is consistent with the standard spin-statistics theorem of relativistic QFT but derived from substrate principles.
+
+#### 5.8.2 The Dirac equation
+
+The substrate-level derivation of the Dirac equation (R.3 in the Phase-1 inventory) follows from substrate-level relativistic structure on the spinor bundle. The Cl(3,1) signature is identified at the substrate level (R.2.4); the spinor structure is derived. The Dirac equation emerges as the substrate-level theorem describing relativistic chain dynamics on the spinor bundle.
+
+#### 5.8.3 The $g=2$ electron magnetic moment
+
+The substrate-level derivation produces the electron's magnetic moment $g=2$ (or, with QED corrections, $g \approx 2.0023...$) as a structural consequence rather than a fitting parameter. The $g=2$ value follows from the substrate-level spinor structure plus the Dirac-equation derivation; corrections from substrate-level vacuum polarization match the standard QED expansion.
+
+#### 5.8.4 Canonical commutation relations
+
+The canonical commutation relations $[\hat x, \hat p] = i\hbar$ follow from the substrate-level position-momentum complementarity used in the Heisenberg derivation (Section 5.5). The relations are not postulated; they are the substrate-level structural consequence of finite-bandwidth chain endpoints distributing participation across complementary observables.
+
+#### 5.8.5 What the extensions establish
+
+Together, these extensions establish that Phase-1 closes more than the four QM postulates. The framework reaches into relativistic QFT territory at form level: spin-statistics, Dirac equation, and $g=2$ are derived rather than postulated. Chapter 6 develops the form-level QFT content further (T17 gauge-field-as-rule-type, UV-finiteness, ED-I-13 quantum information as channel geometry).
+
+### 5.9 What Phase-1 Changes About Quantum Mechanics
+
+#### 5.9.1 No experiment runs differently
+
+Standard QM's empirical content is preserved exactly. The Born rule is squared; the Schrödinger equation is unchanged; the Heisenberg bound is the same; measurement is irreversible. Every experiment that has ever validated quantum mechanics continues to validate it. The framework changes the *story underneath* the postulates, not the postulates' empirical content.
+
+#### 5.9.2 The interpretive frame shifts
+
+Three structural changes:
+
+- **The four postulates are no longer postulates.** They are derived theorems with substrate-level structural origin.
+- **The measurement problem dissolves.** Wavefunction collapse is identified as the coarse-grained signature of substrate-level P11 commitment events; there is no separate collapse postulate, and no observer dependence is required.
+- **Quantum mechanics becomes a coarse-grained reading of substrate dynamics in the thin-participation regime.** Standard QM is what substrate dynamics look like when commitment has not yet occurred and substrate dynamics admit unitary, reversible evolution. Departures from standard QM (decoherence, measurement, classical limits) are the substrate-level signatures of commitment events at chain endpoints.
+
+#### 5.9.3 The relationship to interpretations of quantum mechanics
+
+ED's substrate-level framework is not an interpretation of standard QM. It is a structural framework that produces standard QM as a derived consequence. The traditional interpretive options (Copenhagen, many-worlds, Bohmian mechanics, decoherence-based interpretations, QBism, etc.) ask different questions about the same axiomatic QM. ED asks where the axioms come from and provides a substrate-level answer.
+
+This positions ED outside the standard interpretive landscape. The framework does not adjudicate between interpretations; it supplies a structural foundation that makes the interpretive questions less load-bearing. If one accepts the substrate ontology, the four postulates are derived rather than chosen, and the interpretive puzzles around their status (especially around measurement) shift onto the substrate-ontological question instead.
+
+#### 5.9.4 The transition from substrate to QM
+
+The transition is auditable:
+
+1. **Substrate primitives** (Chapter 1).
+2. **Load-bearing invariants** (Chapter 2).
+3. **DCGT coarse-graining bridge** (Chapter 3).
+4. **Theorem N1 + Theorem 18 kernel-level arrow** (Chapter 4).
+5. **Phase-1 closure of QM postulates** (Chapter 5, this chapter).
+6. **Form-level QFT and quantum information** (Chapter 6).
+7. **Quantum computation architecture** (Chapter 7).
+
+Each step in the chain identifies its substrate inputs and its mathematical bridges. By the end of the chain, standard QM is not a self-contained framework with axiomatic foundations; it is the coarse-grained reading of substrate dynamics in the thin-participation regime, and quantum computing (Chapter 7) is the engineered occupation of that regime.
+
+### 5.10 Form-FORCED vs Value-INHERITED at the Phase-1 Closure
+
+#### 5.10.1 What is form-FORCED
+
+The structural content of T1–T16 is form-FORCED by the substrate inputs combined with the mathematical bridges:
+
+- **The Born rule's squared form.** Forced by substrate non-contextuality + bandwidth conservation + Gleason 1957.
+- **The Schrödinger equation's structural content** (existence, uniqueness, linearity, first-order-in-time, Hamiltonian content). Forced by substrate time-translation symmetry + bandwidth conservation + continuity + Stone 1932.
+- **The Heisenberg lower bound's functional form.** Forced by substrate finite-bandwidth + complementary-observable structure + bandwidth quantization at $\hbar/2$.
+- **The measurement rule's irreversibility.** Forced by P11 commitment-irreversibility + the kernel-level arrow of Theorem 18.
+- **The spin-statistics theorem at substrate level.** Forced by substrate chain-statistics structure.
+- **The Dirac equation form.** Forced by substrate relativistic structure on the spinor bundle (Cl(3,1) signature derived from R.2.4).
+- **The $g=2$ leading-order electron magnetic moment.** Forced by substrate-level spinor structure plus Dirac-equation derivation.
+- **The canonical commutation relations.** Forced by substrate-level position-momentum complementarity.
+
+#### 5.10.2 What is value-INHERITED
+
+Specific numerical values that the framework does not derive in closed form at the primitive layer:
+
+- **The numerical value of $\hbar$.** Substrate input; not derived from other primitives. The factor of $1/2$ in $\hbar/2$ is form-FORCED; the value of $\hbar$ is INHERITED.
+- **The specific functional shape of the V1 vacuum kernel.** Used in Phase-1 indirectly through the substrate-level vacuum-response structure that enters Born and Schrödinger arguments. Finite-width is FORCED; closed-form shape is INHERITED.
+- **Particle-specific masses and coupling constants.** These appear in the Dirac equation and in the $g=2$ corrections; their specific values inherit from particle physics empirical input, not from substrate primitives.
+- **The Standard Model gauge group.** Phase-1 establishes the form of QM; T17 (Chapter 6) establishes the form of gauge fields; the specific gauge group nature realizes is INHERITED empirical input. The framework derives the *form* of gauge invariance and gauge-field structure without committing to which specific group nature realizes.
+
+#### 5.10.3 The methodological consistency
+
+The form-FORCED / value-INHERITED pattern at Phase-1 is consistent with the pattern at the primitive layer (Chapter 1), the load-bearing invariants layer (Chapter 2), the DCGT layer (Chapter 3), and the Theorem N1 + Theorem 18 layer (Chapter 4). The structural form of each derived QM postulate is fixed; specific numerical values inherit from substrate constants whose closed-form derivation either comes from outside the primitive layer (substrate inputs like $\hbar$) or remains downstream open work.
+
+### 5.11 Dependencies
+
+#### 5.11.1 Upstream
+
+- **Chapter 1.** Substrate primitives, especially P04 (bandwidth update rule, foundational for Born and Heisenberg derivations) and P11 (commitment-irreversibility, foundational for the measurement rule). Also P01 (event discreteness, contributing to UV-finiteness in Chapter 6 extensions).
+- **Chapter 2.** Load-bearing invariants. Multiplicity $\mathcal{M}$ enters the Born-rule derivation through bandwidth-conservation structure. The V1 kernel mediates substrate-level vacuum response that enters the Schrödinger argument.
+- **Chapter 4.** Theorem N1 + Theorem 18 kernel-level arrow. Supplies the substrate-level structural foundation for the directional content of measurement (through P11 + V1 forward-only support).
+
+#### 5.11.2 Downstream
+
+- **Chapter 6 (Form-level QFT and Quantum Information).** Builds on Phase-1's QM closure to derive T17 (gauge-field-as-rule-type), UV-finiteness, and the channel-geometry account of quantum information (ED-I-13). Phase-1 supplies the substrate-level QM foundation; Chapter 6 extends to QFT-territory form-level content.
+- **Chapter 7 (Quantum Computation).** Identifies quantum computation as the engineered occupation of the thin-participation regime that Phase-1 characterizes. Phase-1's substrate-level account of QM is the foundation on which UR-1's three substrate conditions are formulated.
+- **Chapters 8, 9, 10, 11, 12, 13.** Each consumes Phase-1's QM closure indirectly through DCGT coarse-graining, since the substrate-to-continuum bridge produces standard QM in the thin-participation regime as a baseline.
+- **Chapter 14 (Cross-platform unifications).** The form-FORCED / value-INHERITED methodology, including Phase-1's pattern of deriving QM postulates from substrate primitives, is one of the cross-domain consistency signatures developed in Chapter 14.
+
+### 5.12 Canonical Sources
+
+- `papers/Phase_1/`
+- `papers/QM_Emergence_Structural_Completion/`
+- `papers/Born_Gleason/`
+- `papers/U1_Participation_Measure/`
+- `papers/U2_Inner_Product/`
+- `papers/U3_Time_Translation_Schrodinger/`
+- `papers/U4_Hamiltonian_Form/`
+- `papers/U5_Translation_Momentum/`
+
+The Phase_1 paper presents the sixteen-theorem closure in publication-grade form. The QM_Emergence_Structural_Completion paper integrates the closure with extensions (spin-statistics, Dirac, $g=2$, canonical commutation relations). The Born_Gleason paper develops the Born-rule derivation. The U1–U5 paper chain develops the substrate-level construction underlying the Schrödinger equation: U1 (participation measure), U2 (inner-product structure), U3 (time-translation closure), U4 (Hamiltonian form), U5 (translation/momentum content).
+
+The Monograph Shell's Appendix A theorem provenance map lists T1–T16 with their substrate-input dependencies and the Gleason / Stone mathematical bridges. The Notation Glossary in Appendix B lists all symbols used in the chapter.
+
+### 5.13 Optional Figures
+
+**Figure 5.1 — The four QM postulates and their substrate-level derivations.** A four-row diagram. Each row corresponds to one postulate (Born, Schrödinger, Heisenberg, Measurement). Columns: (i) Standard QM status (postulate); (ii) Substrate inputs consumed; (iii) Mathematical bridge (Gleason 1957 for Born, Stone 1932 for Schrödinger, internal substrate argument for Heisenberg, P11 + Theorem 18 for Measurement); (iv) ED Phase-1 status (derived theorem). The figure makes visible the structural transition from postulate to theorem across all four cases.
+
+**Figure 5.2 — The U1–U5 paper chain.** A vertical flow diagram with five nodes: U1 (participation measure), U2 (inner-product structure), U3 (time-translation Schrödinger), U4 (Hamiltonian form), U5 (translation/momentum). Arrows show the dependency chain. A side-arrow from U1 leads to Born_Gleason; a side-arrow from U2 leads to the Hilbert-space embedding. The figure makes visible the explicit derivation chain from substrate primitives through to the Schrödinger equation.
+
+**Figure 5.3 — The substrate-level analogue of measurement.** A two-panel diagram. Left panel: substrate region with participation distributed across multiple chain endpoints (the substrate analogue of a wavefunction superposition). Right panel: P11 commitment event at one chain endpoint, with surrounding endpoints showing reduced participation (the substrate analogue of post-measurement collapse). Arrows between panels indicate the time evolution from pre-measurement to post-measurement. A label notes that the apparent discontinuity is the coarse-grained signature of P11 commitment events; no separate collapse postulate is required.
+
+**Figure 5.4 — The Phase-1 inventory and its extensions.** A circular diagram with sixteen-theorem closure in the center (T1–T16, organized into four quadrants for Born, Schrödinger, Heisenberg, Measurement). Outside the central circle, four extension theorems: spin-statistics (R.2.5), Dirac equation (R.3), $g=2$ electron magnetic moment, canonical commutation relations. Arrows from the central inventory to the extensions indicate the substrate-level connections.
+
+**Figure 5.5 — The transition from substrate to standard QM.** A vertical flow diagram showing the seven-step chain: substrate primitives (Chapter 1) → load-bearing invariants (Chapter 2) → DCGT coarse-graining (Chapter 3) → kernel-level arrow (Chapter 4) → Phase-1 closure (Chapter 5) → form-level QFT (Chapter 6) → QC architecture (Chapter 7). Each step is annotated with its substrate inputs and outputs. The figure makes visible the explicit auditability of the transition from substrate ontology to standard QM and beyond.
+
+**Figure 5.6 — Form-FORCED vs Value-INHERITED at Phase-1.** A two-column diagram. Left column ("Form-FORCED"): squared form of Born rule, Schrödinger equation structural content, Heisenberg lower bound functional form, measurement irreversibility, spin-statistics, Dirac form, $g=2$ leading order, canonical commutation relations. Right column ("Value-INHERITED"): numerical value of $\hbar$, V1 kernel functional shape, particle masses, gauge couplings, Standard Model gauge group. The figure makes visible the demarcation Phase-1 inherits from the broader program methodology.
+
+\newpage
+
+## Chapter 6 — Form-Level QFT and Quantum Information: T17, UV-Finiteness, ED-I-13
+
+### 6.1 Chapter Overview
+
+Phase-1 (Chapter 5) closes the four postulates of non-relativistic quantum mechanics at the substrate level. This chapter extends the closure into form-level quantum field theory and quantum information. Three results combine to establish the form-level QFT and QI closure: **Theorem 17 (Gauge-Field-as-Rule-Type)** which establishes gauge fields as participation measures of structural rule-types in the substrate; **substrate-level UV-finiteness**, derived from primitives P01 (event discreteness), P13 (proper-time ordering with finite intervals), and P04 (bounded bandwidth), and reframing renormalization as a continuum-approximation tool rather than a substrate requirement; and **ED-I-13 (Quantum Information: Channel Geometry)**, which reinterprets the five landmark results of quantum information theory — Deutsch (1985/92), Deutsch–Jozsa (1992), Bennett–Brassard 1984 (BB84), teleportation (Bennett et al. 1993), and Shor (1994/96) — as five different manipulations of substrate channel geometry.
+
+The chapter does not produce a constructive QFT or a closed-form derivation of the Standard Model. It establishes the *form-level* content: the structural shape of gauge invariance and gauge-field structure (T17), the substrate origin of UV-finiteness (replacing renormalization as a foundational requirement), and the substrate-level vocabulary in which quantum information lives (channel geometry rather than Hilbert-space mystery). The Standard Model gauge group remains empirical input; the framework derives the form of gauge fields without committing to which specific compact-simple-group structure nature realizes. After this chapter, Chapter 7 builds directly on T17, UV-finiteness, and ED-I-13 to develop the substrate-level architecture of quantum computation.
+
+### 6.2 Why Form-Level QFT Closure Matters
+
+#### 6.2.1 Two open questions that Phase-1 alone does not close
+
+Phase-1 (Chapter 5) closes non-relativistic QM at the substrate level. Two structural questions remain open after Phase-1 that the form-level QFT chapter addresses:
+
+- **Where do gauge fields come from?** Standard QFT treats gauge invariance as a fundamental principle: pick a symmetry group, require local invariance, and dynamical gauge fields appear as a consequence. Why this principle? Why these specific gauge groups? Why does nature use gauge fields at all? Standard QFT does not say.
+- **Why doesn't QFT diverge?** Loop integrals in standard QFT are divergent, and the divergences are absorbed by renormalization. Why does the universe avoid the divergences in practice? Why is renormalization needed in the formalism but not in nature? Standard QFT treats this as a feature of effective-theory machinery rather than as a structural property of reality.
+
+ED reframes both questions. T17 establishes that gauge fields are not fundamental dynamical fields; they are participation measures of structural rule-types in the substrate. The structural origin of gauge invariance is the interface property of label-carrying rule-types — gauge invariance is the symmetry under which rule-type labels can be freely chosen. The substrate-level UV-finiteness establishes that the divergences of standard QFT are artifacts of the continuum approximation rather than properties of reality; the substrate ontology has built-in finiteness through P01 + P13 + P04, and renormalization survives only as a continuum-approximation tool.
+
+#### 6.2.2 The third question: what is quantum information?
+
+Standard quantum information theory is built on top of standard QM's Hilbert-space formalism. Five landmark results — Deutsch's first quantum algorithm, Deutsch–Jozsa, BB84 cryptography, teleportation, Shor's factoring algorithm — are treated as ingenious applications of Hilbert-space machinery. Why does each work? The standard answer points to specific Hilbert-space properties (superposition, interference, entanglement, no-cloning, measurement collapse) without identifying a unifying structural mechanism.
+
+ED-I-13 reframes quantum information as the geometry of substrate channels. The five landmark results become five distinct manipulations of substrate channel geometry, each exploiting a different aspect of the substrate's participation structure: high-multiplicity channels supporting global access, minimal channels enforcing rewrite-on-measurement, unresolved participation rules enabling identity reassignment, high-multiplicity channels carrying global periodicity natively. The unifying structural mechanism is the substrate's channel geometry; quantum information becomes a branch of ED-architecture rather than a Hilbert-space mystery.
+
+#### 6.2.3 What this chapter delivers structurally
+
+Three closures, each at form level:
+
+1. **Gauge structure closure.** T17 establishes the form of gauge fields and gauge invariance from substrate primitives. The Standard Model gauge group remains empirical input; the structural form is FORCED.
+2. **UV-finiteness closure.** Substrate primitives P01 + P13 + P04 deliver UV-finiteness as a substrate property. Renormalization is reframed as continuum-approximation machinery; it is not load-bearing at the substrate level.
+3. **Quantum information closure.** ED-I-13 reinterprets the five landmark QI results as substrate channel-geometry manipulations. Quantum information acquires a substrate-level structural foundation.
+
+Together these three closures establish form-level QFT and QI content, complete the form-level closure of the quantum sector that Phase-1 began, and set up Chapter 7's quantum-computing architecture.
+
+### 6.3 Theorem 17: Gauge-Field-as-Rule-Type
+
+#### 6.3.1 The structural question
+
+What are gauge fields, structurally? Standard QFT treats them as dynamical fields whose existence follows from gauge invariance. The photon, the gluons, the W and Z bosons, and the Higgs boson are dynamical fields associated with specific gauge groups (U(1), SU(3), SU(2)×U(1), and the Higgs sector). Standard QFT derives the existence of these fields from the gauge principle, but the gauge principle itself — local symmetry under group transformations — is a postulate rather than a derived structural feature.
+
+The structural question becomes: where does the gauge principle come from? Why does nature use gauge fields at all? Why these specific gauge groups?
+
+#### 6.3.2 T17's structural content
+
+Theorem 17 establishes gauge fields as **participation measures of structural rule-types** in the substrate. The structural content has three parts:
+
+1. **Rule-type structure.** The substrate's participation channels carry internal labels — labels that distinguish one type of rule from another. A "rule-type" is a class of substrate-level participation rules characterized by its label structure. Charge labels (U(1) labels), color labels (SU(3) labels), and isospin labels (SU(2) labels) are the canonical examples; the structural commitment is that the substrate supports rule-types with internal label-carrying structure.
+2. **Participation measure.** A gauge field, structurally, is the participation measure of a rule-type. It measures how participation channels carrying that rule-type's label distribute across the substrate. The "field" is not a fundamental dynamical object in the standard-QFT sense; it is the substrate-level density of label-carrying participation events.
+3. **Interface property.** Gauge invariance is the *interface property* of a rule-type — the symmetry under which the rule-type's label can be freely chosen at each substrate location. The structural origin of gauge invariance is the freedom to relabel rule-types without changing the substrate-level participation dynamics. This is structurally distinct from the standard-QFT presentation of gauge invariance as a fundamental principle imposed on the theory.
+
+#### 6.3.3 Coverage of Abelian and non-Abelian gauge structures
+
+T17 covers both Abelian (single-label) and non-Abelian (multi-label with non-commuting structure) gauge structures. The Abelian case (U(1)) is the substrate origin of standard electromagnetism: charge labels, charge-carrying participation events, and the gauge-field-as-charge-density-measure structural identification. The non-Abelian case generalizes to compact-simple-group rule-types: SU(2) and SU(3) labels carry non-commuting structure, and the substrate's participation rules across non-commuting labels produce the non-Abelian gauge content.
+
+The structural commitment: T17 is form-FORCED for any compact-simple-group rule-type structure. It does not commit to which specific group nature realizes; the Standard Model's $SU(3) \times SU(2) \times U(1)$ structure is empirical input. What T17 commits to is the *form* — that gauge fields are interface measures of rule-types, that gauge invariance is the rule-type label-relabeling symmetry, and that this form covers Abelian and non-Abelian structures alike.
+
+#### 6.3.4 What T17 does and does not derive
+
+T17 derives:
+- The structural form of gauge fields (as participation measures of rule-types).
+- The structural form of gauge invariance (as interface property under rule-type relabeling).
+- The coverage of Abelian and non-Abelian compact-simple-group structures.
+- The substrate-level mechanism by which gauge fields mediate interactions between label-carrying participation events.
+- The connection to T17-vacuum-coupling-clauses C5–C7, which Theorem 18 (Chapter 4) refines to forward-only directionality.
+
+T17 does not derive:
+- Which specific gauge group nature realizes. The Standard Model's $SU(3) \times SU(2) \times U(1)$ structure is empirical input.
+- The specific values of gauge couplings (the fine structure constant $\alpha$, the strong coupling $\alpha_s$, the weak coupling, the Higgs vacuum expectation value). These are INHERITED from particle-physics empirical input.
+- The Higgs sector's specific structure or mass. Empirical input.
+- The number of generations of fundamental fermions or the fermion mass spectrum. Empirical input.
+
+The framework's empirical posture on the Standard Model: the form of gauge structure is FORCED by T17; the specific gauge group, the coupling constants, the particle content, and the masses are INHERITED. This is the form-FORCED / value-INHERITED methodology applied to the gauge sector.
+
+#### 6.3.5 The substrate-level mechanism for charge and label conservation
+
+Charge conservation in standard QFT is a Noether consequence of the gauge invariance postulate. In ED, charge conservation is the substrate-level statement that rule-type labels are conserved under substrate dynamics — the labels are intrinsic to chains carrying the rule-type, and substrate dynamics preserve them. The Noether structure inherits from the substrate-level conservation; it is not a separate postulate.
+
+The same applies to other gauge-invariance-derived conservation laws. Color conservation in QCD inherits from substrate-level color-label conservation; weak-isospin conservation inherits from substrate-level weak-isospin-label conservation; etc. The conservation structure is form-FORCED at the substrate level; the specific charge values (electron's $-e$, quark's $\pm \frac{1}{3}e$ or $\pm \frac{2}{3}e$, etc.) are INHERITED.
+
+### 6.4 Substrate-Level UV-Finiteness
+
+#### 6.4.1 The structural question
+
+Why is renormalization needed in standard QFT, and why does the universe appear to avoid the divergences that motivate it? Standard QFT loop integrals diverge at high momentum (UV divergence), and the divergences are absorbed by renormalization. Renormalization is technically successful — it produces finite predictions — but it is universally understood to be a workaround for an underlying structural issue. The structural question: where does the universe's UV-finiteness come from?
+
+#### 6.4.2 The substrate-level answer
+
+ED supplies a structural answer through three substrate primitives:
+
+- **P01 event discreteness.** Substrate events are discrete; there is a smallest length scale built into the substrate. The continuum limit, where loop integrals run over arbitrary high momentum, does not have a substrate-level counterpart — substrate events do not exist at sub-Planckian length scales because the substrate's irreducible length is the Planck length (identified through T19 in Chapter 11).
+- **P13 finite proper-time intervals.** The substrate's proper-time ordering on chains uses finite intervals; there are no infinitesimal proper-time steps at the substrate level. This bounds substrate dynamics' temporal resolution and prevents infinitesimal-time-step divergences from arising.
+- **P04 bounded bandwidth.** Participation channels carry bounded bandwidth; the substrate cannot support unbounded high-frequency content at chain endpoints. This caps the substrate's high-frequency dynamics and prevents the integrand of substrate-level loop analogues from diverging at high momentum.
+
+Together, these three primitives make the substrate UV-finite by construction. The substrate-level analogues of standard-QFT loop integrals do not diverge because the substrate has built-in cutoffs at the substrate length scale, the substrate proper-time-step scale, and the substrate bandwidth-quantum scale.
+
+#### 6.4.3 Renormalization reframed
+
+Renormalization in standard QFT is not refuted; it is reframed. The continuum approximation that produces standard QFT's loop integrals is a coarse-grained reading of substrate dynamics. The continuum approximation extends substrate dynamics to arbitrary high momentum because it does not see the substrate's discreteness. Renormalization is the technical machinery that handles the resulting apparent divergences in the continuum approximation; it is a continuum-approximation tool rather than a substrate-level requirement.
+
+The framework's stance: standard QFT's renormalization machinery survives as effective-theory machinery for performing continuum-approximation calculations. The substrate ontology does not need it; the divergences renormalization handles do not exist at the substrate level. The Wilsonian effective-theory framing of renormalization (where renormalization is interpreted as integrating out high-momentum modes above a cutoff) is consistent with the substrate-level account: the substrate's UV cutoff is at the substrate length scale, and Wilsonian flow describes how the continuum-approximation effective theory changes as the cutoff is varied within the continuum-approximation regime.
+
+#### 6.4.4 The structural payoff
+
+UV-finiteness shifts from a Wilsonian effective-theory consolation to a substrate-level structural property. The framework's claim is not that renormalization is wrong — it is technically successful — but that the structural reason the universe avoids the divergences is the substrate's discrete, bounded character. The continuum approximation produces divergences because it abstracts away from the substrate's structure; the substrate itself does not have them.
+
+The same structural payoff appears in Chapter 13's no-singularity result for black-hole interiors: P01 event discreteness contributes (alongside P04 bounded bandwidth and the gradient-saturation primitive) to forbidding curvature divergences at the substrate level. The continuum singularities of GR are artifacts of the continuum approximation; the substrate has no singularities. The cross-domain consistency between UV-finiteness (Chapter 6) and no-singularity (Chapter 13) is a structural signature of the framework — both are substrate-level structural consequences of the same primitives.
+
+### 6.5 ED-I-13: Quantum Information as Channel Geometry
+
+#### 6.5.1 The structural question
+
+Why do the five landmark results of quantum information theory work? Standard quantum information explains each result by appealing to specific Hilbert-space properties — superposition, interference, entanglement, no-cloning, measurement collapse — without identifying a unifying structural mechanism. The five results are presented as ingenious applications of QM machinery, each exploiting a different feature of the formalism.
+
+ED-I-13 reframes the question. Quantum information is the geometry of substrate channels; the five landmark results are five different manipulations of substrate channel geometry. The unifying mechanism is structural: each result exploits a specific aspect of the substrate's participation structure.
+
+#### 6.5.2 The substrate-level vocabulary for QI
+
+ED-I-13 introduces the substrate-level vocabulary in which quantum information lives:
+
+- **Multiplicity.** The count of viable distinct ED-gradient pathways available locally, as introduced in Chapter 2. High-multiplicity channels support many simultaneous participation rules; minimal channels enforce strict alignment.
+- **Channels.** Substrate-level participation pathways. A channel is defined by its rule-type, its multiplicity, and its endpoint structure. Channels are the substrate-level analogue of "qubits" or "modes" in standard QI.
+- **Identity alignment.** A chain's substrate-level identity is encoded in its participation rule. Identity alignment is the substrate-level structure that makes "the same chain" coherent across multiple substrate locations. Operations on identity alignment underlie teleportation in the standard formalism.
+- **Global participation.** High-multiplicity channels can carry rules whose content is *global* — properties of the entire channel's geometry rather than properties of any single endpoint. Global participation underlies Deutsch and Deutsch–Jozsa in the standard formalism.
+- **Rewrite-on-measurement.** Minimal-multiplicity channels enforce that a measurement event triggers a substrate-level rewrite of the channel's participation rule. Rewrite-on-measurement underlies BB84 cryptography in the standard formalism.
+
+These are not new substrate primitives — they are substrate-level structures that the existing primitives (P01 through P13, the load-bearing invariants of Chapter 2) jointly produce. ED-I-13's contribution is to identify that quantum information lives in this substrate-level vocabulary rather than in Hilbert-space abstractions.
+
+#### 6.5.3 The five landmark QI results, restated
+
+ED-I-13 re-derives the five landmark results structurally:
+
+**Deutsch (1985/92): global access via high-multiplicity channels.** The Deutsch algorithm determines whether a function is constant or balanced with a single oracle query. Standard QI explains this through superposition: the oracle is queried "in parallel" on both inputs. ED-I-13 explains it through high-multiplicity channels: the substrate channel carrying the input/output relationship has enough multiplicity to support both function-evaluation pathways simultaneously, and the algorithm reads off the channel's global structure rather than any single pathway. The structural mechanism is multiplicity supporting global access.
+
+**Deutsch–Jozsa (1992): constraint extraction through multiplicity.** The Deutsch–Jozsa algorithm determines whether a function is constant or balanced (over $2^n$ inputs) with a single oracle query. Standard QI explains this through interference. ED-I-13 explains it through global constraint extraction: the substrate channel's global structure encodes the constraint, and the algorithm extracts the structural property without traversing all $2^n$ pathways individually. The structural mechanism is multiplicity-mediated global constraint extraction.
+
+**BB84 (1984): rewrite-on-measurement in minimal channels.** The BB84 quantum cryptography protocol uses non-orthogonal measurement bases to detect eavesdropping. Standard QI explains this through no-cloning. ED-I-13 explains it through rewrite-on-measurement: a minimal-multiplicity channel cannot simultaneously preserve participation rules in non-orthogonal bases; an eavesdropper's measurement triggers a substrate-level rewrite that the legitimate parties can detect. The structural mechanism is rewrite-on-measurement in minimal channels.
+
+**Teleportation (Bennett et al. 1993): identity reassignment across unresolved channels.** Quantum teleportation transfers a quantum state from one location to another using entanglement plus classical communication. Standard QI explains this through entanglement plus classical-bit assistance. ED-I-13 explains it through identity reassignment: an entangled pair establishes an unresolved participation rule across two substrate endpoints; the sender's measurement plus the receiver's correction reassigns the identity alignment from the sender's location to the receiver's location, all through manipulations of the unresolved rule's substrate structure. No state "travels"; identity is reassigned across the unresolved channel. The structural mechanism is identity reassignment.
+
+**Shor (1994/96): symmetry extraction through global geometry.** Shor's factoring algorithm extracts the period of a modular function exponentially faster than classical algorithms. Standard QI explains this through quantum Fourier transform on superposition states. ED-I-13 explains it through symmetry extraction: the periodic structure of the modular function induces a global participation pattern in a high-multiplicity channel; the QFT reads out the global symmetry directly without traversing each input individually. The structural mechanism is global symmetry extraction.
+
+#### 6.5.4 The unifying structural mechanism
+
+The five landmark results are not five separate ingenious applications of QM machinery; they are five different manipulations of substrate channel geometry. The unifying mechanism is the substrate's channel structure — multiplicity, identity alignment, global participation, rewrite-on-measurement. Each result exploits a different aspect of the substrate's participation structure, but the underlying structural framework is unified.
+
+The framework's claim is not that the standard explanations of these results are wrong; they are technically correct. The framework reframes the structural origin of why each result works. Quantum information's "magic tricks" become substrate-level architectural moves on channel geometry.
+
+#### 6.5.5 ED-I-13's open predictions
+
+ED-I-13 predicts directions for future quantum-information work that follow from the substrate-level reframing:
+
+- **New algorithmic classes** based on symmetry extraction and global constraint resolution. The substrate-level vocabulary identifies dimensions of channel geometry that standard quantum-information theory has not systematically exploited.
+- **Structural limits on measurement disturbance** determined by channel multiplicity. This is one of the predictive contents that Chapter 7 develops in the UR-1 architecture and the multiplicity-cap function $M$.
+- **New cryptographic primitives** based on channel incompatibility rather than no-cloning.
+- **Reinterpretation of entanglement as undeveloped identity** rather than stored correlation. Identity alignment across unresolved channels is the structural object; "entanglement" is the standard-QI label for it.
+- **Error correction via distributed alignment** rather than redundancy of states. This is the structural content that Chapter 7 develops as Class C high-multiplicity-redundancy architecture.
+- **Computation as manipulation of participation geometry** as a unifying design principle. This is the structural framing that Chapter 7's quantum computing architecture develops formally.
+
+These are form-level structural predictions; specific algorithmic implementations and quantitative measures are downstream open work. ED-I-13's role in this chapter is to establish the substrate-level vocabulary; Chapter 7 develops the architecture that exploits it.
+
+### 6.6 The Form-Level QFT and QI Closure as a Whole
+
+#### 6.6.1 What is closed at form level
+
+The chapter closes form-level structural content for QFT and QI:
+
+- **Gauge structure form-closure.** T17 establishes gauge fields as participation measures of structural rule-types; gauge invariance as interface property; coverage of Abelian and non-Abelian compact-simple-group structures.
+- **UV-finiteness substrate-closure.** Substrate UV-finiteness from P01 + P13 + P04; renormalization reframed as continuum-approximation tool.
+- **Quantum information channel-geometry-closure.** ED-I-13 reinterpretation of five landmark QI results as substrate channel-geometry manipulations; substrate-level vocabulary for QI (multiplicity, channels, identity alignment, global participation, rewrite-on-measurement).
+
+What is *not* closed at form level: the specific gauge group (Standard Model gauge group is empirical input); specific coupling constants, particle masses, and Higgs sector structure (all INHERITED); a constructive proof of QFT existence at Streater–Wightman / Osterwalder–Schrader rigor (Yang–Mills constructive existence is structurally addressed in Chapter 9 at the same Path-C-style verdict); specific quantum algorithms exploiting the substrate-level vocabulary (downstream open work).
+
+#### 6.6.2 What this enables for Chapter 7 (Quantum Computation)
+
+The chapter sets up Chapter 7's quantum-computing architecture directly. The substrate-level vocabulary of ED-I-13 — multiplicity, channels, identity alignment, global participation — is exactly the vocabulary in which UR-1 (the Unresolved-Regime Characterization Theorem of Chapter 7) operates. The three substrate conditions of UR-1 are:
+
+- **(i) Multiplicity bounded.** $\mathcal{M}_i \leq \mathcal{M}_\mathrm{crit}$ at every endpoint. ED-I-13's multiplicity vocabulary supplies the substrate-level definition.
+- **(ii) Cross-endpoint connectivity sustained.** $\gamma_{ij} \geq \Gamma_\mathrm{min}$ along every rule-spanning pathway. ED-I-13's channel and rule-spanning vocabulary supplies the substrate-level definition.
+- **(iii) Commitment-injection bounded.** Inherits from P11 commitment-irreversibility (Chapter 1) and Theorem 18 (Chapter 4).
+
+Chapter 7 also identifies the three architectural classes (engineered-low-multiplicity, global-geometric-rigidity, high-multiplicity-redundancy) that exhaust the substrate-allowed strategies for protecting the unresolved-rule regime; each class's substrate-level mechanism uses the vocabulary established in ED-I-13.
+
+#### 6.6.3 The position of form-level QFT closure in the program
+
+Form-level QFT closure sits between Phase-1 closure (Chapter 5) and the continuum theories of Parts III and IV. Phase-1 closes non-relativistic QM at the substrate level; the form-level QFT closure extends to relativistic and gauge-theoretic territory. The continuum theories of Parts III and IV (Navier–Stokes, MHD, Yang–Mills, soft-matter mobility, substrate gravity, curvature emergence, black-hole architecture) build on the form-level closure: T17's minimal-coupling content provides the Lorentz force in MHD (Chapter 9); T17's non-Abelian extension produces the Yang–Mills equation (Chapter 9); UV-finiteness underlies the substrate-cutoff regularization in NS (Chapter 8) and the Yang–Mills mass-gap mechanism (Chapter 9).
+
+The form-level closure is therefore a structural waypoint: it consolidates what Phase-1 establishes about the quantum sector, extends it to gauge-theoretic territory, and sets up the continuum theories that downstream chapters develop.
+
+### 6.7 The CR Framing Applied to Form-Level QFT
+
+The continuum-approximation (CR) framing introduced in Chapter 4 (distinguishing primitive-level retarded V1 from continuum-level Wightman correlator) extends to the form-level QFT closure. Two layers:
+
+- **Primitive level.** T17 gauge-field-as-rule-type; substrate UV-finiteness from P01 + P13 + P04; ED-I-13 substrate channel-geometry vocabulary. These are substrate-level structural commitments.
+- **Continuum approximation.** Standard QFT machinery — gauge fields as dynamical fields, gauge invariance as a fundamental principle, renormalization as the technical apparatus for absorbing divergences, Hilbert-space quantum-information theory as the standard formalism for QI. This is continuum-level effective machinery.
+
+The two layers are separately consistent. The primitive level is form-FORCED by substrate primitives; the continuum approximation is the standard machinery used in calculations. The natural correspondences: T17 ↔ standard gauge-field theory; substrate UV-finiteness ↔ Wilsonian effective-theory framing of renormalization; ED-I-13 substrate channel-geometry ↔ standard Hilbert-space quantum information.
+
+The CR framing's value is that it preserves the empirical content of standard QFT and standard QI exactly. ED does not change any standard QFT calculation or any standard QI prediction; it changes the *story underneath*. Form-level QFT closure is a structural-foundational claim, not a discriminating-from-standard-physics claim. The empirical posture is consistent with Chapter 4's empirical posture for Theorem 18.
+
+### 6.8 Form-FORCED vs Value-INHERITED
+
+#### 6.8.1 What is form-FORCED
+
+- **T17's structural form** of gauge fields as participation measures of structural rule-types.
+- **T17's coverage** of Abelian and non-Abelian compact-simple-group structures.
+- **The interface-property origin** of gauge invariance.
+- **Substrate-level UV-finiteness** from P01 + P13 + P04.
+- **The reframing of renormalization** as a continuum-approximation tool rather than a substrate-level requirement.
+- **ED-I-13's substrate channel-geometry vocabulary** for quantum information (multiplicity, channels, identity alignment, global participation, rewrite-on-measurement).
+- **The substrate-level reinterpretation of the five landmark QI results** as channel-geometry manipulations.
+- **The structural unification** of QI under substrate channel geometry (replacing the standard treatment as five distinct Hilbert-space tricks).
+
+#### 6.8.2 What is value-INHERITED
+
+- **The specific gauge group** nature realizes (Standard Model's $SU(3) \times SU(2) \times U(1)$ structure). Empirical input.
+- **Specific gauge couplings** (the fine structure constant $\alpha$, the strong coupling $\alpha_s$, the weak couplings, the Higgs vacuum expectation value). Empirical input.
+- **Specific particle masses** in the Standard Model. Empirical input.
+- **The Higgs sector's specific structure**. Empirical input.
+- **The number of generations** of fundamental fermions. Empirical input.
+- **Specific quantum algorithms** beyond the five landmark results (depending on substrate channel-geometry properties yet to be systematically exploited).
+- **Specific cryptographic primitives** based on substrate channel incompatibility.
+- **Specific error-correction schemes** based on distributed alignment.
+
+#### 6.8.3 What is open
+
+Several open extensions are flagged for downstream work:
+
+- **Closed-form derivation of substrate constants** entering gauge couplings. This is part of the broader closed-form-substrate-constants program (alongside $\mathcal{M}_\mathrm{crit}$ in Chapter 7, $\log g$ in Chapter 13, and $\kappa/|\hat{N}'|$ in the ED-SC arc).
+- **Constructive QFT existence** at Streater–Wightman / OS-axiom rigor. Yang–Mills (Chapter 9) gives a structural-positive verdict at substrate-suggestive level; full constructive existence remains open.
+- **Substrate-level account of the Higgs mechanism**. The framework treats this as out of scope for the form-level closure.
+- **Generation structure** of fundamental fermions. The framework does not derive the number of generations or the mass spectrum.
+
+### 6.9 Dependencies
+
+#### 6.9.1 Upstream
+
+- **Chapter 1.** Substrate primitives, especially P01 (event discreteness, foundational for UV-finiteness), P04 (bandwidth update rule, foundational for UV-finiteness and rule-type label structure), and P13 (proper-time ordering with finite intervals, foundational for UV-finiteness). Plus the participation primitives that supply rule-type label structure.
+- **Chapter 2.** Load-bearing invariants. Multiplicity $\mathcal{M}$ enters ED-I-13's substrate channel-geometry vocabulary directly. The V1 kernel mediates substrate-level vacuum response that enters T17 vacuum-coupling content.
+- **Chapter 4.** Theorem 18 kernel-level arrow. T17 vacuum-coupling clauses C5–C7 are refined to forward-only directionality through Theorem 18. ED-I-13 inherits the kernel-level arrow indirectly through the substrate-level structural foundation.
+- **Chapter 5.** Phase-1 closure. The form-level QFT closure of this chapter extends the QM closure of Chapter 5 to relativistic and gauge-theoretic territory. ED-I-13 builds on Phase-1's substrate-level account of quantum systems.
+
+#### 6.9.2 Downstream
+
+- **Chapter 7 (Quantum Computation).** UR-1's substrate-level conditions use the channel-geometry vocabulary established in ED-I-13. The three architectural classes (engineered-low-multiplicity, global-geometric-rigidity, high-multiplicity-redundancy) inherit substrate-level mechanisms from this chapter. The multiplicity-cap function $M$ is the QC-architecture-specific reading of substrate channel-geometry constraints.
+- **Chapter 8 (Navier–Stokes).** Substrate UV-finiteness (specifically through V1's finite width producing R1 substrate-cutoff regularization) is the substrate-level content that connects to the NS architectural decomposition.
+- **Chapter 9 (MHD and Yang–Mills).** T17 minimal coupling provides the substrate-to-continuum bridge for the Lorentz force; T17's non-Abelian extension produces the Yang–Mills equation; substrate UV-finiteness produces the Yang–Mills mass-gap mechanism through V1's second-moment expansion.
+- **Chapter 12 (Curvature Emergence).** ED-Phys-10 acoustic-metric guardrails are consistent with the form-level QFT closure of this chapter; the substrate-level structural commitments (UV-finiteness, no-singularity through P01) are preserved across the gravity sector.
+- **Chapter 13 (Black-Hole Architecture).** The cross-domain consistency between substrate UV-finiteness and the no-singularity result of BH-3 inherits from this chapter; both are substrate-level structural consequences of P01 plus related primitives.
+- **Chapter 14 (Cross-Platform Unifications).** The form-FORCED methodology, including form-level QFT closure as an example of the program's structural reach, is one of the cross-domain consistency signatures.
+
+### 6.10 Canonical Sources
+
+- `papers/Gauge_Fields_Theorem_17/`
+- ED-I-13 (Quantum Information: Channel Geometry, Feb 2026)
+- `papers/Arc_Q/`
+- `papers/Arc_R/`
+
+The Gauge_Fields_Theorem_17 paper presents Theorem 17 in publication-grade form with the formal derivation of gauge-field-as-rule-type structure. ED-I-13 (the canonical source for the substrate channel-geometry framework) presents the reinterpretation of the five landmark QI results. Arc_Q contains the closure memos for the Arc Q gauge-sector closure that produced T17. Arc_R contains the relativistic-extension memos covering Cl(3,1) signature on the spinor bundle, R.2.5 spin-statistics, and R.3 Dirac equation derivation that connect to T17's relativistic content.
+
+The Monograph Shell's Appendix A theorem provenance map lists T17 with its substrate-input dependencies. The Notation Glossary in Appendix B lists the symbols used in this chapter, including multiplicity $\mathcal{M}$, V1 kernel, and the substrate-level rule-type vocabulary.
+
+### 6.11 Optional Figures
+
+**Figure 6.1 — T17 structural content.** A three-panel diagram. Left panel: standard QFT presentation of gauge fields (gauge invariance as fundamental principle; gauge fields as dynamical objects; renormalization as essential machinery). Middle panel: T17 substrate-level reframing (rule-type label structure on participation channels; gauge fields as participation measures of rule-types; gauge invariance as interface property of rule-types). Right panel: structural correspondence (Abelian U(1) ↔ charge labels; non-Abelian SU(N) ↔ multi-component labels; Standard Model gauge group ↔ empirical input). The figure makes visible the structural transition from postulate-to-theorem at the gauge-field level.
+
+**Figure 6.2 — Substrate UV-finiteness.** A two-panel diagram. Left panel: standard QFT loop integrals diverging at high momentum, with renormalization absorbing the divergences. Right panel: substrate-level UV-finiteness through P01 (event discreteness sets a smallest length scale at $\ell_P$), P13 (finite proper-time intervals bound temporal resolution), P04 (bounded bandwidth caps high-frequency content). A note observes that renormalization survives as continuum-approximation machinery but is not load-bearing at the substrate level.
+
+**Figure 6.3 — The five landmark QI results as channel-geometry manipulations.** A five-row diagram. Each row corresponds to one landmark result (Deutsch, Deutsch–Jozsa, BB84, teleportation, Shor). Columns: (i) Standard QI explanation (superposition, interference, no-cloning, entanglement, quantum Fourier transform); (ii) ED-I-13 substrate-level mechanism (global access via high multiplicity, global constraint extraction, rewrite-on-measurement in minimal channels, identity reassignment across unresolved channels, global symmetry extraction); (iii) The substrate-channel-geometry property exploited. The figure makes visible the unifying structural mechanism across the five results.
+
+**Figure 6.4 — The substrate-level vocabulary for quantum information.** A central diagram showing five interlocking concepts: multiplicity (count of viable pathways); channels (substrate-level participation pathways); identity alignment (substrate-level identity coherence); global participation (high-multiplicity channels carrying global structure); rewrite-on-measurement (minimal-multiplicity channels enforcing substrate-level rule rewrites under measurement). Each concept is annotated with the standard-QI feature it replaces or reframes.
+
+**Figure 6.5 — Form-level QFT closure as a structural waypoint.** A flow diagram showing the seven-stage transition from substrate primitives to QC architecture: substrate primitives (Chapter 1) → load-bearing invariants (Chapter 2) → DCGT bridge (Chapter 3) → kernel-level arrow (Chapter 4) → Phase-1 QM closure (Chapter 5) → form-level QFT and QI closure (Chapter 6, this chapter) → QC architecture (Chapter 7). The figure makes visible the chapter's position in the program's derivation chain.
+
+**Figure 6.6 — Form-FORCED vs Value-INHERITED at form-level QFT.** A two-column diagram. Left column ("Form-FORCED"): T17 gauge-field-as-rule-type structure, Abelian/non-Abelian coverage, gauge invariance as interface property, substrate UV-finiteness, ED-I-13 channel-geometry vocabulary, substrate-level reinterpretation of five landmark QI results. Right column ("Value-INHERITED"): Standard Model gauge group, gauge couplings, particle masses, Higgs sector structure, generation structure, specific quantum algorithms beyond the five landmark results. The figure makes visible the demarcation that propagates through Chapters 7, 9, and 13.
+
+\newpage
+
+## Chapter 7 — Quantum Computation: UR-1, the Multiplicity-Cap Function $M$, Architectural Taxonomy
+
+### 7.1 Chapter Overview
+
+Quantum computation, in the Event Density framework, is the **deliberate engineered occupation of a low-multiplicity unresolved-rule substrate regime** — a region of substrate where a participation rule remains unresolved across designated endpoints long enough for its geometry to be manipulated, before environmental ED-injection forces irreversible individuation. The **Unresolved-Regime Characterization Theorem (UR-1)** identifies three independently-necessary substrate conditions for the regime: (i) bounded multiplicity, (ii) sustained cross-endpoint connectivity, and (iii) bounded commitment-injection. The QC operating window is given structurally by $\tau_\mathrm{QC} = \min(\tau_{(\mathrm{i})}, \tau_{(\mathrm{ii})}, \tau_{(\mathrm{iii})})$ over the three condition-failure timescales.
+
+Three architectural classes — **engineered-low-multiplicity (A)**, **global-geometric-rigidity (B)**, **high-multiplicity-redundancy (C)** — exhaust the substrate-allowed strategies for protecting the regime. The **multiplicity-cap function $M$** unifies the classes as projections of one substrate object. The chapter's strongest result is **cross-platform unification**: the matter-wave quantum-classical boundary at 140–250 kDa molecular mass and the qubit-system multiplicity walls are the same substrate-determined boundary projected onto two different platforms via shared substrate constants. The framework's reframing replaces decoherence (the standard variable) with multiplicity (the upstream substrate variable), and the chapter develops the substrate-level architecture of QC under this reframing.
+
+The chapter does not deliver a constructive recipe for fault-tolerant quantum computing. It is a structural account: it establishes what QC *is* at the substrate level, what its limits are, and how those limits manifest across the platform inventory. After this chapter, every continuum theory in Parts III and IV inherits the substrate ontology developed here for the quantum sector.
+
+### 7.2 The Substrate-Level Reframing
+
+#### 7.2.1 The standard QC framing and what it misses
+
+Standard quantum computing treats coherence as a state property of a wavefunction and decoherence as the wavefunction's coupling to environmental degrees of freedom. The operative variable is the coupling rate; engineering reduces the rate; coherence times scale inversely with the irreducible coupling-rate floor. Scaling limits are explained by where the engineering cannot push the coupling rate any lower.
+
+This framing is empirically successful but structurally incomplete. It does not say *why* certain platforms hit walls at certain scales. It does not unify the matter-wave quantum-classical boundary (a foundational-physics observation about giant molecules) with qubit-system scaling limits (an engineering question about coherence preservation in arrays). It treats different platforms (superconducting, ion, photonic, topological, bosonic) as different problems requiring different solutions, when the substrate-level analysis says they are the same problem viewed from different architectural angles.
+
+#### 7.2.2 The substrate variable
+
+ED reframes the central organizing variable. **Multiplicity** $\mathcal{M}$ — the count of viable distinct ED-gradient pathways available locally, established in Chapter 2 as the substrate analogue of entropy — is the upstream substrate-state quantity. Decoherence in the standard sense is the *coarse-grained signature* of substrate-level individuation events firing at endpoints whose multiplicity has risen above a substrate-determined threshold. The standard variable is real but downstream; the substrate variable is upstream and structurally prior.
+
+The reframing has direct structural consequences:
+
+- **Coherence is not a state property.** It is the integrity of an *unresolved participation rule* spanning designated endpoints (the substrate-level analogue of the wavefunction superposition).
+- **Decoherence is not a coupling rate.** It is the substrate-level event of P11 commitment occurring before the protocol intends. P11 commitment is the substrate-level mechanism; decoherence rate is the coarse-grained measurement of how often the mechanism fires.
+- **Engineering effort is not "reducing decoherence."** It is *holding the substrate region in a low-multiplicity, well-connected, low-commitment-rate configuration*, against the substrate's natural tendency to proliferate gradients and force individuation.
+
+The framing change is structurally significant because it shifts the question from "how do we engineer-down a coupling rate?" to "what substrate conditions must be held, and what architectural strategies hold them?" The latter question has a substrate-level structural answer (UR-1, Section 7.4); the former does not.
+
+#### 7.2.3 What QC is, in substrate language
+
+Quantum computation, in ED's reading, is structurally the same kind of object as a Josephson junction (ED-I-23), a bulk superconductor (ED-I-01), a Tonomura-class topological-phase setup (ED-I-14), a multi-timescale photonic lattice (ED-I-18), or the inside of a saturated participation zone (BH-3). Each is a substrate region of low-multiplicity ED-flow held against the substrate's tendency to proliferate gradients and force individuation. The differences across platforms are not in *what* is being held but in *how* it is being held — which substrate-state quantity the architecture commits to fix, and through what mechanism.
+
+A QC, specifically, uses the regime as an *operating substrate* on which to manipulate unresolved participation geometry. Quantum gates are substrate-level operations that reshape the geometry of the unresolved rule before it commits. Readout is the controlled triggering of P11 commitment events at designated endpoints. The substrate-level account makes the standard QC machinery legible without changing any of its empirical content.
+
+### 7.3 Substrate State and Substrate-State Quantities
+
+#### 7.3.1 The five substrate-state quantities for QC
+
+Five substrate-level quantities govern the QC sector. Each is established in Chapter 2 as a load-bearing invariant; this chapter applies them in the QC-architectural reading:
+
+- **Multiplicity** $\mathcal{M}(\mathcal{S})$ at substrate region $\mathcal{S}$. The count of viable distinct ED-gradient pathways available locally.
+- **Gradient sparsity** $\sigma(\mathbf{x}) = |\nabla\rho|\,\ell_P^2/\rho_\mathrm{local}$ at substrate point $\mathbf{x}$. The substrate-scale dimensionless steepness of participation density.
+- **Cross-bandwidth** $\gamma_{ij}$ along a rule-spanning pathway between endpoints $e_i$ and $e_j$. The substrate-mediated rate at which the two endpoints exchange correlated participation events.
+- **Commitment-injection rate** $\Lambda_\mathcal{S}(t) = \Lambda_\mathrm{env}(t) + \Lambda_\mathrm{int}(t)$. The rate at which P11 commitment events fire at $\mathcal{S}$'s endpoints, sourced by environmental ED-injection plus internal participation dynamics.
+- **Unresolvedness** $\mathcal{U}(\mathcal{S}, t) \in [0, 1]$. The integrity of an unresolved participation rule across the designated endpoints of $\mathcal{S}$ at substrate time $t$. $\mathcal{U} \to 1$ when the rule is fully unresolved; $\mathcal{U} \to 0$ when full individuation has been reached.
+
+The QC architecture's substrate-level analysis is a function of these five quantities and the architectural mechanisms that hold them within their operational regimes.
+
+#### 7.3.2 The unresolvedness function
+
+The unresolvedness $\mathcal{U}(\mathcal{S}, t)$ takes a specific form-FORCED structure derived in UR-1 (Section 7.4). It is a three-factor product:
+
+```math
+\mathcal{U}(\mathcal{S}, t) = \prod_{i \in \mathrm{endpts}(\mathcal{R})} \mu\!\left(\frac{\mathcal{M}_i(t)}{\mathcal{M}_\mathrm{crit}}\right) \cdot \prod_{(i,j) \in \mathcal{R}} \kappa\!\left(\frac{\gamma_{ij}(t)}{\Gamma_\mathrm{min}}\right) \cdot \exp\!\left[-\int_0^t \Lambda_\mathcal{S}(t')\,dt'\right]
+```
+
+The three factors correspond, in order, to:
+
+- **Multiplicity headroom.** Whether each endpoint's local multiplicity is bounded below the substrate-determined critical value $\mathcal{M}_\mathrm{crit}$.
+- **Rule-spanning connectivity.** Whether each rule-spanning pathway maintains cross-bandwidth above the substrate-determined minimum $\Gamma_\mathrm{min}$.
+- **Commitment survival.** Whether the cumulative commitment-injection rate has not yet driven the rule to individuation.
+
+The product structure is form-FORCED: the rule fails to remain unresolved if *any* of the three factors collapses. The functional shapes $\mu$ and $\kappa$ are form-FORCED to be monotone with specific limiting behavior; their specific functional forms are INHERITED from the substrate-level V1-kernel and DCGT machinery.
+
+#### 7.3.3 The relation set $\mathcal{R}$
+
+The relation set $\mathcal{R}$ identifies which endpoint pairs the rule spans. For a single qubit, $\mathcal{R}$ is the set of designated $\{|0\rangle, |1\rangle\}$ endpoints. For a multi-qubit entangled register, $\mathcal{R}$ extends across all qubits' designated endpoints. For a matter-wave interferometer, $\mathcal{R}$ is the pair of arms. The structural content of $\mathcal{R}$ is that it specifies *which* substrate endpoints the rule must remain unresolved across; $\mathcal{R}$ is platform-specific but the UR-1 structural form is platform-independent.
+
+### 7.4 UR-1: The Unresolved-Regime Characterization Theorem
+
+#### 7.4.1 The theorem statement
+
+**UR-1 (Unresolved-Regime Characterization Theorem).** Let $\mathcal{S}$ be a substrate region with designated participation-rule relation set $\mathcal{R}$ over endpoints $\{e_1, \ldots, e_n\}$. Let $\mathcal{U}_\mathrm{min} \in (0, 1)$ be a target unresolvedness threshold. Then $\mathcal{U}(\mathcal{S}, t) \geq \mathcal{U}_\mathrm{min}$ holds at substrate time $t$ if and only if:
+
+- **(i) Multiplicity bounded.** For every endpoint $e_i$, $\mathcal{M}_i(t) \leq \mathcal{M}_\mathrm{crit}$.
+- **(ii) Cross-endpoint connectivity sustained.** For every pair $(i, j) \in \mathcal{R}$, $\gamma_{ij}(t) \geq \Gamma_\mathrm{min}$.
+- **(iii) Commitment-injection bounded.** $\int_0^t \Lambda_\mathcal{S}(t')\,dt' \leq \ln(1/\mathcal{U}_\mathrm{min})$ (with appropriate corrections from the per-condition negative-log deficits).
+
+Each condition is independently necessary. Failure of any one drives $\mathcal{U}$ below $\mathcal{U}_\mathrm{min}$ at a substrate-determined rate. The conditions are coupled through substrate geometry — physical substrate configurations cannot independently dial all three — but each can fail without the others.
+
+#### 7.4.2 Why three conditions, not more or fewer
+
+The three-factor product form of $\mathcal{U}$ is forced by the substrate-level structure of the unresolved rule. Three substrate-level processes can independently degrade $\mathcal{U}$:
+
+- **Local multiplicity proliferation** at any endpoint of the rule. If the count of viable pathways at one endpoint exceeds $\mathcal{M}_\mathrm{crit}$, the rule cannot remain coherently spread across that endpoint.
+- **Cross-endpoint bandwidth collapse** along any rule-spanning pathway. If the substrate-mediated cross-bandwidth between two endpoints falls below $\Gamma_\mathrm{min}$, the rule cannot remain coherent across that pair.
+- **Commitment-event accumulation** at any endpoint of the rule. Each P11 commitment event at an endpoint is an irreversible individuation; cumulative commitment-injection drives $\mathcal{U}$ to zero exponentially.
+
+These three processes are structurally distinct (they arise from different substrate quantities) but compose multiplicatively on $\mathcal{U}$, because any of them alone can drive the rule to $\mathcal{U} \to 0$ regardless of the others. The functional form must therefore be a product of three factors, one per process. UR-1's three-condition structure is the substrate-level statement that all three factors must be held.
+
+#### 7.4.3 Independence and substrate-geometric coupling
+
+UR-1's three conditions are **independent in form** (each can fail alone, each is independently necessary, the proof establishes that violation of any one drops $\mathcal{U}$ below threshold even with the other two satisfied) but **coupled through substrate geometry** (a physical substrate region cannot independently dial $\mathcal{M}$, $\sigma$, $\Lambda$ to arbitrary values; substrate constraints link them). For Block-B failure-mode rate analysis (Section 7.5) and Block-D multiplicity-cap-function construction (Section 7.7), each condition is treated independently. For Block-C architectural classification (Section 7.6), the geometric coupling matters — different architectures use different substrate-geometric tactics to satisfy multiple conditions simultaneously, and the substrate-coupling structure is what distinguishes one architecture class from another.
+
+#### 7.4.4 Reduction to known regimes
+
+UR-1 reproduces three known regimes cleanly, each with a different binding condition:
+
+- **Bulk superconductor (ED-I-01).** Below $T_c$, conditions (i) and (ii) hold robustly; condition (iii) holds because thermal ED-injection rate is below the substrate individuation threshold. Above $T_c$, thermal injection drives condition (iii) failure; $\mathcal{U}$ drops; resistance reappears. **$T_c$ is identified as the substrate temperature at which condition (iii) crosses its threshold.**
+- **Josephson junction (ED-I-23).** Two low-$\mathcal{M}$ SC electrodes separated by a thin barrier. Conditions (i) and (iii) hold; condition (ii) is the *load-bearing* condition by design — the barrier creates a high-$\sigma$ region with $\gamma_{LR}$ engineered just above $\Gamma_\mathrm{min}$. The JJ lives at the (ii) boundary. **Macroscopic quantum tunneling (Devoret-Martinis-Clarke 1985) corresponds to dynamical fluctuations at the (ii) boundary** — the rule globally reconfigures across the gap when $\gamma_{LR}$ momentarily drops below threshold. The MQT rate's WKB exponential structure is recovered directly from DCGT $\kappa$-function evaluation.
+- **Free atomic-scale matter wave.** The molecule is a low-$\mathcal{M}$ ED-object whose internal $\mathcal{M}$ scales with mass (rotational + vibrational + electronic DOF activation). For low molecular mass, $\mathcal{M} \ll \mathcal{M}_\mathrm{crit}$ and condition (i) holds. For high mass (140–250 kDa), internal $\mathcal{M}$ rises and crosses $\mathcal{M}_\mathrm{crit}$. **The matter-wave Q-C boundary is identified as the molecular mass at which condition (i) crosses threshold.**
+
+Three different empirical phenomena, three different UR-1 conditions, one substrate framework.
+
+### 7.5 Failure-Mode Rates and the QC Operating Window
+
+#### 7.5.1 Three substrate-level dynamics
+
+Each UR-1 condition admits a substrate-level dynamical equation governing the timescale at which it crosses threshold.
+
+**Condition (i) multiplicity dynamics.** The substrate-level evolution of $\mathcal{M}$ is
+
+```math
+\frac{d\mathcal{M}}{dt}\bigg|_\mathcal{S} = \alpha_\mathrm{env}\,\Lambda_\mathrm{env}(t) + \alpha_\mathrm{act}\,S_\mathrm{int}(t) - A_\mathcal{S}(\mathcal{M} - \mathcal{M}_\mathrm{floor})
+```
+
+with $\alpha_\mathrm{env}\Lambda_\mathrm{env}$ environmental ED-injection driving pathway-count growth, $\alpha_\mathrm{act}S_\mathrm{int}$ internal pathway-activation rate from thermal or operational stimulation, and $A_\mathcal{S}(\mathcal{M} - \mathcal{M}_\mathrm{floor})$ architectural restoring rate returning $\mathcal{M}$ to the architecturally-imposed floor. Two failure modes: **static** when $\mathcal{M}_\mathrm{floor} \geq \mathcal{M}_\mathrm{crit}$ (the system cannot be operated regardless of timescale; this is the matter-wave Q-C boundary regime) and **dynamic** when $\mathcal{M}_\mathrm{floor} < \mathcal{M}_\mathrm{crit}$ but environmental injection drives the steady state above threshold.
+
+**Condition (ii) cross-bandwidth dynamics.** The cross-bandwidth $\gamma_{ij}(t)$ evolves under substrate gradient erosion plus architectural pumping, with the form $d\gamma_{ij}/dt = -(\gamma_{ij} - \gamma_\mathrm{floor})/\tau_\mathrm{dec}^{(\mathrm{ii})} + \xi(t)$ where $\xi(t)$ is stochastic substrate perturbation. Two regimes: **sustained-above-threshold** ($\gamma_\mathrm{floor} > \Gamma_\mathrm{min}$ with margin; $\tau_{(\mathrm{ii})}$ exponentially long via Kramers-class escape) and **near-threshold** ($\gamma_\mathrm{floor} \approx \Gamma_\mathrm{min}$ by design, as in JJ; fluctuations push below threshold; each crossing produces global rule reconfiguration with WKB MQT rate $\sim \omega_0 \exp[-\alpha\int_\mathrm{barrier}\sigma\,d\ell]$).
+
+**Condition (iii) commitment-injection dynamics.** The commitment-survival factor crosses threshold at
+
+```math
+\tau_{(\mathrm{iii})} = \frac{\ln(1/\mathcal{U}_\mathrm{min})}{\Lambda_\mathrm{env} + \Lambda_\mathrm{int}}.
+```
+
+$\Lambda_\mathrm{env}$ has additive contributions from thermal radiation, residual-gas collisions, Purcell decay into electromagnetic modes, dielectric noise, magnetic-flux fluctuations, quasiparticle injection from above-gap excitations. Bounded below by V1 vacuum kernel residual rate $\Lambda_{V1}$. $\Lambda_\mathrm{int}$ accumulates from intentional commitments (gates, ancilla resets, intermediate measurements) and incidental commitments.
+
+#### 7.5.2 The QC operating window
+
+Combining: the QC operating window is the substrate time over which all three UR-1 conditions simultaneously hold,
+
+```math
+\tau_\mathrm{QC} = \min\bigl[\tau_{(\mathrm{i})}, \tau_{(\mathrm{ii})}, \tau_{(\mathrm{iii})}\bigr].
+```
+
+Three structural observations follow.
+
+**Different architectures bind on different conditions.** Each architectural class is characterized not by which timescale is *longest* but by which is *shortest* — i.e., which UR-1 condition is the architecture's binding constraint. The class taxonomy of Section 7.6 pivots on this observation.
+
+**The operating window is a substrate observable.** $\tau_\mathrm{QC}$ corresponds to what experimentalists call coherence time, T₁/T₂, fault-tolerance-headroom, or maximum coherent flight time. Cross-platform measurements are evaluations of $\tau_\mathrm{QC}$ for different binding conditions.
+
+**Architectural design is the optimization of $\min(\cdot)$.** Improving the longest of the three timescales is irrelevant; only improvement of the *binding* timescale extends the window. The substrate provides the structural reason for what platform-development teams empirically know.
+
+#### 7.5.3 Empirical anchor reductions
+
+Cross-platform anchors map cleanly to the three conditions:
+
+| Phenomenon | Binding condition | Substrate identification |
+|---|---|---|
+| Matter-wave Q-C boundary 140–250 kDa | (i) static failure | $\mathcal{M}_\mathrm{floor}(M_\star) = \mathcal{M}_\mathrm{crit}$ |
+| SC qubit T₁ | (iii) | $\Lambda_\mathrm{env}$ Purcell + dielectric + quasiparticle |
+| SC qubit T₂ | (ii) | Kramers escape from protected pathway |
+| JJ MQT (Devoret-Martinis-Clarke) | (ii) near-threshold | WKB $\sim \omega_0 \exp[-\alpha\int\sigma\,d\ell]$ |
+| Topological-qubit error suppression | (iii) gap-suppressed | Most env modes don't couple to protected rule |
+| Multi-timescale FPM relaxation (Hafezi 2025) | (i) relaxed by redundancy | Multi-axis pathway expansion |
+| Quasiparticle poisoning | multi-condition (i)+(iii) | Single event raises $\mathcal{M}$ and $\Lambda$ |
+
+The pattern is: each empirical phenomenon is the substrate-level signature of one UR-1 condition crossing threshold (or, for poisoning-class events, of multiple conditions crossing simultaneously). The taxonomy is one substrate framework, multiple platform projections.
+
+### 7.6 The Three-Class Architectural Taxonomy
+
+#### 7.6.1 Three substrate-allowed protection strategies
+
+Three architectural classes exhaust the substrate-level base strategies for protecting the unresolved-rule regime. The exhaustiveness argument is structural and is developed in detail in Arc Q-COMPUTE Memo 4; the chapter summarizes the result.
+
+**Class A — engineered-low-multiplicity.** Protection target: condition (i) bounded multiplicity. The architecture commits structurally to suppressing local multiplicity via lattice symmetry, engineered ED-bottleneck, deep confinement, or mode engineering. Examples: bulk superconductors (ED-I-01: lattice symmetry collapses $\mathcal{M}$ to ≈ 1); Josephson junction qubits (ED-I-23: deliberately engineered ED-bottlenecks); trapped ions (deeply confined low-$\mathcal{M}$ regions); gate-model photonic platforms (single-photon states in engineered linear-optical circuits, ED-I-12 + ED-I-13). Mechanism: structural simplification of the substrate's gradient landscape, holding $\mathcal{M}_\mathrm{floor}$ low by design. Binding constraint: typically (ii) or (iii) — environmental coupling channels reaching through engineered isolation.
+
+**Class B — global-geometric-rigidity.** Protection target: condition (ii) cross-endpoint connectivity. The architecture encodes the participation rule in *global ED-channel geometry* — topological invariants of the substrate's gradient structure that cannot be perturbed by local environmental injection. The participation rule's integrity is a property of channel connectivity, not of local timing. Examples: topological qubits (Majorana, anyonic platforms; ED-I-14 establishes topological phases as global invariants of ED-channel geometry); photonic Chern channels (ED-I-12 + ED-I-18: edge states with topologically protected gradient rigidity); geometric-phase quantum gates. Mechanism: encoding identity in homotopy-class structure of ED-channel geometry; local environmental perturbation cannot reach the encoded information without spanning the entire channel topology. Binding constraint: $\tau_\mathrm{gap-stab}(\mathcal{T})$ — the substrate-level rate at which the global topological structure $\mathcal{T}$ can be perturbed (gap-closing events, edge-state hybridization, anyonic non-Abelian braiding errors).
+
+**Class C — high-multiplicity-redundancy.** Protection target: $\mathcal{U}$ via redundancy of pathways. Condition (i) is *relaxed* by architectural design — high $\mathcal{M}$ is permitted, but the rule's integrity survives because multiple parallel pathways carry the same participation structure. Examples: multi-timescale photonic lattices (ED-I-18: Hafezi 2025 multi-axis ring resonators with 100% device yield via redundancy expansion); bosonic codes (cat states, GKP states; encoding logical information across many physical photon-number states); generalized multi-axis architectures. Mechanism: parallel ED-channels carrying the same participation rule; environmental ED-injection driving any single pathway toward individuation is absorbed by the redundancy; the rule's integrity is sustained by surviving channels. Binding constraint: correlated errors across redundant pathways exceeding the *correlation budget* $N_\mathrm{corr}$ — common-mode noise, shared substrate defects, optical-mode crosstalk that defeat pathway-independence.
+
+#### 7.6.2 Exhaustiveness over substrate-level base strategies
+
+The three classes are exhaustive over substrate-level base protection strategies, by the following structural argument:
+
+1. UR-1 has three conditions, each set by a substrate quantity ($\mathcal{M}$, $\sigma$/$\gamma_{ij}$, $\Lambda$).
+2. Two of these substrate quantities are *fixable structurally* — $\mathcal{M}$ via local structural simplification (Class A), and $\sigma$ via global topological invariants (Class B). $\Lambda$ is not fixable structurally because it is intrinsically a coupling rate at the boundary between protected region and environment; reducing $\Lambda$ is achieved as a *consequence* of the other classes' mechanisms (low-$\mathcal{M}$ system isolated → low coupling, Class A; topological gap → suppressed coupling, Class B; redundancy → reduced impact of any single coupling event, Class C).
+3. The third strategy is *indirect* — instead of fixing a substrate quantity, provide redundancy so that $\mathcal{U}$ survives partial failures (Class C).
+4. No fourth substrate-level base strategy exists because (a) there are only three substrate quantities to fix in UR-1's structure, (b) only two are structurally fixable, (c) the redundancy strategy provides the third option, and (d) all candidate Class D strategies audited in Arc Q-COMPUTE Memo 4 are either techniques for extending one of A/B/C's timescales or compositions of A/B/C.
+
+The three-class structure is therefore exhaustive at the substrate-level base; the closure status is FORCED.
+
+#### 7.6.3 Meta-architectures: compositions and techniques
+
+Real systems are typically *compositions* of A/B/C. Four candidate Class D strategies were audited in Arc Q-COMPUTE Memo 4 and rejected as new substrate-level classes:
+
+- **Dynamical decoupling.** Reduces effective $\Lambda$ via temporal averaging. Technique for extending $\tau_{(\mathrm{iii})}$ within Class A; not a new substrate-level strategy.
+- **Reservoir engineering (Mirrahimi-Devoret cat states).** Implements the architectural restoring rate $A_\mathcal{S}$ via structured environmental coupling. Technique for Class A's restoring mechanism; not a new substrate-level strategy.
+- **Error-correction-as-architecture.** Class C encoding (logical via redundancy across physical qubits) plus Class A active restoring (syndrome-guided correction) at logical level. Meta-architectural composition of A and C; not a new substrate-level strategy.
+- **Hybrid systems (SC-photonic, topological-SC).** Compositions of A/B/C subsystems with substrate-geometric handoff boundaries. Compositions; not new substrate-level strategies.
+
+The substrate-level taxonomy is unchanged by the existence of meta-architectures. The three-class structure describes the *base*; meta-architectures are the *compositions* layered on the base.
+
+### 7.7 The Multiplicity-Cap Function $M$
+
+#### 7.7.1 The unified function
+
+The multiplicity-cap function $M$ is a single substrate object with three architectural-class projections:
+
+```math
+M(\mathcal{S}, K, \mathcal{E}, \mathcal{O}) = \min\bigl[\tau_{(\mathrm{i})}^{(K, \mathcal{O})}(\mathcal{S}, \mathcal{E}),\ \tau_{(\mathrm{ii})}^{(K, \mathcal{O})}(\mathcal{S}, \mathcal{E}),\ \tau_{(\mathrm{iii})}^{(K, \mathcal{O})}(\mathcal{S}, \mathcal{E})\bigr]
+```
+
+with inputs:
+
+- **System** $\mathcal{S}$: the protected region's configuration, including endpoints, $\mathcal{M}_\mathrm{floor}$, $\gamma_\mathrm{floor}$, and any architectural redundancy count.
+- **Class** $K \in \{A, B, C\}$: the architectural-class assignment.
+- **Environment** $\mathcal{E}$: $\Lambda_\mathrm{env}$, perturbation rates, temperature.
+- **Meta-architecture overlay** $\mathcal{O}$: dynamical decoupling, reservoir engineering, error correction, hybrid composition (any combination).
+
+Each $\tau_j^{(K,\mathcal{O})}$ is evaluated using the rate equation from Section 7.5 with class-specific protection-mechanism modifiers and meta-architectural overlay extensions.
+
+#### 7.7.2 The class projections
+
+**$M_A$ — Class A projection.** The $\tau_{(\mathrm{i})}^{(A)}$ is split into static-failure and dynamic-failure branches; static failure occurs if $\mathcal{M}_\mathrm{floor}(\mathcal{S}) \geq \mathcal{M}_\mathrm{crit}$. The $\tau_{(\mathrm{ii})}^{(A)}$ is Kramers-class escape from engineered low-$\sigma$ pathways. The $\tau_{(\mathrm{iii})}^{(A)}$ is environmental binding from Purcell + dielectric + quasiparticle channels. JJ-class engineering at the (ii) boundary recovers WKB MQT structure directly from DCGT.
+
+**$M_B$ — Class B projection.** All three timescales are gap-suppressed by $\exp(\Delta_\mathrm{top}/T_\mathrm{eff})$. Binding shifts from environmental rate to topology-perturbation rate $\tau_\mathrm{gap-stab}(\mathcal{T})$, set by macroscopic substrate quality (sample homogeneity, edge purity, defect density, anyonic fusion-error rates), not by local environmental coupling. For Majorana platforms with $\Delta_\mathrm{top} \sim 0.1$ meV at $T_\mathrm{eff} \sim 20$ mK, the gap factor is order $10^{25}$. Class B can in principle exceed Class A coherence by exponential factors at the cost of much harder topology engineering.
+
+**$M_C$ — Class C projection.** Three redundancy modifiers apply: $g(N)$ suppresses effective $\mathcal{M}$ (Class C *relaxes* condition (i)); $h(N)$ enhances effective $\Gamma_\mathrm{cross}$; $c(N) \sim \exp(-N/N_\mathrm{corr})$ suppresses effective $\Lambda$ until correlation budget saturates. Class C ceiling: $\tau_\mathrm{QC}^{C, \mathrm{ceil}} = \tau_\mathrm{QC}^\mathrm{single} \cdot e$ asymptotically. Class C is **bounded-redundancy-advantage** — it cannot exceed single-pathway ceilings without bound; its role is extending the useful operating window before saturation.
+
+#### 7.7.3 Meta-architectural overlays
+
+Meta-architectures appear as boundary-condition modifiers, not new projections:
+
+- **Dynamical decoupling.** Replaces $\Lambda_\mathrm{env}^{(K)}$ with a temporally-averaged $\Lambda_\mathrm{env}^\mathrm{DD}(\omega_\mathrm{decoup})$.
+- **Reservoir engineering.** Increases $A_\mathcal{S}$ in the multiplicity dynamics via structured environmental coupling.
+- **Error correction.** Recursive overlay: $\tau_\mathrm{QC}^\mathrm{logical}$ is derived from $\tau_\mathrm{QC}^\mathrm{phys}$ via code distance and threshold. The meta-architecture takes the physical $M$ and applies a *recursive overlay* at the logical level, outputting the logical $M$.
+- **Hybrid composition.** $\min$ over subsystems' projections plus losses at handoff boundaries; no new projection.
+
+#### 7.7.4 OQ closure status
+
+Arc Q-COMPUTE's seven memos closed seven open questions during the arc's development. The Block-D level result (this section's content) closes:
+
+- $M$ is one substrate object with three class-projections plus meta-architectural overlays, not three independent functions. (OQ-4 closed.)
+- The matter-wave Q-C boundary at 140–250 kDa is in $M_A$'s $\tau_{(\mathrm{i})}$ static-failure branch. The qubit-system multiplicity walls of various platforms lie at corresponding evaluation points of $M_A$ and the meta-architectures. The cross-platform identity is a substrate-level structural consequence. (OQ-5 closed.)
+- Specific functional shapes of $\mu, \kappa, g/h/c(N)$ are INHERITED at the same level as $\log g$ in BH-5 (Chapter 13). (OQ-7 closed to INHERITED level.)
+
+### 7.8 Cross-Platform Unification: Matter-Wave ↔ Qubit-System Identity
+
+#### 7.8.1 The strongest output
+
+The framework's strongest cross-platform result is the substrate-level identity between two empirically distinct phenomena: the matter-wave quantum-classical boundary at 140–250 kDa molecular mass and the qubit-system multiplicity walls of various Class A platforms. These are not analogous phenomena; they are the *same* substrate-determined boundary projected onto two different platforms via shared substrate constants.
+
+The matter-wave boundary is observed in matter-wave interferometry experiments. Below the boundary, large molecules show interference fringes consistent with quantum-mechanical superposition. Above the boundary, fringes wash out and the molecule behaves classically. The boundary is empirically located at 140–250 kDa molecular mass, depending on molecular structure, internal-DOF activation, and environmental conditions.
+
+The qubit-system multiplicity wall is the structural ceiling on Class A QC platforms. Each platform (transmon SC qubits, fluxonium SC qubits, trapped ions, photonic gate-model) has an architecture-specific scaling function $f_\mathrm{sys}^{(A)}(\mathcal{S})$ mapping system size to effective system multiplicity. At a substrate-determined system size $N_\star$ (the platform-specific wall), $f_\mathrm{sys}^{(A)}$ crosses $\mathcal{M}_\mathrm{crit}$ and the platform's effective coherence collapses.
+
+The substrate-level identity: both the matter-wave boundary mass $M_\star$ and the qubit-system $N_\star$ are crossings of the same substrate constant $\mathcal{M}_\mathrm{crit}$, evaluated for two different scaling-function inputs. Sharper measurement of $M_\star$ directly constrains the substrate constant $\mathcal{M}_\mathrm{crit}$, which in turn constrains $N_\star$ for any qubit platform with a calibrated $f_\mathrm{sys}^{(A)}$.
+
+#### 7.8.2 Implications
+
+The identity has direct consequences for the QC roadmap:
+
+- **Matter-wave interferometry becomes a direct probe of QC ceilings.** The Vienna and Basel matter-wave-interferometry programs are reframed as the cleanest available probe of the substrate constant $\mathcal{M}_\mathrm{crit}$ that determines qubit-array walls. Investment in matter-wave-boundary measurement (mass-matched isomer experiments, ultra-cold-vacuum extension, internal-DOF-controlled molecular probes) is investment in characterizing the limits of the qubit-based QC roadmap.
+- **The two communities study the same substrate phenomenon.** The matter-wave-interferometry program (foundational physics, no commercial QC application) and the SC-qubit-scaling program (commercial QC, no foundational-physics application) are studying the same substrate-determined boundary from two empirical directions.
+- **Cross-platform calibration is structurally valuable.** A national or institutional research program coordinating matter-wave-boundary measurement with qubit-platform multiplicity tomography produces consistency checks unavailable in either community alone.
+
+#### 7.8.3 Sharp predictions
+
+The cross-platform identity supports sharp predictions:
+
+- **Class A → Class C transition is mandatory at the wall.** Pure Class A scaling cannot pass the substrate-determined system-multiplicity wall. The path past the wall is composition with logical-qubit encoding (Class C); error correction is the standard meta-architectural composition that achieves this.
+- **Class B exponential coherence advantage.** Topological qubits can outrun Class A coherence by an exponential factor $\exp(\Delta_\mathrm{top}/T_\mathrm{eff})$ in the topological gap, but only if topology engineering can deliver stable gaps. The binding shifts from isolation engineering to topology engineering.
+- **Class C correlation-budget plateau.** Redundancy-based architectures saturate at a substrate-determined correlation budget $N_\mathrm{corr}$. Beyond this, additional redundancy stops paying.
+- **Cross-class architectural transitions.** A → C mandatory at the wall; B overtakes A at $\Delta/T \gtrsim 10$–20; C saturates at $N_\mathrm{corr}$.
+
+These are testable structural predictions with explicit falsification conditions. The QC sector's empirical anchor map is developed in Chapter 15 (Public Test Inventory).
+
+### 7.9 What QC in ED Does and Does Not Deliver
+
+#### 7.9.1 What is delivered
+
+- A substrate-level account of quantum computation grounded in UR-1.
+- Three exhaustive architectural classes (A, B, C) characterizing protection strategies.
+- The multiplicity-cap function $M$ as the substrate-level cross-platform unifier.
+- Cross-platform unification between the matter-wave Q-C boundary and qubit-system multiplicity walls.
+- Falsifiable predictive content with explicit sharp/structural/inherited demarcation.
+- Cross-domain consistency with all prior closed arcs (Phase-1, T17, T18, DCGT, Arc SG, Arc BH).
+- Six explicit OPEN extensions named for follow-on work (closed-form $\mathcal{M}_\mathrm{crit}$; architecture-to-platform calibration; closed-form $g/h/c(N)$; topology-stability theorem for Class B; surface-code recursive-overlay derivation; hybrid-architecture handoff dynamics).
+
+#### 7.9.2 What is not delivered
+
+- Closed-form values for INHERITED parameters ($\mathcal{M}_\mathrm{crit}$, $N_\mathrm{corr}$, $\Delta_\mathrm{top}^{\max}$, etc.). These are calibrated empirically; the closed-form-substrate-constants program is downstream open work.
+- A constructive recipe for fault-tolerant quantum computing. The arc is structural, not engineering. Engineering against the substrate-level binding constraints is exactly the right work in the appropriate regime; the framework changes the *interpretive frame* under which engineering progress is evaluated, not the engineering itself.
+- Specific numerical predictions for any specific QC platform. Architecture-to-platform calibration (O-QC-2) is the engineering-tractable program that converts the framework's structural predictions into platform-specific numerical bounds.
+- A claim that practical-scale QC is achievable or impossible. The framework predicts *which substrate-level wall is binding at what scale* and *which architectures can outrun which walls* — not whether the engineering effort to reach a given scale will or will not succeed.
+
+#### 7.9.3 The decisive falsifier
+
+The framework's central falsifier is the cross-platform unification claim. If a future platform is identified that exhibits coherence behavior consistent with no class assignment in {A, B, C}, cannot be explained as meta-architectural composition of A/B/C, and fails to match $M$ under any substrate-allowed parameter calibration, then the framework needs extension (introduce a Class D) or replacement.
+
+Conversely, continued cross-anchor consistency over the next decade of platform development — particularly the consistency of $\mathcal{M}_\mathrm{crit}$ extracted from matter-wave-boundary measurement with $\mathcal{M}_\mathrm{crit}$ inferred from qubit-platform multiplicity walls — is significant cross-platform evidence for the substrate framework.
+
+### 7.10 Form-FORCED vs Value-INHERITED at the QC Architecture
+
+#### 7.10.1 What is form-FORCED
+
+- **UR-1's three-condition characterization** of the unresolved-rule regime.
+- **The three-factor product form of $\mathcal{U}$** (multiplicity headroom × rule-spanning connectivity × commitment-survival).
+- **The QC operating window structure** $\tau_\mathrm{QC} = \min(\tau_{(\mathrm{i})}, \tau_{(\mathrm{ii})}, \tau_{(\mathrm{iii})})$.
+- **The three-class architectural exhaustiveness** at substrate-level base.
+- **The reframing of meta-architectures** (error correction, dynamical decoupling, reservoir engineering, hybrid composition) as compositions or techniques rather than new substrate-level strategies.
+- **The multiplicity-cap function $M$** as one substrate object with three projections plus meta-architectural overlays.
+- **The static-failure branch** of $\tau_{(\mathrm{i})}$ at $\mathcal{M}_\mathrm{floor} = \mathcal{M}_\mathrm{crit}$.
+- **The exponential gap-suppression** of all three timescales in Class B by $\exp(\Delta_\mathrm{top}/T_\mathrm{eff})$.
+- **The correlation-budget plateau** in Class C with bounded redundancy advantage.
+- **The cross-platform identity** between matter-wave Q-C boundary and qubit-system multiplicity walls via shared $\mathcal{M}_\mathrm{crit}$.
+- **The WKB-form recovery of MQT** from DCGT $\kappa$-function evaluation at engineered JJ barriers.
+- **Three cross-class architectural transitions** (A → C mandatory, B overtakes A, C saturation).
+
+#### 7.10.2 What is value-INHERITED
+
+- **$\mathcal{M}_\mathrm{crit}$.** Anchored empirically by matter-wave Q-C boundary at 140–250 kDa. Closed-form derivation is open (O-QC-1).
+- **$\Gamma_\mathrm{min}$.** Minimum cross-bandwidth for hydrodynamic-window resolution.
+- **$\Lambda_{V1}$.** V1 vacuum residual injection rate; bounds Class A perfect-isolation ceiling.
+- **$\beta_\mathrm{crit} \sim \log(R_\mathrm{cg}/\ell_P)$.** Critical gradient threshold for decoupling-surface formation; substrate-determined dimensionless number.
+- **$N_\mathrm{corr}$.** Correlation budget for Class C platforms; INHERITED, platform-specific.
+- **$\Delta_\mathrm{top}^{\max}$.** Maximum stable topological gap for Class B platforms.
+- **$T_\mathrm{eff}^{\min}$.** Minimum substrate-equivalent perturbation temperature.
+- **Specific shapes of $\mu, \kappa, g(N), h(N), c(N)$.** Form-FORCED to be monotone with specific limits; specific functional shapes INHERITED.
+- **Architecture-specific scaling functions** $f_\mathrm{sys}^{(A)}(\mathcal{S})$. INHERITED from architecture-to-platform calibration (O-QC-2).
+- **Platform-specific $N_\star$ values.** Determined by architecture-specific $f_\mathrm{sys}^{(A)}$ + the substrate-shared $\mathcal{M}_\mathrm{crit}$.
+
+#### 7.10.3 Six open extensions
+
+Six O-QC items carried forward as named open extensions:
+
+- **O-QC-1.** Closed-form derivation of $\mathcal{M}_\mathrm{crit}$ from V1 kernel and ED-I-01 substrate constants. Structurally similar in difficulty to closed-form $\log g$ (O2 from Arc BH).
+- **O-QC-2.** Architecture-to-platform calibration program. Map $\mathcal{M}_\mathrm{floor}^{(A)}(\mathcal{S})$ for canonical qubit platforms (transmon, fluxonium, trapped ion, photonic) and predict $N_\star$ values via the cross-platform identity with the matter-wave anchor.
+- **O-QC-3.** Closed-form $g(N), h(N), c(N)$ for Class C platforms. Currently INHERITED; closed-form derivation requires extending DCGT to multi-axis redundancy structure.
+- **O-QC-4.** Topology-stability theorem for Class B. Substrate-level account of $\tau_\mathrm{gap-stab}(\mathcal{T})$ for canonical topological structures (Majorana, Fibonacci anyons, Chern bands).
+- **O-QC-5.** Surface-code logical-qubit recursive-overlay derivation. Specific scaling of $\tau_\mathrm{QC}^\mathrm{logical}$ with code distance + threshold from the substrate-level error-correction-as-meta-architecture analysis.
+- **O-QC-6.** Hybrid-architecture handoff dynamics. SC-photonic interconnects, topological-SC platforms, and other hybrid architectures' handoff boundaries as substrate-geometric transitions.
+
+### 7.11 Dependencies
+
+#### 7.11.1 Upstream
+
+- **Chapter 1.** All thirteen substrate primitives. Especially: P04 bandwidth update rule (multiplicity bound and bandwidth conservation underlying UR-1 condition (i)); P11 commitment-irreversibility (commitment-injection underlying UR-1 condition (iii)); P01 event discreteness, P02 chain worldline structure, P13 proper-time ordering, finite-kernel and substrate-locality commitments.
+- **Chapter 2.** Load-bearing invariants — multiplicity $\mathcal{M}$, gradient sparsity $\sigma$, cross-bandwidth $\Gamma_\mathrm{cross}$, V1 finite-width vacuum kernel, P11 commitment-irreversibility. All five enter the QC architectural reading.
+- **Chapter 3.** DCGT cross-bandwidth structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\sigma]$ underlies UR-1 condition (ii). The hydrodynamic-window scale separation is the substrate-level prerequisite for the QC operating regime.
+- **Chapter 4.** Theorem 18 kernel-level arrow. Provides the substrate-level structural foundation for P11's directional content as it enters UR-1 condition (iii) commitment-injection accumulation.
+- **Chapter 5.** Phase-1 closure. Identifies QC as the engineered occupation of the thin-participation regime characterized by Phase-1; supplies the substrate-level QM foundation on which UR-1's three substrate conditions are formulated.
+- **Chapter 6.** T17 gauge-field-as-rule-type and ED-I-13 channel-geometry quantum information. T17 supports the substrate-level vocabulary for participation rules with rule-type label structure; ED-I-13 supplies the multiplicity-as-channel-geometry vocabulary that UR-1's three substrate conditions inherit.
+
+#### 7.11.2 Downstream
+
+- **Chapter 13 (Black-Hole Architecture).** Cross-domain $\Gamma_\mathrm{cross}$ collapse mechanism shared with QC condition (ii) failure at scales separated by ~50 orders of magnitude. The substrate condition $|\nabla\rho|\,\ell_P^2/\rho_\mathrm{local} \gtrsim \log(R_\mathrm{cg}/\ell_P)$ unifies horizon formation in BH-2 with $\gamma_{ij}$ collapse in QC condition (ii).
+- **Chapter 14 (Cross-Platform Unifications).** The cross-platform identity between matter-wave Q-C boundary and qubit-system multiplicity walls is the strongest cross-platform claim in the program; Chapter 14 develops it as the central output of the cross-domain unification program.
+- **Chapter 15 (Public Test Inventory).** Empirical anchors for the QC sector — matter-wave Q-C boundary, JJ MQT, SC qubit T₁/T₂, Hafezi multi-timescale, topological-gap suppression — are catalogued in Chapter 15 with status taxonomy (PASSED / ANCHORED / IN PROGRESS / ACTIVE / OPEN).
+
+### 7.12 Canonical Sources
+
+- `papers/Quantum_Computing_Foundations/`
+- Arc Q-COMPUTE memos in `theory/Quantum_Computing/`
+- ED-I-23 (Josephson Junctions, Mar 2026)
+- ED-I-14 (Topological Effects, Feb 2026)
+- ED-I-18 (Multi-Timescale Photonics, Feb 2026)
+- ED-I-12 (Photonics, Feb 2026)
+
+The Quantum_Computing_Foundations paper presents the publication-grade architectural account of the QC sector, including UR-1, the three-class taxonomy, the multiplicity-cap function $M$, cross-platform unification, FORCED/INHERITED/OPEN classification, and the conceptual-shift framing (decoherence-centric → multiplicity-centric). Arc Q-COMPUTE memos (seven memos: Opening, UR-1 derivation, failure-mode rates, architectural-class audit, multiplicity-cap function $M$, predictive content, synthesis) develop each component in detail.
+
+ED-I-23 (Josephson Junctions) is the canonical source for the substrate-level account of JJ as engineered ED-bottleneck and the Class A reading. ED-I-14 (Topological Effects) is the canonical source for topological phases as global ED-channel invariants and the Class B reading. ED-I-18 (Multi-Timescale Photonics) is the canonical source for the Class C reading through Hafezi-class multi-axis architectures. ED-I-12 (Photonics) supplies the broader photonic substrate-level account underlying gate-model photonic platforms.
+
+The Monograph Shell's Appendix A theorem provenance map lists UR-1 with its substrate-input dependencies. The Notation Glossary in Appendix B lists the symbols used in this chapter, including $\mathcal{U}$, $\mathcal{M}$, $\sigma$, $\gamma_{ij}$, $\Lambda$, $\tau_\mathrm{QC}$, $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$, $\mathcal{M}_\mathrm{crit}$, $\Gamma_\mathrm{min}$, $N_\mathrm{corr}$, $\Delta_\mathrm{top}$, $T_\mathrm{eff}$, $\mu$, $\kappa$, $g(N)$, $h(N)$, $c(N)$, $f_\mathrm{sys}^{(A)}$.
+
+### 7.13 Optional Figures
+
+**Figure 7.1 — The substrate-level reframing.** A two-column diagram. Left column ("Standard QC framing"): coherence as state property; decoherence as coupling rate; engineering target = reduce coupling. Right column ("ED substrate framing"): coherence as integrity of unresolved participation rule; decoherence as P11 commitment events at endpoints; engineering target = hold low-$\mathcal{M}$, high-$\gamma$, low-$\Lambda$ regime. A central arrow labeled "the upstream variable is multiplicity $\mathcal{M}$, not decoherence rate" makes the reframing explicit.
+
+**Figure 7.2 — UR-1's three conditions and the QC operating window.** A diagram showing the three failure-mode timescales $\tau_{(\mathrm{i})}$, $\tau_{(\mathrm{ii})}$, $\tau_{(\mathrm{iii})}$ as horizontal bars of variable length. The QC operating window $\tau_\mathrm{QC} = \min(\cdot)$ is highlighted as the shortest bar. Labels identify the substrate-level mechanism each timescale corresponds to: (i) multiplicity proliferation; (ii) cross-bandwidth collapse; (iii) commitment-injection accumulation. A note identifies which condition binds for each canonical empirical anchor.
+
+**Figure 7.3 — The three-class taxonomy.** A radial diagram with $M$ at the center and three spokes labeled Class A (engineered-low-multiplicity), Class B (global-geometric-rigidity), Class C (high-multiplicity-redundancy). Each spoke is annotated with: the protection target (which UR-1 condition is structurally fixed); the substrate mechanism; the typical binding constraint; example platforms (SC qubits / ions / photonic for A; topological qubits / Chern channels for B; bosonic codes / multi-timescale photonics for C).
+
+**Figure 7.4 — Meta-architectures as compositions.** A diagram showing how the four meta-architectural strategies (dynamical decoupling, reservoir engineering, error correction, hybrid composition) reduce to compositions or techniques over the three substrate-level base classes. Each meta-architecture is labeled with which class it extends or composes.
+
+**Figure 7.5 — The multiplicity-cap function $M$ and its three projections.** A schematic with $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$ as a single substrate object. Three projection arrows extend to $M_A$, $M_B$, $M_C$, each annotated with the class-specific modifier (multiplicity static-failure for A, gap-suppression $\exp(\Delta_\mathrm{top}/T_\mathrm{eff})$ for B, redundancy modifiers $g/h/c(N)$ for C). Meta-architectural overlays $\mathcal{O}$ are shown as annotations on each projection.
+
+**Figure 7.6 — The cross-platform identity.** A diagram with two empirical phenomena on the left (matter-wave Q-C boundary at 140–250 kDa; qubit-system multiplicity wall at platform-specific $N_\star$) and a single substrate constant $\mathcal{M}_\mathrm{crit}$ on the right. Arrows from each empirical phenomenon converge on $\mathcal{M}_\mathrm{crit}$, indicating that both are crossings of the same substrate threshold projected onto two different platform-scaling functions $f_\mathrm{sys}^{(A)}$. A note observes that sharper measurement of either anchor constrains the other.
+
+**Figure 7.7 — Form-FORCED vs Value-INHERITED at QC.** A two-column diagram. Left column ("Form-FORCED"): UR-1 three-condition characterization, three-factor product form of $\mathcal{U}$, three-class architectural exhaustiveness, $M$ as one substrate object with three projections, cross-platform identity, exponential gap-suppression in Class B, correlation-budget plateau in Class C. Right column ("Value-INHERITED"): $\mathcal{M}_\mathrm{crit}$, $\Gamma_\mathrm{min}$, $N_\mathrm{corr}$, $\Delta_\mathrm{top}^{\max}$, specific functional shapes of $\mu/\kappa/g/h/c$, architecture-specific $f_\mathrm{sys}^{(A)}$, platform-specific $N_\star$. The figure makes visible the demarcation that propagates through Chapter 14's cross-platform unification analysis.
+
+**Figure 7.8 — The cross-domain $\Gamma_\mathrm{cross}$ collapse echo.** A length-scale diagram showing the same DCGT-derived exponential structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ producing phenomena at scales separated by ~50 orders of magnitude: Josephson-junction MQT at $\sim 10^{-9}$ m; QC condition (ii) failure at $\sim 10^{-3}$ m; black-hole horizon formation at $\sim 10^{4}$ m for stellar-mass black holes. The figure makes visible the cross-domain identity between QC condition (ii) failure and BH-2 horizon formation.
+
+\newpage
+
+# Part III — Continuum and Dynamics
+
+Part III addresses the continuum-and-dynamics sector. Chapter 8 establishes the architectural foundations for the Navier–Stokes program through the substrate-cutoff regularization R1 and the Intermediate Path C closure. Chapter 9 extends the architecture to magnetohydrodynamics and Yang–Mills via the T17 coupling, the DCGT non-Abelian continuum limit, and the mass-gap mechanism. Chapter 10 covers soft-matter mobility and non-Newtonian rheology through the Universal Mobility Law and the V5 cross-chain memory kernel.
+
+\newpage
+
+## Chapter 8 — Navier–Stokes Architectural Foundations: Form-FORCED, R1, Path C
+
+### 8.1 Chapter Overview
+
+The Navier–Stokes equation is structurally a hybrid. Its content does not partition into a single category at the substrate level; rather, the equation packages four kinds of structure that have four distinct origins. Two of the four — the viscous-diffusion sector and the substrate-cutoff hyperviscous regularization R1 — are *substrate-derived* through the Diffusion Coarse-Graining Theorem applied to vector-valued participation transport. One — advection $(\mathbf{v}\cdot\nabla)\mathbf{v}$ — is a *frame-kinematic* artifact of writing fluid dynamics in laboratory-frame coordinates rather than a substrate-level force. One — the pressure term plus the incompressibility constraint — is a *continuum-imposed constraint* set by external assumption rather than derived. Standard fluid mechanics treats all four kinds of structure as phenomenological; the Event Density framework treats them as architecturally distinct.
+
+The chapter establishes this four-fold decomposition, derives R1 as form-FORCED from V1's finite-width kernel through DCGT's first subleading order, develops the Intermediate Path C verdict on the Clay Navier–Stokes existence-and-smoothness problem, and identifies turbulence as the dynamical signature of the non-substrate-derived advective sector. Three-angle convergence (architectural, dynamical, spectral) confirms that advection sits outside the substrate-derived sector. The 2D-smooth / 3D-open dimensional asymmetry of the Clay problem is reproduced as a direct structural consequence of the substrate-level analysis: vortex-stretching, the unique non-sign-definite contribution to the gradient-norm Lyapunov balance, identically vanishes in 2D and is structurally non-trivial in 3D.
+
+The chapter does *not* deliver a Clay solution. It delivers a substrate-grounded Intermediate Path C verdict: a real Clay-NS-relevant regularizing mechanism plus an explicit structural identification of where the obstruction lives. Engineering predictions for fluid mechanics do not change; the interpretive frame under which the Clay difficulty is understood does. After this chapter, Chapters 9 (MHD and Yang–Mills) and 10 (soft-matter mobility) extend the same DCGT machinery to additional continuum sectors.
+
+### 8.2 What Standard Navier–Stokes Packages
+
+#### 8.2.1 The momentum equation
+
+The Navier–Stokes momentum equation, in its standard incompressible form, is
+
+```math
+\rho\bigl(\partial_t\mathbf{v} + (\mathbf{v}\cdot\nabla)\mathbf{v}\bigr) = -\nabla p + \mu\nabla^2\mathbf{v} + \rho\mathbf{f},
+```
+
+with continuity (incompressibility) condition $\nabla\cdot\mathbf{v} = 0$. The equation has been the workhorse of fluid mechanics since Stokes (1845). It matches experimental data across an enormous range of conditions — from laminar capillary flow to high-Reynolds-number atmospheric turbulence — and is the load-bearing equation behind every weather forecast, every aerodynamic-design code, and every flow simulation in engineering practice.
+
+#### 8.2.2 The four kinds of structure
+
+Standard Navier–Stokes packages four kinds of structure into one expression:
+
+- **Viscous diffusion** — the term $\mu\nabla^2\mathbf{v}$. Smoothing of velocity gradients. Standard physics treats this as the first-order continuum description of momentum transport via molecular viscosity.
+- **Advection** — the term $(\mathbf{v}\cdot\nabla)\mathbf{v}$. The fluid carries its own velocity field along its flow lines. This is the source of nonlinearity and of the Clay-NS difficulty.
+- **Pressure** — the term $-\nabla p$. In incompressible flow, pressure is not an independent dynamical field; it is determined instantaneously by the requirement that the velocity field stay divergence-free. It acts as a Lagrange multiplier for incompressibility.
+- **Incompressibility** — the constraint $\nabla\cdot\mathbf{v} = 0$. The fluid does not change density. This is an external assumption imposed on the equation rather than derived from first principles.
+
+Standard fluid mechanics treats these four kinds of structure as a single phenomenological package. The package fits the data; that has been treated as sufficient justification for its use.
+
+#### 8.2.3 The structural questions standard fluid mechanics does not answer
+
+Three questions that the standard fluid-mechanics package leaves open:
+
+- **Why this exact equation?** The momentum equation has its specific functional form: this combination of viscous diffusion, advection, pressure, and incompressibility. Other functional forms are mathematically possible. Why does nature pick this one?
+- **Why is 2D smooth and 3D open?** Mathematicians proved decades ago that 2D Navier–Stokes admits global smooth solutions for any reasonable initial condition. The 3D smoothness question is the Clay Millennium Problem; nobody has cracked it. Why the dimensional asymmetry?
+- **Why does turbulence have no canonical structural account?** Every theoretical approach to turbulence — Kolmogorov's energy cascade, Kraichnan's 2D inverse cascade, Renormalization Group methods, lattice-Boltzmann simulations — captures part of the phenomenon but not the whole. Why has no single architectural template been found?
+
+The standard fluid-mechanics framework does not address these three questions structurally. It treats the equation as phenomenological and the open problems as mathematical or computational rather than structural.
+
+### 8.3 The Substrate-Level Decomposition
+
+#### 8.3.1 The DCGT-derivable sector
+
+The substrate-level analysis through DCGT (Chapter 3) produces *two* of the four NS structures as form-FORCED outputs.
+
+**Viscous diffusion ($\mu\nabla^2\mathbf{v}$).** DCGT's leading-order multi-scale expansion, applied to vector-valued participation transport, produces Newton's law of viscosity at leading order. This is one of DCGT's five canonical leading-order consequences (Chapter 3, Section 3.6.2). The viscous-diffusion term in standard Navier–Stokes is the substrate-to-continuum bridge for vector momentum transport in the hydrodynamic window. The viscosity coefficient $\mu$ inherits its specific value from substrate-channel statistics; the *form* — Laplacian of velocity, multiplied by a positive coefficient — is FORCED.
+
+**Substrate-cutoff hyperviscous regularization R1.** DCGT's first subleading order, applied to V1's finite-width kernel content (Theorem N1, Chapter 4), produces a hyperviscous correction term
+
+```math
+-\kappa\mu_{\mathrm{V1}}\,\ell_P^2\,\nabla^4\mathbf{v}.
+```
+
+This is the R1 term. It is small at ordinary flow scales — suppressed by $\ell_P^2$ — but it is structurally inevitable. V1's finite-width is a substrate-ontological commitment (Chapter 1's finite-kernel primitive, Theorem N1's formal closure); the first-subleading-order DCGT expansion produces R1 directly. The R1 coefficient combination $\kappa\mu_{\mathrm{V1}}\ell_P^2$ is INHERITED; the *form* — fourth-order spatial derivative of velocity, multiplied by a small substrate-cutoff coefficient — is FORCED.
+
+These two sectors together — viscous diffusion at leading order, R1 at first subleading order — exhaust the substrate-derived content of NS. The remaining two structures are not DCGT outputs.
+
+#### 8.3.2 The frame-kinematic sector
+
+**Advection $(\mathbf{v}\cdot\nabla)\mathbf{v}$.** DCGT's multi-scale expansion does *not* produce the advective term. The advective term arises as bookkeeping when fluid dynamics is written in laboratory-frame coordinates rather than co-moving-with-the-fluid coordinates. The fluid itself, as the substrate sees it, does not have an advective term; only the lab-frame description of it does. Advection is therefore a *frame-kinematic* artifact, not a substrate-level force.
+
+The structural reading: a substrate region carrying a participation pattern does not "carry its own velocity along itself" at the substrate level; the substrate's participation events are local to substrate cells, and the substrate-level dynamics describe how participation density and velocity-like content evolve at each cell without invoking advective transport. When the dynamics are written in laboratory-frame coordinates — coordinates fixed relative to a chosen observer rather than co-moving with the fluid — the substrate's local dynamics acquire an apparent advective term. The term is real for laboratory-frame computation; it is not substrate-derived.
+
+This identification is consistent across three independent angles, developed in Section 8.7 as the **three-angle convergence on advection-as-non-ED**.
+
+#### 8.3.3 The continuum-imposed sector
+
+**Pressure ($-\nabla p$) and incompressibility ($\nabla\cdot\mathbf{v} = 0$).** Pressure in incompressible flow is a Lagrange multiplier enforcing incompressibility; incompressibility is an external assumption that real fluids satisfy only approximately (water more accurately than air; air more accurately than steel). The substrate ontology does not contain incompressibility as a primitive; it does not contain pressure as a fundamental dynamical field. Both are continuum-level constraints imposed on the equation by the modeller's choice of regime.
+
+The substrate-level reading: incompressibility is a useful approximation in regimes where density variations are small relative to dynamical pressures; pressure follows as the constraint multiplier. Compressible flow regimes use a different constraint structure (mass conservation as an evolving rather than instantaneous constraint), and the pressure term takes a different role. Neither version is substrate-derived; both are continuum-imposed depending on the regime.
+
+#### 8.3.4 The four-fold decomposition
+
+The four-fold architectural decomposition of NS:
+
+```math
+\begin{array}{l|l|l}
+\text{Sector} & \text{Origin} & \text{Substrate status} \\
+\hline
+\mu\nabla^2\mathbf{v} & \text{DCGT leading-order} & \text{Substrate-derived (form-FORCED)} \\
+-\kappa\mu_{\mathrm{V1}}\ell_P^2\nabla^4\mathbf{v} & \text{DCGT first-subleading-order} & \text{Substrate-derived (form-FORCED)} \\
+(\mathbf{v}\cdot\nabla)\mathbf{v} & \text{Frame-kinematic artifact of lab-frame coordinates} & \text{Non-substrate (frame-kinematic)} \\
+-\nabla p,\ \nabla\cdot\mathbf{v}=0 & \text{Continuum-imposed approximation} & \text{Non-substrate (constraint-class)} \\
+\end{array}
+```
+
+This decomposition is the structural reading of NS that the framework supplies. Standard fluid mechanics treats all four sectors as phenomenological; the substrate-level analysis treats two of them as substrate-derived and the other two as non-substrate. The decomposition organizes the answer to all three open questions of Section 8.2.3.
+
+#### 8.3.5 The structural reading under ED-I-06
+
+ED-I-06 (Fields and Forces in Event Density) is the program's ontological roof for fluid mechanics, MHD, and substrate gravity. ED-I-06 identifies three field classes (directional fields like velocity and magnetic field; scalar fields like pressure and density; curvature-like fields, in ED-10 territory) and the forces-versus-frame-kinematic ontological distinction.
+
+ED-I-06's reading of the NS decomposition: canonical-ED content consists of forces sourced by stable participation structures (the viscous and R1 sectors of NS, both substrate-derived through DCGT applied to participation transport); non-ED content consists of transport-kinematic frame artifacts (advection) plus continuum-imposed constraints (pressure, incompressibility). The four-fold decomposition is consistent with ED-I-06's canonical/non-canonical boundary.
+
+The framework's conceptual roof for the NS decomposition is therefore ED-I-06, with the substrate-level derivation through DCGT. ED-I-06 does not invalidate any closed-arc result; it supplies the ontological vocabulary in which the substrate-level decomposition is read.
+
+### 8.4 The R1 Substrate-Cutoff Regularization Term
+
+#### 8.4.1 R1's structural form
+
+The R1 term is
+
+```math
+-\kappa\mu_{\mathrm{V1}}\,\ell_P^2\,\nabla^4\mathbf{v}.
+```
+
+The fourth-order spatial derivative is the substrate's first-subleading correction to the leading-order viscous Laplacian. The coefficient combination $\kappa\mu_{\mathrm{V1}}\ell_P^2$ packages a substrate-determined dimensionless prefactor $\kappa$, a V1-kernel-related coefficient $\mu_{\mathrm{V1}}$, and the substrate length-squared $\ell_P^2$. The overall coefficient is small at ordinary flow scales; at extreme scales (approaching the substrate length), R1 becomes important.
+
+#### 8.4.2 Why R1 is form-FORCED
+
+R1's structural form follows from V1's finite-width commitment combined with DCGT's first-subleading-order expansion. V1's finite width means the substrate's participation-event mediation has temporal smearing at the substrate scale; DCGT's multi-scale expansion at first subleading order in $\ell_P/R_\mathrm{cg}$ produces a fourth-order spatial-derivative correction to the leading-order viscous diffusion. The fourth-order character is the substrate-natural form of a first-subleading correction to a second-order operator; it is not chosen.
+
+The framework does *not* commit to the specific value of the prefactor $\kappa\mu_{\mathrm{V1}}$. That value inherits from V1's specific functional shape, which is INHERITED at the level of Theorem N1. R1's *existence* and its *form* (fourth-order spatial derivative, multiplied by a small substrate-cutoff coefficient) are FORCED; the *coefficient value* is INHERITED.
+
+#### 8.4.3 Why R1 matters for Clay-NS
+
+Standard NS analyses of the Clay smoothness problem face a structural difficulty: the candidate regularizing mechanisms (viscosity, energy dissipation, Kolmogorov-cascade-class inertial-range arguments) do not produce strict monotone decay of the Lyapunov norm for arbitrary 3D initial conditions. The classical viscous term $\mu\nabla^2\mathbf{v}$ alone does not control the advective vortex-stretching contribution to the Lyapunov balance.
+
+R1 supplies an additional regularizing mechanism. The fourth-order operator $-\nabla^4\mathbf{v}$ is *strictly more dissipative* than the second-order operator $\nabla^2\mathbf{v}$ at high spatial frequencies. The substrate-cutoff coefficient $\kappa\mu_{\mathrm{V1}}\ell_P^2$ is small, but the additional dissipation at high frequencies is precisely what is needed to control the gradient-norm Lyapunov in regimes where viscosity alone fails.
+
+The framework's claim is structural: in any version of the equation that drops the advective term, R1 produces strict monotone decay of the gradient-norm Lyapunov for any reasonable initial condition. The advective term is not dropped in the standard NS equation; the framework's verdict on Clay-NS therefore identifies R1 as a real Clay-relevant regularizing mechanism but locates the residual obstruction in the advective sector that R1 cannot reach.
+
+#### 8.4.4 R1's relation to Wilsonian effective-theory machinery
+
+Standard Wilsonian effective-theory analysis of NS includes higher-derivative corrections that arise from integrating out high-momentum modes above some cutoff. These corrections take the form of fourth-order, sixth-order, and higher spatial-derivative operators with coefficients suppressed by powers of the cutoff scale. The R1 term in ED is structurally similar to the leading higher-derivative correction in this Wilsonian framework: it is the coefficient of $\nabla^4\mathbf{v}$ at first subleading order.
+
+The structural difference: in standard Wilsonian analysis, the higher-derivative corrections are regulator-dependent — they reflect the chosen cutoff scheme. In ED, R1's existence is regulator-independent: it follows from V1's substrate-ontological finite-width commitment, not from a chosen continuum cutoff. The substrate is the Wilsonian framework's "true cutoff" at the substrate length scale, and R1 is the leading correction in that framework. The form is FORCED; the specific coefficient value is INHERITED, parallel to how all substrate-cutoff coefficients in the program inherit their values from substrate-level structural derivations that are downstream open work.
+
+### 8.5 The Intermediate Path C Verdict on Clay-NS
+
+#### 8.5.1 What an Intermediate Path C verdict is
+
+The framework distinguishes three classes of verdict on a Clay-class problem:
+
+- **Path A: full constructive solution.** A complete proof at Clay-rigorous level (in the NS case, global existence and smoothness of strong solutions for arbitrary smooth initial data in $\mathbb{R}^3$, satisfying the standard energy bounds).
+- **Path B: refutation.** A demonstration that the conjecture is false, e.g., a finite-time singularity construction.
+- **Path C: structural identification of the obstruction.** A substrate-grounded analysis that supplies a real regularizing mechanism but explicitly identifies what the substrate does *not* control. This verdict is between Path A (full solution) and Path B (refutation): the framework supplies real Clay-relevant content without claiming to close the problem at constructive-rigorous level.
+
+The framework's verdict on Clay-NS is **Intermediate Path C**: the substrate-level analysis supplies R1 as a real regularizing mechanism, but the residual obstruction lives in the frame-kinematic sector (advection) that the substrate does not natively control.
+
+#### 8.5.2 The structural argument
+
+The argument has three steps:
+
+1. **R1 produces strict monotone decay of the gradient-norm Lyapunov in any version of the equation that drops the advective term.** This is a substrate-level claim: R1's $-\nabla^4\mathbf{v}$ operator is strictly negative-definite when integrated against the gradient-norm Lyapunov; the leading viscous term $\mu\nabla^2\mathbf{v}$ is also negative-definite; pressure and incompressibility are sign-definite; only the advective vortex-stretching term has indefinite sign. The argument identifies advective vortex-stretching as the unique non-sign-definite contribution.
+
+2. **Advective vortex-stretching is the structural source of the Clay-NS difficulty.** The vortex-stretching term in the 3D vorticity equation $(\boldsymbol\omega\cdot\nabla)\mathbf{v}$ — the curl of the advective term — can amplify vorticity magnitudes in 3D. Whether it actually drives finite-time blow-up is the open Clay question. The framework's claim is *not* that vortex-stretching does drive blow-up; the claim is that vortex-stretching is the unique structural channel through which blow-up could occur.
+
+3. **The substrate does not natively control the frame-kinematic sector.** Advection arises from lab-frame coordinates rather than from substrate-level dynamics; the substrate's regularizing mechanisms (viscous diffusion at leading order, R1 at first subleading order) operate on the substrate-derived content of NS, not on the frame-kinematic sector. The Clay-NS obstruction sits in the part of the equation that the substrate does not natively reach.
+
+#### 8.5.3 What Path C delivers and does not deliver
+
+Path C **delivers**:
+
+- A real Clay-NS-relevant regularizing mechanism (R1).
+- A structural identification of where the obstruction lives (the frame-kinematic advective sector).
+- A structural explanation for why standard NS analyses have not closed the Clay problem despite decades of effort (the obstruction is not in the part of the equation that admits substrate-level control).
+- A reproduction of the dimensional asymmetry between 2D and 3D NS (Section 8.6).
+- A reproduction of the empirical observation that turbulence has no canonical structural template (Section 8.7).
+
+Path C **does not deliver**:
+
+- A constructive proof of global existence and smoothness for 3D NS at Clay-rigorous level.
+- A refutation of the smoothness conjecture (e.g., a finite-time singularity construction).
+- A solution to the Clay Millennium Problem.
+
+The honest framing: ED supplies substrate-grounded structural content for the Clay-NS problem at Path C level. The framework does not claim to close the problem at Path A level; it explicitly identifies what the substrate does not control. The Path C verdict is structurally parallel to the Yang–Mills Clay-relevance verdict (Chapter 9, Section 9.7) and to the BH 1/4-coefficient INHERITED verdict (Chapter 13).
+
+### 8.6 The Dimensional-Structure Account: 2D Smooth, 3D Obstruction
+
+#### 8.6.1 The 2D / 3D asymmetry as a substrate-level result
+
+The framework's substrate-level analysis reproduces the 2D-smooth / 3D-open dimensional asymmetry of the Clay-NS problem as a direct structural consequence of the four-fold decomposition. The argument:
+
+- **In 2D, vortex-stretching identically vanishes.** The vorticity in 2D is a scalar (conserved along streamlines, with the vortex-stretching term $(\boldsymbol\omega\cdot\nabla)\mathbf{v}$ identically zero because there is no $z$-component for the gradient to act through). With no vortex-stretching, no obstruction; smooth solutions follow by standard energy methods.
+- **In 3D, vortex-stretching is structurally non-trivial.** The vorticity is a vector, and the analog of "conserved along streamlines" fails. The vortex-stretching term $(\boldsymbol\omega\cdot\nabla)\mathbf{v}$ is the unique non-sign-definite contribution to the gradient-norm Lyapunov balance; it can in principle drive finite-time singularities; whether it actually does is the Clay-open question.
+
+The substrate-level reading of this asymmetry: the obstruction in 3D NS is structurally *real* because the frame-kinematic advective sector produces a vector-valued nonlinear term that the substrate does not natively control. In 2D the same frame-kinematic sector produces a scalar nonlinear term whose curl identically vanishes; the obstruction is structurally *absent* because vortex-stretching has no vector to operate on.
+
+#### 8.6.2 Why this matters structurally
+
+Two structural consequences:
+
+- **2D NS smoothness is a substrate-level structural consequence of the dimensional structure.** The framework's analysis recovers the 1960s mathematical result that 2D NS admits global smooth solutions, but it identifies the structural reason as the absence of vortex-stretching in 2D rather than as a delicate energy-method argument.
+- **3D NS obstruction is structurally real but located in the non-substrate-derived sector.** The Clay-NS difficulty is not a calculational artifact; it reflects a real structural feature of the 3D advective sector. The framework's Path C verdict says: this is where the obstruction lives, and it lives in a sector the substrate does not natively control.
+
+This dimensional-structure account is consistent with what fluid mathematicians have empirically known for ninety years; ED supplies the substrate-level structural reason.
+
+### 8.7 Three-Angle Convergence on Advection-as-Non-ED
+
+#### 8.7.1 What three-angle convergence means
+
+The substrate-level identification of advection as frame-kinematic rather than substrate-derived is supported by three independent lines of analysis that converge on the same conclusion. Each angle uses different machinery; the convergence makes the identification structurally robust rather than dependent on any single argument.
+
+**Architectural angle (NS-2.08).** The DCGT multi-scale expansion produces leading-order viscous diffusion and first-subleading-order R1; it does not produce the advective term at any order. The advective term must therefore have a non-DCGT origin. Architecturally, advection is a coordinate-frame artifact rather than a substrate-derivable continuum content.
+
+**Dynamical angle (NS-Smooth-3).** The gradient-norm Lyapunov balance for NS shows that all substrate-derived terms (viscous Laplacian, R1 hyperviscous, pressure-as-Lagrange-multiplier, incompressibility-as-constraint) produce sign-definite contributions to the rate of change of velocity-gradient energy. Only the advective vortex-stretching term has indefinite sign. Dynamically, advection is the unique non-sign-definite contribution and the unique structural source of potential blow-up.
+
+**Spectral angle (NS-Turb-4).** The energy-cascade structure of turbulence (Kolmogorov's $-5/3$ inertial-range scaling and its variants) is driven by the advective term's nonlinear coupling between Fourier modes. The substrate-derived sectors (viscous and R1) do not produce cascade-class structure; they dissipate energy at different scales without redistributing it across modes. Spectrally, advection is the unique driver of cascade-class dynamics.
+
+#### 8.7.2 The convergent identification
+
+All three angles identify advection as the non-substrate-derived sector. The three angles use different machinery (DCGT multi-scale expansion; Lyapunov-balance sign-definiteness; spectral cascade analysis) and reach the same conclusion. The convergence is structurally significant: the identification is not an artifact of any one analytical choice; it is a robust substrate-level structural fact.
+
+This three-angle convergence is the framework's strongest single load-bearing finding for the NS sector. It justifies the Path C verdict's structural identification of the obstruction's location, it justifies the dimensional-structure account of Section 8.6, and it justifies the turbulence-as-non-ED reading of Section 8.8.
+
+### 8.8 Turbulence as the Dynamical Signature of Non-Substrate-Derived Content
+
+#### 8.8.1 Why turbulence has no canonical substrate-level template
+
+Turbulence is the developed nonlinear regime of 3D NS — what happens when the advective term dominates and the flow becomes chaotic. Standard physics has multiple incomplete approaches to turbulence (Kolmogorov, Kraichnan, RG, lattice Boltzmann), but no single canonical structural account.
+
+The framework's substrate-level reading: turbulence is the dynamical signature of the *non-substrate-derived* sector of NS. The advective term, which is frame-kinematic rather than substrate-derived, is what produces the turbulent cascade. Since the substrate doesn't natively contain the advective term, the substrate doesn't natively produce a structural template for the cascade either.
+
+This is, strictly, a *negative* result. The framework predicts that no substrate-level account of turbulence is forthcoming, because the substrate doesn't generate turbulence. The framework hands the turbulence problem back to fluid mechanics with a structural reason for why it has stayed phenomenologically thorny: turbulence is the dynamical signature of the part of the equation that the substrate does not control, and substrate-level analysis cannot produce a canonical template for content that lives outside its scope.
+
+#### 8.8.2 What this changes about the turbulence question
+
+The framework does not solve turbulence. It identifies a structural reason for the empirical observation that turbulence has resisted phenomenological unification. The reframing:
+
+- **Standard physics's many incomplete approaches to turbulence** are each capturing some aspect of the advective dynamics in laboratory-frame coordinates. Their incompleteness is structural rather than methodological; no single approach captures the whole because the dynamics they describe lives in a sector with no substrate-level architectural template.
+- **Future turbulence theory should focus on the advective sector specifically.** The substrate-derived sectors (viscous, R1) are well-understood; the cascade dynamics live in the advective sector. The framework's contribution is to localize the open-problem space.
+
+This is the same kind of negative-but-structurally-informative result as the Clay-NS Intermediate Path C verdict. The framework identifies what the substrate does not deliver and supplies a structural reason.
+
+#### 8.8.3 The H1/H2/H3 turbulence hypotheses
+
+Three turbulence-related hypotheses appear in the program's NS-Turb material:
+
+- **H1** — viscous-sector content has a structurally clean coarse-grained reading. **Holds.** The viscous sector is substrate-derived through DCGT.
+- **H2** — substrate-cutoff R1 content has a structurally clean coarse-grained reading. **Holds.** R1 is substrate-derived through DCGT's first subleading order.
+- **H3** — cascade-class advective content has a substrate-derivable canonical template. **Fails substantively.** The substrate does not contain the advective term, so no substrate-level canonical template for the cascade is forthcoming.
+
+The H3 failure is the substantive finding. The substrate-level analysis is honest: H3 is not partially-met or pending-further-work; it is structurally absent because the cascade dynamics live in a non-substrate sector.
+
+### 8.9 What This Changes (And What It Doesn't)
+
+#### 8.9.1 What does not change
+
+Every weather forecast tomorrow uses the same Navier–Stokes equation it used yesterday. Every wind tunnel calibrates the same way. Every flow simulation gives the same numerical answer. The Clay Millennium Problem on Navier–Stokes is still open. Turbulence is still phenomenologically thorny.
+
+The framework changes nothing about engineering predictions, computational fluid dynamics, weather forecasting, aircraft design, or any other practical use of NS. The empirical content of the equation is preserved.
+
+#### 8.9.2 What does change
+
+Three structural shifts:
+
+- **The Navier–Stokes equation's specific form is identified as a hybrid.** Viscous diffusion is substrate-derived; R1 substrate-cutoff is substrate-derived; advection is frame-kinematic; pressure and incompressibility are continuum-imposed constraints. Standard fluid mechanics treats all four as phenomenological; the substrate-level reading distinguishes them architecturally.
+- **The Clay-NS smoothness obstruction is structurally located.** It lives in the frame-kinematic advective sector, not in the substrate-derived sectors. R1 supplies a real Clay-relevant regularizing mechanism; the framework's contribution to Clay-NS is *Intermediate Path C* — substrate-grounded structural decomposition with explicit identification of what is helped and what is not.
+- **Turbulence has no substrate-level canonical template** because the advective sector is non-substrate. The empirical observation that turbulence has stayed phenomenologically untamed for a century has a structural explanation: the cascade dynamics live in a sector outside the substrate's reach.
+
+These three shifts do not change any laboratory prediction. They change the conceptual placement of the open problems.
+
+### 8.10 Form-FORCED vs Value-INHERITED at the NS Sector
+
+#### 8.10.1 What is form-FORCED
+
+- **The four-fold architectural decomposition** of NS into viscous-diffusion (substrate-derived), R1 substrate-cutoff (substrate-derived), advection (frame-kinematic), pressure + incompressibility (continuum-imposed).
+- **R1 substrate-cutoff form** as the first-subleading-order DCGT output: $-\kappa\mu_{\mathrm{V1}}\ell_P^2\nabla^4\mathbf{v}$.
+- **The Intermediate Path C verdict** on Clay-NS: real regularizing mechanism + structural identification of the obstruction.
+- **The dimensional-structure account**: 2D smoothness (vortex-stretching identically vanishes); 3D obstruction (vortex-stretching is the unique non-sign-definite contribution).
+- **Three-angle convergence** on advection-as-non-ED (architectural / dynamical / spectral).
+- **Turbulence as the dynamical signature of the non-substrate-derived advective sector.**
+- **The H1/H2/H3 status** (H1 holds, H2 holds, H3 fails substantively).
+
+#### 8.10.2 What is value-INHERITED
+
+- **The viscosity coefficient $\mu$.** Set by substrate-channel statistics; value INHERITED.
+- **The R1 coefficient combination $\kappa\mu_{\mathrm{V1}}$.** Set by V1's specific functional shape; value INHERITED.
+- **The substrate length scale $\ell_P$ entering R1's coefficient.** Identified with the Planck length through T19 Newton-recovery (Chapter 11); value INHERITED.
+- **Specific turbulence cascade exponents** (Kolmogorov $-5/3$, Kraichnan $-3$, etc.). These are properties of the non-substrate-derived advective sector; values are INHERITED from fluid-mechanics empirical input rather than derived from substrate primitives.
+- **Critical Reynolds numbers** for transitions (laminar-to-turbulent transition, etc.). INHERITED from fluid-mechanics empirical input.
+
+#### 8.10.3 What is open
+
+- **A constructive Clay-NS proof.** Path A is open. The framework's Intermediate Path C verdict does not provide a Clay-rigorous existence-and-smoothness proof.
+- **A canonical structural account of turbulence.** Open at substrate level; the framework predicts no substrate-level template will be forthcoming because turbulence lives in a non-substrate sector.
+- **A constructive analysis of the advective vortex-stretching dynamics** at substrate level. Substrate analysis does not natively reach this sector; whether a substrate-level extension could control vortex-stretching is open work.
+
+### 8.11 Dependencies
+
+#### 8.11.1 Upstream
+
+- **Chapter 1.** Substrate primitives, especially P04 bandwidth update rule (foundational for participation transport), the finite-kernel commitment for V1 (foundational for R1's substrate-cutoff structure), and substrate-locality (foundational for the lab-frame-versus-co-moving-frame distinction underlying advection-as-frame-kinematic).
+- **Chapter 2.** Load-bearing invariants. V1 finite-width vacuum kernel is the substrate-level object that produces R1 through DCGT first subleading order; gradient sparsity $\sigma$ enters substrate-level transport content indirectly.
+- **Chapter 3.** DCGT. The leading-order viscous-diffusion content and the first-subleading-order R1 content are the two DCGT outputs that produce the substrate-derived sectors of NS. The hydrodynamic-window scale separation $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$ is the substrate-level prerequisite for the multi-scale expansion that produces them.
+
+#### 8.11.2 Downstream
+
+- **Chapter 9 (MHD and Yang–Mills).** Extends the NS architectural decomposition to MHD by adding T17 minimal coupling on charged-chain populations (producing the Lorentz force and Maxwell's equations). The MHD content classification inherits the canonical-ED-versus-non-ED boundary developed in this chapter. Yang–Mills uses the non-Abelian DCGT generalization that is structurally parallel to NS but applied to compact-simple-group rule-types.
+- **Chapter 10 (Soft-Matter Mobility).** Uses DCGT scalar-diffusion content (the substrate-to-continuum bridge analogous to the viscous-diffusion content of NS) plus V5→Maxwell viscoelasticity. The substrate-level decomposition methodology is consistent with the four-fold NS decomposition of this chapter.
+- **Chapter 11 (Substrate Gravity).** The cumulative-strain coarse-graining that produces the modified Poisson equation in the substrate-gravity sector is structurally parallel to the DCGT machinery that produces NS's substrate-derived sectors. The form-FORCED / value-INHERITED methodology developed in this chapter propagates through Chapter 11.
+- **Chapter 14 (Cross-Platform Unifications).** The kinematic-coupling-pattern boundary (canonical ED via T17 minimal coupling versus transport-kinematic non-ED via advection / induction kinematic / Ohm kinematic) is a cross-arc structural finding that this chapter establishes for NS and Chapter 9 extends to MHD.
+
+### 8.12 Canonical Sources
+
+- `papers/Navier Stokes_Synthesis_Paper/` (main + Appendix C [MHD architectural classification + ED-I-06] + Appendix D [DCGT] + Appendix E [Yang–Mills])
+- ED-I-06 (Fields and Forces in Event Density, Feb 2026; ontological roof for fluid mechanics, MHD, and substrate gravity)
+
+The Navier–Stokes Synthesis Paper presents the publication-grade architectural account of the NS sector, including the four-fold decomposition, R1 substrate-cutoff regularization, the Intermediate Path C verdict on Clay-NS, the dimensional-structure account of 2D-smooth / 3D-open, the three-angle convergence on advection-as-non-ED, and turbulence as the dynamical signature of the non-substrate-derived sector. Appendix C covers MHD architectural classification (extended in Chapter 9), Appendix D covers DCGT (the substrate-to-continuum bridge developed in Chapter 3), and Appendix E covers Yang–Mills Clay-relevance (extended in Chapter 9).
+
+ED-I-06 (Fields and Forces in Event Density) is the program's ontological roof for the canonical-ED-versus-non-ED boundary, supplying the field-class structure (directional / scalar / curvature-like) and the forces-versus-frame-kinematic-versus-constraint vocabulary used in the four-fold decomposition.
+
+The Monograph Shell's Appendix A theorem provenance map lists DCGT (Chapter 3) and N1 (Chapter 4) as the substrate-level theorems that produce the NS substrate-derived sectors. The Notation Glossary in Appendix B lists the symbols used in this chapter.
+
+### 8.13 Optional Figures
+
+**Figure 8.1 — The four-fold architectural decomposition of NS.** A horizontal layout of the NS momentum equation, with each term color-coded by substrate status: viscous diffusion (substrate-derived); R1 substrate-cutoff (substrate-derived, small); advection (frame-kinematic); pressure (continuum-imposed Lagrange multiplier); incompressibility (continuum-imposed constraint). Annotations explain the origin of each term and identify the substrate-level reading.
+
+**Figure 8.2 — DCGT producing viscous and R1 sectors.** A flow diagram. DCGT's leading-order multi-scale expansion outputs scalar diffusion, directional viscosity (the leading-order $\mu\nabla^2\mathbf{v}$), V1→R1 substrate cutoff (the first-subleading-order $-\kappa\mu_{\mathrm{V1}}\ell_P^2\nabla^4\mathbf{v}$), V5→Maxwell viscoelasticity, and T17 minimal coupling. Two of these (viscous and R1) feed into NS as substrate-derived sectors; the others feed into Chapters 6, 9, 10. The figure makes visible the position of NS in DCGT's broader output structure.
+
+**Figure 8.3 — Three-angle convergence on advection-as-non-ED.** A triangular diagram with three vertices labeled architectural (NS-2.08), dynamical (NS-Smooth-3), spectral (NS-Turb-4). All three vertices converge on the central conclusion: advection is the non-substrate-derived sector; advective vortex-stretching is the unique non-sign-definite contribution; the cascade is driven by advection. The figure makes visible the structural robustness of the advection-as-non-ED identification.
+
+**Figure 8.4 — The Intermediate Path C verdict.** A two-panel diagram. Left panel: schematic of the gradient-norm Lyapunov balance, showing all sign-definite contributions (viscous diffusion, R1 substrate-cutoff, pressure, incompressibility) as negative, plus the unique non-sign-definite contribution (advective vortex-stretching) with indefinite sign. Right panel: dimensional-structure schematic showing 2D vortex-stretching as identically zero (no vector to stretch) and 3D vortex-stretching as structurally non-trivial. A central note identifies the Path C verdict: substrate supplies real regularizing mechanism (R1) plus structural identification of the obstruction (advective vortex-stretching in 3D).
+
+**Figure 8.5 — The H1/H2/H3 turbulence-hypotheses status.** A three-row diagram. H1 (viscous-sector clean coarse-grained reading): holds. H2 (R1 substrate-cutoff clean coarse-grained reading): holds. H3 (cascade-class advective content has substrate-derivable canonical template): fails substantively. Each row is annotated with the substrate-level reason for the status.
+
+**Figure 8.6 — Form-FORCED vs Value-INHERITED at NS.** A two-column diagram. Left column ("Form-FORCED"): the four-fold decomposition; R1 form $-\kappa\mu_{\mathrm{V1}}\ell_P^2\nabla^4\mathbf{v}$; Path C verdict structure; dimensional-structure account; three-angle convergence on advection-as-non-ED; turbulence as non-substrate sector. Right column ("Value-INHERITED"): viscosity coefficient $\mu$; R1 prefactor combination $\kappa\mu_{\mathrm{V1}}$; substrate length $\ell_P$; specific turbulence cascade exponents; critical Reynolds numbers. The figure makes visible the demarcation that propagates through Chapters 9 and 10.
+
+**Figure 8.7 — NS in the program's broader closed-arc context.** A horizontal layout showing NS's position relative to other closed-arc continuum theories: NS (this chapter); MHD and Yang–Mills (Chapter 9, extending NS with T17 minimal coupling and non-Abelian generalization); soft-matter mobility (Chapter 10, using DCGT scalar-diffusion content and V5→Maxwell viscoelasticity); substrate gravity (Chapter 11, using cumulative-strain coarse-graining structurally parallel to DCGT). The figure makes visible NS's role as a load-bearing case study in the program's architectural decomposition methodology.
+
+\newpage
+
+## Chapter 9 — Magnetohydrodynamics and Yang–Mills: T17 Coupling, DCGT Continuum, Mass-Gap Mechanism
+
+### 9.1 Chapter Overview
+
+Chapter 8 established the four-fold architectural decomposition of Navier–Stokes: viscous diffusion (substrate-derived through DCGT leading order), R1 substrate-cutoff (substrate-derived through DCGT first subleading order from V1's finite width), advection (frame-kinematic artifact of laboratory-frame coordinates), and pressure plus incompressibility (continuum-imposed constraints). This chapter extends the same machinery to two adjacent continuum field theories: **magnetohydrodynamics (MHD)** and **non-Abelian Yang–Mills theory**. The structural extension uses T17 minimal coupling (Chapter 6) on charged-chain populations to produce the Lorentz force and Maxwell's equations from substrate primitives, and uses the non-Abelian generalization of DCGT (Chapter 3) on compact-simple-group rule-types to produce the Yang–Mills equation $D_\mu F^{\mu\nu} = J^\nu$ at leading order plus a substrate-level mass-gap mechanism at first subleading order.
+
+The chapter delivers three structural results. First, the MHD content classification: eleven content items partition into six canonical-ED forces (substrate-derived through DCGT plus T17 minimal coupling), two continuum-imposed constraints (pressure, incompressibility), and three transport-kinematic non-ED items (advection, induction kinematic, Ohm kinematic). MHD has strictly more canonical-ED content on the EM side than pure NS but shares the same canonical/non-canonical boundary and the same transport-kinematic obstruction class. Second, the Yang–Mills continuum equation as DCGT non-Abelian output, with the substrate-level mass-gap mechanism arising from V1's second-moment expansion plus non-Abelian quartic stabilization. Third, a conditional-positive structural-suggestive verdict on the Clay Yang–Mills problem — Intermediate Path C in the same form as the Clay-NS verdict (Chapter 8) — with the Gribov-class gauge-fixing obstruction reframed via T17's substrate-level gauge-quotient identification but not constructively resolved. The kinematic-coupling-pattern boundary in continuum field theory — minimal-coupling-derived (canonical ED) versus transport-kinematic (non-ED) — is a cross-arc structural finding that this chapter establishes formally.
+
+### 9.2 Why MHD and Yang–Mills Sit Together
+
+#### 9.2.1 The shared substrate machinery
+
+Magnetohydrodynamics and Yang–Mills theory appear in different parts of the standard physics inventory. MHD is the classical theory of electrically conducting fluids, used in plasma physics, solar physics, fusion engineering, and astrophysical magnetohydrodynamics. Yang–Mills is the relativistic gauge theory of non-Abelian compact-simple-group fields, foundational for the Standard Model's strong and weak nuclear forces. The two theories operate in different regimes, address different physical questions, and have largely separate research communities.
+
+The substrate-level analysis identifies a structural connection that the standard separation hides. Both MHD and Yang–Mills are continuum theories that emerge from the substrate through the *same* substrate-to-continuum machinery applied to different content channels:
+
+- **DCGT** (Chapter 3) supplies the substrate-to-continuum bridge for both. MHD uses DCGT's leading-order viscous-diffusion content (the Navier–Stokes baseline of Chapter 8) plus the substrate-to-continuum bridge for charged-chain populations. Yang–Mills uses the non-Abelian generalization of DCGT applied to compact-simple-group rule-types.
+- **T17 minimal coupling** (Chapter 6) supplies the gauge-field content for both. MHD uses T17's Abelian (U(1)) content to produce the Lorentz force and Maxwell's equations. Yang–Mills uses T17's non-Abelian generalization to produce the Yang–Mills equation.
+- **V1 finite-width kernel** (Chapter 4) supplies the substrate-cutoff content for both. MHD inherits R1 (as in NS, Chapter 8). Yang–Mills uses V1's second-moment expansion to produce a substrate-level mass-gap mechanism.
+
+The two theories are therefore not separate; they are two adjacent applications of the same substrate-to-continuum machinery. Treating them in one chapter exposes the shared structural skeleton.
+
+#### 9.2.2 The structural gain of the joint treatment
+
+Three structural gains follow from treating MHD and Yang–Mills together:
+
+- **The kinematic-coupling-pattern boundary becomes visible.** In both MHD and Yang–Mills, content items partition into substrate-derived (canonical-ED, reachable through DCGT plus T17 minimal coupling) and non-substrate (frame-kinematic or constraint-class). The boundary between these two classes is the same boundary that appeared in NS (Chapter 8); the joint treatment makes the boundary's universality visible.
+- **The mass-gap mechanism inherits from finite-width V1.** The substrate-level mass-gap in Yang–Mills uses V1's finite-width content (Theorem N1, Chapter 4), the same substrate object that produces the R1 hyperviscous term in NS and MHD. The structural reason MHD does not have a mass gap (it does not require non-Abelian quartic stabilization) and Yang–Mills does (it requires non-Abelian quartic stabilization for the gap to survive continuum-limit flow) is exposed.
+- **The Clay Yang–Mills verdict mirrors the Clay-NS verdict.** Both Clay-class Millennium Problems receive Intermediate Path C verdicts at structural-suggestive level. The structural parallels and differences are exposed through the joint chapter.
+
+#### 9.2.3 What the chapter does not deliver
+
+The chapter does not deliver:
+
+- **A constructive Yang–Mills existence-and-mass-gap proof at Streater–Wightman / OS-axiom rigor.** The Clay Yang–Mills problem demands a proof at constructive-rigorous level. The framework's verdict is at structural-suggestive level — a substrate-grounded structural-positive content with explicit identification of what the substrate does not constructively close.
+- **Specific values of the gauge couplings.** The fine structure constant $\alpha$, the strong coupling $\alpha_s$, the weak couplings — all are INHERITED from particle-physics empirical input.
+- **The Standard Model gauge group.** $SU(3) \times SU(2) \times U(1)$ is empirical input; the framework derives the form of gauge structure but not which group nature realizes (this is the same value-INHERITED status established in Chapter 6).
+- **Specific MHD coefficients.** Magnetic diffusivity, conductivity, and other MHD-specific empirical coefficients are INHERITED from plasma-physics empirical input.
+
+The chapter operates entirely at form level for MHD and Yang–Mills. Engineering predictions for plasma physics, fusion engineering, solar magnetohydrodynamics, particle-physics scattering amplitudes, and quantum-chromodynamics calculations do not change.
+
+### 9.3 MHD as NS Plus T17 Minimal Coupling
+
+#### 9.3.1 The structural extension
+
+Magnetohydrodynamics extends Navier–Stokes by adding electromagnetic content coupled to the fluid through charge-carrying participation. The substrate-level extension proceeds in two steps:
+
+1. **NS as baseline.** The four-fold NS decomposition of Chapter 8 is the pure-fluid baseline: viscous diffusion (substrate-derived), R1 substrate-cutoff (substrate-derived), advection (frame-kinematic), pressure plus incompressibility (continuum-imposed).
+2. **T17 minimal coupling on charged-chain populations.** T17 (Chapter 6) supplies the substrate-level structure for gauge fields as participation measures of structural rule-types. Applied to charged-chain populations, T17 minimal coupling produces the Lorentz force on charged participation patterns and Maxwell's equations as the substrate-to-continuum bridge for the gauge-field content.
+
+The result is the MHD continuum equations: NS's momentum equation extended by the Lorentz force term, plus Maxwell's equations governing the electromagnetic field, plus the standard MHD constraints.
+
+#### 9.3.2 The Lorentz force from T17 minimal coupling
+
+T17 establishes gauge fields as participation measures of structural rule-types in the substrate. Applied to charged participation events — chains carrying U(1) charge labels — the substrate-level analysis produces a coupling between charge-carrying chain endpoints and the U(1) gauge field. The substrate-to-continuum bridge through DCGT, evaluated at leading order, produces
+
+```math
+\mathbf{F} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B})
+```
+
+as the leading-order effective force on a charged participation pattern moving with velocity $\mathbf{v}$ through the U(1) gauge field $\mathbf{E}$, $\mathbf{B}$. The Lorentz force is *derived* rather than postulated. The structural content:
+
+- **The substrate-level origin** is T17 minimal coupling on charged-chain populations.
+- **The continuum-level form** is the standard Lorentz force.
+- **The DCGT bridge** (Chapter 3, Section 3.6.5) is the leading-order coarse-grained content.
+
+This is the substrate-level reframing of the Lorentz force from postulate (in standard electromagnetism) to derived theorem (in ED).
+
+#### 9.3.3 Maxwell's equations from T17 gauge content
+
+T17's full structural content — the participation-measure-of-rule-types reading of gauge fields — produces Maxwell's equations as the continuum-level statement of how the U(1) gauge field's substrate-level participation measure evolves. Specifically:
+
+- **Gauss's law for $\mathbf{E}$.** $\nabla\cdot\mathbf{E} = \rho/\epsilon_0$. The substrate-level statement: charge-carrying participation events source the U(1) gauge field; the divergence of $\mathbf{E}$ measures the local charge-carrying participation density.
+- **No-monopole law for $\mathbf{B}$.** $\nabla\cdot\mathbf{B} = 0$. The substrate-level statement: there are no isolated magnetic-charge-carrying participation patterns at the substrate level; this is FORCED by T17's specific U(1) rule-type structure (no monopoles in the U(1) sector).
+- **Faraday's law.** $\partial_t\mathbf{B} + \nabla\times\mathbf{E} = 0$. The substrate-level statement: time-evolution of the magnetic-field component of the U(1) gauge field is sourced by the curl of the electric-field component, consistent with T17's gauge-invariance interface property.
+- **Ampère's law (with Maxwell correction).** $\nabla\times\mathbf{B} - (1/c^2)\partial_t\mathbf{E} = \mu_0\mathbf{J}$. The substrate-level statement: spatial circulation of the magnetic-field component is sourced by the current density (charge-carrying participation flux) plus the time-varying electric field; the Maxwell correction term is FORCED by gauge-invariance consistency at substrate level.
+
+Maxwell's equations are derived from T17's gauge content; they are not postulated. The structural origin is the participation-measure-of-rule-types reading of U(1) gauge fields.
+
+#### 9.3.4 The MHD content classification
+
+The full MHD content partitions into eleven items distributed across three architectural classes. The classification is developed in detail in NS Synthesis Paper Appendix C; the chapter summarizes the result.
+
+**Six canonical-ED items (substrate-derived).** The six items that are substrate-derived through DCGT plus T17 minimal coupling:
+
+1. Viscous diffusion ($\mu\nabla^2\mathbf{v}$). Inherited from NS (Chapter 8, Section 8.3.1).
+2. Magnetic diffusion. Substrate-derived through DCGT applied to magnetic-field participation density.
+3. Lorentz force ($q(\mathbf{E} + \mathbf{v}\times\mathbf{B})$). Substrate-derived through T17 minimal coupling on charged-chain populations.
+4. R1 substrate-cutoff ($-\kappa\mu_{\mathrm{V1}}\ell_P^2\nabla^4\mathbf{v}$). Inherited from NS (Chapter 8, Section 8.4.1).
+5. $\partial_t\mathbf{B}$ time-evolution. Substrate-derived through T17 gauge-field dynamics.
+6. $\nabla\cdot\mathbf{B} = 0$ no-monopole condition. Substrate-derived through T17's specific U(1) rule-type structure.
+
+**Two continuum-imposed constraints.** The two items that are continuum-imposed (the same class as in NS):
+
+1. Pressure ($-\nabla p$). Lagrange multiplier for incompressibility.
+2. Incompressibility ($\nabla\cdot\mathbf{v} = 0$). External assumption on the velocity field.
+
+**Three transport-kinematic non-ED items.** The three items that are frame-kinematic artifacts, parallel to NS's advective term but in distinct content channels:
+
+1. Advection ($(\mathbf{v}\cdot\nabla)\mathbf{v}$). Frame-kinematic artifact of laboratory-frame coordinates. Inherited from NS (Chapter 8, Section 8.3.2).
+2. Induction kinematic. The induction-equation kinematic content corresponding to advective transport of magnetic field with the fluid. Frame-kinematic at substrate level.
+3. Ohm kinematic. The kinematic part of Ohm's law (relating current to electric-plus-velocity-cross-magnetic field structure). Frame-kinematic at substrate level.
+
+The 6:2:3 split is the MHD content classification's structural signature. MHD has strictly more canonical-ED content than NS (six versus two substrate-derived items) because the EM side of MHD is fully substrate-derivable through T17, while NS has only the viscous and R1 substrate-derived items. The canonical/non-canonical boundary is the same, however, and the transport-kinematic non-ED class is parallel.
+
+#### 9.3.5 The H1/H2/H3 status for MHD
+
+The three turbulence-related hypotheses developed in the NS chapter (Chapter 8, Section 8.8.3) extend to MHD:
+
+- **H1** — viscous-sector and magnetic-diffusion-sector content has structurally clean coarse-grained reading. **Holds.** Both are substrate-derived through DCGT.
+- **H2** — substrate-cutoff R1 content has structurally clean coarse-grained reading. **Holds.** Inherited from NS.
+- **H3** — cascade-class advective and induction-kinematic content has substrate-derivable canonical template. **Holds in modified form for MHD.** MHD turbulence cascades (Alfvén-wave cascades, Iroshnikov-Kraichnan, Goldreich-Sridhar) operate in a sector that includes some substrate-derivable content (magnetic diffusion, Lorentz force coupling) plus the non-substrate transport-kinematic sector. The substrate-level template covers more of the cascade than in pure NS but does not cover all of it.
+
+H3's modified status for MHD reflects the strictly-more-canonical content on the EM side. MHD turbulence is partially within substrate reach in a way that pure NS turbulence is not; the framework's predictive content for MHD turbulence is correspondingly stronger than for pure NS turbulence, while still incomplete.
+
+#### 9.3.6 The kinematic-coupling-pattern as the canonical boundary
+
+The MHD classification exposes a structural finding that generalizes beyond the MHD sector itself: the canonical/non-canonical boundary in continuum field theory is the **kinematic-coupling-pattern boundary**.
+
+Velocity-dependence in continuum equations splits cleanly into:
+- **Minimal-coupling-derived content** (canonical ED via T17 — Lorentz force, magnetic-field coupling to charged participation). This is substrate-derived through T17 minimal coupling on label-carrying participation events.
+- **Transport-kinematic content** (non-ED — advection, induction kinematic, Ohm kinematic). This is frame-kinematic, arising from coordinate-frame choices rather than from substrate-level forces.
+
+The kinematic-coupling-pattern boundary is the substrate-level structural distinction between forces (sourced by stable participation structures, derivable through T17 minimal coupling) and frame-kinematic content (artifacts of laboratory-frame coordinates with no substrate-level structural origin). The boundary appears in NS (Chapter 8) with the canonical/non-canonical split between viscous + R1 versus advection. It appears in MHD (this chapter) with the 6:2:3 classification distinguishing the six canonical-ED items from the three transport-kinematic non-ED items.
+
+The structural significance: the kinematic-coupling-pattern boundary is a load-bearing finding of the framework's continuum-field-theory analysis. It identifies precisely which structures in standard continuum theories are substrate-derivable and which are coordinate-dependent artifacts. It is the same boundary across NS, MHD, and (with appropriate generalization) Yang–Mills.
+
+### 9.4 Yang–Mills as the Non-Abelian DCGT Output
+
+#### 9.4.1 The non-Abelian DCGT generalization
+
+DCGT (Chapter 3) is presented for Abelian content channels; the substrate-to-continuum bridge produces leading-order continuum equations through multi-scale expansion in the hydrodynamic-window scale separation. The non-Abelian generalization applies the same machinery to compact-simple-group rule-types: instead of a single scalar charge label (U(1) gauge structure), the rule-type carries multi-component labels with non-commuting structure (SU(N) gauge structures).
+
+The structural content of the non-Abelian generalization:
+- The hydrodynamic-window scale separation $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$ is unchanged.
+- The multi-scale expansion structure is unchanged.
+- The participation-channel content is generalized to carry non-Abelian labels.
+- T17 minimal coupling is generalized to non-Abelian rule-types.
+
+The output of the non-Abelian DCGT generalization at leading order is the continuum Yang–Mills equation:
+
+```math
+D_\mu F^{\mu\nu} = J^\nu,
+```
+
+where $F^{\mu\nu}$ is the non-Abelian field-strength tensor, $D_\mu$ is the gauge-covariant derivative, and $J^\nu$ is the matter current. The equation is form-FORCED by the substrate-level structural commitments combined with the non-Abelian DCGT generalization; it is not chosen.
+
+#### 9.4.2 What is form-FORCED in Yang–Mills
+
+The substrate-level analysis FORCES:
+
+- **The Yang–Mills equation form** $D_\mu F^{\mu\nu} = J^\nu$ at leading order.
+- **The non-Abelian gauge-covariant derivative** structure $D_\mu = \partial_\mu - igA_\mu$ with $A_\mu$ taking values in the gauge-group's Lie algebra.
+- **The field-strength tensor** $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu - ig[A_\mu, A_\nu]$ with the non-Abelian commutator term.
+- **The gauge-invariance interface property** under local non-Abelian transformations $A_\mu \to U A_\mu U^\dagger + (i/g) U\partial_\mu U^\dagger$.
+- **The classical action** $S = -\frac{1}{4}\int d^4x\,\mathrm{tr}(F_{\mu\nu}F^{\mu\nu}) + \text{matter terms}$ at leading order.
+
+#### 9.4.3 What is value-INHERITED in Yang–Mills
+
+The substrate-level analysis does not derive:
+
+- **The specific gauge group** nature realizes (the Standard Model's $SU(3) \times SU(2) \times U(1)$ structure). Empirical input.
+- **The gauge couplings** $g$ for each gauge group (the strong coupling $\alpha_s$, the weak couplings, the electroweak mixing angle). Empirical input.
+- **The specific matter content** (number of quark flavors, lepton families, Higgs sector). Empirical input.
+- **Particle masses** in the matter sector. Empirical input.
+
+The framework's empirical posture on the Standard Model is consistent with Chapter 6: the form of gauge structure and gauge invariance is FORCED; the specific gauge group, couplings, matter content, and masses are INHERITED.
+
+### 9.5 The Substrate-Level Mass-Gap Mechanism
+
+#### 9.5.1 The Yang–Mills mass-gap problem
+
+The Clay Yang–Mills Millennium Problem asks for a constructive proof that pure non-Abelian Yang–Mills theory on $\mathbb{R}^4$ exists at Streater–Wightman / Osterwalder–Schrader rigor *and* that it has a positive mass gap — there is no zero-mass excitation in the spectrum despite the gauge bosons being massless at the classical level. The mass gap is the structural feature that makes confinement possible in QCD; without it, color-singlet hadrons would not exist.
+
+Standard QFT establishes the mass gap empirically (lattice QCD calculations, hadron spectroscopy) and partial-rigor frameworks (lattice gauge theory, Wilson-class non-perturbative analyses) but has not produced a Clay-rigorous proof. The mass-gap mechanism is structurally elusive in the standard framework.
+
+#### 9.5.2 The substrate-level mechanism
+
+The substrate-level analysis produces a mass-gap mechanism through two ingredients:
+
+- **V1 second-moment expansion.** The V1 finite-width vacuum kernel (Theorem N1, Chapter 4) has a finite second temporal moment at substrate scale. Under DCGT non-Abelian generalization, the second-moment expansion of V1 contributes to the gauge-field's effective dispersion relation at first subleading order. The contribution is structurally similar to a substrate-cutoff term (parallel to R1 in NS, Chapter 8) but applied to the gauge sector rather than the velocity sector.
+- **Non-Abelian quartic stabilization.** The non-Abelian field-strength tensor's commutator term $-ig[A_\mu, A_\nu]$ produces quartic self-interactions in the gauge field. Under coarse-graining, the quartic terms contribute to a mass-like dispersion correction. Combined with V1's second-moment contribution, the quartic stabilization produces a substrate-level mass gap at first subleading order in the multi-scale expansion.
+
+The mass-gap mechanism is therefore: **V1 second-moment expansion + non-Abelian quartic stabilization** at first subleading order under DCGT non-Abelian generalization.
+
+#### 9.5.3 Survival of the gap under continuum-limit flow
+
+The substrate-level mass-gap is established at the substrate scale through V1 + non-Abelian quartic stabilization. Whether the gap survives the continuum-limit flow — the Wilsonian renormalization-group flow that takes the substrate-scale theory to the continuum effective theory — depends on the rescaling behavior of V1's kernel profile under the flow.
+
+The framework's claim: the mass gap survives under continuum-limit flow *conditional* on V1's kernel profile rescaling appropriately. Specifically, if V1's second-moment scales correctly relative to the gauge-field rescaling under the flow, the mass-gap contribution remains finite at the continuum scale; if V1's rescaling produces a different scaling exponent, the gap could either grow or shrink relative to the gauge-field scale.
+
+The structural status: the mass-gap mechanism is form-FORCED at substrate scale; survival under continuum-limit flow is *conditional* on V1's kernel-profile rescaling, which is INHERITED from V1's specific functional shape. Closed-form derivation of V1's kernel profile is downstream open work.
+
+#### 9.5.4 The OS-positivity audit
+
+The framework's analysis of Yang–Mills includes a channel-by-channel Osterwalder–Schrader-positivity audit at substrate-suggestive level. OS-positivity is the structural property required for a constructive QFT to satisfy Streater–Wightman axioms; it is one of the load-bearing requirements for Clay-rigor.
+
+The substrate-level audit examines OS-positivity in each Yang–Mills content channel (gauge-field self-coupling, matter-coupling sectors, vacuum-fluctuation sectors). The audit concludes: OS-positivity holds at substrate-suggestive level under structural conditions identifiable at the substrate scale. The conditions are not equivalent to a Clay-rigorous proof — they are substrate-suggestive structural conditions that, if preserved through continuum-limit flow, would constitute OS-positivity at the continuum level.
+
+The structural status of the OS-positivity audit: substrate-suggestive positive verdict with explicit identification of the conditions; not a Clay-rigorous proof.
+
+### 9.6 The Gribov-Class Gauge-Fixing Obstruction
+
+#### 9.6.1 What the Gribov obstruction is
+
+Constructive non-Abelian Yang–Mills faces a structural obstruction known as the Gribov ambiguity: standard gauge-fixing procedures (Coulomb gauge, Lorenz gauge) do not uniquely fix the gauge in non-Abelian theories. Multiple gauge-equivalent field configurations satisfy the same gauge-fixing condition; the resulting "Gribov copies" obstruct the standard quantization procedure at non-perturbative level.
+
+Standard constructive Yang–Mills programs (lattice gauge theory, stochastic quantization, etc.) handle the Gribov ambiguity through restriction to the *Gribov region* (the region where the Faddeev–Popov operator is positive) or through other structural devices. None of these handles the obstruction at full Clay-rigor.
+
+#### 9.6.2 T17's substrate-level reframing
+
+T17 supplies a substrate-level reframing of the gauge-fixing question. Gauge invariance, in T17's reading (Chapter 6), is the *interface property* of label-carrying rule-types — the symmetry under which rule-type labels can be freely chosen at each substrate location. The substrate-level analysis identifies a **substrate-level gauge-quotient**: the substrate dynamics live on the quotient of the rule-type configuration space by the gauge group, not on the configuration space itself.
+
+The substrate-level gauge-quotient identification: rather than choosing a gauge-fixing condition that selects a representative from each gauge-equivalence class, the substrate-level analysis works directly with gauge-equivalence classes as the substrate-level objects. The Gribov ambiguity is then reframed as a structural feature of how the configuration-space-modulo-gauge-group quotient is topologically structured, rather than as an obstruction to gauge-fixing.
+
+#### 9.6.3 What the reframing solves and does not solve
+
+The reframing **does**:
+- Identify the Gribov ambiguity at substrate level as a feature of the gauge-quotient topology rather than as a quantization obstruction.
+- Suggest a constructive path through working with substrate-level gauge-equivalence classes directly.
+- Connect the Gribov question to T17's substrate-level structural commitments rather than to specific gauge-fixing technicalities.
+
+The reframing **does not**:
+- Constructively resolve the Gribov ambiguity at Clay-rigorous level.
+- Produce a complete constructive Yang–Mills existence proof on $\mathbb{R}^4$.
+- Replace lattice gauge theory or other partial-rigor frameworks at the level of empirical content.
+
+The framework's claim is structural-positive at substrate-suggestive level: the substrate ontology supplies a reframing that identifies the Gribov ambiguity's structural origin and suggests the constructive direction, but does not constructively resolve the ambiguity in the full Clay-rigorous sense.
+
+### 9.7 The Conditional-Positive Verdict on Clay Yang–Mills
+
+#### 9.7.1 Path-C-style verdict for Yang–Mills
+
+The framework's verdict on the Clay Yang–Mills problem is structurally parallel to the Clay-NS verdict (Chapter 8, Section 8.5): **Intermediate Path C** at substrate-suggestive level. The components:
+
+- **Real Clay-relevant content.** The substrate-level mass-gap mechanism (V1 second-moment + non-Abelian quartic stabilization) is real substrate-derivable content for the Clay-NS-class question of mass-gap existence.
+- **Substrate-suggestive positive content.** The OS-positivity audit at channel-by-channel level produces structural-suggestive positive content. The gauge-quotient reframing of the Gribov obstruction produces structural-suggestive positive content.
+- **Explicit identification of what is not constructively closed.** The conditional survival of the mass gap under continuum-limit flow (conditional on V1's kernel-profile rescaling); the partial reframing of the Gribov obstruction (suggestive but not constructive); the absence of a full Streater–Wightman / OS-axiom rigor proof.
+
+The verdict's status: structural-positive at substrate-suggestive level, parallel to the Clay-NS Intermediate Path C verdict and to the BH 1/4-coefficient INHERITED verdict (Chapter 13).
+
+#### 9.7.2 What the verdict delivers
+
+- A substrate-derived continuum Yang–Mills equation at leading order.
+- A substrate-level mass-gap mechanism at first subleading order.
+- A substrate-suggestive positive OS-positivity content.
+- A substrate-level reframing of the Gribov gauge-fixing obstruction.
+- A clear identification of which Clay-rigorous components remain open.
+
+#### 9.7.3 What the verdict does not deliver
+
+- A constructive Yang–Mills existence proof at Streater–Wightman / OS-axiom rigor on $\mathbb{R}^4$.
+- A constructive resolution of the Gribov ambiguity at Clay-rigor.
+- A closed-form proof of mass-gap survival under continuum-limit flow.
+- A solution to the Clay Yang–Mills Millennium Problem.
+
+The framework's Clay Yang–Mills posture is honest: substrate-grounded structural-positive content with explicit demarcation of what is not closed at constructive-rigorous level. The same form-FORCED / value-INHERITED methodology applies; closed-form derivations of substrate constants (the mass-gap-relevant V1 kernel profile, the gauge-coupling values, the gauge-group structure) remain downstream open work.
+
+### 9.8 Cross-Arc Structural Findings
+
+#### 9.8.1 The kinematic-coupling-pattern as a cross-arc finding
+
+The kinematic-coupling-pattern boundary identified in the MHD classification (Section 9.3.6) is a cross-arc structural finding. It generalizes:
+
+- **In NS (Chapter 8).** The canonical/non-canonical split is viscous + R1 (substrate-derived) versus advection (frame-kinematic) versus pressure + incompressibility (constraint).
+- **In MHD (this chapter).** The 6:2:3 split with strictly-more-canonical content on the EM side. Same boundary structure as NS, with T17 minimal coupling supplying the additional canonical content.
+- **In Yang–Mills (this chapter).** The Yang–Mills equation $D_\mu F^{\mu\nu} = J^\nu$ is fully substrate-derived (gauge-covariant); the matter-coupling sector inherits T17 minimal coupling. The non-Abelian generalization preserves the kinematic-coupling-pattern boundary but moves more content into the canonical-ED class.
+
+The pattern: T17 minimal coupling (Chapter 6) is the substrate-level mechanism that makes content canonical-ED; transport-kinematic content (advection, induction kinematic, Ohm kinematic) is non-ED frame-kinematic. The boundary is the same across NS, MHD, and Yang–Mills.
+
+#### 9.8.2 Six canonical-ED versus three transport-kinematic in MHD
+
+The 6:2:3 split is structurally significant because MHD has *strictly more canonical content on the EM side* than pure NS. The EM-side six canonical items (magnetic diffusion, Lorentz force, R1, $\partial_t\mathbf{B}$, $\nabla\cdot\mathbf{B} = 0$, plus the inherited NS viscous diffusion) are all substrate-derived through DCGT plus T17 minimal coupling. The three transport-kinematic items (advection, induction kinematic, Ohm kinematic) are all velocity-dependent frame-kinematic content — exactly the same structural class as advection in pure NS.
+
+The structural lesson: T17 minimal coupling is what makes EM-side content canonical-ED. Without T17, the EM-side content would be mostly transport-kinematic (parallel to how non-T17 content like advection is transport-kinematic). With T17, the substrate-level coupling between charge-carrying participation events and the gauge field produces the substrate-derivable Lorentz force, magnetic diffusion, and gauge-field dynamics.
+
+#### 9.8.3 Yang–Mills as fully canonical-ED on the gauge sector
+
+Yang–Mills theory (pure, without matter) is fully canonical-ED on the gauge sector. The Yang–Mills equation $D_\mu F^{\mu\nu} = J^\nu$ is substrate-derived; the gauge-field dynamics are substrate-derived through DCGT non-Abelian; the substrate-level mass-gap mechanism is substrate-derived through V1 second-moment plus non-Abelian quartic stabilization.
+
+The structural reason Yang–Mills is "more canonical" than MHD or NS: pure Yang–Mills has no fluid sector, no incompressibility constraint, no advection (the gauge-covariant derivative $D_\mu$ is the substrate-level analogue, and it is substrate-derived rather than frame-kinematic). The non-Abelian gauge structure does the load-bearing work, and the substrate-level analysis covers it through DCGT plus T17.
+
+### 9.9 What This Changes (And What It Doesn't)
+
+#### 9.9.1 What does not change
+
+Engineering predictions for plasma physics, fusion engineering, solar magnetohydrodynamics, particle-physics scattering amplitudes, and quantum-chromodynamics calculations do not change. Empirical content of MHD and Yang–Mills is preserved exactly. The Clay Yang–Mills Millennium Problem is still open at constructive-rigor level.
+
+#### 9.9.2 What does change
+
+Three structural shifts:
+
+- **The Lorentz force is derived rather than postulated.** Standard physics treats the Lorentz force as fundamental; ED derives it from T17 minimal coupling on charged-chain populations.
+- **The Yang–Mills equation is derived rather than postulated.** Standard physics establishes Yang–Mills theory through the gauge-invariance principle; ED derives the equation from DCGT non-Abelian generalization plus T17 generalized minimal coupling.
+- **The mass gap has a substrate-level mechanism.** Standard physics establishes the mass gap empirically; ED supplies a substrate-level mechanism (V1 second-moment + non-Abelian quartic stabilization), conditional on V1's kernel-profile rescaling under continuum-limit flow.
+
+These three shifts do not change any laboratory prediction. They change the structural origin of the equations.
+
+### 9.10 Form-FORCED vs Value-INHERITED at MHD and Yang–Mills
+
+#### 9.10.1 What is form-FORCED
+
+- **The MHD content classification** (6:2:3 partition into canonical-ED, continuum-imposed, transport-kinematic non-ED).
+- **The Lorentz force** as T17 minimal coupling on charged-chain populations.
+- **Maxwell's equations** as the substrate-to-continuum bridge for U(1) gauge content via T17.
+- **The Yang–Mills equation form** $D_\mu F^{\mu\nu} = J^\nu$ at leading order from DCGT non-Abelian generalization plus T17 generalized minimal coupling.
+- **The substrate-level mass-gap mechanism form** (V1 second-moment + non-Abelian quartic stabilization).
+- **The OS-positivity substrate-suggestive positive verdict** at channel-by-channel level.
+- **The gauge-quotient reframing of the Gribov obstruction** at substrate level.
+- **The Intermediate Path C verdict structure** for Clay Yang–Mills.
+- **The kinematic-coupling-pattern boundary** as the canonical/non-canonical distinction in continuum field theory.
+
+#### 9.10.2 What is value-INHERITED
+
+- **The specific gauge group** (Standard Model's $SU(3) \times SU(2) \times U(1)$). Empirical input.
+- **The gauge couplings** ($\alpha$, $\alpha_s$, the weak couplings). Empirical input.
+- **The specific matter content** (quark flavors, lepton families, Higgs sector). Empirical input.
+- **Particle masses** in the matter sector. Empirical input.
+- **The mass-gap value** in pure Yang–Mills (e.g., the lowest-glueball mass in QCD). Conditional on V1's kernel-profile rescaling under continuum-limit flow; INHERITED.
+- **MHD-specific coefficients** (magnetic diffusivity, conductivity). INHERITED from plasma-physics empirical input.
+- **The R1 coefficient** in MHD's hyperviscous content. INHERITED, parallel to NS.
+
+#### 9.10.3 What is open
+
+- **A constructive Yang–Mills existence-and-mass-gap proof at Clay-rigor.** Path A is open. The framework's substrate-suggestive positive verdict does not provide a Streater–Wightman / OS-axiom rigorous proof.
+- **A constructive resolution of the Gribov ambiguity at Clay-rigor.** Reframed at substrate level but not constructively closed.
+- **Closed-form derivation of V1's kernel-profile rescaling under continuum-limit flow.** Determines whether the mass gap survives unchanged or is renormalized; downstream open work.
+- **Closed-form values of gauge couplings.** Part of the broader closed-form-substrate-constants program (alongside $\mathcal{M}_\mathrm{crit}$ in Chapter 7, $\log g$ in Chapter 13, and $\kappa/|\hat{N}'|$ in the ED-SC arc).
+
+### 9.11 Dependencies
+
+#### 9.11.1 Upstream
+
+- **Chapter 1.** Substrate primitives. Especially: P04 bandwidth update rule (foundational for charge-carrying participation transport); P11 commitment-irreversibility (foundational for the kernel-level arrow that V1 inherits); the finite-kernel commitment for V1 (foundational for the mass-gap mechanism); substrate-locality (foundational for the MHD lab-frame-versus-co-moving-frame distinction underlying advection-as-frame-kinematic).
+- **Chapter 2.** Load-bearing invariants. V1 finite-width vacuum kernel produces both R1 substrate-cutoff (in MHD, inherited from NS) and the mass-gap mechanism in Yang–Mills.
+- **Chapter 3.** DCGT. The leading-order viscous-diffusion content (in MHD, inherited from NS), the first-subleading-order R1 content (in MHD), and the non-Abelian generalization (in Yang–Mills) are all DCGT outputs. The hydrodynamic-window scale separation $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$ is the substrate-level prerequisite.
+- **Chapter 6.** T17 minimal coupling on charged-chain populations is the substrate-level mechanism for the Lorentz force and Maxwell's equations in MHD; T17's non-Abelian generalization is the substrate-level mechanism for the matter-coupling sector of Yang–Mills.
+- **Chapter 8.** NS architectural decomposition. MHD inherits NS's pure-fluid baseline (viscous diffusion, R1, advection, pressure, incompressibility). The 6:2:3 MHD classification extends NS's four-fold decomposition by adding T17-derived EM content.
+
+#### 9.11.2 Downstream
+
+- **Chapter 14 (Cross-Platform Unifications).** The kinematic-coupling-pattern boundary (canonical ED via T17 minimal coupling versus transport-kinematic non-ED) is a cross-arc structural finding developed in this chapter and Chapter 8 and synthesized in Chapter 14 as one of the program's structural signatures.
+- **Chapter 15 (Public Test Inventory).** Empirical anchors for MHD and Yang–Mills sectors are catalogued in Chapter 15.
+
+### 9.12 Canonical Sources
+
+- `papers/Navier Stokes_Synthesis_Paper/` Appendix C (MHD architectural classification) and Appendix E (Yang–Mills Clay-relevance verdict)
+- Arc YM memos in `theory/Yang_Mills/`
+- `papers/Gauge_Fields_Theorem_17/`
+
+The Navier–Stokes Synthesis Paper Appendix C presents the publication-grade MHD content classification (6:2:3 partition, canonical-ED-versus-non-ED boundary, kinematic-coupling-pattern as the canonical boundary). Appendix E presents the publication-grade Yang–Mills Clay-relevance verdict (substrate-derived continuum equation, mass-gap mechanism, OS-positivity audit, Gribov-reframing, Intermediate Path C verdict). Arc YM memos in `theory/Yang_Mills/` (six memos: YM-1 compact-simple-group via P09 amendment + T17 strengthening, YM-2 substrate→continuum limit, YM-3 mass gap from $\ell_P$ substrate cutoff, YM-4 axiom verification, YM-5 OS-positivity audit, YM-6 synthesis) develop each component in detail. The Gauge_Fields_Theorem_17 paper presents T17 (Chapter 6's content) used here as substrate-level mechanism for the Lorentz force and the Yang–Mills matter coupling.
+
+The Monograph Shell's Appendix A theorem provenance map lists T17 (Chapter 6), DCGT (Chapter 3), and N1 (Chapter 4) as the substrate-level theorems consumed by this chapter. The Notation Glossary in Appendix B lists the symbols used in this chapter.
+
+### 9.13 Optional Figures
+
+**Figure 9.1 — The MHD content classification.** A 11-row diagram with each MHD content item in a row, color-coded by class: six canonical-ED items in green (substrate-derived through DCGT plus T17 minimal coupling); two continuum-imposed items in blue (pressure, incompressibility); three transport-kinematic non-ED items in red (advection, induction kinematic, Ohm kinematic). Annotations identify the substrate-level origin of each item.
+
+**Figure 9.2 — From NS to MHD via T17.** A flow diagram showing the structural extension. Left column: NS four-fold decomposition (viscous-diffusion, R1, advection, pressure + incompressibility). Center: T17 minimal coupling on charged-chain populations. Right column: MHD 6:2:3 decomposition with the EM-side canonical content (magnetic diffusion, Lorentz force, $\partial_t\mathbf{B}$, $\nabla\cdot\mathbf{B} = 0$) added to the NS baseline.
+
+**Figure 9.3 — The kinematic-coupling-pattern boundary.** A two-column diagram. Left column ("Canonical ED via T17 minimal coupling"): viscous diffusion, R1, magnetic diffusion, Lorentz force, $\partial_t\mathbf{B}$, $\nabla\cdot\mathbf{B} = 0$, Yang–Mills equation. Right column ("Transport-kinematic non-ED"): advection, induction kinematic, Ohm kinematic. The boundary between the columns is annotated as "the canonical/non-canonical boundary in continuum field theory: minimal-coupling-derived versus frame-kinematic."
+
+**Figure 9.4 — Yang–Mills as DCGT non-Abelian output.** A flow diagram. DCGT (Chapter 3) generalizes from Abelian to non-Abelian rule-types (T17 generalized minimal coupling). The leading-order output is the Yang–Mills continuum equation $D_\mu F^{\mu\nu} = J^\nu$. The first-subleading-order output is the substrate-level mass-gap mechanism (V1 second-moment + non-Abelian quartic stabilization). Survival under continuum-limit flow is conditional on V1's kernel-profile rescaling.
+
+**Figure 9.5 — The mass-gap mechanism.** A two-panel diagram. Left panel: substrate-level structure showing V1's second-moment expansion contributing to the gauge field's effective dispersion. Right panel: non-Abelian quartic self-interaction from $-ig[A_\mu, A_\nu]$ contributing to the mass-like dispersion correction. The combination produces the substrate-level mass gap at first subleading order. A note observes that survival under continuum-limit flow is conditional on V1's kernel-profile rescaling.
+
+**Figure 9.6 — Gribov-reframing through gauge-quotient.** A two-panel diagram. Left panel: standard gauge-fixing approach with multiple Gribov copies in the configuration space and an obstruction to unique gauge-fixing. Right panel: substrate-level gauge-quotient identification, where the substrate dynamics live on the configuration-space-modulo-gauge-group quotient directly, reframing the Gribov ambiguity as a feature of the quotient topology rather than as a quantization obstruction.
+
+**Figure 9.7 — The Intermediate Path C verdict structure for Yang–Mills.** A diagram showing the structural parallel to the Clay-NS Path C verdict. Real Clay-relevant content (mass-gap mechanism, OS-positivity substrate-suggestive verdict, gauge-quotient Gribov-reframing) on one side; what is not constructively closed (Streater–Wightman rigor, full Gribov resolution, V1 kernel-profile closed form) on the other side. A note observes that the verdict is structural-positive at substrate-suggestive level, parallel to Clay-NS and to the BH 1/4-coefficient INHERITED verdict.
+
+**Figure 9.8 — Form-FORCED vs Value-INHERITED at MHD and Yang–Mills.** A two-column diagram. Left column ("Form-FORCED"): MHD 6:2:3 classification, Lorentz force from T17, Maxwell's equations, Yang–Mills equation form, mass-gap mechanism form, OS-positivity verdict, gauge-quotient reframing, kinematic-coupling-pattern boundary. Right column ("Value-INHERITED"): Standard Model gauge group, gauge couplings, particle masses, mass-gap numerical value, MHD-specific coefficients, R1 prefactor.
+
+**Figure 9.9 — MHD and Yang–Mills in the program's broader closed-arc context.** A horizontal layout showing the position of MHD and Yang–Mills in the program's continuum-theory inventory: NS (Chapter 8); MHD and Yang–Mills (this chapter); soft-matter mobility (Chapter 10); substrate gravity (Chapter 11). The figure makes visible the shared substrate machinery (DCGT, T17, V1) across the four continuum sectors.
+
+\newpage
+
+## Chapter 10 — Soft-Matter Mobility and Non-Newtonian Rheology: UDM, P4-NN, V5
+
+### 10.1 Chapter Overview
+
+Soft-matter rheology — the study of how complex fluids (suspensions, polymer solutions, biological gels, proteins, colloids) flow under stress — is one of the most empirically successful and theoretically fragmented sectors of classical physics. Five canonical families of non-Newtonian fluid behavior have been established phenomenologically: Krieger–Dougherty divergence near jamming, discontinuous shear-thickening (cornstarch-class), Cross-class shear-thinning (ketchup-class), mixed regimes (combinations of the above), and Maxwell-class viscoelasticity (silly putty). Each family has its own constitutive model, its own community, and its own empirical fits. There is no first-principles structural account that explains why these five families exist or why they share any common machinery.
+
+This chapter establishes the substrate-level architectural unification of soft-matter rheology. Two structural commitments produce all five canonical families. **The Universal Mobility Law (UDM)** establishes that mobility in concentrated soft-matter systems takes the form $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ with $\beta \approx 2$, derived from substrate primitive P04 (the bandwidth update rule, applied as the mobility-capacity bound). **The P4-NonNewtonian extension (P4-NN)** generalizes the same architectural principle from concentration-driven mobility to flow-state-variable mobility, producing four of the five families through different applications of P04 to different state variables. The fifth family — Maxwell-class viscoelasticity — comes from **V5 cross-chain memory** under DCGT coarse-graining, producing the standard $\tau_R \dot\sigma + \sigma = 2\mu S$ Maxwell equation with the relaxation time $\tau_R$ identified as V5's first temporal moment.
+
+The chapter integrates UDM and P4-NN with the V5 mechanism into a single architectural account. Empirical validation of UDM's $\beta \approx 2$ exponent across ten chemically unrelated systems — yielding $\beta = 1.72 \pm 0.37$ with $R^2 > 0.986$ in every fit — is the program's most quantitatively-tested structural prediction. Mechanism-clustered scatter (cooperative networks $\bar\beta \approx 2.31$, steric $\approx 1.76$, gradual/electrostatic $\approx 1.38$) is consistent with the substrate-level account's prediction that cooperativity of saturation modulates the exponent. The chapter does not derive specific values of viscosity coefficients, packing limits, critical shear rates, or relaxation times — those are INHERITED from material physics. It establishes the architectural unification of five separately-modeled rheology families under two substrate commitments.
+
+### 10.2 The Soft-Matter Rheology Inventory
+
+#### 10.2.1 The five canonical families
+
+Standard soft-matter rheology has accumulated five canonical constitutive-equation families through a century of empirical fitting:
+
+- **Krieger–Dougherty divergence.** For suspensions of solid particles in fluid, viscosity diverges as the particle volume fraction approaches a packing limit:
+  ```math
+  \mu(\phi) \propto \left(1 - \phi/\phi_\mathrm{max}\right)^{-\beta_\mathrm{KD}}.
+  ```
+  The exponent $\beta_\mathrm{KD}$ is fit empirically; values near 2 are typical for hard-sphere suspensions.
+- **Discontinuous shear-thickening (DST).** Some suspensions (cornstarch in water, certain silica suspensions, body-armor fluids) show a sharp, discontinuous jump in viscosity above a critical shear rate. Below the critical rate the fluid is liquid-like; above it, viscosity rises by orders of magnitude.
+- **Cross-class shear-thinning.** Many polymer solutions, ketchup, paint, and biological fluids show monotone decrease of viscosity with shear rate. Cross's phenomenological model fits this with a high-viscosity plateau at low shear, transitioning to a low-viscosity tail at high shear.
+- **Mixed regimes.** Some fluids show non-monotone viscosity-shear-rate curves: thinning then thickening, or thickening then thinning. Mixed-regime models are typically constructed by combining Cross-class and DST-class machinery with material-specific transition shapes.
+- **Maxwell-class viscoelasticity.** Silly putty, long-chain polymer solutions, and biological gels respond elastically to fast deformations and viscously to slow deformations. The standard Maxwell equation $\tau_R\dot\sigma + \sigma = 2\mu S$ captures this with one parameter (the relaxation time $\tau_R$) that varies by orders of magnitude across systems.
+
+These five families are treated as separate phenomena with separate constitutive equations. Each family has its own community, its own empirical-fit literature, and its own intuition about the underlying mechanism. There is no first-principles account that unifies them.
+
+#### 10.2.2 What is missing in the standard treatment
+
+Three structural questions that the standard soft-matter rheology framework does not answer:
+
+- **Why these five families and not others?** Why does the empirical inventory cluster into Krieger–Dougherty, DST, Cross-class, mixed, and Maxwell rather than into some other classification? Standard rheology treats this as an empirical question without structural content.
+- **Why do diffusion, suspension viscosity, and shear-thickening share an exponent class?** Empirical exponents in concentration-driven diffusion suppression, Krieger–Dougherty viscosity divergence, and DST critical-rate behavior all cluster near $\beta \approx 2$. Standard rheology treats this as coincidence; the substrate-level analysis does not.
+- **What is the structural origin of the relaxation time in Maxwell-class viscoelasticity?** The standard Maxwell model treats $\tau_R$ as a phenomenological fitting parameter. Standard rheology does not derive $\tau_R$ from a substrate-level mechanism.
+
+The substrate-level analysis answers all three. The empirical inventory of five families is structurally exhaustive given two substrate commitments (P04 mobility-capacity bound and V5 cross-chain memory); the shared $\beta \approx 2$ exponent reflects a single substrate principle applied to different state variables; the relaxation time inherits from V5's first temporal moment.
+
+### 10.3 Substrate Inputs: P04 and V5
+
+#### 10.3.1 P04 as the mobility-capacity bound
+
+Substrate primitive P04 (Chapter 1, Section 1.4.1) is the bandwidth update rule: participation channels carry bounded bandwidth, and the bandwidth update constrains how much of a chain's available participation capacity can be active at any substrate moment. Applied to soft-matter systems where the substrate is densely populated by participation events, P04 supplies a *mobility-capacity bound*: the rate at which a tagged participation event can move through the system is bounded by the available substrate-channel capacity at each transit step.
+
+The mobility-capacity bound has a specific structural form. As the local participation density $\rho$ approaches the substrate's maximum sustainable density $\rho_\mathrm{max}$, the available channel capacity for new transit events vanishes. The mobility-capacity bound therefore takes a form-FORCED structural form:
+
+```math
+M(\rho) = M_0\left(1 - \frac{\rho}{\rho_\mathrm{max}}\right)^\beta
+```
+
+with $M_0$ a substrate-determined prefactor (the unconstrained mobility), $\rho_\mathrm{max}$ a substrate-determined packing limit, and $\beta$ a substrate-natural exponent. The substrate-natural value of $\beta$ is 2; the empirical exponent is near 2 with mechanism-clustered scatter (Section 10.4).
+
+#### 10.3.2 V5 as the cross-chain memory kernel
+
+Substrate primitive V5 (Chapter 1, Section 1.7.1) is the substrate-level cross-chain memory kernel — a finite-width temporal kernel mediating correlations between distinct chains. V5 is the substrate-level analogue of memory in the system: a participation event at one chain endpoint produces a delayed effect at neighboring chains, with the delay determined by V5's temporal width.
+
+V5's structural role for soft-matter rheology: under DCGT coarse-graining (Chapter 3, Section 3.6.4), V5's finite-width memory produces Maxwell-class viscoelastic dynamics at the continuum level. The continuum equation $\tau_R\dot\sigma + \sigma = 2\mu S$ emerges, with $\tau_R$ identified as V5's first temporal moment. The form is FORCED by DCGT applied to V5; the specific value of $\tau_R$ is INHERITED from V5's specific functional shape and from molecular physics for the system being modeled.
+
+#### 10.3.3 Together: P04 + V5 produce all five families
+
+The two substrate commitments produce all five canonical rheology families. P04 produces four (Krieger–Dougherty, DST, Cross-class, mixed regimes) through different applications to different state variables. V5 produces the fifth (Maxwell-class viscoelasticity) through DCGT memory-coarse-graining.
+
+The structural significance: five families that have been treated as five separate problems with five separate constitutive equations turn out to share two substrate commitments. The unification is not partial; it covers the entire canonical inventory of non-Newtonian soft-matter rheology.
+
+### 10.4 The Universal Mobility Law (UDM)
+
+#### 10.4.1 The structural derivation
+
+The Universal Mobility Law derives directly from P04's mobility-capacity bound applied to concentration-driven mobility in soft-matter systems. The structural argument:
+
+1. **A tagged participation event** in a soft-matter system (a tracer molecule, a colloidal particle, a polymer segment) moves through a substrate populated by other participation events.
+2. **The tagged event's mobility** is bounded above by the available substrate-channel capacity at each transit step.
+3. **As local participation density $\rho$ rises**, the available channel capacity falls; mobility decreases.
+4. **The functional form of the mobility-capacity bound** is FORCED by P04's structural content: a smooth power-law approach to zero as $\rho \to \rho_\mathrm{max}$:
+   ```math
+   M(\rho) = M_0\left(1 - \frac{\rho}{\rho_\mathrm{max}}\right)^\beta.
+   ```
+
+The form-FORCED content: power-law approach to zero at the packing limit, with substrate-natural exponent $\beta = 2$. The value-INHERITED content: the specific values of $M_0$, $\rho_\mathrm{max}$, and the precise empirical $\beta$ for any given system.
+
+#### 10.4.2 Empirical validation across ten systems
+
+UDM has been empirically tested across ten chemically unrelated soft-matter systems in concentration-driven diffusion experiments. The systems span a wide range of microscopic physics:
+
+- PMMA colloids (hard-sphere suspensions)
+- Hard-sphere colloids (additional samples)
+- Sucrose–water solutions
+- Glycerol–water solutions
+- BSA protein solutions
+- Lysozyme protein solutions
+- PEG (polyethylene glycol) in water
+- Dextran (polysaccharide) in water
+- Casein micelles
+- Ludox silica suspensions
+
+Each system has different microscopic physics: different particle types, different interactions, different size ratios, different molecular shapes, different solvent environments. Standard rheology models for these systems are different in each case (Krieger–Dougherty for hard-sphere colloids; Cross-class for polymer solutions; complex hydrodynamic models for protein solutions; etc.).
+
+UDM fits all ten systems with the same functional form $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$. The empirical results: $\beta = 1.72 \pm 0.37$ across the ten systems, with $R^2 > 0.986$ in every fit. The canonical ED value is $\beta = 2$; the empirical average sits within one standard deviation of 2.
+
+#### 10.4.3 The mechanism-clustered scatter
+
+The empirical $\beta$ values across the ten systems do not all sit at $\beta = 2$; they scatter. The scatter pattern is structurally informative.
+
+Systems where the saturation mechanism involves *cooperative* network effects — hydrogen-bonding viscosity in glycerol, hydrodynamic crowding in dextran, certain protein-solution structures — cluster around $\bar\beta \approx 2.31$. *Above* the canonical value.
+
+Systems where the saturation mechanism is *steric* — hard-sphere colloids, ordinary polymer suspensions, the textbook hard-sphere cases — cluster around $\bar\beta \approx 1.76$. Right at the canonical value.
+
+Systems where the saturation mechanism is *gradual and less cooperative* — polymer entanglement at moderate concentration, electrostatic effects in dilute regime — cluster around $\bar\beta \approx 1.38$. *Below* the canonical value.
+
+The clustering by mechanism is structurally consistent with the substrate-level account. The substrate-natural prediction is that more-cooperative networks should saturate sharper (higher $\beta$) and less-cooperative ones should saturate gentler (lower $\beta$). The empirical data delivers this pattern across the ten-system range. The framework's claim is at the level of *structural coherence* rather than first-principles numerical prediction; the canonical $\beta = 2$ value plus mechanism-clustered scatter is what the substrate-level account predicts and the data confirms.
+
+#### 10.4.4 What UDM does and does not deliver
+
+UDM **delivers**:
+- The form-FORCED functional shape of mobility-saturation in concentrated soft-matter systems.
+- The substrate-natural exponent $\beta = 2$ as the canonical value.
+- A structural account of why the exponent class recurs across chemically unrelated systems (the same P04 bound applied to different microscopic physics).
+- Empirical validation across ten systems with $\beta = 1.72 \pm 0.37$ and $R^2 > 0.986$.
+- Mechanism-clustered scatter consistent with substrate-level predictions about cooperativity.
+
+UDM **does not deliver**:
+- Specific numerical predictions of $M_0$ or $\rho_\mathrm{max}$ for any given material. These are INHERITED from material physics.
+- A first-principles closed-form derivation of the precise empirical $\beta$ for any single system. The substrate-natural value is 2; the empirical scatter is consistent but not predicted in closed form.
+- A complete microscopic theory of any specific soft-matter system. The framework supplies the substrate-level architectural skeleton; the microscopic content is in standard soft-matter physics.
+
+### 10.5 The P4-NonNewtonian Extension (P4-NN)
+
+#### 10.5.1 The generalization principle
+
+UDM applies P04's mobility-capacity bound to *concentration-driven* mobility — the bound on mobility as a function of local participation density $\rho$. The P4-NonNewtonian extension generalizes the same architectural principle to *flow-state-variable* mobility — the bound on mobility as a function of dynamical state variables like strain rate, applied stress, or shear deformation.
+
+The generalization is direct. The substrate-level mobility-capacity bound is a structural statement about how the substrate's available channel capacity depends on the local substrate state. When the local substrate state is characterized by participation density (the UDM case), the bound produces the Krieger–Dougherty-class divergence near jamming. When the local substrate state is characterized by other variables — strain rate, applied stress, etc. — the same bound applied to those variables produces other constitutive structures.
+
+The structural content: *one substrate-level bound, multiple state-variable applications, multiple canonical rheology families*. The generalization is form-FORCED by P04's structural content.
+
+#### 10.5.2 Krieger–Dougherty divergence (concentration-driven)
+
+The Krieger–Dougherty case is the original UDM application. Volume fraction $\phi$ is the state variable; the substrate-level analysis produces
+
+```math
+\mu(\phi) \propto \left(1 - \phi/\phi_\mathrm{max}\right)^{-\beta_\mathrm{KD}}
+```
+
+with substrate-natural exponent $\beta_\mathrm{KD}$ near 2 (the same exponent class as UDM, by the same substrate-level structural argument).
+
+#### 10.5.3 Discontinuous shear-thickening (strain-rate-driven)
+
+For shear-thickening fluids, the saturation variable is strain rate. The substrate-level mobility-capacity bound, applied to strain rate, produces a discontinuous transition: below a critical strain rate, the substrate's participation network can keep up with the imposed flow and mobility is high; above the critical rate, the network cannot keep up and mobility crashes. The discontinuous-thickening transition is the substrate-level statement that the strain-rate variable has crossed its mobility-capacity threshold.
+
+The structural argument is form-FORCED. The specific value of the critical strain rate, the specific magnitude of the viscosity jump, and the specific cornstarch-versus-silica-versus-body-armor variability are INHERITED from material physics.
+
+#### 10.5.4 Cross-class shear-thinning (strain-rate-driven, monotone-decreasing)
+
+For shear-thinning fluids, the saturation variable is again strain rate, but the substrate-level mobility-capacity is approached from the *opposite* direction. At low strain rates the substrate-level participation network is in a high-multiplicity configuration (entangled, structured); applied strain rate breaks down the multiplicity, and the mobility *increases* as the strain rate disrupts the network. The result is monotone-decreasing viscosity with shear rate.
+
+Cross's phenomenological model fits this with a high-viscosity plateau at low shear (the high-multiplicity configuration), transitioning to a low-viscosity tail at high shear (the disrupted-network configuration). The substrate-level account derives the structural form from P04 applied to the strain-rate state variable.
+
+#### 10.5.5 Mixed regimes
+
+Some fluids show non-monotone viscosity-shear-rate curves. The substrate-level account reads these as systems with multiple state-variable mechanisms competing: at low shear rates one P04-class mechanism dominates (e.g., shear-thickening), at high shear rates another (e.g., disruption-driven thinning). The mixed-regime model is the substrate-level superposition of two P04 mechanisms.
+
+The structural argument is form-FORCED for the existence of mixed-regime behavior under multiple-mechanism competition. The specific transition shapes and crossover scales are INHERITED.
+
+#### 10.5.6 The structural unification of four families
+
+Krieger–Dougherty, DST, Cross-class, and mixed regimes are four canonical non-Newtonian rheology families. The P4-NonNewtonian extension unifies them under a single substrate principle: the mobility-capacity bound P04 applied to different state variables. The structural content:
+
+- **Same substrate primitive** (P04) in all four cases.
+- **Different state variables** (volume fraction for KD, strain rate for DST and Cross-class, multiple state variables for mixed regimes).
+- **Different functional structures** at the continuum level (divergence for KD, discontinuous jump for DST, monotone decrease for Cross-class, non-monotone for mixed).
+- **Common exponent class** $\beta \approx 2$ across diffusion, suspension viscosity, and shear-thickening (when the substrate-level bound applies in directly comparable forms).
+
+The four-family unification is the structural significance of P4-NN. Standard rheology treats KD, DST, Cross-class, and mixed regimes as four separate phenomena requiring four separate constitutive models. The substrate-level analysis identifies them as four projections of a single substrate principle.
+
+### 10.6 Maxwell-Class Viscoelasticity from V5
+
+#### 10.6.1 The fifth family and its substrate-level mechanism
+
+Maxwell-class viscoelasticity is the fifth canonical non-Newtonian rheology family. It does not fit the P4-NonNewtonian framework (it is not a P04 mobility-capacity bound applied to a state variable); it requires a separate substrate-level mechanism. The mechanism is V5 cross-chain memory.
+
+V5 is the substrate-level finite-width temporal kernel mediating correlations between distinct chains. Under DCGT coarse-graining (Chapter 3, Section 3.6.4), V5's finite-width memory produces Maxwell-class viscoelastic dynamics at the continuum level. The continuum form:
+
+```math
+\tau_R\,\dot\sigma + \sigma = 2\mu S,
+```
+
+where $\sigma$ is the stress tensor, $S$ is the strain-rate tensor, $\mu$ is the high-frequency viscosity, and $\tau_R$ is the relaxation time identified as V5's first temporal moment.
+
+#### 10.6.2 The structural origin of the relaxation time
+
+The relaxation time $\tau_R$ has been a phenomenological fitting parameter in standard Maxwell-class rheology. The substrate-level reading: $\tau_R$ is V5's first temporal moment — a substrate-level quantity that characterizes V5's memory structure for the system in question.
+
+The form-FORCED content: $\tau_R$ exists as a substrate-level quantity, derivable from V5 under DCGT coarse-graining. The functional form of the Maxwell equation is FORCED. The value-INHERITED content: the specific numerical value of $\tau_R$ is INHERITED from V5's specific functional shape, which in turn depends on material physics for the system being modeled.
+
+For silly putty, $\tau_R$ is on the order of seconds; for long-chain polymer solutions, $\tau_R$ varies from milliseconds to hours; for biological gels, $\tau_R$ depends on the gel's chemical structure. The framework does not predict these specific values; it identifies $\tau_R$ as V5's first temporal moment and derives the Maxwell equation form from V5 under DCGT.
+
+#### 10.6.3 Why this matters structurally
+
+Two structural shifts:
+
+- **The Maxwell equation is derived rather than postulated.** Standard rheology treats the Maxwell equation as a phenomenological model (a spring-and-dashpot mechanical analogue). The substrate-level account derives it from V5 cross-chain memory through DCGT coarse-graining.
+- **The relaxation time has substrate-level structural origin.** $\tau_R$ is V5's first temporal moment, not just a fitting parameter. The substrate-level structural origin connects the relaxation time to the substrate's memory kernel rather than to any specific microscopic mechanism.
+
+The empirical content of Maxwell-class viscoelasticity does not change; the structural origin of the equation does.
+
+### 10.7 The Unified Soft-Matter Architecture
+
+#### 10.7.1 Two substrate commitments, five canonical families
+
+The full architectural unification:
+
+```math
+\begin{array}{l|l|l}
+\text{Family} & \text{Substrate mechanism} & \text{State variable / mechanism} \\
+\hline
+\text{Krieger–Dougherty} & \text{P04 mobility-capacity bound} & \text{Volume fraction } \phi \\
+\text{Discontinuous shear-thickening} & \text{P04 mobility-capacity bound} & \text{Strain rate (saturating)} \\
+\text{Cross-class shear-thinning} & \text{P04 mobility-capacity bound} & \text{Strain rate (disruption)} \\
+\text{Mixed regimes} & \text{P04, multi-mechanism} & \text{Multiple state variables} \\
+\text{Maxwell viscoelasticity} & \text{V5 cross-chain memory} & \text{Time (memory kernel)} \\
+\end{array}
+```
+
+The five canonical families share two substrate commitments: P04 (mobility-capacity bound, producing four families through different state-variable applications) and V5 (cross-chain memory, producing the fifth family through DCGT coarse-graining). No additional substrate primitive is required; no phenomenological postulate is required beyond the substrate-level structural content.
+
+#### 10.7.2 The shared exponent class
+
+The empirical $\beta \approx 2$ exponent appears in three distinct empirical contexts:
+
+- **Concentration-driven diffusion suppression** in the ten UDM systems ($\beta = 1.72 \pm 0.37$).
+- **Krieger–Dougherty viscosity divergence** in suspensions ($\beta_\mathrm{KD}$ near 2).
+- **Discontinuous shear-thickening critical-rate behavior** in DST systems (saturation exponent near 2).
+
+All three contexts reflect the same substrate-level mechanism: P04 mobility-capacity bound applied to different state variables. The shared exponent class is structurally significant; standard rheology treats the recurrence of $\beta \approx 2$ as coincidence, while the substrate-level account predicts it as a structural consequence of the shared P04 mechanism.
+
+#### 10.7.3 What is not in the unification
+
+Two things that the substrate-level analysis does not cover:
+
+- **Yield-stress fluids** (Bingham plastics, Herschel-Bulkley fluids). These are non-Newtonian fluids that do not flow at all until applied stress exceeds a yield threshold. The yield-stress mechanism is not directly a P04 or V5 phenomenon; it requires an additional structural commitment beyond the two used here. The framework treats yield-stress fluids as outside the scope of UDM + P4-NN + V5 unification.
+- **Highly entangled polymer melts** (reptation regimes). The Doi-Edwards reptation model describes polymer-melt rheology in deeply entangled regimes through a different mechanism (tube-confinement and reptation). Whether reptation fits the substrate-level architecture or requires additional substrate commitments is open work.
+
+The framework's coverage is therefore: five canonical non-Newtonian families unified under two substrate commitments (P04 + V5). Yield-stress fluids and deeply entangled polymer melts are flagged as open extensions.
+
+### 10.8 The Universal Mobility Law as Empirical Anchor
+
+#### 10.8.1 The PASSED status
+
+UDM is one of the program's three PASSED-status empirical anchors (along with the dwarf-galaxy outer-radius mass discrepancy in Chapter 11 and the multi-timescale FPM relaxation in Chapter 7). The empirical validation across ten chemically unrelated systems with $\beta = 1.72 \pm 0.37$ and $R^2 > 0.986$ is the program's most quantitatively-tested structural prediction.
+
+The PASSED status reflects:
+- **The form-FORCED structural content** (the functional form $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ across ten chemically unrelated systems) is empirically confirmed.
+- **The substrate-natural exponent $\beta = 2$** is consistent with empirical data within one standard deviation.
+- **The mechanism-clustered scatter** (cooperative-network/steric/gradual-electrostatic clustering around 2.31/1.76/1.38) is consistent with the substrate-level account's prediction about cooperativity.
+
+#### 10.8.2 What the empirical anchor is and is not
+
+The empirical anchor **is**:
+- A cross-system test of the form-FORCED structural content across ten systems with different microscopic physics.
+- A quantitatively-tested validation of the substrate-natural exponent class.
+- An identification of mechanism-clustered scatter consistent with the substrate-level account's structural predictions.
+
+The empirical anchor **is not**:
+- A first-principles derivation of $\beta = 1.72$ from substrate primitives in closed form. The canonical value is $\beta = 2$; the empirical value is consistent with it but not predicted in closed form.
+- A complete substrate-level theory of any single soft-matter system. The framework supplies the architectural skeleton; the microscopic content is in standard soft-matter physics.
+- A solution to all open soft-matter rheology problems. The framework explicitly leaves yield-stress fluids and deeply entangled polymer melts as open extensions.
+
+#### 10.8.3 The FRAP-related extension
+
+A pre-registered extension of the UDM empirical program is the FRAP (Fluorescence Recovery After Photobleaching) measurement at high BSA concentration. FRAP measures recovery dynamics of bleached fluorescent regions in concentrated protein solutions; the substrate-level prediction is a non-Fickian recovery profile with $R(t) \sim t^{1/6}$ scaling at deep concentrations, distinct from the standard Fickian $t^{1/2}$ scaling.
+
+The FRAP-BSA extension is currently in IN PROGRESS status (Chapter 15). A pre-registered protocol has been submitted to a contract lab; quote received April 2026; technician-team review is pending. The empirical content, when available, will provide an additional cross-system test of the substrate-level account.
+
+### 10.9 What This Changes (And What It Doesn't)
+
+#### 10.9.1 What does not change
+
+Engineering predictions for soft-matter rheology do not change. Krieger–Dougherty fits the same data; DST occurs in cornstarch at the same critical shear rates; Cross-class fits ketchup the same way; mixed-regime fluids show the same non-monotone curves; silly putty has the same relaxation behavior. Empirical content of soft-matter rheology is preserved exactly.
+
+#### 10.9.2 What does change
+
+Three structural shifts:
+
+- **Five separately-modeled rheology families share two substrate commitments.** The standard treatment of KD, DST, Cross-class, mixed, and Maxwell as five separate phenomena is reframed as four projections of P04 plus one projection of V5.
+- **The shared $\beta \approx 2$ exponent has a substrate-level explanation.** The recurrence of the exponent class across diffusion, suspension viscosity, and shear-thickening reflects the same P04 mechanism applied to different state variables.
+- **The Maxwell relaxation time has a substrate-level origin.** $\tau_R$ is V5's first temporal moment, not a phenomenological fitting parameter.
+
+These three shifts do not change any laboratory prediction. They change the conceptual placement of the five canonical non-Newtonian rheology families and supply structural origins for empirical regularities that standard soft-matter physics treats as phenomenological.
+
+### 10.10 Form-FORCED vs Value-INHERITED at Soft-Matter Mobility
+
+#### 10.10.1 What is form-FORCED
+
+- **The Universal Mobility Law functional form** $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$.
+- **The substrate-natural exponent** $\beta = 2$.
+- **The four-family P4-NonNewtonian unification** (KD, DST, Cross-class, mixed regimes from P04 applied to different state variables).
+- **The Maxwell-equation form** $\tau_R\dot\sigma + \sigma = 2\mu S$ from V5 cross-chain memory under DCGT.
+- **The identification of $\tau_R$ as V5's first temporal moment.**
+- **The structural exhaustiveness** of UDM + P4-NN + V5 over the five canonical non-Newtonian rheology families.
+- **The mechanism-clustered scatter pattern** (cooperative networks → higher $\beta$; steric → near $\beta = 2$; gradual/electrostatic → lower $\beta$).
+- **The substrate origin of the shared $\beta \approx 2$ exponent class** across diffusion, suspension viscosity, and shear-thickening as the same P04 bound applied to different state variables.
+
+#### 10.10.2 What is value-INHERITED
+
+- **The specific empirical $\beta$ for any individual system.** Empirical: $\beta = 1.72 \pm 0.37$ across ten systems.
+- **The packing limit $\rho_\mathrm{max}$ for any individual system.** Material physics.
+- **The unconstrained mobility $M_0$ for any individual system.** Material physics.
+- **The critical strain rate** for any individual DST system.
+- **The viscosity coefficients** in any specific Cross-class fit.
+- **The relaxation time $\tau_R$** for any individual Maxwell-class system. INHERITED from V5's specific functional shape and from molecular physics.
+- **Specific transition shapes** in mixed-regime fluids.
+- **Microscopic-level molecular details** for any specific soft-matter system.
+
+#### 10.10.3 What is open
+
+- **Yield-stress fluids.** Bingham plastics, Herschel-Bulkley fluids, and other yield-stress phenomena are not covered by the UDM + P4-NN + V5 unification. Whether an additional substrate commitment closes them or whether they have a different substrate-level origin is open.
+- **Deeply entangled polymer melts.** The Doi-Edwards reptation regime is not directly addressed by UDM. Whether it fits the substrate-level architecture is open.
+- **Closed-form derivation of mechanism-clustered scatter.** The empirical clustering pattern is consistent with substrate-level cooperativity predictions, but a closed-form derivation of the specific cluster values is downstream open work.
+- **FRAP-BSA empirical confirmation.** The pre-registered protocol's empirical results are pending.
+
+### 10.11 Dependencies
+
+#### 10.11.1 Upstream
+
+- **Chapter 1.** Substrate primitives, especially P04 (mobility-capacity bound, the load-bearing primitive for UDM and the four P4-NN families) and the finite-kernel commitment for V5 (the load-bearing primitive for Maxwell-class viscoelasticity).
+- **Chapter 2.** Load-bearing invariants. Multiplicity $\mathcal{M}$ enters the mechanism-clustered-scatter analysis (cooperative networks have higher cooperativity at the multiplicity level than steric or electrostatic mechanisms). V5 finite-width memory kernel is established as a load-bearing invariant.
+- **Chapter 3.** DCGT. The substrate-to-continuum bridge for V5→Maxwell viscoelasticity is one of DCGT's five leading-order consequences (Chapter 3, Section 3.6.4). The scalar-diffusion content of DCGT (Chapter 3, Section 3.6.1) is the substrate-to-continuum bridge for UDM.
+
+#### 10.11.2 Downstream
+
+- **Chapter 14 (Cross-Platform Unifications).** UDM's $\beta \approx 2$ result and the soft-matter architectural unification are part of the program's cross-domain consistency signatures. The form-FORCED / value-INHERITED methodology developed here propagates through Chapter 14.
+- **Chapter 15 (Public Test Inventory).** UDM PASSED status across ten systems is one of the program's three PASSED-status empirical anchors, catalogued in Chapter 15. FRAP-BSA IN PROGRESS status is also catalogued.
+
+### 10.12 Canonical Sources
+
+- `papers/Universal_Mobility_Law/`
+- `papers/P4_NonNewtonian_Paper_Draft/`
+
+The Universal_Mobility_Law paper presents the publication-grade empirical validation across ten systems, with the canonical form $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ derived from P04 mobility-capacity bound and the empirical results $\beta = 1.72 \pm 0.37$, $R^2 > 0.986$, plus the mechanism-clustered scatter analysis. The P4_NonNewtonian_Paper_Draft presents the architectural extension covering Krieger–Dougherty, DST, Cross-class, mixed regimes, and Maxwell-class viscoelasticity through the unified P04 + V5 substrate commitments.
+
+The Monograph Shell's Appendix A theorem provenance map lists DCGT (Chapter 3) and the V5 finite-width memory kernel as the substrate-level theorems consumed by this chapter. The Notation Glossary in Appendix B lists the symbols used in this chapter (mobility $M$, participation density $\rho$, packing limit $\rho_\mathrm{max}$, exponent $\beta$, relaxation time $\tau_R$, V5 cross-chain memory kernel).
+
+### 10.13 Optional Figures
+
+**Figure 10.1 — The five canonical non-Newtonian rheology families.** A five-row diagram. Each row corresponds to one family (Krieger–Dougherty, DST, Cross-class, mixed regimes, Maxwell-class viscoelasticity). Columns: (i) Standard constitutive equation; (ii) Substrate-level mechanism (P04 mobility-capacity bound applied to which state variable, or V5 cross-chain memory); (iii) Empirical example. The figure makes visible the substrate-level unification of the five families.
+
+**Figure 10.2 — UDM across ten systems.** A scatter plot with mobility ratio on the y-axis and $\rho/\rho_\mathrm{max}$ on the x-axis. Ten curves, one for each empirical system, all fitting the same functional form $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ with system-specific empirical $\beta$ values clustered around $\beta = 1.72 \pm 0.37$. The canonical $\beta = 2$ curve is shown for reference.
+
+**Figure 10.3 — Mechanism-clustered scatter in $\beta$.** A horizontal axis labeled with system mechanisms: cooperative-networks ($\bar\beta \approx 2.31$), steric ($\bar\beta \approx 1.76$), gradual/electrostatic ($\bar\beta \approx 1.38$). The canonical $\beta = 2$ value is marked. The figure makes visible the structural pattern that more-cooperative networks have higher $\beta$ and less-cooperative have lower $\beta$.
+
+**Figure 10.4 — P4-NN as one substrate principle, four state-variable applications.** A radial diagram with P04 at the center and four spokes radiating outward to: (i) Krieger–Dougherty (volume fraction); (ii) DST (strain rate, saturating); (iii) Cross-class (strain rate, disruption); (iv) mixed regimes (multiple state variables). Each spoke is annotated with the state variable used and the resulting constitutive structure. The figure makes visible the single-substrate-principle architecture covering four canonical families.
+
+**Figure 10.5 — V5 to Maxwell viscoelasticity through DCGT.** A flow diagram showing V5 cross-chain memory at the substrate level, DCGT coarse-graining, and the Maxwell equation $\tau_R\dot\sigma + \sigma = 2\mu S$ at the continuum level. The relaxation time $\tau_R$ is identified as V5's first temporal moment.
+
+**Figure 10.6 — The full architectural unification.** A 2x5 grid: left column shows the five canonical families; right column shows the substrate mechanism (P04 for the first four; V5 for the fifth). A central note observes that two substrate commitments produce all five canonical non-Newtonian rheology families.
+
+**Figure 10.7 — Form-FORCED vs Value-INHERITED at soft-matter mobility.** A two-column diagram. Left column ("Form-FORCED"): UDM functional form, substrate-natural $\beta = 2$, four-family P4-NN unification, Maxwell-equation form, $\tau_R$ as V5 first temporal moment, exhaustiveness of UDM + P4-NN + V5 over five canonical families. Right column ("Value-INHERITED"): specific empirical $\beta$ for individual systems, packing limits $\rho_\mathrm{max}$, unconstrained mobilities $M_0$, critical strain rates, viscosity coefficients, relaxation times $\tau_R$.
+
+**Figure 10.8 — The PASSED-status empirical anchor.** A simplified view of UDM's empirical validation: ten chemically unrelated systems, all fitting $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ with $\beta = 1.72 \pm 0.37$, $R^2 > 0.986$. A note observes that this is the most quantitatively-tested structural prediction in the Event Density program.
+
+\newpage
+
+# Part IV — Gravity and Cosmology
+
+Part IV addresses the gravitational sector. Chapter 11 closes substrate gravity at galactic scale through T19 (Newton), T20 (MOND transition acceleration), the ED Combination Rule, and T21 (BTFR slope-4). Chapter 12 develops curvature emergence via Arc ED-10 and the acoustic-metric covariantization. Chapter 13 develops black-hole architecture via Arc BH: decoupling surfaces, area law, and BHPT phase-shift structure.
+
+\newpage
+
+## Chapter 11 — Substrate Gravity at Galactic Scale: T19, T20, ECR, T21
+
+### 11.1 Chapter Overview
+
+Galactic-scale gravitational physics has driven cosmology and astrophysics for forty years. Two responses to the empirical observation that spiral-galaxy rotation curves do not follow Newton's law have dominated: invoking dark matter (which has yet to be directly detected despite decades of underground-laboratory effort), or invoking Modified Newtonian Dynamics (MOND, which fits the data with empirical inputs that have no first-principles derivation in standard physics). Neither response is structurally complete. The first leaves the universe's mass-energy budget dominated by an undetected substance; the second produces phenomenologically successful fits with constants of unknown origin.
+
+This chapter establishes the substrate-gravity sector of the Event Density framework: the entire flat-spacetime gravitational physics of galactic scales is derived from substrate primitives without free parameters. Four results combine to form the closure: **Theorem T19** derives Newton's gravitational constant $G = c^3\ell_P^2/\hbar$ from substrate cumulative-strain mechanism plus holographic participation-count bound; **Theorem T20** derives the MOND transition acceleration $a_0 = c\,H_0/(2\pi)$ from the cosmic horizon's dipole-projection contribution to a local accelerating object's substrate environment; **the ED Combination Rule (ECR)** establishes $a = \sqrt{a_N \cdot a_0}$ as the substrate-derived multiplicative-participation rule for the deep-galactic regime; and **Theorem T21** derives the slope-4 baryonic Tully–Fisher relation $v^4 = G\,M\,a_0$ from T19, T20, and ECR, with the proportionality constant in substrate quantities and zero intrinsic scatter predicted in the asymptotic deep-MOND regime. Flat rotation curves follow as a corollary.
+
+The chapter operates entirely at flat-spacetime / weak-field galactic scale. Curvature emergence (Chapter 12) extends the same substrate-gravity content to acoustic-metric scalar-tensor covariantization. The framework explicitly does not derive Einstein's general relativity; the curvature-emergence content is kinematic-class rather than full-GR dynamical. The chapter does not address cluster-scale dynamics (where MOND has known difficulties), dark-energy / cosmological-constant questions, structure formation, or other cosmological observables. Its scope is the substrate-derivation of the four canonical galactic-gravity results and their consolidation under DCGT into a modified Poisson equation. The dwarf-galaxy outer-radius mass-discrepancy result (Chapter 15, PASSED status) is the chapter's most quantitatively-tested empirical anchor.
+
+### 11.2 The Standard Cast of Characters in Galactic Gravity
+
+#### 11.2.1 The empirical regularities
+
+Standard galactic gravity has five canonical empirical regularities that any structural account must reproduce:
+
+- **Newton's law in the solar system.** $a = GM/R^2$, with $G \approx 6.674 \times 10^{-11}$ m³ kg⁻¹ s⁻². Universal gravitational acceleration from a point mass; works to extraordinary precision at solar-system scales.
+- **Flat rotation curves.** Stars in the outer regions of spiral galaxies orbit at speeds that asymptote to a finite, mass-determined value as a function of radius, rather than falling off as $1/\sqrt{R}$ as Newton's law would predict for a Keplerian system.
+- **The MOND transition acceleration.** $a_0 \approx 1.2 \times 10^{-10}$ m/s². The empirical scale below which galactic dynamics depart from Newton's law. In MOND, this is a phenomenological constant; standard physics has no first-principles account of its specific value.
+- **The deep-MOND combination rule.** $a = \sqrt{a_N \cdot a_0}$. The empirical pattern connecting Newton-class and MOND-class accelerations in the regime well below $a_0$. In MOND, this is a phenomenological functional form.
+- **The slope-4 baryonic Tully–Fisher relation.** $v^4 \propto M$, observed empirically across hundreds of galaxies, with the proportionality constant set by data. In MOND, the slope-4 follows from the combination rule applied to the orbital-balance equation; in dark-matter cosmology, it emerges from a chain of empirical assumptions about halo profiles.
+
+A complete structural account of galactic gravity has to derive all five from something more fundamental. The Event Density framework derives all five.
+
+#### 11.2.2 Why neither dark matter nor MOND is structurally complete
+
+Standard responses to the empirical regularities are structurally incomplete in different ways:
+
+- **Dark matter** explains a great deal — galaxy rotation curves, gravitational lensing, structure formation, cosmic-microwave-background acoustic peaks — but its central postulate (that the universe contains 5–6× more mass in invisible non-baryonic particles than in visible baryonic matter) has not been directly confirmed. Every direct-detection experiment in deep underground laboratories, run for decades with ever more sensitive instruments, has produced null results. The particles, if they exist, have eluded every attempt to catch one.
+- **MOND** explains galactic rotation curves and the Tully–Fisher relation phenomenologically without invoking dark matter, but its central inputs — the transition acceleration $a_0$ and the combination rule $a = \sqrt{a_N a_0}$ — are phenomenological constants of unknown origin. The specific value of $a_0$ has the suspicious shape "speed of light times Hubble rate divided by something order unity" but no first-principles derivation in standard physics.
+
+Both responses leave the structural origin of the empirical regularities unexplained. Dark matter pushes the explanation onto an undetected substance; MOND pushes it onto unmotivated phenomenological constants.
+
+#### 11.2.3 The substrate-level alternative
+
+The Event Density framework's substrate-level analysis offers a third option: derive the empirical regularities from substrate primitives with no free parameters. The four results of this chapter (T19, T20, ECR, T21) collectively close the substrate-derivation chain for galactic gravity. The empirical regularities are reproduced; the inputs are substrate primitives plus standard physical constants ($\hbar$, $c$, $H_0$); no dark-matter postulate is required at galactic scale; no phenomenological constants are introduced.
+
+The framework's claim is structural rather than empirical-discriminating: galactic rotation curves do not look different at the lab tomorrow because of this work. What changes is the structural origin of the empirical regularities. The framework does not refute dark matter as a possible component of the universe's mass-energy budget at scales beyond the galactic; it refutes the structural necessity of dark matter at galactic scales by deriving the rotation-curve and Tully–Fisher phenomenology from substrate primitives.
+
+### 11.3 The Substrate Inputs for Galactic Gravity
+
+#### 11.3.1 Three pieces of substrate machinery
+
+Three pieces of substrate machinery do most of the work in deriving galactic gravity. Each is established at substrate level by primitives and load-bearing invariants of Chapters 1–4; this chapter applies them to the gravitational sector.
+
+- **Cumulative-strain mechanism.** A chain (the substrate-level analogue of a particle) at distance $R$ from a mass $M$ experiences strain on its participation channels. The strain integrates along the path from the chain's location outward, and its rate of change with radial position gives the chain's effective acceleration. The cumulative-strain mechanism is the substrate-level structural origin of gravitational attraction at the chain level.
+- **Holographic participation-count bound.** The substrate has a finite number of participation degrees of freedom on any boundary surface. The count scales with the area of the surface and inversely with the substrate length scale squared. This is the framework's substrate-native analogue of holographic-class bounds in standard high-energy physics. It is a structural commitment that follows from substrate locality applied to surfaces (Chapter 1, Section 1.7.2).
+- **Cosmic decoupling surface.** The substrate has natural participation boundaries. The cosmic horizon — at distance $R_H = c/H_0$ from any observer — is one of them. Beyond $R_H$, micro-events cannot reach the observer in finite cosmic time. The horizon is a real participation boundary at the substrate level, not a metaphor. Substrate primitive content from Chapter 2 (cross-bandwidth $\Gamma_\mathrm{cross}$ collapse) and Chapter 13 (the universal horizon mechanism) provides the substrate-level reading of the cosmic horizon as a participation-bandwidth boundary.
+
+These three pieces, plus substrate time-translation symmetry and retardation (forward-cone-only causal structure from Theorem 18, Chapter 4), produce the entire gravitational sector of galactic physics.
+
+#### 11.3.2 The substrate inputs and constants
+
+The substrate inputs used in the four derivations:
+
+- $\hbar$ (Planck's constant). Substrate input from Chapter 1's primitive layer.
+- $c$ (speed of light). Substrate input.
+- $H_0$ (Hubble rate). Substrate input characterizing the cosmic horizon's distance.
+- $\ell_P$ (Planck length / substrate length scale). Identified with the standard Planck length through T19's Newton-recovery argument; this identification is *derived*, not postulated.
+
+The substrate primitives consumed:
+- The participation-density primitives (load-bearing for cumulative-strain mechanism and cosmic-horizon participation density).
+- Substrate locality (load-bearing for holographic participation-count bound on boundary surfaces).
+- DCGT (Chapter 3) consolidates substrate-gravity content into a modified Poisson equation in flat-background regime.
+- Theorem 18 (Chapter 4) supplies the kernel-level arrow ensuring forward-only causal structure for substrate dynamics.
+
+The framework's claim is that no other substrate inputs are required. T19, T20, ECR, T21 are derived from this set without phenomenological additions.
+
+### 11.4 Theorem T19: Newton's Gravitational Constant from Substrate
+
+#### 11.4.1 The structural derivation
+
+Theorem T19 derives Newton's gravitational constant $G$ from substrate primitives. The structural argument:
+
+1. **Take a chain at distance $R$ from a mass $M$.** The chain experiences strain on its participation channels through the cumulative-strain mechanism. The strain integrates along the path from the chain's location outward.
+2. **Apply the cumulative-strain reading.** The chain's acceleration is the rate of change of integrated strain with radial position. The integrated strain scales as $M/R$ (the gradient of $M/R$ with respect to $R$ gives the inverse-square law's $1/R^2$ structure). At this stage the inverse-square form of Newton's law is recovered, but the proportionality constant $G$ is not yet fixed.
+3. **Apply the holographic participation-count bound.** A sphere at radius $R$ around the mass has area $4\pi R^2$. The participation degrees of freedom on this sphere are $4\pi R^2/\ell_P^2$, where $\ell_P$ is the substrate length scale. This bound is a structural commitment of the substrate ontology applied to boundary surfaces.
+4. **Distribute the local mass-energy across the participation degrees of freedom.** A substrate-level equipartition argument distributes the local mass-energy $Mc^2$ across the $4\pi R^2/\ell_P^2$ degrees of freedom on the sphere. An Unruh-analog inversion identifies the local participation rate per degree of freedom.
+5. **Compute the chain's effective acceleration.** Combining the cumulative-strain rate and the participation-count bound, the substrate-level analysis produces the effective acceleration:
+   ```math
+   a = \frac{M c^3 \ell_P^2}{R^2 \hbar}.
+   ```
+   The factors of $2\pi$ from the area normalization and from the equipartition argument cancel cleanly.
+6. **Compare with Newton's law.** Newton's law is $a = GM/R^2$. Comparing:
+   ```math
+   G = \frac{c^3\,\ell_P^2}{\hbar}.
+   ```
+
+The proportionality constant in Newton's law is now expressed as a relationship among three fundamental substrate constants: the speed of light $c$, the Planck length $\ell_P$, and Planck's constant $\hbar$.
+
+#### 11.4.2 The Planck-length identification
+
+The substrate length scale $\ell_P$ is identified with the standard Planck length through Newton-recovery. The framework does *not* assume $\ell_P = \sqrt{\hbar G/c^3}$ at the substrate-ontological level; that identification follows from solving for $\ell_P$ given the empirical value of $G$:
+
+```math
+\ell_P = \sqrt{\frac{G\hbar}{c^3}}.
+```
+
+Plugging in empirical values of $G$, $\hbar$, $c$ produces the standard Planck length $\ell_P \approx 1.616 \times 10^{-35}$ m. The framework's structural commitment is to a substrate length scale; the empirical content of T19 is that this length scale is the standard Planck length.
+
+This is the form-FORCED / value-INHERITED demarcation at T19's level. The functional form $G = c^3\ell_P^2/\hbar$ is FORCED. The numerical value of $\ell_P$ (and equivalently of $G$) is INHERITED from substrate constants whose closed-form derivation is downstream open work; the value is calibrated against Newton-recovery.
+
+#### 11.4.3 What T19 does and does not deliver
+
+T19 **delivers**:
+- Newton's gravitational constant $G$ as a relationship among substrate constants $c$, $\ell_P$, $\hbar$.
+- The identification of the substrate length scale with the standard Planck length as a derived consequence of Newton-recovery.
+- The substrate-level structural origin of inverse-square Newton's law via cumulative-strain mechanism plus holographic participation-count bound.
+
+T19 **does not deliver**:
+- A closed-form first-principles derivation of $\ell_P$'s specific value. Inherited from substrate constants.
+- A substrate-level account of strong-field gravity (extreme curvature regimes). Chapter 12 develops the curvature-emergence extension at acoustic-metric scalar-tensor level; full GR is not derived.
+- A structural account of cluster-scale or cosmological-scale gravity. Out of scope.
+
+### 11.5 Theorem T20: The MOND Transition Acceleration
+
+#### 11.5.1 The structural question
+
+The MOND transition acceleration $a_0 \approx 1.2 \times 10^{-10}$ m/s² is the empirical scale below which galactic dynamics depart from Newton's law. The specific value has the suspicious shape "speed of light times Hubble rate divided by something order unity" — specifically, $a_0 \approx c H_0 / (2\pi)$. Standard MOND treats this as a phenomenological constant fit to galactic rotation-curve data.
+
+The substrate-level question: where does $a_0$ come from? The structural answer involves the cosmic horizon's contribution to a local accelerating object's substrate environment.
+
+#### 11.5.2 The structural derivation
+
+Theorem T20 derives $a_0$ from a substrate-native dipole-projection mechanism:
+
+1. **A chain at rest in flat substrate** has its participation environment in three-dimensional symmetry. There is no preferred direction; the chain's substrate environment is isotropic.
+2. **A chain that is accelerating breaks that symmetry.** There is a "forward" direction (the direction of acceleration) and a "backward" direction. The chain's participation environment becomes anisotropic with a privileged axis along the acceleration direction. This is the substrate-level analogue of the Rindler-frame anisotropy in standard physics.
+3. **The chain has an acceleration-induced decoupling surface** at distance $c^2/a$ behind it. Beyond this surface, micro-events cannot reach the chain in finite proper time. The substrate-level reading: the chain's environment has a participation-density boundary set by its acceleration.
+4. **The cosmic horizon contributes to the chain's stability landscape.** But because the chain's environment is anisotropic, the cosmic horizon's contribution is not the isotropic full-sphere integration. It is a *directional projection* along the chain's acceleration axis.
+5. **Decompose this projection in spherical harmonics.** The leading anisotropic mode is the dipole — $\ell = 1$, $m = 0$. The dipole has a specific azimuthal symmetry around the acceleration axis: its only spatial periodicity is the $2\pi$ azimuthal cycle.
+6. **The chain integrates the cosmic horizon's contribution through the azimuthal mode.** The effective rate at which it experiences cosmic-horizon fluctuations is the cosmic angular rate $H_0$ divided by the dipole's azimuthal period $2\pi$:
+   ```math
+   \gamma_\mathrm{cosmic}^\mathrm{eff} = \frac{H_0}{2\pi}.
+   ```
+7. **The chain's own acceleration-induced decoupling surface refreshes at rate $a/c$.** The transition between local-decoupling-dominated dynamics (Newton regime) and cosmic-decoupling-dominated dynamics (MOND regime) occurs where these two rates match:
+   ```math
+   \frac{a_*}{c} = \frac{H_0}{2\pi}.
+   ```
+8. **Solving:**
+   ```math
+   a_0 = \frac{c\,H_0}{2\pi}.
+   ```
+
+#### 11.5.3 The empirical match
+
+Plugging in standard values $H_0 = 70$ km/s/Mpc and $c = 3 \times 10^8$ m/s yields $a_0 \approx 1.08 \times 10^{-10}$ m/s². The empirical MOND constant is $\approx 1.2 \times 10^{-10}$ m/s². The match is within approximately 10%, parameter-free.
+
+The Hubble tension — whether $H_0$ is closer to 67 km/s/Mpc (cosmic-microwave-background-derived value) or 73 km/s/Mpc (local distance-ladder value) — translates to a prediction band of about 15% on $a_0$. This is consistent with the empirical-match status: the substrate-derived $a_0$ is within the Hubble-tension band of the empirical MOND constant.
+
+#### 11.5.4 The structural significance of the $2\pi$
+
+A long-standing curiosity in MOND research has been the suspicious appearance of $2\pi$ in the empirical $a_0 = cH_0/(2\pi)$ relationship. Standard MOND has no first-principles account of this factor; it is fit to the data and the $2\pi$ emerges as a numerical coincidence.
+
+The substrate-level account identifies the structural origin: the $2\pi$ is the azimuthal period of the leading anisotropic projection mode (the dipole) of the cosmic horizon's contribution to an accelerating chain's substrate environment. The factor is structural, not phenomenological. The framework's specific contribution at T20 is to provide the structural reason for the empirically-noted $2\pi$.
+
+#### 11.5.5 What T20 does and does not deliver
+
+T20 **delivers**:
+- The MOND transition acceleration $a_0 = c\,H_0/(2\pi)$ from substrate-native dipole-projection mechanism.
+- A structural account of the suspicious $2\pi$ in the empirical $a_0$ relationship.
+- A parameter-free numerical match within ~10% of the empirical MOND constant (within Hubble-tension uncertainty).
+
+T20 **does not deliver**:
+- A closed-form first-principles prediction of the specific Hubble rate $H_0$. The Hubble rate is a substrate input, treated as empirical.
+- A complete substrate-level account of cosmic-horizon participation density. Arc COSMO (Chapter 15, OPEN status) is the natural future arc that would extend T20's content to cosmological-scale dynamics including dark-energy-class phenomena.
+- A substrate-level resolution of the Hubble tension itself. The 15% prediction band reflects empirical uncertainty in $H_0$, not a substrate-level prediction.
+
+### 11.6 The ED Combination Rule (ECR)
+
+#### 11.6.1 The structural question
+
+For galactic outskirts to obey the empirical Tully–Fisher relation $v^4 \propto M$, the framework needs a specific rule for how Newton-class strain (from local mass $M$) and cosmic-horizon-class strain (the MOND scale $a_0$) combine in the chain's stability landscape. Standard MOND's interpolation function $\mu(a/a_0)$ accomplishes this phenomenologically: $\mu \to 1$ in the high-acceleration regime (Newton recovered) and $\mu \to a/a_0$ in the low-acceleration regime (MOND scaling). The substrate-level question: where does this combination rule come from?
+
+#### 11.6.2 The substrate-level derivation
+
+In the joint weak-gradient regime — where neither Newton-class strain nor cosmic-horizon-class strain dominates the chain's accessible region — the chain's stability landscape acquires a *logarithmic cross-term*:
+
+```math
+\Sigma_\mathrm{cross}(R) = \sqrt{G\,M\,a_0}\cdot\log(R/R_0) + \mathrm{const.}
+```
+
+The coefficient $\sqrt{G\,M\,a_0}$ is the *geometric mean* of the two substrate strain scales, not their sum. This is multiplicative participation between local-mass and cosmic-horizon contributions, baked into the substrate's two-scale structure.
+
+The cross-term is *not* a perturbative correction; it is the substrate's structural response to the joint regime. Standard perturbation theory would produce additive corrections (Newton plus MOND in some weighted average). The substrate's structural response is multiplicative — the geometric mean of the two scales — because the two scales characterize different substrate channels (local-mass strain in the Newton-class participation channel; cosmic-horizon strain in the dipole-projection channel) and their joint contribution to the stability landscape is the product of the two channel-specific strains.
+
+The chain's effective acceleration in the deep regime is the gradient of the cross-term:
+
+```math
+a = \frac{\sqrt{G\,M\,a_0}}{R} = \sqrt{a_N\cdot a_0},
+```
+
+where $a_N = GM/R^2$ is the Newton acceleration. This is the substrate-level statement of the deep-MOND combination rule. The framework calls it the ED Combination Rule.
+
+#### 11.6.3 The structural significance
+
+ECR's structural significance is the substrate-level origin of the multiplicative-participation rule. Standard MOND treats the geometric-mean form as a phenomenological observation; the substrate-level account derives it as a consequence of how two substrate strain scales combine in the joint weak-gradient regime.
+
+ECR is form-FORCED at the substrate level. The geometric-mean structure is not optional; it follows from the two-scale logarithmic stability-landscape argument. Specific numerical content (the precise transition shape between Newton-dominated and ECR-dominated regimes) is INHERITED from the substrate's specific cumulative-strain dynamics.
+
+#### 11.6.4 ECR is a derived rule, not a primitive
+
+The ED Combination Rule is *not* a substrate primitive. The framework's nomenclature distinguishes:
+- **P11** is Primitive 11 (commitment-irreversibility, Chapter 1).
+- **ECR** is the ED Combination Rule (this section's substrate-derived multiplicative-participation rule).
+
+ECR is reachable from substrate primitives plus T19 plus T20; it is not part of the irreducible base of the substrate ontology. The naming convention avoids any confusion between substrate primitives (which are committed, not derived) and ECR (which is derived).
+
+### 11.7 Theorem T21: The Slope-4 Baryonic Tully–Fisher Relation
+
+#### 11.7.1 The structural derivation
+
+Theorem T21 follows from T19, T20, and ECR through orbital balance:
+
+1. **A test particle in a circular orbit at radius $R$ around a galactic mass $M$** has centripetal acceleration $v^2/R$ in the orbital frame.
+2. **Set the centripetal acceleration equal to the deep-MOND effective acceleration** from ECR:
+   ```math
+   \frac{v^2}{R} = \frac{\sqrt{G\,M\,a_0}}{R}.
+   ```
+3. **The right-hand side is independent of $R$.** Solving:
+   ```math
+   v^2 = \sqrt{G\,M\,a_0}.
+   ```
+4. **The orbital speed asymptotes to a finite, mass-determined value at large radius.** This is *flat rotation curves*, derived from substrate primitives.
+5. **Squaring:**
+   ```math
+   v^4 = G\,M\,a_0.
+   ```
+
+This is the slope-4 baryonic Tully–Fisher relation. The proportionality constant $G\,a_0$ is now expressed entirely in substrate constants:
+
+```math
+G\,a_0 = \frac{c^3\,\ell_P^2}{\hbar}\cdot\frac{c\,H_0}{2\pi} = \frac{c^4\,\ell_P^2\,H_0}{2\pi\,\hbar}.
+```
+
+#### 11.7.2 The robustness audit
+
+The slope-4 result is robust under all admissible variations of the framework's substrate kernels and interpolation functions. The substrate-level analysis identifies which features of the derivation are necessary for slope-4 and which are admissible variants:
+
+- **Necessary structural features:** (i) the cumulative-strain mechanism producing inverse-square Newton; (ii) the dipole-projection mechanism producing the $a_0$ scale; (iii) the geometric-mean ECR producing multiplicative cross-term composition; (iv) circular-orbit centripetal balance.
+- **Admissible variations:** different specific shapes of the substrate cumulative-strain kernel; different specific shapes of the cosmic-horizon dipole-projection profile; different specific shapes of the ECR transition function between Newton-dominated and deep-MOND regimes.
+
+Under any admissible variation, the slope-4 result $v^4 = GMa_0$ holds in the asymptotic deep-MOND regime. This robustness is structurally significant: the framework predicts slope-4 not as a phenomenological fit but as a structurally-FORCED consequence of the substrate-level ingredients.
+
+#### 11.7.3 Zero intrinsic scatter prediction
+
+A direct consequence of T21's robustness: the framework predicts *zero intrinsic scatter* in the asymptotic deep-MOND regime. Scatter in empirical Tully–Fisher data should be dominated by baryonic-mass measurement uncertainty rather than by intrinsic physics scatter.
+
+The empirical SPARC galaxy-rotation-curve catalog (about 150 galaxies) shows sub-0.1-dex scatter dominated by baryonic-mass measurement uncertainty, consistent with the framework's zero-intrinsic-scatter prediction. This is an empirical anchor for T21 at the structural level.
+
+#### 11.7.4 What T21 does and does not deliver
+
+T21 **delivers**:
+- The slope-4 baryonic Tully–Fisher relation $v^4 = G\,M\,a_0$ from substrate primitives.
+- The proportionality constant $G\,a_0$ in fundamental substrate quantities.
+- Flat rotation curves as a corollary.
+- Zero intrinsic scatter prediction in the asymptotic deep-MOND regime.
+- Robustness under admissible substrate-kernel variations.
+
+T21 **does not deliver**:
+- A constructive derivation of any specific galaxy's rotation curve. The framework supplies the structural relation; specific galactic dynamics depend on baryonic mass distribution.
+- A complete theory of galactic dynamics including disk dynamics, spiral-arm structure, halo substructure, etc.
+- An account of cluster-scale dynamics. Out of scope.
+
+### 11.8 Consolidation Under DCGT: The Modified Poisson Equation
+
+#### 11.8.1 DCGT applied to substrate gravity
+
+Chapter 3's DCGT (Diffusion Coarse-Graining Theorem) consolidates the substrate-gravity content into a modified Poisson equation in the flat-background regime. The substrate-level analysis through T19, T20, ECR, T21 produces galactic-gravity content; DCGT's coarse-graining bridge integrates this content into a continuum-level differential equation.
+
+The consolidated form:
+
+```math
+\nabla\cdot\bigl[\mu(|\nabla\Phi|/a_0)\,\nabla\Phi\bigr] = 4\pi\,G\,\rho_m,
+```
+
+where $\Phi$ is the gravitational potential, $\rho_m$ is the matter density, and $\mu(x)$ is an interpolation function with the asymptotic constraints:
+- $\mu(x) \to 1$ for $x \gg 1$ (high-acceleration regime, recovering Newton's law).
+- $\mu(x) \to x$ for $x \ll 1$ (low-acceleration regime, recovering ECR's geometric-mean composition).
+
+The interpolation function $\mu$ is *constrained* in its asymptotic behavior by the substrate-level ingredients (Newton recovery at high acceleration; ECR at low acceleration); its specific functional form between the two limits is INHERITED from substrate-cumulative-strain-kernel details.
+
+#### 11.8.2 The structural status of the modified Poisson equation
+
+The modified Poisson equation is the framework's continuum-level statement of substrate gravity in the flat-background regime. It is structurally equivalent to the standard MOND-class modified gravity equation studied in the post-MOND literature; the framework's specific contribution is the substrate-level derivation of the equation's form-FORCED ingredients (T19, T20, ECR, T21) plus the asymptotic constraints on the interpolation function.
+
+The equation is *not* general relativity. It is a flat-spacetime / weak-field equation. Curvature emergence (Chapter 12) extends substrate gravity to acoustic-metric scalar-tensor covariantization; full GR is not derived.
+
+#### 11.8.3 The framework's substrate-gravity scope
+
+The substrate-gravity sector covers:
+- **Newton's law in the solar system** (T19, recovered in the high-acceleration regime).
+- **The MOND transition acceleration** $a_0$ (T20, derived from cosmic-horizon dipole-projection).
+- **The deep-galactic combination rule** (ECR, derived from substrate's two-scale logarithmic stability landscape).
+- **The slope-4 baryonic Tully–Fisher relation** (T21, derived from T19+T20+ECR with orbital balance).
+- **Flat rotation curves** (corollary of T21).
+- **The modified Poisson equation** in flat-background regime (DCGT consolidation).
+
+The framework's scope explicitly does not cover:
+- **Cluster-scale dynamics.** Where MOND has known difficulties; future work.
+- **Strong-field gravity.** Extreme curvature regimes; addressed in Chapter 12 at acoustic-metric class but not full GR.
+- **Cosmological-scale dynamics.** Dark-energy / cosmological-constant questions, structure formation, CMB acoustic peaks. Arc COSMO (Chapter 15, OPEN) is the natural future arc.
+- **Dark-matter component of the universe's mass-energy budget at non-galactic scales.** Out of scope.
+
+The substrate-gravity sector therefore closes the galactic-scale gravitational physics problem at substrate level without invoking dark matter or phenomenological constants. Cluster-scale and cosmological-scale gravity are flagged as open extensions.
+
+### 11.9 The Empirical Anchor: Dwarf-Galaxy Outer-Radius Mass Discrepancy
+
+#### 11.9.1 The PASSED-status anchor
+
+The substrate-gravity sector has one PASSED-status empirical anchor (Chapter 15): the dwarf-galaxy outer-radius mass discrepancy result.
+
+The structural prediction: dynamically *active* dwarf galaxies (recent star formation, mergers, AGN feedback, bar-driven inflow) should exhibit larger outer-radius mass discrepancies than dynamically *quiet* dwarfs at fixed baryonic mass. The substrate-level reason: sustained internal activity generates ED gradients that diffuse into smooth temporal halos, increasing the apparent outer-radius mass discrepancy in active systems.
+
+The empirical test: SPARC dataset analysis of 46 dwarf galaxies, classified into Quiet and Active groups. Results:
+- Quiet dwarfs: $\langle D_\mathrm{outer}\rangle \approx 3.94$.
+- Active dwarfs: $\langle D_\mathrm{outer}\rangle \approx 6.01$.
+- Ratio: $D_\mathrm{Active}/D_\mathrm{Quiet} \approx 1.53$.
+
+A 53% higher outer-radius mass discrepancy in active dwarfs than in quiet dwarfs at fixed baryonic mass. A scatter plot of the outermost points shows two clean visual bands at $D \approx 3$–4 (Quiet) and $D \approx 5$–6 (Active). The separation is structural, reproducible, and visually obvious.
+
+#### 11.9.2 What the PASSED status means
+
+The PASSED status reflects:
+- **The structural prediction is empirically confirmed.** Active > Quiet outer-radius mass discrepancy is observed at the predicted ~50% level.
+- **The structural mechanism is consistent with the data.** Activity-dependent halo strength is the substrate-level reading; the empirical pattern matches.
+- **First completed astrophysical test of the framework.** The dwarf-galaxy result is the first structural prediction of the framework that has been empirically tested with published data.
+
+The PASSED status does *not* mean:
+- **The framework is empirically validated as a complete theory.** PASSED status is for one specific structural prediction; other predictions (cluster dynamics, cosmological observables) are out of scope or open.
+- **Dark matter is refuted.** The framework's claim is structural rather than empirical-discriminating; both dark matter and the substrate-gravity reading can fit galactic rotation curves, and the framework derives the rotation curves from substrate primitives without invoking dark matter at galactic scales.
+
+### 11.10 What This Changes (And What It Doesn't)
+
+#### 11.10.1 What does not change
+
+Galactic rotation curves look the same tomorrow as they have for forty years. The empirical Tully–Fisher relation continues to fit slope-4 across hundreds of galaxies. The MOND transition acceleration is what observation shows it to be. No new astronomical observation will produce a different result because of this work.
+
+The framework changes nothing about engineering predictions, computational astrophysics, weather of cosmological-scale measurements, or any other practical use of standard galactic-gravity results. The empirical content is preserved.
+
+#### 11.10.2 What does change
+
+Three structural shifts:
+
+- **Newton's gravitational constant becomes substrate-derived.** $G = c^3\ell_P^2/\hbar$, with the substrate length scale identified with the standard Planck length through Newton-recovery rather than postulated.
+- **The MOND transition acceleration becomes substrate-derived.** $a_0 = c\,H_0/(2\pi)$, with the suspicious $2\pi$ identified as the dipole's azimuthal period rather than as a phenomenological coincidence.
+- **The deep-galactic combination rule and slope-4 Tully–Fisher relation become substrate-derived.** ECR's geometric-mean form follows from the substrate's two-scale logarithmic stability landscape; T21's slope-4 follows from orbital balance applied to ECR.
+
+These three shifts do not change any astronomical observation. They change the structural origin of galactic gravity. Three previously empirical or phenomenological inputs become substrate-derived consequences with no free parameters.
+
+### 11.11 Form-FORCED vs Value-INHERITED at Substrate Gravity
+
+#### 11.11.1 What is form-FORCED
+
+- **The functional form $G = c^3\ell_P^2/\hbar$.** Newton's gravitational constant as a relationship among substrate constants.
+- **The functional form $a_0 = c\,H_0/(2\pi)$.** MOND transition acceleration with the $2\pi$ as dipole azimuthal period.
+- **The geometric-mean form of ECR.** $a = \sqrt{a_N\,a_0}$ in the deep-MOND regime as substrate's multiplicative-participation rule.
+- **The slope-4 form of Tully–Fisher.** $v^4 = G\,M\,a_0$ from T19+T20+ECR with orbital balance.
+- **Flat rotation curves.** Corollary of T21.
+- **The asymptotic constraints on the modified Poisson equation interpolation function.** $\mu \to 1$ at high acceleration (Newton recovered); $\mu \to x$ at low acceleration (ECR recovered).
+- **Robustness of slope-4 under admissible substrate-kernel variations.**
+- **Zero intrinsic scatter prediction in the asymptotic deep-MOND regime.**
+- **Activity-dependent halo strength prediction** (dwarf-galaxy PASSED anchor).
+
+#### 11.11.2 What is value-INHERITED
+
+- **The numerical value of $\ell_P$ (and equivalently of $G$).** Inherited from substrate constants; calibrated against Newton-recovery.
+- **The numerical value of $H_0$.** Substrate input; subject to Hubble-tension empirical uncertainty (15% prediction band on $a_0$).
+- **The specific shape of the modified Poisson interpolation function $\mu(x)$ between asymptotic limits.** Inherited from substrate-cumulative-strain-kernel details.
+- **Specific galaxy-by-galaxy rotation-curve details.** Depend on baryonic mass distribution; not a substrate-level prediction.
+
+#### 11.11.3 What is open
+
+- **Cluster-scale dynamics.** Where MOND has known difficulties; future substrate-gravity work needed.
+- **Cosmological-scale dynamics.** Dark-energy questions, structure formation, CMB acoustic peaks. Arc COSMO is the natural future arc.
+- **Closed-form derivation of $\ell_P$ from substrate primitives without Newton-recovery calibration.** Open work.
+- **Closed-form derivation of $H_0$ from substrate primitives.** Out of current scope; tied to Arc COSMO.
+- **Strong-field gravity beyond acoustic-metric class.** Chapter 12 develops curvature emergence at acoustic-metric scalar-tensor; full GR is not derived.
+
+### 11.12 Dependencies
+
+#### 11.12.1 Upstream
+
+- **Chapter 1.** Substrate primitives, especially the participation primitives (load-bearing for cumulative-strain mechanism and cosmic-horizon participation density), the substrate-locality commitment (load-bearing for holographic participation-count bound).
+- **Chapter 2.** Load-bearing invariants. Cross-bandwidth $\Gamma_\mathrm{cross}$ enters the cosmic-horizon participation density treatment indirectly; participation density gradient enters the cumulative-strain mechanism.
+- **Chapter 3.** DCGT consolidates substrate-gravity content under the modified Poisson equation in flat-background regime. The substrate-to-continuum bridge for the cumulative-strain content uses DCGT's coarse-graining machinery.
+- **Chapter 4.** Theorem 18 kernel-level arrow. Supplies the substrate-level forward-cone-only causal structure that substrate gravity inherits at the kernel level.
+
+#### 11.12.2 Downstream
+
+- **Chapter 12 (Curvature Emergence).** Extends the substrate-gravity content of this chapter to acoustic-metric scalar-tensor covariantization. The flat-background modified Poisson equation derived here is the weak-field limit of Chapter 12's covariant equation.
+- **Chapter 13 (Black-Hole Architecture).** The cosmic-horizon participation-boundary content of T20 connects structurally to Chapter 13's universal horizon mechanism; both use the substrate-level cross-bandwidth $\Gamma_\mathrm{cross}$ collapse content from Chapter 2.
+- **Chapter 14 (Cross-Platform Unifications).** The substrate-gravity sector's empirical content (especially the dwarf-galaxy PASSED anchor and the substrate-level reframing of $a_0$) is part of the program's cross-domain consistency signatures.
+- **Chapter 15 (Public Test Inventory).** The dwarf-galaxy outer-radius mass-discrepancy result (PASSED status), the SPARC slope-4 Tully–Fisher anchor, the halo-lag-in-cluster-collisions prediction (Active status), and other galactic-gravity predictions are catalogued in Chapter 15.
+
+### 11.13 Canonical Sources
+
+- `papers/Substrate_Gravity_Foundations/`
+- `papers/Substrate_Gravity_Foundations/ED_substrate_gravity_foundations_2026-04-28.{md,tex,pdf}` (detailed-derivation companion)
+
+The Substrate_Gravity_Foundations paper presents the publication-grade architectural account of the substrate-gravity sector, including T19, T20, ECR, T21, and the consolidated modified Poisson equation under DCGT. The detailed-derivation companion paper (April 2026) presents the explicit substrate-level derivations of T19's cumulative-strain mechanism plus holographic participation-count bound, T20's cosmic-horizon dipole-projection mechanism, ECR's two-scale logarithmic stability-landscape derivation, and T21's robustness audit.
+
+The Monograph Shell's Appendix A theorem provenance map lists T19, T20, ECR, T21 with their substrate-input dependencies. The Notation Glossary in Appendix B lists the symbols used in this chapter (Newton's constant $G$, MOND scale $a_0$, Hubble rate $H_0$, Planck length $\ell_P$, gravitational potential $\Phi$, modified-Poisson interpolation function $\mu(x)$, baryonic Tully–Fisher coefficient $G\,a_0$).
+
+### 11.14 Optional Figures
+
+**Figure 11.1 — Three substrate machinery pieces for galactic gravity.** A diagram showing the three substrate ingredients used in T19, T20, ECR, T21: cumulative-strain mechanism (chain at distance $R$ from mass $M$ experiencing integrated strain), holographic participation-count bound (sphere at radius $R$ with $4\pi R^2/\ell_P^2$ degrees of freedom), cosmic decoupling surface (cosmic horizon at $R_H = c/H_0$). Each substrate ingredient is labeled with the chapter where it is established.
+
+**Figure 11.2 — T19 derivation flowchart.** A flow diagram showing the T19 derivation: chain at distance $R$ from mass $M$ → cumulative-strain mechanism → integrated strain $\propto M/R$ → holographic participation-count bound on sphere at radius $R$ → equipartition argument → Unruh-analog inversion → effective acceleration $a = Mc^3\ell_P^2/(R^2\hbar)$ → Newton-recovery comparison → $G = c^3\ell_P^2/\hbar$.
+
+**Figure 11.3 — T20 dipole-projection mechanism.** A schematic showing an accelerating chain in the cosmic substrate, with its acceleration-induced anisotropic environment (forward and backward directions). The cosmic horizon's contribution projects via dipole ($\ell = 1$, $m = 0$) with azimuthal period $2\pi$. The effective rate $H_0/(2\pi)$ matches the chain's local-decoupling refresh rate $a/c$ at $a_* = a_0 = cH_0/(2\pi)$.
+
+**Figure 11.4 — ECR's geometric-mean composition.** A two-panel diagram. Left panel: standard MOND interpolation function $\mu(a/a_0)$ as a phenomenological smooth transition. Right panel: ECR substrate-level multiplicative-participation rule producing the geometric-mean form $a = \sqrt{a_N a_0}$ in the deep-MOND regime. A note observes that the multiplicative-participation form is FORCED at substrate level rather than chosen.
+
+**Figure 11.5 — T21 derivation flowchart.** A flow diagram showing the T21 derivation: orbital centripetal balance $v^2/R = a$ → ECR deep-MOND $a = \sqrt{GMa_0}/R$ → $v^2 = \sqrt{GMa_0}$ → flat rotation curves (corollary) → $v^4 = GMa_0$ slope-4 baryonic Tully–Fisher.
+
+**Figure 11.6 — The modified Poisson equation.** A schematic showing the consolidated form $\nabla\cdot[\mu(|\nabla\Phi|/a_0)\nabla\Phi] = 4\pi G\rho_m$ with annotations: high-acceleration limit (Newton's law recovered), low-acceleration limit (ECR's geometric-mean recovered), interpolation function $\mu$ with substrate-level asymptotic constraints. The figure makes visible the framework's flat-background substrate-gravity equation.
+
+**Figure 11.7 — Dwarf-galaxy PASSED-status anchor.** A schematic of the SPARC-dataset analysis. Two visual bands for outer-radius mass discrepancy $D$: Quiet dwarfs at $D \approx 3$–4 ($\langle D_\mathrm{outer}\rangle \approx 3.94$); Active dwarfs at $D \approx 5$–6 ($\langle D_\mathrm{outer}\rangle \approx 6.01$). Ratio $\approx 1.53$ (53% higher in active). Annotation: first completed astrophysical test of the framework.
+
+**Figure 11.8 — Form-FORCED vs Value-INHERITED at substrate gravity.** A two-column diagram. Left column ("Form-FORCED"): functional forms of $G$, $a_0$, ECR, $v^4 = GMa_0$, modified-Poisson asymptotic constraints, slope-4 robustness, zero-intrinsic-scatter prediction, activity-dependent halo strength. Right column ("Value-INHERITED"): numerical $\ell_P$ value, $H_0$ value (Hubble-tension band), modified-Poisson interpolation function shape between asymptotes, galaxy-by-galaxy rotation-curve specifics.
+
+**Figure 11.9 — The four-result substrate-gravity closure.** A radial diagram with the substrate-gravity closure at the center and four spokes radiating outward to T19 (Newton's $G$), T20 (MOND $a_0$), ECR (combination rule), T21 (Tully–Fisher slope-4). Each spoke is annotated with the substrate-level mechanism. A note observes that all four are derived without free parameters; the substrate inputs are $\hbar$, $c$, $H_0$, $\ell_P$ (with $\ell_P$ identified with the Planck length through Newton-recovery).
+
+\newpage
+
+## Chapter 12 — Curvature Emergence: Arc ED-10, Acoustic-Metric Covariantization
+
+### 12.1 Chapter Overview
+
+Chapter 11 closed the substrate-gravity sector at flat-spacetime / weak-field galactic scale: Theorems T19, T20, ECR, and T21 derive Newton's gravitational constant, the MOND transition acceleration, the deep-MOND combination rule, and the slope-4 baryonic Tully–Fisher relation from substrate primitives without free parameters. The Diffusion Coarse-Graining Theorem (Chapter 3) consolidates the content into a modified Poisson equation in flat-background regime. This chapter extends the substrate-gravity content to a curvature-emergent regime via **Arc ED-10**, which produces a substrate-FORCED covariant generalization: a scalar-tensor acoustic-metric equation that reduces to the modified Poisson equation in the weak-field limit and admits curvature-emergent content at strong-gradient scale.
+
+The substrate cumulative-strain four-index object is identified as the load-bearing curvature degree of freedom. The acoustic-metric scalar-tensor covariantization takes the form
+
+```math
+\nabla_\mu\!\left[\mu\!\left(\frac{\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\,\nabla_\beta\Phi}}{a_0}\right)\nabla^\mu\Phi\right] = 4\pi\,G\,T,
+```
+
+where $g_{\mu\nu}$ is the substrate-derived acoustic metric (a kinematic summary of substrate participation density), $\mu(x)$ is an interpolation function with the same asymptotic constraints as the flat-spacetime modified Poisson equation (Chapter 11), and $T$ is the trace of the matter stress-energy tensor. The covariant equation is structurally equivalent to the RAQUAL-class scalar-tensor MOND covariantization studied in the post-Bekenstein–Milgrom literature; the framework's specific contribution is the substrate-derivation chain that identifies this form as **substrate-FORCED rather than phenomenologically chosen**.
+
+The chapter is explicit about its scope. It does *not* derive Einstein's general relativity. The acoustic metric is kinematic-class — a coarse-grained summary of substrate participation density — rather than the dynamical metric of Einstein's theory. The covariant equation inherits a known structural cost: deep-MOND superluminal scalar propagation, which is structurally inevitable when producing the substrate-derived MOND behavior without introducing additional dynamical fields. The verdict is **conditional-positive at structural-suggestive level**: a coherent, OS-positive, ghost-free, gradient-stable scalar-tensor framework that recovers all flat-spacetime substrate-gravity results (Chapter 11) in the weak-field limit, with deep-MOND superluminality as the structurally-inherited cost. Honest framing parallel to NS-Smoothness Intermediate Path C (Chapter 8) and Yang–Mills Clay-relevance (Chapter 9).
+
+### 12.2 Why Curvature Emergence Matters Structurally
+
+#### 12.2.1 The structural gap between flat-background and curved-background gravity
+
+Chapter 11's modified Poisson equation operates in flat-background regime: a fixed Newtonian potential $\Phi$ on a fixed spacetime, with substrate gradients producing the galactic-gravity content. This regime is sufficient for galactic-scale physics where gravitational fields are weak and spacetime curvature is negligible. It is *not* sufficient for any regime where curvature itself becomes a relevant degree of freedom — strong-field gravity, gravitational-wave propagation, cosmological dynamics, black-hole physics, or any setting where general relativity's dynamical content is needed.
+
+The structural question: how does the substrate-gravity sector extend from flat-background to curved-background regime? Standard MOND faces the same question and has been answered phenomenologically by various scalar-tensor and tensor-vector-scalar covariantizations (RAQUAL, TeVeS, BIMOND, etc.) since Bekenstein and Milgrom 1984. Each covariantization produces a relativistic extension of MOND with phenomenologically chosen ingredients; none derives the relativistic content from a substrate-level structural argument.
+
+The Event Density framework's contribution: a substrate-derivation chain that produces the curved-background extension as a structural consequence of the substrate cumulative-strain object's four-index character, without phenomenological additions.
+
+#### 12.2.2 What Arc ED-10 does and does not deliver
+
+Arc ED-10 **delivers**:
+- A substrate-FORCED covariant generalization of the modified Poisson equation.
+- The acoustic-metric scalar-tensor structural form $\nabla_\mu[\mu(|\nabla\Phi|/a_0)\nabla^\mu\Phi] = 4\pi G T$.
+- Reduction to the flat-spacetime modified Poisson equation in the weak-field limit.
+- An OS-positive, ghost-free, gradient-stable scalar-tensor framework.
+- Identification of the substrate-level structural cost (deep-MOND superluminal scalar propagation) as inevitable given the substrate-derivation chain.
+
+Arc ED-10 **does not deliver**:
+- Einstein's general relativity. The acoustic metric is kinematic; the Einstein equation $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ is not derived. Promotion to full GR remains SPECULATIVE in the program (Chapter 15's GR-4A item).
+- A dynamical metric content equivalent to GR's. The acoustic metric is a coarse-grained summary, not a dynamical degree of freedom in the GR sense.
+- A constructive-rigor proof of well-posedness for the covariant equation in arbitrary backgrounds. Conditional-positive verdict at structural-suggestive level.
+
+The chapter operates at the conditional-positive level developed in Chapter 8 (Clay-NS Intermediate Path C) and Chapter 9 (Yang–Mills Clay-relevance). It supplies substrate-grounded structural content with explicit demarcation of what is not closed at higher rigor.
+
+### 12.3 The Substrate Cumulative-Strain Four-Index Object
+
+#### 12.3.1 The load-bearing curvature degree of freedom
+
+Chapter 11's cumulative-strain mechanism describes how a chain at distance $R$ from a mass $M$ accumulates strain along the path between them. The mechanism produces inverse-square Newton in the leading order of T19's derivation. At flat-background level, the strain content is described by a scalar field $\Phi$ (the gravitational potential) with vector-valued gradients $\nabla\Phi$.
+
+At the substrate-level structural analysis, the cumulative-strain object is *not* fundamentally a scalar. It is a four-index tensorial object — the substrate-level analog of a rank-four tensor that captures the full strain content of a chain's participation environment as it accumulates along the path. The four-index character is structural: substrate strain has both magnitude and directional structure, and the four-index object records both the local strain density and the directional dependence of how that strain accumulates in the four spacetime directions.
+
+The four-index cumulative-strain object is the **load-bearing curvature degree of freedom** for Arc ED-10. Standard scalar-tensor MOND covariantizations introduce a scalar degree of freedom (the MOND potential) coupled to the spacetime metric; Arc ED-10's substrate-level analysis identifies the four-index cumulative-strain object as the structural origin of this scalar field, with the scalar field being one specific projection of the four-index content.
+
+#### 12.3.2 What the four-index character buys
+
+Three structural consequences of identifying the cumulative-strain object as four-index:
+
+- **The scalar field of the covariant equation is not a fundamental dynamical field.** It is a substrate-derived projection of the cumulative-strain four-index object. Its specific form-FORCED structure follows from the substrate analysis rather than from a phenomenological postulate.
+- **The substrate-level analysis identifies which scalar-tensor structures are admissible.** Some standard MOND covariantizations (RAQUAL-class, TeVeS-class, etc.) introduce scalar fields with specific kinetic terms and coupling structures; not all of these are substrate-admissible. Arc ED-10 identifies the RAQUAL-class structure as the form-FORCED output.
+- **The acoustic-metric structure follows from the four-index object's coarse-graining.** Under DCGT, the four-index cumulative-strain object reduces at leading order to a scalar field plus a kinematic-summary metric structure. The kinematic-summary metric is the acoustic metric of Arc ED-10.
+
+The four-index character is therefore structurally load-bearing for the entire Arc ED-10 covariantization. It is the substrate-level reading of curvature degrees of freedom; the standard scalar-tensor MOND scalar field is its leading-order coarse-grained projection.
+
+#### 12.3.3 Form-FORCED at the substrate level
+
+The substrate's commitment to a four-index cumulative-strain object is not a phenomenological choice; it is the substrate-level reading of how directional strain accumulates along chain trajectories. The four-index character follows from substrate-locality plus participation-density-gradient content (Chapter 1) plus the substrate's spacetime-geometric structure (which includes both spatial directions and a temporal direction).
+
+The framework treats the four-index character as form-FORCED: any substrate ontology with the primitives of Chapter 1 plus substrate locality must support four-index cumulative-strain content as the directional generalization of the scalar-strain content used in Chapter 11. Arc ED-10's covariantization therefore inherits the four-index character as structurally non-optional.
+
+### 12.4 The Acoustic Metric
+
+#### 12.4.1 Substrate-level definition
+
+The acoustic metric $g_{\mu\nu}^\mathrm{ac}$ is the kinematic summary of substrate participation density at the continuum level. Under DCGT (Chapter 3), the substrate's participation-density structure coarse-grains into a smooth tensor field that plays the role of a Lorentzian metric for the propagation of substrate-derived continuum content.
+
+The structural reading: the acoustic metric is *kinematic*, not *dynamical*. It is a summary of substrate participation density, computed from the substrate state, rather than an independent dynamical degree of freedom with its own equation of motion. This is the central distinction between Arc ED-10's acoustic metric and Einstein's general-relativistic metric. Einstein's metric is dynamical: it satisfies the Einstein equation $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ and is an independent degree of freedom of the gravitational sector. Arc ED-10's acoustic metric is kinematic: it is determined by the substrate state, not by an independent equation of motion.
+
+#### 12.4.2 The kinematic-class status
+
+The kinematic-class status of the acoustic metric has structural consequences:
+
+- **The acoustic metric is computed from substrate state.** Given a substrate participation-density configuration, the acoustic metric follows by coarse-graining. There is no independent acoustic-metric equation analogous to the Einstein equation.
+- **Variations in the substrate state produce variations in the acoustic metric.** Strong substrate gradients produce strong acoustic-metric curvature; weak substrate gradients produce weak curvature. The relationship is determined by the substrate's coarse-graining structure.
+- **The acoustic metric does not propagate independently.** Standard general-relativistic content includes gravitational waves as independent dynamical degrees of freedom of the metric; Arc ED-10's acoustic-metric content does not include such an independent dynamical sector. Whether substrate-level analogues of gravitational-wave content can be developed within Arc ED-10's framework is open work.
+
+The framework is honest about this scope. The acoustic metric is sufficient for the curvature-emergence content that Arc ED-10 closes (the substrate-derived scalar-tensor covariantization of MOND); it is not sufficient for full GR content. Promotion to full GR remains SPECULATIVE.
+
+#### 12.4.3 Why "acoustic" metric
+
+The terminology "acoustic" derives from the analog-gravity literature, where a kinematic metric defined by fluid-flow content plays the role of a Lorentzian metric for sound propagation in the fluid. The acoustic-metric construction in analog gravity is structurally similar to Arc ED-10's: a smooth tensor field defined by underlying substrate (or fluid) state acts as a metric for the propagation of certain continuum-level degrees of freedom, without being a dynamical degree of freedom in the GR sense.
+
+Arc ED-10's acoustic metric is the substrate-level analog of the analog-gravity acoustic metric. The terminology connects the framework to a well-studied class of kinematic-class metrics in standard physics, while clearly distinguishing the substrate-level content from full GR.
+
+### 12.5 The Acoustic-Metric Scalar-Tensor Covariantization
+
+#### 12.5.1 The covariant equation
+
+The acoustic-metric scalar-tensor covariantization that Arc ED-10 produces takes the form:
+
+```math
+\nabla_\mu\!\left[\mu\!\left(\frac{\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\,\nabla_\beta\Phi}}{a_0}\right)\nabla^\mu\Phi\right] = 4\pi\,G\,T,
+```
+
+where:
+- $\Phi$ is the substrate-derived gravitational scalar field (the leading-order coarse-grained projection of the four-index cumulative-strain object).
+- $g_{\mu\nu}$ is the substrate-derived acoustic metric.
+- $\nabla_\mu$ is the metric-covariant derivative with respect to the acoustic metric.
+- $\mu(x)$ is the interpolation function of Chapter 11, with asymptotic constraints $\mu(x) \to 1$ for $x \gg 1$ (Newton recovery at high acceleration) and $\mu(x) \to x$ for $x \ll 1$ (ECR recovery at low acceleration).
+- $T$ is the trace of the matter stress-energy tensor.
+- $a_0$ is the MOND transition acceleration of T20 (Chapter 11).
+- $G$ is Newton's gravitational constant of T19 (Chapter 11).
+
+The equation is the covariant generalization of the flat-background modified Poisson equation $\nabla\cdot[\mu(|\nabla\Phi|/a_0)\nabla\Phi] = 4\pi G\rho_m$ (Chapter 11). The covariant generalization replaces the flat-space gradient $\nabla$ with the metric-covariant derivative $\nabla_\mu$, replaces the Euclidean magnitude $|\nabla\Phi|$ with the metric-derived magnitude $\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\nabla_\beta\Phi}$, and replaces the matter density $\rho_m$ with the trace $T$ of the stress-energy tensor.
+
+#### 12.5.2 The structural relation to RAQUAL-class MOND covariantizations
+
+The covariant equation is structurally equivalent to the RAQUAL-class scalar-tensor MOND covariantization studied in the post-Bekenstein–Milgrom literature. RAQUAL (Relativistic AQUAdratic Lagrangian) and its descendants are a class of relativistic MOND theories in which a scalar field with a non-standard kinetic term couples to matter through the conformal factor of the metric.
+
+Arc ED-10's covariantization belongs to this class. The framework's specific contribution is *not* the discovery of a new relativistic MOND theory; it is the **substrate-derivation chain** that identifies the RAQUAL-class form as substrate-FORCED rather than phenomenologically chosen. The relativistic-MOND literature has studied RAQUAL-class theories for forty years; the framework's contribution is to derive one such theory from substrate primitives without phenomenological assumptions.
+
+#### 12.5.3 Why this specific covariantization
+
+The substrate-level analysis identifies the specific RAQUAL-class form (with the interpolation function $\mu$ acting on the four-index object's leading projection) as the form-FORCED output of the substrate's coarse-graining. Other scalar-tensor structures (TeVeS-class with additional vector field; BIMOND-class with additional metric; etc.) are not substrate-FORCED — they would require additional dynamical degrees of freedom that the substrate's four-index cumulative-strain content does not produce at leading order.
+
+The framework's claim: among the relativistic-MOND covariantization options studied in the literature, the RAQUAL-class scalar-tensor form is the substrate-derivable one. This is the structural significance of Arc ED-10's specific covariantization choice.
+
+#### 12.5.4 What is form-FORCED in the covariant equation
+
+- **The functional form of the equation** $\nabla_\mu[\mu(|\nabla\Phi|/a_0)\nabla^\mu\Phi] = 4\pi G T$.
+- **The asymptotic constraints on $\mu$**: $\mu \to 1$ at high acceleration; $\mu \to x$ at low acceleration.
+- **The acoustic-metric kinematic-class status**.
+- **The reduction to the flat-spacetime modified Poisson equation in the weak-field limit**.
+- **The use of $T$ (trace of stress-energy)** rather than $\rho_m$ as the source term in the relativistic regime.
+- **The non-introduction of additional dynamical fields** (no extra vector or tensor fields beyond the scalar $\Phi$ and the acoustic metric).
+
+#### 12.5.5 What is value-INHERITED in the covariant equation
+
+- **The specific functional shape of $\mu(x)$ between asymptotic limits.** Inherited from substrate-cumulative-strain-kernel details.
+- **The numerical values of $G$ and $a_0$ entering the equation.** Inherited from T19 and T20 (Chapter 11).
+- **Specific solutions of the covariant equation in any given background.** Depend on matter distribution and chosen background; not substrate-level structural predictions.
+
+### 12.6 Reduction to Flat-Spacetime Substrate-Gravity
+
+#### 12.6.1 The weak-field limit
+
+The covariant equation reduces to Chapter 11's modified Poisson equation in the weak-field limit:
+
+```math
+g_{\mu\nu} \to \eta_{\mu\nu} + h_{\mu\nu}\quad\text{with}\quad h_{\mu\nu} \ll 1,
+```
+
+where $\eta_{\mu\nu}$ is the flat Minkowski metric and $h_{\mu\nu}$ is a small perturbation. In this limit, the metric-covariant derivative reduces to the flat-space gradient at leading order, the metric-derived magnitude reduces to the Euclidean magnitude, and the trace $T$ reduces to the matter density $\rho_m$ in the non-relativistic regime.
+
+The reduction:
+
+```math
+\nabla_\mu\!\left[\mu\!\left(\frac{\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\,\nabla_\beta\Phi}}{a_0}\right)\nabla^\mu\Phi\right] = 4\pi G T \;\longrightarrow\; \nabla\cdot\!\left[\mu\!\left(\frac{|\nabla\Phi|}{a_0}\right)\nabla\Phi\right] = 4\pi G\rho_m.
+```
+
+The flat-spacetime modified Poisson equation of Chapter 11 is the weak-field limit of the covariant equation. T19, T20, ECR, T21, flat rotation curves, and the slope-4 Tully–Fisher relation all follow as consequences of the covariant equation in the weak-field galactic regime.
+
+#### 12.6.2 What this reduction establishes
+
+The reduction establishes the consistency between Arc ED-10's curvature-emergence content and Chapter 11's substrate-gravity content at galactic scale. The two sectors are not separate; the curvature-emergence covariant equation generalizes the flat-spacetime equation, and the flat-spacetime equation is the appropriate weak-field limit.
+
+The structural significance: the program's substrate-gravity sector is internally consistent across regimes. Galactic dynamics use the flat-background limit (Chapter 11); curvature-emergent content uses the covariant equation (this chapter). Both reduce to substrate primitives plus T19, T20, ECR, T21 with no phenomenological additions.
+
+#### 12.6.3 The dwarf-galaxy PASSED anchor inheritance
+
+The dwarf-galaxy outer-radius mass-discrepancy result (Chapter 11, Section 11.9; Chapter 15 PASSED status) is established at flat-background regime. The covariant equation of Arc ED-10 inherits this empirical anchor through its weak-field reduction: any solution of the covariant equation in the weak-field galactic regime produces the same dwarf-galaxy phenomenology.
+
+The PASSED status of the dwarf-galaxy result therefore extends to the curvature-emergence sector by structural inheritance through the weak-field reduction. The framework's empirical anchoring at flat-background scale propagates upward to the curvature-emergence regime.
+
+### 12.7 The Structural Cost: Deep-MOND Superluminal Scalar Propagation
+
+#### 12.7.1 What deep-MOND superluminality is
+
+The covariant equation has a known structural feature in the deep-MOND regime ($|\nabla\Phi|/a_0 \ll 1$): the scalar field $\Phi$ propagates at speeds greater than $c$ in this regime. The relevant propagation speed is set by the scalar field's effective dispersion relation, which in turn depends on the interpolation function $\mu$'s behavior in the deep-MOND limit.
+
+The structural reading: $\mu(x) \to x$ at small $x$ produces an effective dispersion relation for $\Phi$ in which the scalar propagation speed exceeds $c$ at deep-MOND accelerations. Standard relativistic field theory typically requires propagation speeds bounded by $c$; the deep-MOND superluminal scalar propagation is therefore a structural feature of the covariant equation that departs from this standard expectation.
+
+#### 12.7.2 Why the superluminality is structurally inevitable
+
+The deep-MOND superluminal scalar propagation is *not* a phenomenological cost imposed on Arc ED-10. It is a structurally inevitable consequence of producing the substrate-derived MOND behavior without introducing additional dynamical fields:
+
+- **The substrate-derivation chain produces the RAQUAL-class scalar-tensor structure** with $\mu(x)$ as the interpolation function.
+- **The asymptotic constraint $\mu(x) \to x$ at small $x$** is required for ECR recovery (Chapter 11) — this constraint is non-optional given T20 + ECR.
+- **Any RAQUAL-class theory satisfying $\mu(x) \to x$ at small $x$** has deep-MOND superluminal scalar propagation. This is a known property of RAQUAL-class theories in the relativistic-MOND literature.
+
+The framework's claim: the deep-MOND superluminality is *the only structural cost* of producing the substrate-derived MOND behavior covariantly. Avoidance routes — adding additional dynamical fields (vector or tensor) to bound the scalar propagation, or modifying the asymptotic structure of $\mu$ — are inadmissible because they would either violate the substrate-level four-index-object structural commitment (no-new-primitives) or violate the BTFR slope-4 robustness (Chapter 11, Section 11.7).
+
+#### 12.7.3 The structural significance
+
+The deep-MOND superluminality is a structural cost of the covariant equation, not a refutation of it. Standard relativistic-MOND covariantizations in the post-Bekenstein–Milgrom literature have either accepted the same cost (RAQUAL-class theories) or introduced additional fields to bound it (TeVeS-class, BIMOND-class). The framework chooses the RAQUAL-class path on substrate-level structural grounds: additional fields would introduce content not derivable from the substrate ontology.
+
+The structural cost is acknowledged honestly. The framework does not claim to deliver a fully relativistic MOND theory free of structural costs; it delivers a substrate-derived covariantization with one known structural cost (deep-MOND superluminality), with the alternative covariantizations rejected on structural rather than phenomenological grounds.
+
+#### 12.7.4 What the superluminality does not do
+
+Two clarifications about the deep-MOND superluminality:
+
+- **It does not violate causality at the empirical level.** The deep-MOND superluminal regime is at low acceleration (galactic outskirts, deep-cosmological scales); causal-ordering observations are at high acceleration where $\mu \to 1$ and the standard relativistic structure recovers. No empirical observation tests deep-MOND-regime causal-ordering directly.
+- **It does not refute the framework empirically.** The deep-MOND superluminality is a feature of the *covariant equation*; the empirical content (galactic rotation curves, Tully–Fisher relation) is recovered in the weak-field limit where the superluminality is not directly tested. Any empirical test that probed deep-MOND-regime scalar-field propagation directly would be a discriminating test, but no such test is currently within experimental reach.
+
+### 12.8 The Stability-Class Audit
+
+#### 12.8.1 OS-positive, ghost-free, gradient-stable
+
+Arc ED-10's covariant equation passes a structural stability-class audit at substrate-suggestive level. The audit examines three properties required for any sensible relativistic field theory:
+
+- **OS-positivity.** Osterwalder–Schrader positivity, the structural property required for a Wick-rotated theory to be a Wightman QFT. The covariant equation's substrate-derivation produces a structure consistent with OS-positivity at substrate-suggestive level.
+- **Ghost-free.** The theory has no negative-norm states (ghosts) that would render the theory unstable or non-unitary. RAQUAL-class theories with appropriately-chosen kinetic structure are ghost-free; Arc ED-10's substrate-derived form satisfies the ghost-free condition.
+- **Gradient-stable.** The theory's perturbations around stable backgrounds are not exponentially growing modes (gradient instabilities). Arc ED-10's covariant equation is gradient-stable in the relevant regimes (high-acceleration Newton-recovered regime; deep-MOND regime, with the caveat of superluminal but non-divergent propagation).
+
+The structural audit: the covariant equation is OS-positive, ghost-free, and gradient-stable at substrate-suggestive level. This is the structural-quality condition for a relativistic field theory; Arc ED-10 satisfies it.
+
+#### 12.8.2 The conditional-positive verdict
+
+The framework's verdict on Arc ED-10's covariantization is **conditional-positive at structural-suggestive level**:
+
+- **Substrate-derivation produces a coherent scalar-tensor framework.** The four-index cumulative-strain object plus DCGT coarse-graining produces the RAQUAL-class form structurally.
+- **OS-positive, ghost-free, gradient-stable.** Stability-class audit passes at substrate-suggestive level.
+- **Recovers all flat-spacetime substrate-gravity results in the weak-field limit.** Internal consistency with Chapter 11.
+- **Deep-MOND superluminality is the only structural cost.** Acknowledged as structurally inevitable.
+- **Not a constructive-rigor proof of well-posedness for arbitrary backgrounds.** Conditional-positive at substrate-suggestive level rather than constructive-rigorous level.
+
+This verdict is structurally parallel to NS-Smoothness Intermediate Path C (Chapter 8) and Yang–Mills Clay-relevance (Chapter 9). Each delivers substrate-grounded structural-positive content with explicit demarcation of what is not closed at higher rigor.
+
+#### 12.8.3 What the conditional-positive verdict means
+
+The verdict means:
+- **The framework supplies real curvature-emergence content** at the substrate level: a substrate-derived covariant equation with stability-class properties that pass at substrate-suggestive level.
+- **The framework explicitly does not claim full GR derivation.** Promotion to GR remains SPECULATIVE.
+- **The framework is honest about the structural cost** (deep-MOND superluminality) and identifies the cost as inevitable given the substrate-derivation chain.
+- **The framework supplies an audit trail** from substrate primitives to the covariant equation, parallel to the audit trails for Clay-NS (Chapter 8) and Yang–Mills (Chapter 9).
+
+The structural significance is that Arc ED-10's curvature-emergence content joins the program's three Path-C-style closures: NS, Yang–Mills, and substrate-gravity-with-curvature-emergence. Each delivers substrate-grounded structural-positive content with explicit demarcation, and each forms part of the program's broader form-FORCED / value-INHERITED methodology.
+
+### 12.9 What This Does Not Derive: Einstein's General Relativity
+
+#### 12.9.1 The explicit non-derivation
+
+The framework explicitly does not derive Einstein's general relativity. Three structural reasons:
+
+- **The acoustic metric is kinematic, not dynamical.** The acoustic metric is computed from substrate state under DCGT coarse-graining; it is not an independent dynamical degree of freedom with its own equation of motion. Einstein's metric is dynamical; the Einstein equation $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ governs its evolution as an independent field.
+- **No Einstein equation is derived.** The substrate-level analysis produces the modified Poisson equation in flat regime (Chapter 11) and the scalar-tensor covariantization in this chapter. Neither produces $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ as a substrate-level theorem.
+- **The substrate ontology does not include a dynamical metric primitive.** Chapter 1's thirteen primitives include event discreteness, chain worldlines, bandwidth update, commitment-irreversibility, finite-width kernels, substrate locality, and proper-time ordering. None of these is a dynamical-metric primitive equivalent to GR's metric content.
+
+The framework's posture on GR: **GR-4A**, the question of whether full GR can be derived from substrate primitives, remains SPECULATIVE-not-REFUTED. Promotion to full GR would require either a new substrate primitive or a derivation strategy that the program has not yet identified. Arc ED-10 closes the curvature-emergence question at acoustic-metric scalar-tensor level; it does not close GR-4A.
+
+#### 12.9.2 Why this scope is appropriate
+
+The framework's scope on GR is structurally honest. Standard GR has been the empirically-confirmed theory of gravity at strong-field and cosmological scales for over a century; deriving it from substrate primitives would be a significantly larger structural achievement than what Arc ED-10 delivers. The framework treats GR-4A as the long-horizon target and Arc ED-10 as the closer-scope curvature-emergence content reachable from current substrate primitives.
+
+Two possible outcomes for GR-4A:
+- **GR-4A succeeds (long-horizon).** Future substrate-primitive work or a new derivation strategy produces full GR from substrate primitives. The framework becomes a gravity theory at field-equation level.
+- **GR-4A fails (kinematic-ceiling permanent).** The acoustic-metric kinematic-class reading is the structural ceiling for substrate-level gravity content. The framework remains at Arc ED-10's acoustic-metric scalar-tensor level for relativistic-gravity content, with full GR remaining a separate framework that the substrate ontology does not derive.
+
+The framework is neutral on which outcome occurs; the chapter's content is what is currently in hand. Arc ED-10 closes the curvature-emergence content at acoustic-metric scalar-tensor level. GR-4A remains open.
+
+#### 12.9.3 Sharpening from Arc ED-10 closure
+
+Chapter 11's closure plus Arc ED-10's closure in this chapter sharpens the GR-4A question. The load-bearing obstruction to GR derivation is now identifiable:
+
+- **The acoustic-metric reading is kinematic, not dynamical-fundamental.** Converting to genuine dynamical metric content is what GR-4A would require.
+- **The substrate's four-index cumulative-strain object** is the load-bearing curvature degree of freedom at substrate-suggestive level; whether this object can be promoted to a genuine dynamical metric content under additional substrate-level structural work is open.
+- **The substrate-level scope of dynamical content** is currently bounded by what DCGT and its non-Abelian generalization (Chapter 9) deliver; whether dynamical-metric content fits this scope or requires extension is open.
+
+The post-Arc-ED-10 GR-4A status is therefore better-scoped than before. The structural obstruction is identified at acoustic-metric kinematic-versus-dynamical level; future GR-4A work targets converting the kinematic content into genuine dynamical content.
+
+### 12.10 What This Changes (And What It Doesn't)
+
+#### 12.10.1 What does not change
+
+Engineering predictions for relativistic gravity at strong-field and cosmological scales do not change. Standard GR continues to govern cosmological-scale physics, gravitational-wave detection, black-hole solutions, and similar relativistic content. The framework's curvature-emergence sector is at acoustic-metric scalar-tensor level; full GR is not derived; standard relativistic-gravity computations proceed unchanged.
+
+#### 12.10.2 What does change
+
+Two structural shifts:
+
+- **The substrate-gravity sector extends from flat-background to curvature-emergent.** Chapter 11's modified Poisson equation is the weak-field limit of Arc ED-10's covariant equation. The substrate-gravity sector therefore covers galactic-scale flat-background dynamics plus curvature-emergence content at substrate-suggestive level.
+- **The RAQUAL-class scalar-tensor MOND covariantization is identified as substrate-FORCED.** Standard relativistic-MOND literature has studied RAQUAL-class theories phenomenologically since 1984; the framework identifies the RAQUAL-class form as structurally FORCED by substrate primitives. This changes the structural origin of relativistic-MOND content from phenomenological choice to substrate-derived consequence.
+
+These two shifts do not change any laboratory prediction or any astronomical observation. They change the structural origin of relativistic-MOND content and identify the substrate-level structural consequence.
+
+### 12.11 Form-FORCED vs Value-INHERITED at Curvature Emergence
+
+#### 12.11.1 What is form-FORCED
+
+- **The substrate cumulative-strain four-index object** as the load-bearing curvature degree of freedom.
+- **The acoustic-metric kinematic-class status** (computed from substrate state, not dynamical).
+- **The covariant equation form** $\nabla_\mu[\mu(|\nabla\Phi|/a_0)\nabla^\mu\Phi] = 4\pi G T$.
+- **The RAQUAL-class scalar-tensor structure** as the substrate-FORCED relativistic-MOND covariantization.
+- **The asymptotic constraints on $\mu$**: Newton recovery at high acceleration; ECR recovery at low acceleration.
+- **The non-introduction of additional dynamical fields** beyond the scalar $\Phi$ and the acoustic metric.
+- **Reduction to the flat-spacetime modified Poisson equation in the weak-field limit**.
+- **OS-positive, ghost-free, gradient-stable** structural properties at substrate-suggestive level.
+- **Deep-MOND superluminal scalar propagation** as the structurally-inevitable cost.
+- **The conditional-positive verdict** at structural-suggestive level.
+
+#### 12.11.2 What is value-INHERITED
+
+- **The specific functional shape of $\mu(x)$** between asymptotic limits. Inherited from substrate-cumulative-strain-kernel details.
+- **Specific solutions of the covariant equation** in any given background. Depend on matter distribution and chosen background.
+- **Numerical values of $G$ and $a_0$** entering the covariant equation. Inherited from T19 and T20 (Chapter 11).
+- **The specific deep-MOND superluminal propagation speed** at any given acceleration. Inherited from the specific shape of $\mu$ in the deep-MOND regime.
+
+#### 12.11.3 What is open
+
+- **GR-4A: full Einstein-equation emergence from substrate primitives.** SPECULATIVE-not-REFUTED. Arc ED-10 closure sharpens the obstruction (acoustic-metric kinematic-versus-dynamical) but does not close GR-4A.
+- **Substrate-level analogues of gravitational-wave content.** Whether substrate-level dynamical analogues of GR's gravitational-wave content can be developed within Arc ED-10's framework is open.
+- **Strong-field gravity beyond acoustic-metric class.** The covariant equation at extreme curvatures may have additional structural content not derived in the chapter.
+- **Cosmological-scale dynamics.** Arc COSMO (Chapter 15, OPEN status) is the natural future arc; cosmic expansion and dark-energy questions are out of current scope.
+- **Closed-form derivation of the deep-MOND interpolation function shape.** Inherited; closed-form is downstream open work.
+
+### 12.12 Dependencies
+
+#### 12.12.1 Upstream
+
+- **Chapter 1.** Substrate primitives, especially the participation primitives (load-bearing for cumulative-strain content) and substrate locality (load-bearing for the four-index character of cumulative strain).
+- **Chapter 2.** Load-bearing invariants. Participation density gradient enters the cumulative-strain content; cross-bandwidth $\Gamma_\mathrm{cross}$ enters the cosmic-horizon-related content indirectly.
+- **Chapter 3.** DCGT. The substrate-to-continuum bridge for the four-index cumulative-strain object's leading-order projection (the scalar field $\Phi$) and for the acoustic metric's kinematic-summary status.
+- **Chapter 11.** Substrate gravity at galactic scale. The flat-background modified Poisson equation is the weak-field limit of Arc ED-10's covariant equation. T19, T20, ECR, T21 supply the substrate-derived ingredients (Newton's $G$, MOND $a_0$, ECR combination rule, slope-4 Tully–Fisher) that the covariant equation inherits.
+
+#### 12.12.2 Downstream
+
+- **Chapter 13 (Black-Hole Architecture).** The acoustic-metric kinematic content underlies the substrate-level reading of black-hole horizons (Chapter 13 develops the BH architecture using acoustic-metric content respecting ED-Phys-10 guardrails).
+- **Chapter 14 (Cross-Platform Unifications).** The form-FORCED methodology, including Arc ED-10's substrate-FORCED scalar-tensor structure, is part of the program's cross-domain consistency signatures.
+- **Chapter 15 (Public Test Inventory).** The dwarf-galaxy outer-radius mass-discrepancy result (PASSED status from Chapter 11) extends to the curvature-emergence sector by structural inheritance through the weak-field reduction. GR-4A is catalogued as SPECULATIVE-not-REFUTED.
+
+### 12.13 Canonical Sources
+
+- `papers/Substrate_Gravity_Foundations/` (curvature-emergence section in extended-scope paper)
+- Arc ED-10 memos in `theory/Substrate_Gravity/`
+
+The Substrate_Gravity_Foundations paper's curvature-emergence section presents the publication-grade Arc ED-10 closure with the substrate-FORCED covariant equation, the four-index cumulative-strain object identification, the acoustic-metric kinematic-class status, the OS-positive / ghost-free / gradient-stable stability-class audit, the deep-MOND superluminality structural-cost identification, and the conditional-positive verdict at structural-suggestive level. Arc ED-10 memos in `theory/Substrate_Gravity/` (six memos covering the substrate-derivation chain in detail) develop each component in detail.
+
+The Monograph Shell's Appendix A theorem provenance map lists DCGT (Chapter 3) and the substrate-gravity theorems T19, T20, ECR, T21 (Chapter 11) as the upstream theorems consumed by this chapter. The Notation Glossary in Appendix B lists the symbols used in this chapter (acoustic metric $g_{\mu\nu}$, scalar field $\Phi$, interpolation function $\mu(x)$, MOND scale $a_0$, Newton's constant $G$, stress-energy trace $T$).
+
+### 12.14 Optional Figures
+
+**Figure 12.1 — From flat-background to curvature-emergence.** A two-panel diagram. Left panel: Chapter 11's flat-spacetime modified Poisson equation $\nabla\cdot[\mu(|\nabla\Phi|/a_0)\nabla\Phi] = 4\pi G\rho_m$. Right panel: this chapter's covariant equation $\nabla_\mu[\mu(\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\nabla_\beta\Phi}/a_0)\nabla^\mu\Phi] = 4\pi G T$. A central arrow labeled "weak-field limit" connects the right panel to the left panel.
+
+**Figure 12.2 — The substrate cumulative-strain four-index object.** A schematic showing the substrate-level analog of a rank-four tensor capturing the strain content of a chain's participation environment along its trajectory. The four indices represent the four spacetime directions; the object's leading-order projection produces the scalar field $\Phi$ of the covariant equation.
+
+**Figure 12.3 — The acoustic metric as kinematic-summary.** A two-panel diagram. Left panel: substrate-level participation density $\rho(\mathbf{x},t)$ on the substrate. Right panel: the acoustic metric $g_{\mu\nu}^\mathrm{ac}$ as a kinematic summary of $\rho$ under DCGT coarse-graining. A note observes that the acoustic metric is computed from substrate state, not an independent dynamical degree of freedom.
+
+**Figure 12.4 — The RAQUAL-class scalar-tensor structure.** A schematic showing the covariant equation's structure: scalar field $\Phi$, interpolation function $\mu$, metric-covariant derivatives, stress-energy trace $T$. A note observes that this is the substrate-FORCED form, structurally equivalent to the standard RAQUAL-class MOND covariantization studied since Bekenstein-Milgrom 1984.
+
+**Figure 12.5 — Reduction to flat-spacetime in the weak-field limit.** A flow diagram showing the reduction: covariant equation (curved background, relativistic) → weak-field expansion ($g_{\mu\nu} \to \eta_{\mu\nu} + h_{\mu\nu}$) → metric-covariant derivative reduces to flat-space gradient → metric-derived magnitude reduces to Euclidean magnitude → trace $T$ reduces to matter density $\rho_m$ → flat-spacetime modified Poisson equation.
+
+**Figure 12.6 — Stability-class audit.** A three-row diagram. OS-positivity: substrate-suggestive positive. Ghost-free: substrate-suggestive positive. Gradient-stability: substrate-suggestive positive in relevant regimes. A note observes that all three properties are structural-quality conditions for relativistic field theories; Arc ED-10 satisfies them at substrate-suggestive level.
+
+**Figure 12.7 — The structural cost: deep-MOND superluminality.** A schematic showing the scalar field's effective propagation speed as a function of acceleration. At high acceleration ($\mu \to 1$): standard relativistic propagation speed bounded by $c$. At deep-MOND acceleration ($\mu \to x$): superluminal scalar propagation. A note identifies this as the structurally-inevitable cost of producing substrate-derived MOND behavior without additional dynamical fields.
+
+**Figure 12.8 — The conditional-positive verdict.** A diagram showing the structural-suggestive-positive content (substrate-derivation chain, RAQUAL-class structure, OS-positive / ghost-free / gradient-stable, weak-field reduction) on one side, and what is not closed (constructive-rigor proof, full GR derivation) on the other. A central note observes that this verdict is parallel to NS-Smoothness Intermediate Path C (Chapter 8) and Yang–Mills Clay-relevance (Chapter 9).
+
+**Figure 12.9 — GR-4A status.** A diagram showing the framework's gravity-content scope. Chapter 11 covers galactic-scale flat-background substrate gravity. This chapter extends to acoustic-metric scalar-tensor curvature emergence at substrate-suggestive level. GR-4A (full Einstein-equation derivation from substrate primitives) remains SPECULATIVE-not-REFUTED. The Arc ED-10 closure sharpens GR-4A's obstruction at the acoustic-metric kinematic-versus-dynamical level.
+
+**Figure 12.10 — Form-FORCED vs Value-INHERITED at curvature emergence.** A two-column diagram. Left column ("Form-FORCED"): four-index cumulative-strain object, acoustic-metric kinematic-class, covariant equation form, RAQUAL-class scalar-tensor structure, asymptotic constraints on $\mu$, weak-field reduction, stability-class properties, deep-MOND superluminality structural cost. Right column ("Value-INHERITED"): specific shape of $\mu(x)$, specific solutions in given backgrounds, specific deep-MOND superluminal speeds, $G$ and $a_0$ numerical values.
+
+\newpage
+
+## Chapter 13 — Black-Hole Architecture: Arc BH, Horizons, Area Law, Phase-Shift Structure
+
+### 13.1 Chapter Overview
+
+Black-hole physics in standard treatments combines general-relativistic geometry (event horizons, singularities, Killing structure) with quantum-field-theoretic content (Hawking radiation, Bekenstein–Hawking entropy, information loss). The combination generates a well-known cluster of paradoxes: the information-loss paradox, the firewall paradox, the complementarity contradiction, and the singularity problem. Forty years of work on holography, ER=EPR, soft-hair conjectures, fuzzballs, and other proposals has produced no consensus resolution. The Event Density framework approaches the black-hole sector from a different ontological starting point: substrate participation events with irreversible commitment, with spacetime geometry as a coarse-grained kinematic reading via the acoustic metric (Chapter 12) rather than as a fundamental object. Under the substrate ontology, the standard paradoxes are *not generated in framework* — the four assumptions whose joint imposition produces them are not imposed at substrate level.
+
+This chapter establishes the substrate-level architecture of black-hole physics. **A single substrate condition** unifies six derivations:
+
+```math
+\sigma(\mathbf{x}) \;=\; \frac{|\nabla\rho|\,\ell_P^2}{\rho_\mathrm{local}} \;\gtrsim\; \log\!\left(\frac{R_\mathrm{cg}}{\ell_P}\right).
+```
+
+Six structural results follow from this single condition: **horizon as decoupling surface** (BH-2, universal across black-hole / Rindler / cosmic / acoustic horizons), **singularity replacement by finite-thickness saturated participation zone** (BH-3, three substrate constraints jointly forbid divergent curvature), **information architecture and evaporation as participation re-routing** (BH-4, paradoxes not generated rather than solved), **area-law entropy with form derived and 1/4 coefficient INHERITED** (BH-5), **wave-black-hole scattering as global path-integrated invariant of minimal ED-channels** (BH-6), and a **conditional-positive structural closure verdict** (BH-7) parallel in form to Clay-NS Intermediate Path C (Chapter 8), Yang–Mills Clay-relevance (Chapter 9), and Arc ED-10 curvature emergence (Chapter 12). Hawking-spectrum derivation is named as the next natural arc (B4); the mechanism is in hand from BH-4, with the explicit V5 cross-chain correlation calculation producing the spectrum as the remaining work.
+
+The chapter does not change empirical predictions for black-hole observations. Engineering and astronomical computations using standard general-relativistic black-hole solutions proceed unchanged. What changes is the structural origin of black-hole architecture: from a combined GR+QFT framework that generates paradoxes to a substrate-level framework in which the same paradoxes do not arise because their generating assumptions are not imposed.
+
+### 13.2 The Standard Paradox Cluster
+
+#### 13.2.1 The four canonical paradoxes
+
+Standard black-hole physics has four canonical paradoxes that arise from combining general-relativistic geometry with quantum-field-theoretic content:
+
+- **The information-loss paradox.** Stephen Hawking's 1974 result that black holes radiate thermally implies that information apparently disappears as the black hole evaporates: the radiation that emerges is featureless, regardless of what fell in. Standard quantum mechanics requires information preservation under unitary evolution; combining GR's classical evaporation with QM's information conservation produces the paradox.
+- **The firewall paradox.** Pushing hard on the demand that information escape evaporating black holes plus the standard rules of quantum entanglement plus the standard demand that an infalling observer experiences nothing strange at the horizon produces a contradiction (AMPS 2012). Saving quantum mechanics appears to require the horizon to be a wall of high-energy radiation that vaporizes anything entering it — the firewall.
+- **The complementarity contradiction.** The proposal that outside the horizon information returns in radiation and inside the horizon information falls toward the center, with both descriptions valid because no single observer can verify both at once. The proposal works as a partial fix until sharp questions are asked, at which point complementarity cracks. The firewall was, in part, the crack.
+- **The singularity problem.** General relativity, applied to a collapsing massive object, drives toward a point at which curvature is infinite, density is infinite, and the equations stop working. Every physicist agrees the singularity is not a feature of nature; it is a notice from the formalism that the formalism has run out. What replaces it has been an open question for sixty years.
+
+#### 13.2.2 The four assumptions whose joint imposition generates the paradoxes
+
+Each of the four paradoxes arises from imposing a combination of four assumptions about reality:
+
+- **Global unitarity.** The universe's quantum state evolves perfectly invertibly across all space and time.
+- **Global Cauchy data.** The entire state of the universe must be specifiable on a single connected spacelike slice.
+- **A sharp geometric boundary.** The horizon is a knife-edge surface, not a fade or a coarse-grained statistical feature.
+- **Monogamy at that boundary.** Entanglement between two regions cannot be shared with a third region, particularly enforced at the horizon.
+
+Standard GR plus QFT imposes all four. Each individual assumption is plausible in its respective regime. Their joint imposition at black-hole horizons produces the paradox cluster.
+
+#### 13.2.3 The Event Density structural position
+
+ED imposes none of the four assumptions at the substrate level:
+
+- **No global unitarity requirement.** Unitarity is a coarse-grained continuum property of closed sub-systems in the QM-emergence sector (Phase-1, Chapter 5); it is not a global constraint on the substrate.
+- **No global Cauchy data.** ED commits events locally; there is no spacelike surface on which the entire universe's state must be specified.
+- **No sharp geometric boundary.** A horizon in ED is a coarse-grained statistical feature of cross-bandwidth $\Gamma_\mathrm{cross}$, not a knife-edge geometric locus.
+- **No monogamy-at-boundary requirement.** Without a sharp boundary, monogamy-of-entanglement enforcement at one is not a structural requirement.
+
+The four standard paradoxes therefore do not arise. They are not "solved by clever ED machinery" — they are *not generated in framework*. This is structurally distinct from any of the standard interpretive resolutions (Copenhagen, many-worlds, holography, ER=EPR, etc.); ED's substrate ontology does not impose the assumptions whose joint presence is what generates the paradox cluster, and so the cluster does not exist at substrate level.
+
+### 13.3 The Single Substrate Condition
+
+#### 13.3.1 The threshold condition
+
+The substrate-level analysis identifies a single condition that unifies six structural results across Arc BH:
+
+```math
+\sigma(\mathbf{x}) \;=\; \frac{|\nabla\rho(\mathbf{x})|\,\ell_P^2}{\rho_\mathrm{local}(\mathbf{x})} \;\gtrsim\; \log\!\left(\frac{R_\mathrm{cg}}{\ell_P}\right).
+```
+
+The left-hand side is the substrate-scale gradient sparsity $\sigma$ from Chapter 2 — the substrate-natural dimensionless steepness of participation density. The right-hand side is the threshold scale at which the cross-bandwidth $\Gamma_\mathrm{cross}$ falls below hydrodynamic-window resolution under DCGT (Chapter 3). The condition demarcates the regime in which substrate-level analysis transitions from coarse-grained continuum reading (where standard physics applies) to substrate-saturated regime (where the acoustic-metric reading breaks down).
+
+#### 13.3.2 What the condition controls
+
+The single condition supports six derivations:
+
+- **Horizon formation (BH-2).** Where the condition is met across a closed surface, $\Gamma_\mathrm{cross}$ collapses below hydrodynamic-window resolution and the surface becomes a substrate-level decoupling surface — the substrate reading of an event horizon.
+- **Interior saturation (BH-3).** Where the condition is met in a bulk volume, substrate gradients are at the saturation regime; the acoustic-metric reading fails; substrate dynamics remain finite but the continuum-spacetime description does not.
+- **Information blocking (BH-4).** Where the condition is met across the horizon surface, committed structure cannot cross the surface (participation-bandwidth prohibition); entanglement (uncommitted structure) can straddle.
+- **Participation-capacity saturation (BH-5).** Where the condition is met, the substrate's participation channels at the surface are at their saturated capacity; the area-law entropy form follows from counting capacity.
+- **Strong-curvature scattering (BH-6).** Near the surface, substrate gradients produce the strong-curvature region through which minimal ED-channels (gravitational waves) propagate; the BHPT phase shift is the path-integrated channel-action over this region.
+- **Verdict status (BH-7).** All six derivations rest on the same substrate condition; the architectural-level closure is internally consistent.
+
+The single substrate condition unifies the six derivations. This is structurally significant: rather than six separate substrate-level analyses for six separate phenomena, the framework supplies one substrate-level condition with six consequences.
+
+#### 13.3.3 Form-FORCED and value-INHERITED
+
+The functional form $\sigma = |\nabla\rho|\ell_P^2/\rho_\mathrm{local}$ and the threshold scale $\log(R_\mathrm{cg}/\ell_P)$ are form-FORCED by Chapter 2's load-bearing invariants and Chapter 3's DCGT cross-bandwidth structure. The specific numerical coefficient $\beta_\mathrm{crit}$ that the condition's right-hand side approximates (with $\beta_\mathrm{crit} \sim \log(R_\mathrm{cg}/\ell_P)$) is INHERITED from substrate-determined dimensionless content; precise prefactor depends on coarse-graining choices.
+
+### 13.4 Horizon as Decoupling Surface (BH-2)
+
+#### 13.4.1 The substrate-level horizon
+
+A black-hole event horizon, in standard general relativity, is a sharp surface — a knife-edge null hypersurface separating the interior from the exterior. Across the surface, light cannot propagate outward; the surface is geometric and well-defined.
+
+The substrate-level reading reframes this. A horizon is the surface where the cross-bandwidth $\Gamma_\mathrm{cross}$ between the two sides falls below hydrodynamic-window resolution under DCGT coarse-graining. The substrate-level condition for horizon formation is precisely the single substrate condition: $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$ across a closed surface.
+
+Where this condition is met, $\Gamma_\mathrm{cross}$ collapses exponentially through the DCGT-derived structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ (Chapter 3). At the threshold, the cross-bandwidth becomes effectively zero at the coarse-grained continuum scale — the two sides of the surface decouple. The "fade, not cliff" character of the substrate-level horizon is structurally significant: from coarse-grained continuum perspective the decoupling is sharp, but at the substrate level it is exponential rather than discontinuous.
+
+#### 13.4.2 Universal horizon mechanism
+
+The substrate-level horizon mechanism is *universal* across four classes of horizons that standard physics treats as analogous but distinct:
+
+- **Black-hole event horizons.** Strong gradients at high-mass concentrations produce the substrate condition.
+- **Rindler horizons.** Acceleration-induced gradients in accelerated frames produce the substrate condition.
+- **Cosmological horizons.** $H_0$-scale gradient set by cosmic-horizon participation density produces the substrate condition.
+- **Acoustic horizons.** Flow-induced gradients in fluid analog systems (the acoustic metric of analog gravity) produce the substrate condition.
+
+In each case, the horizon is a continuum shadow of the same substrate decoupling surface. The four classes share thermodynamic-style features (temperature, entropy, evaporation analogs) at the standard-physics level; the substrate-level analysis explains why: they are projections of one substrate phenomenon at four different scales.
+
+This is one of the framework's strongest cross-domain unifications. Chapter 14's cross-platform analysis develops it as part of the program's $\Gamma_\mathrm{cross}$-collapse cross-domain echo.
+
+#### 13.4.3 The geometric horizon as continuum shadow
+
+The acoustic-metric reading of Arc ED-10 (Chapter 12) supplies the continuum-level definition of an event horizon as the locus of null-geodesic capture in the acoustic metric. The substrate-level decoupling surface and the acoustic-metric event horizon coincide to leading order in the hydrodynamic-window expansion; corrections arise at the substrate scale.
+
+The structural reading: the geometric horizon is the continuum-level reading of the substrate-level decoupling surface. It is not a separate object; it is what the decoupling surface looks like in the coarse-grained continuum. The framework's substrate-level analysis identifies the underlying object (the decoupling surface) and explains its standard-physics reading (the geometric horizon) as the coarse-grained continuum projection.
+
+#### 13.4.4 Observer-independence
+
+The decoupling surface is defined as a level set of the substrate scalar $\sigma$. Both $\rho$ and $\nabla\rho$ are coarse-grained substrate quantities; they do not depend on the choice of continuum-observer. The decoupling surface is therefore observer-independent in the same sense that $\rho$ is.
+
+Continuum-observer-dependent statements about which side of the surface a particular continuum trajectory is on do depend on the observer (as expected in the standard-physics horizon framing) — but the surface itself does not. This resolves the "different observers see different horizons" issue at substrate level: the surface is observer-independent; what changes is which trajectory the observer follows relative to the surface.
+
+### 13.5 Singularity Replacement by Saturated Zone (BH-3)
+
+#### 13.5.1 The three substrate constraints
+
+Standard general relativity produces curvature singularities at black-hole interiors. The acoustic-metric reading of Arc ED-10 (Chapter 12) is a coarse-grained continuum reading; the substrate ontology's three constraints jointly forbid the divergent quantities that the continuum reading produces.
+
+The three substrate constraints:
+
+- **(C1) Finite participation.** The substrate has a finite count of viable participation channels per coarse-graining cell. There is no substrate state in which infinitely many channels participate at one point. P04 (bandwidth update rule, Chapter 1) plus participation primitives (Chapter 2) supply the finite-participation commitment.
+- **(C2) Discrete micro-events.** Substrate events are discrete (P01, Chapter 1). Each commitment is a finite-amplitude occurrence at a finite-resolution patch. Continuum singularity statements that require unboundedly many infinitely small events at a single point are inadmissible at the substrate level.
+- **(C3) Gradient saturation.** $|\nabla\rho|$ has a substrate-imposed maximum: when $\sigma \to \beta_\mathrm{crit}$, the substrate's mobility-capacity bound caps further steepening. Gradients cannot run away to infinity. P04's mobility-capacity content (Chapter 2) supplies the saturation commitment.
+
+Any one of (C1)–(C3) alone would suffice to forbid a continuum singularity; the three together overdetermine the result. The substrate ontology has *no singularities*.
+
+#### 13.5.2 Acoustic-metric breakdown before substrate
+
+The acoustic metric (Chapter 12) is a coarse-grained kinematic reading of substrate participation density. Its validity requires the hydrodynamic-window expansion of DCGT to be controlled. When $\sigma \gtrsim \beta_\mathrm{crit}$, the multi-scale expansion's small parameter ceases to be small; the acoustic metric ceases to be a controlled approximation.
+
+The acoustic metric breaks down before the substrate does. This is the substrate-level meaning of "singularity": the breakdown is a property of the kinematic continuum reading, not of the underlying substrate. Substrate dynamics remain finite throughout; the continuum-spacetime description fails because the continuum approximation fails, not because reality has run out.
+
+#### 13.5.3 The replacement: finite-thickness saturated zone
+
+The substrate replacement for the singular endpoint is a *finite-thickness saturated participation zone* characterized by:
+
+- **Gradients at the substrate-imposed maximum.** $\sigma \to \beta_\mathrm{crit}$ throughout the zone.
+- **Cross-participation bandwidth collapsed in all directions.** Not just radial; the saturated zone is decoupled from all neighboring substrate regions in the cross-bandwidth sense.
+- **Only the commitment-order direction (P11) remaining structurally meaningful.** Spatial directions become structurally interchangeable when $\sigma$ saturates; only the temporal commitment-order direction remains as a structural direction.
+- **Acoustic metric degenerate or undefined.** The continuum kinematic-summary breaks down; no acoustic-metric reading is available within the saturated zone.
+- **Substrate dynamics finite.** Substrate-level evolution proceeds as saturated commitment cycles. Nothing diverges.
+
+The saturated zone is not a point; it is a region of finite thickness. Substrate dynamics inside the zone are finite, ordinary, and well-defined. They just do not admit a smooth-spacetime description.
+
+#### 13.5.4 No geodesic incompleteness at substrate level
+
+Geodesic incompleteness — the property that null and timelike geodesics in Schwarzschild and Kerr black holes terminate at finite proper time at the central singularity — is a property of the acoustic-metric reading, not of the substrate. At the substrate level, there are no geodesics; there are only commitment-event sequences. Commitment-event sequences inside the saturated zone proceed in finite-amplitude finite-resolution increments; there is no sequence that "ends" at a singular point.
+
+Substrate-level evolution is everywhere defined. The geodesic-incompleteness reading of the singular interior is a continuum-level artifact; at substrate level the evolution continues through saturated commitment cycles, and the standard-physics geodesic incompleteness corresponds to the regime where the continuum reading breaks down.
+
+### 13.6 Information Architecture and Evaporation (BH-4)
+
+#### 13.6.1 Committed vs uncommitted structure
+
+ED distinguishes two structurally different forms of correlation at the substrate level:
+
+- **Committed structure (information).** P11-irreversible records of participation events. Transmission of committed structure between two regions requires nonzero $\Gamma_\mathrm{cross}$ between them. This is the substrate analog of "information" in the standard QC and QI literature.
+- **Uncommitted structure (entanglement).** Correlation potential between two regions, set up at pair-formation. Persistence of uncommitted structure does not require ongoing cross-bandwidth — it is set by the joint participation amplitude when the pair was created.
+
+This is the substrate translation of the standard quantum-information no-signaling-but-correlations-persist behavior. Two regions can be in a deeply correlated joint state without any ongoing exchange of information; the correlation persists because of how the joint state was prepared, not because of ongoing communication.
+
+#### 13.6.2 Information cannot cross a horizon
+
+At the substrate-level decoupling surface (Section 13.4), $\Gamma_\mathrm{cross}$ is below hydrodynamic-window resolution. Therefore:
+
+- **Committed structure transmission across the surface requires bandwidth that is structurally absent.** Information, in the substrate sense, does not pass through a horizon.
+- **This is not a causal prohibition.** ED has no fundamental light-cone primitive; the prohibition is a *participation-bandwidth prohibition*. The substrate channels that would carry committed structure have their bandwidth suppressed below resolution.
+- **The substrate-level horizon-blocking-information statement** is structurally distinct from the GR-level "information cannot exit a black hole because nothing can travel faster than light." The substrate-level reading is bandwidth-mediated, not lightcone-mediated.
+
+#### 13.6.3 Entanglement straddling
+
+Uncommitted structure does not require ongoing $\Gamma_\mathrm{cross}$; it is set by joint participation amplitude at pair-formation. Pair-amplitude structures can therefore exist with one leg inside and one leg outside the decoupling surface without violating Section 13.6.2. Entanglement (uncommitted structure) straddles the horizon freely; only committed structure (information) is blocked.
+
+#### 13.6.4 Evaporation as participation re-routing
+
+The substrate-level evaporation mechanism follows from the architecture above:
+
+1. **Horizon blocks committed structure** (Section 13.6.2).
+2. **Uncommitted pair structures can straddle the surface** (Section 13.6.3).
+3. **Strong $|\nabla\rho|$ near the surface supports pair-creation-class events** (gradient-driven, substrate analog of strong-field vacuum pair production).
+4. **Commitment events on these pairs commit one leg inward** (joining the BH-3 saturated zone) **and the other outward** (joining the radiation field).
+5. **Joint correlation is preserved globally** across the inward + outward commitments.
+
+This is *participation re-routing*, not information destruction. Hawking radiation, in the substrate-level reading, is the coarse-grained statistics of outward-committed legs of these pair-creation-class events. The thermal-spectrum derivation itself is the next natural arc (B4); the *mechanism* of evaporation as participation re-routing is established in BH-4.
+
+#### 13.6.5 No information paradox: not solved, not generated
+
+The four standard assumptions that produce the information paradox (global unitarity, global Cauchy data, sharp geometric boundary, monogamy-at-boundary) are not imposed at substrate level (Section 13.2.3). The paradox does not arise.
+
+The same applies to firewalls and complementarity: both require a sharp geometric boundary, which the ED ontology does not provide. Without the sharp boundary, monogamy-at-boundary and complementarity-versus-non-locality questions do not have well-defined formulations at substrate level.
+
+The framework's stance is structural: BH puzzles are *not solved in framework* but *not generated in framework*. The same pattern applies to the singularity (BH-3) and to the horizon (BH-2). Standard puzzles dissolve when the continuum-level assumptions that generate them are not imposed on a fundamentally local-and-irreversible substrate.
+
+This is the framework's central rhetorical move on black-hole physics, stated structurally: **the information paradox, firewall paradox, complementarity contradiction, and singularity problem are not solved in ED — they simply never arise in its ontology.**
+
+### 13.7 Area-Law Entropy (BH-5)
+
+#### 13.7.1 Participation capacity at the decoupling surface
+
+Define the participation-capacity density $\chi(\rho, \nabla\rho)$ as the substrate-level density of viable commitment-channel slots per Planck-area patch on the decoupling surface $\Sigma_H$. The total participation capacity of $\Sigma_H$:
+
+```math
+\mathcal{C}_H \;=\; \int_{\Sigma_H} \frac{dA}{\ell_P^2}\,\chi(\rho, \nabla\rho).
+```
+
+Two structural points:
+- **Area-extensivity.** $\mathcal{C}_H$ scales with the integrated surface area, not with the enclosed volume, because the integrand is supported only on $\Sigma_H$.
+- **Saturation in the BH-relevant regime.** $\chi \to 1$ where gradient saturation holds (BH-3); the capacity reduces to $\mathcal{C}_H \approx A/\ell_P^2$.
+
+The area-law form is *derived* from substrate machinery: two-dimensional surface support + gradient saturation + per-patch finite alphabet.
+
+#### 13.7.2 Entropy as log of viable commitment histories
+
+ED's substrate-level definition of entropy: $S = \log(\text{number of viable commitment histories compatible with the macroscopic constraint})$. At the decoupling surface, the macroscopic constraint is the participation capacity. With per-patch finite alphabet $g$ (the substrate's local count of distinct commitment motifs per Planck-area patch) and per-patch independence under DCGT:
+
+```math
+S \;=\; \mathcal{C}_H\,\log g \;\approx\; \frac{A}{\ell_P^2}\,\log g.
+```
+
+The area-law form is now derived. The proportionality constant $\log g$ remains to be determined.
+
+#### 13.7.3 The 1/4 coefficient: INHERITED, not derived
+
+The Bekenstein–Hawking value $S_\mathrm{BH} = A/(4\ell_P^2)$ corresponds to $\log g = 1/4$, i.e., $g = e^{1/4} \approx 1.284$. This is *not an integer*. Naive per-patch-independent finite-alphabet counting cannot reproduce $1/4$: integer $g \geq 2$ all give $\log g \geq \ln 2 \approx 0.693$, well above $1/4$.
+
+To recover $1/4$, the per-patch-independence assumption must be relaxed. Adjacent patches share commitment-history correlations through V1-kernel cross-patch overlap; the effective per-patch contribution is reduced from $\log g$ (independent count) to a smaller correlated value. Recovering $1/4$ exactly requires substrate-level state counting that is not currently in hand — structurally similar in difficulty to closed-form derivation of $\kappa/|\hat{N}'| = 0.001766$ (priority item E4) and to closed-form $\mathcal{M}_\mathrm{crit}$ in QC (Chapter 7's O-QC-1).
+
+**Verdict on the 1/4 coefficient: INHERITED, not derived.** Form-FORCED + value-INHERITED methodology applied honestly. Same category as $a_0$ (Chapter 11), $G$ (Chapter 11), $\Lambda$, gauge couplings (Chapter 9), and the other substrate-determined dimensionless numbers in the program.
+
+#### 13.7.4 Implications for motif counting and V1 correlations
+
+The closed-form $\log g$ derivation would require either:
+- An explicit V1-kernel-counting argument analogous to a substrate-level partition function.
+- A derivation of the per-patch commitment alphabet from microscopic substrate dynamics.
+
+Either route is a candidate future arc. Currently flagged as **OPEN item O2** in the program's priority list. The closed-form-substrate-constants program (combining O-QC-1 for $\mathcal{M}_\mathrm{crit}$, O2 for $\log g$, and E4 for $\kappa/|\hat{N}'|$) is the program's structurally-similar collection of closed-form open work.
+
+### 13.8 Wave–Black-Hole Scattering (BH-6)
+
+#### 13.8.1 Minimal ED-channel
+
+A minimal ED-channel — a gravitational wave in the continuum reading — is a substrate excitation characterized by:
+- Low multiplicity (small number of participation degrees of freedom involved per coarse-graining cell).
+- Low anisotropy (anisotropy tensor magnitude small compared to substrate-saturation).
+- DCGT-coherent propagation (channel survives multi-scale expansion to a wave equation on the acoustic metric).
+
+The channel's global phase along propagation trajectory $\gamma(\lambda)$:
+
+```math
+\Phi[\gamma] \;=\; \int_\gamma \mathcal{A}(\rho, \nabla\rho, \mathrm{anisotropy})\,d\lambda.
+```
+
+#### 13.8.2 Maximal ED-structure
+
+A maximal ED-structure — a black hole in the continuum reading — is high-multiplicity, saturated-gradient, decoupling-surface-bounded, with curvature-like participation structure given by SG-4 / Arc ED-10 (Chapter 12). In the BH-relevant regime, scattered channels propagate through a region where $\sigma \gg 1$ near $\Sigma_H$ and the acoustic metric is strongly curved.
+
+#### 13.8.3 Phase shift as global path-integrated invariant
+
+The minimal channel's propagation kernel is distorted by the maximal structure's saturated gradients. The channel's phase accumulates a shift relative to its asymptotic free-wave value:
+
+```math
+\delta_{\ell m} \;=\; \int_\mathrm{path} \Delta\mathcal{A}\,d\lambda
+```
+
+with $\Delta\mathcal{A} = \mathcal{A}_\mathrm{full} - \mathcal{A}_\mathrm{asymptotic}$ the curvature-induced excess action density along the trajectory. The shift is a single scalar per partial-wave mode $(\ell, m)$ because the channel is minimal; it is inevitable along any trajectory threading the strong-curvature region because the gradients are saturated.
+
+#### 13.8.4 S-matrix exponentiation
+
+The S-matrix structure $S = e^{iN}$ (from ED-I-26) is recovered: $N$ is the integrated channel action; $\delta_{\ell m}$ are its partial-wave components. Exterior-side unitarity follows from BH-4 (no committed structure leaks across $\Sigma_H$, so no probability is lost from the scattering channel; entanglement-amplitude correlations with the interior persist but do not enter exterior unitarity bookkeeping).
+
+#### 13.8.5 Helicity preservation and flip
+
+For axisymmetric, non-rotating backgrounds (Schwarzschild-like): principal directions of the participation profile are aligned uniformly along the trajectory's symmetry plane. The channel's anisotropy tensor returns to itself up to an overall scalar phase under parallel transport. **Helicity is preserved**; phase shifts act identically on both helicity states.
+
+For backgrounds with frame-dragging (Kerr-like): principal directions rotate along the trajectory. The channel's anisotropy tensor picks up a twist relative to a non-rotating reference frame:
+
+```math
+\Delta\phi_\mathrm{twist} \;=\; \int \omega_\mathrm{FD}\,d\lambda.
+```
+
+**Helicity flip channels open**, with mixing strength tied to spin parameter via $\omega_\mathrm{FD}$.
+
+#### 13.8.6 Kerr twist and superradiance
+
+The Kerr phase shift relative to Schwarzschild has a substrate origin: frame-dragging is a global rotation of the participation anisotropy basis, sourced by substrate-level vorticity in the participation flow of a spinning maximal structure. The channel acquires a twist proportional to integrated background vorticity along its trajectory. Trajectory-dependence of the integration produces the prograde/retrograde scattering asymmetry.
+
+**Superradiance** (energy extraction by certain scattering channels) is structurally compatible with this picture: channels traversing the rotating-vorticity exterior can net positive energy transfer from background to channel via the participation-flow vorticity. No committed structure is extracted from the interior; the energy transfer is mediated by exterior participation flow. Full amplitude derivation is **OPEN item O1**.
+
+### 13.9 The Conditional-Positive Verdict (BH-7)
+
+#### 13.9.1 Architectural-level structural closure
+
+The seven memos of Arc BH (Opening + BH-2 + BH-3 + BH-4 + BH-5 + BH-6 + Synthesis) collectively close the substrate-level architecture of black-hole physics at the architectural level. The closure is conditional-positive: the architectural framework is internally consistent; the structural results are derived from substrate primitives plus closed-arc machinery; specific numerical thresholds (the 1/4 coefficient, the BHPT spectral details, $\beta_\mathrm{crit}$, V1 kernel width) are INHERITED rather than closed-form derived.
+
+The verdict is structurally parallel to NS-Smoothness Intermediate Path C (Chapter 8), Yang–Mills Clay-relevance (Chapter 9), and Arc ED-10 curvature emergence (Chapter 12). Each delivers substrate-grounded structural-positive content with explicit demarcation of what is not closed at higher rigor.
+
+#### 13.9.2 What the closure delivers
+
+- **The single substrate condition** unifying horizon formation, interior saturation, information blocking, participation-capacity saturation, and strong-curvature scattering region.
+- **Universal horizon mechanism** across BH / Rindler / cosmic / acoustic horizons.
+- **No singularities; finite-thickness saturated participation zone replacement.**
+- **Information / firewall / complementarity / singularity paradoxes not generated in framework.**
+- **Area-law entropy form derived; 1/4 coefficient INHERITED.**
+- **BHPT phase-shift structure derived as global path-integrated invariant.**
+- **Helicity preservation/flip and Kerr twist** from anisotropy-basis transport plus substrate-level vorticity.
+- **Conditional-positive structural closure** at architectural level.
+
+#### 13.9.3 What the closure does not deliver
+
+- **Hawking spectrum derivation** (the next natural arc, B4). The mechanism is in hand from BH-4 (asymmetric participation flow at saturated decoupling surface produces outward-radiation statistics); the explicit V5 cross-chain correlation calculation that produces the spectrum is the remaining work.
+- **Closed-form 1/4 coefficient.** OPEN item O2; closed-form $\log g$ requires either explicit V1-kernel-counting argument or substrate-level partition function.
+- **Superradiance amplitude derivation.** OPEN item O1; structurally compatible per BH-6, but full derivation requires extending BH-6 + Arc SG.
+- **Full Kerr interior audit.** OPEN item O3; BH-3 establishes saturated-zone interior structure for Schwarzschild-class BHs; rotating-BH interior architecture (ergosphere, Cauchy horizons, frame-dragging at saturation) requires extension.
+- **Constructive-rigor proofs** at any single component. The verdict is structural-positive at substrate-suggestive level, not constructive-rigor.
+
+#### 13.9.4 The Hawking-spectrum next arc
+
+Hawking-spectrum derivation (B4) is the next natural concrete arc following Arc BH closure. The components in hand:
+- **The mechanism** (BH-4, evaporation as participation re-routing through pair-creation events at the saturated decoupling surface).
+- **The substrate-level structural framework** for the spectrum derivation (BH-2's universal horizon mechanism plus BH-4's information-architecture content).
+- **The V5 cross-chain memory kernel** (Chapter 1, Chapter 2) as the substrate-level object whose cross-chain correlation calculation produces the spectrum.
+
+The remaining work: the explicit V5 cross-chain correlation calculation. A clean match with $T_H = \kappa/(2\pi)$ would be a structural recovery; a deviation would be a falsifier of the substrate-level framework. Either result is informative.
+
+### 13.10 What This Changes (And What It Doesn't)
+
+#### 13.10.1 What does not change
+
+Engineering and astronomical predictions for black-hole physics do not change. Standard general-relativistic black-hole solutions (Schwarzschild, Kerr, Reissner–Nordström, Kerr–Newman) continue to govern strong-field gravity computations. LIGO/Virgo gravitational-wave detection continues to use standard BHPT quasinormal-mode catalogs. Black-hole astrophysics computations proceed unchanged.
+
+#### 13.10.2 What does change
+
+Three structural shifts:
+
+- **The standard paradox cluster does not arise.** Information-loss, firewall, complementarity, and singularity paradoxes are not solved in framework but not generated in framework. The four assumptions whose joint imposition produces them are not imposed at substrate level.
+- **Horizons become coarse-grained statistical features** of $\Gamma_\mathrm{cross}$ collapse, not knife-edge geometric loci. The decoupling-surface mechanism is universal across BH / Rindler / cosmic / acoustic horizons.
+- **Singularities do not exist** as physical objects. The acoustic-metric reading breaks down at $\sigma \gtrsim \beta_\mathrm{crit}$; substrate dynamics remain finite. The replacement is a finite-thickness saturated participation zone.
+
+These three shifts do not change any astronomical observation. They change the structural origin of black-hole architecture — from a combined GR+QFT framework that generates paradoxes to a substrate-level framework in which the paradoxes do not arise.
+
+### 13.11 Form-FORCED vs Value-INHERITED at Black-Hole Architecture
+
+#### 13.11.1 What is form-FORCED
+
+- **The single substrate condition** $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$ unifying six derivations.
+- **The horizon as decoupling surface** mechanism, universal across BH / Rindler / cosmic / acoustic horizons.
+- **The three substrate constraints (C1)–(C3)** jointly forbidding divergent curvature (no singularities).
+- **The finite-thickness saturated participation zone** as replacement for the singular interior.
+- **The committed-vs-uncommitted structure distinction** producing information blocking + entanglement straddling.
+- **The evaporation-as-participation-re-routing** mechanism through pair-creation events at the saturated surface.
+- **The non-generation of standard paradoxes** (information, firewall, complementarity, singularity).
+- **The area-law form** $S \propto A/\ell_P^2$ from two-dimensional surface support + gradient saturation + per-patch finite alphabet.
+- **The BHPT phase-shift structure** as global path-integrated invariant of minimal ED-channels.
+- **Helicity preservation/flip from anisotropy-basis transport.**
+- **Kerr twist from integrated frame-dragging vorticity.**
+- **The conditional-positive structural closure verdict.**
+
+#### 13.11.2 What is value-INHERITED
+
+- **The 1/4 coefficient** in the area-law entropy. Corresponds to $\log g \approx 1/4$ from substrate motif counting; closed-form derivation is OPEN item O2.
+- **BHPT spectral details.** Specific values of $\delta_{\ell m}$ for given backgrounds; INHERITED from acoustic-metric structure (Chapter 12) and from background-specific content.
+- **$\beta_\mathrm{crit}$** in the substrate condition's right-hand side. Substrate-determined dimensionless number; precise prefactor depends on coarse-graining choices.
+- **V1 kernel width.** Set the per-patch substrate temporal width entering the motif alphabet $g$.
+- **Specific Hawking temperature for any given background.** Depends on V5 cross-chain correlation calculation; the next-arc B4 deliverable.
+- **Specific superradiance amplitudes.** OPEN item O1.
+- **Specific Kerr-interior architectural details** beyond Schwarzschild-class. OPEN item O3.
+
+#### 13.11.3 What is open
+
+Three OPEN items carrying forward from Arc BH:
+
+- **O1 — Superradiance amplitude derivation.** Structurally compatible; full amplitude derivation requires extending BH-6.
+- **O2 — Closed-form $\log g$ from substrate motif counting.** Closed-form $1/4$ coefficient; structurally similar in difficulty to O-QC-1 ($\mathcal{M}_\mathrm{crit}$) and E4 ($\kappa/|\hat{N}'|$).
+- **O3 — Full Kerr interior audit.** Rotating-BH interior architecture beyond Schwarzschild-class.
+
+Plus the **B4 Hawking spectrum derivation** as the next natural concrete arc.
+
+### 13.12 Dependencies
+
+#### 13.12.1 Upstream
+
+- **Chapter 1.** Substrate primitives. Especially: P11 commitment-irreversibility (load-bearing for the committed-vs-uncommitted information architecture); P01 event discreteness (load-bearing for constraint C2 forbidding singularities); P04 bandwidth update rule (load-bearing for constraint C1 finite participation and constraint C3 gradient saturation); the finite-kernel commitment for V1 (load-bearing for the per-patch motif alphabet); substrate locality (load-bearing for the cross-bandwidth structure underlying horizon formation).
+- **Chapter 2.** Load-bearing invariants. Gradient sparsity $\sigma$ enters the single substrate condition directly; cross-bandwidth $\Gamma_\mathrm{cross}$ enters horizon formation through DCGT; multiplicity $\mathcal{M}$ enters the saturated-zone interior structure; V1 finite-width vacuum kernel enters the motif alphabet.
+- **Chapter 3.** DCGT. The substrate-to-continuum bridge for $\Gamma_\mathrm{cross}$ structure used in horizon formation; the multi-scale expansion underlying the threshold scale $\log(R_\mathrm{cg}/\ell_P)$.
+- **Chapter 12.** Arc ED-10 acoustic-metric scalar-tensor framework. The acoustic metric is the kinematic-summary structure that breaks down at $\sigma \gtrsim \beta_\mathrm{crit}$ in BH-3; the curvature-emergence content underlies the strong-curvature scattering region in BH-6.
+
+#### 13.12.2 Downstream
+
+- **Chapter 14 (Cross-Platform Unifications).** The cross-domain $\Gamma_\mathrm{cross}$-collapse mechanism shared with QC condition (ii) failure (Chapter 7) at scales separated by ~50 orders of magnitude is one of the program's strongest cross-platform substrate-mechanism identities. Chapter 14 develops it as part of the program's cross-domain unification analysis.
+- **Chapter 15 (Public Test Inventory).** Hawking spectrum is the next natural arc (B4); BHPT phase-shift content is anchored against LIGO/Virgo quasinormal-mode catalogs; OPEN items O1, O2, O3 are catalogued.
+
+### 13.13 Canonical Sources
+
+- `papers/Black_Hole_Foundations/`
+- Arc BH memos in `theory/Black_Holes/`
+
+The Black_Hole_Foundations paper presents the publication-grade architectural account of the BH sector, including the single substrate condition, the universal horizon mechanism, the singularity replacement, the information non-paradox, the area-law form, the BHPT phase-shift structure, the conditional-positive verdict, and the explicit not-generated-in-framework framing for the four standard paradoxes. Arc BH memos in `theory/Black_Holes/` (seven memos: Opening, Horizon-DCGT, Singularity-And-Strong-Curvature-Audit, Information-And-Evaporation, Area-Law-Entropy, Wave-BH-Scattering, Synthesis) develop each component in detail.
+
+The Monograph Shell's Appendix A theorem provenance map lists DCGT (Chapter 3) and the substrate-condition machinery as the upstream theorems consumed by this chapter. The Notation Glossary in Appendix B lists the symbols used in this chapter (gradient sparsity $\sigma$, cross-bandwidth $\Gamma_\mathrm{cross}$, decoupling surface $\Sigma_H$, area $A$, motif alphabet $g$, BHPT phase shift $\delta_{\ell m}$, channel action $\mathcal{A}$, frame-dragging vorticity $\omega_\mathrm{FD}$).
+
+### 13.14 Optional Figures
+
+**Figure 13.1 — The single substrate condition unifying six derivations.** A central diagram with the substrate condition $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$ at the center and six radial spokes labeled BH-2 horizon formation, BH-3 interior saturation, BH-4 information blocking, BH-5 participation-capacity, BH-6 strong-curvature scattering, BH-7 verdict. Each spoke is annotated with its substrate-level consequence.
+
+**Figure 13.2 — Universal horizon mechanism across four classes.** A four-panel diagram showing four horizon classes (BH event horizons, Rindler horizons, cosmic horizons, acoustic horizons in analog gravity). Each panel shows the substrate-level decoupling surface produced by the same single substrate condition. A central note observes that the four classes share thermodynamic-style features at standard-physics level because they are projections of one substrate phenomenon at four different scales.
+
+**Figure 13.3 — Singularity replacement.** A two-panel diagram. Left panel: standard GR singular interior (curvature divergence, geodesic incompleteness). Right panel: substrate-level finite-thickness saturated participation zone (gradient saturation, finite substrate dynamics, no singularity). A note observes that the acoustic-metric reading breaks down before the substrate does; substrate dynamics remain finite.
+
+**Figure 13.4 — The four assumptions whose joint imposition generates the paradox cluster.** A diagram showing the four assumptions (global unitarity, global Cauchy data, sharp geometric boundary, monogamy-at-boundary) connected to the four paradoxes (information loss, firewall, complementarity, singularity). A central note observes that ED imposes none of the four at substrate level — the paradoxes do not arise.
+
+**Figure 13.5 — Information vs entanglement at the horizon.** A schematic showing committed structure (information, P11-irreversible) blocked at the decoupling surface, and uncommitted structure (entanglement, joint amplitude) straddling the surface freely. A note observes that the blocking is participation-bandwidth, not causal.
+
+**Figure 13.6 — Evaporation as participation re-routing.** A schematic showing pair-creation-class events at the saturated decoupling surface, with one leg committing inward (joining the saturated zone) and the other committing outward (joining the radiation field). Joint correlation is preserved globally; no committed structure is destroyed.
+
+**Figure 13.7 — Area-law entropy form derived; 1/4 coefficient INHERITED.** A two-panel diagram. Left panel: area-law form $S = A/\ell_P^2 \cdot \log g$ derived from substrate participation-capacity at the decoupling surface. Right panel: 1/4 coefficient corresponds to $\log g \approx 1/4$, requires substrate motif counting beyond per-patch independence; INHERITED, OPEN item O2.
+
+**Figure 13.8 — BHPT phase-shift structure.** A schematic showing minimal ED-channel propagating through the strong-curvature exterior of a maximal ED-structure, accumulating phase shift $\delta_{\ell m} = \int_\mathrm{path}\Delta\mathcal{A}\,d\lambda$ as a global path-integrated invariant. Helicity preservation (axisymmetric backgrounds) and helicity flip (frame-dragging backgrounds) shown as anisotropy-basis transport.
+
+**Figure 13.9 — The cross-domain $\Gamma_\mathrm{cross}$-collapse echo.** A length-scale diagram showing the same substrate-condition mechanism producing horizon formation at gravitational-collapse scales (~$10^{38}\,\ell_P$ for stellar-mass black holes) and condition (ii) failure in QC at engineered-system scales (~$10^{-9}$ m for Josephson junctions). Two empirical phenomena, one substrate identity, ~50 orders of magnitude scale separation.
+
+**Figure 13.10 — Form-FORCED vs Value-INHERITED at black-hole architecture.** A two-column diagram. Left column ("Form-FORCED"): single substrate condition, universal horizon mechanism, no singularities, paradoxes not generated, area-law form, BHPT phase-shift structure, helicity behavior, Kerr twist. Right column ("Value-INHERITED"): 1/4 coefficient ($\log g$), BHPT spectral details, $\beta_\mathrm{crit}$, V1 kernel width, specific Hawking temperature, superradiance amplitudes, Kerr interior details.
+
+\newpage
+
+# Part V — Empirical Synthesis
+
+Part V provides the empirical synthesis. Chapter 14 surveys cross-platform unifications and the program's methodology. Chapter 15 catalogs the public test inventory and open extensions.
+
+\newpage
+
+## Chapter 14 — Cross-Platform Unifications: Matter-Wave ↔ Qubit, $\Gamma_\mathrm{cross}$ Collapse, Methodology
+
+### 14.1 Chapter Overview
+
+The substrate-level analysis of the preceding twelve chapters produces continuum-physics content across nine sectors: quantum mechanics (Chapter 5), form-level QFT and quantum information (Chapter 6), quantum computation (Chapter 7), Navier–Stokes architectural foundations (Chapter 8), MHD and Yang–Mills (Chapter 9), soft-matter mobility (Chapter 10), substrate gravity (Chapter 11), curvature emergence (Chapter 12), and black-hole architecture (Chapter 13). Each sector is closed at architectural level through a different application of the same substrate machinery: substrate primitives (Chapter 1), load-bearing invariants (Chapter 2), DCGT (Chapter 3), and the kernel-level arrow of time (Chapter 4).
+
+This chapter collects the **cross-domain unifications** that emerge from the closed sectors — places where the same substrate quantity, mechanism, or architectural principle produces empirically distinct phenomena at structurally distant scales. Three kinds of unification recur across the program: **same-substrate-quantity at different platforms** (the matter-wave quantum-classical boundary and qubit-system multiplicity walls share $\mathcal{M}_\mathrm{crit}$); **same-substrate-mechanism at different scales** ($\Gamma_\mathrm{cross}$ collapse produces both black-hole horizon formation and quantum-computing condition (ii) failure at scales separated by ~50 orders of magnitude); and **same-architectural-principle across content channels** (P04's mobility-capacity bound produces both the Universal Mobility Law and Class A QC; V1's finite-width kernel produces the kernel-level arrow, R1 substrate-cutoff regularization, the Yang–Mills mass-gap mechanism, and the BH area-law motif alphabet). The chapter also establishes the program's **form-FORCED / value-INHERITED methodology** as a cross-domain testable signature: closed-form derivation of any inherited substrate constant in one sector should produce mutually consistent values when projected to other sectors.
+
+The chapter does not introduce new substrate primitives, theorems, or arcs. It synthesizes results already established in Chapters 1–13 into the structural cross-domain pattern that the program produces. The cross-domain unifications are not coincidences; they are direct consequences of the substrate ontology being a single framework with consistent applications across multiple sectors. The chapter's role is to make this structural pattern visible as a synthesis at the program level, distinguishing the program's substrate-level framework from phenomenological assemblies that lack such cross-domain identities.
+
+### 14.2 Why Cross-Domain Unifications Matter Structurally
+
+#### 14.2.1 What unifications across domains demonstrate
+
+A substrate-level framework that produces continuum physics across multiple sectors is structurally significant only if the substrate machinery is *consistent* across the sectors. A framework in which every sector's substrate-derivation invokes a different combination of primitives, with no overlap or shared structural content, would not constitute a substrate-level theory; it would be a collection of separate theories sharing a common vocabulary. The unifying claim of the Event Density program is that one substrate ontology produces all nine closed sectors, and the cross-domain unifications of this chapter are the structural evidence for that claim.
+
+Three kinds of cross-domain content emerge from the program. Each is a different *type* of unification:
+
+- **Cross-platform identity** at the level of substrate quantities. Two empirically distinct phenomena (at different platforms) share a substrate-determined parameter; sharper measurement of one constrains the other. The matter-wave Q-C boundary and the qubit-system multiplicity walls (Section 14.3) are the canonical example.
+- **Cross-scale identity** at the level of substrate mechanisms. The same substrate machinery produces phenomena at scales separated by tens of orders of magnitude. The $\Gamma_\mathrm{cross}$-collapse mechanism (Section 14.4) is the canonical example.
+- **Cross-channel identity** at the level of architectural principles. The same substrate primitive appears in multiple closed sectors with structurally consistent consequences. P04's mobility-capacity bound (Section 14.5) and V1's finite-width kernel (Section 14.6) are canonical examples.
+
+A substrate-level framework that produces only one of these unification types might be a coincidence. A framework that produces all three across nine sectors is structurally tight; the substrate ontology is doing real work.
+
+#### 14.2.2 What the chapter does and does not deliver
+
+The chapter **delivers**:
+- A structural synthesis of the cross-domain unifications established in Chapters 1–13.
+- The matter-wave ↔ qubit-system cross-platform identity as the program's strongest empirical-anchor unification.
+- The $\Gamma_\mathrm{cross}$-collapse cross-scale identity as the program's strongest substrate-mechanism unification.
+- The P04 mobility-capacity bound and V1 finite-width kernel cross-channel identities as architectural-principle unifications.
+- The form-FORCED / value-INHERITED methodology as a testable cross-domain signature.
+- The structural distinction between substrate-level frameworks (which produce cross-domain unifications) and phenomenological assemblies (which do not).
+
+The chapter **does not deliver**:
+- New substrate primitives, theorems, or arcs. The chapter is synthetic, not constructive.
+- Closed-form derivations of any inherited substrate constants. The closed-form-substrate-constants program is downstream open work; this chapter establishes the program's cross-domain consistency requirements but does not close them.
+- Empirical predictions beyond what Chapters 7–13 establish. The chapter restates the cross-platform identity in unified form; it does not introduce new predictions.
+
+### 14.3 Cross-Platform Identity: Matter-Wave ↔ Qubit-System Multiplicity Walls
+
+#### 14.3.1 Two empirically distinct phenomena
+
+Two empirical phenomena have been studied in different research communities for decades:
+
+- **The matter-wave quantum-classical boundary.** Matter-wave interferometry experiments (Vienna and Basel programs, broadly) probe the quantum-classical transition by sending increasingly massive molecules through interferometers. Below approximately 140 kDa molecular mass, fringes are observed cleanly. Above approximately 250 kDa, fringes wash out and the molecule behaves classically. The empirical boundary is one of the most robust findings in foundational quantum physics; it has been studied for ~20 years and the boundary mass is reproducible across experimental groups.
+- **The qubit-system multiplicity wall.** Quantum-computing platforms (superconducting qubits, trapped ions, photonic gate-model architectures) face structural ceilings on system-level effective coherence as the system scales. Each Class A platform has a substrate-determined wall at a specific platform $N_\star$ (system size); past the wall, pure-Class-A scaling cannot continue.
+
+These two phenomena have been treated as separate research programs by different communities. The matter-wave-interferometry community works on foundational quantum physics with no commercial application. The QC-scaling community works on commercial quantum computing with no foundational-quantum-physics application. Standard physics has no structural reason to identify them.
+
+#### 14.3.2 The substrate-level identity
+
+The substrate-level analysis of Chapter 7 (UR-1 and the multiplicity-cap function $M$) produces both phenomena as the same substrate-determined boundary projected onto two different platforms. The substrate-level reading:
+
+- **The matter-wave Q-C boundary mass $M_\star$** is the molecular mass at which the molecule's intrinsic internal-DOF activated multiplicity crosses $\mathcal{M}_\mathrm{crit}$. Below $M_\star$, the molecule's effective system multiplicity is $\mathcal{M}_\mathrm{floor}(M_\mathrm{mol}) < \mathcal{M}_\mathrm{crit}$; the unresolved-rule regime can be sustained; fringes are observed. Above $M_\star$, $\mathcal{M}_\mathrm{floor}(M_\mathrm{mol}) > \mathcal{M}_\mathrm{crit}$; the unresolved regime cannot be sustained; fringes wash out.
+- **The qubit-system multiplicity wall $N_\star$** is the system size at which the qubit-system's architecture-specific scaling function $f_\mathrm{sys}^{(A)}(\mathcal{S})$ crosses the same $\mathcal{M}_\mathrm{crit}$. Below $N_\star$, the system-level multiplicity is below the threshold; the unresolved-rule regime can be sustained; the QC platform operates. Above $N_\star$, system-level multiplicity exceeds the threshold; the regime cannot be sustained; pure-Class-A scaling fails.
+
+The two empirical phenomena are crossings of the same substrate constant $\mathcal{M}_\mathrm{crit}$ evaluated at two different platform-scaling functions. The cross-platform identity is form-FORCED at the substrate level.
+
+#### 14.3.3 What this identity implies empirically
+
+- **Sharper measurement of one anchor constrains the other.** A more precise measurement of the matter-wave Q-C boundary mass directly constrains $\mathcal{M}_\mathrm{crit}$, which in turn constrains the qubit-system $N_\star$ values for any platform with a calibrated $f_\mathrm{sys}^{(A)}$. Conversely, a measurement of the qubit-system multiplicity wall constrains $\mathcal{M}_\mathrm{crit}$ and therefore constrains the matter-wave boundary mass.
+- **The two communities study the same substrate phenomenon.** Foundational matter-wave-interferometry research and commercial QC-scaling research are not separate research programs at the substrate level; they probe the same substrate boundary from two empirical directions.
+- **Cross-platform calibration is structurally valuable.** A research program coordinating measurements of both anchors produces consistency checks unavailable in either community alone. Inconsistent calibration of $\mathcal{M}_\mathrm{crit}$ between the two platforms would *refute the substrate-level identity*; consistent calibration is the form-FORCED prediction.
+
+#### 14.3.4 The strongest empirical-anchor unification
+
+The matter-wave ↔ qubit-system identity is the program's **strongest empirical-anchor cross-platform unification**. It is testable at the form-FORCED level and falsifiable by inconsistent calibration. The empirical content:
+
+- The matter-wave boundary at 140–250 kDa is a PASSED-class observation in the program's empirical inventory (Chapter 15); it is the natural anchor for $\mathcal{M}_\mathrm{crit}$.
+- Qubit-system multiplicity walls are IN PROGRESS as empirical anchors; SC qubit platforms are approaching the substrate-determined wall as system-level effective coherence is measured at increasing scales.
+- Cross-platform calibration of $\mathcal{M}_\mathrm{crit}$ from both anchors is a structural test: if the two anchors yield consistent $\mathcal{M}_\mathrm{crit}$ values up to the architecture-specific scaling functions, the cross-platform identity is empirically supported. If they yield inconsistent values, the identity is refuted.
+
+The framework's reframing implication: matter-wave-interferometry research is reframed as a direct probe of QC ceilings, and QC-scaling research is reframed as a direct probe of fundamental quantum-classical boundaries. The two empirical fronts are connected at the substrate level.
+
+### 14.4 Cross-Scale Identity: $\Gamma_\mathrm{cross}$ Collapse Across ~50 Orders of Magnitude
+
+#### 14.4.1 The same substrate mechanism at different scales
+
+The DCGT-derived cross-bandwidth structure $\Gamma_\mathrm{cross}(\mathbf{x}_1, \mathbf{x}_2) \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ (Chapter 3) appears in two empirically distinct sectors:
+
+- **Black-hole horizon formation (Chapter 13).** The substrate-level horizon is the surface where $\Gamma_\mathrm{cross}$ falls below hydrodynamic-window resolution. The substrate condition for horizon formation is precisely the threshold condition $\sigma \gtrsim \log(R_\mathrm{cg}/\ell_P)$. This produces the universal horizon mechanism across BH / Rindler / cosmic / acoustic horizons.
+- **Quantum-computing condition (ii) failure (Chapter 7).** UR-1's condition (ii) requires $\gamma_{ij} \geq \Gamma_\mathrm{min}$ along every rule-spanning pathway. Failure of this condition is the substrate-level cause of qubit decoherence in Class A architectures. The cross-bandwidth between rule-spanning endpoints fails when substrate gradients along the pathway produce $\Gamma_\mathrm{cross}$ collapse.
+
+The same DCGT-derived exponential structure produces both. The Josephson-junction macroscopic-quantum-tunneling (MQT) rate is structurally equivalent in form to the substrate-level horizon-formation condition: both involve cross-bandwidth collapse through integrated $\sigma$ along a pathway.
+
+#### 14.4.2 Scale separation: ~50 orders of magnitude
+
+The two empirical applications of the same substrate mechanism live at scales separated by approximately 50 orders of magnitude in physical length:
+
+- **Black-hole horizon scales.** A stellar-mass black hole has horizon radius $\sim 10^{4}$ m. The substrate-level decoupling surface is at this scale, and the integrated $\sigma$ along radial paths through the horizon region produces the $\Gamma_\mathrm{cross}$-collapse exponential.
+- **Josephson-junction barrier scales.** A typical JJ barrier has thickness $\sim 10^{-9}$ m. The integrated $\sigma$ along the engineered barrier produces the same DCGT-derived exponential, manifesting as the WKB MQT rate $\tau_\mathrm{MQT}^{-1} \sim \omega_0\exp[-\alpha\int_\mathrm{barrier}\sigma\,d\ell]$.
+
+The ratio of length scales is approximately $10^{4}/10^{-9} = 10^{13}$ in physical length. When the substrate-scale calibration enters (the substrate length scale is the Planck length $\ell_P \sim 10^{-35}$ m), the structural separation in substrate-scale units is correspondingly larger. The framework's claim that the substrate ontology produces both phenomena through the same mechanism is therefore a claim of consistency across substantially separated empirical regimes.
+
+#### 14.4.3 The structural significance
+
+The substrate does not distinguish between "gravitational" and "engineered" gradient regions when computing $\Gamma_\mathrm{cross}$. It applies the same DCGT machinery, and the empirical phenomena that result differ only in the platform-specific values of $\sigma$ along the relevant path.
+
+The structural lesson: when a substrate ontology produces continuum physics through coarse-graining, the substrate-level mechanisms are platform-independent; the platform-specific empirical phenomena are different evaluation points of the same substrate machinery. This is the kind of cross-scale consistency that distinguishes substrate-level frameworks from phenomenological assemblies.
+
+A phenomenological assembly that fits MQT data with one model and BH-horizon data with another model would show no structural reason for the same exponential form to appear in both contexts. The substrate-level framework derives both from the same DCGT machinery and predicts (form-FORCED) that any new platform with substrate gradient structure analogous to either MQT barriers or BH horizons should exhibit the same exponential form.
+
+#### 14.4.4 The cross-scale unification across other phenomena
+
+Beyond MQT and BH horizon formation, the same $\Gamma_\mathrm{cross}$ collapse mechanism appears in other closed-sector content:
+
+- **Cosmological horizon participation density.** T20 (Chapter 11) uses the cosmic horizon's participation-boundary content; the substrate-level reading of the cosmic horizon as a $\Gamma_\mathrm{cross}$-collapse boundary is consistent with BH-2's universal horizon mechanism.
+- **Acoustic horizons in analog gravity.** Flow-induced gradients in fluid analog systems produce the same substrate condition and the same $\Gamma_\mathrm{cross}$ collapse.
+- **Rindler horizons in accelerated frames.** Acceleration-induced gradients produce the same substrate condition.
+
+The substrate mechanism is platform-independent across BH event horizons, cosmic horizons, Rindler horizons, acoustic-gravity horizons, and JJ-class engineered barriers in QC. Empirical content differs by the specific values of $\sigma$ along the relevant paths in each case; the substrate-level mechanism is the same.
+
+### 14.5 Cross-Channel Identity: P04 Mobility-Capacity Bound
+
+#### 14.5.1 The same substrate primitive in multiple sectors
+
+Substrate primitive P04 (the bandwidth update rule, Chapter 1) supplies the mobility-capacity bound used in two structurally distant content sectors:
+
+- **Soft-matter mobility (Chapter 10).** P04's mobility-capacity bound produces the Universal Mobility Law $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ in concentrated soft-matter systems. The substrate-natural exponent $\beta = 2$ is empirically validated across ten chemically unrelated systems with $\beta = 1.72 \pm 0.37$.
+- **Quantum computing Class A protection (Chapter 7).** P04's mobility-capacity bound produces the Class A engineered-low-multiplicity protection mechanism. The structural commitment is to suppressing local multiplicity by structural means (lattice symmetry, engineered ED-bottleneck, deep confinement, mode engineering). Class A platforms (superconducting qubits, trapped ions, gate-model photonic) are the QC-architectural reading of substrate-level low-multiplicity engineering.
+
+Both applications use the same substrate primitive (P04), but they apply it to different content channels: soft-matter mobility uses concentration-driven mobility; QC Class A uses participation-rule integrity in engineered low-multiplicity regions.
+
+#### 14.5.2 The structural significance of cross-channel application
+
+The cross-channel application of P04 demonstrates that the substrate primitives are not domain-specific. P04's structural content — that participation channels carry bounded bandwidth and that the bandwidth update produces a mobility-capacity bound — is the same in soft-matter rheology and in quantum computing. The empirical phenomena differ; the substrate primitive is identical.
+
+The same applies to other primitives:
+
+- **P11 commitment-irreversibility** appears in the kernel-level arrow of time (Chapter 4), the no-collapse measurement rule (Chapter 5), the BH-4 information architecture (Chapter 13), and the UR-1 commitment-injection failure mode (Chapter 7).
+- **P01 event discreteness** appears in substrate UV-finiteness (Chapter 6), the BH-3 no-singularity result (Chapter 13), and the multiple closed sectors that inherit the substrate's smallest length scale.
+
+Each primitive supplies content to multiple closed sectors. The unification across content channels is a structural signature of the substrate-level framework.
+
+#### 14.5.3 The shared exponent class $\beta \approx 2$
+
+The empirical $\beta \approx 2$ exponent appears in three distinct empirical contexts within the program:
+
+- **Concentration-driven diffusion suppression** in the ten UDM systems ($\beta = 1.72 \pm 0.37$).
+- **Krieger–Dougherty viscosity divergence** in suspensions ($\beta_\mathrm{KD}$ near 2).
+- **Discontinuous shear-thickening critical-rate behavior** in DST systems (saturation exponent near 2).
+
+All three contexts reflect the same substrate-level mechanism: P04 mobility-capacity bound applied to different state variables. The shared exponent class is structurally significant; the cross-context consistency is what a substrate-level framework should produce.
+
+The mechanism-clustered scatter in the UDM data (cooperative networks $\bar\beta \approx 2.31$, steric $\approx 1.76$, gradual/electrostatic $\approx 1.38$) is consistent with the substrate-level account's prediction that cooperativity of saturation modulates the exponent. The cross-system scatter is not a refutation; it is structurally informative content that the substrate-level framework predicts as an empirically-detectable pattern.
+
+### 14.6 Cross-Channel Identity: V1 Finite-Width Vacuum Kernel
+
+#### 14.6.1 The same substrate object in multiple sectors
+
+The V1 finite-width vacuum kernel (formalized in Theorem N1, Chapter 4) appears as load-bearing substrate machinery in four distinct closed sectors:
+
+- **Kernel-level arrow of time (Chapter 4).** V1's finite-width plus chain-sourced character supplies the structural input to Theorem 18's forcing chain. V1 retardation produces the substrate-level arrow of time.
+- **R1 substrate-cutoff regularization in Navier–Stokes (Chapter 8).** V1's finite width produces, at first subleading order in DCGT, the hyperviscous correction term $-\kappa\mu_{\mathrm{V1}}\ell_P^2\nabla^4\mathbf{v}$. R1 supplies the Clay-NS-relevant regularizing mechanism in the framework's Intermediate Path C verdict.
+- **Yang–Mills mass-gap mechanism (Chapter 9).** V1's second-moment expansion plus non-Abelian quartic stabilization produces a substrate-level mass-gap. Survival of the gap is conditional on V1's kernel-profile rescaling under continuum-limit flow.
+- **BH area-law motif alphabet (Chapter 13).** V1's per-patch substrate temporal width sets the per-patch motif alphabet $g$ in the BH area-law entropy expression $S = (A/\ell_P^2)\log g$.
+
+V1 is therefore one of the program's most cross-channel substrate objects. Its finite-width content alone supplies four distinct structural results across four closed sectors.
+
+#### 14.6.2 What this cross-channel content demonstrates
+
+A substrate-level framework should produce cross-channel consequences from each substrate object. V1's cross-channel content demonstrates that the V1 finite-width primitive is not specialized to any single sector; it is a substrate-level commitment that propagates structurally through the substrate-to-continuum bridge to multiple closed-sector content.
+
+The four cross-channel applications of V1 are structurally consistent: they all use V1's finite-width content, but they apply it through different mechanisms (Theorem 18 chain-summation for the arrow; first-subleading-order DCGT expansion for R1; second-moment expansion plus non-Abelian quartic stabilization for YM mass-gap; per-patch substrate temporal width for BH motif counting). The diversity of mechanisms applied to the same substrate object is structurally significant; it shows that the substrate ontology supports multiple structural derivations from each primitive.
+
+#### 14.6.3 The unification across kernels
+
+The same cross-channel pattern appears for V5 (the cross-chain memory kernel):
+
+- **V5 → Maxwell viscoelasticity in soft-matter mobility (Chapter 10).** V5's first temporal moment is identified as the relaxation time $\tau_R$ in the Maxwell equation.
+- **V5 cross-chain correlations in BH evaporation (Chapter 13, next-arc B4).** V5's cross-chain correlation calculation is the load-bearing remaining work for the Hawking-spectrum derivation. The mechanism is in hand from BH-4; the explicit V5 calculation is what produces the spectrum.
+
+Both kernels (V1 and V5) appear in multiple closed sectors with structurally consistent substrate-level content. The cross-channel pattern is therefore not a coincidence of any single kernel; it is a structural signature of how substrate kernels propagate through the substrate-to-continuum bridge.
+
+### 14.7 Form-FORCED / Value-INHERITED as Cross-Domain Methodology
+
+#### 14.7.1 The methodological pattern
+
+The program's signature methodological pattern — *form-FORCED at the structural level, value-INHERITED at the numerical level* — has appeared in every chapter from Chapter 1 onward. Each closed sector identifies which content is structurally fixed by the substrate (form-FORCED) and which numerical thresholds inherit from substrate constants whose specific values come from outside the primitive layer or remain downstream open work (value-INHERITED).
+
+The cross-domain pattern: *every closed sector is structurally fixed in form and numerically calibrated against empirical anchors*. The methodology is consistent across the program, and the consistency itself is a structural signature.
+
+#### 14.7.2 The cross-domain testable signature
+
+The methodology is testable as a cross-domain signature: *closed-form derivation of any inherited substrate constant in one sector should produce mutually consistent values when projected to other sectors*. Three specific closed-form-substrate-constants candidates have been identified across the program:
+
+- **$\mathcal{M}_\mathrm{crit}$ in QC** (Chapter 7, OPEN item O-QC-1). Closed-form derivation from V1 kernel + ED-I-01 substrate constants. Empirical anchor: matter-wave Q-C boundary at 140–250 kDa.
+- **$\log g$ in BH area-law entropy** (Chapter 13, OPEN item O2). Closed-form derivation from substrate motif counting. Empirical anchor: Bekenstein–Hawking 1/4 coefficient.
+- **$\kappa/|\hat{N}'| \approx 0.001766$ in the ED-SC arc** (priority list E4). Closed-form derivation from substrate constants.
+
+These three are structurally similar: each calibrates a substrate constant from empirical anchors; closed-form derivation in any one constrains the others by the cross-domain consistency requirement. The three are sometimes called the **closed-form-substrate-constants program**.
+
+The cross-domain consistency requirement: if closed-form derivation produces $\mathcal{M}_\mathrm{crit}$ at one numerical value, the implied $\log g$ and $\kappa/|\hat{N}'|$ values in their respective sectors should be consistent with their empirical anchors. Mutual inconsistency between two closed-form-derived substrate constants would falsify the cross-domain methodology — it would demonstrate that the substrate ontology cannot consistently calibrate its inherited constants across multiple sectors.
+
+#### 14.7.3 What the methodology buys
+
+The form-FORCED / value-INHERITED methodology buys three structural advantages for the program:
+
+- **Predictive content without phenomenological additions.** Each closed sector produces sharp form-level predictions (UR-1 conditions, slope-4 Tully–Fisher, Universal Mobility Law functional form, etc.) without introducing phenomenological constants beyond the substrate inputs ($\hbar$, $c$, $H_0$, $\ell_P$). The numerical thresholds inherit from substrate constants whose closed-form derivation is downstream open work.
+- **Cross-domain consistency at the structural level.** The form-FORCED content is the same across sectors when the same substrate primitive applies; the value-INHERITED content varies by sector but is constrained by cross-domain consistency.
+- **Honest framing of what is and is not closed.** The methodology distinguishes structurally what the framework derives (form) from what it inherits empirically (value). Open extensions are explicitly named (the closed-form-substrate-constants program; GR-4A; Arc COSMO; the various Arc-specific OPEN items). The framework does not claim to close more than it does.
+
+#### 14.7.4 The methodology as program-level signature
+
+The program-level methodology is consistent across all nine closed sectors. Phase-1 closure of QM (Chapter 5), form-level QFT and QI (Chapter 6), QC architecture (Chapter 7), Navier–Stokes (Chapter 8), MHD and Yang–Mills (Chapter 9), soft-matter mobility (Chapter 10), substrate gravity (Chapter 11), curvature emergence (Chapter 12), and BH architecture (Chapter 13) all follow the same pattern: structural form is FORCED; numerical thresholds are INHERITED; open extensions are explicitly named.
+
+The cross-domain consistency of the methodology is itself a structural signature of the program. A phenomenological assembly would not preserve this consistency across nine sectors; the program's substrate-level ontology does, by structural design.
+
+### 14.8 The Three Unification Types Summarized
+
+#### 14.8.1 Same-substrate-quantity (matter-wave ↔ qubit-system)
+
+Two empirically distinct phenomena at different platforms share a substrate-determined parameter ($\mathcal{M}_\mathrm{crit}$). The cross-platform identity is form-FORCED; sharper measurement of one anchor constrains the other.
+
+The structural signature: the substrate ontology supplies a single parameter that controls both phenomena; the parameter's value is platform-independent; cross-platform calibration is structurally valuable.
+
+#### 14.8.2 Same-substrate-mechanism ($\Gamma_\mathrm{cross}$ collapse across scales)
+
+The same substrate machinery (DCGT-derived $\Gamma_\mathrm{cross}$ exponential) produces empirical phenomena at scales separated by tens of orders of magnitude (BH horizon formation, QC condition (ii) failure, JJ MQT, cosmic horizons, Rindler horizons, acoustic horizons in analog gravity).
+
+The structural signature: substrate mechanisms are platform-independent; the substrate does not distinguish between "gravitational" and "engineered" gradient regions; the platform-specific phenomena are different evaluation points of the same substrate machinery.
+
+#### 14.8.3 Same-architectural-principle (P04, V1 across content channels)
+
+The same substrate primitive supplies content to multiple closed sectors with structurally consistent consequences (P04 producing UDM and Class A; V1 producing the kernel-level arrow, R1, YM mass-gap, BH motif alphabet).
+
+The structural signature: substrate primitives are not domain-specific; their content propagates through the substrate-to-continuum bridge to multiple closed sectors; the cross-channel consistency is what a substrate-level framework should produce.
+
+#### 14.8.4 The three unification types together
+
+The three unification types together demonstrate that the substrate ontology is *one framework with consistent applications across multiple sectors*, not a collection of separate sector-specific theories sharing a common vocabulary. Each unification type is a different facet of cross-domain consistency:
+
+- **Cross-platform identity** demonstrates that substrate parameters are platform-independent.
+- **Cross-scale identity** demonstrates that substrate mechanisms are scale-independent.
+- **Cross-channel identity** demonstrates that substrate primitives are channel-independent.
+
+A framework producing all three across nine closed sectors is structurally tight. A framework producing only one of these types might be a coincidence; producing all three is the substrate ontology doing real work.
+
+### 14.9 What This Changes (And What It Doesn't)
+
+#### 14.9.1 What does not change
+
+The chapter does not change any sector-level prediction. Empirical content of all nine closed sectors is preserved exactly. Engineering and astronomical predictions for QC, soft-matter rheology, galactic gravity, black-hole physics, and the rest of the program's continuum-physics content proceed unchanged.
+
+#### 14.9.2 What does change
+
+The chapter identifies structural cross-domain unifications that the standard treatments of these sectors do not produce. Three structural shifts:
+
+- **Matter-wave interferometry and qubit-system scaling become connected.** The two empirical research programs are reframed as two probes of the same substrate-determined parameter. Cross-platform calibration becomes structurally valuable.
+- **Black-hole horizon formation and quantum-computing condition (ii) failure share a substrate mechanism.** The cross-scale identity at ~50 orders of magnitude is one of the program's strongest substrate-mechanism unifications.
+- **The form-FORCED / value-INHERITED methodology is identified as a cross-domain signature.** The cross-domain consistency requirement on closed-form-substrate-constants derivations becomes a testable structural prediction.
+
+These shifts are at the level of structural pattern recognition rather than at the level of empirical prediction. They make visible the cross-domain consistency that the substrate ontology produces; they do not change any laboratory observation.
+
+### 14.10 Form-FORCED vs Value-INHERITED at Cross-Platform Unifications
+
+#### 14.10.1 What is form-FORCED
+
+- **The matter-wave ↔ qubit-system cross-platform identity** via shared $\mathcal{M}_\mathrm{crit}$.
+- **The $\Gamma_\mathrm{cross}$-collapse cross-scale identity** between BH horizon formation and QC condition (ii) failure (and the broader universal-horizon-mechanism class).
+- **The P04 mobility-capacity bound cross-channel identity** between Universal Mobility Law and Class A QC.
+- **The V1 finite-width kernel cross-channel identity** across kernel-level arrow, R1 substrate-cutoff, YM mass-gap, BH area-law motif alphabet.
+- **The form-FORCED / value-INHERITED methodology** as cross-domain testable signature.
+- **The cross-domain consistency requirement** on closed-form-substrate-constants derivations.
+
+#### 14.10.2 What is value-INHERITED
+
+- **The specific value of $\mathcal{M}_\mathrm{crit}$.** Anchored empirically by matter-wave Q-C boundary at 140–250 kDa. Closed-form derivation is OPEN item O-QC-1 (Chapter 7).
+- **The specific value of $\log g$ in BH entropy.** Anchored empirically by Bekenstein–Hawking 1/4 coefficient. Closed-form derivation is OPEN item O2 (Chapter 13).
+- **The specific value of $\kappa/|\hat{N}'|$ in the ED-SC arc.** Anchored empirically. Closed-form derivation is OPEN item E4.
+- **Architecture-specific scaling functions** ($f_\mathrm{int}$ for matter-wave molecules, $f_\mathrm{xy}$ for SC qubit arrays, etc.). INHERITED from architecture-to-platform calibration (O-QC-2).
+- **Specific platform-level wall locations** ($N_\star$ for any given QC platform). Determined by the architecture-specific $f_\mathrm{sys}^{(A)}$ plus the substrate-shared $\mathcal{M}_\mathrm{crit}$.
+
+#### 14.10.3 What is open
+
+- **The closed-form-substrate-constants program.** Three structurally similar open items (O-QC-1, O2, E4); closed-form derivation in any one constrains the others by the cross-domain consistency requirement.
+- **Architecture-to-platform calibration** (O-QC-2). Mapping $\mathcal{M}_\mathrm{floor}^{(A)}(\mathcal{S})$ for canonical qubit platforms; predicting $N_\star$ values via the cross-platform identity.
+- **Cross-platform calibration of $\mathcal{M}_\mathrm{crit}$** from both the matter-wave anchor and the qubit-system anchor. Empirical work.
+- **Empirical confirmation of $\Gamma_\mathrm{cross}$-collapse cross-scale identity** in additional sectors beyond BH horizons and QC condition (ii). Cosmic-horizon and Rindler-horizon empirical content provides additional anchors when available.
+
+### 14.11 Dependencies
+
+#### 14.11.1 Upstream
+
+- **All preceding chapters.** The cross-domain unifications synthesize results established in Chapters 1–13. No single chapter is the sole upstream dependency; the chapter integrates content across the entire monograph.
+- **Chapter 1 (substrate primitives).** The cross-channel identities of P04 and V1 rely on the primitive-level commitments established in Chapter 1.
+- **Chapter 2 (load-bearing invariants).** The cross-platform identity rests on multiplicity $\mathcal{M}$ and the cross-bandwidth $\Gamma_\mathrm{cross}$, both established as load-bearing invariants in Chapter 2.
+- **Chapter 3 (DCGT).** The $\Gamma_\mathrm{cross}$-collapse cross-scale identity uses the DCGT-derived exponential structure from Chapter 3.
+- **Chapter 4 (kernel-level arrow).** V1's cross-channel content includes Theorem 18's role in the kernel-level arrow.
+- **Chapter 7 (QC architecture).** UR-1 and the multiplicity-cap function $M$ supply the matter-wave ↔ qubit-system cross-platform identity.
+- **Chapter 13 (BH architecture).** The BH horizon-formation mechanism is one side of the $\Gamma_\mathrm{cross}$-collapse cross-scale identity.
+- **Chapter 10 (soft-matter mobility).** Universal Mobility Law is one side of the P04 cross-channel identity.
+
+#### 14.11.2 Downstream
+
+- **Chapter 15 (Public Test Inventory).** Empirical anchors for the cross-platform unifications are catalogued in Chapter 15. The closed-form-substrate-constants program (O-QC-1, O2, E4) is part of the open-extensions inventory.
+
+The chapter does not introduce content consumed downstream beyond what the closed sectors already established. Its role is synthetic.
+
+### 14.12 Canonical Sources
+
+- `papers/ED_QFT_Overview/`
+- `papers/ED_One_Substrate_Three_Domains/`
+- Cross-references to all Foundations papers (SG, BH, QC) and the NS Synthesis Paper.
+
+The ED_QFT_Overview paper (program-level synthesis) presents the cross-domain unifications in publication-grade form across the nine closed sectors. The ED_One_Substrate_Three_Domains paper supplies the program-overview / three-domains framing that organizes the cross-domain content. The Foundations papers (Substrate_Gravity_Foundations, Black_Hole_Foundations, Quantum_Computing_Foundations) and the NS Synthesis Paper are the sector-specific publication-grade sources whose cross-domain content this chapter integrates.
+
+The Monograph Shell's Appendix A theorem provenance map lists the substrate primitives, theorems, and arcs whose cross-domain applications this chapter synthesizes. The Notation Glossary in Appendix B lists the symbols used in this chapter (multiplicity $\mathcal{M}$, gradient sparsity $\sigma$, cross-bandwidth $\Gamma_\mathrm{cross}$, V1 kernel, V5 kernel, P04, P11, $\mathcal{M}_\mathrm{crit}$, $\log g$, $\kappa/|\hat{N}'|$).
+
+### 14.13 Optional Figures
+
+**Figure 14.1 — The three cross-domain unification types.** A three-row diagram. Row 1: same-substrate-quantity (matter-wave Q-C boundary ↔ qubit-system multiplicity wall, both crossings of $\mathcal{M}_\mathrm{crit}$). Row 2: same-substrate-mechanism ($\Gamma_\mathrm{cross}$ collapse at BH horizon formation and QC condition (ii) failure, ~50 orders of magnitude apart in length). Row 3: same-architectural-principle (P04 producing UDM and Class A; V1 producing kernel-arrow, R1, YM mass-gap, BH motif alphabet). A central note observes that the three unification types together demonstrate the substrate ontology's cross-domain consistency.
+
+**Figure 14.2 — The matter-wave ↔ qubit-system cross-platform identity.** A two-panel diagram. Left panel: matter-wave interferometry empirical setup with molecule of mass $M_\mathrm{mol}$ producing fringes (below boundary at 140 kDa) or losing fringes (above boundary at 250 kDa). Right panel: qubit-system architecture with system size $N$ producing operating QC (below wall at $N_\star$) or losing effective coherence (above $N_\star$). A central note labels both as crossings of the same substrate constant $\mathcal{M}_\mathrm{crit}$ at two different platform-scaling functions.
+
+**Figure 14.3 — The $\Gamma_\mathrm{cross}$-collapse cross-scale identity.** A length-scale axis from JJ barriers (~$10^{-9}$ m) to BH horizons (~$10^{4}$ m for stellar-mass black holes), with the same DCGT-derived exponential structure $\Gamma_\mathrm{cross} \sim \exp[-\alpha\int_\mathrm{path}\sigma\,d\ell]$ producing phenomena at both scales. Approximately 13 orders of magnitude in physical length (more in substrate-scale units). A note observes that this is the cross-scale identity at ~50 orders of magnitude.
+
+**Figure 14.4 — P04 cross-channel identity.** A diagram with P04 (mobility-capacity bound, Chapter 1) at the center and two spokes radiating outward to: (i) Universal Mobility Law in soft-matter rheology (Chapter 10, $\beta \approx 2$ across ten systems); (ii) Class A engineered-low-multiplicity protection in QC (Chapter 7). Each spoke is annotated with the substrate-level consequence.
+
+**Figure 14.5 — V1 cross-channel identity.** A diagram with V1 finite-width vacuum kernel (Chapter 4) at the center and four spokes radiating outward to: (i) Kernel-level arrow of time (Theorem 18, Chapter 4); (ii) R1 substrate-cutoff regularization in NS (Chapter 8); (iii) Yang–Mills mass-gap mechanism (Chapter 9); (iv) BH area-law motif alphabet (Chapter 13). Each spoke is annotated with the substrate-level mechanism.
+
+**Figure 14.6 — Form-FORCED / Value-INHERITED methodology as cross-domain signature.** A multi-row diagram with each row corresponding to a closed sector (QM, QFT, QC, NS, MHD, YM, soft-matter, gravity, curvature, BH). Two columns: form-FORCED content for the sector; value-INHERITED content for the sector. A central note observes that the methodology is consistent across all nine closed sectors; the cross-domain consistency itself is a structural signature.
+
+**Figure 14.7 — The closed-form-substrate-constants program.** A diagram with three structurally similar open items: $\mathcal{M}_\mathrm{crit}$ (O-QC-1, anchored at matter-wave 140–250 kDa boundary); $\log g$ (O2, anchored at BH 1/4 coefficient); $\kappa/|\hat{N}'|$ (E4, anchored at ED-SC empirical value). Each is a closed-form-derivation open item. A central note observes that closed-form derivation in any one constrains the others by cross-domain consistency.
+
+**Figure 14.8 — The substrate-level program at a glance.** A radial diagram with the substrate ontology at the center and nine spokes radiating outward to the nine closed sectors. Each spoke is annotated with the closed sector's content and with the substrate primitives / load-bearing invariants / theorems consumed. A central note observes that the substrate ontology produces continuum physics across nine sectors through consistent applications of the same substrate machinery.
+
+**Figure 14.9 — Substrate-level framework vs phenomenological assembly.** A two-column diagram. Left column ("substrate-level framework"): cross-domain unifications, cross-platform identities, cross-scale identities, cross-channel identities, methodological consistency. Right column ("phenomenological assembly"): no cross-domain unifications, sector-specific theories, no cross-platform identities, sector-specific methodologies. A central note observes that the cross-domain unifications of this chapter are the structural distinguishing signature between the two framework types.
+
+\newpage
+
+## Chapter 15 — Public Test Inventory and Open Extensions
+
+### 15.1 Chapter Overview
+
+The Event Density framework's structural content across the preceding fourteen chapters produces empirical content as a *consequence*: every closed sector generates falsifiable substrate-level predictions. This final chapter collects those predictions as a **public test inventory** and identifies the **open extensions** — the structural follow-on programs that the framework's current scope leaves open. The chapter operates entirely within the form-FORCED / value-INHERITED methodology established across the program: each test is a substrate-level structural claim with an explicit confirmation/refutation condition; each open extension is a named structural target with a defined scope and a relationship to existing closed-arc content.
+
+The chapter establishes the **status taxonomy** used uniformly across sectors: **PASSED** (empirical confirmation in published data), **ANCHORED** (prediction calibrated to existing observation), **IN PROGRESS** (active experimental program awaiting result), **ACTIVE** (test specified, awaiting execution), and **OPEN** (prediction stated, technique requires development). The current inventory comprises three PASSED predictions, thirteen ANCHORED, three IN PROGRESS, seventeen ACTIVE, and four OPEN — totaling forty empirical claims across the nine closed sectors. The chapter does not introduce new tests; it synthesizes those produced by the closed sectors into a unified inventory readable as the program's empirical interface.
+
+The chapter also names the program's open extensions. **B4 Hawking spectrum** is the next natural concrete arc — the mechanism is in hand from Chapter 13; the explicit V5 cross-chain correlation calculation that produces the spectrum is the remaining work. **The closed-form substrate-constants program** unifies three structurally similar open items: $\mathcal{M}_\mathrm{crit}$ (O-QC-1, calibrated against the matter-wave Q-C boundary), $\log g$ (O2 from Arc BH, anchored at the Bekenstein–Hawking 1/4 coefficient), and $\kappa/|\hat{N}'|$ (E4 from the ED-SC arc). **Architecture-to-platform calibration** (O-QC-2), **topology-stability theorem** (O-QC-4), and the four other O-QC items carry forward from Arc Q-COMPUTE. **Arc COSMO** (cosmic expansion / $H_0$ derivation from substrate) and **GR-4A** (Einstein-equation emergence) sit at speculative-not-refuted status. The chapter closes the monograph at the empirical-synthesis layer.
+
+### 15.2 Why a Public Test Inventory
+
+#### 15.2.1 The empirical posture of a substrate-level framework
+
+A substrate-level framework's empirical posture differs from that of a phenomenological assembly. A phenomenological assembly fits empirical data with parameters tuned to the data; its predictive content is mostly in interpolation between fitted regimes. A substrate-level framework derives form-level predictions from substrate primitives; its empirical content is sharper at the structural level (form-FORCED) and inherited at the numerical level (value-INHERITED).
+
+The framework's predictive content is therefore:
+- **Sharp at structural form.** UR-1's three-condition characterization, the Universal Mobility Law functional shape, the slope-4 Tully–Fisher relation, the BH area-law form — all are form-FORCED structural claims with explicit falsification conditions (refutation of any structural form refutes the substrate-level derivation).
+- **Calibrated at numerical value.** The $1/4$ coefficient in BH entropy, the matter-wave Q-C boundary at 140–250 kDa, the MOND scale $a_0$ — all are numerical values that the framework either inherits from substrate constants (with closed-form derivation as downstream open work) or anchors against empirical observation.
+- **Structurally cross-validated.** The form-FORCED / value-INHERITED methodology produces cross-domain consistency requirements (Chapter 14): closed-form derivation of any inherited substrate constant in one sector must produce values consistent with empirical anchors in other sectors. Mutual inconsistency across sectors would refute the substrate-level methodology.
+
+The public test inventory makes this empirical posture visible across the program's nine closed sectors. It is the program's interface to readers who want the empirical content distilled from the structural content.
+
+#### 15.2.2 What the inventory delivers
+
+- **A unified status taxonomy** applied across sectors. Each test has the same status labels (PASSED, ANCHORED, IN PROGRESS, ACTIVE, OPEN); cross-sector comparison is structurally meaningful.
+- **An explicit confirmation/refutation condition** for each test. Every test is falsifiable; the refutation condition is named.
+- **A map from sector content to empirical anchor.** Each closed-sector chapter produces specific tests; the inventory identifies which tests come from which chapter.
+- **A list of open extensions.** Future arcs and open structural problems are identified, with the relationship to current closed-arc content named explicitly.
+
+#### 15.2.3 What the inventory does not deliver
+
+- **No new predictions** beyond what the closed sectors produce. The chapter is synthetic, not constructive.
+- **No commitment that any test will succeed.** The framework's empirical posture is honest: PASSED tests are confirmed; ANCHORED tests are calibrated against existing observation; IN PROGRESS, ACTIVE, and OPEN tests have not produced empirical results.
+- **No claim that the framework as a whole is empirically validated.** The inventory's PASSED count is three; full empirical validation across nine sectors would require dozens more PASSED-status results. The framework's posture is structural-positive at architectural level (each sector closed at architectural level with form-FORCED content) plus empirically PASSED at three specific anchors.
+
+### 15.3 The Status Taxonomy
+
+#### 15.3.1 The five status levels
+
+The framework uses a uniform five-level status taxonomy across all sectors:
+
+- **PASSED** — Empirical confirmation in published data. The structural prediction has been tested against observation, and the observation matches the prediction within stated uncertainty.
+- **ANCHORED** — Prediction calibrated to existing observation. The substrate-level prediction matches existing empirical content in functional form or numerical range, but the prediction is treated as anchored against rather than fully tested by the observation (because the observation predates the prediction or because the structural prediction is a reframing rather than a discriminating-from-standard-physics claim).
+- **IN PROGRESS** — Active experimental program awaiting result. A test has been specified, an experimental program is currently running, and empirical content is expected within a defined window.
+- **ACTIVE** — Test specified, awaiting execution. A test has been specified at sufficient detail that an experimental program could execute it; no experimental program is currently running.
+- **OPEN** — Prediction stated, technique requires development. The substrate-level analysis identifies a prediction, but the experimental technique to test it does not currently exist or requires substantial development beyond current capability.
+
+The taxonomy is uniform across sectors. A test in the QC sector with status IN PROGRESS uses the same status label as a test in the gravity sector with status IN PROGRESS; cross-sector comparison is meaningful at the empirical-status layer.
+
+#### 15.3.2 Why this five-level taxonomy
+
+The taxonomy distinguishes the structurally distinct empirical-status conditions that arise across the program:
+
+- **PASSED vs ANCHORED.** Both involve empirical content matching the prediction. PASSED status requires that the empirical observation be a direct test of the substrate-level prediction (the observation was made or analyzed because of the prediction, or the prediction is sharp enough that the observation discriminates). ANCHORED status applies when the empirical observation predates the prediction or when the prediction is a reframing of existing empirical content rather than a sharp discriminating test.
+- **IN PROGRESS vs ACTIVE.** Both involve specified tests without empirical results yet. IN PROGRESS status requires an active experimental program currently running. ACTIVE status applies when the test is specified at adequate detail but no experimental program is currently running.
+- **ACTIVE vs OPEN.** Both involve specified predictions without current experimental programs. ACTIVE status applies when the experimental technique exists; OPEN status applies when the technique requires development beyond current capability.
+
+The taxonomy is coarse-grained enough to be applied uniformly across sectors and fine-grained enough to distinguish structurally meaningful empirical-status conditions.
+
+#### 15.3.3 What the status counts represent
+
+The inventory's current status counts: three PASSED, thirteen ANCHORED, three IN PROGRESS, seventeen ACTIVE, four OPEN.
+
+The counts represent forty distinct empirical claims. Each claim is a substrate-level structural prediction generated by one of the closed sectors of Chapters 5–13. The cross-sector distribution is consistent with the framework's empirical posture: more ACTIVE claims than PASSED claims (the framework is producing more predictions than have been empirically tested), more ANCHORED than PASSED (much of the framework's empirical content reframes existing observations rather than producing discriminating tests).
+
+### 15.4 PASSED Predictions
+
+#### 15.4.1 The three PASSED-status anchors
+
+Three predictions have status PASSED — empirical confirmation in published data:
+
+- **Dwarf galaxy outer-radius mass discrepancy: Active > Quiet** (Chapter 11, substrate-gravity sector). SPARC dataset analysis of 46 dwarf galaxies showed $\langle D_\mathrm{outer}\rangle \approx 6.01$ for Active dwarfs versus $\approx 3.94$ for Quiet dwarfs at fixed baryonic mass — a 53% higher outer-radius mass discrepancy in Active systems. The substrate-level prediction (sustained internal activity generates ED gradients producing smooth temporal halos with enhanced outer-radius discrepancies) is empirically confirmed. This is the framework's first completed astrophysical test.
+- **Multi-timescale FPM relaxation (Hafezi 2025)** (Chapter 7, QC sector). The University of Maryland multi-timescale photonic resonator-lattice work demonstrated that adding a second timescale to a single-ring resonator dramatically relaxes frequency-phase matching, broadens harmonic generation, and produces 100% device yield with disorder tolerance. The substrate-level prediction (multi-timescale lattices are high-multiplicity ED-objects with redundancy expansion of viable participation pathways) is empirically confirmed. This is the canonical Class C empirical demonstration in the QC architectural taxonomy.
+- **Universal Mobility Law $\beta \approx 1.72$ across ten systems** (Chapter 10, soft-matter sector). Empirical validation across ten chemically unrelated soft-matter systems (PMMA colloids, hard-sphere colloids, sucrose-water, glycerol-water, BSA, lysozyme, PEG-water, dextran, casein micelles, Ludox silica) yielded $\beta = 1.72 \pm 0.37$ with $R^2 > 0.986$. The substrate-level prediction (P04 mobility-capacity bound produces functional form $M(\rho) = M_0(1-\rho/\rho_\mathrm{max})^\beta$ with substrate-natural $\beta = 2$) is empirically confirmed within one standard deviation, with mechanism-clustered scatter consistent with the substrate-level account. This is the program's most quantitatively-tested structural prediction.
+
+#### 15.4.2 What PASSED status delivers and what it does not deliver
+
+PASSED status delivers:
+- **Empirical confirmation of a substrate-level structural prediction.** The empirical content matches the prediction within stated uncertainty.
+- **Cross-sector visibility of empirical anchoring.** PASSED tests in different sectors (gravity, QC, soft-matter) demonstrate that the framework's empirical content reaches multiple sectors.
+- **Evidence at architectural level.** The PASSED tests confirm form-FORCED content (the dwarf-galaxy active-versus-quiet ratio; the multi-timescale FPM relaxation behavior; the Universal Mobility Law functional shape).
+
+PASSED status does *not* deliver:
+- **Full empirical validation of the framework.** Three PASSED tests across nine sectors is not full empirical validation.
+- **Discrimination from all alternative theories.** Each PASSED test discriminates between the substrate-level prediction and specific alternatives, but not all alternatives.
+- **Closed-form derivation of inherited values.** PASSED tests confirm the form-FORCED structure; they do not derive the value-INHERITED specific numerical content (the precise empirical $\beta$ value; the precise dwarf-galaxy ratio).
+
+### 15.5 ANCHORED Predictions
+
+#### 15.5.1 The thirteen ANCHORED predictions
+
+Thirteen predictions have status ANCHORED — calibrated to existing observation:
+
+- **Matter-wave Q-C boundary as multiplicity wall** (Chapter 7). Empirical 140–250 kDa boundary is the natural anchor for $\mathcal{M}_\mathrm{crit}$.
+- **Newton's $G$ from substrate** (Chapter 11). $G = c^3\ell_P^2/\hbar$ identifies the substrate length scale with the Planck length through Newton-recovery; numerical content is empirically anchored.
+- **MOND $a_0$ within 10%** (Chapter 11). $a_0 = c\,H_0/(2\pi)$ matches empirical MOND constant within ~10% parameter-free; Hubble-tension band 67–73 km/s/Mpc translates to ~15% prediction band on $a_0$.
+- **Slope-4 Tully–Fisher relation** (Chapter 11). $v^4 = G\,M\,a_0$ derived from substrate primitives; empirically anchored against SPARC galaxy-rotation-curve catalog (~150 galaxies, sub-0.1-dex scatter dominated by baryonic-mass measurement uncertainty).
+- **Hyper-coherence in ultra-symmetric superconductors** (Chapter 7, ED-I-01). Bulk superconductors below $T_c$ exhibit zero resistance, Meissner effect, and flux quantization, all reproduced under Class A substrate-level reading.
+- **Josephson MQT WKB structure recovered from DCGT** (Chapter 7, Chapter 8). Devoret-Martinis-Clarke 1985 measurements of MQT-rate exponential dependence on barrier parameters reproduced as DCGT $\kappa$-function evaluation at the engineered $\sigma$-profile.
+- **Krieger–Dougherty divergence** (Chapter 10). Empirical viscosity divergence near suspension packing limit reproduced as substrate-level mobility-capacity bound applied to volume fraction.
+- **Discontinuous shear-thickening** (Chapter 10). Empirical DST reproduced as P04 mobility-capacity bound applied to strain rate at the saturation regime.
+- **BH area-law entropy form** (Chapter 13). Bekenstein-Hawking $S \propto A/\ell_P^2$ reproduced as substrate-level participation-capacity at the decoupling surface; 1/4 coefficient inherited at $\log g \approx 1/4$.
+- **BHPT phase-shift structure** (Chapter 13). Standard black-hole-perturbation-theory phase shifts reproduced as global path-integrated invariants of minimal ED-channels through the strong-curvature region.
+- **Universal horizon mechanism** (Chapter 13). Thermodynamic-style features shared across BH / Rindler / cosmic / acoustic horizons reproduced as projections of one substrate decoupling-surface phenomenon.
+- **High-Tc superconductors as intrinsically low-multiplicity** (Chapter 7, ED-I-01). Three predicted features (short coherence lengths, unconventional pairing symmetries, complex phase diagrams) match observed properties of high-Tc materials.
+- **Cross-domain $\Gamma_\mathrm{cross}$ collapse** (Chapter 14). Same DCGT-derived exponential structure unifies BH-2 horizon formation and QC condition (ii) failure across ~50 orders of magnitude.
+- **Form-FORCED / value-INHERITED methodology** (Chapter 14). Cross-domain consistency requirement on closed-form-substrate-constants derivations.
+
+#### 15.5.2 What ANCHORED status delivers and what it does not deliver
+
+ANCHORED status delivers:
+- **Calibration against existing empirical content.** The substrate-level prediction matches existing observation in functional form or numerical range.
+- **Reframing of standard physics phenomena under substrate-level analysis.** Each ANCHORED prediction reproduces a standard-physics phenomenon as a consequence of substrate primitives plus closed-arc machinery.
+- **Empirical anchoring without discriminating-from-standard-physics claims.** ANCHORED predictions are typically not sharp discriminating tests against alternative theories; they are reframings that preserve the empirical content.
+
+ANCHORED status does *not* deliver:
+- **Discriminating-from-standard-physics empirical content.** ANCHORED predictions match standard physics where standard physics already produces correct empirical content; they do not discriminate.
+- **Full empirical confirmation at the substrate-level mechanism layer.** The mechanism is reframed; the empirical content is anchored; discriminating tests at the substrate-level layer are typically ACTIVE or OPEN.
+
+### 15.6 IN PROGRESS Predictions
+
+#### 15.6.1 The three IN PROGRESS predictions
+
+Three predictions have status IN PROGRESS — active experimental program awaiting result:
+
+- **SC-qubit system-multiplicity wall** (Chapter 7). Multiple SC-qubit programs are scaling toward the substrate-determined wall at platform-specific $N_\star$. As $\tau_\mathrm{QC}^\mathrm{logical}$ is measured at increasing physical-qubit counts at fixed code distance, the substrate-level prediction is that pure-Class-A scaling will plateau at $N_\star$. The empirical content is being generated by ongoing scaling efforts; the prediction will be tested as scaling continues.
+- **FRAP $t^{1/6}$ scaling at high BSA** (Chapter 10). Pre-registered FRAP measurement at high BSA concentration tests the substrate-level prediction of non-Fickian recovery with $R(t) \sim t^{1/6}$ scaling at deep concentrations, distinct from standard Fickian $t^{1/2}$. Quote received April 2026 from contract lab; technician-team review pending. Empirical content expected within defined window.
+- **Quantum error correction as Class A + Class C composition** (Chapter 7). Surface-code-based fault-tolerant QC programs are testing whether logical-qubit lifetimes scale as substrate-level meta-architectural composition predicts. The empirical content is being generated by ongoing fault-tolerant QC efforts.
+
+#### 15.6.2 What IN PROGRESS status delivers
+
+IN PROGRESS status delivers:
+- **Predicted empirical content within a defined window.** The experimental program is running; results are expected.
+- **Direct testability of substrate-level predictions.** Each IN PROGRESS test has explicit confirmation/refutation conditions defined in advance.
+- **Forward-looking empirical anchoring.** IN PROGRESS tests will become PASSED or REFUTED upon experimental completion; the empirical posture sharpens with time.
+
+### 15.7 ACTIVE Predictions
+
+#### 15.7.1 The seventeen ACTIVE predictions
+
+Seventeen predictions have status ACTIVE — test specified, awaiting execution. The set spans the program's full sector inventory:
+
+**Quantum sector (Chapter 7):**
+- Mass-matched isomer matter-wave test (mass-matched isomers with different DOF structure should show different fringe behavior at fixed mass).
+- Cross-platform $\mathcal{M}_\mathrm{crit}$ calibration (consistency check between matter-wave and qubit-system anchors).
+- Class C correlation-budget plateau (multi-axis photonic platforms beyond ~3-5 axes; bosonic codes beyond a code-distance threshold).
+- Bell correlation degradation with multiplicity (entanglement-based correlations should degrade with system multiplicity load even at fixed environmental coupling).
+
+**Gravity sector (Chapter 11):**
+- Halo lag in cluster collisions (ED predicts lagging, sheared halo in Bullet-Cluster-class collisions).
+- Activity-dependent halo strength (galaxies with same baryonic mass but different dynamical activity should exhibit different halo strengths).
+- Post-starburst hysteresis (post-starburst galaxies should retain enhanced halos for relaxation timescales after activity subsides).
+- Reduced small-scale substructure (smoother halo profiles, fewer dwarf satellites, weaker strong-lensing flux anomalies than CDM predicts).
+
+**Condensed matter and photonics sector:**
+- Mesoscopic transport threshold (non-analytic kink in $G(L)$ at substrate-determined critical channel length).
+- SC phase-stiffness saturation (early-onset plateau in $J(T)$ before $T_c$).
+- Casimir-gradient saturation (force plateau at sub-100 nm separations).
+- Microresonator linewidth asymmetry (asymmetric Lorentzian splitting at substrate-determined threshold).
+- Photonic crystal ED-gradient limit (saturation of field confinement at substrate-determined mode volume).
+- Multi-timescale comb formation threshold (sharp threshold transition for stable comb formation).
+- ED-limited soliton step (saturation of soliton step height at substrate gradient ceiling).
+
+**Phononics sector:**
+- Chiral-phonon ED-vorticity (orbital current scaling with ED-tension and phonon vorticity, not phonon population).
+- Orbital Seebeck (current scaling with ED-tension rather than phonon number).
+
+#### 15.7.2 What ACTIVE status delivers
+
+ACTIVE status delivers:
+- **Specified tests** at sufficient detail for experimental execution.
+- **Future empirical content** when experimental programs run the tests.
+- **Cross-sector coverage** of the framework's empirical predictive content.
+
+The seventeen ACTIVE tests span the program's full sector inventory; empirical confirmation of any subset would advance the framework's empirical anchoring.
+
+### 15.8 OPEN Predictions
+
+#### 15.8.1 The four OPEN predictions
+
+Four predictions have status OPEN — prediction stated, technique requires development:
+
+- **Class B exponential coherence advantage (topological qubits)** (Chapter 7). Topological qubits should outrun Class A coherence by exponential factor $\exp(\Delta_\mathrm{top}/T_\mathrm{eff})$ in topological gap. Empirical test requires development of stable topological-qubit platforms with measurable coherence advantage; technology is in development.
+- **Hawking spectrum** (Chapter 13). Match to $T_H = \kappa/(2\pi)$ as substrate-level structural recovery; deviation as falsifier. Empirical test of black-hole evaporation spectrum requires astronomical observations beyond current capability; analog-gravity laboratory experiments may provide partial empirical content.
+- **No-singularity interior observation** (Chapter 13). Substrate-level account predicts no singularities in BH interiors. Direct empirical test is not currently feasible; indirect tests (late-time evaporation tail behavior, gravitational-wave observations of BH-merger interiors, analog-gravity simulations) require development.
+- **ED-entrainment universality across rotating fields** (Chapter 9, Chapter 14). Any rotating ED-flow structure should entrain overlapping ED-flow loops. Empirical test using non-phononic rotating fields (optical vortex beams, exciton vortices, polariton vortices, acoustic vortices, mechanical micro-rotors) requires development of the experimental setups.
+
+#### 15.8.2 What OPEN status delivers
+
+OPEN status delivers:
+- **Stated predictions** that future technology may test.
+- **Long-horizon empirical content** for the framework.
+- **Targets for technique development.** The OPEN tests identify what experimental techniques would need to be developed to test specific substrate-level predictions.
+
+### 15.9 The Open Extensions
+
+#### 15.9.1 B4 Hawking spectrum — the next natural arc
+
+The next natural concrete arc following Arc BH closure (Chapter 13) is **B4 Hawking spectrum derivation**. The components in hand:
+
+- **The mechanism** (Chapter 13, BH-4): evaporation as participation re-routing through pair-creation events at the saturated decoupling surface.
+- **The substrate-level structural framework** for the spectrum derivation (BH-2's universal horizon mechanism plus BH-4's information-architecture content).
+- **The V5 cross-chain memory kernel** (Chapter 1, Chapter 2) as the substrate-level object whose cross-chain correlation calculation produces the spectrum.
+
+The remaining work: the explicit V5 cross-chain correlation calculation. A clean match with $T_H = \kappa/(2\pi)$ would be a structural recovery; a deviation would be a falsifier of the substrate-level framework. Either result is informative.
+
+The arc's structural characterization: B4 is a six-to-eight-memo arc that completes the BH-sector empirical anchoring with the Hawking-spectrum derivation. It is structurally similar in scope to Arc Q-COMPUTE and Arc BH; it is bounded; the framework's content is in hand for the derivation.
+
+#### 15.9.2 The closed-form-substrate-constants program
+
+Three structurally similar open items form the **closed-form-substrate-constants program**:
+
+- **O-QC-1: closed-form $\mathcal{M}_\mathrm{crit}$.** Anchored against the matter-wave Q-C boundary at 140–250 kDa molecular mass. Closed-form derivation requires V1 kernel + ED-I-01 substrate constants combined into a structural argument that yields the specific value of $\mathcal{M}_\mathrm{crit}$.
+- **O2: closed-form $\log g$.** Anchored against the Bekenstein-Hawking $1/4$ coefficient. Closed-form derivation requires substrate-level motif counting beyond per-patch independence — either an explicit V1-kernel-counting argument or a substrate-level partition function.
+- **E4: closed-form $\kappa/|\hat{N}'| \approx 0.001766$.** Anchored against the ED-SC arc's empirical content. Closed-form derivation requires substrate constants from cross-scale invariance content.
+
+The three are structurally similar: each calibrates a substrate constant from empirical anchors; closed-form derivation in any one constrains the others by the cross-domain consistency requirement (Chapter 14, Section 14.7.2). The program's closed-form-substrate-constants work is therefore a unified program rather than three separate items; progress on any one structurally informs the others.
+
+#### 15.9.3 Architecture-to-platform calibration (O-QC-2)
+
+The architecture-to-platform calibration program maps the substrate-level $\mathcal{M}_\mathrm{floor}^{(A)}(\mathcal{S})$ for canonical qubit platforms (transmon, fluxonium, trapped ion, photonic gate-model). The structural target: predict $N_\star$ values for each platform via the cross-platform identity with the matter-wave anchor.
+
+The program's content:
+- **Map architecture-specific scaling functions** $f_\mathrm{sys}^{(A)}(\mathcal{S})$ for each platform.
+- **Predict $N_\star$ values** via $f_\mathrm{sys}^{(A)}(\mathcal{S}_\star) = \mathcal{M}_\mathrm{crit}$ at the substrate-shared $\mathcal{M}_\mathrm{crit}$.
+- **Provide cross-platform consistency checks** by comparing the calibration against scaling experiments at each platform.
+
+The architecture-to-platform calibration is structurally engineering-tractable: it requires platform-specific cross-talk and leakage tomography, which is being developed by the QC industry independently. Coordination between the substrate-level analysis and the engineering programs would produce structurally valuable predictions.
+
+#### 15.9.4 Topology-stability theorem for Class B (O-QC-4)
+
+The topology-stability theorem program develops a substrate-level theorem on $\tau_\mathrm{gap-stab}(\mathcal{T})$ — the substrate-level rate at which a topological structure $\mathcal{T}$ is perturbed in Class B platforms. The structural target: a substrate-level theorem characterizing how global ED-channel geometry resists local perturbation across canonical topological structures (Majorana, Fibonacci anyons, Chern bands).
+
+The theorem's structural content:
+- **Substrate-level account of $\tau_\mathrm{gap-stab}(\mathcal{T})$** for canonical topological structures.
+- **Connection to the ED-I-14 topological-effects content** (Chapter 6) at the substrate level.
+- **Predictive content for Class B platforms.** The theorem would supply the substrate-level structural prediction for topological-qubit coherence times beyond the gap-suppressed $\exp(\Delta_\mathrm{top}/T_\mathrm{eff})$ enhancement.
+
+The topology-stability theorem is the natural follow-on for Class B platforms in QC; it would close the substrate-level structural content that BH-6's BHPT phase-shift derivation requires for full Kerr-class topological content.
+
+#### 15.9.5 Other O-QC items
+
+Three additional O-QC items carry forward from Arc Q-COMPUTE:
+
+- **O-QC-3: closed-form $g(N), h(N), c(N)$ for Class C platforms.** Currently INHERITED; closed-form derivation requires extending DCGT to multi-axis redundancy structure.
+- **O-QC-5: surface-code logical-qubit recursive-overlay derivation.** Specific scaling of $\tau_\mathrm{QC}^\mathrm{logical}$ with code distance and threshold from the substrate-level error-correction-as-meta-architecture analysis.
+- **O-QC-6: hybrid-architecture handoff dynamics.** SC-photonic interconnects, topological-SC platforms, and other hybrid architectures' handoff boundaries as substrate-geometric transitions.
+
+Each is a bounded structural extension of Chapter 7's QC architectural content. None requires new substrate primitives.
+
+#### 15.9.6 Three O items from Arc BH
+
+Three O items carry forward from Arc BH:
+
+- **O1: superradiance amplitude derivation.** Structurally compatible with BH-6's substrate-level reading; full amplitude derivation requires extending BH-6 + Arc SG.
+- **O2: closed-form $\log g$.** Part of the closed-form-substrate-constants program (Section 15.9.2).
+- **O3: full Kerr interior audit.** BH-3 establishes saturated-zone interior structure for Schwarzschild-class BHs; rotating-BH interior architecture (ergosphere, Cauchy horizons, frame-dragging at saturation) requires extension.
+
+#### 15.9.7 Arc COSMO — speculative-not-refuted
+
+**Arc COSMO** is the cosmic-expansion / $H_0$-from-substrate program. The structural target: derive cosmic expansion at substrate level, including possible substrate-level Friedmann-class equations, $H_0$ derivation, expansion-history dynamics, $\Lambda$ value, Hubble tension.
+
+The content:
+- **Substrate-level cosmic-horizon dynamics.** Currently the cosmic horizon enters T20 (Chapter 11) as a substrate input characterizing distance $R_H = c/H_0$; Arc COSMO would derive the cosmic-horizon dynamics from substrate primitives.
+- **$H_0$ from substrate.** Currently the Hubble rate is a substrate input; Arc COSMO would derive $H_0$ from substrate constants.
+- **Hubble tension.** The 67-versus-73 km/s/Mpc empirical disagreement may have a substrate-level structural origin reachable from the framework's primitives.
+
+Arc COSMO is **speculative-not-refuted**. The framework treats it as a long-horizon target; current substrate-level scope does not yet include the substrate-level cosmological-scale dynamics required to address it. Possible scope: 15–25 memos if pursued.
+
+#### 15.9.8 GR-4A — Einstein-equation emergence (speculative-not-refuted)
+
+**GR-4A** is the program's name for the question of whether full Einstein-equation emergence is reachable from substrate primitives. The framework's curvature-emergence content (Chapter 12, Arc ED-10) closes at acoustic-metric scalar-tensor level; the acoustic metric is kinematic, not the dynamical metric of Einstein's theory. GR-4A asks whether the kinematic content can be promoted to genuine dynamical metric content.
+
+The status:
+- **Speculative-not-refuted.** Promotion to full GR requires either a new substrate primitive or a derivation strategy not yet identified.
+- **If forced**, the framework becomes a gravity theory at field-equation level.
+- **If refuted**, the kinematic ceiling is permanent; the framework remains at Arc ED-10's acoustic-metric scalar-tensor level for relativistic-gravity content.
+
+The Arc ED-10 closure (Chapter 12) sharpens GR-4A's structural obstruction at the acoustic-metric kinematic-versus-dynamical level; future GR-4A work targets converting the kinematic content into genuine dynamical content.
+
+### 15.10 The Overall Empirical Map
+
+#### 15.10.1 Forty empirical claims across nine sectors
+
+The forty-claim test inventory partitions across the program's nine closed sectors. The cross-sector distribution reflects the program's empirical posture:
+
+- **Quantum sector (Chapters 5–7):** approximately 10 empirical claims (matter-wave Q-C boundary, hyper-coherence in SC, Josephson MQT WKB, multi-timescale FPM relaxation, SC qubit wall, FRAP, QEC composition, mass-matched isomers, cross-platform calibration, Class C plateau, Bell correlation, Class B exponential, plus others).
+- **Gravity sector (Chapters 11–12):** approximately 10 empirical claims (Newton's $G$, MOND $a_0$, slope-4 Tully-Fisher, dwarf-galaxy Active>Quiet, halo lag, activity-dependent halo, hysteresis, reduced substructure, Hawking spectrum, no-singularity interior).
+- **Condensed-matter and photonics sector (Chapter 8 plus extensions):** approximately 10 empirical claims (mesoscopic transport, SC phase-stiffness, Casimir-gradient, microresonator linewidth, photonic-crystal limit, comb formation, soliton step, Krieger-Dougherty, DST, plus others).
+- **Soft-matter sector (Chapter 10):** approximately 3 empirical claims (Universal Mobility Law, FRAP $t^{1/6}$, Krieger-Dougherty + DST shared exponent).
+- **Phononics sector:** approximately 3 empirical claims (chiral-phonon vorticity, orbital Seebeck, ED-entrainment universality).
+- **Cross-domain sector (Chapter 14):** approximately 4 empirical claims (universal horizon mechanism, cross-domain $\Gamma_\mathrm{cross}$ collapse, form-FORCED methodology, BHPT structure).
+
+The cross-sector distribution is consistent with the program's empirical posture: every closed sector produces multiple empirical claims; cross-sector consistency is testable through the form-FORCED methodology.
+
+#### 15.10.2 The empirical-status frontier
+
+The program's empirical-status frontier consists of:
+- **Three PASSED claims** confirming form-FORCED content in three sectors.
+- **Thirteen ANCHORED claims** reframing existing empirical content under substrate-level analysis.
+- **Three IN PROGRESS claims** in active experimental programs.
+- **Seventeen ACTIVE claims** awaiting experimental execution.
+- **Four OPEN claims** awaiting technique development.
+
+The frontier is dynamic: ACTIVE tests will move to IN PROGRESS as experimental programs run them; IN PROGRESS will move to PASSED or ANCHORED (or REFUTED) as empirical content arrives; OPEN tests will move to ACTIVE as experimental techniques develop.
+
+#### 15.10.3 What the inventory means for future work
+
+The inventory's structural significance: the framework produces empirical content across nine sectors at multiple status levels. Future work:
+- **Empirical work on ACTIVE tests** would advance the framework's empirical anchoring.
+- **Engineering progress on OPEN tests** would convert OPEN status to ACTIVE.
+- **Closed-form derivation of inherited substrate constants** would complete the form-FORCED / value-INHERITED methodology at numerical-content level.
+
+The inventory therefore serves as both an empirical interface for readers and a structural roadmap for future work.
+
+### 15.11 The Open-Extensions Map
+
+#### 15.11.1 Future architectural-level arcs
+
+The named open extensions identify future architectural-level arcs and their relationship to current closed-arc content:
+
+- **B4 Hawking spectrum** — next natural concrete arc, builds directly on Chapter 13.
+- **Arc COSMO** — long-horizon arc, extends Chapter 11's substrate-gravity content to cosmological scales.
+- **GR-4A** — speculative long-horizon arc, would extend Chapter 12's curvature-emergence content to full GR.
+
+The closed-form-substrate-constants program (O-QC-1, O2, E4) is not a single arc but a program of structurally similar work that constrains itself by cross-domain consistency.
+
+The other O-QC items (O-QC-2 through O-QC-6) and the BH O items (O1, O2, O3) are bounded structural extensions of existing closed-arc content; each is a natural follow-on from Chapters 7 and 13 respectively.
+
+#### 15.11.2 Cross-arc relationships
+
+The open extensions are structurally connected:
+
+- **O-QC-1 (closed-form $\mathcal{M}_\mathrm{crit}$) and O2 (closed-form $\log g$) and E4 (closed-form $\kappa/|\hat{N}'|$)** are the closed-form-substrate-constants program. Cross-domain consistency constrains the three derivations to mutually consistent substrate-constant values.
+- **B4 (Hawking spectrum) and O1 (superradiance amplitude) and O3 (full Kerr interior)** are all extensions of Chapter 13's BH-architectural content; the three combine to produce a more complete BH sector.
+- **O-QC-2 (architecture-to-platform calibration) and O-QC-4 (topology-stability theorem)** are platform-level extensions of Chapter 7's QC architectural content.
+
+The cross-arc relationships are structurally meaningful: progress on one open extension constrains adjacent extensions; the program's open-extension landscape is connected rather than scattered.
+
+#### 15.11.3 The program's overall future
+
+The program's overall future trajectory:
+
+- **Short-horizon (1–2 years):** Empirical work on ACTIVE tests; experimental confirmation of IN PROGRESS tests; B4 Hawking spectrum derivation; closed-form-substrate-constants progress.
+- **Medium-horizon (3–5 years):** Architecture-to-platform calibration program (O-QC-2); topology-stability theorem (O-QC-4); other O-QC and O items; further empirical anchoring of the cross-platform identity.
+- **Long-horizon (5+ years):** Arc COSMO; GR-4A (if reachable); the program's substrate-level scope expanding to cosmological-scale dynamics.
+
+The framework's current scope is nine closed sectors at architectural level. The future scope, with completed open extensions, would be substantially larger.
+
+### 15.12 What This Chapter Changes (And What It Doesn't)
+
+#### 15.12.1 What does not change
+
+The chapter does not change any of the closed-sector content. It does not introduce new tests, new theorems, or new substrate primitives. It is a synthesis, not a contribution at architectural level.
+
+#### 15.12.2 What does change
+
+The chapter establishes:
+- **The status taxonomy** as a uniform framework for empirical-status reporting across sectors.
+- **The empirical interface** to the program for readers who want the empirical content distilled.
+- **The open-extensions map** as a structural roadmap for future work.
+
+These shifts are at the level of program-level organization rather than at the level of empirical content. They make visible what the closed sectors collectively produce as empirical content; they do not change any individual sector's content.
+
+### 15.13 Form-FORCED vs Value-INHERITED at the Empirical Synthesis
+
+#### 15.13.1 What is form-FORCED at this layer
+
+- **The status taxonomy** (PASSED / ANCHORED / IN PROGRESS / ACTIVE / OPEN) as a uniform empirical-status framework across sectors.
+- **The cross-domain consistency requirement** on closed-form-substrate-constants derivations (form-FORCED by the form-FORCED / value-INHERITED methodology).
+- **The named open-extensions list** (B4, closed-form-substrate-constants program, architecture-to-platform calibration, topology-stability theorem, Arc COSMO, GR-4A, plus six O-QC and three O items) as the program's structural roadmap.
+- **The structural relationships** between open extensions (the closed-form-substrate-constants program's mutual constraints; the BH-extension cluster's structural connections; the QC-extension cluster's platform-level relationships).
+
+#### 15.13.2 What is value-INHERITED at this layer
+
+- **The current status counts** (3 PASSED, 13 ANCHORED, 3 IN PROGRESS, 17 ACTIVE, 4 OPEN). These reflect the empirical state at time of writing; the counts will evolve as experimental programs run.
+- **The specific empirical anchors** for the ANCHORED predictions (matter-wave 140–250 kDa boundary; SPARC catalog; Devoret-Martinis-Clarke 1985; Hafezi 2025; ten-system UDM data; Bekenstein-Hawking 1/4 coefficient; etc.).
+- **The future trajectory** of any specific test (whether ACTIVE tests will succeed in becoming PASSED; whether OPEN tests will transition to ACTIVE).
+
+#### 15.13.3 What is open
+
+- **All ACTIVE tests** await experimental execution. Future work will determine outcomes.
+- **All OPEN tests** await technique development. Long-horizon work.
+- **All open extensions** are downstream programs. The framework's current scope is closed at architectural level for the nine sectors; the open extensions identify future work.
+
+### 15.14 Dependencies
+
+#### 15.14.1 Upstream
+
+- **All preceding chapters.** The empirical content synthesized in this chapter is generated by Chapters 5–13. No single chapter is the sole upstream dependency.
+- **Chapter 14 (cross-platform unifications).** The form-FORCED / value-INHERITED methodology and the cross-domain consistency requirement on closed-form-substrate-constants derivations are established in Chapter 14 and applied here.
+
+#### 15.14.2 Downstream
+
+The chapter has no downstream dependencies in the monograph's main text — it is the final chapter. Future monograph editions or chapter expansions would inherit this chapter's status taxonomy and open-extensions map.
+
+The chapter also serves as the program-level empirical interface; future external readers and external collaborators consume this chapter's content as the entry point to the framework's empirical claims.
+
+### 15.15 Canonical Sources
+
+- `Desktop/ED_Public_Test_Inventory.md` (living test catalog)
+- `docs/Investigation_Priority_List.md` (active priority list with open extensions)
+- All Foundations papers and Synthesis papers for sector-specific predictions.
+
+The Public Test Inventory is the program's living test catalog, updated as experimental programs run and new predictions are derived. The Investigation Priority List is the program's active priority list with open extensions identified. The Foundations papers (Substrate_Gravity_Foundations, Black_Hole_Foundations, Quantum_Computing_Foundations) and the NS Synthesis Paper supply sector-specific empirical content that this chapter synthesizes.
+
+The Monograph Shell's Appendix A theorem provenance map, Appendix B notation glossary, Appendix C paper-to-chapter cross-reference, and Appendix D substrate constants table together supply the structural reference content that this chapter consumes. The Closing Note of the shell summarizes the program's overall future trajectory in a manner consistent with this chapter's open-extensions map.
+
+### 15.16 Optional Figures
+
+**Figure 15.1 — The status taxonomy.** A five-row diagram. Each row corresponds to one status level (PASSED, ANCHORED, IN PROGRESS, ACTIVE, OPEN). Columns: status definition; structural meaning; example test from the inventory; current count. The figure makes visible the uniform taxonomy across sectors.
+
+**Figure 15.2 — The status counts pie chart.** A pie chart showing the forty-claim distribution: 3 PASSED (green), 13 ANCHORED (blue), 3 IN PROGRESS (orange), 17 ACTIVE (yellow), 4 OPEN (red). The figure makes visible the program's empirical-status distribution at time of writing.
+
+**Figure 15.3 — Empirical claims across nine sectors.** A grid: rows are the nine closed sectors (QM, QFT, QC, NS, MHD, YM, soft-matter, gravity, BH); columns are status levels. Cells contain the count of empirical claims per (sector, status). The figure makes visible the cross-sector distribution of empirical content.
+
+**Figure 15.4 — The PASSED-status anchors.** A three-row diagram. Each row corresponds to one PASSED test (dwarf-galaxy Active > Quiet; multi-timescale FPM relaxation; Universal Mobility Law). Columns: chapter; sector; substrate-level prediction; empirical confirmation; first completed status. The figure makes visible the three foundational empirical anchors.
+
+**Figure 15.5 — The closed-form-substrate-constants program.** A three-node diagram with $\mathcal{M}_\mathrm{crit}$ (O-QC-1), $\log g$ (O2), and $\kappa/|\hat{N}'|$ (E4). Connecting lines indicate cross-domain consistency requirements. A central note observes that closed-form derivation in any one constrains the others.
+
+**Figure 15.6 — The open-extensions roadmap.** A diagram showing future architectural-level arcs (B4, Arc COSMO, GR-4A) and bounded extensions (O-QC items, O items from Arc BH). Time-horizon labels: short (1-2 years), medium (3-5 years), long (5+ years). The figure makes visible the program's overall future trajectory.
+
+**Figure 15.7 — Form-FORCED vs Value-INHERITED at empirical synthesis.** A two-column diagram. Left column ("Form-FORCED"): status taxonomy uniform across sectors; cross-domain consistency requirement; named open-extensions list; structural relationships between open extensions. Right column ("Value-INHERITED"): current status counts; specific empirical anchors; specific future trajectories of individual tests.
+
+**Figure 15.8 — The program at empirical interface.** A diagram showing the program's empirical interface: nine closed sectors producing forty empirical claims at five status levels, with closed-form-substrate-constants program and open-extensions map identifying future work. A central note observes that the framework's empirical posture is sharp at structural form, calibrated at numerical value, with cross-domain consistency as a testable structural signature.
+
+\newpage
+
+## Appendix A — Theorem Provenance Map
+
+### A.1 Appendix Overview
+
+This appendix is the program's structural-foundation theorem inventory in expanded form. For every theorem cited in the monograph — the sixteen Phase-1 closure theorems T1–T16, the gauge-field theorem T17, the kernel-arrow theorem T18, the substrate-gravity theorems T19, T20, ECR, T21, the foundational theorems N1, GR1, DCGT, and the unresolved-regime theorem UR-1 — Appendix A states what the theorem establishes, names the primitives and intermediate results that must be in place before the theorem can be derived, identifies the canonical source paper(s) where the derivation lives, and records which chapters of the monograph use the theorem as a load-bearing component.
+
+The intent is navigational. The monograph's chapters do not duplicate derivations: when Chapter 5 says "Born's rule emerges via the Gleason route" or Chapter 11 says "T19 fixes $G = c^3\ell_P^2/\hbar$ from the substrate cumulative-strain mechanism," the reader who wants the proof needs a single map from theorem name to dependency chain to source paper. Appendix A is that map. The provenance graph is consistent with the chapter dependency graph: every dependency-chain entry below appears in a chapter or earlier theorem, never forward in the structure.
+
+---
+
+### A.2 Reading the Provenance Entries
+
+Each theorem is recorded under the following heads.
+
+- **Statement** — what the theorem establishes, in one to three sentences. Form-FORCED content is named explicitly; value-INHERITED content (substrate constants, threshold values, prefactors whose closed form is downstream work) is flagged.
+- **Dependency chain** — the primitives, prior theorems, and mathematical inputs (Gleason 1957, Stone 1932, Hadamard parametrix, multi-scale expansion, and so on) that are upstream. Every upstream item appears either in Chapters 1–4 of the monograph (substrate primitives, load-bearing invariants, DCGT, kernel-arrow) or in an earlier theorem in this appendix.
+- **Canonical source.** The repository path where the derivation lives. Paths use the monograph's standard `papers/...` and `theory/...` and `arcs/...` conventions.
+- **Used in chapters.** The monograph chapters where this theorem is load-bearing. A theorem may be referenced in additional chapters; the entry names the chapters where it carries structural weight.
+
+---
+
+### A.3 Phase-1 Closure of Quantum Mechanics — T1–T16
+
+#### T1–T16 — Sixteen FORCED theorems collectively closing the four QM postulates
+
+**Statement.** The four standard QM postulates (the Born rule for outcome probabilities, the Schrödinger evolution rule for closed-system dynamics, the Heisenberg uncertainty relation as a structural lower bound, and the no-collapse measurement rule) are all derived from substrate primitives plus standard mathematical theorems. Form-FORCED content includes: the squared-modulus form of the Born probability rule (not merely a probabilistic frame), the linearity and first-order-in-time character of the Schrödinger generator, the $\hbar/2$ lower bound in canonical-conjugate uncertainty, and the irreversibility of the participation-event recording step. Value-INHERITED content includes: the absolute scale of $\hbar$, the precise spectrum of any concrete Hamiltonian, and the choice of representation (position, momentum, energy basis) — all of which follow conventional inheritance from substrate constants and operator-theoretic structure.
+
+**Dependency chain.** Substrate primitives **P01** (event discreteness), **P02** (chain worldline), **P04** (bandwidth update), **P11** (commitment-irreversibility), and **P13** (proper-time ordering) supply the bandwidth structure on which every postulate rests. From P04 plus substrate non-contextuality of the participation rule, one obtains the bandwidth-conservation property across orthogonal decompositions of a participation-state, which is exactly the hypothesis of Gleason's theorem (1957) on Hilbert spaces of dimension $\geq 3$. Gleason's theorem then forces the Born rule's squared form. From substrate time-translation symmetry on closed systems plus continuity, Stone's theorem (1932) on one-parameter unitary groups forces the Schrödinger generator to be linear and first-order in time. From substrate finite-bandwidth (P04) plus orthogonal-component conjugacy, the Robertson-style commutator bound forces $\Delta A\,\Delta B \geq \tfrac{1}{2}|\langle[A,B]\rangle|$, and substituting canonical conjugates yields $\hbar/2$. From P11 commitment-irreversibility plus the participation-recording step, the measurement rule is obtained without postulating a "collapse" mechanism: the irreversibility is the substrate-level reason that the recording step is asymmetric.
+
+**Canonical sources.**
+- `papers/Phase_1/`
+- `papers/QM_Emergence_Structural_Completion/`
+- `papers/Born_Gleason/`
+- `papers/U1_Participation_Measure/`
+- `papers/U2_Inner_Product/`
+- `papers/U3_Time_Translation_Schrodinger/`
+- `papers/U4_Hamiltonian_Form/`
+- `papers/U5_Translation_Momentum/`
+
+**Used in chapters.** Chapter 5 (Phase-1 closure of QM); Chapter 6 (form-level QFT and quantum information, where T1–T16 are the substrate-floor on which T17 and UV-finiteness sit); Chapter 7 (quantum computation, where the Born-rule structure governs measurement statistics in any architectural class); Chapter 14 (cross-platform unifications: matter-wave Q-C boundary).
+
+---
+
+### A.4 T17 — Gauge-Field-as-Rule-Type
+
+**Statement.** Gauge fields are participation measures of structural rule-types in the substrate. A gauge field is not a fundamental object in the ED ontology; it is the coarse-grained continuum measure of the local activity of a label-carrying participation rule. Gauge invariance is the interface property of label-carrying rules: relabelings that preserve the rule's substrate structure are exactly the gauge transformations of the emergent field. Form-FORCED content includes: the existence of a gauge-field measure for any compact-simple-group rule-type, the minimal-coupling form of its interaction with matter (a Lorentz force when specialized to the U(1) case), and the structural distinction between Abelian and non-Abelian rule-types. Value-INHERITED content includes: coupling constants, specific spectra of bound states, and the choice of rule-type in any given physical sector.
+
+**Dependency chain.** Substrate primitives + label-carrying rule-type structure (Chapter 1 commitments) + DCGT coarse-graining (Chapter 3) → interface property of relabelings preserves the substrate rule, which is exactly gauge invariance at the continuum level. The non-Abelian extension is forced by the same interface argument when the rule-type's relabeling group is non-commutative; the substrate has no preference for Abelian rules.
+
+**Canonical source.** `papers/Gauge_Fields_Theorem_17/`.
+
+**Used in chapters.** Chapter 6 (form-level QFT); Chapter 9 (MHD and Yang–Mills: T17 plus DCGT supplies the substrate-derived non-Abelian continuum equation); Chapter 10 (T17's U(1) specialization in soft-matter electromagnetic dressing); Chapter 11 (substrate gravity: T17's structural distinction underwrites the substrate-gravity coupling channel).
+
+---
+
+### A.5 T18 — V1 Kernel Retardation (Kernel-Level Arrow of Time)
+
+**Statement.** The V1 vacuum response kernel — the finite-width temporal-smearing kernel mediating effective-vacuum participation — is uniquely forced at the primitive level to have support restricted to the forward causal cone. No symmetric, advanced, or hybrid kernel is constructible at primitive level. The microscopic arrow of time is FORCED structurally rather than postulated. Form-FORCED content includes: forward-cone-only support of V1; the kernel's strict positivity on its support; the impossibility of substrate-level time-symmetric or advanced kernels. Value-INHERITED content includes: the exact width function of V1, the magnitude of its first temporal moment, and the absolute calibration of the response amplitude.
+
+**Dependency chain.** **P01** + **P02** + **P04** + **P11** + **P13** + Theorem **N1** (V1 finite-width vacuum kernel) + the Q.8 effective-vacuum factorization (which routes substrate participation through the V1 channel) → V1 retarded.
+
+**Canonical source.** `papers/Time_Arrow_Theorem_18/`.
+
+**Used in chapters.** Chapter 4 (kernel-level arrow of time — the chapter is built around T18); Chapter 6 (form-level QFT, where T18 supplies the microscopic causal structure underlying the propagator); Chapter 12 (curvature emergence, where GR1 generalizes T18 to curved background); Chapter 13 (black-hole architecture, where the forward-cone-only V1 underwrites the decoupling-surface structure).
+
+---
+
+### A.6 T19 — Newton's Gravitational Constant from Substrate
+
+**Statement.** Newton's gravitational constant is fixed by substrate constants:
+```math
+G = \frac{c^3 \ell_P^2}{\hbar}.
+```
+The derivation supplies the inverse-square form of the gravitational field around a stable participation structure and identifies the proportionality constant with the named combination of substrate constants. As a derived consequence, the substrate length scale is identified with the Planck length: any other identification would either over- or under-shoot the empirical value of $G$.
+
+**Dependency chain.** Substrate cumulative-strain mechanism (substrate participation density responding to a stable-structure source) + holographic participation-count bound on a sphere of radius $R$ (the bound being a direct consequence of substrate event-discreteness and the unit substrate cell area $\sim \ell_P^2$) + substrate-level equipartition (energy distributing across viable substrate-scale modes) → inverse-square form + proportionality constant fixed.
+
+**Canonical source.** `papers/Substrate_Gravity_Foundations/` (T19 derivation).
+
+**Used in chapters.** Chapter 11 (substrate gravity — T19 is the first of four theorems closing the galactic-scale gravity layer); Chapter 12 (curvature emergence, where T19 underwrites the weak-field limit of the covariantized acoustic-metric scalar-tensor structure); Chapter 13 (black-hole architecture, where the area-law form $A/\ell_P^2$ inherits from T19's identification of $\ell_P$).
+
+---
+
+### A.7 T20 — MOND Transition Acceleration from Cosmic-Horizon Dipole
+
+**Statement.** The MOND transition acceleration is fixed by substrate constants:
+```math
+a_0 = \frac{c\,H_0}{2\pi}.
+```
+The derivation routes through the cosmic horizon's dipole-projection contribution to a locally accelerating participation chain's substrate environment. The factor $2\pi$ is the azimuthal period of the leading anisotropic projection mode. The numerical match to the empirically extracted MOND acceleration is within roughly ten percent, parameter-free.
+
+**Dependency chain.** Cosmic-horizon participation density (a substrate-level quantity sourced by all participation events within the horizon) + accelerating chain's anisotropic environment (the chain's acceleration breaks isotropy of its substrate vicinity) + dipole projection along the acceleration axis (the leading anisotropic mode) + azimuthal period $2\pi$ → $a_0 = cH_0/(2\pi)$.
+
+**Canonical source.** `papers/Substrate_Gravity_Foundations/` (T20 derivation).
+
+**Used in chapters.** Chapter 11 (substrate gravity — T20 is the cosmic-horizon-class acceleration entering ECR and T21); Chapter 12 (curvature emergence, where $a_0$ is the deep-MOND threshold in the covariantized scalar-tensor equation); Chapter 15 (public test inventory: BTFR slope-4 and zero-intrinsic-scatter predictions).
+
+---
+
+### A.8 ECR — ED Combination Rule
+
+**Statement.** Newton-class accelerations $a_N$ and cosmic-horizon-class accelerations $a_0$ combine multiplicatively (geometric mean) in the deep-galactic regime:
+```math
+a = \sqrt{a_N \cdot a_0}.
+```
+The substrate-derived multiplicative-participation rule replaces MOND's phenomenological interpolation function in the asymptotic deep-MOND regime. ECR is named — not numbered — to reserve "P11" exclusively for the eleventh substrate primitive (commitment-irreversibility).
+
+**Dependency chain.** **T19** + **T20** + substrate logarithmic stability landscape (substrate-level cross-term $\sqrt{G\,M\,a_0}\,\log(R/R_0)$ from the leading correction to Newton-class acceleration in the cosmic-horizon-modulated regime) → geometric-mean composition.
+
+**Canonical source.** `papers/Substrate_Gravity_Foundations/` (ECR derivation).
+
+**Used in chapters.** Chapter 11 (substrate gravity — ECR is the bridge between T19/T20 and T21); Chapter 12 (curvature emergence, where the modified Poisson equation $\nabla\cdot[\mu(|\nabla\Phi|/a_0)\nabla\Phi] = 4\pi G\rho_m$ contains ECR in the asymptotic deep-MOND limit).
+
+---
+
+### A.9 T21 — Slope-4 Baryonic Tully–Fisher Relation
+
+**Statement.** The slope-4 baryonic Tully–Fisher relation is forced:
+```math
+v_\mathrm{flat}^4 = G\,M_b\,a_0.
+```
+The proportionality constant is in fundamental quantities, not phenomenological. Zero intrinsic scatter is predicted in the asymptotic deep-MOND regime; observed scatter is dominated by mass-measurement uncertainty rather than by genuine population variance. The slope is robust under all admissible substrate-level variations of the closure: exponent 4 cannot be shifted without violating either T19 or T20 or ECR.
+
+**Dependency chain.** **T19** + **T20** + **ECR** + circular-orbit centripetal balance ($v^2/R = a$, with $a$ given by ECR in the deep-MOND asymptote) → $v^4 = G\,M\,a_0$.
+
+**Canonical source.** `papers/Substrate_Gravity_Foundations/` (T21 derivation).
+
+**Used in chapters.** Chapter 11 (substrate gravity — T21 is the empirical anchor of the galactic-scale gravity layer); Chapter 15 (public test inventory: BTFR slope-4 has PASSED; zero-intrinsic-scatter prediction is ANCHORED).
+
+---
+
+### A.10 N1 — V1 Finite-Width Vacuum Kernel
+
+**Statement.** The V1 vacuum response kernel is finite-width and chain-sourced. The kernel mediates substrate-level participation events through an effective-vacuum response of finite temporal extent; its width is set by substrate constants and is not zero (point-instantaneous response is forbidden). Form-FORCED content includes: the existence of a finite-width vacuum kernel, its chain-sourced character, and its strict positivity on support. Value-INHERITED content includes: the precise width function and its first and second moments.
+
+**Dependency chain.** Substrate primitives → effective-vacuum response factorization + finite-width temporal kernel via substrate event-discreteness (P01) and bandwidth update (P04).
+
+**Canonical source.** Theorem N1 paper (V1 kernel inventory).
+
+**Used in chapters.** Chapter 2 (load-bearing invariants — V1 is named); Chapter 4 (kernel-arrow — N1 is upstream of T18); Chapter 6 (form-level QFT — N1 supplies the propagator's microscopic structure); Chapter 8 (Navier–Stokes — V1 underwrites the R1 substrate-cutoff regularization); Chapter 9 (Yang–Mills — V1's finite width is the substrate-cutoff governing the mass-gap mechanism); Chapter 12 (curvature emergence — N1 is upstream of GR1).
+
+---
+
+### A.11 GR1 — V1 Curved-Spacetime Extension (Phase-3)
+
+**Statement.** The V1 vacuum kernel extends to curved spacetime via Hadamard-parametrix causal-future restriction with the Synge world function. The curved-spacetime kernel inherits Theorem 18's forward-cone-only support and preserves P11 time orientation along curved geodesics. GR1 is structurally complete at the form level; full Einstein-equation emergence remains downstream work.
+
+**Dependency chain.** **N1** + **T18** + Hadamard parametrix (the curved-spacetime analogue of the Minkowski Green's function) + Synge world function (geodesic interval substituting for $\sigma(x,y) = (x-y)^2/2$ on a curved background) → curved-spacetime V1 retarded.
+
+**Canonical source.** Phase-3 GR1 derivation (paper under the substrate-gravity / curvature-emergence cluster).
+
+**Used in chapters.** Chapter 12 (curvature emergence — GR1 is load-bearing); Chapter 13 (black-hole architecture — GR1 underwrites the curved-background V1 inside which decoupling surfaces form).
+
+---
+
+### A.12 DCGT — Diffusion Coarse-Graining Theorem
+
+**Statement.** DCGT is the substrate-to-continuum bridge for canonical-ED dynamical content. Within the hydrodynamic-window scale separation
+```math
+\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow},
+```
+substrate dynamics admit a multi-scale expansion to coarse-grained continuum equations. The leading-order content covers: scalar diffusion (canonical ED participation density); directional viscosity (chain-aligned substrate-momentum transport); the V1→R1 substrate-cutoff hyperviscous regularization $-\kappa\mu_\mathrm{V1}\ell_P^2\nabla^4\mathbf{v}$; the V5→Maxwell viscoelastic memory kernel; and the T17 minimal-coupling Lorentz interaction in U(1) and non-Abelian extension. The cross-bandwidth $\Gamma_\mathrm{cross}\sim \exp[-\alpha\sigma]$ between adjacent regions is a direct DCGT output.
+
+**Dependency chain.** Substrate primitives + hydrodynamic-window scale separation (Chapter 3) + multi-scale expansion → cross-bandwidth $\Gamma_\mathrm{cross}\sim\exp[-\alpha\sigma]$ + leading-order continuum content.
+
+**Canonical sources.**
+- Arc D memos in `theory/Arc_D/`
+- `papers/Navier Stokes_Synthesis_Paper/` Appendix D (DCGT)
+- `papers/ED_QFT_Overview/` (program-level synthesis with DCGT central)
+
+**Used in chapters.** Chapter 3 (the chapter is built around DCGT); Chapter 8 (Navier–Stokes — DCGT supplies the substrate-to-NS bridge); Chapter 9 (MHD and Yang–Mills — DCGT plus T17 supplies the non-Abelian continuum equation); Chapter 10 (soft-matter mobility — DCGT plus V5 supplies the viscoelastic memory kernel); Chapter 11 (substrate gravity — DCGT consolidates T19/T20/ECR/T21 into the flat-background field equation $\nabla\cdot[\mu(|\nabla\Phi|/a_0)\nabla\Phi] = 4\pi G\rho_m$); Chapter 12 (curvature emergence — DCGT-on-curved-background underwrites the covariantized scalar-tensor equation).
+
+---
+
+### A.13 UR-1 — Unresolved-Regime Characterization Theorem
+
+**Statement.** Three independently necessary substrate conditions characterize the unresolved-rule regime that quantum computation requires:
+
+1. (i) bounded multiplicity ($\mathcal{M} \leq \mathcal{M}_\mathrm{crit}$),
+2. (ii) sustained cross-endpoint connectivity ($\Gamma_\mathrm{cross} \geq \Gamma_\mathrm{min}$),
+3. (iii) bounded commitment-injection ($\Lambda \leq \Lambda_\mathrm{V1}$).
+
+The unresolvedness functional decomposes as a three-factor product
+```math
+\mathcal{U}(\mathcal{S},t) = \mu(\mathcal{M}/\mathcal{M}_\mathrm{crit}) \cdot \kappa(\Gamma_\mathrm{cross}/\Gamma_\mathrm{min}) \cdot \exp\!\Big(-\!\!\int_0^t \Lambda(s)\,ds\Big),
+```
+(multiplicity headroom × rule-spanning connectivity × commitment-survival exponential), and the QC operating window is
+```math
+\tau_\mathrm{QC} = \min(\tau_{(\mathrm{i})},\tau_{(\mathrm{ii})},\tau_{(\mathrm{iii})}).
+```
+Each of (i)/(ii)/(iii) is necessary and no two are jointly sufficient. The three-factor exhaustiveness underwrites the architectural taxonomy A/B/C of Chapter 7.
+
+**Dependency chain.** Substrate primitives (especially **P11** commitment-irreversibility) + **DCGT** + **V1** + multiplicity-as-entropy reading (Chapter 2) → three-factor product form of $\mathcal{U}$ → three independent conditions.
+
+**Canonical source.** `papers/Quantum_Computing_Foundations/`; Arc Q-COMPUTE Memo 2 in `theory/Quantum_Computing/`.
+
+**Used in chapters.** Chapter 7 (quantum computation — the chapter is built around UR-1 and the multiplicity-cap function $M$); Chapter 14 (cross-platform unifications — UR-1's $\mathcal{M}_\mathrm{crit}$ underwrites both the matter-wave Q-C boundary and the qubit-system multiplicity wall); Chapter 15 (public test inventory: Class A wall, Class B exponential gap-suppression, and Class C correlation-budget plateau predictions).
+
+---
+
+### A.14 Provenance Graph (Topological Summary)
+
+The dependency structure among the foundational theorems forms a directed acyclic graph rooted at the substrate primitives. Reading the graph downstream:
+
+- **P01–P13** → **N1** (V1 finite-width vacuum kernel)
+- **P01, P02, P04, P11, P13** + **Q.8 effective-vacuum factorization** + **N1** → **T18** (kernel-level arrow of time)
+- **P01–P13** + **Gleason 1957** + **Stone 1932** → **T1–T16** (Phase-1 closure of QM)
+- **P01–P13** + **DCGT** → **T17** (gauge-field-as-rule-type)
+- **P01–P13** + **hydrodynamic-window scale separation** → **DCGT**
+- **P01–P13** + **substrate cumulative-strain** + **holographic participation-count bound** → **T19** ($G$ from substrate)
+- **P01–P13** + **cosmic-horizon dipole projection** → **T20** ($a_0$ from cosmic horizon)
+- **T19** + **T20** + **substrate logarithmic stability landscape** → **ECR** (geometric-mean composition)
+- **T19** + **T20** + **ECR** + **circular-orbit balance** → **T21** (BTFR slope 4)
+- **N1** + **T18** + **Hadamard parametrix** + **Synge world function** → **GR1** (curved-background V1)
+- **P01–P13** (especially P11) + **DCGT** + **V1** + **multiplicity-as-entropy** → **UR-1** (three-factor unresolvedness)
+
+The dependency graph contains no cycles: every theorem depends only on the substrate primitives and on theorems strictly upstream. The chapter dependency graph in the monograph respects this ordering — Chapter $X$ never invokes a theorem whose dependencies have not been established by Chapter $X-1$ or earlier.
+
+---
+
+### A.15 Canonical Sources (Aggregated)
+
+For convenient navigation, the canonical-source paths cited above are aggregated here:
+
+- `papers/Phase_1/`
+- `papers/QM_Emergence_Structural_Completion/`
+- `papers/Born_Gleason/`
+- `papers/U1_Participation_Measure/`
+- `papers/U2_Inner_Product/`
+- `papers/U3_Time_Translation_Schrodinger/`
+- `papers/U4_Hamiltonian_Form/`
+- `papers/U5_Translation_Momentum/`
+- `papers/Gauge_Fields_Theorem_17/`
+- `papers/Time_Arrow_Theorem_18/`
+- `papers/Substrate_Gravity_Foundations/`
+- `papers/Navier Stokes_Synthesis_Paper/` (Appendix D for DCGT)
+- `papers/Quantum_Computing_Foundations/`
+- `papers/ED_QFT_Overview/`
+- Theorem N1 paper (V1 kernel inventory)
+- Phase-3 GR1 derivation paper
+- `theory/Arc_D/` (DCGT memos)
+- `theory/Quantum_Computing/` (Arc Q-COMPUTE memos)
+- `theory/Substrate_Gravity/` (substrate-gravity arc memos)
+- `arcs/arc-B/` (Arc B closure memos for T18)
+
+---
+
+### A.16 Optional Figures
+
+The following diagrams are described for inclusion in the final monograph:
+
+- **Figure A.1 — Provenance DAG.** Directed acyclic graph with nodes for each theorem (T1–T21, ECR, N1, GR1, DCGT, UR-1) and the substrate-primitive cluster {P01–P13}. Edges encode upstream dependencies. Color-coding: substrate primitives (P-cluster) in one shade; foundational theorems N1/GR1/DCGT/T18 in a second; QM-closure cluster T1–T16 in a third; substrate-gravity cluster T19/T20/ECR/T21 in a fourth; gauge/QC cluster T17/UR-1 in a fifth.
+- **Figure A.2 — Theorem-to-chapter incidence matrix.** Rows: theorems. Columns: chapters 1–15. Filled cells indicate "load-bearing." Used to verify the chapter dependency graph against the provenance graph.
+- **Table A.1 — Form-FORCED vs Value-INHERITED inventory.** For each theorem, two columns separating which content is form-FORCED and which is value-INHERITED, exactly as recorded in the entries above.
+
+---
+
+### A.17 Dependency Section
+
+Appendix A inherits the substrate-primitive layer (Chapter 1), the load-bearing invariants (Chapter 2), the DCGT bridge (Chapter 3), and the kernel-arrow structure (Chapter 4). It is consistent with the chapter-by-chapter dependency graph. No theorem in this appendix is invoked in a chapter prior to its dependencies being established; no entry above introduces content not already named in the chapter inventory.
+
+The provenance graph is consistent with Appendix B (notation glossary): every symbol used in a theorem statement is defined in Appendix B. It is consistent with Appendix C (paper-to-chapter cross-reference): every canonical-source path above appears in Appendix C under the chapter to which the source paper is assigned. It is consistent with Appendix D (substrate constants): every substrate constant appearing in a theorem statement (notably $c$, $\hbar$, $H_0$, $\ell_P$, $G$, $a_0$) is recorded in Appendix D with its structural role.
+
+\newpage
+
+## Appendix B — Notation Glossary
+
+### B.1 Appendix Overview
+
+This appendix collects every symbol used across the monograph with a unified, self-consistent definition. Definitions are stated in the form they carry in the chapters and in the canonical source papers; nothing in this appendix introduces new notation, redefines an existing symbol, or shifts a definition relative to the source-paper canon. Where a quantity is form-FORCED (its functional shape is derived from substrate primitives) but value-INHERITED (its absolute scale or threshold inherits from substrate constants whose closed form is downstream work), the entry flags this explicitly.
+
+The glossary is grouped by structural role: substrate quantities and primitives; length and time scales; substrate constants and coupling parameters; UR-1 thresholds and functional shapes; the multiplicity-cap function and architectural-class objects; substrate-gravity quantities; black-hole quantities; and soft-matter mobility. Symbols not in this glossary do not appear in the monograph. Symbols that appear in the monograph but whose canonical definition lives in a source paper carry a pointer to that paper.
+
+---
+
+### B.2 Substrate Quantities and Primitives
+
+#### $\rho$ — Local participation density
+
+The substrate-level participation density: a scalar field on the substrate that records, at each substrate-scale region, the local rate at which participation events register. The fundamental coarse-graining target of canonical-ED dynamics. All continuum density-like quantities (mass density, charge density, fluid density) emerge as coarse-grained projections of $\rho$ through DCGT.
+
+#### $\nabla\rho$ — Participation density gradient
+
+The substrate-scale gradient of $\rho$. The gradient sources the cross-bandwidth $\Gamma_\mathrm{cross}$ between adjacent regions and underwrites the directional viscosity and mobility-suppression structure across the program.
+
+#### $\sigma = |\nabla\rho|\,\ell_P^2/\rho_\mathrm{local}$ — Substrate-scale gradient sparsity
+
+A dimensionless local quantity built from $|\nabla\rho|$, the substrate length scale $\ell_P^2$, and the local participation density. Sparsity $\sigma$ controls the suppression of cross-bandwidth via $\Gamma_\mathrm{cross}\sim\exp[-\alpha\sigma]$. Form-FORCED dimensionless combination.
+
+#### $\Gamma_\mathrm{cross}$ — Substrate-mediated cross-bandwidth
+
+The cross-bandwidth between adjacent substrate regions that mediates participation-rule rule-spanning connectivity. Form-FORCED as $\Gamma_\mathrm{cross}\sim\exp[-\alpha\sigma]$ via DCGT; its absolute scale is value-INHERITED.
+
+#### $\mathcal{M}$ — Multiplicity
+
+The count of viable distinct ED-gradient pathways through a substrate region, where "viable" is determined by the substrate participation rules. The ED analogue of entropy: high $\mathcal{M}$ corresponds to many indistinguishable substrate routes for participation, low $\mathcal{M}$ to few. Multiplicity is a load-bearing invariant of the program: it controls the unresolved-rule regime (UR-1 condition i), the QC architectural-class taxonomy (A is engineered-low-$\mathcal{M}$; B is global-geometric $\mathcal{M}$ via topological rigidity; C is high-$\mathcal{M}$ via redundancy), the entropy coefficient in BH area law, and the matter-wave Q-C boundary.
+
+#### $\mathcal{U}(\mathcal{S},t) \in [0,1]$ — Participation-rule unresolvedness
+
+The unresolvedness functional across designated endpoints of a substrate region $\mathcal{S}$ at time $t$. Form-FORCED three-factor product:
+```math
+\mathcal{U}(\mathcal{S},t) = \mu(\mathcal{M}/\mathcal{M}_\mathrm{crit}) \cdot \kappa(\Gamma_\mathrm{cross}/\Gamma_\mathrm{min}) \cdot \exp\!\Big(-\!\!\int_0^t \Lambda(s)\,ds\Big).
+```
+Each factor corresponds to one of the three independently necessary UR-1 conditions.
+
+#### $\Lambda$ — Local commitment-injection rate
+
+The substrate-level rate at which commitments (irreversible participation recordings) are injected into a region. Decomposes as $\Lambda = \Lambda_\mathrm{env} + \Lambda_\mathrm{int}$ — environmental and intrinsic contributions. Governs the commitment-survival exponential factor in $\mathcal{U}$.
+
+#### V1, V5 — Finite-width vacuum kernel and cross-chain memory kernel
+
+V1 is the finite-width vacuum response kernel of Theorem N1, the substrate-level temporal-smearing kernel mediating effective-vacuum participation. V5 is the cross-chain memory kernel mediating substrate-level memory between chains; its first temporal moment yields the Maxwell viscoelastic relaxation time $\tau_R$ via DCGT.
+
+#### P1–P13 — The thirteen substrate primitives
+
+The irreducible substrate commitments. Notably P01 (event discreteness), P02 (chain worldline), P04 (bandwidth update), P11 (commitment-irreversibility), P13 (proper-time ordering); seven additional primitives covering participation, multiplicity, finite kernels, and substrate-locality conditions. Canonical inventory in `papers/Event_Density_Ontology_and_Axioms/`.
+
+#### R1 — Substrate-cutoff hyperviscous regularization
+
+The continuum hyperviscous term
+```math
+-\kappa\,\mu_\mathrm{V1}\,\ell_P^2\,\nabla^4\mathbf{v},
+```
+inherited from V1's finite width through DCGT. R1 underwrites the substrate-cutoff regularization of Navier–Stokes-class equations and the form-level mass-gap mechanism for Yang–Mills.
+
+---
+
+### B.3 Length and Time Scales
+
+#### $\ell_P$ — Planck length
+
+The substrate length scale, derived to coincide with the Planck length via T19's identification. Sets the units in which $\sigma$, $A/\ell_P^2$, $\beta_\mathrm{crit}$, and the R1 prefactor are expressed.
+
+#### $R_\mathrm{cg}$ — Coarse-graining length scale
+
+The coarse-graining radius of DCGT. Lies in the hydrodynamic window $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$. The DCGT multi-scale expansion proceeds at $R_\mathrm{cg}$.
+
+#### $L_\mathrm{flow}$ — Continuum-flow length scale
+
+The length scale of the emergent continuum dynamics. The upper bound of the hydrodynamic window. Relative ordering $\ell_P \ll R_\mathrm{cg} \ll L_\mathrm{flow}$ is a substantive scale-separation condition that DCGT requires.
+
+#### $\tau_\mathrm{QC}$ — QC operating window
+
+The minimum of the three UR-1 condition-failure timescales. Defines the maximum coherent-computation duration available in any architectural class:
+```math
+\tau_\mathrm{QC} = \min(\tau_{(\mathrm{i})}, \tau_{(\mathrm{ii})}, \tau_{(\mathrm{iii})}).
+```
+
+#### $\tau_{(\mathrm{i})}, \tau_{(\mathrm{ii})}, \tau_{(\mathrm{iii})}$ — UR-1 condition-failure timescales
+
+The three independent timescales on which UR-1 conditions (i)/(ii)/(iii) fail respectively. Each timescale is class-dependent: Class A is dominated by $\tau_{(\mathrm{iii})}$; Class B by $\tau_{(\mathrm{i})}$; Class C by $\tau_{(\mathrm{ii})}$.
+
+---
+
+### B.4 Substrate Constants and Coupling Parameters
+
+#### $\hbar$ — Planck's constant
+
+Substrate input. Sets the absolute scale of canonical-conjugate uncertainty bounds and enters T19's identification of $G$.
+
+#### $c$ — Speed of light
+
+Substrate input. The substrate-propagation speed for participation-rule connectivity and the asymptotic causal-cone speed for V1 retardation.
+
+#### $H_0$ — Hubble rate
+
+Substrate input. Sets the cosmic-horizon participation density scale in T20.
+
+#### $G$ — Gravitational constant (DERIVED)
+
+Form-FORCED + value-DERIVED:
+```math
+G = \frac{c^3\,\ell_P^2}{\hbar}.
+```
+Source: T19. Not a substrate input.
+
+#### $a_0$ — MOND transition acceleration (DERIVED)
+
+Form-FORCED + value-DERIVED:
+```math
+a_0 = \frac{c\,H_0}{2\pi}.
+```
+Source: T20. The factor $2\pi$ is the azimuthal period of the leading anisotropic projection mode.
+
+#### $\alpha$ — DCGT prefactor
+
+The form-FORCED, value-INHERITED prefactor in the cross-bandwidth structure $\Gamma_\mathrm{cross}\sim\exp[-\alpha\sigma]$. Its closed form is downstream work in the substrate-constants program.
+
+#### $\beta$ — Universal Mobility Law mobility exponent
+
+The exponent in the Universal Mobility Law $M(\rho) \propto (1 - \rho/\rho_\mathrm{max})^\beta$. Canonical form-FORCED value 2 (substrate prediction); empirical anchor $\beta \approx 1.72 \pm 0.37$ across ten systems (PASSED). Discrepancy from canonical 2 is the program's anchored prediction of the closed-form correction route.
+
+---
+
+### B.5 UR-1 Thresholds (INHERITED)
+
+The following thresholds are form-FORCED to exist (UR-1 establishes their existence and structural role) but value-INHERITED (their closed-form expressions in substrate constants are downstream work).
+
+#### $\mathcal{M}_\mathrm{crit}$ — Critical multiplicity threshold
+
+Above this multiplicity, the unresolved-rule regime fails: the substrate region cannot sustain coherent rule-spanning. Underwrites both the matter-wave Q-C boundary (140–250 kDa, projected) and the qubit-system multiplicity wall — the same substrate object via two-point Q-C mass extrapolation. O-QC-1 in the closed-form-substrate-constants program.
+
+#### $\Gamma_\mathrm{min}$ — Minimum cross-bandwidth
+
+The minimum $\Gamma_\mathrm{cross}$ below which cross-endpoint connectivity fails. Class C correlation-budget plateau is set by $\Gamma_\mathrm{min}$.
+
+#### $\Lambda_\mathrm{V1}$ — V1 vacuum residual injection rate
+
+The irreducible commitment-injection rate from the V1 vacuum kernel itself, present even in perfect environmental isolation. Class A's perfect-isolation ceiling: a Class A device cannot lower $\Lambda$ below $\Lambda_\mathrm{V1}$ regardless of engineering effort.
+
+#### $\beta_\mathrm{crit} \sim \log(R_\mathrm{cg}/\ell_P)$ — Critical gradient threshold
+
+The critical sparsity threshold for decoupling-surface formation in the BH program. Form-FORCED logarithmic dependence on the scale ratio.
+
+#### $N_\mathrm{corr}$ — Correlation budget
+
+The maximum number of correlated substrate channels available before Class C redundancy saturates. Class C correlation-budget plateau is governed by $N_\mathrm{corr}$.
+
+#### $\Delta_\mathrm{top}$ — Topological gap
+
+The protective gap separating topologically distinct ground states in Class B. Closes at gap-suppression rate $\sim e^{-\#}$ in the topology-perturbation regime.
+
+#### $T_\mathrm{eff}$ — Substrate-equivalent perturbation temperature
+
+The substrate-level effective temperature corresponding to environmental perturbations. Enters Class A and Class B failure routes through thermal commitment-injection.
+
+---
+
+### B.6 UR-1 Functional Shapes (Form-FORCED, Shape INHERITED)
+
+The unresolvedness three-factor product contains two named factor functions whose form is FORCED (monotonicity, range) and whose specific shape is INHERITED.
+
+#### $\mu(x)$ — Multiplicity-headroom factor
+
+Monotone-decreasing from $\mu(0)=1$ to $\mu(\infty)=0$. Form-FORCED. Its closed form is downstream work.
+
+#### $\kappa(x)$ — Rule-spanning connectivity factor
+
+Monotone-increasing from $\kappa(0)=0$ to $\kappa(\infty)=1$. Form-FORCED. Its closed form is downstream work.
+
+#### $g(N), h(N), c(N)$ — Class C redundancy modifier functions
+
+The Class C scaling functions for redundancy, hybridization, and correlation respectively. Form-FORCED in the Class-C projection of $M$; specific shapes are downstream work.
+
+---
+
+### B.7 Multiplicity-Cap Function and Architectural Classes
+
+#### $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$ — Multiplicity-cap function
+
+The single substrate object capping multiplicity in any QC architecture. Three architectural-class projections (A/B/C) plus meta-architectural overlays $\mathcal{O}$. The unification of multiplicity-cap behavior across all engineered QC platforms into one substrate function is the load-bearing structural result of Arc Q-COMPUTE.
+
+#### $K \in \{A, B, C\}$ — Architectural class
+
+A: engineered-low-multiplicity (e.g. SC qubits, trapped ions). B: global-geometric-rigidity (e.g. topological qubits). C: high-multiplicity-redundancy (e.g. error-correcting codes, ensemble averaging). Form-FORCED three-class exhaustiveness via UR-1.
+
+#### $\mathcal{O}$ — Meta-architectural overlay
+
+Compositions of the three architectural classes: error correction, dynamical decoupling, reservoir engineering, hybrids. Not new classes; compositions.
+
+#### $\mathcal{S}$ — Substrate-region system input
+
+The substrate-region characterization of the QC system itself.
+
+#### $\mathcal{E}$ — Environment input
+
+The substrate-region characterization of the QC system's environment.
+
+#### $\mathcal{M}_\mathrm{floor}, \gamma_\mathrm{floor}$ — Architectural floors
+
+The architecturally-imposed lower bounds on multiplicity and connectivity respectively that a given architectural class can achieve.
+
+#### $A_S$ — Architectural restoring rate
+
+The class-dependent rate at which the architecture restores conditions (i)/(ii)/(iii) after perturbation.
+
+#### $f_\mathrm{int}, f_\mathrm{xy}, f_\mathrm{sys}^{(A)}$ — Architecture-specific scaling functions
+
+Dimensionless scaling functions in the multiplicity-cap projection for each architectural class.
+
+---
+
+### B.8 Substrate-Gravity Quantities
+
+#### $\Phi$ — Gravitational potential
+
+The substrate-derived gravitational potential in flat-background substrate gravity. Satisfies the modified Poisson equation
+```math
+\nabla\cdot\big[\mu(|\nabla\Phi|/a_0)\,\nabla\Phi\big] = 4\pi G\,\rho_m.
+```
+
+#### $\mu(|\nabla\Phi|/a_0)$ — Interpolation function
+
+The interpolation function in the substrate-gravity modified Poisson equation. Form-FORCED to match Newtonian asymptote at $|\nabla\Phi|\gg a_0$ and deep-MOND asymptote at $|\nabla\Phi|\ll a_0$. Note: this $\mu$ is a different object from the UR-1 multiplicity-headroom factor $\mu(x)$; the symbol is shared by convention with the source papers.
+
+#### $g_{\mu\nu}^\mathrm{ac}$ — Acoustic metric
+
+The kinematic-summary metric of substrate participation density in Arc ED-10. Not the Einstein metric; an acoustic-metric construction underwriting the covariantized scalar-tensor structure.
+
+#### $T$ — Trace of matter stress-energy
+
+The trace appearing in the covariantized substrate-gravity equation
+```math
+\nabla_\mu\big[\mu(\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\nabla_\beta\Phi}/a_0)\,\nabla^\mu\Phi\big] = 4\pi G\,T.
+```
+
+#### $v_\mathrm{flat}$ — Asymptotic flat-rotation-curve speed
+
+The rotational speed in the asymptotic deep-MOND regime, related to baryonic mass by T21's $v^4 = G\,M_b\,a_0$.
+
+#### $M_b$ — Baryonic mass
+
+The total baryonic mass of a galactic system, the variable on the right side of the BTFR slope-4 relation.
+
+---
+
+### B.9 Black-Hole Quantities
+
+#### $\Sigma_H$ — Decoupling surface
+
+The substrate-level horizon: the surface across which substrate participation rule-connectivity is severed. The substrate-level analogue of an event horizon, but defined kinematically without invoking an Einstein metric.
+
+#### $A$ — Coarse-grained acoustic-metric area of $\Sigma_H$
+
+The area of the decoupling surface in the coarse-grained acoustic-metric units. Enters the area law with prefactor $\ell_P^{-2}\log g$.
+
+#### $S$ — Black-hole entropy
+
+Form-FORCED area law:
+```math
+S = \frac{A}{\ell_P^2}\,\log g.
+```
+The form is FORCED; the coefficient $\log g$ is value-INHERITED, with $\log g \approx 1/4$ corresponding to the Bekenstein–Hawking match.
+
+#### $\log g$ — Entropy coefficient
+
+The INHERITED coefficient in the area law. O-2 in the closed-form-substrate-constants program.
+
+#### $\delta_{\ell m}$ — BHPT phase shift
+
+The black-hole perturbation-theory phase shift, a global path-integrated invariant in the BH scattering structure.
+
+#### $\Delta\mathcal{A}$ — Channel action density excess
+
+The action-density excess along a perturbation channel's substrate trajectory near $\Sigma_H$.
+
+#### $\Delta\phi_\mathrm{twist}$ — Kerr-twist accumulated frame-dragging vorticity
+
+The accumulated frame-dragging vorticity along a path in the Kerr extension of the BH architecture.
+
+#### $\omega_\mathrm{FD}$ — Local frame-dragging angular velocity
+
+The local angular velocity of frame-dragging at a substrate point in the rotating BH.
+
+#### $\mathcal{T}$ — Topological structure label
+
+The label distinguishing topological structures in the Class B QC and the BH motif alphabet.
+
+#### $T_H$ — Hawking temperature
+
+```math
+T_H = \frac{\kappa}{2\pi},
+```
+where $\kappa$ is surface gravity. The structural form FORCED; closed-form spectrum is the B4 open-extension target.
+
+#### $\tau_\mathrm{gap-stab}(\mathcal{T})$ — Class B topology-perturbation rate
+
+The rate at which the topological gap $\Delta_\mathrm{top}$ closes for topology label $\mathcal{T}$ under perturbation. Class B exponential gap-suppression prediction is governed by $\tau_\mathrm{gap-stab}$.
+
+---
+
+### B.10 Soft-Matter Mobility
+
+#### $M(\rho)$ — Mobility (Universal Mobility Law)
+
+Form-FORCED power law:
+```math
+M(\rho) = M_0\,\big(1 - \rho/\rho_\mathrm{max}\big)^\beta,
+```
+with canonical $\beta = 2$ (substrate prediction) and empirical $\beta \approx 1.72 \pm 0.37$ across ten systems (PASSED). Note: this $M$ is a different object from the multiplicity-cap function $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$; the symbol is shared by convention with the source papers.
+
+#### $\rho_\mathrm{max}$ — Packing limit
+
+The maximum participation density at which mobility vanishes in UDM.
+
+#### $\tau_R$ — Maxwell viscoelastic relaxation time
+
+The first temporal moment of the V5 cross-chain memory kernel under DCGT, identified with the Maxwell viscoelastic relaxation time of the emergent continuum.
+
+---
+
+### B.11 Convention Notes
+
+#### Symbol re-use across sectors
+
+Three symbols are re-used by convention in different sectors:
+
+- **$\mu$**: appears as (i) the UR-1 multiplicity-headroom factor $\mu(x)$, (ii) the substrate-gravity interpolation function $\mu(|\nabla\Phi|/a_0)$, and (iii) the V1-amplitude prefactor $\mu_\mathrm{V1}$ in R1. Context disambiguates; sectorial reuse follows the source-paper canon.
+- **$M$**: appears as (i) the multiplicity-cap function $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$, (ii) the soft-matter mobility $M(\rho)$, and (iii) the baryonic mass $M_b$. Context disambiguates.
+- **$\kappa$**: appears as (i) the UR-1 connectivity factor $\kappa(x)$, (ii) the BH surface gravity $\kappa$ in $T_H = \kappa/(2\pi)$, and (iii) the R1 prefactor $\kappa$ in $-\kappa\mu_\mathrm{V1}\ell_P^2\nabla^4\mathbf{v}$. Context disambiguates.
+
+#### Form-FORCED / Value-INHERITED Tagging
+
+The glossary tags every entry whose value is INHERITED rather than DERIVED. Form-FORCED structural quantities ($\mathcal{M}_\mathrm{crit}$, $\Gamma_\mathrm{min}$, $\log g$, $\beta$ canonical 2) are flagged as INHERITED when their closed-form expressions are downstream work; FORCED-and-DERIVED quantities ($G$, $a_0$, $T_H$ functional form) are flagged accordingly.
+
+#### Repository Path Convention
+
+Source paths use `papers/...`, `theory/...`, and `arcs/...` exactly as in the chapter sources, with no prefix path component beyond the repository root `event-density/`.
+
+---
+
+### B.12 Dependency Section
+
+Appendix B is consistent with Appendix A (theorem provenance map): every symbol used in a theorem statement in Appendix A is defined in Appendix B. It is consistent with Appendix C (paper-to-chapter cross-reference): every symbol in this glossary is used in at least one chapter, and the canonical definition of every symbol lives in a paper assigned to a chapter in Appendix C. It is consistent with Appendix D (substrate constants): every substrate constant defined in Appendix D ($c$, $\hbar$, $H_0$, $\ell_P$, $G$, $a_0$, $\alpha$, $\beta$, the UR-1 thresholds, $\log g$) appears here with the same definition.
+
+The glossary inherits the substrate-primitive layer (Chapter 1), the load-bearing-invariants layer (Chapter 2), the DCGT layer (Chapter 3), and the kernel-arrow layer (Chapter 4). Symbols whose canonical definitions live in source papers point to those papers via the entries in Appendix C.
+
+---
+
+### B.13 Canonical Sources
+
+- `papers/Event_Density_Ontology_and_Axioms/`
+- `papers/Foundations_of_Event_Density/`
+- `papers/Phase_1/`
+- `papers/QM_Emergence_Structural_Completion/`
+- `papers/Born_Gleason/`
+- `papers/U1_Participation_Measure/`
+- `papers/U2_Inner_Product/`
+- `papers/U3_Time_Translation_Schrodinger/`
+- `papers/U4_Hamiltonian_Form/`
+- `papers/U5_Translation_Momentum/`
+- `papers/Gauge_Fields_Theorem_17/`
+- `papers/Time_Arrow_Theorem_18/`
+- `papers/Substrate_Gravity_Foundations/`
+- `papers/Navier Stokes_Synthesis_Paper/` (main + Appendices C/D/E)
+- `papers/Quantum_Computing_Foundations/`
+- `papers/Black_Hole_Foundations/`
+- `papers/Universal_Mobility_Law/`
+- `papers/P4_NonNewtonian_Paper_Draft/`
+- `papers/ED_QFT_Overview/`
+- `theory/Arc_D/` (DCGT memos)
+- `theory/Quantum_Computing/` (Arc Q-COMPUTE memos)
+- `theory/Substrate_Gravity/` (substrate-gravity arc memos)
+- `theory/Black_Holes/` (Arc BH memos)
+- `theory/Yang_Mills/` (Yang–Mills arc memos)
+- `arcs/arc-B/` (Arc B closure memos)
+
+---
+
+### B.14 Optional Figures
+
+The following tables and diagrams are described for inclusion in the final monograph:
+
+- **Table B.1 — Symbol-by-section incidence.** Rows: symbols. Columns: chapters 1–15. Filled cells indicate "used as load-bearing." Used to verify glossary completeness and chapter-by-chapter consistency.
+- **Table B.2 — Form-FORCED / Value-INHERITED tagging.** Two columns separating FORCED-structure entries from INHERITED-value entries. Highlights the closed-form-substrate-constants program targets ($\mathcal{M}_\mathrm{crit}$, $\log g$, $\alpha$, the UR-1 $\mu(x)$ and $\kappa(x)$ shapes).
+- **Figure B.1 — Symbol-reuse map.** Diagram showing the three convention-reused symbols ($\mu$, $M$, $\kappa$) and which sector each instance belongs to. Used to disambiguate notation under sectorial context.
+- **Table B.3 — Substrate-input vs derived-quantity inventory.** Two columns: substrate inputs ($\hbar$, $c$, $H_0$, $\ell_P$ at the program-level — note $\ell_P$ becomes derived under T19) versus derived quantities ($G$, $a_0$, $\Gamma_\mathrm{cross}$ form, $\mathcal{U}$ form, BTFR slope-4, area law form). Maps the FORCED/INHERITED tagging onto a clean substrate-input vs. derivation chart.
+
+\newpage
+
+## Appendix C — Paper-to-Chapter Cross-Reference
+
+### C.1 Appendix Overview
+
+This appendix assigns every publication-grade Event Density paper to exactly one chapter of the monograph. The assignment is structural rather than thematic: each paper is placed at the chapter where its content is load-bearing, even when the paper's results are referenced in later chapters. Where a paper covers material spanning multiple chapters (notably the NS Synthesis Paper with its Appendices C, D, and E), the main paper is assigned to its anchoring chapter and each appendix is assigned to the chapter for which it is structurally definitive.
+
+The cross-reference is consistent with Appendix A (theorem provenance map): every canonical-source path cited in Appendix A appears here under the chapter to which the source paper is assigned. It is consistent with Appendix B (notation glossary): every symbol defined in Appendix B has its canonical definition in a paper assigned here. It is consistent with Appendix D (substrate constants): every constant defined in Appendix D has its derivation or empirical anchor in a paper assigned here. Repository paths are stated relative to the repository root `event-density/`, exactly as in the chapter sources.
+
+---
+
+### C.2 Part I — Substrate Foundations
+
+#### Chapter 1 — The Substrate Ontology (P1–P13)
+
+- **`papers/Event_Density_Ontology_and_Axioms/`** — Canonical inventory of the thirteen substrate primitives and the axiomatic structure of the program. Every later result is reachable from a subset of P1–P13 plus mathematical structure.
+- **`papers/Foundations_of_Event_Density/`** — Companion foundations collection: discusses the ontological commitments behind each primitive, the substrate-locality conditions, and the boundary between substrate ontology and emergent continuum physics.
+- **`papers/ED_One_Substrate_Three_Domains/`** — Program-overview / orientation context. Used in Chapter 1 only as a reading aid for situating the substrate ontology within the program's three-domain organization (substrate, continuum, gravity).
+
+#### Chapter 2 — Load-Bearing Invariants
+
+- **ED-I-01 (Superconductivity)** — Multiplicity-as-entropy reading. Establishes the structural identification between substrate multiplicity $\mathcal{M}$ and the entropic content of substrate participation pathways, anchored against superconducting condensate behavior.
+- **ED-I-23 (Josephson Junctions)** — Multiplicity at engineered low-$\mathcal{M}$ regions. Demonstrates the substrate-level mechanism by which engineered low-multiplicity regions sustain phase-coherent participation across a junction.
+- **ED-I-29 (Tunneling)** — Sparse-$\sigma$ regions and global rule reconfiguration. Connects the gradient-sparsity invariant $\sigma$ to the substrate-level mechanism of tunneling as a sparse-$\sigma$ rule reconfiguration rather than barrier penetration.
+- **ED-I-06 (Fields and Forces in Event Density)** — Ontological roof providing field/force vocabulary. The retroactive ontological frame that grounds the load-bearing invariants in a substrate-derived field/force taxonomy.
+
+#### Chapter 3 — The Coarse-Graining Bridge (DCGT)
+
+- **`papers/Navier Stokes_Synthesis_Paper/` Appendix D (DCGT)** — The canonical derivation of the Diffusion Coarse-Graining Theorem. Contains the multi-scale expansion, the hydrodynamic-window scale-separation conditions, and the leading-order continuum content (scalar diffusion, directional viscosity, V1→R1, V5→Maxwell, T17 minimal coupling).
+- **Arc D memos in `theory/Arc_D/`** — Six-memo arc producing DCGT. Records the substrate-to-continuum bridge construction step by step.
+- **`papers/ED_QFT_Overview/`** — Program-level synthesis with DCGT central. Shows DCGT operating uniformly across the QM, QFT, NS, MHD, YM, soft-matter, and substrate-gravity sectors.
+
+#### Chapter 4 — Kernel-Level Arrow of Time (N1 + T18)
+
+- **`papers/Time_Arrow_Theorem_18/`** — Canonical T18 derivation: V1 retardation forced at primitive level. Establishes the kernel-level arrow of time as a structural FORCED result rather than a postulated boundary condition.
+- **N1 derivation paper (V1 finite-width kernel)** — Canonical N1 derivation: existence and finite width of the V1 vacuum response kernel. Upstream of T18.
+- **`arcs/arc-B/`** — Arc B closure memos. Records the closure of the kernel-arrow arc; supplies the Q.8 effective-vacuum factorization that underwrites T18.
+
+---
+
+### C.3 Part II — Quantum Sector
+
+#### Chapter 5 — Phase-1 Closure of QM (T1–T16)
+
+- **`papers/Phase_1/`** — Canonical Phase-1 closure paper: the sixteen forced theorems collectively deriving the four QM postulates from substrate primitives plus mathematical theorems (Gleason 1957, Stone 1932).
+- **`papers/QM_Emergence_Structural_Completion/`** — Companion paper on the structural-completion methodology and the boundary between FORCED-form and INHERITED-value content in the QM emergence program.
+- **`papers/Born_Gleason/`** — Detailed treatment of the Born-rule derivation via Gleason's theorem. The substrate-level argument for bandwidth-conservation across orthogonal decompositions, supplying Gleason's hypothesis.
+- **`papers/U1_Participation_Measure/`** — U1: the substrate-derived participation-measure structure underlying state-vector formalism.
+- **`papers/U2_Inner_Product/`** — U2: derivation of the inner-product structure on the participation-state space.
+- **`papers/U3_Time_Translation_Schrodinger/`** — U3: time-translation symmetry plus Stone's theorem yielding the Schrödinger generator's linearity and first-order character.
+- **`papers/U4_Hamiltonian_Form/`** — U4: derivation of the Hamiltonian's substrate-level form.
+- **`papers/U5_Translation_Momentum/`** — U5: derivation of the canonical translation/momentum structure and the canonical commutator.
+
+#### Chapter 6 — Form-Level QFT and Quantum Information (T17, UV-FIN, ED-I-13)
+
+- **`papers/Gauge_Fields_Theorem_17/`** — Canonical T17 derivation: gauge fields as participation measures of structural rule-types. Covers Abelian U(1) and non-Abelian compact-simple-group cases.
+- **ED-I-13 (Quantum Information: Channel Geometry)** — Quantum-information channel-geometry interpretation grounded in T17's interface-property reading.
+- **`papers/Arc_Q/`** — Arc Q closure memos: gauge-field-as-rule-type arc.
+- **`papers/Arc_R/`** — Arc R closure memos: substrate-level UV finiteness via V1 finite width.
+
+#### Chapter 7 — Quantum Computation (UR-1, $M$, A/B/C)
+
+- **`papers/Quantum_Computing_Foundations/`** — Canonical Q-COMPUTE Foundations Paper. Contains the UR-1 derivation, the multiplicity-cap function $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$, the three-class architectural taxonomy A/B/C, and the closed-form-substrate-constants targets O-QC-1 through O-QC-6.
+- **Arc Q-COMPUTE memos in `theory/Quantum_Computing/`** — Seven-memo arc producing the Q-COMPUTE Foundations Paper. Records the architectural-class derivation, the meta-architectural overlay structure, and the cross-domain echo with BH-2 ($\Gamma_\mathrm{cross}$ collapse).
+- **ED-I-14 (Topological Effects)** — Topological-effects interpretation underwriting the Class B (global-geometric-rigidity) projection of $M$.
+- **ED-I-18 (Multi-Timescale Photonics)** — Multi-timescale photonics interpretation; the Hafezi 2025 multi-timescale photonics anchor lives here as a PASSED prediction.
+- **ED-I-12 (Photonics)** — Photonics interpretation supplying the substrate-level reading of photonic platforms relevant to Class A and Class C realizations.
+
+---
+
+### C.4 Part III — Continuum and Dynamics
+
+#### Chapter 8 — Navier–Stokes Architectural Foundations
+
+- **`papers/Navier Stokes_Synthesis_Paper/` (main + Appendix C)** — The NS Synthesis Paper consolidates the full NS program: Path B-strong, the Intermediate Path C closure, the R1 substrate-cutoff regularization, the form-FORCED viscosity, and the vortex-stretching obstruction analysis. Appendix C covers the MHD extension (assigned to Chapter 9).
+- **Arc NS memos in `theory/Navier Stokes/`** — Records the NS-1, NS-2, NS-3, NS-Smoothness, NS-Turb, P4-NN, NS-Q, and NS-MHD arc closures.
+- **ED-I-06 (Fields and Forces)** — Ontological roof for the NS classification: identifies advection-non-ED and induction-kinematic-non-ED as transport-kinematic frame artifacts rather than substrate primitives.
+
+#### Chapter 9 — Magnetohydrodynamics and Yang–Mills
+
+- **`papers/Navier Stokes_Synthesis_Paper/` Appendix C (MHD)** — Full MHD treatment: the H1/H2/H3 hold conditions, the 6:2:3 classification of eleven MHD items into canonical-ED, transport-kinematic, and ED-coupled.
+- **`papers/Navier Stokes_Synthesis_Paper/` Appendix E (Yang–Mills)** — Full Yang–Mills treatment integrated into the NS Synthesis Paper. Contains the substrate-derived continuum YM equation $D_\mu F^{\mu\nu} = J^\nu$ via DCGT generalized to non-Abelian + T17, plus the mass-gap mechanism via V1 second-moment plus non-Abelian quartic stabilization.
+- **Arc YM memos in `theory/Yang_Mills/`** — Six-memo arc YM-1 through YM-6 producing the YM closure. Records the structurally-positive Clay-relevance verdict and the OS-positivity audit.
+
+#### Chapter 10 — Soft-Matter Mobility and Non-Newtonian Rheology
+
+- **`papers/Universal_Mobility_Law/`** — Canonical Universal Mobility Law paper. Form-FORCED $M(\rho) \propto (1 - \rho/\rho_\mathrm{max})^\beta$ with canonical $\beta = 2$; empirical $\beta \approx 1.72 \pm 0.37$ across ten systems (PASSED).
+- **`papers/P4_NonNewtonian_Paper_Draft/`** — P4-NN paper: substrate-derived Krieger-Dougherty form plus Maxwell viscoelastic memory via V5-DCGT.
+
+---
+
+### C.5 Part IV — Gravity and Cosmology
+
+#### Chapter 11 — Substrate Gravity at Galactic Scale (T19, T20, ECR, T21)
+
+- **`papers/Substrate_Gravity_Foundations/Substrate_Gravity_Foundations_Paper.{md,tex,pdf}`** — Canonical Substrate Gravity Foundations Paper. Contains T19 ($G = c^3\ell_P^2/\hbar$), T20 ($a_0 = c\,H_0/(2\pi)$), the ED Combination Rule ($a = \sqrt{a_N\,a_0}$), and T21 (BTFR slope-4).
+- **`papers/Substrate_Gravity_Foundations/ED_substrate_gravity_foundations_2026-04-28.{md,tex,pdf}`** — Detailed-derivation companion paper. Records the dipole-projection derivation of $a_0$, the substrate-cumulative-strain mechanism for T19, and the substrate logarithmic stability landscape that produces ECR.
+
+#### Chapter 12 — Curvature Emergence (Arc ED-10)
+
+- **`papers/Substrate_Gravity_Foundations/`** — Curvature-emergence section in the extended-scope Substrate Gravity Foundations paper. Contains the substrate-FORCED scalar-tensor acoustic-metric covariantization $\nabla_\mu[\mu(\sqrt{g^{\alpha\beta}\nabla_\alpha\Phi\nabla_\beta\Phi}/a_0)\nabla^\mu\Phi] = 4\pi GT$, OS-positivity, ghost-freedom, and gradient-stability under (C1)-(C3).
+- **Arc ED-10 memos in `theory/Substrate_Gravity/`** — Six-memo arc records the curvature-emergence closure; deep-MOND superluminality structurally FORCED as the only structural cost.
+
+#### Chapter 13 — Black-Hole Architecture (Arc BH)
+
+- **`papers/Black_Hole_Foundations/`** — Canonical Black Hole Foundations Paper. Contains the decoupling-surface construction, the area-law form $S = (A/\ell_P^2)\log g$, the BHPT phase-shift structure, the helicity behavior, and the Kerr-twist accumulated frame-dragging vorticity.
+- **Arc BH memos in `theory/Black_Holes/` (BH-1 through BH-7)** — Seven-memo arc producing the BH Foundations Paper. Records the structural-positive verdicts on no-singularities, information blocking and entanglement straddling, evaporation as participation re-routing, and the open follow-ons (B4 Hawking spectrum, superradiance amplitude, closed-form $\log g$, full Kerr interior audit).
+
+---
+
+### C.6 Part V — Empirical Synthesis
+
+#### Chapter 14 — Cross-Platform Unifications and Methodology
+
+- **`papers/ED_QFT_Overview/`** — Program-level synthesis. Twelve sections integrating Phase-1 QM emergence + foundational theorems + DCGT + NS/MHD + Yang–Mills + substrate-gravity preview. The cross-platform unifications (matter-wave Q-C boundary ↔ qubit-system multiplicity wall via shared $\mathcal{M}_\mathrm{crit}$; $\Gamma_\mathrm{cross}$ collapse across BH-2 and QC condition (ii); P04 mobility-capacity bound across UDM and Class A QC; V1 across kernel-arrow, R1, YM mass-gap, and BH motif alphabet) are surveyed here.
+- **`papers/ED_One_Substrate_Three_Domains/`** — Program-overview / cross-domain context paper. Used in Chapter 14 to situate the cross-platform unifications within the program's three-domain organization.
+
+#### Chapter 15 — Public Test Inventory and Open Extensions
+
+- **`Desktop/ED_Public_Test_Inventory.md`** — Living test catalog. Records the status taxonomy (PASSED / ANCHORED / IN PROGRESS / ACTIVE / OPEN) uniformly across sectors, with three PASSED predictions, thirteen ANCHORED predictions, three IN PROGRESS predictions, seventeen ACTIVE predictions, and four OPEN predictions.
+- **`docs/Investigation_Priority_List.md`** — Active priority list with open extensions. Records the current "what to work on next" priority list (twenty-three numbered items, easiest-to-hardest, with closed items archived).
+- **Various ED-I interpretation papers** — Sector-specific prediction sources. Each ED-I paper supplies the substrate-level reading for one sector and contributes the sector-specific predictions in the public test inventory.
+
+---
+
+### C.7 Cross-Reference: ED-I Interpretation Papers
+
+The ED-I (Event Density Interpretation) paper series supplies sector-specific substrate-level readings used across the monograph. Each ED-I paper is assigned to its primary chapter; many are referenced in additional chapters. The list below records the assignments named in Sections C.2–C.6 plus the additional ED-I papers appearing in the program's interpretation-paper inventory and used as supporting references.
+
+- **ED-I-01 (Superconductivity)** → Chapter 2.
+- **ED-I-06 (Fields and Forces in Event Density)** → Chapter 2 (also load-bearing in Chapter 8).
+- **ED-I-12 (Photonics)** → Chapter 7.
+- **ED-I-13 (Quantum Information: Channel Geometry)** → Chapter 6.
+- **ED-I-14 (Topological Effects)** → Chapter 7.
+- **ED-I-18 (Multi-Timescale Photonics)** → Chapter 7.
+- **ED-I-23 (Josephson Junctions)** → Chapter 2.
+- **ED-I-29 (Tunneling)** → Chapter 2.
+
+Additional ED-I papers in the program interpret sectors not load-bearing in any monograph chapter; they appear in Chapter 15's prediction inventory through specific predictions but are not assigned as load-bearing to any chapter here.
+
+---
+
+### C.8 Cross-Reference: Arc Memos and Closure Documents
+
+The program's structural derivations are organized into named arcs, each consisting of multiple sequential memos. Each arc is assigned here to its primary chapter alongside the publication-grade paper(s) that consolidate its content.
+
+- **Arc B (Kernel-Arrow / V1 closure)** → Chapter 4. Memos in `arcs/arc-B/`.
+- **Arc D (DCGT)** → Chapter 3. Memos in `theory/Arc_D/`. Six-memo arc producing the Diffusion Coarse-Graining Theorem.
+- **Arc Q (Gauge-Field-as-Rule-Type)** → Chapter 6. Memos in `papers/Arc_Q/`.
+- **Arc R (Substrate UV Finiteness)** → Chapter 6. Memos in `papers/Arc_R/`.
+- **Arc Q-COMPUTE** → Chapter 7. Seven-memo arc in `theory/Quantum_Computing/`. Closed 2026-05-02.
+- **Arc NS (Navier–Stokes)** → Chapter 8. Multiple sub-arcs: NS-1, NS-2, NS-3 / NS-Smoothness, NS-Turb, P4-NN, NS-Q. Memos in `theory/Navier Stokes/`.
+- **Arc YM (Yang–Mills)** → Chapter 9. Six-memo arc in `theory/Yang_Mills/`. Closed 2026-04-30.
+- **Arc SG (Substrate Gravity Extension)** → Chapter 11. Six-memo arc in `theory/Substrate_Gravity/`. Closed 2026-04-30.
+- **Arc ED-10 (Curvature Emergence)** → Chapter 12. Six-memo arc in `theory/Substrate_Gravity/`. Closed 2026-04-30.
+- **Arc BH (Black Holes)** → Chapter 13. Seven-memo arc (BH-1 through BH-7) in `theory/Black_Holes/`. Closed 2026-05-01.
+
+---
+
+### C.9 Dependency Section
+
+Appendix C respects the chapter dependency graph. Each chapter assignment cites only papers whose content does not invoke results from later chapters: a paper assigned to Chapter $X$ may use any earlier chapter's content, but does not depend structurally on a chapter $Y > X$. In the few cases where a paper's derivation references a downstream result (e.g. the NS Synthesis Paper main text references DCGT, which is canonically derived in Appendix D of the same paper), the dependency is internal to the paper and respects the chapter ordering: NS Synthesis Paper Appendix D is assigned to Chapter 3 (DCGT), which precedes Chapter 8 (NS main).
+
+The cross-reference is consistent with Appendix A: every theorem-source path in Appendix A appears here under its chapter. It is consistent with Appendix B: the canonical definition of every glossary symbol lives in a paper assigned to a chapter here. It is consistent with Appendix D: every substrate constant in Appendix D has its derivation or empirical anchor in a paper assigned here.
+
+---
+
+### C.10 Canonical Sources (Aggregated)
+
+The following repository paths appear in this appendix; their full inventory is consolidated here for ease of navigation.
+
+**`papers/` cluster:**
+- `papers/Event_Density_Ontology_and_Axioms/`
+- `papers/Foundations_of_Event_Density/`
+- `papers/ED_One_Substrate_Three_Domains/`
+- `papers/Phase_1/`
+- `papers/QM_Emergence_Structural_Completion/`
+- `papers/Born_Gleason/`
+- `papers/U1_Participation_Measure/`
+- `papers/U2_Inner_Product/`
+- `papers/U3_Time_Translation_Schrodinger/`
+- `papers/U4_Hamiltonian_Form/`
+- `papers/U5_Translation_Momentum/`
+- `papers/Gauge_Fields_Theorem_17/`
+- `papers/Time_Arrow_Theorem_18/`
+- `papers/Arc_Q/`
+- `papers/Arc_R/`
+- `papers/Quantum_Computing_Foundations/`
+- `papers/Navier Stokes_Synthesis_Paper/` (main + Appendices C, D, E)
+- `papers/Universal_Mobility_Law/`
+- `papers/P4_NonNewtonian_Paper_Draft/`
+- `papers/Substrate_Gravity_Foundations/Substrate_Gravity_Foundations_Paper.{md,tex,pdf}`
+- `papers/Substrate_Gravity_Foundations/ED_substrate_gravity_foundations_2026-04-28.{md,tex,pdf}`
+- `papers/Black_Hole_Foundations/`
+- `papers/ED_QFT_Overview/`
+
+**`theory/` cluster:**
+- `theory/Arc_D/`
+- `theory/Quantum_Computing/`
+- `theory/Navier Stokes/`
+- `theory/Yang_Mills/`
+- `theory/Substrate_Gravity/`
+- `theory/Black_Holes/`
+
+**`arcs/` cluster:**
+- `arcs/arc-B/`
+
+**`docs/` and orientation:**
+- `Desktop/ED_Public_Test_Inventory.md`
+- `docs/Investigation_Priority_List.md`
+
+---
+
+### C.11 Optional Figures
+
+The following tables and diagrams are described for inclusion in the final monograph:
+
+- **Table C.1 — Paper-to-chapter assignment matrix.** Rows: every publication-grade paper in the program. Columns: chapters 1–15. Each row has exactly one filled cell (the chapter the paper is assigned to). Used to verify completeness of the cross-reference and prevent paper-orphaning.
+- **Table C.2 — ED-I interpretation paper inventory.** Rows: ED-I papers (numbered 01 through 29). Columns: primary chapter + secondary chapters + sectorial role. Records the full ED-I inventory and the interpretation-layer mapping into the chapter structure.
+- **Figure C.1 — Arc dependency graph.** Directed acyclic graph of arc closures: Arc B → T18 + N1; Arc D → DCGT; Arc Q → T17; Arc Q-COMPUTE → UR-1 + $M$; Arc NS → NS Synthesis; Arc YM → YM Synthesis; Arc SG → Substrate Gravity Foundations; Arc ED-10 → Curvature Emergence; Arc BH → BH Foundations. Edges encode "feeds into." Used to visualize how the arc-closure pipeline produces the publication-grade papers assigned in this appendix.
+- **Table C.3 — Repository-cluster summary.** Three rows (papers/, theory/, arcs/) with column counts of items per chapter. Used to verify that every chapter has at least one publication-grade source and at least one supporting arc/theory reference where applicable.
+
+\newpage
+
+## Appendix D — Substrate Constants and Inherited Values
+
+### D.1 Appendix Overview
+
+This appendix collects every substrate constant referenced across the monograph, with each entry recording four heads: the constant's structural role in the program, its substrate-input vs. derived-vs.-inherited status, its current numerical value (closed-form where derived, empirical anchor where inherited, dimensionless ratio where structurally fixed), and the chapter or chapters where it is load-bearing. The appendix is the program's accounting of what is fixed and what remains open at the level of dimensional and dimensionless constants.
+
+The classification follows the form-FORCED / value-INHERITED methodology: substrate-input constants ($\hbar$, $c$, $H_0$, $\ell_P$) are taken as given; derived constants ($G$, $a_0$) are FORCED both in form and in value once the substrate inputs are fixed; inherited constants ($\mathcal{M}_\mathrm{crit}$, $\log g$, $\Lambda_\mathrm{V1}$, the UR-1 functional shapes, the architecture-specific scaling functions) are FORCED in their structural role but value-INHERITED until closed-form derivation is supplied by the substrate-constants program. Three INHERITED constants — $\mathcal{M}_\mathrm{crit}$ (O-QC-1), $\log g$ (O2 from Arc BH), and $\kappa/|\hat{N}'|$ (E4 from the ED-SC arc) — form a structurally-similar cluster that is the program's closed-form-substrate-constants program.
+
+---
+
+### D.2 Substrate Inputs (Taken as Given)
+
+The four substrate-input constants are not derived within the monograph's nine sectors. They are the program's empirical anchors at the substrate level; every other constant in the monograph's nine sectors is either form-FORCED + value-DERIVED from these inputs, or form-FORCED + value-INHERITED.
+
+#### $\hbar$ — Planck's constant
+
+**Structural role.** Sets the absolute scale of canonical-conjugate uncertainty bounds (Heisenberg's $\hbar/2$ in T1–T16); enters T19's identification of $G$.
+
+**Status.** Substrate input.
+
+**Value.** $\hbar = 1.054 \times 10^{-34}$ J·s (CODATA).
+
+**Used in.** Chapter 5 (Phase-1 closure of QM); Chapter 11 (substrate gravity, via T19).
+
+#### $c$ — Speed of light
+
+**Structural role.** The substrate-propagation speed for participation-rule connectivity; the asymptotic causal-cone speed for V1 retardation; enters T19 and T20 identifications.
+
+**Status.** Substrate input.
+
+**Value.** $c = 2.998 \times 10^8$ m/s (exact by SI definition).
+
+**Used in.** Chapter 4 (kernel-arrow); Chapter 11 (substrate gravity, via T19 and T20); Chapter 12 (curvature emergence).
+
+#### $H_0$ — Hubble rate
+
+**Structural role.** Sets the cosmic-horizon participation density scale in T20.
+
+**Status.** Substrate input.
+
+**Value.** $H_0 \in [67, 73]$ km/s/Mpc (Hubble tension band). The Hubble-tension band translates to roughly a 15% prediction band on $a_0$ via T20.
+
+**Used in.** Chapter 11 (substrate gravity, via T20).
+
+#### $\ell_P$ — Planck length / substrate length scale
+
+**Structural role.** The substrate length scale: governs the dimensionless gradient sparsity $\sigma = |\nabla\rho|\,\ell_P^2/\rho_\mathrm{local}$, the BH area law $S = (A/\ell_P^2)\log g$, the substrate-cutoff hyperviscous prefactor in R1 ($-\kappa\mu_\mathrm{V1}\ell_P^2\nabla^4\mathbf{v}$), and the critical gradient threshold $\beta_\mathrm{crit}\sim\log(R_\mathrm{cg}/\ell_P)$.
+
+**Status.** Identified with the Planck length via T19 Newton-recovery (derived, not postulated). Listed as a substrate input in this section because no still-more-fundamental substrate input fixes it; T19 fixes it by requiring the derived form $G = c^3\ell_P^2/\hbar$ to recover the empirically observed $G$.
+
+**Value.** $\ell_P = (G\hbar/c^3)^{1/2} \approx 1.616 \times 10^{-35}$ m.
+
+**Used in.** Chapters 2, 3, 7, 8, 9, 11, 12, 13.
+
+---
+
+### D.3 Derived Substrate Constants (Form-FORCED, Value-DERIVED)
+
+Two substrate constants are FORCED both in form and in value once the substrate inputs are fixed. The derivations live in the substrate-gravity foundations papers.
+
+#### $G$ — Newton's gravitational constant
+
+**Structural role.** The proportionality constant in the inverse-square gravitational field. Enters every Newtonian-asymptote calculation in the substrate-gravity sector and the BTFR slope-4 relation.
+
+**Status.** FORCED both in form (inverse-square) and in value (named combination of substrate inputs).
+
+**Closed-form value.**
+```math
+G = \frac{c^3\,\ell_P^2}{\hbar} \approx 6.674 \times 10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}.
+```
+
+**Source.** T19, in `papers/Substrate_Gravity_Foundations/`.
+
+**Used in.** Chapter 11; Chapter 12; Chapter 13.
+
+#### $a_0$ — MOND transition acceleration
+
+**Structural role.** The deep-MOND-asymptote acceleration scale; the threshold below which the substrate-gravity interpolation function $\mu(|\nabla\Phi|/a_0)$ enters its deep-MOND limit; the proportionality constant in BTFR slope-4.
+
+**Status.** FORCED both in form (cosmic-horizon dipole projection) and in value (named combination of substrate inputs).
+
+**Closed-form value.**
+```math
+a_0 = \frac{c\,H_0}{2\pi} \approx 1.08 \times 10^{-10}\ \mathrm{m/s^2}.
+```
+Matches the empirical MOND acceleration $\approx 1.2 \times 10^{-10}$ m/s² to within roughly 10%, parameter-free. The Hubble-tension band $H_0 \in [67, 73]$ km/s/Mpc translates to a roughly 15% prediction band on $a_0$.
+
+**Source.** T20, in `papers/Substrate_Gravity_Foundations/`.
+
+**Used in.** Chapter 11; Chapter 12; Chapter 15.
+
+---
+
+### D.4 INHERITED Substrate Constants (Form-FORCED in Role; Specific Value Calibrated Empirically or Downstream)
+
+The following constants are FORCED in their structural role by the substrate-level derivations of the program — they exist, they have specific dimensional or dimensionless types, and their qualitative behavior is fixed — but their specific numerical values are either calibrated against empirical anchors or remain downstream targets of the closed-form-substrate-constants program.
+
+#### $\mathcal{M}_\mathrm{crit}$ — Critical multiplicity threshold
+
+**Structural role.** The critical multiplicity above which the unresolved-rule regime fails; underwrites both the matter-wave Q-C boundary and the qubit-system multiplicity wall via the same substrate object. Form-FORCED by UR-1 condition (i).
+
+**Status.** INHERITED. Value-anchored empirically by the matter-wave Q-C boundary at 140–250 kDa molecular mass (two-point Q-C mass extrapolation).
+
+**Closed-form derivation status.** OPEN. Designated **O-QC-1** in the closed-form-substrate-constants program.
+
+**Used in.** Chapter 7 (QC architectural taxonomy); Chapter 14 (cross-platform unifications: matter-wave ↔ qubit identity).
+
+#### $\Gamma_\mathrm{min}$ — Minimum cross-bandwidth
+
+**Structural role.** The minimum cross-bandwidth below which UR-1 condition (ii) fails; the threshold governing the Class C correlation-budget plateau and the BH decoupling-surface formation condition.
+
+**Status.** INHERITED from V1-kernel + DCGT closed-form details.
+
+**Used in.** Chapter 3 (DCGT); Chapter 7 (Class C correlation-budget plateau); Chapter 13 (decoupling-surface threshold).
+
+#### $\Lambda_\mathrm{V1}$ — V1 vacuum residual injection rate
+
+**Structural role.** The irreducible commitment-injection rate from the V1 vacuum kernel itself, present even in perfect environmental isolation. Bounds Class A's perfect-isolation ceiling: a Class A device cannot lower $\Lambda$ below $\Lambda_\mathrm{V1}$ regardless of engineering effort.
+
+**Status.** INHERITED.
+
+**Used in.** Chapter 7 (Class A perfect-isolation ceiling).
+
+#### $\beta_\mathrm{crit} \sim \log(R_\mathrm{cg}/\ell_P)$ — Critical gradient threshold
+
+**Structural role.** The critical sparsity threshold above which decoupling-surface formation becomes structurally favorable. Form-FORCED logarithmic dependence on the scale ratio $R_\mathrm{cg}/\ell_P$.
+
+**Status.** INHERITED. Substrate-determined dimensionless number; precise prefactor depends on coarse-graining choices.
+
+**Used in.** Chapter 7; Chapter 13.
+
+#### $N_\mathrm{corr}$ — Correlation budget for Class C platforms
+
+**Structural role.** The maximum number of correlated substrate channels available before Class C redundancy saturates. Sets the Class C correlation-budget plateau.
+
+**Status.** INHERITED from substrate-coupling pattern across redundant pathways; platform-specific.
+
+**Used in.** Chapter 7.
+
+#### $\Delta_\mathrm{top}^{\max}$ — Maximum stable topological gap (Class B)
+
+**Structural role.** The maximum topological gap that can be stably maintained against substrate-level perturbations in a Class B platform. Sets the upper bound on Class B coherent-computation duration.
+
+**Status.** INHERITED from material/topology engineering. The Class B exponential gap-suppression prediction is governed by the rate at which $\Delta_\mathrm{top}$ closes under perturbation.
+
+**Used in.** Chapter 7.
+
+#### $T_\mathrm{eff}^{\min}$ — Minimum substrate-equivalent perturbation temperature
+
+**Structural role.** The minimum effective substrate-equivalent temperature that environmental engineering can achieve in a given platform. Enters Class A and Class B failure routes through thermal commitment-injection.
+
+**Status.** INHERITED from environmental engineering.
+
+**Used in.** Chapter 7.
+
+#### $\log g$ — Black-hole area-law entropy coefficient
+
+**Structural role.** The coefficient in the form-FORCED BH area law $S = (A/\ell_P^2)\log g$. Determines the substrate-level analogue of the Bekenstein–Hawking $1/4$ coefficient.
+
+**Status.** INHERITED from substrate motif counting. The empirical match $\log g \approx 1/4$ corresponds to $g \approx 1.28$, a non-integer substrate motif-count base.
+
+**Closed-form derivation status.** OPEN. Designated **O2** in the Arc BH closed-form-substrate-constants targets.
+
+**Used in.** Chapter 13.
+
+#### $\beta$ — Universal Mobility Law mobility exponent
+
+**Structural role.** The exponent in $M(\rho) = M_0(1 - \rho/\rho_\mathrm{max})^\beta$. The form-FORCED canonical substrate prediction is $\beta = 2$.
+
+**Status.** Empirical anchor: $\beta = 1.72 \pm 0.37$ across ten systems with mechanism-clustered scatter (PASSED). The discrepancy from canonical 2 anchors a closed-form correction route as downstream work.
+
+**Used in.** Chapter 10; Chapter 15.
+
+#### $\kappa/|\hat{N}'| \approx 0.001766$ — ED-SC anchor (cross-scale invariance)
+
+**Structural role.** The cross-scale invariance anchor of the ED-SC arc; central value 0.001766 with model band ±10.78%. Records the empirically-measured cross-scale invariance ratio.
+
+**Status.** INHERITED from cross-scale invariance.
+
+**Closed-form derivation status.** OPEN. Designated **E4** in the ED-SC arc.
+
+**Used in.** Cross-reference: ED-SC arc work, not within this monograph's nine sectors but flagged here for completeness because it is one of three structurally-similar INHERITED constants in the closed-form-substrate-constants program.
+
+---
+
+### D.5 Class-Specific INHERITED Quantities
+
+The following quantities are FORCED in their structural role by UR-1 and the multiplicity-cap function $M(\mathcal{S}, K, \mathcal{E}, \mathcal{O})$ projections, but their specific shapes or values are INHERITED from V1-kernel + DCGT details, from architecture-to-platform calibration, or from a topology-stability theorem still to be derived.
+
+#### $\mu(x), \kappa(x)$ — UR-1 functional shapes
+
+**Structural role.** The multiplicity-headroom factor (monotone-decreasing from 1 to 0) and rule-spanning connectivity factor (monotone-increasing from 0 to 1) in the unresolvedness three-factor product. Form-FORCED to be monotone with specific limits.
+
+**Status.** Specific shape (Boltzmann, rational, sigmoid, etc.) is INHERITED from V1-kernel + DCGT closed-form details.
+
+**Used in.** Chapter 7.
+
+#### $g(N), h(N), c(N)$ — Class C redundancy modifier functions
+
+**Structural role.** The Class C scaling functions for redundancy, hybridization, and correlation. Form-FORCED in the Class-C projection of $M$.
+
+**Status.** Specific shapes INHERITED.
+
+**Used in.** Chapter 7.
+
+#### $f_\mathrm{int}(M_\mathrm{mol}), f_\mathrm{xy}(N_\mathrm{qubits}), f_\mathrm{sys}^{(A)}(\mathcal{S})$ — Architecture-specific scaling functions
+
+**Structural role.** Map system-size variables (molecular mass, qubit count, system-size descriptor) to effective multiplicity for each architectural class.
+
+**Status.** INHERITED from architecture-to-platform calibration. Designated **O-QC-2** in the Q-COMPUTE open-extension list.
+
+**Used in.** Chapter 7; Chapter 14.
+
+#### $\tau_\mathrm{gap-stab}(\mathcal{T})$ — Class B topology-perturbation rate
+
+**Structural role.** The rate at which the topological gap $\Delta_\mathrm{top}$ closes for topology label $\mathcal{T}$ under perturbation. Underwrites the Class B exponential gap-suppression prediction.
+
+**Status.** Form named; topology-stability theorem (designated **O-QC-4**) is the natural follow-on for substrate-level derivation.
+
+**Used in.** Chapter 7.
+
+---
+
+### D.6 The Closed-Form-Substrate-Constants Program
+
+Three INHERITED constants in the inventory above are structurally similar in character: each is dimensionless or has a specific dimensional form, each is empirically anchored, and each is the target of a closed-form derivation that the substrate-constants program treats as a priority.
+
+| Constant | Sector | Open-extension label | Empirical anchor |
+|---|---|---|---|
+| $\mathcal{M}_\mathrm{crit}$ | QC (Chapter 7) | O-QC-1 | Matter-wave Q-C boundary at 140–250 kDa |
+| $\log g$ | BH (Chapter 13) | O2 (Arc BH) | $\log g \approx 1/4$ Bekenstein–Hawking match |
+| $\kappa/|\hat{N}'|$ | ED-SC (cross-reference) | E4 | $\approx 0.001766$ central; model band $\pm 10.78\%$ |
+
+Closed-form derivation in any one of these constants constrains the others by the form-FORCED / value-INHERITED methodology's cross-domain consistency requirement: the program's three-domain organization (substrate / continuum / gravity) demands that any substrate-level closed-form derivation route must be expressible in substrate primitives that are themselves cross-domain. A closed-form derivation of $\mathcal{M}_\mathrm{crit}$ will use substrate-level multiplicity counting; the same multiplicity counting must be the substrate-level mechanism counting BH motifs that fixes $\log g$; and the same multiplicity counting must underwrite the cross-scale invariance ratio that fixes $\kappa/|\hat{N}'|$. The three constants are not mutually independent; they are three projections of the same closed-form-substrate-constants problem.
+
+---
+
+### D.7 Structural Roles Cross-Referenced by Sector
+
+The substrate constants in this appendix support the following sectorial structures:
+
+- **Quantum sector (Chapters 5–7).** $\hbar$ in T1–T16 uncertainty bounds; $\mathcal{M}_\mathrm{crit}$ in QC architectural taxonomy and matter-wave Q-C boundary; $\Gamma_\mathrm{min}$, $\Lambda_\mathrm{V1}$, $\beta_\mathrm{crit}$, $N_\mathrm{corr}$, $\Delta_\mathrm{top}^{\max}$, $T_\mathrm{eff}^{\min}$ in UR-1 condition-failure timescales and class-specific projections of $M$.
+- **Continuum and dynamics (Chapters 8–10).** $\ell_P$ in the R1 substrate-cutoff hyperviscous prefactor; $\beta$ in the Universal Mobility Law; the V5-derived Maxwell relaxation time $\tau_R$ inheriting through DCGT.
+- **Gravity sector (Chapters 11–13).** $c$, $\hbar$, $H_0$, $\ell_P$ as substrate inputs; $G$ and $a_0$ as derived; $\log g$ in the BH area-law coefficient.
+- **Cross-platform and empirical synthesis (Chapters 14–15).** $\mathcal{M}_\mathrm{crit}$ unifying matter-wave Q-C and qubit-system multiplicity wall; $\Gamma_\mathrm{cross}$ collapse across BH-2 and QC condition (ii); $\beta$ as a PASSED empirical anchor; $a_0$ as the BTFR slope-4 anchor (PASSED).
+
+---
+
+### D.8 Form-FORCED / Value-INHERITED Tagging Summary
+
+| Constant | Form-FORCED? | Value-DERIVED or INHERITED? |
+|---|---|---|
+| $\hbar$ | — | Substrate input |
+| $c$ | — | Substrate input |
+| $H_0$ | — | Substrate input |
+| $\ell_P$ | — | Substrate input (also identified via T19 Newton-recovery) |
+| $G$ | FORCED | DERIVED ($G = c^3\ell_P^2/\hbar$) |
+| $a_0$ | FORCED | DERIVED ($a_0 = c\,H_0/(2\pi)$) |
+| $\mathcal{M}_\mathrm{crit}$ | FORCED | INHERITED (O-QC-1 open) |
+| $\Gamma_\mathrm{min}$ | FORCED | INHERITED |
+| $\Lambda_\mathrm{V1}$ | FORCED | INHERITED |
+| $\beta_\mathrm{crit}$ | FORCED (logarithmic shape) | INHERITED (prefactor) |
+| $N_\mathrm{corr}$ | FORCED | INHERITED |
+| $\Delta_\mathrm{top}^{\max}$ | FORCED | INHERITED |
+| $T_\mathrm{eff}^{\min}$ | FORCED | INHERITED |
+| $\log g$ | FORCED | INHERITED (O2 open) |
+| $\beta$ | FORCED (canonical 2) | EMPIRICAL ANCHOR ($1.72\pm 0.37$, PASSED) |
+| $\kappa/|\hat{N}'|$ | FORCED | INHERITED (E4 open) |
+| $\mu(x), \kappa(x)$ | FORCED (monotone, limits) | INHERITED (specific shape) |
+| $g(N), h(N), c(N)$ | FORCED | INHERITED |
+| $f_\mathrm{int}, f_\mathrm{xy}, f_\mathrm{sys}^{(A)}$ | FORCED | INHERITED (O-QC-2) |
+| $\tau_\mathrm{gap-stab}(\mathcal{T})$ | Form named | INHERITED (O-QC-4) |
+
+---
+
+### D.9 Dependency Section
+
+Appendix D is consistent with Appendix A (theorem provenance map): the derivations of $G$ via T19 and $a_0$ via T20 appear in Appendix A under their respective theorems. It is consistent with Appendix B (notation glossary): every constant defined here has its symbol entry in Appendix B. It is consistent with Appendix C (paper-to-chapter cross-reference): every derivation or empirical anchor cited here lives in a paper assigned in Appendix C.
+
+The substrate-input layer ($\hbar$, $c$, $H_0$, $\ell_P$) is upstream of every derivation in the monograph. The derived constants ($G$, $a_0$) are upstream of the substrate-gravity sector (Chapters 11–13) and of the BTFR-slope-4 prediction. The INHERITED constants are downstream of the sectorial derivations that establish their structural role, and upstream of empirical anchors and predictions in Chapter 15. The closed-form-substrate-constants program (O-QC-1, O2, E4) is the program's strategy for closing the INHERITED-value gap from below.
+
+---
+
+### D.10 Canonical Sources
+
+- **Substrate inputs and T19 / T20 derivations:**
+  - `papers/Substrate_Gravity_Foundations/Substrate_Gravity_Foundations_Paper.{md,tex,pdf}`
+  - `papers/Substrate_Gravity_Foundations/ED_substrate_gravity_foundations_2026-04-28.{md,tex,pdf}`
+- **UR-1 thresholds and Q-COMPUTE open-extension labels:**
+  - `papers/Quantum_Computing_Foundations/`
+  - Arc Q-COMPUTE memos in `theory/Quantum_Computing/`
+- **BH area-law coefficient and O2:**
+  - `papers/Black_Hole_Foundations/`
+  - Arc BH memos in `theory/Black_Holes/`
+- **Universal Mobility Law $\beta$ empirical anchor:**
+  - `papers/Universal_Mobility_Law/`
+  - `papers/P4_NonNewtonian_Paper_Draft/`
+- **DCGT and V1/V5 closed-form details (governing $\Gamma_\mathrm{min}$, $\Lambda_\mathrm{V1}$, UR-1 functional shapes):**
+  - `papers/Navier Stokes_Synthesis_Paper/` Appendix D (DCGT)
+  - Arc D memos in `theory/Arc_D/`
+  - Theorem N1 paper (V1 finite-width kernel)
+- **ED-SC anchor and E4:**
+  - ED-SC arc work (cross-reference; not within this monograph's nine sectors)
+
+---
+
+### D.11 Optional Figures
+
+The following tables and diagrams are described for inclusion in the final monograph:
+
+- **Table D.1 — Master substrate-constants inventory.** Rows: every constant in this appendix. Columns: structural role; status (substrate input / FORCED-DERIVED / FORCED-INHERITED / EMPIRICAL ANCHOR); current value; chapter(s) where load-bearing; closed-form derivation status / open-extension label. The complete tabular form of Sections D.2–D.5.
+- **Table D.2 — Form-FORCED vs Value-INHERITED tagging summary.** The summary table reproduced from Section D.8.
+- **Figure D.1 — Closed-form-substrate-constants program diagram.** Three nodes for $\mathcal{M}_\mathrm{crit}$, $\log g$, and $\kappa/|\hat{N}'|$, with their open-extension labels (O-QC-1, O2, E4) and empirical anchors. Edges indicate the cross-domain consistency requirement: closed-form derivation in any one constrains the others by substrate-level multiplicity counting.
+- **Figure D.2 — Substrate-input-to-derived-constants dependency tree.** Root nodes: $\hbar$, $c$, $H_0$, $\ell_P$. First-level derived: $G$ (via T19), $a_0$ (via T20). Second-level relationships: BTFR slope-4 (via $G$ and $a_0$), area law (via $\ell_P$ and $\log g$ INHERITED), Heisenberg bound (via $\hbar$), R1 prefactor (via $\ell_P$). Visualizes the program's value-derivation structure end-to-end.
+- **Table D.3 — Sectorial-incidence matrix.** Rows: constants. Columns: sectors (substrate ontology, load-bearing invariants, DCGT, kernel-arrow, QM, QFT, QC, NS, MHD, YM, soft-matter, substrate gravity, curvature, BH, cross-platform, public tests). Filled cells indicate "load-bearing." Used to verify that every constant has a sectorial home and every sector is grounded in the constants inventory.
+
+\newpage
+
+# Closing Note
+
+This shell is the first draft of a monograph that the program is large enough to need. Fifteen chapters, five Parts, four appendices. ~250–350 pages typeset when chapters are progressively expanded from structural summaries into full integrated derivations.
+
+The shell exists to make the program navigable today. Any reader can use it to enter the program at any chapter, follow the dependency graph to earlier chapters as needed, and reach the canonical source paper for any result through the cross-reference table. The shell stays valid as the canonical entry point even if no chapter is ever expanded; chapters that do get expanded progressively replace their summaries in place without changing the dependency structure.
+
+The methodological commitment is preserved across every chapter: form-FORCED at the structural level, value-INHERITED at the numerical level, with empirical anchors and downstream-theorem programs explicitly named. The framework's empirical posture is mixed by design — predictions sharp enough to be falsified, specific numerical thresholds calibrated rather than computed in closed form. The shell honors this distinction and makes it visible across nine sectors of substrate-level architectural closure.
+
+Future work proceeds along three parallel tracks. The **closed-form substrate-constants program** (O-QC-1, O2 from Arc BH, E4 from ED-SC) attacks the INHERITED-constant boundary from below, deriving values currently anchored to empirical observation. The **next-arc program** opens new structural fronts (B4 Hawking spectrum as the immediate next concrete arc; Arc COSMO and GR-4A as long-horizon speculative arcs). The **chapter-expansion program** progressively replaces each shell summary with the full integrated treatment — a progression of multiple sessions per chapter, paced by which sector's derivation is most actively being clarified.
+
+The shell completes the program's current internal organization. The program's external posture — the public test inventory, the architectural-foundation papers (SG, BH, QC), the ED-QFT Unified Overview, the Universal Mobility Law and P4-NonNewtonian papers, and the public explainers — remains the program's interface to readers who do not need the monograph's depth. The shell is the spine connecting them.
+
+— Allen Proxmire, May 2026

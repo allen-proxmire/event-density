@@ -1,0 +1,116 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" font-size="14" font-weight="bold">Figure 1.4 — Primitives P01–P13 grouped by structural role</text>
+
+  <!-- Four cluster boxes -->
+  <!-- Cluster 1: Event-structural -->
+  <rect x="40" y="60" width="200" height="200" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="140" y="84" text-anchor="middle" font-weight="bold" fill="#1a4f8b">Event-structural</text>
+  <g fill="#fff" stroke="#1a4f8b" stroke-width="1.2">
+    <rect x="60" y="100" width="70" height="28" rx="3"/>
+    <rect x="150" y="100" width="70" height="28" rx="3"/>
+    <rect x="60" y="140" width="70" height="28" rx="3"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-weight="bold">
+    <text x="95" y="119">P01</text>
+    <text x="185" y="119">P02</text>
+    <text x="95" y="159">P13</text>
+  </g>
+  <text x="140" y="195" text-anchor="middle" font-size="11" fill="#444">discreteness, chains,</text>
+  <text x="140" y="210" text-anchor="middle" font-size="11" fill="#444">proper-time ordering</text>
+  <text x="140" y="240" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ T18, T1–T16, N1</text>
+
+  <!-- Cluster 2: Participation / bandwidth -->
+  <rect x="260" y="60" width="200" height="200" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="360" y="84" text-anchor="middle" font-weight="bold" fill="#1a4f8b">Participation / bandwidth</text>
+  <g fill="#fff" stroke="#1a4f8b" stroke-width="1.2">
+    <rect x="280" y="100" width="70" height="28" rx="3"/>
+    <rect x="370" y="100" width="70" height="28" rx="3"/>
+    <rect x="280" y="140" width="70" height="28" rx="3"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-weight="bold">
+    <text x="315" y="119">P04</text>
+    <text x="405" y="119">P05</text>
+    <text x="315" y="159">P06</text>
+  </g>
+  <text x="360" y="195" text-anchor="middle" font-size="11" fill="#444">bandwidth update,</text>
+  <text x="360" y="210" text-anchor="middle" font-size="11" fill="#444">multiplicity, finite kernels</text>
+  <text x="360" y="240" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ T1–T16, DCGT, UR-1</text>
+
+  <!-- Cluster 3: Commitment -->
+  <rect x="480" y="60" width="200" height="200" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="580" y="84" text-anchor="middle" font-weight="bold" fill="#1a4f8b">Commitment</text>
+  <g fill="#fff" stroke="#1a4f8b" stroke-width="1.2">
+    <rect x="500" y="100" width="70" height="28" rx="3"/>
+    <rect x="590" y="100" width="70" height="28" rx="3"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-weight="bold">
+    <text x="535" y="119">P11</text>
+    <text x="625" y="119">P07</text>
+  </g>
+  <text x="580" y="195" text-anchor="middle" font-size="11" fill="#444">irreversibility,</text>
+  <text x="580" y="210" text-anchor="middle" font-size="11" fill="#444">commitment-injection</text>
+  <text x="580" y="240" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ T18, measurement, UR-1</text>
+
+  <!-- Cluster 4: Substrate-locality / structure -->
+  <rect x="700" y="60" width="160" height="200" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="780" y="84" text-anchor="middle" font-weight="bold" fill="#1a4f8b">Substrate-locality</text>
+  <g fill="#fff" stroke="#1a4f8b" stroke-width="1.2">
+    <rect x="715" y="100" width="60" height="28" rx="3"/>
+    <rect x="785" y="100" width="60" height="28" rx="3"/>
+    <rect x="715" y="140" width="60" height="28" rx="3"/>
+    <rect x="785" y="140" width="60" height="28" rx="3"/>
+    <rect x="750" y="180" width="60" height="28" rx="3"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-weight="bold">
+    <text x="745" y="119">P03</text>
+    <text x="815" y="119">P08</text>
+    <text x="745" y="159">P09</text>
+    <text x="815" y="159">P10</text>
+    <text x="780" y="199">P12</text>
+  </g>
+  <text x="780" y="232" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ T17, GR1, DCGT</text>
+
+  <!-- Downstream theorem family bar -->
+  <text x="450" y="320" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">Downstream theorem families</text>
+
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="60" y="345" width="170" height="44" rx="4"/>
+    <rect x="250" y="345" width="170" height="44" rx="4"/>
+    <rect x="440" y="345" width="170" height="44" rx="4"/>
+    <rect x="630" y="345" width="170" height="44" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-weight="bold">
+    <text x="145" y="372">QM closure (T1–T16)</text>
+    <text x="335" y="372">Kernel-arrow (T18, N1)</text>
+    <text x="525" y="372">Gauge / QC (T17, UR-1)</text>
+    <text x="715" y="372">Gravity (T19–T21, ECR)</text>
+  </g>
+
+  <!-- Connecting arrows from clusters to families -->
+  <g stroke="#888" stroke-width="1.2" fill="none" marker-end="url(#arr)">
+    <line x1="140" y1="260" x2="145" y2="345"/>
+    <line x1="140" y1="260" x2="335" y2="345"/>
+    <line x1="360" y1="260" x2="145" y2="345"/>
+    <line x1="360" y1="260" x2="525" y2="345"/>
+    <line x1="580" y1="260" x2="335" y2="345"/>
+    <line x1="580" y1="260" x2="525" y2="345"/>
+    <line x1="780" y1="260" x2="525" y2="345"/>
+    <line x1="780" y1="260" x2="715" y2="345"/>
+    <line x1="360" y1="260" x2="715" y2="345"/>
+  </g>
+
+  <!-- Note panel -->
+  <rect x="60" y="430" width="780" height="130" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="455" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the grouping</text>
+  <text x="80" y="480" font-size="11" fill="#444">• Event-structural primitives commit the substrate to discrete, chain-organized, proper-time-ordered events.</text>
+  <text x="80" y="498" font-size="11" fill="#444">• Participation / bandwidth primitives commit it to bounded-bandwidth update with multiplicity and finite-width kernels.</text>
+  <text x="80" y="516" font-size="11" fill="#444">• Commitment primitives commit it to irreversibility of recording (the substrate-level mechanism behind measurement).</text>
+  <text x="80" y="534" font-size="11" fill="#444">• Substrate-locality primitives constrain how participation rules connect adjacent regions.</text>
+  <text x="80" y="552" font-size="11" fill="#444" font-style="italic">P04 and P11 feed multiple downstream families and are the heaviest-load primitives.</text>
+</svg>

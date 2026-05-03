@@ -1,0 +1,79 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <marker id="arrU" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,10 L5,0 L10,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 10.3 — Mechanism-clustered scatter in β across UDM systems</text>
+  <text x="450" y="50" text-anchor="middle" font-size="11" fill="#666" font-style="italic">scatter is not random — it groups by underlying microstructural mechanism</text>
+
+  <!-- Plot area -->
+  <line x1="100" y1="80" x2="100" y2="450" stroke="#444" stroke-width="1.5" marker-end="url(#arrU)"/>
+  <text x="60" y="84" font-size="11" fill="#444" text-anchor="middle">β</text>
+
+  <!-- Y ticks -->
+  <g stroke="#444" stroke-width="1">
+    <line x1="95" y1="430" x2="100" y2="430"/>
+    <line x1="95" y1="345" x2="100" y2="345"/>
+    <line x1="95" y1="260" x2="100" y2="260"/>
+    <line x1="95" y1="175" x2="100" y2="175"/>
+  </g>
+  <g text-anchor="end" font-size="10" fill="#666">
+    <text x="92" y="434">0</text>
+    <text x="92" y="349">1</text>
+    <text x="92" y="264">2</text>
+    <text x="92" y="179">3</text>
+  </g>
+
+  <line x1="100" y1="430" x2="820" y2="430" stroke="#444" stroke-width="1.5" marker-end="url(#arrR)"/>
+  <text x="450" y="475" text-anchor="middle" font-size="11" fill="#444">mechanism cluster</text>
+
+  <!-- Three cluster columns -->
+  <!-- Cluster 1: Hydrodynamic-dominated (left, around x=240) — high β near 2 -->
+  <rect x="160" y="220" width="160" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1" opacity="0.5"/>
+  <text x="240" y="448" text-anchor="middle" font-weight="bold" font-size="11" fill="#1a4f8b">hydrodynamic-</text>
+  <text x="240" y="461" text-anchor="middle" font-size="11" fill="#1a4f8b">dominated</text>
+
+  <!-- Data points: β ≈ 1.95, 2.00, 2.10 -->
+  <circle cx="200" cy="265" r="6" fill="#1a4f8b"/>
+  <circle cx="240" cy="260" r="6" fill="#1a4f8b"/>
+  <circle cx="280" cy="252" r="6" fill="#1a4f8b"/>
+  <text x="240" y="195" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">β ≈ 2 cluster mean</text>
+
+  <!-- Cluster 2: Mixed (middle, x=460) — β around 1.7-1.85 -->
+  <rect x="380" y="265" width="160" height="50" fill="#fff4e0" stroke="#a05a00" stroke-width="1" opacity="0.5"/>
+  <text x="460" y="448" text-anchor="middle" font-weight="bold" font-size="11" fill="#a05a00">mixed regime</text>
+
+  <!-- Data points: β ≈ 1.78, 1.85, 1.65 -->
+  <circle cx="420" cy="282" r="6" fill="#a05a00"/>
+  <circle cx="460" cy="280" r="6" fill="#a05a00"/>
+  <circle cx="500" cy="290" r="6" fill="#a05a00"/>
+  <text x="460" y="240" text-anchor="middle" font-size="10" fill="#a05a00" font-style="italic">β ≈ 1.7 cluster mean</text>
+
+  <!-- Cluster 3: Friction/contact-dominated (right, x=680) — β ≈ 1.4-1.6 -->
+  <rect x="600" y="295" width="160" height="50" fill="#f0e8ff" stroke="#5a2090" stroke-width="1" opacity="0.5"/>
+  <text x="680" y="448" text-anchor="middle" font-weight="bold" font-size="11" fill="#5a2090">friction-/contact-</text>
+  <text x="680" y="461" text-anchor="middle" font-size="11" fill="#5a2090">dominated</text>
+
+  <!-- Data points: β ≈ 1.40, 1.50, 1.55, 1.62 -->
+  <circle cx="640" cy="311" r="6" fill="#5a2090"/>
+  <circle cx="670" cy="304" r="6" fill="#5a2090"/>
+  <circle cx="700" cy="298" r="6" fill="#5a2090"/>
+  <circle cx="730" cy="318" r="6" fill="#5a2090"/>
+  <text x="680" y="270" text-anchor="middle" font-size="10" fill="#5a2090" font-style="italic">β ≈ 1.5 cluster mean</text>
+
+  <!-- Reference lines -->
+  <line x1="100" y1="260" x2="820" y2="260" stroke="#1a4f8b" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="830" y="264" font-size="10" fill="#1a4f8b">β = 2</text>
+
+  <!-- Footer -->
+  <rect x="40" y="495" width="820" height="85" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="518" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the clustering</text>
+  <text x="60" y="540" font-size="11" fill="#444">Scatter in β is not random; systems group by which microstructural mechanism dominates the mobility law.</text>
+  <text x="60" y="558" font-size="11" fill="#444">Hydrodynamic-dominated systems sit closest to canonical β = 2; friction/contact-dominated systems shift to β ≈ 1.5.</text>
+  <text x="60" y="576" font-size="11" fill="#444" font-style="italic">Closed-form correction route: substrate-level participation-rule modification under contact mechanisms (downstream work).</text>
+</svg>

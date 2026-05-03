@@ -1,0 +1,87 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 7.6 — Cross-platform identity: matter-wave Q-C boundary ↔ qubit multiplicity wall</text>
+
+  <!-- Two side-by-side platforms -->
+
+  <!-- LEFT: Matter-wave interferometry -->
+  <rect x="40" y="60" width="370" height="280" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="225" y="86" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Matter-wave interferometry</text>
+  <text x="225" y="104" text-anchor="middle" font-size="11" fill="#444" font-style="italic">large molecule diffraction</text>
+  <line x1="55" y1="115" x2="395" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <!-- Schematic: source → grating → detector -->
+  <g fill="#1a4f8b">
+    <rect x="60" y="155" width="30" height="40" rx="2"/>
+  </g>
+  <text x="75" y="215" text-anchor="middle" font-size="10" fill="#444">source</text>
+  <line x1="90" y1="175" x2="180" y2="175" stroke="#444" stroke-width="1"/>
+  <line x1="180" y1="155" x2="180" y2="195" stroke="#1a4f8b" stroke-width="3"/>
+  <line x1="180" y1="160" x2="180" y2="170" stroke="#fff" stroke-width="1"/>
+  <line x1="180" y1="180" x2="180" y2="190" stroke="#fff" stroke-width="1"/>
+  <text x="180" y="215" text-anchor="middle" font-size="10" fill="#444">grating</text>
+  <line x1="180" y1="175" x2="380" y2="155" stroke="#444" stroke-width="0.8"/>
+  <line x1="180" y1="175" x2="380" y2="195" stroke="#444" stroke-width="0.8"/>
+  <line x1="180" y1="175" x2="380" y2="175" stroke="#444" stroke-width="0.8"/>
+  <line x1="380" y1="155" x2="380" y2="195" stroke="#1a4f8b" stroke-width="3"/>
+  <text x="380" y="215" text-anchor="middle" font-size="10" fill="#444">detector</text>
+
+  <text x="225" y="252" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Failure threshold:</text>
+  <text x="225" y="272" text-anchor="middle" font-size="11" fill="#444">large molecule mass</text>
+  <text x="225" y="290" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">M_mol ≈ 140–250 kDa</text>
+  <text x="225" y="312" text-anchor="middle" font-size="11" fill="#444" font-style="italic">interference fringes vanish</text>
+  <text x="225" y="328" text-anchor="middle" font-size="10" fill="#666" font-style="italic">two-point Q-C extrapolation</text>
+
+  <!-- RIGHT: Qubit array -->
+  <rect x="490" y="60" width="370" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="675" y="86" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Qubit-system multiplicity wall</text>
+  <text x="675" y="104" text-anchor="middle" font-size="11" fill="#444" font-style="italic">SC qubit / trapped ion array</text>
+  <line x1="505" y1="115" x2="845" y2="115" stroke="#a05a00" stroke-width="0.8"/>
+
+  <!-- Schematic: qubit array growing in size -->
+  <g fill="#a05a00" stroke="#a05a00" stroke-width="1.5">
+    <circle cx="540" cy="175" r="8"/>
+    <circle cx="565" cy="175" r="8"/>
+    <circle cx="590" cy="175" r="8"/>
+    <circle cx="615" cy="175" r="8"/>
+    <circle cx="640" cy="175" r="8"/>
+    <circle cx="665" cy="175" r="8"/>
+    <circle cx="690" cy="175" r="8"/>
+    <circle cx="715" cy="175" r="8"/>
+    <circle cx="740" cy="175" r="8"/>
+    <circle cx="765" cy="175" r="8"/>
+    <circle cx="790" cy="175" r="8"/>
+  </g>
+  <line x1="540" y1="200" x2="790" y2="200" stroke="#444" stroke-width="0.8" marker-end="url(#arr)"/>
+  <text x="665" y="217" text-anchor="middle" font-size="10" fill="#444">growing N_qubits</text>
+
+  <text x="675" y="252" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">Failure threshold:</text>
+  <text x="675" y="272" text-anchor="middle" font-size="11" fill="#444">qubit count + connectivity</text>
+  <text x="675" y="290" text-anchor="middle" font-size="13" fill="#1a4f8b" font-weight="bold">N_qubits beyond Class A wall</text>
+  <text x="675" y="312" text-anchor="middle" font-size="11" fill="#444" font-style="italic">coherent rule-spanning fails</text>
+  <text x="675" y="328" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Class A operating ceiling</text>
+
+  <!-- Identity bridge: shared 𝓜_crit -->
+  <rect x="180" y="380" width="540" height="140" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="410" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">Same substrate threshold:  𝓜_crit</text>
+  <line x1="200" y1="420" x2="700" y2="420" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="445" text-anchor="middle" fill="#fff" font-size="12">Different platforms; one INHERITED critical multiplicity</text>
+  <text x="450" y="465" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">M_mol  ↔  N_qubits  ↔  internal-mode count of 𝓢</text>
+  <text x="450" y="485" text-anchor="middle" fill="#fff" font-size="11">Closed-form derivation: O-QC-1</text>
+  <text x="450" y="505" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">a single value pins both empirical thresholds</text>
+
+  <!-- Connecting arrows from each platform to the identity panel -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="225" y1="340" x2="320" y2="380"/>
+    <line x1="675" y1="340" x2="580" y2="380"/>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="555" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Two domain-specific phenomena are one substrate object evaluated on different system definitions 𝓢.</text>
+  <text x="450" y="572" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Form-FORCED identity; absolute scale 𝓜_crit value-INHERITED — a target of the closed-form-substrate-constants program.</text>
+</svg>

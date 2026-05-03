@@ -1,12 +1,11 @@
-# Foundations of Substrate Gravity
-## From Newtonian Limit to Curvature Emergence in the Event Density Framework
-
-**Allen Proxmire**
-**Collaborator:** Claude (AI collaborator)
-**April 2026**
-**Series:** Event-Density Foundational Theorems — Substrate Gravity Foundations
-
 ---
+title: |
+  Foundations of Substrate Gravity\
+  \large From Newtonian Limit to Curvature Emergence in the Event Density Framework
+author: Allen Proxmire
+date: April 2026
+---
+
 
 ## Abstract
 

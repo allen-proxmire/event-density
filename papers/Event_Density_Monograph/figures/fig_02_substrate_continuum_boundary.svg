@@ -1,0 +1,84 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrowup" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,10 L5,0 L10,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="24" text-anchor="middle" font-size="14" font-weight="bold">Figure 1.2 — The substrate / continuum boundary</text>
+
+  <!-- Above-line region (continuum) -->
+  <text x="450" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">Continuum (emergent)</text>
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="40"  y="80"  width="135" height="32" rx="4"/>
+    <rect x="190" y="80"  width="135" height="32" rx="4"/>
+    <rect x="340" y="80"  width="135" height="32" rx="4"/>
+    <rect x="490" y="80"  width="135" height="32" rx="4"/>
+    <rect x="640" y="80"  width="135" height="32" rx="4"/>
+    <rect x="40"  y="125" width="135" height="32" rx="4"/>
+    <rect x="190" y="125" width="135" height="32" rx="4"/>
+    <rect x="340" y="125" width="135" height="32" rx="4"/>
+    <rect x="490" y="125" width="135" height="32" rx="4"/>
+    <rect x="640" y="125" width="135" height="32" rx="4"/>
+    <rect x="265" y="170" width="170" height="32" rx="4"/>
+    <rect x="455" y="170" width="170" height="32" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-size="12">
+    <text x="107.5" y="100">smooth spacetime</text>
+    <text x="257.5" y="100">fields</text>
+    <text x="407.5" y="100">particles</text>
+    <text x="557.5" y="100">Schrödinger eq.</text>
+    <text x="707.5" y="100">Maxwell eqs.</text>
+    <text x="107.5" y="145">Yang–Mills eq.</text>
+    <text x="257.5" y="145">Navier–Stokes</text>
+    <text x="407.5" y="145">mod. Poisson</text>
+    <text x="557.5" y="145">acoustic metric</text>
+    <text x="707.5" y="145">BH horizons</text>
+    <text x="350" y="190">(continuum equations)</text>
+    <text x="540" y="190">(continuum objects)</text>
+  </g>
+
+  <!-- DCGT bridge line -->
+  <line x1="40" y1="305" x2="860" y2="305" stroke="#1a4f8b" stroke-width="2.5"/>
+  <rect x="280" y="290" width="340" height="30" fill="#1a4f8b" stroke="#1a4f8b"/>
+  <text x="450" y="310" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">DCGT and non-Abelian generalizations (Chapters 3, 9)</text>
+
+  <!-- Upward arrows passing through line (continuum derives from substrate) -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrowup)">
+    <line x1="100" y1="380" x2="100" y2="160"/>
+    <line x1="220" y1="380" x2="220" y2="160"/>
+    <line x1="340" y1="380" x2="340" y2="160"/>
+    <line x1="460" y1="380" x2="460" y2="160"/>
+    <line x1="580" y1="380" x2="580" y2="160"/>
+    <line x1="700" y1="380" x2="700" y2="160"/>
+    <line x1="800" y1="380" x2="800" y2="160"/>
+  </g>
+
+  <!-- Below-line region (substrate) -->
+  <text x="450" y="410" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">Substrate (irreducible)</text>
+  <g fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="40"  y="430" width="240" height="32" rx="4"/>
+    <rect x="295" y="430" width="270" height="32" rx="4"/>
+    <rect x="580" y="430" width="280" height="32" rx="4"/>
+    <rect x="40"  y="475" width="240" height="32" rx="4"/>
+    <rect x="295" y="475" width="270" height="32" rx="4"/>
+    <rect x="580" y="475" width="280" height="32" rx="4"/>
+    <rect x="40"  y="520" width="240" height="32" rx="4"/>
+    <rect x="295" y="520" width="270" height="32" rx="4"/>
+    <rect x="580" y="520" width="280" height="32" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-size="12">
+    <text x="160" y="450">Primitives P01–P13</text>
+    <text x="430" y="450">ρ  (participation density)</text>
+    <text x="720" y="450">∇ρ  (density gradient)</text>
+    <text x="160" y="495">σ  (gradient sparsity)</text>
+    <text x="430" y="495">𝓜  (multiplicity)</text>
+    <text x="720" y="495">Γ_cross  (cross-bandwidth)</text>
+    <text x="160" y="540">Λ  (commitment-injection)</text>
+    <text x="430" y="540">𝓤  (unresolvedness)</text>
+    <text x="720" y="540">V1, V5  (kernels)</text>
+  </g>
+
+  <!-- Footer note: no downward arrows -->
+  <text x="450" y="585" text-anchor="middle" font-size="11" fill="#666" font-style="italic">All arrows point upward. The framework does not derive primitives from the continuum.</text>
+</svg>

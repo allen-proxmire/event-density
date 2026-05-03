@@ -1,0 +1,117 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Table C.3 — Repository-cluster summary</text>
+  <text x="450" y="40" text-anchor="middle" font-size="10" fill="#666" font-style="italic">items per chapter across papers/ , theory/ , arcs/ subtrees</text>
+
+  <!-- Headers -->
+  <g fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="40" y="55" width="320" height="32"/>
+    <rect x="360" y="55" width="160" height="32"/>
+    <rect x="520" y="55" width="160" height="32"/>
+    <rect x="680" y="55" width="180" height="32"/>
+  </g>
+  <g text-anchor="middle" fill="#fff" font-weight="bold" font-size="12">
+    <text x="200" y="76">Chapter</text>
+    <text x="440" y="76">papers/</text>
+    <text x="600" y="76">theory/</text>
+    <text x="770" y="76">arcs/  +  external</text>
+  </g>
+
+  <!-- Rows -->
+  <g fill="#fff" stroke="#888" stroke-width="1">
+    <rect x="40" y="87" width="320" height="32"/><rect x="360" y="87" width="160" height="32"/><rect x="520" y="87" width="160" height="32"/><rect x="680" y="87" width="180" height="32"/>
+    <rect x="40" y="119" width="320" height="32"/><rect x="360" y="119" width="160" height="32"/><rect x="520" y="119" width="160" height="32"/><rect x="680" y="119" width="180" height="32"/>
+    <rect x="40" y="151" width="320" height="32"/><rect x="360" y="151" width="160" height="32"/><rect x="520" y="151" width="160" height="32"/><rect x="680" y="151" width="180" height="32"/>
+    <rect x="40" y="183" width="320" height="32"/><rect x="360" y="183" width="160" height="32"/><rect x="520" y="183" width="160" height="32"/><rect x="680" y="183" width="180" height="32"/>
+    <rect x="40" y="215" width="320" height="32"/><rect x="360" y="215" width="160" height="32"/><rect x="520" y="215" width="160" height="32"/><rect x="680" y="215" width="180" height="32"/>
+    <rect x="40" y="247" width="320" height="32"/><rect x="360" y="247" width="160" height="32"/><rect x="520" y="247" width="160" height="32"/><rect x="680" y="247" width="180" height="32"/>
+    <rect x="40" y="279" width="320" height="32"/><rect x="360" y="279" width="160" height="32"/><rect x="520" y="279" width="160" height="32"/><rect x="680" y="279" width="180" height="32"/>
+    <rect x="40" y="311" width="320" height="32"/><rect x="360" y="311" width="160" height="32"/><rect x="520" y="311" width="160" height="32"/><rect x="680" y="311" width="180" height="32"/>
+    <rect x="40" y="343" width="320" height="32"/><rect x="360" y="343" width="160" height="32"/><rect x="520" y="343" width="160" height="32"/><rect x="680" y="343" width="180" height="32"/>
+    <rect x="40" y="375" width="320" height="32"/><rect x="360" y="375" width="160" height="32"/><rect x="520" y="375" width="160" height="32"/><rect x="680" y="375" width="180" height="32"/>
+    <rect x="40" y="407" width="320" height="32"/><rect x="360" y="407" width="160" height="32"/><rect x="520" y="407" width="160" height="32"/><rect x="680" y="407" width="180" height="32"/>
+    <rect x="40" y="439" width="320" height="32"/><rect x="360" y="439" width="160" height="32"/><rect x="520" y="439" width="160" height="32"/><rect x="680" y="439" width="180" height="32"/>
+    <rect x="40" y="471" width="320" height="32"/><rect x="360" y="471" width="160" height="32"/><rect x="520" y="471" width="160" height="32"/><rect x="680" y="471" width="180" height="32"/>
+    <rect x="40" y="503" width="320" height="32"/><rect x="360" y="503" width="160" height="32"/><rect x="520" y="503" width="160" height="32"/><rect x="680" y="503" width="180" height="32"/>
+    <rect x="40" y="535" width="320" height="32"/><rect x="360" y="535" width="160" height="32"/><rect x="520" y="535" width="160" height="32"/><rect x="680" y="535" width="180" height="32"/>
+  </g>
+
+  <g font-size="11">
+    <text x="55" y="107" fill="#444">Ch. 1 — Substrate Ontology</text>
+    <text x="440" y="107" text-anchor="middle" fill="#1a4f8b" font-weight="bold">3</text>
+    <text x="600" y="107" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="107" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="139" fill="#444">Ch. 2 — Load-Bearing Invariants</text>
+    <text x="440" y="139" text-anchor="middle" fill="#1a4f8b" font-weight="bold">4 (ED-I)</text>
+    <text x="600" y="139" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="139" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="171" fill="#444">Ch. 3 — DCGT</text>
+    <text x="440" y="171" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2</text>
+    <text x="600" y="171" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (Arc D)</text>
+    <text x="770" y="171" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="203" fill="#444">Ch. 4 — Kernel-Arrow</text>
+    <text x="440" y="203" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2</text>
+    <text x="600" y="203" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="203" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (arc-B)</text>
+
+    <text x="55" y="235" fill="#444">Ch. 5 — Phase-1 QM</text>
+    <text x="440" y="235" text-anchor="middle" fill="#1a4f8b" font-weight="bold">8 (incl. U1–U5)</text>
+    <text x="600" y="235" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="235" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="267" fill="#444">Ch. 6 — Form-Level QFT</text>
+    <text x="440" y="267" text-anchor="middle" fill="#1a4f8b" font-weight="bold">3</text>
+    <text x="600" y="267" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="267" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 ED-I</text>
+
+    <text x="55" y="299" fill="#444">Ch. 7 — Quantum Computation</text>
+    <text x="440" y="299" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1</text>
+    <text x="600" y="299" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (Q-COMPUTE)</text>
+    <text x="770" y="299" text-anchor="middle" fill="#1a4f8b" font-weight="bold">3 ED-I</text>
+
+    <text x="55" y="331" fill="#444">Ch. 8 — Navier–Stokes</text>
+    <text x="440" y="331" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (main)</text>
+    <text x="600" y="331" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (Arc NS)</text>
+    <text x="770" y="331" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 ED-I</text>
+
+    <text x="55" y="363" fill="#444">Ch. 9 — MHD + Yang–Mills</text>
+    <text x="440" y="363" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2 (App. C, E)</text>
+    <text x="600" y="363" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (Arc YM)</text>
+    <text x="770" y="363" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="395" fill="#444">Ch. 10 — Soft-matter mobility</text>
+    <text x="440" y="395" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2</text>
+    <text x="600" y="395" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="395" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="427" fill="#444">Ch. 11 — Substrate Gravity</text>
+    <text x="440" y="427" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2</text>
+    <text x="600" y="427" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="427" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="459" fill="#444">Ch. 12 — Curvature Emergence</text>
+    <text x="440" y="459" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1</text>
+    <text x="600" y="459" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (Arc ED-10)</text>
+    <text x="770" y="459" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="491" fill="#444">Ch. 13 — Black-Hole Architecture</text>
+    <text x="440" y="491" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1</text>
+    <text x="600" y="491" text-anchor="middle" fill="#1a4f8b" font-weight="bold">1 (Arc BH)</text>
+    <text x="770" y="491" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="523" fill="#444">Ch. 14 — Cross-Platform Unifications</text>
+    <text x="440" y="523" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2</text>
+    <text x="600" y="523" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="523" text-anchor="middle" fill="#666">0</text>
+
+    <text x="55" y="555" fill="#444">Ch. 15 — Public Test Inventory</text>
+    <text x="440" y="555" text-anchor="middle" fill="#666">0</text>
+    <text x="600" y="555" text-anchor="middle" fill="#666">0</text>
+    <text x="770" y="555" text-anchor="middle" fill="#1a4f8b" font-weight="bold">2 (Desktop, docs)</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="585" text-anchor="middle" font-size="10" fill="#666" font-style="italic">every chapter has at least one publication-grade source; arc-closure subtrees feed papers/ via Figure C.1</text>
+</svg>

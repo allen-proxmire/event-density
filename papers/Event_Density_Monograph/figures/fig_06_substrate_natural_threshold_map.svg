@@ -1,0 +1,110 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" font-size="14" font-weight="bold">Figure 2.2 — Substrate-natural thresholds and their invariant sources</text>
+
+  <!-- Top row: invariants -->
+  <text x="450" y="62" text-anchor="middle" font-size="12" fill="#444">Load-bearing invariants</text>
+  <g fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="50"  y="80" width="160" height="40" rx="4"/>
+    <rect x="230" y="80" width="160" height="40" rx="4"/>
+    <rect x="410" y="80" width="160" height="40" rx="4"/>
+    <rect x="590" y="80" width="160" height="40" rx="4"/>
+    <rect x="770" y="80" width="80"  height="40" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-weight="bold">
+    <text x="130" y="105">𝓜  (multiplicity)</text>
+    <text x="310" y="105">σ  (gradient sparsity)</text>
+    <text x="490" y="105">Γ_cross</text>
+    <text x="670" y="105">V1 kernel</text>
+    <text x="810" y="105">Λ</text>
+  </g>
+
+  <!-- Middle row: thresholds -->
+  <text x="450" y="220" text-anchor="middle" font-size="12" fill="#444">Substrate-natural thresholds (form-FORCED, value-INHERITED)</text>
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="50"  y="240" width="160" height="50" rx="4"/>
+    <rect x="230" y="240" width="160" height="50" rx="4"/>
+    <rect x="410" y="240" width="160" height="50" rx="4"/>
+    <rect x="590" y="240" width="160" height="50" rx="4"/>
+    <rect x="770" y="240" width="80"  height="50" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-weight="bold">
+    <text x="130" y="265">𝓜_crit</text>
+    <text x="310" y="265">β_crit</text>
+    <text x="490" y="265">Γ_min</text>
+    <text x="670" y="265">— (kernel width)</text>
+    <text x="810" y="265">Λ_V1</text>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-size="10">
+    <text x="130" y="282">critical multiplicity</text>
+    <text x="310" y="282">~ log(R_cg / ℓ_P)</text>
+    <text x="490" y="282">min cross-bandwidth</text>
+    <text x="670" y="282">finite temporal extent</text>
+    <text x="810" y="282">vacuum residual</text>
+  </g>
+
+  <!-- Connecting arrows invariant → threshold -->
+  <g stroke="#666" stroke-width="1.2" fill="none" marker-end="url(#arr)">
+    <line x1="130" y1="120" x2="130" y2="240"/>
+    <line x1="310" y1="120" x2="310" y2="240"/>
+    <line x1="490" y1="120" x2="490" y2="240"/>
+    <line x1="670" y1="120" x2="670" y2="240"/>
+    <line x1="810" y1="120" x2="810" y2="240"/>
+  </g>
+
+  <!-- Bottom row: where each threshold becomes load-bearing -->
+  <text x="450" y="335" text-anchor="middle" font-size="12" fill="#444">Where each threshold becomes load-bearing</text>
+  <g fill="#f5f5f5" stroke="#888" stroke-width="1.2">
+    <rect x="50"  y="355" width="160" height="105" rx="4"/>
+    <rect x="230" y="355" width="160" height="105" rx="4"/>
+    <rect x="410" y="355" width="160" height="105" rx="4"/>
+    <rect x="590" y="355" width="160" height="105" rx="4"/>
+    <rect x="770" y="355" width="80"  height="105" rx="4"/>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="#444">
+    <text x="130" y="378">Q-C boundary</text>
+    <text x="130" y="395">QC class A wall</text>
+    <text x="130" y="412">matter-wave 140–250 kDa</text>
+    <text x="130" y="429">— Ch. 7, 14</text>
+
+    <text x="310" y="378">decoupling-surface</text>
+    <text x="310" y="395">formation in BH</text>
+    <text x="310" y="412">QC perturbation</text>
+    <text x="310" y="429">— Ch. 7, 13</text>
+
+    <text x="490" y="378">QC class C plateau</text>
+    <text x="490" y="395">DCGT hydrodynamic</text>
+    <text x="490" y="412">window resolution</text>
+    <text x="490" y="429">— Ch. 3, 7</text>
+
+    <text x="670" y="378">R1 hyperviscous</text>
+    <text x="670" y="395">YM mass-gap</text>
+    <text x="670" y="412">τ_R viscoelastic</text>
+    <text x="670" y="429">— Ch. 8, 9, 10</text>
+
+    <text x="810" y="378">QC class A</text>
+    <text x="810" y="395">isolation</text>
+    <text x="810" y="412">ceiling</text>
+    <text x="810" y="429">— Ch. 7</text>
+  </g>
+
+  <g stroke="#666" stroke-width="1.2" fill="none" marker-end="url(#arr)">
+    <line x1="130" y1="290" x2="130" y2="355"/>
+    <line x1="310" y1="290" x2="310" y2="355"/>
+    <line x1="490" y1="290" x2="490" y2="355"/>
+    <line x1="670" y1="290" x2="670" y2="355"/>
+    <line x1="810" y1="290" x2="810" y2="355"/>
+  </g>
+
+  <!-- Footer note -->
+  <rect x="50" y="495" width="800" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="518" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the threshold map</text>
+  <text x="70" y="540" font-size="11" fill="#444">Each invariant gives rise to one or more substrate-natural thresholds. The form of each threshold is FORCED by the invariant's structural role;</text>
+  <text x="70" y="557" font-size="11" fill="#444">specific numerical values are INHERITED — calibrated empirically (e.g. matter-wave Q-C boundary) or downstream</text>
+  <text x="70" y="572" font-size="11" fill="#444">(closed-form-substrate-constants program: 𝓜_crit = O-QC-1; log g = O2; κ/|N̂'| = E4).</text>
+</svg>

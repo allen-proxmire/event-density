@@ -1,0 +1,76 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 13.1 — Six BH derivations unified by one substrate condition</text>
+
+  <!-- Central condition -->
+  <rect x="280" y="60" width="340" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="90" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Substrate condition</text>
+  <line x1="300" y1="100" x2="600" y2="100" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="125" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Γ_cross  →  0  on  Σ_H</text>
+  <text x="450" y="148" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">cross-bandwidth severed across decoupling surface</text>
+
+  <!-- Six fan-out arrows -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="320" y1="160" x2="170" y2="245"/>
+    <line x1="400" y1="160" x2="380" y2="245"/>
+    <line x1="500" y1="160" x2="590" y2="245"/>
+    <line x1="580" y1="160" x2="780" y2="245"/>
+    <line x1="350" y1="160" x2="270" y2="425"/>
+    <line x1="550" y1="160" x2="680" y2="425"/>
+  </g>
+
+  <!-- Six derivation boxes (6 panels, 3+3) -->
+
+  <rect x="40" y="255" width="265" height="110" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="172" y="280" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">1. Horizon = decoupling surface</text>
+  <line x1="55" y1="290" x2="290" y2="290" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="172" y="312" text-anchor="middle" font-size="11" fill="#444">Σ_H defined kinematically</text>
+  <text x="172" y="328" text-anchor="middle" font-size="11" fill="#444">where Γ_cross collapses</text>
+  <text x="172" y="350" text-anchor="middle" font-size="10" fill="#666" font-style="italic">no metric-singularity required</text>
+
+  <rect x="320" y="255" width="265" height="110" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="452" y="280" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. No singularity</text>
+  <line x1="335" y1="290" x2="570" y2="290" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="452" y="312" text-anchor="middle" font-size="11" fill="#444">P01 discreteness +</text>
+  <text x="452" y="328" text-anchor="middle" font-size="11" fill="#444">substrate cutoff at ℓ_P</text>
+  <text x="452" y="350" text-anchor="middle" font-size="10" fill="#666" font-style="italic">no infinite curvature</text>
+
+  <rect x="600" y="255" width="265" height="110" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="732" y="280" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">3. Information blocking</text>
+  <line x1="615" y1="290" x2="850" y2="290" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="732" y="312" text-anchor="middle" font-size="11" fill="#444">substrate channels severed</text>
+  <text x="732" y="328" text-anchor="middle" font-size="11" fill="#444">across Σ_H</text>
+  <text x="732" y="350" text-anchor="middle" font-size="10" fill="#666" font-style="italic">classical-info one-directional</text>
+
+  <rect x="40" y="375" width="265" height="110" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="172" y="400" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">4. Entanglement straddling</text>
+  <line x1="55" y1="410" x2="290" y2="410" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="172" y="432" text-anchor="middle" font-size="11" fill="#444">substrate rules pre-existing</text>
+  <text x="172" y="448" text-anchor="middle" font-size="11" fill="#444">before Σ_H formation persist</text>
+  <text x="172" y="470" text-anchor="middle" font-size="10" fill="#666" font-style="italic">shared-rule-coherence preserved</text>
+
+  <rect x="320" y="375" width="265" height="110" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="452" y="400" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">5. Area law form</text>
+  <line x1="335" y1="410" x2="570" y2="410" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="452" y="432" text-anchor="middle" font-size="11" fill="#444">S = (A / ℓ_P²) · log g</text>
+  <text x="452" y="448" text-anchor="middle" font-size="11" fill="#444">substrate motif counting</text>
+  <text x="452" y="470" text-anchor="middle" font-size="10" fill="#666" font-style="italic">log g INHERITED (O2)</text>
+
+  <rect x="600" y="375" width="265" height="110" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="732" y="400" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">6. Evaporation re-routing</text>
+  <line x1="615" y1="410" x2="850" y2="410" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="732" y="432" text-anchor="middle" font-size="11" fill="#444">participation flow re-routes</text>
+  <text x="732" y="448" text-anchor="middle" font-size="11" fill="#444">through V1 vacuum kernel</text>
+  <text x="732" y="470" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ Hawking-class spectrum</text>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="523" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Reading the unification</text>
+  <text x="60" y="545" font-size="11" fill="#444">Six BH derivations all stem from one substrate condition: Γ_cross collapse on Σ_H. No new substrate primitive invoked at any step.</text>
+  <text x="60" y="563" font-size="11" fill="#444" font-style="italic">Same Γ_cross-collapse mechanism appears at QC scale (Class C plateau, Fig. 7.8) — cross-domain echo at ~50-order separation.</text>
+</svg>

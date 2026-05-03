@@ -1,0 +1,67 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 12.8 — Curvature emergence: conditional-positive verdict</text>
+
+  <!-- Top: scope statement -->
+  <rect x="40" y="60" width="820" height="60" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="88" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Arc ED-10 closure: scalar-tensor covariantization of substrate-gravity</text>
+  <text x="450" y="110" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">RAQUAL-class structure with substrate-derived μ-interpolation function</text>
+
+  <!-- Three positive verdicts -->
+  <text x="450" y="155" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Three positive structural results</text>
+
+  <rect x="40" y="175" width="265" height="135" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="172" y="200" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">1. OS-positive</text>
+  <line x1="55" y1="210" x2="290" y2="210" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="172" y="237" text-anchor="middle" font-size="11" fill="#444">channel-by-channel</text>
+  <text x="172" y="255" text-anchor="middle" font-size="11" fill="#444">reflection-positive</text>
+  <text x="172" y="282" text-anchor="middle" font-size="10" fill="#666" font-style="italic">under condition (C1)</text>
+  <text x="172" y="298" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate ρ &gt; 0</text>
+
+  <rect x="320" y="175" width="265" height="135" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="452" y="200" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">2. Ghost-free</text>
+  <line x1="335" y1="210" x2="570" y2="210" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="452" y="237" text-anchor="middle" font-size="11" fill="#444">single scalar Φ</text>
+  <text x="452" y="255" text-anchor="middle" font-size="11" fill="#444">no negative-norm modes</text>
+  <text x="452" y="282" text-anchor="middle" font-size="10" fill="#666" font-style="italic">under condition (C2)</text>
+  <text x="452" y="298" text-anchor="middle" font-size="10" fill="#666" font-style="italic">μ monotone</text>
+
+  <rect x="600" y="175" width="265" height="135" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="732" y="200" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">3. Gradient-stable</text>
+  <line x1="615" y1="210" x2="850" y2="210" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="732" y="237" text-anchor="middle" font-size="11" fill="#444">no spatial-gradient</text>
+  <text x="732" y="255" text-anchor="middle" font-size="11" fill="#444">runaway in evolution</text>
+  <text x="732" y="282" text-anchor="middle" font-size="10" fill="#666" font-style="italic">under condition (C3)</text>
+  <text x="732" y="298" text-anchor="middle" font-size="10" fill="#666" font-style="italic">μ-asymptotes bounded</text>
+
+  <!-- Negative cost -->
+  <rect x="180" y="335" width="540" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="360" text-anchor="middle" font-weight="bold" font-size="13" fill="#a05a00">Structural cost: deep-MOND superluminality</text>
+  <line x1="200" y1="370" x2="700" y2="370" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="450" y="392" text-anchor="middle" font-size="11" fill="#444">scalar mode propagates &gt; c in deep-MOND asymptote</text>
+  <text x="450" y="408" text-anchor="middle" font-size="10" fill="#666" font-style="italic">— see Figure 12.7; avoidance routes inadmissible</text>
+
+  <!-- Convergence to verdict -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="172" y1="310" x2="380" y2="445"/>
+    <line x1="452" y1="310" x2="450" y2="445"/>
+    <line x1="732" y1="310" x2="520" y2="445"/>
+    <line x1="450" y1="415" x2="450" y2="445"/>
+  </g>
+
+  <!-- Verdict -->
+  <rect x="180" y="455" width="540" height="100" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="482" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Conditional-positive verdict</text>
+  <line x1="200" y1="492" x2="700" y2="492" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="513" text-anchor="middle" fill="#fff" font-size="12">parallel to NS Intermediate Path C (Fig. 8.4)</text>
+  <text x="450" y="531" text-anchor="middle" fill="#fff" font-size="12">and Yang–Mills Clay-relevance (Fig. 9.7)</text>
+  <text x="450" y="549" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">substrate-faithful continuum extension closure</text>
+
+  <!-- Footer -->
+  <text x="450" y="582" text-anchor="middle" font-size="11" fill="#444" font-style="italic">Curvature emergence is structurally complete at form-FORCED level; full Einstein-equation recovery (GR-4A) remains long-horizon.</text>
+</svg>

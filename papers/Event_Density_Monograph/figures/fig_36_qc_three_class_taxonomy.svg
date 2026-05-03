@@ -1,0 +1,79 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 7.3 — The three QC architectural classes A / B / C</text>
+  <text x="450" y="50" text-anchor="middle" font-size="11" fill="#666" font-style="italic">three exhaustive substrate strategies for sustaining the unresolved regime</text>
+
+  <!-- Three labeled regions, side by side -->
+
+  <!-- Class A: engineered-low-multiplicity -->
+  <rect x="40" y="80" width="265" height="380" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="172" y="108" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="16">Class A</text>
+  <text x="172" y="128" text-anchor="middle" font-size="12" fill="#1a4f8b">engineered-low-multiplicity</text>
+  <line x1="55" y1="140" x2="290" y2="140" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <text x="172" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Substrate strategy:</text>
+  <text x="172" y="190" text-anchor="middle" font-size="11" fill="#444">force 𝓜 small by engineering</text>
+  <text x="172" y="208" text-anchor="middle" font-size="11" fill="#444">— suppress channels at source</text>
+
+  <text x="172" y="245" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Operates by satisfying:</text>
+  <text x="172" y="265" text-anchor="middle" font-size="11" fill="#444">condition (i): 𝓜 ≤ 𝓜_crit</text>
+
+  <text x="172" y="305" text-anchor="middle" font-weight="bold" font-size="12" fill="#1a4f8b">Failure mode:</text>
+  <text x="172" y="325" text-anchor="middle" font-size="13" fill="#1a4f8b" font-weight="bold">τ_(iii)</text>
+  <text x="172" y="343" text-anchor="middle" font-size="11" fill="#444">commitment-injection bounds</text>
+  <text x="172" y="360" text-anchor="middle" font-size="11" fill="#444">isolation ceiling Λ_V1</text>
+
+  <text x="172" y="400" text-anchor="middle" font-size="11" fill="#666" font-style="italic">prediction:</text>
+  <text x="172" y="418" text-anchor="middle" font-size="11" fill="#666" font-style="italic">τ_QC capped by Λ_V1</text>
+  <text x="172" y="436" text-anchor="middle" font-size="11" fill="#666" font-style="italic">"Class A wall"</text>
+
+  <!-- Class B: global-geometric-rigidity -->
+  <rect x="318" y="80" width="265" height="380" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="8"/>
+  <text x="450" y="108" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="16">Class B</text>
+  <text x="450" y="128" text-anchor="middle" font-size="12" fill="#a05a00">global-geometric-rigidity</text>
+  <line x1="333" y1="140" x2="568" y2="140" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="450" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Substrate strategy:</text>
+  <text x="450" y="190" text-anchor="middle" font-size="11" fill="#444">topological gap Δ_top fixes</text>
+  <text x="450" y="208" text-anchor="middle" font-size="11" fill="#444">𝓜 by global geometry</text>
+
+  <text x="450" y="245" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Operates by satisfying:</text>
+  <text x="450" y="265" text-anchor="middle" font-size="11" fill="#444">condition (i): 𝓜 ≤ 𝓜_crit globally</text>
+
+  <text x="450" y="305" text-anchor="middle" font-weight="bold" font-size="12" fill="#a05a00">Failure mode:</text>
+  <text x="450" y="325" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">τ_(i)</text>
+  <text x="450" y="343" text-anchor="middle" font-size="11" fill="#444">topological-gap closure</text>
+  <text x="450" y="360" text-anchor="middle" font-size="11" fill="#444">τ_gap-stab(𝓣)</text>
+
+  <text x="450" y="400" text-anchor="middle" font-size="11" fill="#666" font-style="italic">prediction:</text>
+  <text x="450" y="418" text-anchor="middle" font-size="11" fill="#666" font-style="italic">exponential gap-suppression</text>
+  <text x="450" y="436" text-anchor="middle" font-size="11" fill="#666" font-style="italic">under topology perturbation</text>
+
+  <!-- Class C: high-multiplicity-redundancy -->
+  <rect x="595" y="80" width="265" height="380" fill="#f0e8ff" stroke="#5a2090" stroke-width="2" rx="8"/>
+  <text x="728" y="108" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="16">Class C</text>
+  <text x="728" y="128" text-anchor="middle" font-size="12" fill="#5a2090">high-multiplicity-redundancy</text>
+  <line x1="610" y1="140" x2="845" y2="140" stroke="#5a2090" stroke-width="0.8"/>
+
+  <text x="728" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Substrate strategy:</text>
+  <text x="728" y="190" text-anchor="middle" font-size="11" fill="#444">embrace high 𝓜; correct via</text>
+  <text x="728" y="208" text-anchor="middle" font-size="11" fill="#444">redundant channels (codes)</text>
+
+  <text x="728" y="245" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Operates by satisfying:</text>
+  <text x="728" y="265" text-anchor="middle" font-size="11" fill="#444">condition (ii): Γ_cross ≥ Γ_min</text>
+
+  <text x="728" y="305" text-anchor="middle" font-weight="bold" font-size="12" fill="#5a2090">Failure mode:</text>
+  <text x="728" y="325" text-anchor="middle" font-size="13" fill="#5a2090" font-weight="bold">τ_(ii)</text>
+  <text x="728" y="343" text-anchor="middle" font-size="11" fill="#444">correlation-budget saturation</text>
+  <text x="728" y="360" text-anchor="middle" font-size="11" fill="#444">N_corr exhausted</text>
+
+  <text x="728" y="400" text-anchor="middle" font-size="11" fill="#666" font-style="italic">prediction:</text>
+  <text x="728" y="418" text-anchor="middle" font-size="11" fill="#666" font-style="italic">correlation-budget plateau</text>
+  <text x="728" y="436" text-anchor="middle" font-size="11" fill="#666" font-style="italic">scaling-saturation in N_corr</text>
+
+  <!-- Footer -->
+  <rect x="40" y="490" width="820" height="90" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="513" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Three-class exhaustiveness FORCED by UR-1</text>
+  <text x="60" y="535" font-size="11" fill="#444">No fourth class is admissible at substrate level. Meta-architectures (error correction, dynamical decoupling, reservoir engineering, hybrids)</text>
+  <text x="60" y="553" font-size="11" fill="#444">are compositions of A/B/C — not new classes. Multiplicity-cap function M(𝓢, K, 𝓔, 𝓞) is one substrate object with three projections.</text>
+  <text x="60" y="572" font-size="11" fill="#444" font-style="italic">Class A and Class C have distinct failure modes; selecting an architecture means choosing which condition to optimize.</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 6.2 — Substrate UV-finiteness: no divergent loop integrals at primitive level</text>
+
+  <!-- Two side-by-side panels: standard QFT vs ED substrate -->
+
+  <!-- Panel A: Standard QFT divergence -->
+  <rect x="40" y="60" width="380" height="220" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="6"/>
+  <text x="230" y="85" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">Standard QFT</text>
+  <text x="230" y="103" text-anchor="middle" font-size="11" fill="#666" font-style="italic">continuous spacetime, point-like events</text>
+
+  <!-- Loop integral with divergence -->
+  <text x="230" y="138" text-anchor="middle" font-family="serif" font-size="14" fill="#444">∫ d⁴k / k²  →  ∞</text>
+  <text x="230" y="160" text-anchor="middle" font-size="11" fill="#444">UV divergence at k → ∞</text>
+
+  <text x="230" y="195" text-anchor="middle" font-size="11" fill="#a05a00">requires renormalization,</text>
+  <text x="230" y="212" text-anchor="middle" font-size="11" fill="#a05a00">cutoff prescription, or</text>
+  <text x="230" y="229" text-anchor="middle" font-size="11" fill="#a05a00">regularization scheme</text>
+  <text x="230" y="258" text-anchor="middle" font-size="11" fill="#444" font-style="italic">finiteness imposed externally</text>
+
+  <!-- Panel B: ED substrate UV-finite -->
+  <rect x="480" y="60" width="380" height="220" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="670" y="85" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">ED substrate</text>
+  <text x="670" y="103" text-anchor="middle" font-size="11" fill="#666" font-style="italic">discrete events (P01), finite-width V1 (N1)</text>
+
+  <!-- Substrate-cutoff integral -->
+  <text x="670" y="138" text-anchor="middle" font-family="serif" font-size="14" fill="#1a4f8b">∫ d⁴k V̂₁(k) / k²  &lt;  ∞</text>
+  <text x="670" y="160" text-anchor="middle" font-size="11" fill="#444">V̂₁(k) → 0 for k ≫ ℓ_P⁻¹</text>
+
+  <text x="670" y="195" text-anchor="middle" font-size="11" fill="#1a4f8b">two-fold UV regularization:</text>
+  <text x="670" y="212" text-anchor="middle" font-size="11" fill="#444">(i) P01 discreteness</text>
+  <text x="670" y="229" text-anchor="middle" font-size="11" fill="#444">(ii) V1 finite kernel width</text>
+  <text x="670" y="258" text-anchor="middle" font-size="11" fill="#444" font-style="italic">finiteness FORCED structurally</text>
+
+  <!-- Mid section: how ED achieves it -->
+  <text x="450" y="312" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Two substrate features that suppress UV divergence</text>
+
+  <rect x="60" y="330" width="370" height="120" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="245" y="355" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">P01 — Event discreteness</text>
+  <line x1="80" y1="365" x2="410" y2="365" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="245" y="386" text-anchor="middle" font-size="11" fill="#444">smallest substrate length scale ~ ℓ_P</text>
+  <text x="245" y="404" text-anchor="middle" font-size="11" fill="#444">no infinitesimal events</text>
+  <text x="245" y="424" text-anchor="middle" font-size="11" fill="#444">→ momentum integral cutoff at k ~ 1/ℓ_P</text>
+  <text x="245" y="442" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Chapter 1 — irreducible primitive</text>
+
+  <rect x="470" y="330" width="370" height="120" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="655" y="355" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="12">N1 — V1 finite-width kernel</text>
+  <line x1="490" y1="365" x2="820" y2="365" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="655" y="386" text-anchor="middle" font-size="11" fill="#444">V1 vacuum response has finite width</text>
+  <text x="655" y="404" text-anchor="middle" font-size="11" fill="#444">Fourier transform V̂₁(k) → 0 for k → ∞</text>
+  <text x="655" y="424" text-anchor="middle" font-size="11" fill="#444">→ all loop integrals UV-suppressed</text>
+  <text x="655" y="442" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Chapter 4 — N1 + T18</text>
+
+  <!-- Arrows down to conclusion -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="245" y1="450" x2="380" y2="500"/>
+    <line x1="655" y1="450" x2="520" y2="500"/>
+  </g>
+
+  <!-- Conclusion box -->
+  <rect x="180" y="500" width="540" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="450" y="525" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Substrate UV-finiteness</text>
+  <text x="450" y="546" text-anchor="middle" fill="#fff" font-size="12">no renormalization required at substrate level</text>
+  <text x="450" y="566" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">finiteness is structural, not a regularization scheme</text>
+</svg>

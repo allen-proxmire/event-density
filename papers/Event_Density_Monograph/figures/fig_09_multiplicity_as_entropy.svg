@@ -1,0 +1,81 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" font-size="14" font-weight="bold">Figure 2.5 — Multiplicity 𝓜 as the ED analogue of entropy</text>
+
+  <!-- Two side-by-side panels with same source/sink endpoints, different pathway counts -->
+
+  <!-- Panel A: Low multiplicity (engineered, e.g. Class A) -->
+  <rect x="50" y="60" width="380" height="380" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="4"/>
+  <text x="240" y="84" text-anchor="middle" font-weight="bold" fill="#444">Low 𝓜 — few viable pathways</text>
+  <text x="240" y="102" text-anchor="middle" font-size="11" fill="#666" font-style="italic">engineered substrate region (Class A regime)</text>
+
+  <!-- endpoints A -->
+  <g fill="#1a4f8b">
+    <circle cx="100" cy="260" r="14"/>
+    <circle cx="380" cy="260" r="14"/>
+  </g>
+  <g text-anchor="middle" fill="#fff" font-weight="bold" font-size="11">
+    <text x="100" y="264">A</text>
+    <text x="380" y="264">B</text>
+  </g>
+
+  <!-- Few pathways A: 2 paths -->
+  <g stroke="#1a4f8b" stroke-width="2" fill="none">
+    <path d="M 114,260 C 200,200 280,200 366,260"/>
+    <path d="M 114,260 C 200,320 280,320 366,260"/>
+  </g>
+
+  <!-- 𝓜 readout panel A -->
+  <rect x="80" y="370" width="320" height="50" fill="#fff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="240" y="392" text-anchor="middle" fill="#1a4f8b" font-weight="bold" font-size="14">𝓜  small  →  unresolved regime sustained</text>
+  <text x="240" y="410" text-anchor="middle" font-size="11" fill="#444">→ supports coherent rule-spanning (QC class A)</text>
+
+  <!-- Panel B: High multiplicity (decohered) -->
+  <rect x="470" y="60" width="380" height="380" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="4"/>
+  <text x="660" y="84" text-anchor="middle" font-weight="bold" fill="#444">High 𝓜 — many viable pathways</text>
+  <text x="660" y="102" text-anchor="middle" font-size="11" fill="#666" font-style="italic">classical / decohered region (𝓜 &gt; 𝓜_crit)</text>
+
+  <!-- endpoints B -->
+  <g fill="#a05a00">
+    <circle cx="520" cy="260" r="14"/>
+    <circle cx="800" cy="260" r="14"/>
+  </g>
+  <g text-anchor="middle" fill="#fff" font-weight="bold" font-size="11">
+    <text x="520" y="264">A</text>
+    <text x="800" y="264">B</text>
+  </g>
+
+  <!-- Many pathways B: 9 paths -->
+  <g stroke="#a05a00" stroke-width="1.4" fill="none" opacity="0.85">
+    <path d="M 534,260 C 600,160 720,160 786,260"/>
+    <path d="M 534,260 C 600,180 720,180 786,260"/>
+    <path d="M 534,260 C 600,200 720,200 786,260"/>
+    <path d="M 534,260 C 600,225 720,225 786,260"/>
+    <path d="M 534,260 L 786,260"/>
+    <path d="M 534,260 C 600,295 720,295 786,260"/>
+    <path d="M 534,260 C 600,320 720,320 786,260"/>
+    <path d="M 534,260 C 600,340 720,340 786,260"/>
+    <path d="M 534,260 C 600,360 720,360 786,260"/>
+  </g>
+
+  <!-- 𝓜 readout panel B -->
+  <rect x="500" y="370" width="320" height="50" fill="#fff" stroke="#a05a00" stroke-width="1.5" rx="4"/>
+  <text x="660" y="392" text-anchor="middle" fill="#a05a00" font-weight="bold" font-size="14">𝓜  large  →  unresolved regime fails</text>
+  <text x="660" y="410" text-anchor="middle" font-size="11" fill="#444">→ classical superposition collapse, decoherence</text>
+
+  <!-- Bottom analogy bar: ED ↔ thermodynamics -->
+  <rect x="50" y="465" width="800" height="115" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="490" text-anchor="middle" font-weight="bold" font-size="13" fill="#a05a00">Analogy with thermodynamic entropy</text>
+
+  <g font-size="12" fill="#444">
+    <text x="80" y="515">• ED:  𝓜  =  count of viable distinct ED-gradient pathways through a region</text>
+    <text x="80" y="534">• Thermodynamics:  S  =  log(microstates compatible with macrostate)</text>
+    <text x="80" y="553">• Both are pathway-/state-counting quantities; both grow with available structure</text>
+    <text x="80" y="572">• ED extension: 𝓜 has a critical value 𝓜_crit at which the unresolved regime fails</text>
+  </g>
+</svg>

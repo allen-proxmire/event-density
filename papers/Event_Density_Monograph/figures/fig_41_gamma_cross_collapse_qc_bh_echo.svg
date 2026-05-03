@@ -1,0 +1,65 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 7.8 — Γ_cross-collapse echo: QC class C plateau ↔ BH-2 horizon formation</text>
+
+  <!-- Top: shared substrate quantity -->
+  <rect x="200" y="60" width="500" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="90" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">Γ_cross  ~  exp [ −α ∫_path σ dℓ ]</text>
+  <text x="450" y="110" text-anchor="middle" fill="#fff" font-size="11">substrate-locality cross-bandwidth (DCGT)</text>
+  <text x="450" y="128" text-anchor="middle" fill="#fff" font-size="11" font-style="italic">collapses when σ accumulates along connecting pathway</text>
+
+  <!-- Two echoes of Γ_cross collapse -->
+
+  <!-- LEFT: QC class C plateau -->
+  <rect x="40" y="200" width="380" height="280" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="230" y="226" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">QC Class C plateau (Ch. 7)</text>
+  <text x="230" y="244" text-anchor="middle" font-size="11" fill="#444" font-style="italic">condition (ii) failure mode</text>
+  <line x1="55" y1="254" x2="405" y2="254" stroke="#5a2090" stroke-width="0.8"/>
+
+  <text x="230" y="284" text-anchor="middle" font-size="11" fill="#444">scale: ~ 10⁻⁹ to 10⁻³ m</text>
+  <text x="230" y="304" text-anchor="middle" font-size="11" fill="#444">qubit array, redundant codes</text>
+
+  <text x="230" y="335" text-anchor="middle" font-size="12" fill="#5a2090" font-weight="bold">Γ_cross saturates at Γ_min</text>
+  <text x="230" y="355" text-anchor="middle" font-size="11" fill="#444">→ N_corr correlation budget</text>
+  <text x="230" y="372" text-anchor="middle" font-size="11" fill="#444">exhausted</text>
+
+  <text x="230" y="408" text-anchor="middle" font-size="11" fill="#444">cross-endpoint connectivity</text>
+  <text x="230" y="425" text-anchor="middle" font-size="11" fill="#444">cannot grow further</text>
+
+  <text x="230" y="458" text-anchor="middle" font-size="11" fill="#666" font-style="italic">scaling-saturation prediction</text>
+
+  <!-- RIGHT: BH-2 horizon formation -->
+  <rect x="480" y="200" width="380" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="670" y="226" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">BH-2 horizon formation (Ch. 13)</text>
+  <text x="670" y="244" text-anchor="middle" font-size="11" fill="#444" font-style="italic">decoupling-surface formation</text>
+  <line x1="495" y1="254" x2="845" y2="254" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="670" y="284" text-anchor="middle" font-size="11" fill="#444">scale: ~ ℓ_P near horizon</text>
+  <text x="670" y="304" text-anchor="middle" font-size="11" fill="#444">stellar-mass to supermassive BH</text>
+
+  <text x="670" y="335" text-anchor="middle" font-size="12" fill="#a05a00" font-weight="bold">Γ_cross  →  0  across Σ_H</text>
+  <text x="670" y="355" text-anchor="middle" font-size="11" fill="#444">→ rule-spanning fully severed</text>
+  <text x="670" y="372" text-anchor="middle" font-size="11" fill="#444">across decoupling surface</text>
+
+  <text x="670" y="408" text-anchor="middle" font-size="11" fill="#444">information blocking,</text>
+  <text x="670" y="425" text-anchor="middle" font-size="11" fill="#444">entanglement straddling</text>
+
+  <text x="670" y="458" text-anchor="middle" font-size="11" fill="#666" font-style="italic">no-singularity prediction</text>
+
+  <!-- Connecting arrows from top panel down to each echo -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="350" y1="140" x2="230" y2="200"/>
+    <line x1="550" y1="140" x2="670" y2="200"/>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="525" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">~ 50 orders of magnitude separation, one substrate quantity</text>
+  <text x="60" y="548" font-size="11" fill="#444">Two phenomena — QC scaling-saturation and BH horizon formation — are different scales of the same Γ_cross collapse.</text>
+  <text x="60" y="566" font-size="11" fill="#444" font-style="italic">No domain-specific mechanism is invoked at either scale; both are consequences of σ-accumulation along substrate paths.</text>
+</svg>

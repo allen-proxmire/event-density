@@ -1,0 +1,66 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <marker id="arrSm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 14.2 — Cross-platform identity: matter-wave Q-C boundary ↔ qubit-system wall</text>
+
+  <!-- Top: shared substrate threshold -->
+  <rect x="280" y="60" width="340" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="92" text-anchor="middle" fill="#fff" font-weight="bold" font-size="16">𝓜_crit</text>
+  <line x1="300" y1="102" x2="600" y2="102" stroke="#fff" stroke-width="0.8"/>
+  <text x="450" y="123" text-anchor="middle" fill="#fff" font-size="11">critical multiplicity threshold (UR-1 condition (i))</text>
+  <text x="450" y="138" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">closed-form derivation: O-QC-1</text>
+
+  <!-- Two sectorial fan-outs -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arrSm)">
+    <line x1="380" y1="140" x2="220" y2="200"/>
+    <line x1="520" y1="140" x2="680" y2="200"/>
+  </g>
+
+  <!-- LEFT: matter-wave Q-C boundary -->
+  <rect x="40" y="210" width="380" height="270" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="230" y="236" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Matter-wave Q-C boundary</text>
+  <text x="230" y="254" text-anchor="middle" font-size="11" fill="#444" font-style="italic">large-molecule diffraction</text>
+  <line x1="55" y1="264" x2="405" y2="264" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <!-- empirical anchor -->
+  <text x="230" y="296" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">M_mol ≈ 140–250 kDa</text>
+  <text x="230" y="316" text-anchor="middle" font-size="11" fill="#444">interference visibility</text>
+  <text x="230" y="334" text-anchor="middle" font-size="11" fill="#444">vanishes at this mass</text>
+
+  <text x="230" y="370" text-anchor="middle" font-size="11" fill="#444">substrate variable:</text>
+  <text x="230" y="388" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">M_mol  →  𝓜  via f_int(M_mol)</text>
+
+  <text x="230" y="425" text-anchor="middle" font-size="11" fill="#444">empirical anchor:</text>
+  <text x="230" y="443" text-anchor="middle" font-size="11" fill="#444">two-point Q-C extrapolation</text>
+  <text x="230" y="461" text-anchor="middle" font-size="11" fill="#444">(5–10× beyond direct reach)</text>
+
+  <!-- RIGHT: qubit-system multiplicity wall -->
+  <rect x="480" y="210" width="380" height="270" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="670" y="236" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Qubit-system multiplicity wall</text>
+  <text x="670" y="254" text-anchor="middle" font-size="11" fill="#444" font-style="italic">SC qubit / trapped-ion arrays</text>
+  <line x1="495" y1="264" x2="845" y2="264" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="670" y="296" text-anchor="middle" font-size="13" fill="#1a4f8b" font-weight="bold">N_qubits + connectivity</text>
+  <text x="670" y="316" text-anchor="middle" font-size="11" fill="#444">Class A wall: coherent</text>
+  <text x="670" y="334" text-anchor="middle" font-size="11" fill="#444">rule-spanning fails</text>
+
+  <text x="670" y="370" text-anchor="middle" font-size="11" fill="#444">substrate variable:</text>
+  <text x="670" y="388" text-anchor="middle" font-size="11" fill="#444" font-weight="bold">N_qubits  →  𝓜  via f_xy(N_qubits)</text>
+
+  <text x="670" y="425" text-anchor="middle" font-size="11" fill="#444">empirical anchor:</text>
+  <text x="670" y="443" text-anchor="middle" font-size="11" fill="#444">QC platform scaling-saturation</text>
+  <text x="670" y="461" text-anchor="middle" font-size="11" fill="#444">(class-specific via multiplicity-cap M)</text>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="523" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Cross-platform identity</text>
+  <text x="60" y="545" font-size="11" fill="#444">Two domain-specific phenomena (matter-wave Q-C boundary, qubit multiplicity wall) reduce to one substrate threshold.</text>
+  <text x="60" y="563" font-size="11" fill="#444" font-style="italic">Closed-form derivation of 𝓜_crit (O-QC-1) would simultaneously fix both empirical scales — testable cross-platform prediction.</text>
+</svg>

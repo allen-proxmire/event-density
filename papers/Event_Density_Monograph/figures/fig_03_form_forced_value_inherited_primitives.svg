@@ -1,0 +1,54 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="13">
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 1.3 — Form-FORCED vs Value-INHERITED at the primitive layer</text>
+
+  <!-- Vertical divider -->
+  <line x1="450" y1="55" x2="450" y2="560" stroke="#888" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- LEFT column: Form-FORCED -->
+  <rect x="40" y="55" width="380" height="40" fill="#1a4f8b"/>
+  <text x="230" y="80" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Form-FORCED</text>
+  <text x="230" y="115" text-anchor="middle" font-size="11" fill="#444" font-style="italic">structural commitments derived from substrate ontology</text>
+
+  <g fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5">
+    <rect x="60" y="140" width="340" height="44" rx="4"/>
+    <rect x="60" y="200" width="340" height="44" rx="4"/>
+    <rect x="60" y="260" width="340" height="44" rx="4"/>
+    <rect x="60" y="320" width="340" height="44" rx="4"/>
+    <rect x="60" y="380" width="340" height="44" rx="4"/>
+    <rect x="60" y="440" width="340" height="44" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#1a4f8b" font-size="13">
+    <text x="230" y="167">event discreteness</text>
+    <text x="230" y="227">chain structure</text>
+    <text x="230" y="287">bounded bandwidth</text>
+    <text x="230" y="347">commitment-irreversibility</text>
+    <text x="230" y="407">finite-kernel widths</text>
+    <text x="230" y="467">substrate-locality</text>
+  </g>
+
+  <!-- RIGHT column: Value-INHERITED -->
+  <rect x="480" y="55" width="380" height="40" fill="#a05a00"/>
+  <text x="670" y="80" text-anchor="middle" fill="#fff" font-weight="bold" font-size="14">Value-INHERITED</text>
+  <text x="670" y="115" text-anchor="middle" font-size="11" fill="#444" font-style="italic">numerical scales calibrated empirically or downstream</text>
+
+  <g fill="#fff4e0" stroke="#a05a00" stroke-width="1.5">
+    <rect x="500" y="140" width="340" height="44" rx="4"/>
+    <rect x="500" y="200" width="340" height="44" rx="4"/>
+    <rect x="500" y="260" width="340" height="44" rx="4"/>
+    <rect x="500" y="320" width="340" height="44" rx="4"/>
+    <rect x="500" y="380" width="340" height="44" rx="4"/>
+    <rect x="500" y="440" width="340" height="44" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#a05a00" font-size="13">
+    <text x="670" y="167">numerical scale of ℓ_P</text>
+    <text x="670" y="227">specific shape of V1 kernel</text>
+    <text x="670" y="287">β_crit  (critical gradient threshold)</text>
+    <text x="670" y="347">𝓜_crit  (critical multiplicity)</text>
+    <text x="670" y="407">Γ_min  (minimum cross-bandwidth)</text>
+    <text x="670" y="467">substrate inputs ℏ, c, H₀</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="450" y="540" text-anchor="middle" font-size="12" fill="#444" font-style="italic">The methodological signature: structural form derived from substrate primitives;</text>
+  <text x="450" y="558" text-anchor="middle" font-size="12" fill="#444" font-style="italic">specific values calibrated empirically or downstream of substrate-constants program.</text>
+</svg>

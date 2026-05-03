@@ -1,0 +1,72 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arrSm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 13.8 — BHPT phase-shift structure: δ_ℓm as path-integrated invariant</text>
+
+  <!-- LEFT: scattering geometry sketch -->
+  <rect x="40" y="60" width="380" height="450" fill="#f9f9f9" stroke="#888" stroke-width="1.2" rx="6"/>
+  <text x="230" y="86" text-anchor="middle" font-weight="bold" fill="#444" font-size="13">Scattering geometry</text>
+
+  <!-- Central BH -->
+  <circle cx="230" cy="280" r="55" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="1.5"/>
+  <text x="230" y="285" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Σ_H</text>
+
+  <!-- Incoming wave from left -->
+  <line x1="55" y1="280" x2="170" y2="280" stroke="#1a4f8b" stroke-width="2" marker-end="url(#arrSm)"/>
+  <text x="115" y="270" text-anchor="middle" font-size="10" fill="#1a4f8b">incoming</text>
+
+  <!-- Outgoing scattered waves -->
+  <line x1="290" y1="280" x2="395" y2="200" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arrSm)"/>
+  <line x1="290" y1="280" x2="395" y2="280" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arrSm)"/>
+  <line x1="290" y1="280" x2="395" y2="360" stroke="#1a4f8b" stroke-width="1.5" marker-end="url(#arrSm)"/>
+  <text x="380" y="190" text-anchor="end" font-size="10" fill="#1a4f8b">scattered</text>
+
+  <!-- ΔA channel action density excess -->
+  <path d="M 175,260 C 200,220 270,220 285,265" fill="none" stroke="#a05a00" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="230" y="215" text-anchor="middle" font-size="10" fill="#a05a00">ΔA  (action density excess)</text>
+
+  <text x="230" y="395" text-anchor="middle" font-size="11" fill="#444">trajectory near Σ_H</text>
+  <text x="230" y="412" text-anchor="middle" font-size="11" fill="#444">accumulates excess action</text>
+  <text x="230" y="429" text-anchor="middle" font-size="11" fill="#444">from V1 kernel modulation</text>
+  <text x="230" y="450" text-anchor="middle" font-size="11" fill="#444">+ T17 charge contribution</text>
+  <text x="230" y="467" text-anchor="middle" font-size="11" fill="#444">+ Δφ_twist for Kerr</text>
+  <text x="230" y="488" text-anchor="middle" font-size="10" fill="#666" font-style="italic">→ phase-shift δ_ℓm</text>
+
+  <!-- RIGHT: phase-shift formula and decomposition -->
+  <rect x="480" y="60" width="380" height="450" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="2" rx="6"/>
+  <text x="670" y="86" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Phase-shift structure</text>
+  <line x1="495" y1="100" x2="845" y2="100" stroke="#1a4f8b" stroke-width="0.8"/>
+
+  <!-- Master expression -->
+  <rect x="500" y="120" width="340" height="60" fill="#fff" stroke="#1a4f8b" stroke-width="1.5" rx="4"/>
+  <text x="670" y="148" text-anchor="middle" font-weight="bold" font-size="14" fill="#1a4f8b">δ_ℓm  =  ∫ ΔA  dτ</text>
+  <text x="670" y="170" text-anchor="middle" font-size="10" fill="#444" font-style="italic">global path-integrated invariant</text>
+
+  <text x="670" y="208" text-anchor="middle" font-size="12" fill="#444" font-weight="bold">Three contributions to ΔA</text>
+
+  <g fill="#444" font-size="11">
+    <text x="500" y="240">• V1-kernel modulation</text>
+    <text x="515" y="258">  (substrate retardation)</text>
+    <text x="500" y="285">• T17 charge contribution</text>
+    <text x="515" y="303">  (electromagnetic dressing for RN)</text>
+    <text x="500" y="330">• Δφ_twist accumulated frame-dragging</text>
+    <text x="515" y="348">  (Kerr-twist vorticity)</text>
+  </g>
+
+  <text x="670" y="385" text-anchor="middle" font-size="12" fill="#1a4f8b" font-weight="bold">Properties</text>
+  <g fill="#444" font-size="11">
+    <text x="500" y="410">• gauge-invariant on closed paths</text>
+    <text x="500" y="428">• topological label 𝓣 governs structure</text>
+    <text x="500" y="446">• observable via gravitational-wave</text>
+    <text x="515" y="464">  ringdown phase</text>
+    <text x="500" y="482">• helicity m couples through Δφ_twist</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="555" text-anchor="middle" font-size="11" fill="#444" font-style="italic">δ_ℓm is the global invariant of BHPT scattering — path-integrated, not local. ED reproduces standard BHPT structure</text>
+  <text x="450" y="572" text-anchor="middle" font-size="11" fill="#444" font-style="italic">with substrate-derived V1 kernel modulation. Form FORCED; specific spectrum INHERITED.</text>
+</svg>

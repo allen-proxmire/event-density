@@ -1,0 +1,80 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 14.7 — Closed-form-substrate-constants program: three structurally similar targets</text>
+
+  <!-- Three target boxes -->
+
+  <rect x="40" y="80" width="265" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="172" y="108" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="15">𝓜_crit</text>
+  <text x="172" y="128" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">critical multiplicity</text>
+  <line x1="55" y1="140" x2="290" y2="140" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="172" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Sector</text>
+  <text x="172" y="188" text-anchor="middle" font-size="11" fill="#444">QC (Ch. 7)</text>
+
+  <text x="172" y="220" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Open-extension label</text>
+  <text x="172" y="238" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">O-QC-1</text>
+
+  <text x="172" y="270" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Empirical anchor</text>
+  <text x="172" y="288" text-anchor="middle" font-size="11" fill="#444">matter-wave Q-C boundary</text>
+  <text x="172" y="306" text-anchor="middle" font-size="11" fill="#444">at 140–250 kDa</text>
+
+  <text x="172" y="338" text-anchor="middle" font-size="10" fill="#666" font-style="italic">two-point Q-C extrapolation;</text>
+  <text x="172" y="354" text-anchor="middle" font-size="10" fill="#666" font-style="italic">cross-platform identity</text>
+
+  <rect x="320" y="80" width="265" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="452" y="108" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="15">log g</text>
+  <text x="452" y="128" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">BH area-law coefficient</text>
+  <line x1="335" y1="140" x2="570" y2="140" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="452" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Sector</text>
+  <text x="452" y="188" text-anchor="middle" font-size="11" fill="#444">BH (Ch. 13)</text>
+
+  <text x="452" y="220" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Open-extension label</text>
+  <text x="452" y="238" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">O2  (Arc BH)</text>
+
+  <text x="452" y="270" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Empirical anchor</text>
+  <text x="452" y="288" text-anchor="middle" font-size="11" fill="#444">log g ≈ 1/4</text>
+  <text x="452" y="306" text-anchor="middle" font-size="11" fill="#444">(Bekenstein–Hawking match)</text>
+
+  <text x="452" y="338" text-anchor="middle" font-size="10" fill="#666" font-style="italic">non-integer base g ≈ 1.28;</text>
+  <text x="452" y="354" text-anchor="middle" font-size="10" fill="#666" font-style="italic">substrate motif counting</text>
+
+  <rect x="600" y="80" width="265" height="280" fill="#fff4e0" stroke="#a05a00" stroke-width="2" rx="6"/>
+  <text x="732" y="108" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="15">κ / |N̂'|  ≈  0.001766</text>
+  <text x="732" y="128" text-anchor="middle" font-size="11" fill="#a05a00" font-style="italic">cross-scale invariance ratio</text>
+  <line x1="615" y1="140" x2="850" y2="140" stroke="#a05a00" stroke-width="0.8"/>
+
+  <text x="732" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Sector</text>
+  <text x="732" y="188" text-anchor="middle" font-size="11" fill="#444">ED-SC (cross-reference)</text>
+
+  <text x="732" y="220" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Open-extension label</text>
+  <text x="732" y="238" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">E4  (ED-SC arc)</text>
+
+  <text x="732" y="270" text-anchor="middle" font-weight="bold" font-size="12" fill="#444">Empirical anchor</text>
+  <text x="732" y="288" text-anchor="middle" font-size="11" fill="#444">central 0.001766</text>
+  <text x="732" y="306" text-anchor="middle" font-size="11" fill="#444">model band ±10.78%</text>
+
+  <text x="732" y="338" text-anchor="middle" font-size="10" fill="#666" font-style="italic">scale-invariance signature;</text>
+  <text x="732" y="354" text-anchor="middle" font-size="10" fill="#666" font-style="italic">flagged for completeness</text>
+
+  <!-- Mutual constraint arrows (triangular) -->
+  <g stroke="#1a4f8b" stroke-width="1.2" fill="none" marker-end="url(#arr)">
+    <line x1="305" y1="220" x2="320" y2="220"/>
+    <line x1="585" y1="220" x2="600" y2="220"/>
+    <path d="M 800,360 C 700,440 200,440 105,360"/>
+  </g>
+  <text x="450" y="455" text-anchor="middle" font-size="11" fill="#1a4f8b" font-weight="bold">cross-domain consistency requirement</text>
+  <text x="450" y="473" text-anchor="middle" font-size="10" fill="#1a4f8b" font-style="italic">closed-form derivation in any one constrains the others</text>
+
+  <!-- Footer -->
+  <rect x="40" y="500" width="820" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="4"/>
+  <text x="450" y="525" text-anchor="middle" fill="#fff" font-weight="bold" font-size="13">Why these three are mutually constraining</text>
+  <text x="60" y="548" font-size="11" fill="#fff">All three are dimensionless numbers governing structurally-similar substrate phenomena: multiplicity counting, motif counting,</text>
+  <text x="60" y="566" font-size="11" fill="#fff">and cross-scale invariance. A closed-form derivation of any one supplies the substrate-level counting machinery for the others.</text>
+</svg>

@@ -1,0 +1,97 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 5.3 — Measurement at substrate level: irreversible recording, no collapse</text>
+
+  <!-- Three sequential panels: pre-measurement / commitment step / post-measurement -->
+
+  <!-- Panel 1: Pre-measurement (multiple participation channels active) -->
+  <rect x="40" y="80" width="240" height="320" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="160" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">1. Pre-measurement</text>
+  <text x="160" y="123" text-anchor="middle" font-size="11" fill="#444" font-style="italic">unresolved regime</text>
+
+  <!-- Multiple parallel channels -->
+  <g stroke="#1a4f8b" stroke-width="2" fill="none">
+    <line x1="80" y1="170" x2="240" y2="170"/>
+    <line x1="80" y1="200" x2="240" y2="200"/>
+    <line x1="80" y1="230" x2="240" y2="230"/>
+    <line x1="80" y1="260" x2="240" y2="260"/>
+    <line x1="80" y1="290" x2="240" y2="290"/>
+  </g>
+  <g fill="#1a4f8b">
+    <circle cx="80" cy="170" r="5"/>
+    <circle cx="80" cy="200" r="5"/>
+    <circle cx="80" cy="230" r="5"/>
+    <circle cx="80" cy="260" r="5"/>
+    <circle cx="80" cy="290" r="5"/>
+  </g>
+
+  <text x="160" y="335" text-anchor="middle" font-size="11" fill="#444">multiple participation channels</text>
+  <text x="160" y="352" text-anchor="middle" font-size="11" fill="#444">active simultaneously</text>
+  <text x="160" y="378" text-anchor="middle" font-size="11" fill="#666" font-style="italic">𝓤 ≈ 1, no commitment yet</text>
+
+  <!-- Panel 2: Commitment step (P11) -->
+  <rect x="320" y="80" width="240" height="320" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="440" y="105" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">2. Commitment step</text>
+  <text x="440" y="123" text-anchor="middle" font-size="11" fill="#444" font-style="italic">P11 irreversible recording</text>
+
+  <!-- Channels with one selected and locked -->
+  <g stroke="#888" stroke-width="1.5" stroke-dasharray="3,3" fill="none">
+    <line x1="360" y1="170" x2="520" y2="170"/>
+    <line x1="360" y1="200" x2="520" y2="200"/>
+    <line x1="360" y1="260" x2="520" y2="260"/>
+    <line x1="360" y1="290" x2="520" y2="290"/>
+  </g>
+  <line x1="360" y1="230" x2="520" y2="230" stroke="#a05a00" stroke-width="3"/>
+  <g fill="#888">
+    <circle cx="360" cy="170" r="4"/>
+    <circle cx="360" cy="200" r="4"/>
+    <circle cx="360" cy="260" r="4"/>
+    <circle cx="360" cy="290" r="4"/>
+  </g>
+  <circle cx="360" cy="230" r="6" fill="#a05a00"/>
+
+  <!-- Lock symbol on the selected channel -->
+  <rect x="455" y="218" width="20" height="20" fill="#a05a00"/>
+  <rect x="460" y="220" width="10" height="8" fill="#fff"/>
+  <text x="490" y="234" font-size="10" fill="#a05a00">locked</text>
+
+  <text x="440" y="335" text-anchor="middle" font-size="11" fill="#444">one channel commits;</text>
+  <text x="440" y="352" text-anchor="middle" font-size="11" fill="#444">recording is asymmetric</text>
+  <text x="440" y="378" text-anchor="middle" font-size="11" fill="#666" font-style="italic">substrate-level one-directional</text>
+
+  <!-- Panel 3: Post-measurement (single recorded outcome) -->
+  <rect x="600" y="80" width="240" height="320" fill="#f0e8ff" stroke="#5a2090" stroke-width="1.5" rx="6"/>
+  <text x="720" y="105" text-anchor="middle" font-weight="bold" fill="#5a2090" font-size="13">3. Post-measurement</text>
+  <text x="720" y="123" text-anchor="middle" font-size="11" fill="#444" font-style="italic">recorded outcome</text>
+
+  <!-- Single channel -->
+  <line x1="640" y1="230" x2="800" y2="230" stroke="#5a2090" stroke-width="3"/>
+  <circle cx="640" cy="230" r="6" fill="#5a2090"/>
+  <circle cx="800" cy="230" r="6" fill="#5a2090"/>
+  <text x="720" y="218" text-anchor="middle" font-size="11" fill="#5a2090" font-weight="bold">recorded</text>
+
+  <text x="720" y="335" text-anchor="middle" font-size="11" fill="#444">other channels not "collapsed";</text>
+  <text x="720" y="352" text-anchor="middle" font-size="11" fill="#444">they ceased to be viable pathways</text>
+  <text x="720" y="378" text-anchor="middle" font-size="11" fill="#666" font-style="italic">no separate collapse mechanism</text>
+
+  <!-- Connecting arrows between panels -->
+  <g stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)">
+    <line x1="280" y1="240" x2="320" y2="240"/>
+    <line x1="560" y1="240" x2="600" y2="240"/>
+  </g>
+
+  <!-- Footer -->
+  <rect x="40" y="430" width="820" height="150" fill="#f9f9f9" stroke="#bbb" stroke-width="1" rx="4"/>
+  <text x="450" y="455" text-anchor="middle" font-weight="bold" font-size="13" fill="#444">Reading the substrate-level measurement</text>
+  <text x="60" y="478" font-size="11" fill="#444">Standard QM postulates an instantaneous "collapse" mechanism that is not present elsewhere in the formalism.</text>
+  <text x="60" y="496" font-size="11" fill="#444">ED replaces this postulate with P11 commitment-irreversibility: the participation-recording step is structurally</text>
+  <text x="60" y="514" font-size="11" fill="#444">asymmetric at the substrate level. The "non-recorded" channels are not erased; they cease to be viable pathways</text>
+  <text x="60" y="532" font-size="11" fill="#444">because the substrate's participation-rule has selected a different one and committed to it.</text>
+  <text x="60" y="555" font-size="11" fill="#444" font-style="italic">No collapse mechanism is invoked. Measurement is the substrate-level act of recording, FORCED by P11 to be one-directional.</text>
+  <text x="60" y="572" font-size="11" fill="#444" font-style="italic">Born-rule probabilities (Figure 5.1) govern which channel commits; T1–T16 close the four standard postulates.</text>
+</svg>

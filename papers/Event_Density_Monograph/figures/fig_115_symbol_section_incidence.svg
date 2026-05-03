@@ -1,0 +1,144 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="11">
+  <text x="450" y="22" text-anchor="middle" font-size="14" font-weight="bold">Table B.1 — Symbol-by-section incidence</text>
+  <text x="450" y="40" text-anchor="middle" font-size="10" fill="#666" font-style="italic">filled cells indicate "load-bearing usage"</text>
+
+  <!-- 11 chapter columns × ~13 symbol rows. Origin (160, 60). Cell 60×35. -->
+
+  <!-- Column headers: chapters 5..15 -->
+  <g text-anchor="middle" font-weight="bold" fill="#444" font-size="11">
+    <text x="190" y="78">Ch5</text>
+    <text x="250" y="78">Ch6</text>
+    <text x="310" y="78">Ch7</text>
+    <text x="370" y="78">Ch8</text>
+    <text x="430" y="78">Ch9</text>
+    <text x="490" y="78">Ch10</text>
+    <text x="550" y="78">Ch11</text>
+    <text x="610" y="78">Ch12</text>
+    <text x="670" y="78">Ch13</text>
+    <text x="730" y="78">Ch14</text>
+    <text x="790" y="78">Ch15</text>
+  </g>
+
+  <!-- Rows: ρ, ∇ρ, σ, Γ_cross, 𝓜, V1, V5, P11, ℓ_P, ℏ, G, a₀, μ(x), 𝓤  — 13 rows -->
+  <!-- Row y starts at 85, height 32 -->
+  <!-- Helper: Generate 13×11 grid of empty cells -->
+
+  <g stroke="#bbb" stroke-width="1" fill="#fff">
+    <!-- Row 1 ρ -->
+    <rect x="160" y="85" width="60" height="32"/><rect x="220" y="85" width="60" height="32"/><rect x="280" y="85" width="60" height="32"/><rect x="340" y="85" width="60" height="32"/><rect x="400" y="85" width="60" height="32"/><rect x="460" y="85" width="60" height="32"/><rect x="520" y="85" width="60" height="32"/><rect x="580" y="85" width="60" height="32"/><rect x="640" y="85" width="60" height="32"/><rect x="700" y="85" width="60" height="32"/><rect x="760" y="85" width="60" height="32"/>
+    <!-- Row 2 σ -->
+    <rect x="160" y="117" width="60" height="32"/><rect x="220" y="117" width="60" height="32"/><rect x="280" y="117" width="60" height="32"/><rect x="340" y="117" width="60" height="32"/><rect x="400" y="117" width="60" height="32"/><rect x="460" y="117" width="60" height="32"/><rect x="520" y="117" width="60" height="32"/><rect x="580" y="117" width="60" height="32"/><rect x="640" y="117" width="60" height="32"/><rect x="700" y="117" width="60" height="32"/><rect x="760" y="117" width="60" height="32"/>
+    <!-- Row 3 Γ_cross -->
+    <rect x="160" y="149" width="60" height="32"/><rect x="220" y="149" width="60" height="32"/><rect x="280" y="149" width="60" height="32"/><rect x="340" y="149" width="60" height="32"/><rect x="400" y="149" width="60" height="32"/><rect x="460" y="149" width="60" height="32"/><rect x="520" y="149" width="60" height="32"/><rect x="580" y="149" width="60" height="32"/><rect x="640" y="149" width="60" height="32"/><rect x="700" y="149" width="60" height="32"/><rect x="760" y="149" width="60" height="32"/>
+    <!-- Row 4 𝓜 -->
+    <rect x="160" y="181" width="60" height="32"/><rect x="220" y="181" width="60" height="32"/><rect x="280" y="181" width="60" height="32"/><rect x="340" y="181" width="60" height="32"/><rect x="400" y="181" width="60" height="32"/><rect x="460" y="181" width="60" height="32"/><rect x="520" y="181" width="60" height="32"/><rect x="580" y="181" width="60" height="32"/><rect x="640" y="181" width="60" height="32"/><rect x="700" y="181" width="60" height="32"/><rect x="760" y="181" width="60" height="32"/>
+    <!-- Row 5 V1 -->
+    <rect x="160" y="213" width="60" height="32"/><rect x="220" y="213" width="60" height="32"/><rect x="280" y="213" width="60" height="32"/><rect x="340" y="213" width="60" height="32"/><rect x="400" y="213" width="60" height="32"/><rect x="460" y="213" width="60" height="32"/><rect x="520" y="213" width="60" height="32"/><rect x="580" y="213" width="60" height="32"/><rect x="640" y="213" width="60" height="32"/><rect x="700" y="213" width="60" height="32"/><rect x="760" y="213" width="60" height="32"/>
+    <!-- Row 6 V5 -->
+    <rect x="160" y="245" width="60" height="32"/><rect x="220" y="245" width="60" height="32"/><rect x="280" y="245" width="60" height="32"/><rect x="340" y="245" width="60" height="32"/><rect x="400" y="245" width="60" height="32"/><rect x="460" y="245" width="60" height="32"/><rect x="520" y="245" width="60" height="32"/><rect x="580" y="245" width="60" height="32"/><rect x="640" y="245" width="60" height="32"/><rect x="700" y="245" width="60" height="32"/><rect x="760" y="245" width="60" height="32"/>
+    <!-- Row 7 P11 -->
+    <rect x="160" y="277" width="60" height="32"/><rect x="220" y="277" width="60" height="32"/><rect x="280" y="277" width="60" height="32"/><rect x="340" y="277" width="60" height="32"/><rect x="400" y="277" width="60" height="32"/><rect x="460" y="277" width="60" height="32"/><rect x="520" y="277" width="60" height="32"/><rect x="580" y="277" width="60" height="32"/><rect x="640" y="277" width="60" height="32"/><rect x="700" y="277" width="60" height="32"/><rect x="760" y="277" width="60" height="32"/>
+    <!-- Row 8 ℓ_P -->
+    <rect x="160" y="309" width="60" height="32"/><rect x="220" y="309" width="60" height="32"/><rect x="280" y="309" width="60" height="32"/><rect x="340" y="309" width="60" height="32"/><rect x="400" y="309" width="60" height="32"/><rect x="460" y="309" width="60" height="32"/><rect x="520" y="309" width="60" height="32"/><rect x="580" y="309" width="60" height="32"/><rect x="640" y="309" width="60" height="32"/><rect x="700" y="309" width="60" height="32"/><rect x="760" y="309" width="60" height="32"/>
+    <!-- Row 9 ℏ -->
+    <rect x="160" y="341" width="60" height="32"/><rect x="220" y="341" width="60" height="32"/><rect x="280" y="341" width="60" height="32"/><rect x="340" y="341" width="60" height="32"/><rect x="400" y="341" width="60" height="32"/><rect x="460" y="341" width="60" height="32"/><rect x="520" y="341" width="60" height="32"/><rect x="580" y="341" width="60" height="32"/><rect x="640" y="341" width="60" height="32"/><rect x="700" y="341" width="60" height="32"/><rect x="760" y="341" width="60" height="32"/>
+    <!-- Row 10 G -->
+    <rect x="160" y="373" width="60" height="32"/><rect x="220" y="373" width="60" height="32"/><rect x="280" y="373" width="60" height="32"/><rect x="340" y="373" width="60" height="32"/><rect x="400" y="373" width="60" height="32"/><rect x="460" y="373" width="60" height="32"/><rect x="520" y="373" width="60" height="32"/><rect x="580" y="373" width="60" height="32"/><rect x="640" y="373" width="60" height="32"/><rect x="700" y="373" width="60" height="32"/><rect x="760" y="373" width="60" height="32"/>
+    <!-- Row 11 a₀ -->
+    <rect x="160" y="405" width="60" height="32"/><rect x="220" y="405" width="60" height="32"/><rect x="280" y="405" width="60" height="32"/><rect x="340" y="405" width="60" height="32"/><rect x="400" y="405" width="60" height="32"/><rect x="460" y="405" width="60" height="32"/><rect x="520" y="405" width="60" height="32"/><rect x="580" y="405" width="60" height="32"/><rect x="640" y="405" width="60" height="32"/><rect x="700" y="405" width="60" height="32"/><rect x="760" y="405" width="60" height="32"/>
+    <!-- Row 12 𝓤 -->
+    <rect x="160" y="437" width="60" height="32"/><rect x="220" y="437" width="60" height="32"/><rect x="280" y="437" width="60" height="32"/><rect x="340" y="437" width="60" height="32"/><rect x="400" y="437" width="60" height="32"/><rect x="460" y="437" width="60" height="32"/><rect x="520" y="437" width="60" height="32"/><rect x="580" y="437" width="60" height="32"/><rect x="640" y="437" width="60" height="32"/><rect x="700" y="437" width="60" height="32"/><rect x="760" y="437" width="60" height="32"/>
+    <!-- Row 13 M(𝓢,K,𝓔,𝓞) -->
+    <rect x="160" y="469" width="60" height="32"/><rect x="220" y="469" width="60" height="32"/><rect x="280" y="469" width="60" height="32"/><rect x="340" y="469" width="60" height="32"/><rect x="400" y="469" width="60" height="32"/><rect x="460" y="469" width="60" height="32"/><rect x="520" y="469" width="60" height="32"/><rect x="580" y="469" width="60" height="32"/><rect x="640" y="469" width="60" height="32"/><rect x="700" y="469" width="60" height="32"/><rect x="760" y="469" width="60" height="32"/>
+  </g>
+
+  <!-- Filled cells -->
+  <g fill="#1a4f8b">
+    <!-- ρ in 7,8,9,10,11,12 -->
+    <rect x="280" y="85" width="60" height="32"/>
+    <rect x="340" y="85" width="60" height="32"/>
+    <rect x="400" y="85" width="60" height="32"/>
+    <rect x="460" y="85" width="60" height="32"/>
+    <rect x="520" y="85" width="60" height="32"/>
+    <rect x="580" y="85" width="60" height="32"/>
+    <!-- σ in 8, 13, 14 -->
+    <rect x="340" y="117" width="60" height="32"/>
+    <rect x="640" y="117" width="60" height="32"/>
+    <rect x="700" y="117" width="60" height="32"/>
+    <!-- Γ_cross in 6,7,8,9,11,13,14 -->
+    <rect x="220" y="149" width="60" height="32"/>
+    <rect x="280" y="149" width="60" height="32"/>
+    <rect x="340" y="149" width="60" height="32"/>
+    <rect x="400" y="149" width="60" height="32"/>
+    <rect x="520" y="149" width="60" height="32"/>
+    <rect x="640" y="149" width="60" height="32"/>
+    <rect x="700" y="149" width="60" height="32"/>
+    <!-- 𝓜 in 5,7,10,13,14,15 -->
+    <rect x="160" y="181" width="60" height="32"/>
+    <rect x="280" y="181" width="60" height="32"/>
+    <rect x="460" y="181" width="60" height="32"/>
+    <rect x="640" y="181" width="60" height="32"/>
+    <rect x="700" y="181" width="60" height="32"/>
+    <rect x="760" y="181" width="60" height="32"/>
+    <!-- V1 in 6,8,9,10,12,13 -->
+    <rect x="220" y="213" width="60" height="32"/>
+    <rect x="340" y="213" width="60" height="32"/>
+    <rect x="400" y="213" width="60" height="32"/>
+    <rect x="460" y="213" width="60" height="32"/>
+    <rect x="580" y="213" width="60" height="32"/>
+    <rect x="640" y="213" width="60" height="32"/>
+    <!-- V5 in 10 -->
+    <rect x="460" y="245" width="60" height="32"/>
+    <!-- P11 in 5,7,13 -->
+    <rect x="160" y="277" width="60" height="32"/>
+    <rect x="280" y="277" width="60" height="32"/>
+    <rect x="640" y="277" width="60" height="32"/>
+    <!-- ℓ_P in 8,9,11,12,13,14 -->
+    <rect x="340" y="309" width="60" height="32"/>
+    <rect x="400" y="309" width="60" height="32"/>
+    <rect x="520" y="309" width="60" height="32"/>
+    <rect x="580" y="309" width="60" height="32"/>
+    <rect x="640" y="309" width="60" height="32"/>
+    <rect x="700" y="309" width="60" height="32"/>
+    <!-- ℏ in 5,11 -->
+    <rect x="160" y="341" width="60" height="32"/>
+    <rect x="520" y="341" width="60" height="32"/>
+    <!-- G in 11,12,13 -->
+    <rect x="520" y="373" width="60" height="32"/>
+    <rect x="580" y="373" width="60" height="32"/>
+    <rect x="640" y="373" width="60" height="32"/>
+    <!-- a₀ in 11,12,15 -->
+    <rect x="520" y="405" width="60" height="32"/>
+    <rect x="580" y="405" width="60" height="32"/>
+    <rect x="760" y="405" width="60" height="32"/>
+    <!-- 𝓤 in 7,14 -->
+    <rect x="280" y="437" width="60" height="32"/>
+    <rect x="700" y="437" width="60" height="32"/>
+    <!-- M function in 7,14,15 -->
+    <rect x="280" y="469" width="60" height="32"/>
+    <rect x="700" y="469" width="60" height="32"/>
+    <rect x="760" y="469" width="60" height="32"/>
+  </g>
+
+  <!-- Row labels -->
+  <g text-anchor="end" font-weight="bold" fill="#1a4f8b" font-size="12">
+    <text x="150" y="106">ρ</text>
+    <text x="150" y="138">σ</text>
+    <text x="150" y="170">Γ_cross</text>
+    <text x="150" y="202">𝓜</text>
+    <text x="150" y="234">V1</text>
+    <text x="150" y="266">V5</text>
+    <text x="150" y="298">P11</text>
+    <text x="150" y="330">ℓ_P</text>
+    <text x="150" y="362">ℏ</text>
+    <text x="150" y="394">G</text>
+    <text x="150" y="426">a₀</text>
+    <text x="150" y="458">𝓤</text>
+    <text x="150" y="490">M(𝓢,K,𝓔,𝓞)</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="538" text-anchor="middle" font-size="10" fill="#666" font-style="italic">selected key symbols; full glossary in Appendix B body</text>
+  <text x="450" y="555" text-anchor="middle" font-size="10" fill="#666" font-style="italic">Γ_cross, V1, ρ are most cross-cutting (load-bearing in 6+ chapters)</text>
+  <text x="450" y="572" text-anchor="middle" font-size="10" fill="#666" font-style="italic">cross-checks Appendix B notation glossary against chapter usage</text>
+</svg>

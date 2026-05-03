@@ -1,0 +1,63 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a4f8b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="bold">Figure 11.2 — T19 derivation flowchart: G = c³ ℓ_P² / ℏ</text>
+
+  <!-- Three substrate inputs at top -->
+  <text x="450" y="60" text-anchor="middle" font-size="12" fill="#444">Substrate inputs</text>
+
+  <rect x="40" y="80" width="240" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="160" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Cumulative-strain mechanism</text>
+  <line x1="55" y1="115" x2="265" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="160" y="135" text-anchor="middle" font-size="11" fill="#444">stable participation structure</text>
+  <text x="160" y="153" text-anchor="middle" font-size="11" fill="#444">deforms substrate cumulatively</text>
+
+  <rect x="330" y="80" width="240" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="450" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Holographic count bound</text>
+  <line x1="345" y1="115" x2="555" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="450" y="135" text-anchor="middle" font-size="11" fill="#444">substrate cells on sphere R:</text>
+  <text x="450" y="153" text-anchor="middle" font-size="11" fill="#444">N(R) ~ R² / ℓ_P²</text>
+
+  <rect x="620" y="80" width="240" height="80" fill="#e8f0ff" stroke="#1a4f8b" stroke-width="1.5" rx="6"/>
+  <text x="740" y="105" text-anchor="middle" font-weight="bold" fill="#1a4f8b" font-size="13">Substrate equipartition</text>
+  <line x1="635" y1="115" x2="855" y2="115" stroke="#1a4f8b" stroke-width="0.8"/>
+  <text x="740" y="135" text-anchor="middle" font-size="11" fill="#444">energy distributes across</text>
+  <text x="740" y="153" text-anchor="middle" font-size="11" fill="#444">viable substrate-scale modes</text>
+
+  <!-- Convergence to intermediate result -->
+  <g stroke="#1a4f8b" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <line x1="160" y1="160" x2="380" y2="220"/>
+    <line x1="450" y1="160" x2="450" y2="220"/>
+    <line x1="740" y1="160" x2="520" y2="220"/>
+  </g>
+
+  <!-- Intermediate: inverse-square form -->
+  <rect x="280" y="230" width="340" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="255" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Inverse-square form FORCED</text>
+  <line x1="295" y1="265" x2="605" y2="265" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="450" y="288" text-anchor="middle" font-size="13" fill="#a05a00" font-weight="bold">F  ~  M / R²</text>
+  <text x="450" y="305" text-anchor="middle" font-size="10" fill="#666" font-style="italic">structural form recovered</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="310" x2="450" y2="350" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Identification of proportionality constant -->
+  <rect x="220" y="360" width="460" height="80" fill="#fff4e0" stroke="#a05a00" stroke-width="1.5" rx="6"/>
+  <text x="450" y="385" text-anchor="middle" font-weight="bold" fill="#a05a00" font-size="13">Proportionality constant fixed</text>
+  <line x1="235" y1="395" x2="665" y2="395" stroke="#a05a00" stroke-width="0.8"/>
+  <text x="450" y="418" text-anchor="middle" font-size="11" fill="#444">substrate-input dimensional analysis on c, ℓ_P, ℏ</text>
+  <text x="450" y="436" text-anchor="middle" font-size="10" fill="#666" font-style="italic">unique combination with units of [G]</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="440" x2="450" y2="475" stroke="#1a4f8b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Final result -->
+  <rect x="220" y="485" width="460" height="80" fill="#1a4f8b" stroke="#1a4f8b" stroke-width="2" rx="8"/>
+  <text x="450" y="513" text-anchor="middle" fill="#fff" font-weight="bold" font-size="18">G  =  c³ ℓ_P² / ℏ</text>
+  <text x="450" y="538" text-anchor="middle" fill="#fff" font-size="11">Newton's gravitational constant DERIVED from substrate</text>
+  <text x="450" y="555" text-anchor="middle" fill="#fff" font-size="10" font-style="italic">value DERIVED, not just FORM-FORCED — ℓ_P identified with Planck length by Newton-recovery</text>
+</svg>
