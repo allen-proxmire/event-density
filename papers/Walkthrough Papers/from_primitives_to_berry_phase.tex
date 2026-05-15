@@ -1,0 +1,481 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to Berry Phase},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to Berry Phase\\[6pt]
+\large\mdseries A Walkthrough of the Event Density Derivation}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+\subsection*{What this walkthrough derives}
+
+This walkthrough derives, from substrate primitives, three closely-related quantities of standard quantum mechanics:
+
+\begin{enumerate}[noitemsep]
+  \item \textbf{The Berry connection} $\mathcal{A}_n(\mathbf{R}) = i\langle n(\mathbf{R})|\nabla_\mathbf{R} n(\mathbf{R})\rangle$ on parameter space, as a substrate-level rule-type connection forced by parallel-transport compatibility with normalization and unitarity.
+  \item \textbf{The Berry phase} $\gamma_n[C] = \oint_C \mathcal{A}_n(\mathbf{R})\cdot d\mathbf{R}$, as the geometric phase accumulated under adiabatic cyclic evolution around a closed loop $C$ in parameter space.
+  \item \textbf{The Berry curvature} $\Omega_n(\mathbf{R}) = \nabla_\mathbf{R}\times\mathcal{A}_n(\mathbf{R})$, as the gauge-invariant curvature of the rule-type connection, satisfying $\gamma_n[C] = \iint_S \Omega_n\cdot d\mathbf{S}$ for any surface $S$ with $\partial S = C$.
+\end{enumerate}
+
+Each is derived, not posited. The walkthrough is fully self-contained: all required Hilbert-space, parallel-transport, and gauge-transformation algebra is derived inside the document.
+
+\subsection*{Why standard quantum mechanics treats Berry phase as a formal construction}
+
+Berry's 1984 derivation observed that adiabatic cyclic evolution leaves an instantaneous eigenstate $|n(\mathbf{R})\rangle$ unchanged in identity but multiplied by a phase factor $e^{i\gamma_n}$ above and beyond the standard dynamical phase. The construction proceeds: write $|\psi(t)\rangle = e^{-i\int_0^t E_n(t')dt'/\hbar} e^{i\gamma_n(t)}|n(\mathbf{R}(t))\rangle$, substitute into the Schr\"odinger equation, project onto $\langle n|$, and read off $\dot\gamma_n = i\langle n|\dot n\rangle = i\langle n|\nabla_\mathbf{R} n\rangle\cdot\dot{\mathbf{R}}$.
+
+This is mathematically correct. It is also mechanistically opaque. Standard QM does not say \emph{what makes the parameter-dependent eigenstate $|n(\mathbf{R})\rangle$ a coherent object across $\mathbf{R}$-values that are never simultaneously instantiated}, \emph{why parallel transport produces a connection rather than a flat structure}, \emph{what makes the geometric phase rate-independent}, or \emph{what physical object the Berry curvature describes}. The construction is presented as a derived consequence of QM postulates, but the postulates themselves are unexplained at any deeper ontological level. The Berry connection and curvature are objects in parameter space, not physical space --- their meaning at the level of underlying ontology is left unstated.
+
+\subsection*{What Event Density claims}
+
+The Berry connection, Berry phase, and Berry curvature are FORCED by the substrate ontology of the Event Density (ED) framework when participation rules are parameter-dependent. The connection one-form is the substrate-level statement that adiabatic identity-preservation under parameter change requires a path-dependent compensation, the geometric-phase rate-independence is the substrate-level statement that the connection lives on parameter space rather than time, and the curvature is the substrate-level rule-type curvature in parameter space --- directly analogous to the rule-type curvature of a gauge field in physical space, but lifted to the space of rule parameters.
+
+The substrate-level mechanism, in one sentence: \textbf{the Berry phase is the holonomy of the rule-type connection on the bundle of parameter-dependent participation rules}.
+
+\subsection*{The chain in summary}
+
+The derivation chain runs:
+
+substrate primitives with explicit parameter dependence (\S2) $\to$ parameter-dependent participation rule + instantaneous eigenchannels (\S3) $\to$ parallel-transport condition forces the Berry connection (\S4) $\to$ closed adiabatic loop separates dynamical and geometric phase (\S5) $\to$ Berry curvature as gauge-invariant rule-type curvature, with Stokes-theorem relation (\S6) $\to$ substrate-level reading + explicit comparison with the closed-loop integral structure familiar from gauge fields in physical space (\S7) $\to$ exact claims established (\S8).
+
+The substrate primitives are five: participation rule with parameter dependence, identity alignment with pre-individuation amplitudes, channels and adiabatic evolution as slow parameter change, global ED-geometry in parameter space, and closed loops in parameter space as closed families of participation rules.
+
+\section{The Primitives}
+
+\subsection{P-BP-1. Parameter-dependent participation rule}
+
+A \emph{participation rule} $r(\mathbf{R})$ is the substrate-level identity-encoding of a chain, \emph{with explicit functional dependence on a parameter vector} $\mathbf{R} \in \mathcal{M}$, where $\mathcal{M}$ is a smooth manifold (the parameter manifold). At each fixed $\mathbf{R}$, the rule is a single-typed object: a chain at parameter $\mathbf{R}$ commits to exactly one rule drawn from a discrete alignment set $\mathcal{R}(\mathbf{R}) = \{r_0(\mathbf{R}), r_1(\mathbf{R}), \ldots\}$.
+
+\textbf{Smooth dependence.} As $\mathbf{R}$ varies smoothly, the alignment set varies smoothly: each $r_n(\mathbf{R})$ is a smooth function of $\mathbf{R}$ in the substrate-level sense that the inner-product structure $\langle r_i(\mathbf{R})|r_j(\mathbf{R})\rangle$ is smoothly differentiable in $\mathbf{R}$.
+
+\textbf{Algebraic structure.} The alignment set carries a substrate-level inner-product structure with $\langle r_i(\mathbf{R})|r_i(\mathbf{R})\rangle = 1$ and $\langle r_i(\mathbf{R})|r_j(\mathbf{R})\rangle = 0$ for $i \neq j$ (orthonormal alignment set at each $\mathbf{R}$). This is the parameter-space generalization of the inner-product structure on a fixed alignment set.
+
+\textbf{Pre-individuation amplitudes at fixed $\mathbf{R}$.} Before commitment at parameter $\mathbf{R}$, the chain admits multiple consistent rule continuations weighted by complex amplitudes $\alpha_n(\mathbf{R}) \in \mathbb{C}$:
+\[
+|\psi(\mathbf{R})\rangle = \sum_n \alpha_n(\mathbf{R}) |r_n(\mathbf{R})\rangle, \qquad \sum_n |\alpha_n(\mathbf{R})|^{2} = 1.
+\]
+
+\subsection{P-BP-2. Identity alignment under parameter change}
+
+The \emph{identity alignment} of a chain at parameter $\mathbf{R}$ is the chain's commitment to one specific rule $r_n(\mathbf{R})$ within the alignment set. As $\mathbf{R}$ changes, the rule $r_n(\mathbf{R})$ deforms continuously along the parameter trajectory.
+
+\textbf{Identity-preserving evolution.} A chain whose alignment is $r_n(\mathbf{R})$ at $\mathbf{R} = \mathbf{R}_0$ may continue to be aligned with the \emph{same labeled rule} $r_n(\mathbf{R})$ as $\mathbf{R}$ varies smoothly to $\mathbf{R}_1$, provided the evolution is slow enough not to force a transition to a different rule $r_m(\mathbf{R})$ with $m \neq n$. This is the substrate-level statement of adiabatic identity preservation.
+
+\textbf{Pre-individuation amplitudes carry over.} A pre-individuation state $|\psi(\mathbf{R})\rangle = \sum_n \alpha_n(\mathbf{R})|r_n(\mathbf{R})\rangle$ that is concentrated entirely on the $n$-th rule (i.e., $\alpha_n(\mathbf{R}_0) = 1$, others zero) remains so under identity-preserving evolution: $\alpha_n(\mathbf{R}(t)) = \alpha_n(\mathbf{R}_0)$ in magnitude, modulo a phase factor whose structure is the subject of \S4.
+
+\subsection{P-BP-3. Channel and adiabatic evolution}
+
+A \emph{channel} is a participation pathway through ED-gradients carrying a single alignment thread. At each substrate-tick the channel commits to one rule from the alignment set $\mathcal{R}(\mathbf{R})$ at the current parameter.
+
+\textbf{Adiabatic evolution.} A \emph{slow} parameter change is a trajectory $\mathbf{R}(t)$ along which the parameter changes on timescales $T$ much longer than the substrate-level commitment timescale set by the gap between $r_n(\mathbf{R})$ and the nearest other rule $r_m(\mathbf{R})$:
+\[
+T \gg \hbar / \Delta_{nm}(\mathbf{R}), \qquad \Delta_{nm}(\mathbf{R}) = E_n(\mathbf{R}) - E_m(\mathbf{R}) \quad (m \neq n)
+\]
+is the energy gap (in standard QM coarse-grained units; defined in \S3). Under adiabatic evolution, the channel's identity stays committed to the $n$-th rule throughout the parameter trajectory.
+
+\textbf{Substrate-level statement.} Adiabatic evolution is the regime in which the parameter manifold's geometric structure becomes dominant: the channel cannot commit fast enough to follow rapid local fluctuations, and its commitment is forced to track the smooth deformation of the rule itself.
+
+\subsection{P-BP-4. Global ED-geometry in parameter space}
+
+The \emph{global ED-geometry in parameter space} is the structure imposed on the parameter manifold $\mathcal{M}$ by the family of alignment sets $\{\mathcal{R}(\mathbf{R})\}_{\mathbf{R} \in \mathcal{M}}$. Each point $\mathbf{R}$ carries a Hilbert-space-like fibre (the alignment set + amplitudes), and the smooth dependence of the alignment set on $\mathbf{R}$ defines a fibre bundle over $\mathcal{M}$.
+
+\textbf{Fibre bundle structure.} The total space is the disjoint union $E = \bigsqcup_{\mathbf{R}\in\mathcal{M}} \mathcal{H}(\mathbf{R})$, where $\mathcal{H}(\mathbf{R})$ is the Hilbert space spanned by $\{|r_n(\mathbf{R})\rangle\}$. The projection $\pi: E \to \mathcal{M}$ sends each $|\psi(\mathbf{R})\rangle$ to its base point $\mathbf{R}$. The fibre at $\mathbf{R}$ is $\mathcal{H}(\mathbf{R})$.
+
+\textbf{The bundle is generally non-trivial.} The choice of basis $\{|r_n(\mathbf{R})\rangle\}$ at each $\mathbf{R}$ may not extend to a globally smooth choice across all of $\mathcal{M}$. Different choices differ by $\mathbf{R}$-dependent phase factors $e^{i\chi_n(\mathbf{R})}$. This non-triviality is what makes the Berry phase non-zero in general.
+
+\subsection{P-BP-5. Closed loop in parameter space}
+
+A \emph{closed loop} $C$ in parameter space is a smooth path $\mathbf{R}: [0,T]\to \mathcal{M}$ with $\mathbf{R}(T) = \mathbf{R}(0)$. The parameter manifold returns to its starting point; the alignment set $\mathcal{R}(\mathbf{R}(T)) = \mathcal{R}(\mathbf{R}(0))$ is identical to its initial form.
+
+\textbf{Substrate-level statement.} A closed loop in parameter space is a closed family of participation rules: a one-parameter family of rules that returns to its starting member after one cycle. The chain's identity, if preserved adiabatically, returns to the same committed rule. The non-trivial question --- addressed in \S5 --- is whether the chain's pre-individuation amplitude returns to its initial value or accumulates a phase.
+
+\section{From Parameter-Dependent Rules to Instantaneous Eigenchannels}
+
+\subsection{Hamiltonian as coarse-grained parameter-dependent rule}
+
+The parameter-dependent participation rule, coarse-grained via the substrate-to-Hilbert-space bridge, produces a parameter-dependent Hamiltonian operator $H(\mathbf{R})$ on the fibre Hilbert space $\mathcal{H}(\mathbf{R})$. The eigenvalue equation
+\[
+H(\mathbf{R}) |n(\mathbf{R})\rangle = E_n(\mathbf{R}) |n(\mathbf{R})\rangle
+\]
+defines instantaneous eigenchannels $|n(\mathbf{R})\rangle$ with instantaneous eigen-energies $E_n(\mathbf{R})$. The eigenchannel set $\{|n(\mathbf{R})\rangle\}$ is an orthonormal basis for $\mathcal{H}(\mathbf{R})$:
+\[
+\langle m(\mathbf{R})|n(\mathbf{R})\rangle = \delta_{mn}.
+\]
+The eigenchannels are the coarse-grained images of the parameter-dependent participation rules: $|n(\mathbf{R})\rangle$ corresponds to the substrate-level rule $r_n(\mathbf{R})$.
+
+\subsection{Smooth dependence}
+
+The Hamiltonian $H(\mathbf{R})$ is a smooth function of $\mathbf{R}$ --- its matrix elements are smooth in any fixed basis --- and the eigen-energies $E_n(\mathbf{R})$ are smooth functions on the parameter manifold (away from level crossings). The eigenchannels $|n(\mathbf{R})\rangle$ are smooth functions of $\mathbf{R}$ \emph{up to a phase}: the eigenvalue equation determines $|n(\mathbf{R})\rangle$ only up to multiplication by an arbitrary phase $e^{i\chi_n(\mathbf{R})}$. This phase ambiguity is the source of the gauge structure on parameter space (\S6).
+
+\subsection{Adiabatic evolution at the Hilbert-space level}
+
+The full Schr\"odinger equation under time-varying parameter $\mathbf{R}(t)$:
+\[
+i\hbar \frac{d}{dt} |\psi(t)\rangle = H(\mathbf{R}(t)) |\psi(t)\rangle.
+\]
+Expand $|\psi(t)\rangle$ in the instantaneous eigenchannel basis:
+\[
+|\psi(t)\rangle = \sum_n c_n(t) e^{-i\varphi_n(t)} |n(\mathbf{R}(t))\rangle,
+\]
+where $\varphi_n(t) = \frac{1}{\hbar}\int_0^t E_n(\mathbf{R}(t'))dt'$ is the dynamical phase. Substituting into Schr\"odinger and projecting onto $\langle m(\mathbf{R}(t))|$:
+\[
+\dot c_m(t) = -\sum_n c_n(t) e^{i(\varphi_m - \varphi_n)} \langle m(\mathbf{R}(t))|\tfrac{d}{dt}|n(\mathbf{R}(t))\rangle.
+\]
+The matrix element $\langle m|\tfrac{d}{dt}|n\rangle = \langle m|\nabla_\mathbf{R} n\rangle\cdot\dot{\mathbf{R}}$. For $m \neq n$, the standard adiabatic argument bounds this term by
+\[
+|\langle m|\nabla_\mathbf{R} n\rangle \cdot \dot{\mathbf{R}}| \lesssim |\dot{\mathbf{R}}| / \Delta_{mn}(\mathbf{R}),
+\]
+(from the off-diagonal Hellmann--Feynman identity, derived in \S4.2 below). The phase factor $e^{i(\varphi_m - \varphi_n)}$ oscillates rapidly under the adiabatic condition $|\dot{\mathbf{R}}|/\Delta_{mn} \ll 1$, and the off-diagonal contribution to $\dot c_m$ averages to zero on adiabatic timescales.
+
+\textbf{Conclusion of the adiabatic argument.} Under adiabatic evolution, $|c_n(t)|$ is preserved: a chain initially in the $n$-th instantaneous eigenchannel remains in the $n$-th instantaneous eigenchannel throughout the evolution. The remaining content of $c_n(t)$ is its phase, addressed in \S4.
+
+\section{Parallel Transport and the Berry Connection}
+
+\subsection{The diagonal phase equation}
+
+For a chain initially in $|n(\mathbf{R}(0))\rangle$, adiabatic evolution maintains $|c_n(t)| = 1$ and $|c_m(t)| = 0$ for $m \neq n$. The state at time $t$ is therefore
+\[
+|\psi(t)\rangle = c_n(t) e^{-i\varphi_n(t)} |n(\mathbf{R}(t))\rangle
+\]
+with $|c_n(t)| = 1$, so $c_n(t) = e^{i\gamma_n(t)}$ for some real $\gamma_n(t)$. The diagonal Schr\"odinger projection gives:
+\[
+\dot c_n(t) = -c_n(t) \langle n(\mathbf{R}(t))|\tfrac{d}{dt}|n(\mathbf{R}(t))\rangle,
+\]
+which yields, for $c_n(t) = e^{i\gamma_n(t)}$:
+\[
+i \dot\gamma_n(t) = -\langle n(\mathbf{R}(t))|\tfrac{d}{dt}|n(\mathbf{R}(t))\rangle
+\]
+equivalently
+\[
+\dot\gamma_n(t) = i \langle n(\mathbf{R}(t))| \tfrac{d}{dt} |n(\mathbf{R}(t))\rangle
+= i \langle n(\mathbf{R}(t))|\nabla_\mathbf{R} n(\mathbf{R}(t))\rangle \cdot \dot{\mathbf{R}}(t).
+\]
+
+\subsection{The off-diagonal Hellmann--Feynman identity}
+
+We pause to derive the off-diagonal identity used in \S3.3. Differentiating the eigenvalue equation $H|n\rangle = E_n|n\rangle$ with respect to $\mathbf{R}$:
+\[
+(\nabla_\mathbf{R} H) |n\rangle + H |\nabla_\mathbf{R} n\rangle = (\nabla_\mathbf{R} E_n) |n\rangle + E_n |\nabla_\mathbf{R} n\rangle.
+\]
+Project onto $\langle m|$ for $m \neq n$:
+\[
+\langle m|\nabla_\mathbf{R} H|n\rangle + \langle m|H|\nabla_\mathbf{R} n\rangle = (\nabla_\mathbf{R} E_n) \langle m|n\rangle + E_n \langle m|\nabla_\mathbf{R} n\rangle.
+\]
+Using $\langle m|H = E_m\langle m|$ and $\langle m|n\rangle = 0$:
+\[
+\langle m|\nabla_\mathbf{R} H|n\rangle + E_m \langle m|\nabla_\mathbf{R} n\rangle = E_n \langle m|\nabla_\mathbf{R} n\rangle,
+\]
+which gives
+\[
+\langle m|\nabla_\mathbf{R} n\rangle = \frac{\langle m|\nabla_\mathbf{R} H|n\rangle}{E_n - E_m} \quad \text{for } m \neq n.
+\]
+This is the off-diagonal Hellmann--Feynman identity. It bounds $\langle m|\nabla_\mathbf{R} n\rangle$ by $\|\nabla_\mathbf{R} H\|/\Delta_{mn}$, confirming the adiabatic suppression argument.
+
+\subsection{Normalization constraint forces $\langle n|\nabla_\mathbf{R} n\rangle$ to be imaginary}
+
+Differentiate $\langle n(\mathbf{R})|n(\mathbf{R})\rangle = 1$ with respect to $\mathbf{R}$:
+\[
+\langle \nabla_\mathbf{R} n|n\rangle + \langle n|\nabla_\mathbf{R} n\rangle = 0,
+\]
+which gives
+\[
+\langle n|\nabla_\mathbf{R} n\rangle = -\langle \nabla_\mathbf{R} n|n\rangle = -\langle n|\nabla_\mathbf{R} n\rangle^{*},
+\]
+so $\langle n|\nabla_\mathbf{R} n\rangle$ is purely imaginary. Therefore $i\langle n|\nabla_\mathbf{R} n\rangle$ is purely real.
+
+\subsection{The Berry connection}
+
+Define the \textbf{Berry connection} $\mathcal{A}_n(\mathbf{R})$ on the parameter manifold:
+\[
+\mathcal{A}_n(\mathbf{R}) \equiv i \langle n(\mathbf{R})|\nabla_\mathbf{R} n(\mathbf{R})\rangle.
+\]
+By the normalization argument in \S4.3, $\mathcal{A}_n(\mathbf{R})$ is a real-valued vector field on $\mathcal{M}$. By the diagonal phase equation in \S4.1, it is the rate at which the geometric phase accumulates per unit parameter-space displacement:
+\[
+\dot\gamma_n(t) = \mathcal{A}_n(\mathbf{R}(t)) \cdot \dot{\mathbf{R}}(t).
+\]
+Integrating from $0$ to $T$:
+\[
+\gamma_n(T) - \gamma_n(0) = \int_0^T \mathcal{A}_n(\mathbf{R}(t)) \cdot \dot{\mathbf{R}}(t) \, dt
+= \int_C \mathcal{A}_n(\mathbf{R}) \cdot d\mathbf{R},
+\]
+where $C$ is the parameter-space path traced by $\mathbf{R}(t)$.
+
+\textbf{This is the Berry connection, derived not posited.} It is forced by three substrate-level requirements:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Smooth parameter dependence} (P-BP-1) gives well-defined $\nabla_\mathbf{R}|n(\mathbf{R})\rangle$.
+  \item \textbf{Normalization} of the eigenchannel forces $\langle n|\nabla_\mathbf{R} n\rangle$ to be purely imaginary, so $\mathcal{A}_n$ is real.
+  \item \textbf{Adiabatic identity preservation} (P-BP-2 + P-BP-3) restricts the evolution to the diagonal sector, isolating the diagonal phase rate as the only non-trivial content.
+\end{itemize}
+
+\subsection{Parallel-transport reading}
+
+The condition for \emph{parallel transport} of the chain's identity along a path $\mathbf{R}(t)$ is that no ``extra'' phase be acquired beyond what is forced by the rule-type structure. Equivalently, the chain's pre-individuation state in the $n$-th eigenchannel is
+\[
+|\psi_\mathrm{PT}(t)\rangle \equiv e^{i\gamma_n(t)} |n(\mathbf{R}(t))\rangle,
+\]
+with $\gamma_n(t)$ determined by the requirement that $\langle\psi_\mathrm{PT}(t)|\nabla_\mathbf{R}|\psi_\mathrm{PT}(t)\rangle$ be zero modulo the Berry-connection compensation:
+\[
+\langle \psi_\mathrm{PT}|\tfrac{d}{dt}|\psi_\mathrm{PT}\rangle = i\dot\gamma_n + \langle n|\tfrac{d}{dt}|n\rangle = i\dot\gamma_n - i\mathcal{A}_n \cdot \dot{\mathbf{R}} = 0.
+\]
+So $\gamma_n(t) = \int_0^t \mathcal{A}_n(\mathbf{R}(t'))\cdot\dot{\mathbf{R}}(t')\,dt'$ is exactly the rate that compensates for the parameter-induced rotation of the eigenchannel within the fibre Hilbert space. This is the substrate-level statement that the Berry connection is the connection on the bundle defined in P-BP-4 --- the structure that defines parallel transport of the rule-type identity.
+
+\section{Closed Loops and the Berry Phase}
+
+\subsection{Setup}
+
+Consider a closed loop $C$ in parameter space: $\mathbf{R}(t)$ for $t \in [0,T]$ with $\mathbf{R}(T) = \mathbf{R}(0) \equiv \mathbf{R}_0$. The chain begins in the instantaneous $n$-th eigenchannel: $|\psi(0)\rangle = |n(\mathbf{R}_0)\rangle$.
+
+\subsection{State at time $T$}
+
+By the adiabatic argument (\S3.3) the chain remains in the instantaneous $n$-th eigenchannel throughout. By \S4.4 it accumulates a phase consisting of two pieces:
+\[
+|\psi(T)\rangle = e^{-i\varphi_n(T)} e^{i\gamma_n(T)} |n(\mathbf{R}(T))\rangle = e^{-i\varphi_n(T)} e^{i\gamma_n(T)} |n(\mathbf{R}_0)\rangle.
+\]
+The eigenchannel at the end of the loop is the same labeled rule as at the start (P-BP-5: closed loop in parameter space returns the alignment set to itself), and the chain's commitment is to the same rule throughout (adiabaticity). The non-trivial content lives entirely in the phase.
+
+\subsection{Dynamical phase}
+
+The dynamical phase is
+\[
+\varphi_n(T) = \frac{1}{\hbar} \int_0^T E_n(\mathbf{R}(t)) \, dt.
+\]
+This phase depends on the \emph{speed} of traversal: a slower traversal accumulates a larger dynamical phase because it spends more time at each instantaneous eigen-energy. The dynamical phase is \emph{not} a geometric quantity --- it is an integral of $E_n$ over time, and reparameterizing $t$ changes its value.
+
+\subsection{Geometric (Berry) phase}
+
+The geometric phase is
+\[
+\gamma_n(T) = \int_0^T \mathcal{A}_n(\mathbf{R}(t)) \cdot \dot{\mathbf{R}}(t) \, dt
+= \oint_C \mathcal{A}_n(\mathbf{R}) \cdot d\mathbf{R}.
+\]
+The right-hand side is a \emph{line integral over the closed loop in parameter space}. This integral does \emph{not} depend on the speed of traversal: $\dot{\mathbf{R}}\,dt = d\mathbf{R}$ is a parameter-space differential, and the line integral $\oint_C \mathcal{A}_n(\mathbf{R})\cdot d\mathbf{R}$ is determined entirely by the geometric path $C$ in parameter space --- not by how fast the chain traverses it. \textbf{The Berry phase is rate-independent because it is a geometric invariant of the path in parameter space.}
+
+This is the central derived result:
+\[
+\gamma_n[C] = \oint_C \mathcal{A}_n(\mathbf{R}) \cdot d\mathbf{R}, \qquad \mathcal{A}_n(\mathbf{R}) = i \langle n(\mathbf{R})|\nabla_\mathbf{R} n(\mathbf{R})\rangle.
+\]
+
+\subsection{Substrate-level reading}
+
+\begin{itemize}[noitemsep]
+  \item The chain's commitment to the $n$-th rule is preserved throughout the closed loop (adiabaticity + identity-preserving evolution).
+  \item The chain's pre-individuation amplitude returns to the initial labeled rule but with an accumulated phase.
+  \item The phase splits into a dynamical part (depending on the rate of traversal) and a geometric part (depending only on the path in parameter space).
+  \item The geometric part is the integrated Berry connection --- the holonomy of the rule-type connection on the parameter-space bundle.
+\end{itemize}
+
+\subsection{The Berry phase as global participation twist}
+
+The substrate-level meaning: the family of participation rules indexed by the closed loop $C$ is a \emph{closed family} whose first member equals its last. The chain that traverses the family has its identity-commitment preserved at every step, but the family itself has a global twist. The Berry phase measures this twist as the phase mismatch between the chain's pre-individuation amplitude and the labeled-rule basis at the loop's closure.
+
+If the bundle in P-BP-4 is trivial --- the basis $\{|n(\mathbf{R})\rangle\}$ extends to a globally smooth choice across the entire loop --- then $\mathcal{A}_n$ is a pure gradient and $\oint_C \mathcal{A}_n\cdot d\mathbf{R} = 0$ (modulo $2\pi$). If the bundle is non-trivial, the gradient cannot be globally defined, and the loop integral is generically non-zero.
+
+\section{Berry Curvature and Stokes' Theorem}
+
+\subsection{Gauge transformations of the Berry connection}
+
+The eigenchannel $|n(\mathbf{R})\rangle$ is determined by the eigenvalue equation only up to a phase: $|n(\mathbf{R})\rangle$ and
+\[
+|\tilde n(\mathbf{R})\rangle \equiv e^{i\chi(\mathbf{R})} |n(\mathbf{R})\rangle
+\]
+both satisfy $H(\mathbf{R})|\cdot\rangle = E_n(\mathbf{R})|\cdot\rangle$, for any smooth real-valued function $\chi(\mathbf{R})$ on $\mathcal{M}$. Compute the Berry connection in the new basis:
+\begin{align*}
+\tilde{\mathcal{A}}_n(\mathbf{R}) &= i \langle \tilde n(\mathbf{R})|\nabla_\mathbf{R} \tilde n(\mathbf{R})\rangle \\
+&= i \langle n(\mathbf{R})| e^{-i\chi(\mathbf{R})} \nabla_\mathbf{R} [e^{i\chi(\mathbf{R})} |n(\mathbf{R})\rangle] \\
+&= i \langle n(\mathbf{R})| e^{-i\chi(\mathbf{R})} [i (\nabla_\mathbf{R} \chi) e^{i\chi(\mathbf{R})} |n(\mathbf{R})\rangle + e^{i\chi(\mathbf{R})} |\nabla_\mathbf{R} n(\mathbf{R})\rangle] \\
+&= -\langle n(\mathbf{R})|n(\mathbf{R})\rangle \nabla_\mathbf{R} \chi + i \langle n(\mathbf{R})|\nabla_\mathbf{R} n(\mathbf{R})\rangle \\
+&= \mathcal{A}_n(\mathbf{R}) - \nabla_\mathbf{R} \chi(\mathbf{R})
+\end{align*}
+(using the standard sign convention; some texts use the opposite sign for $\chi$). The Berry connection transforms as a $U(1)$ gauge potential under the eigenchannel-phase rotation:
+\[
+\mathcal{A}_n \to \tilde{\mathcal{A}}_n = \mathcal{A}_n - \nabla_\mathbf{R} \chi.
+\]
+(Note the sign: this is the standard transformation law for a connection one-form under a $\chi \to e^{i\chi}$ gauge transformation; the sign convention varies in the literature. Here we use the convention where the Berry-phase loop integral is $+\oint \mathcal{A}_n\cdot d\mathbf{R}$.)
+
+\subsection{Gauge dependence of the Berry phase}
+
+Under the same gauge transformation, the Berry phase around a loop $C$ transforms as
+\[
+\tilde\gamma_n[C] = \oint_C \tilde{\mathcal{A}}_n \cdot d\mathbf{R} = \oint_C \mathcal{A}_n \cdot d\mathbf{R} - \oint_C \nabla_\mathbf{R} \chi \cdot d\mathbf{R} = \gamma_n[C] - [\chi(\mathbf{R}(T)) - \chi(\mathbf{R}(0))].
+\]
+For a closed loop, $\mathbf{R}(T) = \mathbf{R}(0)$, so $\chi(\mathbf{R}(T)) - \chi(\mathbf{R}(0)) = 0$ if $\chi$ is a single-valued smooth function on $\mathcal{M}$. \textbf{In that case, the Berry phase is gauge-invariant: $\tilde\gamma_n[C] = \gamma_n[C]$.}
+
+If $\chi$ is multi-valued (e.g., $\chi$ has $2\pi n$ winding around $C$), the Berry phase shifts by $2\pi n$ --- but $e^{i\gamma_n[C]}$, the physically observable phase factor, is still gauge-invariant. The Berry phase is gauge-invariant modulo $2\pi$.
+
+\subsection{The Berry curvature}
+
+Define the \textbf{Berry curvature} as the exterior derivative (curl) of the Berry connection:
+\[
+\Omega_n(\mathbf{R}) = \nabla_\mathbf{R} \times \mathcal{A}_n(\mathbf{R}) \quad \text{(in three-dimensional parameter space)}
+\]
+or, more generally, as the two-form
+\[
+\Omega_n = d\mathcal{A}_n = \tfrac{1}{2}(\partial_i \mathcal{A}_{n,j} - \partial_j \mathcal{A}_{n,i}) \, dR^i \wedge dR^j,
+\]
+where $\mathcal{A}_n = \mathcal{A}_{n,i}\, dR^i$.
+
+\textbf{Gauge invariance of $\Omega_n$.} Under $\mathcal{A}_n \to \mathcal{A}_n - \nabla\chi$:
+\[
+\tilde\Omega_n = d(\mathcal{A}_n - d\chi) = d\mathcal{A}_n - d^{2}\chi = d\mathcal{A}_n = \Omega_n,
+\]
+since $d^2 = 0$ for any smooth $\chi$. The Berry curvature is gauge-invariant \emph{unconditionally}, not merely modulo $2\pi$.
+
+\subsection{Stokes' theorem and the integrated curvature}
+
+For any surface $S \subset \mathcal{M}$ with boundary $\partial S = C$, Stokes' theorem on the parameter manifold gives:
+\[
+\oint_C \mathcal{A}_n \cdot d\mathbf{R} = \iint_S (\nabla_\mathbf{R} \times \mathcal{A}_n) \cdot d\mathbf{S} = \iint_S \Omega_n \cdot d\mathbf{S},
+\]
+provided $\mathcal{A}_n$ is smooth on $S$ (the bundle is trivializable over $S$). Therefore:
+\[
+\gamma_n[C] = \iint_S \Omega_n \cdot d\mathbf{S}.
+\]
+The Berry phase around $C$ is the integral of the Berry curvature over any surface $S$ bounded by $C$. \textbf{This is the substrate-level Stokes-theorem relation: the holonomy of the rule-type connection equals the integrated curvature it bounds.}
+
+\subsection{Substrate-level reading of the curvature}
+
+\begin{itemize}[noitemsep]
+  \item $\mathcal{A}_n(\mathbf{R})$ is the substrate-level \emph{connection one-form} on the parameter manifold's bundle of participation rules.
+  \item $\Omega_n(\mathbf{R})$ is the substrate-level \emph{curvature two-form} of that connection.
+  \item The Berry phase $\gamma_n[C]$ is the holonomy of the connection --- the substrate-level statement of how much the rule-type identity has twisted around the closed loop.
+  \item Gauge-invariance of $\Omega_n$ is the substrate-level statement that the curvature is a property of the family of participation rules itself, not of any choice of basis representation.
+\end{itemize}
+
+\subsection{Surface independence}
+
+For two surfaces $S_1$ and $S_2$ both bounded by $C$, with $S_1 \cup (-S_2)$ enclosing a closed region $V$:
+\[
+\iint_{S_1} \Omega_n \cdot d\mathbf{S} - \iint_{S_2} \Omega_n \cdot d\mathbf{S} = \oint_{\partial V} \mathcal{A}_n \cdot d\mathbf{R} - \oint_{\partial V} \mathcal{A}_n \cdot d\mathbf{R} = 0,
+\]
+modulo possible gauge-related contributions if the bundle is not trivializable over $V$. In simply-connected regions of the parameter manifold, the integrated Berry curvature is surface-independent.
+
+When the parameter manifold contains topologically non-trivial structures --- degeneracy points where the bundle becomes singular --- the Berry curvature integrated over a closed surface enclosing such a point yields a non-zero integer multiple of $2\pi$ (the Chern number of the bundle restricted to the surface). This integer-quantization is FORM-FORCED by the requirement that $\oint_C \mathcal{A}_n\cdot d\mathbf{R}$ be well-defined modulo $2\pi$ for any closed surface considered as the boundary of two complementary regions.
+
+\section{Substrate-Level Reading}
+
+The objects derived in \S\S4--6 admit the following substrate-level dictionary:
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{6cm}p{8cm}@{}}
+\toprule
+Standard QM object & Substrate-level meaning \\
+\midrule
+Parameter-dependent eigenstate $|n(\mathbf{R})\rangle$ & Coarse-grained image of parameter-dependent rule $r_n(\mathbf{R})$ (P-BP-1) \\
+Berry connection $\mathcal{A}_n(\mathbf{R})$ & Rule-type connection on the parameter-manifold bundle (P-BP-4) \\
+Berry curvature $\Omega_n(\mathbf{R})$ & Curvature of the rule-type connection in parameter space \\
+Berry phase $\gamma_n[C]$ & Holonomy of the rule-type connection: global participation twist accumulated along a closed family of rules \\
+Gauge transformation $|n\rangle \to e^{i\chi}|n\rangle$ & Local re-phasing of the labeled-rule basis at each parameter point \\
+Adiabatic theorem & Substrate-level identity-preservation under slow parameter change (P-BP-2 + P-BP-3) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Comparison with closed-loop integrals in physical space}
+
+The structure derived here --- a connection one-form $\mathcal{A}$ on a manifold, a curvature two-form $\Omega = d\mathcal{A}$, a closed-loop integral $\oint_C \mathcal{A}\cdot dx$ producing a holonomy phase, gauge-invariance of the phase modulo $2\pi$, and Stokes-theorem relation $\oint_C \mathcal{A} = \iint_S \Omega$ --- is the same structure that appears for gauge fields propagating in physical space. The mathematical formalism is identical; the physical setting differs:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Physical-space gauge field}: $\mathcal{A}_\mu(x)$ defined on physical spacetime; closed-loop integral $\oint_C \mathcal{A}_\mu dx^\mu$ is the gauge phase accumulated by a charged chain traversing a physical loop $C$ that may enclose flux-carrying regions.
+  \item \textbf{Berry connection (this walkthrough)}: $\mathcal{A}_n(\mathbf{R})$ defined on parameter space; closed-loop integral $\oint_C \mathcal{A}_n\cdot d\mathbf{R}$ is the geometric phase accumulated by an adiabatically-evolved chain traversing a closed loop in parameter space.
+\end{itemize}
+
+The substrate-level statement of the analogy: \textbf{the rule-type connection structure is the same in both cases --- the difference is only the manifold on which the connection lives}. In one case it is physical spacetime; in the other it is the parameter manifold of rule-defining quantities. The substrate primitive is the rule-type connection; physical space and parameter space are two manifolds on which it can be instantiated.
+
+\subsection{The bundle is generally non-trivial}
+
+The non-triviality of the bundle in P-BP-4 --- the fact that the basis $\{|n(\mathbf{R})\rangle\}$ cannot generally be extended smoothly across all of $\mathcal{M}$ --- is the substrate-level origin of non-zero Berry phase. If the family of participation rules deforms smoothly around a closed loop without any topological obstruction, the Berry phase is zero (modulo $2\pi$). If the family encircles a degeneracy point (where two eigen-rules become indistinguishable and the bundle structure becomes singular), the Berry phase is non-zero.
+
+This is the substrate-level mechanism behind several standard observations: monopole-like Berry curvature near level crossings, $\pi$ Berry phase for spin-$1/2$ rotations through $2\pi$, and integer-valued Chern numbers for closed-surface-integrated Berry curvature.
+
+\section{What's Forced, What's Inherited, What's Open}
+
+\subsection*{What is FORCED by the substrate ontology}
+
+\begin{itemize}[noitemsep]
+  \item Berry connection $\mathcal{A}_n(\mathbf{R}) = i\langle n(\mathbf{R})|\nabla_\mathbf{R} n(\mathbf{R})\rangle$ is FORCED by adiabatic evolution + normalization + smooth parameter dependence (\S4).
+  \item Berry phase $\gamma_n[C] = \oint_C \mathcal{A}_n\cdot d\mathbf{R}$ is FORCED as the geometric component of the total accumulated phase under adiabatic cyclic evolution (\S5).
+  \item Berry phase rate-independence is FORCED by the line-integral-over-parameter-space structure (\S5.4).
+  \item Berry curvature $\Omega_n = d\mathcal{A}_n$ and its gauge-invariance are FORCED by the differential-form structure of the connection (\S6.3).
+  \item Stokes-theorem relation $\gamma_n[C] = \iint_S \Omega_n\cdot d\mathbf{S}$ is FORCED for any surface $S$ on which the bundle is trivializable (\S6.4).
+  \item The structural identity between the Berry connection and gauge connections in physical space is FORCED by the rule-type connection being a single substrate primitive instantiated on different manifolds (\S7.1).
+\end{itemize}
+
+\subsection*{What is FORM-FORCED-INHERITED (and re-derived inside this document)}
+
+These are standard pieces of QM machinery that the substrate ontology reproduces and that this walkthrough re-derives:
+
+\begin{itemize}[noitemsep]
+  \item Hilbert-space inner product and orthonormality of eigenstates (\S3.1).
+  \item Schr\"odinger equation as the coarse-grained substrate-level evolution (\S3.3).
+  \item Off-diagonal Hellmann--Feynman identity $\langle m|\nabla_\mathbf{R} n\rangle = \langle m|\nabla_\mathbf{R} H|n\rangle/(E_n-E_m)$ (\S4.2).
+  \item Adiabatic theorem (preservation of $|c_n|$ under slow parameter evolution) (\S3.3).
+  \item Normalization derivative identity $\langle n|\nabla_\mathbf{R} n\rangle = -\langle n|\nabla_\mathbf{R} n\rangle^*$ (\S4.3).
+  \item Stokes' theorem on smooth manifolds (\S6.4).
+  \item Differential-form algebra ($d^2 = 0$) for gauge invariance of curvature (\S6.3).
+\end{itemize}
+
+\subsection*{What remains OPEN}
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Non-Abelian Berry connection} for degenerate eigenchannel subspaces. When two or more eigen-rules share an eigen-energy, the connection generalizes from a $U(1)$ one-form to a $U(N)$ matrix-valued one-form. Standard derivation (Wilczek--Zee) is FORM-FORCED-INHERITED; substrate-level reading parallels the non-Abelian extension in the gauge-fields walkthrough. Not derived here; OPEN as a candidate Wu--Yang / non-Abelian Berry walkthrough.
+  \item \textbf{Sub-adiabatic corrections.} The leading-order adiabatic argument neglects $O(|\dot{\mathbf{R}}|/\Delta_{nm})$ corrections from off-diagonal mixing. FORM-FORCED expected; explicit substrate-level coefficient OPEN.
+  \item \textbf{Geometric phase under non-cyclic evolution} (Aharonov--Anandan generalization). Berry's derivation requires the loop to close; the Aharonov--Anandan generalization removes the cyclic requirement and produces a phase associated with any path in projective Hilbert space. Substrate-level reading parallel to the cyclic case; OPEN.
+  \item \textbf{Berry phase for open systems.} Mixed states and Lindblad evolution generalize Berry phase to the geometric phase of Sj\"oqvist--Pati and Tong et al. FORM-FORCED-INHERITED at the standard-QM level; substrate-level reading via the Lindblad walkthrough is OPEN.
+  \item \textbf{Quantization of integrated Berry curvature.} \S6.6 stated the integer-quantization on closed surfaces enclosing degeneracy points without proof. Standard proof uses the Chern theorem; substrate-level reading OPEN as a candidate Chern-quantization walkthrough.
+\end{itemize}
+
+\section{What This Argument Establishes}
+
+This walkthrough establishes the following exact claims:
+
+\textbf{Claim 1.} The Berry connection $\mathcal{A}_n(\mathbf{R}) = i\langle n(\mathbf{R})|\nabla_\mathbf{R} n(\mathbf{R})\rangle$ is FORCED on parameter space by the combination of smooth parameter dependence (P-BP-1), adiabatic identity preservation (P-BP-2 + P-BP-3), and normalization of the eigenchannel. It is real-valued and transforms as a $U(1)$ connection under eigenchannel-phase gauge transformations.
+
+\textbf{Claim 2.} The Berry phase $\gamma_n[C] = \oint_C \mathcal{A}_n\cdot d\mathbf{R}$ around a closed loop $C$ in parameter space is FORCED as the geometric component of the total accumulated phase under adiabatic cyclic evolution. It is gauge-invariant modulo $2\pi$, depends only on the path $C$, and is rate-independent.
+
+\textbf{Claim 3.} The Berry curvature $\Omega_n = \nabla_\mathbf{R}\times\mathcal{A}_n$ is FORCED as the gauge-invariant curvature of the Berry connection, and the Stokes-theorem relation $\gamma_n[C] = \iint_S \Omega_n\cdot d\mathbf{S}$ holds for any surface $S$ with $\partial S = C$ on which the bundle is trivializable.
+
+\textbf{Claim 4.} The structural identity between Berry-phase machinery on parameter space and gauge-field machinery on physical space is FORCED by the rule-type connection being a single substrate primitive instantiated on different manifolds. Berry phase is the parameter-space holonomy of the same rule-type connection that produces gauge phase as physical-space holonomy.
+
+\textbf{Claim 5 (negative).} No new substrate primitives are required. The Berry connection, Berry phase, and Berry curvature decompose into composition of: parameter-dependent participation rule (P-BP-1), identity alignment under parameter change (P-BP-2), adiabatic evolution as slow parameter variation (P-BP-3), the parameter-space bundle structure (P-BP-4), and closed loops in parameter space (P-BP-5). Plus standard differential-geometry machinery (gradient, exterior derivative, Stokes' theorem) re-derived as needed.
+
+\textbf{Claim 6 (scope-limit).} This walkthrough does not derive: the non-Abelian (Wilczek--Zee) Berry connection for degenerate subspaces; sub-adiabatic corrections; the Aharonov--Anandan non-cyclic generalization; the Sj\"oqvist--Pati geometric phase for mixed states; or the Chern quantization of integrated Berry curvature on closed surfaces. Those items are flagged OPEN.
+
+\textbf{The unified statement.} The Berry phase is the parameter-space holonomy of the rule-type connection on the bundle of parameter-dependent participation rules. The Berry connection, Berry curvature, and Berry phase are FORCED by adiabatic identity preservation acting on a smoothly parameter-dependent family of rules; they are not formal QM constructions but substrate-level rule-type geometry expressed in parameter space.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Berry, M. V. \emph{Quantal phase factors accompanying adiabatic changes.} Proc. R. Soc. A \textbf{392}, 45 (1984).
+  \item Simon, B. \emph{Holonomy, the quantum adiabatic theorem, and Berry's phase.} Phys. Rev. Lett. \textbf{51}, 2167 (1983).
+  \item Wilczek, F., Zee, A. \emph{Appearance of gauge structure in simple dynamical systems.} Phys. Rev. Lett. \textbf{52}, 2111 (1984).
+  \item Aharonov, Y., Anandan, J. \emph{Phase change during a cyclic quantum evolution.} Phys. Rev. Lett. \textbf{58}, 1593 (1987).
+  \item Nakahara, M. \emph{Geometry, Topology, and Physics.} IOP Publishing (2003).
+  \item Xiao, D., Chang, M.-C., Niu, Q. \emph{Berry phase effects on electronic properties.} Rev. Mod. Phys. \textbf{82}, 1959 (2010).
+\end{itemize}
+
+\end{document}

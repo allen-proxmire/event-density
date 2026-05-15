@@ -1,0 +1,519 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to Quantum Information},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to Quantum Information\\[6pt]
+\large\mdseries Deutsch, Deutsch--Jozsa, BB84, Teleportation, and Shor from Substrate Primitives}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+\subsection*{What this walkthrough derives}
+
+This walkthrough derives, from substrate primitives, the five landmark operational results of quantum information theory:
+
+\begin{enumerate}[noitemsep]
+  \item \textbf{Deutsch (1985, 1992)} --- a single oracle query distinguishes constant from balanced functions on one bit.
+  \item \textbf{Deutsch--Jozsa (1992)} --- a single oracle query decides the constant-vs-balanced promise on $n$ bits.
+  \item \textbf{Bennett \& Brassard (1984, BB84)} --- non-orthogonal states enable provably-secure key distribution; eavesdropping is structurally self-revealing.
+  \item \textbf{Bennett et al.\ (1993)} --- an unknown one-qubit state can be reconstructed at a remote location using one shared EPR pair plus two classical bits.
+  \item \textbf{Shor (1994--96)} --- the period of a modular exponential function is extractable in polynomial time on a quantum register, with downstream consequence that integer factoring lies in BQP.
+\end{enumerate}
+
+The walkthrough is fully self-contained: every required Hilbert-space, unitary, Born-rule, tensor-product, Bell-basis, and discrete-Fourier construction is derived in \S3 from the substrate primitives in \S2.
+
+\subsection*{Why standard quantum mechanics treats these as postulated or unexplained}
+
+The standard narrative attributes the five results to Hilbert-space structure: superposition enables ``parallel evaluation,'' interference encodes global properties, entanglement stores correlations, measurement collapses the wavefunction, the QFT extracts periodicity. These statements are mathematically correct at the circuit level and predict experimental outcomes accurately.
+
+They are also mechanistically opaque. Standard QM does not say \emph{what makes a ``superposition over inputs'' support one-shot global access}, \emph{why incompatible measurements force disturbance rather than merely revealing it}, \emph{what --- if anything --- propagates between Alice and Bob during teleportation}, or \emph{why periodic structure of an exponentially-large function is single-shot resolvable}. Hilbert-space machinery is given as foundational; the operational phenomena are derived from the postulates, but the postulates themselves are unexplained at any deeper level.
+
+\subsection*{What ED claims}
+
+Each of the five landmark QI results is FORCED by the substrate ontology. Four are FORM-FORCED-INHERITED at the circuit level: the standard QM derivation reproduces inside the ED ontology at leading-order coarse-graining of the substrate primitives, and the substrate-level reading provides the missing mechanism. One --- Shor's algorithm --- requires a substantively new bridge identifying the discrete Fourier transform as a substrate symmetry-resolution operator on $\mathbb{Z}_N$, structurally parallel to the role of the Hadamard transform $H^{\otimes n}$ on $\mathbb{Z}_2^n$ in Deutsch--Jozsa. No new substrate primitives are introduced.
+
+The substrate-level mechanism, in one sentence: quantum information is the substrate-level study of how participation-rule action interacts with channel multiplicity and global ED-geometry.
+
+\subsection*{The chain in summary}
+
+The derivation chain runs: substrate primitives (\S2) $\to$ ED-channel constructions including Hilbert-space, tensor product, Born rule, Bell pair, $\mathbb{Z}_N$ Fourier duality (\S3) $\to$ five landmark QI results, four FORM-FORCED-INHERITED at circuit level + one with new bridge derivation (\S\S4--8) $\to$ unified five-move structure (\S9) $\to$ forced/inherited/open accounting (\S10) $\to$ exact claims established (\S11).
+
+\section{The Primitives}
+
+Six substrate objects suffice for this walkthrough.
+
+\subsection{P-QI-1. Participation rule}
+
+A \emph{participation rule} $r$ is the substrate-level identity-encoding of a chain: the rule that determines how the chain interacts with ED-gradients along its propagation. The participation rule is the substrate object whose coarse-graining produces the quantum-number content of a wavefunction.
+
+\textbf{Single-typed structure.} A participation rule is single-typed: at any one substrate-tick, a given chain commits to exactly one rule drawn from a discrete alignment set $\mathcal{R} = \{r_0, r_1, \ldots\}$. The alignment set is \emph{discrete} at the substrate level.
+
+\textbf{Algebraic structure.} The alignment set carries a substrate-level inner-product structure $\langle r_i | r_j\rangle \in \mathbb{C}$ with $\langle r_i | r_i\rangle = 1$ and $|\langle r_i | r_j\rangle|^2 \leq 1$. Two rules are \emph{orthogonal} iff $\langle r_i | r_j\rangle = 0$; they are \emph{non-orthogonal} iff $0 < |\langle r_i | r_j\rangle| < 1$.
+
+\textbf{Pre-individuation amplitudes.} Before commitment, a chain admits multiple consistent rule continuations weighted by complex amplitudes $\alpha_i \in \mathbb{C}$. The pre-individuation state is parameterized as $\sum_i \alpha_i|r_i\rangle$ with $\sum_i|\alpha_i|^2 = 1$. Individuation commits one outcome with probability $|\alpha_i|^2$.
+
+\subsection{P-QI-2. Channel multiplicity $M$}
+
+A \emph{channel} is a participation pathway through ED-gradients. The multiplicity $M$ counts the number of simultaneously-supported alignment threads.
+
+Three operational regimes:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Minimal channel ($M = 1$)}: exactly one committed alignment thread at a time. Coarse-grains to a single qubit. Used in BB84 and teleportation.
+  \item \textbf{High-multiplicity channel ($M = 2^n$)}: $n$ minimal channels composed in coherent participation-rule structure via tensor product. Used in Deutsch, Deutsch--Jozsa, and Shor.
+  \item \textbf{Unresolved-individuation regime}: $M$ above a substrate-determined critical threshold $\mathcal{M}_{\mathrm{crit}}$.
+\end{itemize}
+
+\subsection{P-QI-3. Identity alignment}
+
+The \emph{identity alignment} of a chain is its substrate-level commitment to one specific participation rule. Once a chain individuates to alignment $r$, that commitment cannot be reversed at the substrate level. A subsequent measurement requiring incompatible alignment does not reverse the prior commitment; it forces a \emph{rewrite} (P-QI-5).
+
+\subsection{P-QI-4. Unresolved participation rule}
+
+An \emph{unresolved participation rule} is a single participation rule whose individuation has not yet committed. When one rule spans multiple endpoints prior to commitment, the endpoints share an \emph{unresolved participation structure}: the rule is one substrate object, the endpoints are multiple, and individuation commits all endpoints simultaneously.
+
+\textbf{No-state-transfer.} Because the rule is one substrate object spanning $A$ and $B$, individuation does not ``transmit'' anything between $A$ and $B$. There is no substrate-level propagation event between the endpoints.
+
+\subsection{P-QI-5. Rewrite-on-measurement}
+
+A minimal channel ($M = 1$) cannot simultaneously support two participation rules whose individuation outputs are inequivalent. When such a channel is subjected to a measurement requiring an incompatible alignment, the channel must \emph{rewrite} its alignment from the prior $r$ to a new $r'$ drawn from the measurement basis. The rewrite is irreversible; the post-rewrite channel is substrate-levelly distinct from the pre-rewrite channel.
+
+\subsection{P-QI-6. Global ED-geometry}
+
+A high-$M$ channel acted on by a single participation rule applied uniformly across all $M$ threads acquires a \emph{global gradient-curvature}: a structure determined by the rule's evaluation on the entire alignment set as a single substrate event, not by $M$ sequential evaluations thread-by-thread.
+
+\textbf{One rule, one channel, one event.} The substrate cost of one rule action on a high-$M$ channel is one substrate event, not $M$ events. This is the substrate-level statement underlying every quantum-algorithmic speedup.
+
+\textbf{No additional primitives are introduced beyond P-QI-1 through P-QI-6.}
+
+\section{Constructing ED-Channels}
+
+\subsection{Minimal channel: substrate-to-Hilbert-space coarse-graining}
+
+A minimal channel ($M = 1$) supports the alignment set $\mathcal{R} = \{r_0, r_1\}$ with inner product $\langle r_0 | r_1\rangle = 0$. Coarse-graining produces the standard one-qubit Hilbert space:
+\[
+r_0 \mapsto |0\rangle, \quad r_1 \mapsto |1\rangle.
+\]
+A general alignment is a substrate-level superposition: $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ with $|\alpha|^2 + |\beta|^2 = 1$. The Born rule
+\[
+P(r_0) = |\alpha|^2, \quad P(r_1) = |\beta|^2
+\]
+is the substrate-level statistics of commitment events.
+
+\subsection{Inner product, orthogonality, non-orthogonality}
+
+For two channel states, $\langle\psi|\varphi\rangle = \alpha_0^*\beta_0 + \alpha_1^*\beta_1$. Two rules are orthogonal iff their post-individuation outputs share no substrate-level structure.
+
+\subsection{Unitary action on minimal channels}
+
+A unitary operator preserves alignment overlap. Two unitaries used throughout:
+\[
+H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}, \quad X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+\]
+With $H|0\rangle = (|0\rangle + |1\rangle)/\sqrt{2}$, $H|1\rangle = (|0\rangle - |1\rangle)/\sqrt{2}$, and $H^2 = I$.
+
+\subsection{High-$M$ channels via tensor product}
+
+Two minimal channels in coherent participation-rule structure compose to a 4-thread channel. The composition rule is the tensor product, FORCED by the requirement that joint commitment statistics on the two channels obey
+\[
+P(r_0\text{ on } A, r_0\text{ on } B) = |\alpha_0|^2 \cdot |\beta_0|^2
+\]
+for product states. The basis for two-channel states is $\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\}$. For $n$ channels: $M = 2^n$ basis states.
+
+\subsection{The high-$M$ uniform channel}
+
+Apply $H$ to each of $n$ minimal channels prepared in $|0\rangle$:
+\[
+H|0\rangle \otimes H|0\rangle \otimes \cdots \otimes H|0\rangle = \frac{1}{\sqrt{2^n}}\sum_x |x\rangle.
+\]
+This is a substrate-level high-$M$ channel with all $2^n$ alignments equally-weighted. It is one substrate object, not $2^n$ separate objects.
+
+\subsection{Global participation rule action}
+
+A global participation rule $\hat f$ representing $f: \{0,1\}^n \to \{0,1\}$ acts by
+\[
+U_f: |x\rangle|y\rangle \mapsto |x\rangle|y \oplus f(x)\rangle
+\]
+where $\oplus$ is bit XOR. This is \emph{one} unitary on the joint $(2n+1)$-channel system: one rule, applied uniformly across the high-$M$ channel, in one substrate event.
+
+\subsection{Unresolved bipartite channel (Bell pair)}
+
+Prepare two minimal channels each in $|0\rangle$. Apply $H$ to channel $A$, then CNOT:
+\[
+|0\rangle|0\rangle \xrightarrow{H \otimes I} (|0\rangle + |1\rangle)/\sqrt{2} \otimes |0\rangle \xrightarrow{\mathrm{CNOT}} (|00\rangle + |11\rangle)/\sqrt{2} \equiv |\Phi^+\rangle.
+\]
+This state is \emph{non-factorizable}. Substrate-level: $|\Phi^+\rangle$ is one unresolved participation rule spanning two endpoints. The four Bell states form an orthonormal basis:
+\[
+|\Phi^\pm\rangle = (|00\rangle \pm |11\rangle)/\sqrt{2}, \qquad |\Psi^\pm\rangle = (|01\rangle \pm |10\rangle)/\sqrt{2}.
+\]
+
+\section{Deutsch: Global Access}
+
+\textbf{Statement.} A high-$M$ channel of $M = 2$ subjected to a single global participation rule $\hat f$ representing $f: \{0,1\} \to \{0,1\}$, followed by a reconciliation operation, FORCES single-query decision of constant ($f(0) = f(1)$) vs balanced ($f(0) \neq f(1)$).
+
+\subsection{Setup}
+
+Prepare two minimal channels: data channel $D$ in $|0\rangle$, ancilla channel $A$ in $|1\rangle$. Apply $H$ to each:
+\[
+|0\rangle_D |1\rangle_A \xrightarrow{H \otimes H} \frac{1}{2}\sum_{x \in \{0,1\}}|x\rangle(|0\rangle - |1\rangle).
+\]
+
+\subsection{Phase-kickback under the global rule}
+
+Apply $U_f$:
+\[
+U_f: |x\rangle(|0\rangle - |1\rangle) = (-1)^{f(x)}|x\rangle(|0\rangle - |1\rangle).
+\]
+The ancilla factors out and the phase $(-1)^{f(x)}$ imprints on the data channel:
+\[
+\text{state} = \left[\frac{1}{\sqrt 2}\sum_x (-1)^{f(x)}|x\rangle\right] \otimes (|0\rangle - |1\rangle)/\sqrt{2}.
+\]
+
+\subsection{Constant vs balanced curvature}
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Constant} ($f(0) = f(1)$): both threads acquire identical phase. Data channel $\propto \pm(|0\rangle + |1\rangle)/\sqrt{2} = \pm H|0\rangle$. The global ED-geometry is uniform.
+  \item \textbf{Balanced} ($f(0) \neq f(1)$): threads acquire opposite phases. Data channel $\propto \pm(|0\rangle - |1\rangle)/\sqrt{2} = \pm H|1\rangle$. The global ED-geometry is alternating.
+\end{itemize}
+
+\subsection{Reconciliation as alignment test}
+
+Apply $H$ to the data channel:
+\[
+\text{constant: } H \cdot (\pm H|0\rangle) = \pm |0\rangle, \quad \text{balanced: } H \cdot (\pm H|1\rangle) = \pm |1\rangle.
+\]
+Measurement returns 0 (constant) or 1 (balanced) deterministically.
+
+\subsection{Substrate-level reading}
+
+\textbf{One rule}, \textbf{one channel}, \textbf{one substrate event}. The ``2 parallel evaluations'' reading is misleading: the substrate object is one channel, the rule is one rule. Constant vs balanced is decided by the global ED-curvature acquired by the single substrate object under the single rule action.
+
+\textbf{The first QI move is global access.}
+
+\section{Deutsch--Jozsa: Global Constraint Extraction}
+
+\textbf{Statement.} A high-$M$ channel of $M = 2^n$ under the promise that $f: \{0,1\}^n \to \{0,1\}$ is either constant or exactly balanced FORCES single-query decision.
+
+\subsection{Setup}
+
+$n$ data channels in $|0\rangle$, one ancilla in $|1\rangle$. Apply $H^{\otimes(n+1)}$:
+\[
+\text{state} = \frac{1}{\sqrt{2^n}}\sum_{x \in \{0,1\}^n}|x\rangle \otimes (|0\rangle - |1\rangle)/\sqrt{2}.
+\]
+
+\subsection{Phase-kickback under $U_f$}
+
+\[
+\text{state} = \left[\frac{1}{\sqrt{2^n}}\sum_x (-1)^{f(x)}|x\rangle\right] \otimes (|0\rangle - |1\rangle)/\sqrt{2}.
+\]
+
+\subsection{Reconciliation $H^{\otimes n}$ on data channels}
+
+Standard identity:
+\[
+H^{\otimes n}|x\rangle = \frac{1}{\sqrt{2^n}}\sum_{z \in \{0,1\}^n}(-1)^{x\cdot z}|z\rangle
+\]
+where $x\cdot z = \sum_i x_i z_i \bmod 2$. Apply to the data state:
+\[
+H^{\otimes n}\left[\frac{1}{\sqrt{2^n}}\sum_x (-1)^{f(x)}|x\rangle\right] = \frac{1}{2^n}\sum_z\left[\sum_x (-1)^{f(x) + x\cdot z}\right]|z\rangle.
+\]
+The amplitude on $|z = 0^n\rangle$ is
+\[
+A_0 = \frac{1}{2^n}\sum_x (-1)^{f(x)}.
+\]
+
+\subsection{Uniform vs alternating curvature}
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Constant} $f \equiv c$: $A_0 = (-1)^c$, magnitude 1. Measurement returns $0^n$ deterministically.
+  \item \textbf{Balanced} $f$: half the terms are $+1$, half are $-1$, so $A_0 = 0$. Measurement never returns $0^n$.
+\end{itemize}
+
+\subsection{Substrate-level reading}
+
+The reconciliation $H^{\otimes n}$ is a \emph{substrate alignment test}: it concentrates amplitude on $|0^n\rangle$ iff the global ED-curvature is uniform. The cancellation in the balanced case is forced by the alternating sign-structure of the rule's curvature imprint, summed across all $2^n$ alignments.
+
+\textbf{The second QI move is global constraint extraction.}
+
+\section{BB84: Rewrite-on-Measurement}
+
+\textbf{Statement.} Two minimal channels prepared in non-orthogonal alignments enable shared-key generation with statistically-detectable eavesdropping.
+
+\subsection{Setup}
+
+Define two mutually-unbiased bases:
+\[
+\text{Rectilinear (Z-basis):} \quad |0\rangle, |1\rangle, \qquad \text{Diagonal (X-basis):} \quad |\pm\rangle = (|0\rangle \pm |1\rangle)/\sqrt{2}.
+\]
+Inner products: $\langle 0|\pm\rangle = \pm\langle 1|\mp\rangle = 1/\sqrt{2}$.
+
+\subsection{Protocol}
+
+Alice prepares each transmitted minimal channel in one of $\{|0\rangle, |1\rangle, |+\rangle, |-\rangle\}$ chosen uniformly at random. Bob measures each in either the Z-basis or X-basis. After transmission, Alice and Bob publicly compare basis choices and discard mismatched rounds.
+
+\subsection{Eavesdropping forces rewrite}
+
+Suppose Eve intercepts and measures in the Z-basis, then re-transmits.
+
+\begin{itemize}[noitemsep]
+  \item If Alice prepared $|0\rangle$ or $|1\rangle$ (Z-basis): Eve's Z-measurement returns the alignment without disturbance.
+  \item If Alice prepared $|+\rangle$ (X-basis): Z-measurement returns $|0\rangle$ or $|1\rangle$ with probability $1/2$ each. P-QI-5 forces the channel to commit. Re-transmission sends $|0\rangle$ or $|1\rangle$, not $|+\rangle$.
+\end{itemize}
+
+\subsection{Information-disturbance algebra}
+
+When Alice prepares $|+\rangle$ and Bob measures in the X-basis:
+
+\begin{itemize}[noitemsep]
+  \item Without Eve: probability of correct outcome ($|+\rangle$) is $|\langle +|+\rangle|^2 = 1$.
+  \item With Eve: the post-Eve state is $|0\rangle$ or $|1\rangle$. Bob's X-measurement on $|0\rangle$ returns $|+\rangle$ with probability $1/2$. Net: Bob measures the wrong outcome with probability $1/2$.
+\end{itemize}
+
+Averaged: half the rounds Alice chose Z (no disturbance), half X (50\% error). Net error rate on matched-basis rounds: $25\%$. Alice and Bob detect Eve by error-rate estimation.
+
+\subsection{Substrate-level reading}
+
+\textbf{Eavesdropping is not forbidden; it is self-revealing.} The structural mechanism is minimal-channel rewrite-on-measurement. No assumption of ``no-cloning'' is invoked --- non-orthogonal-state non-clonability is a derived consequence of P-QI-5 + unitarity of substrate-level rule actions.
+
+\textbf{The third QI move is rewrite-on-measurement.}
+
+\section{Teleportation: Identity Reassignment}
+
+\textbf{Statement.} An unresolved bipartite channel + a single Bell measurement + two classical bits + a Pauli correction transfers an unknown alignment $|\psi\rangle$ from Alice's endpoint to Bob's endpoint.
+
+\subsection{Setup}
+
+Alice holds $C_A$ in unknown alignment $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ and $E_A$ --- half of $|\Phi^+\rangle_{AB} = (|00\rangle + |11\rangle)/\sqrt{2}$. The total state, after expansion:
+\[
+|\psi\rangle_C \otimes |\Phi^+\rangle_{AB} = \frac{1}{\sqrt{2}}\left[\alpha|000\rangle + \alpha|011\rangle + \beta|100\rangle + \beta|111\rangle\right].
+\]
+
+\subsection{Bell-basis decomposition on $\{C, A\}$}
+
+Substituting Bell-basis expressions:
+\begin{align*}
+|\psi\rangle_C \otimes |\Phi^+\rangle_{AB} &= \tfrac{1}{2}\Big[|\Phi^+\rangle_{CA}(\alpha|0\rangle + \beta|1\rangle)_B + |\Phi^-\rangle_{CA}(\alpha|0\rangle - \beta|1\rangle)_B \\
+&\quad + |\Psi^+\rangle_{CA}(\alpha|1\rangle + \beta|0\rangle)_B + |\Psi^-\rangle_{CA}(\alpha|1\rangle - \beta|0\rangle)_B\Big].
+\end{align*}
+
+\subsection{Bell measurement and Pauli correction}
+
+Alice performs a Bell measurement on $\{C, A\}$. Each outcome occurs with probability $1/4$:
+
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Outcome & Classical bits & Bob's state & Pauli correction \\
+\midrule
+$|\Phi^+\rangle_{CA}$ & 00 & $\alpha|0\rangle + \beta|1\rangle = |\psi\rangle$ & $I$ \\
+$|\Phi^-\rangle_{CA}$ & 01 & $\alpha|0\rangle - \beta|1\rangle$ & $Z$ \\
+$|\Psi^+\rangle_{CA}$ & 10 & $\alpha|1\rangle + \beta|0\rangle$ & $X$ \\
+$|\Psi^-\rangle_{CA}$ & 11 & $\alpha|1\rangle - \beta|0\rangle$ & $XZ$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Verification: $X(\alpha|1\rangle + \beta|0\rangle) = \alpha|0\rangle + \beta|1\rangle = |\psi\rangle$. All four outcomes recover $|\psi\rangle$ on Bob's endpoint after the appropriate Pauli correction.
+
+\subsection{Substrate-level reading}
+
+\begin{itemize}[noitemsep]
+  \item The unresolved rule $|\Phi^+\rangle_{AB}$ is \emph{one} substrate object spanning $E_A$ and $E_B$.
+  \item Alice's Bell measurement forces joint individuation in one substrate event.
+  \item Bob's endpoint inherits one of four discrete alignments.
+  \item \textbf{No state propagates} from Alice to Bob: the unresolved rule was always one rule.
+  \item The two classical bits do not transmit $\alpha, \beta$; they identify which of four discrete outcomes occurred.
+\end{itemize}
+
+\subsection{No-signaling}
+
+Bob's local statistics, marginalized over Alice's outcomes:
+\[
+\rho_B = \tfrac{1}{4}\left[|\psi\rangle\langle\psi| + Z|\psi\rangle\langle\psi|Z + X|\psi\rangle\langle\psi|X + XZ|\psi\rangle\langle\psi|XZ\right] = I/2.
+\]
+Maximally mixed, independent of $\alpha, \beta$. \textbf{No-signaling is forced}: identity reassignment requires the classical bits.
+
+\textbf{The fourth QI move is identity reassignment.}
+
+\section{Shor: Symmetry Extraction}
+
+This is the section requiring the substantively new bridge derivation.
+
+\subsection{Problem and reduction}
+
+Given $N$ composite, the integer factoring problem reduces to \emph{period-finding} for $f_a(x) = a^x \bmod N$ where $a$ is coprime to $N$. The period $r$ is the smallest positive integer with $a^r \equiv 1 \pmod N$. Once $r$ is found, $\gcd(a^{r/2} \pm 1, N)$ yields a non-trivial factor.
+
+Classical period-finding requires $\Omega(\sqrt N)$ queries. Shor's algorithm extracts $r$ in $O(\mathrm{polylog}\, N)$ substrate events.
+
+\subsection{Setup}
+
+Use $n$ data channels with $N \leq 2^n < 2N$ and $m$ image channels. Prepare in $|0\rangle$, apply $H^{\otimes n}$:
+\[
+\text{state} = \frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}|x\rangle|0\rangle.
+\]
+
+\subsection{Periodic-rule action and global ED-curvature}
+
+Apply $\hat f_a$:
+\[
+\text{state} = \frac{1}{\sqrt{2^n}}\sum_x |x\rangle|f_a(x)\rangle.
+\]
+Measure the image register. The image outcome $y_0$ collapses the data register to
+\[
+\text{state}_{\mathrm{data}} \propto \sum_{x:\, f_a(x) = y_0}|x\rangle = \frac{1}{\sqrt K}\sum_{j=0}^{K-1}|x_0 + jr\rangle
+\]
+where $K \approx 2^n/r$. Substrate-level: one substrate object with periodic structure imprinted globally.
+
+\subsection{The QFT as substrate symmetry-resolution operator}
+
+Define
+\[
+\mathrm{QFT}_{2^n}: |x\rangle \mapsto \frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n-1} e^{2\pi i xk/2^n}|k\rangle.
+\]
+Apply to the data state:
+\[
+\mathrm{QFT}\left[\frac{1}{\sqrt K}\sum_j |x_0 + jr\rangle\right] = \frac{1}{\sqrt{K\cdot 2^n}}\sum_k e^{2\pi i x_0 k/2^n}\left[\sum_{j=0}^{K-1} e^{2\pi i jrk/2^n}\right]|k\rangle.
+\]
+The geometric series $\sum_j e^{2\pi i jrk/2^n}$ has magnitude $K$ when $rk/2^n$ is an integer, small otherwise.
+
+\textbf{Concentration result.} In the ideal case $r | 2^n$:
+\[
+|\text{amplitude on }|k\rangle|^2 = 1/r \text{ for } k \in \{0, 2^n/r, 2\cdot 2^n/r, \ldots, (r-1)\cdot 2^n/r\}, \quad 0 \text{ otherwise}.
+\]
+
+\subsection{Stable alignment frequencies and measurement}
+
+The substrate-level reading: the global ED-curvature's $\mathbb{Z}_{2^n}$ Fourier dual is concentrated on the \emph{period-conjugate lattice} $\{j\cdot 2^n/r\}$. The QFT is the substrate operator that resolves the $\mathbb{Z}_N$-translation symmetry of the channel --- in direct structural analogy to $H^{\otimes n}$ in \S5, which resolves the $\mathbb{Z}_2^n$-translation symmetry.
+
+Measurement individuates an alignment $k$ near $j\cdot 2^n/r$. Classical post-processing via continued-fraction expansion of $k/2^n$ recovers $j/r$ (and hence $r$, via $\gcd$). Repeating $O(\log\log N)$ times yields $r$ with high probability.
+
+\subsection{Speedup mechanism}
+
+The exponential speedup is forced by:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Single rule action} (P-QI-1 + P-QI-6): one rule, one channel, one global ED-curvature.
+  \item \textbf{Single resolution step}: the QFT resolves the $\mathbb{Z}_N$-symmetry of the global geometry in one substrate event.
+  \item \textbf{Individuation extracts the symmetry signature}: measurement commits the channel to one alignment on the period-conjugate lattice.
+\end{itemize}
+
+Classical period-finding cannot match this because classical access is per-thread.
+
+\textbf{The fifth QI move is symmetry extraction.}
+
+\section{Unified Geometry: The Five QI Moves}
+
+The five landmark QI results manifest five substrate-level moves on ED-channels:
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}p{3.4cm}p{3.4cm}p{3.4cm}p{4.4cm}@{}}
+\toprule
+QI Move & Channel construct & Operation & Result \\
+\midrule
+Global access (Deutsch) & High-$M$ ($M = 2$) & Global rule + $H$ & Constant/balanced decision \\
+Global constraint extraction (D--J) & High-$M$ ($M = 2^n$) & Global rule + $H^{\otimes n}$ & Constant/balanced on $n$ bits \\
+Rewrite-on-measurement (BB84) & Minimal ($M = 1$), non-orthogonal & Measurement-induced rewrite & Self-revealing eavesdropping \\
+Identity reassignment (Teleportation) & Unresolved bipartite & Bell individuation + Pauli correction & Alignment transferred without state-transit \\
+Symmetry extraction (Shor) & High-$M$ + periodic rule & $\mathrm{QFT}_{2^n}$ + measurement & Period of periodic rule \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The five moves share a common structural pattern: a participation-rule action interacts with a channel construct of specified multiplicity, producing a global geometric feature that is read out by a substrate-coherent resolution operation.
+
+The substrate-level reading is uniform across all five: one rule, one channel, one resolution. The exponential speedups (Deutsch, Deutsch--Jozsa, Shor) are not ``many-fold parallel evaluation''; they are the substrate-level statement that one substrate event acts on one substrate object regardless of the multiplicity carried by that object.
+
+\section{What's Forced, What's Inherited, What's Open}
+
+\subsection*{What is FORCED by the substrate ontology}
+
+\begin{itemize}[noitemsep]
+  \item The five operational results follow by composition of the six primitives with the constructions in \S3.
+  \item The substrate-level mechanisms --- channel multiplicity, global rule action, rewrite, unresolved-rule joint individuation, symmetry-resolution operators --- are FORCED.
+  \item The structural unification of the five results into the five-move pattern is FORCED.
+  \item No new substrate primitives are introduced.
+\end{itemize}
+
+\subsection*{What is FORM-FORCED-INHERITED (and re-derived inside this document)}
+
+Hilbert space of minimal channels; Born rule statistics; inner product and orthogonality; unitary action and Hadamard/Pauli operators; tensor product composition; high-$M$ uniform-channel construction; global rule action $U_f$; Bell pair construction; phase-kickback algebra; Hadamard transform identity; information-disturbance algebra; Bell-basis decomposition; no-signaling reduced state; discrete Fourier transform; geometric-series amplitude bound.
+
+\subsection*{What is the NEW BRIDGE}
+
+The substantively new substrate content lives in \S8:
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Periodic-rule + high-$M$-channel $\Rightarrow$ $\mathbb{Z}_N$-symmetric global ED-curvature.}
+  \item \textbf{Identification of the QFT as the substrate symmetry-resolution operator on $\mathbb{Z}_N$}, structurally parallel to $H^{\otimes n}$ on $\mathbb{Z}_2^n$.
+  \item \textbf{Substrate-level reading of the exponential speedup} as ``one rule, one channel, one resolution.''
+\end{itemize}
+
+\subsection*{What remains OPEN}
+
+\begin{itemize}[noitemsep]
+  \item Tight amplitude-bound for the QFT output in the $r \nmid 2^n$ case.
+  \item New algorithmic classes from the substrate ontology.
+  \item New cryptographic primitives based on channel incompatibility rather than no-cloning.
+  \item Substrate-level error-correcting code structure beyond the standard stabilizer formalism.
+  \item Substrate-level account of the fault-tolerance threshold.
+  \item Extension to non-decision sampling problems (BosonSampling, IQP, random-circuit sampling).
+  \item Grover search as a sixth QI move.
+\end{itemize}
+
+\section{What This Argument Establishes}
+
+This walkthrough establishes the following exact claims:
+
+\textbf{Claim 1.} The Deutsch one-bit single-query result is FORCED by the six substrate primitives composed as in \S3.
+
+\textbf{Claim 2.} The Deutsch--Jozsa $n$-bit single-query result is FORCED at $M = 2^n$. The reconciliation $H^{\otimes n}$ is a substrate symmetry-resolution operator on $\mathbb{Z}_2^n$.
+
+\textbf{Claim 3.} BB84 security is FORCED by rewrite-on-measurement (P-QI-5) acting on minimal channels with non-orthogonal alignments. Eavesdropping produces a $25\%$ matched-basis error rate.
+
+\textbf{Claim 4.} Quantum teleportation is FORCED as identity reassignment across an unresolved bipartite channel. No state propagates between endpoints; no-signaling holds.
+
+\textbf{Claim 5.} Shor's algorithm is FORCED via the new bridge: a periodic rule acting on a high-$M$ channel produces a global ED-curvature with $\mathbb{Z}_N$-translation symmetry, and the QFT resolves that symmetry in one substrate-coherent operation.
+
+\textbf{Claim 6 (negative).} No new substrate primitives are required. All five results decompose into composition of the six listed primitives plus one new bridge identification.
+
+\textbf{Claim 7 (scope-limit).} This walkthrough does not derive new algorithmic classes, new cryptographic primitives, new error-correcting codes, or fault-tolerance thresholds beyond the inherited circuit-level math.
+
+\textbf{The unified statement.} Quantum information is the substrate-level study of how participation-rule action interacts with channel multiplicity and global ED-geometry. The five landmark results manifest five substrate-level moves: global access, global constraint extraction, rewrite-on-measurement, identity reassignment, and symmetry extraction.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Deutsch, D. \emph{Quantum theory, the Church-Turing principle and the universal quantum computer.} Proc. R. Soc. A \textbf{400}, 97 (1985).
+  \item Deutsch, D., Jozsa, R. \emph{Rapid solution of problems by quantum computation.} Proc. R. Soc. A \textbf{439}, 553 (1992).
+  \item Bennett, C. H., Brassard, G. \emph{Quantum cryptography: Public key distribution and coin tossing.} Proc. IEEE Int. Conf. Comput. Syst. Signal Process., 175 (1984).
+  \item Bennett, C. H., Brassard, G., Cr\'epeau, C., Jozsa, R., Peres, A., Wootters, W. K. \emph{Teleporting an unknown quantum state via dual classical and Einstein--Podolsky--Rosen channels.} Phys. Rev. Lett. \textbf{70}, 1895 (1993).
+  \item Shor, P. W. \emph{Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer.} SIAM J. Comput. \textbf{26}, 1484 (1997).
+  \item Nielsen, M. A., Chuang, I. L. \emph{Quantum Computation and Quantum Information.} Cambridge University Press (2010).
+\end{itemize}
+
+\end{document}

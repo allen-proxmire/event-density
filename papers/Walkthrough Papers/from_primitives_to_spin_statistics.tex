@@ -1,0 +1,585 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to the Spin-Statistics Theorem},
+  pdfauthor={Allen Proxmire}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to the Spin-Statistics Theorem\\[6pt]
+\large\mdseries A Walkthrough of the Event Density Arc R Stage R.2 Closure}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+
+\section{The Question}
+
+The spin-statistics theorem is one of the deepest individual results in physics. It states that particles with integer spin obey Bose-Einstein statistics --- their wavefunctions are symmetric under exchange, and any number of identical particles can occupy the same quantum state. Particles with half-integer spin obey Fermi-Dirac statistics --- their wavefunctions are antisymmetric under exchange, and no two identical particles can occupy the same quantum state. The relationship is captured compactly:
+\[
+\eta = (-1)^{2s}
+\]
+where $\eta$ is the exchange phase ($+1$ for bosons, $-1$ for fermions) and $s$ is the particle's spin.
+
+This is empirically the most thoroughly tested relationship in particle physics. Every confirmation of Pauli exclusion in atomic structure, every superconductor, every superfluid, every neutron star, every electron-degenerate white dwarf, every blackbody photon distribution, every Bose-Einstein condensate confirms it. The relationship determines why atoms have shell structure and why chemistry exists. It determines why matter is stable against gravitational collapse below the Chandrasekhar limit. It determines why bosons can lase and fermions cannot. The structural integrity of essentially everything we observe in the material world traces back to this one $\mathbb{Z}_2 \times \mathbb{Z}_2$ relationship.
+
+Despite its empirical centrality, the theorem is notoriously difficult to derive cleanly. The standard proofs require substantial machinery. Pauli's 1940 argument used quantum field theory, specifically requiring positivity of energy and microcausality (the requirement that field operators at spacelike-separated points either commute or anticommute). The Streater-Wightman axiomatic framework formalizes this with Lorentz invariance, locality, positivity of energy, and uniqueness of the vacuum. Burgoyne's variation, L\"uders-Zumino's approach, Weinberg's modern presentation in \textit{The Quantum Theory of Fields} --- each requires a substantial axiomatic foundation that includes microcausality as either a postulate or a closely related structural commitment.
+
+The dependence on QFT machinery is not incidental. The standard treatments treat spin-statistics as a theorem about quantum fields rather than about the structure of identical-particle quantum mechanics directly. This is partly because the cleanest microcausality-based arguments need the field-operator algebra to make their case. But it leaves a question hanging: must the theorem really depend on QFT, or is there a more fundamental argument that doesn't require the full field-theoretic apparatus?
+
+The Event Density framework's contribution to the spin-statistics question is methodologically distinct. The framework derives the theorem from substrate-level primitives plus 3+1D spatial topology plus the algebraic uniqueness of the $\mathrm{Cl}(3,1)$ frame, without requiring quantum field theory. The argument runs through configuration-space topology in 3+1D forcing $\pi_1(Q_2) = \mathbb{Z}_2$; the geometric theorem identifying the exchange-class generator with the $2\pi$-rotation generator; the algebraic uniqueness of the $\mathrm{Cl}(3,1)$ Clifford algebra realizing the rotational double cover; and a closure step using the framework's individuation primitive to tie the abstract topological exchange phase to the spinor-module representation theory. The result is $\eta = (-1)^{2s}$ forced unconditionally at primitive level.
+
+The structural beauty of this closure is that it ties two $\mathbb{Z}_2$ dichotomies into a single forced equality. The exchange-phase dichotomy ($\eta = \pm 1$) is forced by the topology. The integer/half-integer spin dichotomy is forced by the Lorentz representation ladder. The equality between them is forced by the algebraic structure of $\mathrm{Cl}(3,1)$ plus the individuation pairing. Each side of the equality is a primitive-level structural classification; the identification between them is the theorem.
+
+This walkthrough presents that derivation. It runs through the framework's primitives plus six structural moves to reach $\eta = (-1)^{2s}$:
+
+\begin{enumerate}[noitemsep]
+\item The exchange dichotomy from involutive structure (R.2.1)
+\item The Lorentz representation ladder with integer/half-integer split (R.2.2)
+\item The configuration-space topology $\pi_1(Q_2) = \mathbb{Z}_2$ (R.2.3, first half)
+\item The geometric theorem identifying exchange-class with $2\pi$-rotation generator (R.2.3, second half)
+\item The $\mathrm{Cl}(3,1)$ algebraic frame uniqueness (Theorem R2)
+\item The minimal-bilinear pairing closure tying the abstract topology to spinor representation theory (R.2.5)
+\end{enumerate}
+
+The structural payoff: the framework reproduces the standard spin-statistics result without QFT. The closure is at the level of substrate primitives plus 3+1D spatial topology, much earlier in the framework's stack than QFT lives. This is a methodological gain --- fewer axiomatic commitments are needed to reach the result --- and it ties spin-statistics structurally into the same primitive-level content that produced the Born rule, Schr\"odinger equation, Klein-Gordon equation, and Dirac equation in earlier walkthroughs.
+
+The walkthrough has eight structural moves: the substrate ontology, six derivation stages, and a closing discussion of what the argument establishes.
+
+\section{The Substrate Ontology}
+
+The framework rests on substrate-level ontological commitments --- the same primitives that gave the Born rule, the Schr\"odinger equation, the Klein-Gordon equation, the Dirac equation, and the structural mass content. The spin-statistics walkthrough adds the rule-type taxonomy (Lever L4 statistics class) plus the configuration-space structure for two-chain participation.
+
+\textbf{Micro-events, chains as worldlines, channels, bandwidth.} Reality consists of discrete acts of becoming. Chains hold these together via persistent rules. Channels are the substrate's adjacency-mediated communication structure. Bandwidth measures local participation density. (Same as in previous walkthroughs.)
+
+\textbf{3+1D spatial commitment.} The substrate is committed to three spatial dimensions plus one temporal dimension. This is a substrate-level commitment, not a derivation. The walkthrough's topological arguments depend on this: $\pi_1(Q_2) = \mathbb{Z}_2$ is specific to 3+1D --- the same result fails in 2+1D where $\pi_1(Q_2) = \mathbb{Z}$ (allowing anyons) and is trivial in 4+1D and higher.
+
+\textbf{Lorentz-covariant participation measure.} From the Klein-Gordon walkthrough, the participation measure is:
+\[
+P_K(x^\mu) = \sqrt{b_K(x^\mu)} \cdot e^{i\pi_K(x^\mu)}
+\]
+a Lorentz scalar at each spacetime event. Bandwidth amplitude carries the participation magnitude; phase carries the participation orientation. Same structure as in earlier walkthroughs.
+
+\textbf{Individuation (Primitive 10).} The threshold separating distinct chains. For two same-type chains $K_A, K_B$, individuation specifies when the chains remain distinguishable as separate participation entities. This is load-bearing for the spin-statistics argument: the exchange operation $E_{AB}$ swaps participation labels of two same-type chains, and the structure of individuation determines what exchange means at primitive level.
+
+\textbf{Commitment irreversibility (Primitive 11).} Discrete commitment events along chain worldlines, with the polarity-asymmetric forward-only update structure (P11). This is what makes the abstract individuation pairing dynamical in the closure step at R.2.5.
+
+\textbf{Rule-type taxonomy (Primitive 07).} A rule-type $\tau$ is specified by four levers:
+
+L1 --- bandwidth partition: rule-type-specific weighting $w_\tau^X$ over the four bands.
+
+L2 --- internal index content: a finite-dimensional Lorentz representation $(j_L, j_R)_\tau$. This is the lever directly relevant to spin.
+
+L3 --- interface content: Fierz-class element $\Gamma_\tau \in \mathrm{Cl}(3,1)$ for Case R. Specifies the bilinear coupling at the rule-type interface.
+
+L4 --- statistics class: Case P ($\eta = +1$, integer spin, bosonic) or Case R ($\eta = -1$, half-integer spin, fermionic). This is the lever directly relevant to exchange statistics.
+
+The spin-statistics theorem is the structural relationship between L2 (which determines $s$) and L4 (which determines $\eta$). Stating the theorem at this level: $L4 = (-1)^{2s}$ for the L2 spin label. The walkthrough's job is to derive this relationship from substrate primitives.
+
+\textbf{Two-chain configuration space.} For two same-type chains $K_A$ and $K_B$ with worldlines $\gamma_A$ and $\gamma_B$, the relevant configuration space at a fixed time slice is:
+\[
+Q_2 = (\mathbb{R}^{3} \times \mathbb{R}^{3} \setminus \Delta) / S_2
+\]
+where $\mathbb{R}^{3} \times \mathbb{R}^{3}$ is the unrestricted two-chain position space, $\Delta$ is the diagonal (where the two chains coincide, removed because individuation forbids strict coincidence for indistinguishable chains), and $S_2$ is the symmetric group on two elements quotienting by the chain-label exchange. The fundamental group $\pi_1(Q_2)$ catalogs the topologically distinct paths a two-chain configuration can take in this space.
+
+That's the working set. From here, the walkthrough runs through six structural moves to reach $\eta = (-1)^{2s}$.
+
+\section{Stage R.2.1 --- The Exchange Dichotomy}
+
+The first structural move establishes the exchange phase $\eta \in \{+1, -1\}$ from substrate-level structural arguments at the rule-type level, independent of the topological argument that R.2.3 will provide.
+
+\subsection{The exchange operation}
+
+For two same-type chains $K_A$ and $K_B$, the exchange operation $E_{AB}$ swaps their participation labels: the label ``$K_A$'' becomes ``$K_B$'' and vice versa, while the underlying physical configuration remains unchanged. The two-chain participation measure transforms as:
+\[
+P_{AB}(x_A, x_B) \to \eta \cdot P_{AB}(x_B, x_A)
+\]
+where $\eta$ is the exchange phase. The factor $\eta$ must satisfy structural constraints that come from the rule-type structure plus the involutive nature of the exchange.
+
+\subsection{The involutive structure}
+
+The exchange operation is its own inverse --- applying it twice returns the original configuration:
+\[
+E_{AB}^{2} = \mathrm{id}
+\]
+This is forced by the meaning of exchange: swapping labels twice gives back the original labeling. As an algebraic relation on the participation measure:
+\[
+\eta^{2} \cdot P_{AB}(x_A, x_B) = P_{AB}(x_A, x_B)
+\]
+so $\eta^{2} = 1$, giving $\eta \in \{+1, -1, +i, -i, \ldots\}$. The full set of solutions to $z^{2} = 1$ in $\mathbb{C}$ is $\{+1, -1\}$, but if we allowed $\eta$ to be a representation of a more general group (the braid group, in 2+1D), other phases would be possible.
+
+\subsection{Mutual substitutability of same-type chains}
+
+The structural constraint that restricts $\eta$ to $\{+1, -1\}$ (rather than to braid-group representations) is the substrate-level requirement that same-type chains are mutually substitutable. Two chains of the same rule-type are not just indistinguishable --- they are interchangeable in any participation context. The exchange $E_{AB}$ must commute with all substrate operations that depend only on rule-type, not on chain identity.
+
+In particular, $E_{AB}$ must commute with the structural identification of which chains are which type. There is no ``memory'' of which chain was originally labeled $K_A$ versus $K_B$ beyond the binary exchange-or-not. This forces $\eta$ to be a 1-dimensional unitary representation of the order-2 group $\mathbb{Z}_2 = \{\mathrm{id}, E_{AB}\}$.
+
+The 1-dimensional unitary representations of $\mathbb{Z}_2$ are exactly two:
+
+The trivial representation: $\eta(\mathrm{id}) = 1$, $\eta(E_{AB}) = 1$.
+
+The sign representation: $\eta(\mathrm{id}) = 1$, $\eta(E_{AB}) = -1$.
+
+Therefore $\eta \in \{+1, -1\}$.
+
+\subsection{The Case P / Case R dichotomy}
+
+The two values of $\eta$ partition rule-types into two structural categories:
+
+\textbf{Case P ($\eta = +1$)} --- bandwidth-sharing-permissive. The two-chain participation measure is symmetric under exchange. Multiple same-type chains can share bandwidth content cooperatively. This is the bosonic class.
+
+\textbf{Case R ($\eta = -1$)} --- bandwidth-sharing-restrictive. The two-chain participation measure is antisymmetric under exchange. The wavefunction vanishes when two same-type chains attempt to occupy the same configuration (the antisymmetric function of two identical arguments is zero). This is Pauli exclusion at primitive level. This is the fermionic class.
+
+The Case P / Case R distinction is thus structurally forced by substrate primitives plus the involutive-and-mutual-substitutability constraint on same-type chains. It is independent of any topological argument about the configuration space.
+
+\subsection{What's not yet established}
+
+At this stage, the framework has established:
+
+$\eta \in \{+1, -1\}$ as a structural dichotomy at the rule-type level.
+
+Two rule-type categories Case P and Case R distinguished by $\eta$.
+
+The framework has not yet established:
+
+That anyons are forbidden (the topological argument that gives this is R.2.3).
+
+That $\eta$ connects to spin (the closure that gives this is R.2.5).
+
+The exchange dichotomy is the first structural move. The walkthrough now combines it with three additional moves to reach $\eta = (-1)^{2s}$.
+
+\section{Stage R.2.2 --- The Lorentz Representation Ladder}
+
+The second structural move establishes the integer/half-integer split in spin via the Lorentz representation classification. The ladder of admissible spins is structurally rigid in 3+1D, with no half-odd-half values appearing.
+
+\subsection{The complexified Lorentz algebra}
+
+The Lorentz Lie algebra $\mathfrak{so}(3,1)$ has six generators: three rotations $J_i$ and three boosts $K_i$. Combining these in two complex linear combinations:
+\[
+A_i = \tfrac{1}{2}(J_i + iK_i), \qquad B_i = \tfrac{1}{2}(J_i - iK_i)
+\]
+gives two commuting $\mathfrak{su}(2)$ algebras. The complexified Lorentz algebra is therefore:
+\[
+\mathfrak{so}(3,1)_\mathbb{C} \cong \mathfrak{su}(2)_\mathbb{C} \oplus \mathfrak{su}(2)_\mathbb{C}
+\]
+This decomposition is well-known in representation theory. Its consequence for spin-statistics: the finite-dimensional representations of the complexified Lorentz algebra are classified by pairs of $\mathfrak{su}(2)$ representations.
+
+\subsection{The $(j_L, j_R)$ classification}
+
+Finite-dimensional representations of $\mathfrak{so}(3,1)_\mathbb{C}$ are labeled by pairs $(j_L, j_R)$ where each of $j_L$ and $j_R$ is a non-negative half-integer:
+\[
+j_L, j_R \in \{0, 1/2, 1, 3/2, 2, \ldots\}
+\]
+The representation has dimension $(2j_L + 1)(2j_R + 1)$.
+
+The spin quantum number $s$ is related to $(j_L, j_R)$ via the Pauli-Lubanski Casimir. Specifically, $s$ runs through the values:
+\[
+s \in \{|j_L - j_R|, |j_L - j_R| + 1, \ldots, j_L + j_R\}
+\]
+For example: $(0, 0)$ gives $s = 0$ (scalar, Higgs-like). $(1/2, 0)$ and $(0, 1/2)$ each give $s = 1/2$ (Weyl spinors). $(1/2, 1/2)$ gives $s \in \{0, 1\}$ (the four-vector representation, Lorentz vector). $(1, 0)$ and $(0, 1)$ give $s = 1$ (self-dual / anti-self-dual antisymmetric tensors).
+
+\subsection{The exhaustive spin ladder}
+
+Combining all $(j_L, j_R)$ representations, the set of admissible spin values for any Lorentz-covariant rule-type is:
+\[
+s \in \{0, 1/2, 1, 3/2, 2, \ldots\}
+\]
+This is the exhaustive spin ladder. It is \textbf{rigid} in 3+1D --- the ladder has steps of $1/2$, with no half-odd-half values like $s = 1/4$ or $s = 3/4$ appearing. This rigidity is a Lie-algebraic theorem, not a substrate primitive: the integer/half-integer split is a consequence of the complexified Lorentz algebra's $\mathfrak{su}(2) \oplus \mathfrak{su}(2)$ structure.
+
+\subsection{The integer/half-integer dichotomy}
+
+The spin ladder partitions naturally into two classes:
+
+\textbf{Integer-spin representations} ($s = 0, 1, 2, \ldots$). These descend to representations of the proper orthochronous Lorentz group $\mathrm{SO}^+(3,1)$. A $2\pi$ rotation acts as $+\mathbb{1}$ on these representations.
+
+\textbf{Half-integer-spin representations} ($s = 1/2, 3/2, 5/2, \ldots$). These do not descend to $\mathrm{SO}^+(3,1)$. They require the double cover $\mathrm{SL}(2,\mathbb{C})$ --- equivalently, they are honest representations of the universal cover of the rotation group $\mathrm{SU}(2)$ rather than of $\mathrm{SO}(3)$ itself. A $2\pi$ rotation acts as $-\mathbb{1}$ on these representations, and $4\pi$ rotation is required to restore identity.
+
+This is the second $\mathbb{Z}_2$ dichotomy in the spin-statistics structure. The first was the exchange-phase dichotomy $\eta \in \{+1, -1\}$ from R.2.1. The second is the integer/half-integer dichotomy from the Lorentz representation theory.
+
+\subsection{What's established}
+
+After R.2.2, the framework has:
+
+The exhaustive $(j_L, j_R)$ classification of admissible Lorentz representations.
+
+The integer/half-integer split in the spin ladder.
+
+The $2\pi$-rotation action: $+\mathbb{1}$ on integer-spin representations (descend to $\mathrm{SO}^+(3,1)$); $-\mathbb{1}$ on half-integer-spin representations (require $\mathrm{SL}(2,\mathbb{C})$ double cover).
+
+The framework has two $\mathbb{Z}_2$ dichotomies now (exchange phase $\eta = \pm 1$; spin parity $2s \bmod 2 = 0$ or $1$). The remaining structural work is to tie them into a single forced equality.
+
+\section{Stage R.2.3 --- Configuration-Space Topology}
+
+The third structural move establishes $\pi_1(Q_2) = \mathbb{Z}_2$ from the geometric structure of the two-identical-chain configuration space in 3+1D. This is the topological argument that simultaneously forbids anyons and identifies the exchange-class generator with the $2\pi$-rotation generator.
+
+\subsection{The two-chain configuration space}
+
+For two same-type chains in 3D space (the spatial part of 3+1D), the configuration space is:
+\[
+Q_2 = (\mathbb{R}^{3} \times \mathbb{R}^{3} \setminus \Delta) / S_2
+\]
+where $\mathbb{R}^{3} \times \mathbb{R}^{3}$ catalogs all ordered pairs $(x_A, x_B)$, $\Delta = \{(x, x) : x \in \mathbb{R}^{3}\}$ is the diagonal removed because individuation forbids strict coincidence, and $S_2$ quotients by the chain-label exchange.
+
+The framework's job is to compute $\pi_1(Q_2)$, the fundamental group cataloging topologically distinct loops in this configuration space.
+
+\subsection{Centre-of-mass plus relative coordinates}
+
+Change to centre-of-mass and relative coordinates:
+\[
+X = (x_A + x_B)/2, \qquad R = x_A - x_B
+\]
+The centre-of-mass coordinate $X \in \mathbb{R}^{3}$ is topologically trivial ($\mathbb{R}^{3}$ is contractible). The relative coordinate $R \in \mathbb{R}^{3} \setminus \{0\}$ (with the origin removed because $x_A = x_B$ is forbidden) carries all the topological content.
+
+The $S_2$ action exchanges the two chains, which in relative coordinates is $R \to -R$ (the antipodal map). So the relative configuration space is:
+\[
+(\mathbb{R}^{3} \setminus \{0\}) / \mathbb{Z}_2
+\]
+where $\mathbb{Z}_2$ acts by $R \to -R$.
+
+\subsection{The relative space deformation-retracts to $\mathbb{R}P^{2}$}
+
+The space $\mathbb{R}^{3} \setminus \{0\}$ deformation-retracts to $S^{2}$ (any non-zero vector projects radially onto the unit sphere). The $\mathbb{Z}_2$ action by $R \to -R$ becomes the antipodal map on $S^{2}$. The quotient $S^{2} / \mathbb{Z}_2$ by the antipodal map is real projective space:
+\[
+S^{2} / \mathbb{Z}_2 \cong \mathbb{R}P^{2}
+\]
+So the relative configuration space deformation-retracts to $\mathbb{R}P^{2}$. The fundamental group of $\mathbb{R}P^{2}$ is well-known:
+\[
+\pi_1(\mathbb{R}P^{2}) = \mathbb{Z}_2
+\]
+This is a standard result in algebraic topology. $\mathbb{R}P^{2}$ is non-orientable; it has a non-trivial double cover ($S^{2}$); loops that go around once are homotopically distinct from loops that go around twice (the latter contracting trivially).
+
+\subsection{The framework's result}
+
+Combining: $\pi_1(Q_2) = \pi_1((\mathbb{R}^{3} \setminus \{0\})/\mathbb{Z}_2) = \pi_1(\mathbb{R}P^{2}) = \mathbb{Z}_2$.
+
+This gives the framework's first major topological result for spin-statistics:
+\[
+\pi_1(Q_2) = \mathbb{Z}_2 \quad \text{in 3+1D}
+\]
+The fundamental group has exactly two elements: the trivial element (loops contractible to a point) and the non-trivial element (loops that exchange the two chains once and cannot be contracted away). The non-trivial element generates the entire group: applying it twice gives the trivial element.
+
+\subsection{Anyon prohibition in 3+1D}
+
+Since $\pi_1(Q_2) = \mathbb{Z}_2$ has only two elements, the only 1-dimensional unitary representations of $\pi_1(Q_2)$ are:
+
+The trivial representation: $\rho(\text{non-trivial}) = +1$.
+
+The sign representation: $\rho(\text{non-trivial}) = -1$.
+
+These correspond to $\eta = +1$ (Case P, bosonic) and $\eta = -1$ (Case R, fermionic). No other exchange phases are admissible.
+
+In particular, anyonic exchange phases $\eta = e^{i\theta}$ for arbitrary $\theta$ are forbidden in 3+1D. Anyons require $\pi_1(Q_2) = \mathbb{Z}$ rather than $\mathbb{Z}_2$, which occurs in 2+1D where the relative configuration space deformation-retracts to $S^{1}$ rather than $\mathbb{R}P^{2}$ and $\pi_1(S^{1}) = \mathbb{Z}$. The framework's prediction matches: in 2+1D systems (effectively two-dimensional condensed-matter systems like the fractional quantum Hall effect), anyons are observed; in 3+1D, they are not.
+
+\subsection{The geometric theorem}
+
+The R.2.3 stage's most important result for spin-statistics is the geometric identification of the exchange-class generator with the $2\pi$-rotation generator. This is the key structural fact that ties exchange to rotation.
+
+\textbf{Setup.} Consider the two-chain relative coordinate $R(t)$ parameterizing a path in $\mathbb{R}^{3} \setminus \{0\}$. As $R(t)$ traces out a loop, the angular coordinate of $R$ rotates. The rotation angle is a smooth function of $t$ with values in $\mathrm{SO}(3)$ acting on $R$.
+
+\textbf{The theorem.} Under the $\mathrm{SO}(3)$-equivariant embedding of the relative coordinate, the exchange-path generator (the loop $\gamma_E$ that exchanges the two chains, generating $\pi_1(Q_2)$) is homotopic to a $2\pi$-rotation of $R$.
+
+\textbf{Geometric argument.} A path that exchanges the two chains takes $R(0)$ at the ``north pole'' of $S^{2}$ to $R(1) = -R(0)$ at the ``south pole.'' On $\mathbb{R}P^{2}$ (the quotient by antipodal identification), this is a closed path generating $\pi_1(\mathbb{R}P^{2})$. Lifting back to $S^{2}$, this path is half of a great circle through the north and south poles. To close the loop on $\mathbb{R}P^{2}$, we identify $R(1) \sim -R(1)$, but on $S^{2}$ this corresponds to a continuous rotation through $2\pi$ (after which $R$ returns to its starting orientation in the lift).
+
+The exchange-path generator is therefore the $2\pi$-rotation generator. They are the same element of $\pi_1(Q_2) = \mathbb{Z}_2$.
+
+\subsection{The structural payoff}
+
+This geometric theorem is the load-bearing connection between exchange statistics and rotational structure. It says: whatever the exchange phase $\eta$ is, it must equal whatever the $2\pi$-rotation phase is (acting on whatever participation-measure module the rule-type carries).
+
+For a Lorentz representation with spin $s$, the $2\pi$-rotation phase is:
+
+$+1$ for integer-spin representations (descending to $\mathrm{SO}^+(3,1)$).
+
+$-1$ for half-integer-spin representations (requiring $\mathrm{SL}(2,\mathbb{C})$ double cover).
+
+So the geometric theorem plus R.2.2 gives:
+\[
+\eta = +1 \text{ for integer } s, \qquad \eta = -1 \text{ for half-integer } s
+\]
+which is exactly $\eta = (-1)^{2s}$.
+
+But this argument is only complete once the framework establishes that the participation measure for half-integer-spin Case-R rule-types actually realizes the $\mathrm{SL}(2,\mathbb{C})$ double cover with $D(R(2\pi)) = -\mathbb{1}$ --- that is, once the algebraic frame is in hand. That's the work of R.2.4.
+
+\section{Stage R.2.4 --- The $\mathrm{Cl}(3,1)$ Frame}
+
+The fourth structural move establishes the $\mathrm{Cl}(3,1)$ Clifford algebra as the unique algebraic frame realizing the rotational double cover for half-integer-spin representations. The argument refutes pure commutation and pure antisymmetry, leaving the anticommutator structure forced.
+
+\subsection{The structural problem}
+
+Half-integer-spin representations require an algebraic frame in which $0$ and $2\pi$ rotations are distinguishable on the spinor module. Specifically, we need a real finite-dimensional associative algebra $\mathcal{A}$ generated by elements $e_\mu$ ($\mu = 0, 1, 2, 3$) satisfying four selection criteria:
+
+\textbf{P1 --- Lorentz tangent-space compatibility.} Each $e_\mu$ transforms as a four-vector under Lorentz transformations.
+
+\textbf{P2 --- Metric compatibility.} Symmetric pairings of the $e_\mu$ reproduce the Minkowski metric $\eta^{\mu\nu}$.
+
+\textbf{P3 --- Half-integer representation realization.} The algebra must support a faithful action of the half-integer $\mathrm{SL}(2,\mathbb{C})$ double cover of the Lorentz group, with $D(R(2\pi)) \neq +\mathbb{1}$ on at least one representation.
+
+\textbf{P4 --- Minimal dimension.} Among algebras satisfying P1--P3, the unique minimal-dimension solution is preferred.
+
+\subsection{Pure commutation fails}
+
+Suppose the algebra is commutative: $e_\mu e_\nu = e_\nu e_\mu$ for all $\mu, \nu$. Then P2 forces:
+\[
+e_\mu e_\nu = (\eta^{\mu\nu} / 2) \cdot \mathbb{1}
+\]
+For $\mu = \nu = 0$ (timelike), this gives $(e_0)^{2} = +\mathbb{1}/2$. For spacelike $\mu = \nu$, it gives $(e_i)^{2} = -\mathbb{1}/2$.
+
+For $\mu \neq \nu$, $\eta^{\mu\nu} = 0$ forces $e_\mu e_\nu = 0$. But in a commutative algebra, this means $e_\mu$ and $e_\nu$ have orthogonal supports --- the algebra splits into one-dimensional pieces with no faithful action of the Lorentz group.
+
+The resulting algebra is essentially diagonal --- a direct sum of one-dimensional subalgebras with no non-trivial group action. It does not support a faithful $\mathrm{SL}(2,\mathbb{C})$ representation with $D(R(2\pi)) \neq +\mathbb{1}$. P3 fails.
+
+\subsection{Pure antisymmetry fails}
+
+Suppose the algebra is strictly anticommutative: $e_\mu e_\nu = -e_\nu e_\mu$ for all $\mu, \nu$, including $\mu = \nu$. Then:
+\[
+e_\mu e_\mu = -e_\mu e_\mu
+\]
+so $(e_\mu)^{2} = 0$ for all $\mu$. But P2 requires $(e_\mu)^{2} = \eta^{\mu\mu} \cdot \mathbb{1}$ (for the diagonal entries), which is nonzero. P2 fails.
+
+\subsection{The mixed relation forced}
+
+Pure commutation fails P3. Pure antisymmetry fails P2. The only remaining possibility is a mixed relation:
+\[
+e_\mu e_\nu + e_\nu e_\mu = c_{\mu\nu} \cdot \mathbb{1}
+\]
+for some symmetric coefficients $c_{\mu\nu}$. P2 forces $c_{\mu\nu} = 2\eta_{\mu\nu}$. Renaming $e_\mu \to \gamma_\mu$ for clarity:
+\[
+\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu} \cdot \mathbb{1}
+\]
+This is the \textbf{Clifford algebra defining relation}. It generates the real Clifford algebra $\mathrm{Cl}(3,1)$ uniquely up to isomorphism.
+
+The dimension of $\mathrm{Cl}(3,1)$ is $2^{4} = 16$ (the algebra has basis $\mathbb{1}$, $\gamma^\mu$, $\gamma^{\mu\nu} = (i/2)[\gamma^\mu, \gamma^\nu]$, $\gamma^{\mu\nu\rho}$, $\gamma^{5} = i\gamma^{0}\gamma^{1}\gamma^{2}\gamma^{3}$, with appropriate index ranges). $\mathrm{Cl}(3,1)$ is isomorphic to the algebra of $4 \times 4$ real matrices $M_4(\mathbb{R})$.
+
+\subsection{The Lorentz generators}
+
+On the spinor module (the four-dimensional space carrying the $(1/2,0) \oplus (0,1/2)$ Dirac representation), the Lorentz generators are:
+\[
+\sigma^{\mu\nu} = (i/2)[\gamma^\mu, \gamma^\nu]
+\]
+These satisfy the $\mathfrak{so}(3,1)$ commutation relations and generate the $\mathrm{SL}(2,\mathbb{C})$ action by exponentiation:
+\[
+S(\Lambda) = \exp(-(i/4)\omega_{\mu\nu} \sigma^{\mu\nu})
+\]
+where $\omega_{\mu\nu}$ parameterizes the Lorentz transformation $\Lambda$.
+
+\subsection{The $2\pi$-rotation acts as $-\mathbb{1}$ automatically}
+
+For a rotation by angle $\theta$ around the $z$-axis, $\omega_{12} = \theta$ and the spinor transformation is:
+\[
+S(R_z(\theta)) = \exp(-(i/2)\theta \sigma^{12})
+\]
+For $\theta = 2\pi$:
+\[
+S(R_z(2\pi)) = \exp(-i\pi \sigma^{12}) = \cos(\pi) \cdot \mathbb{1} - i \sin(\pi) \sigma^{12} = -\mathbb{1}
+\]
+The $2\pi$-rotation acts as $-\mathbb{1}$ on the spinor module \textbf{automatically} --- no separate postulate needed. The half-angle factor in the exponent (the $-(i/2)\theta$ rather than $-i\theta$) comes from the $\mathrm{Cl}(3,1)$ algebra structure plus the $\sigma^{\mu\nu}$ Lorentz generators, both of which are forced.
+
+\subsection{What this establishes}
+
+After R.2.4:
+
+The $\mathrm{Cl}(3,1)$ Clifford algebra is the unique algebraic frame satisfying P1--P4 (Theorem R2 of the Arc R paper).
+
+The $\sigma^{\mu\nu}$ generators of $\mathrm{SL}(2,\mathbb{C})$ act on the spinor module via the half-angle factor.
+
+$D(R(2\pi)) = -\mathbb{1}$ on the spinor module is automatic from the algebraic structure.
+
+Half-integer-spin representations (Case R rule-types) realize the $\mathrm{SL}(2,\mathbb{C})$ double cover with the $2\pi$-rotation sign baked in.
+
+The framework now has:
+
+$\eta \in \{+1, -1\}$ forced by R.2.1 (involutive structure plus mutual substitutability).
+
+The integer/half-integer spin dichotomy from R.2.2.
+
+$\pi_1(Q_2) = \mathbb{Z}_2$ with the geometric theorem identifying exchange-class generator with $2\pi$-rotation generator from R.2.3.
+
+$D(R(2\pi)) = -\mathbb{1}$ on half-integer (Case R) representations from R.2.4.
+
+The closing step ties these into $\eta = (-1)^{2s}$ explicitly.
+
+\section{Stage R.2.5 --- The Spin-Statistics Theorem}
+
+The fifth structural move closes the spin-statistics theorem by tying the abstract topological exchange phase to the spinor-module representation theory via the minimal-bilinear pairing argument using Primitives 10 and 11.
+
+\subsection{The structural setup at closure}
+
+After R.2.1 through R.2.4, the framework has the following pieces in hand:
+
+(A) Exchange phase $\eta \in \{+1, -1\}$ as a structural dichotomy at the rule-type level (R.2.1).
+
+(B) Lorentz spin ladder $s \in \{0, 1/2, 1, 3/2, 2, \ldots\}$ with integer/half-integer split (R.2.2).
+
+(C) Configuration-space topology $\pi_1(Q_2) = \mathbb{Z}_2$ in 3+1D (R.2.3, first half).
+
+(D) Geometric theorem: exchange-class generator equals $2\pi$-rotation generator under $\mathrm{SO}(3)$-equivariant embedding (R.2.3, second half).
+
+(E) $\mathrm{Cl}(3,1)$ algebra forced; $D(R(2\pi)) = -\mathbb{1}$ on the spinor module automatic (R.2.4).
+
+The closing argument needs to combine these into a single forced equality $\eta = (-1)^{2s}$ at the rule-type level --- that is, for any specific rule-type $\tau$ with spin label $s_\tau$ and exchange-phase label $\eta_\tau$.
+
+\subsection{The minimal-bilinear pairing}
+
+The closure step uses Primitive 10 individuation made dynamical by Primitive 11 commitment to construct the bilinear pairing between two same-type chains.
+
+\textbf{The mechanism.} Two same-type chains $K_A$ and $K_B$ carry participation-measure modules $P_K^A$ and $P_K^B$. Primitive 10 individuation requires that the chains remain distinguishable as separate participation entities --- there is some structural pairing between the chain indices that records which chain is which while permitting exchange. The simplest such pairing is the bilinear:
+\[
+B(P_K^A, P_K^B) = \bar P_K^A \cdot \Gamma \cdot P_K^B
+\]
+where $\Gamma$ is a rule-type-specific element of the $\mathrm{Cl}(3,1)$ algebra (the Fierz class $\Gamma_\tau$ from Lever L3). This is the minimal bilinear (MB) pairing.
+
+\textbf{Why this is forced.} Primitive 10 supplies the requirement that the two-chain coupling be a Lorentz-covariant scalar bilinear (from the rule-type's Lorentz representation content). Primitive 11 supplies the dynamical structure: commitment events along the worldlines need a coupling that respects the polarity-asymmetric forward-only update. The minimal Lorentz-scalar bilinear constructible from two spinor-valued participation measures is $\bar\Psi \Gamma \Psi$ (Case R) or $|\Psi|^{2}$ (Case P), with $\Gamma$ from the Fierz basis. The bilinear pairing $B$ is the unique minimal structural object satisfying these constraints.
+
+\subsection{The exchange action on the bilinear}
+
+The exchange operation $E_{AB}$ acts on $B$ as:
+\[
+B(P^A, P^B) \to \eta \cdot B(P^B, P^A) = \eta \cdot \tilde B(P^A, P^B)
+\]
+where $\tilde B$ denotes the bilinear with the role of the two chains swapped. For $B$ to be well-defined on indistinguishable-chain configurations, the swap symmetry of the bilinear must match $\eta$. Specifically:
+
+For $\Gamma$ symmetric under chain-index swap (Case P, integer-spin Fierz classes): $B(P^B, P^A) = +B(P^A, P^B)$, forcing $\eta = +1$.
+
+For $\Gamma$ antisymmetric under chain-index swap (Case R, half-integer-spin Fierz classes): $B(P^B, P^A) = -B(P^A, P^B)$, forcing $\eta = -1$.
+
+\subsection{The connection to $2\pi$-rotation}
+
+The geometric theorem (D) says the exchange operation generates the same element of $\pi_1(Q_2)$ as $2\pi$-rotation. The bilinear $B$ must therefore transform under $2\pi$-rotation in the same way it transforms under exchange.
+
+For Case R rule-types with spinor-valued participation measures, $2\pi$-rotation acts as $D(R(2\pi)) = -\mathbb{1}$ on each chain's module (from E). The bilinear $B = \bar P^A \Gamma P^B$ transforms as:
+\[
+B \to D(R(2\pi))^\dagger \cdot \Gamma \cdot D(R(2\pi)) \cdot B = (-1) \cdot \Gamma \cdot (-1) \cdot B = \Gamma \cdot B
+\]
+The two factors of $-\mathbb{1}$ from the two spinor modules cancel under simultaneous rotation. The bilinear is invariant under simultaneous rotation.
+
+But the geometric theorem says exchange generates the same element as $2\pi$-rotation \textbf{of the relative coordinate}, not simultaneous rotation of both chains. The relative coordinate rotates by $2\pi$ under exchange; this is equivalent to rotating one chain's spinor module by $2\pi$ while leaving the other fixed. In that case, the bilinear picks up a single factor of $-\mathbb{1}$ from the rotated spinor:
+\[
+B \to D(R(2\pi))\big|_{\text{one chain}} \cdot B = (-1) \cdot B
+\]
+So under exchange (equivalently, $2\pi$-rotation of the relative coordinate), the bilinear picks up a sign. For Case R rule-types (spinor-valued, half-integer spin): the exchange phase $\eta = -1$ matches the relative-rotation sign $D(R(2\pi)) = -\mathbb{1}$.
+
+For Case P rule-types (tensor-valued, integer spin): the relative-rotation acts as $+\mathbb{1}$, so $\eta = +1$.
+
+This is the closing identification. The exchange phase $\eta$, defined topologically by the action on the bilinear pairing, equals the $2\pi$-rotation sign $D(R(2\pi))$, which is $+\mathbb{1}$ for integer spin and $-\mathbb{1}$ for half-integer spin.
+
+\subsection{The forced equality}
+
+Combining the three identifications:
+
+$\eta_\tau$ = (action of exchange $E_{AB}$ on bilinear $B$, from R.2.1 dichotomy + R.2.5 bilinear closure)
+
+= (action of $2\pi$-rotation of relative coordinate on bilinear $B$, from R.2.3 geometric theorem)
+
+= $D(R(2\pi))$ on the rule-type's participation-measure module (from R.2.4 $\mathrm{Cl}(3,1)$ realization)
+
+= $+\mathbb{1}$ if $s_\tau$ is integer, $-\mathbb{1}$ if $s_\tau$ is half-integer (from R.2.2 ladder + R.2.4 algebra)
+
+= $(-1)^{2s_\tau}$.
+
+The identification $\eta_\tau = (-1)^{2s_\tau}$ is \textbf{forced unconditionally} at primitive level.
+
+\subsection{The theorem stated}
+
+\textbf{Theorem R1 (Spin-Statistics).} For any ED rule-type $\tau$ in 3+1D with Lorentz-covariant internal index structure, the exchange phase $\eta_\tau$ and the spin quantum number $s_\tau$ are related by:
+\[
+\eta_\tau = (-1)^{2s_\tau}
+\]
+with $\eta_\tau$ FORCED to lie in $\{+1, -1\}$ by $\pi_1(Q_2) = \mathbb{Z}_2$ (R.2.3) and $s_\tau$ FORCED to lie in $\{0, 1/2, 1, 3/2, 2, \ldots\}$ by Lorentz representation theory (R.2.2). Integer-spin rule-types are Case P ($\eta = +1$, bosonic, bandwidth-sharing-permissive). Half-integer-spin rule-types are Case R ($\eta = -1$, fermionic, bandwidth-sharing-restrictive, vanishing-on-coincidence with Pauli exclusion automatic).
+
+The proof runs through six steps:
+
+\begin{enumerate}[noitemsep]
+\item Exchange dichotomy $\eta \in \{+1, -1\}$ from involutive structure plus mutual substitutability (R.2.1).
+\item Topological upgrade $\pi_1(Q_2) = \mathbb{Z}_2$ from spatial dimension 3 plus identical-chain exchange (R.2.3 first half).
+\item Geometric theorem: exchange-path generator equals $2\pi$-rotation generator (R.2.3 second half).
+\item Lorentz representation ladder: half-integer requires $\mathrm{SL}(2,\mathbb{C})$ (R.2.2).
+\item Algebraic frame: $\mathrm{Cl}(3,1)$ with $D(R(2\pi)) = -\mathbb{1}$ on spinor module (R.2.4).
+\item Bilinear-pairing closure: Primitive 10 individuation supplies the bilinear $B = \bar P \Gamma P$ coupling between chain indices, made dynamical by Primitive 11 commitment, which fixes the rule-type-frame coupling and ties the topological exchange phase to the spinor-module representation theory (R.2.5).
+\end{enumerate}
+
+The minimal-bilinear closure step uses Primitive 10's two-chain individuation pairing made dynamical by Primitive 11. There are no remaining CANDIDATE assumptions. The spin-statistics theorem is FORCED unconditionally at primitive level.
+
+\subsection{Pauli exclusion automatic}
+
+For Case R rule-types, the antisymmetric bilinear vanishes when the two chains attempt to occupy identical configurations (the antisymmetric function of two identical arguments is zero). This is \textbf{Pauli exclusion}, automatic at primitive level from the antisymmetric exchange structure.
+
+The framework's substrate-level account of Pauli exclusion runs through individuation: Primitive 10's threshold separating distinct chains, combined with the antisymmetric exchange phase, forces same-type Case R chains to remain spatially separated. This is structurally why electrons in atoms occupy different orbitals, why neutron stars don't collapse below the Tolman-Oppenheimer-Volkoff limit, why the periodic table has shell structure. All of it traces back to $\eta = -1$ for $s = 1/2$ chains.
+
+\subsection{What's established}
+
+After R.2.5:
+
+$\eta_\tau = (-1)^{2s_\tau}$ for any ED rule-type, \textbf{forced unconditionally} at primitive level.
+
+Integer-spin rule-types are Case P (bosonic, $\eta = +1$).
+
+Half-integer-spin rule-types are Case R (fermionic, $\eta = -1$).
+
+Pauli exclusion automatic for Case R rule-types.
+
+Anyons forbidden in 3+1D (from $\pi_1(Q_2) = \mathbb{Z}_2$ having only two elements).
+
+The chain runs from substrate primitives plus the 3+1D commitment plus Lorentz invariance to $\eta = (-1)^{2s}$ without invoking quantum field theory, microcausality, or the Streater-Wightman axioms.
+
+\section{What This Argument Establishes}
+
+The chain runs:
+
+Primitives (micro-events, participation, chains, channels, four-band bandwidth, individuation, commitment, polarity, rule-type taxonomy) plus 3+1D spatial commitment plus Lorentz invariance $\to$ exchange dichotomy $\eta \in \{+1, -1\}$ from involutive structure plus mutual substitutability $\to$ Case P / Case R distinction at rule-type level $\to$ Lorentz representation classification $(j_L, j_R)$ with integer/half-integer split $\to$ configuration-space topology $\pi_1(Q_2) = \mathbb{Z}_2$ from $(\mathbb{R}^{3}\setminus 0)/\mathbb{Z}_2 \simeq \mathbb{R}P^{2}$ $\to$ anyon prohibition automatic $\to$ geometric theorem identifying exchange-path generator with $2\pi$-rotation generator $\to$ $\mathrm{Cl}(3,1)$ algebraic uniqueness from four selection criteria with pure commutation and pure antisymmetry both refuted $\to$ $D(R(2\pi)) = -\mathbb{1}$ on spinor module automatic from $\mathrm{Cl}(3,1)$ plus $\sigma^{\mu\nu}$ generators plus half-angle factor $\to$ minimal-bilinear pairing closure using Primitive 10 individuation and Primitive 11 commitment $\to$ $\eta = (-1)^{2s}$ forced unconditionally.
+
+Each move has its load-bearing argument worked out. The exchange dichotomy is forced by involutive structure and mutual substitutability of same-type chains. The configuration-space topology is computed explicitly via the deformation retraction to $\mathbb{R}P^{2}$ and the standard $\pi_1(\mathbb{R}P^{2}) = \mathbb{Z}_2$ result. The geometric theorem identifies the exchange-class generator with the $2\pi$-rotation generator via the $\mathrm{SO}(3)$-equivariant embedding. The $\mathrm{Cl}(3,1)$ frame is forced by the structural argument: pure commutation collapses to scalars failing half-integer realization, pure antisymmetry forces $e_\mu^{2} = 0$ contradicting the metric, mixed anticommutator structure forced. The $2\pi$-rotation sign is automatic from the half-angle factor in the $\sigma^{\mu\nu}$ generators. The closure step ties the topological exchange to spinor-module representation theory via the minimal-bilinear pairing.
+
+The framework reproduces $\eta = (-1)^{2s}$, the standard spin-statistics theorem of relativistic quantum theory, \textbf{without invoking quantum field theory}. The standard treatments --- Pauli 1940, Streater-Wightman axiomatic framework, Burgoyne, L\"uders-Zumino, Weinberg --- all require microcausality (the requirement that field operators at spacelike-separated points either commute or anticommute), which is a field-theoretic structural commitment. The framework's argument is at the level of substrate primitives plus 3+1D spatial topology plus Lorentz invariance plus the algebraic uniqueness of $\mathrm{Cl}(3,1)$. This is much earlier in the framework's stack than QFT lives.
+
+What's gained methodologically: fewer axiomatic commitments are needed to reach the result. The framework does not assume microcausality; it derives the exchange-anticommutation structure from substrate-level arguments. It does not assume positivity of energy in an axiomatic sense; the energy-positivity content enters through the Klein-Gordon Casimir and the Dirac positive-definite current at the equation-of-motion level rather than as a separate axiom. It does not assume Lorentz invariance as a postulate independent of the substrate; Lorentz covariance is forced by Primitive 06 (the four-gradient as the structural derivative on the event manifold).
+
+The structural beauty of the result is the closure pattern. Two $\mathbb{Z}_2$ dichotomies --- exchange phase $\eta = \pm 1$ and integer/half-integer spin parity --- close into a single forced equality $\eta = (-1)^{2s}$. Each side of the equality is a primitive-level structural classification. The identification between them is the theorem.
+
+This is exactly the kind of closure pattern the framework excels at. Compare with the mass walkthrough: there, the framework attempted a similar structural closure for mass content (Arc M) and found that mass ratios are continuous numerical quantities, not dichotomies, and therefore outside the kind of content the primitive stack can deliver. The R.2 closure works because the inputs are dichotomies ($\eta = \pm 1$ and spin parity $2s \bmod 2 = 0$ or $1$) plus a topological theorem ($\pi_1(Q_2) = \mathbb{Z}_2$ in 3+1D). The Arc M attempted closure failed because mass ratios are real numbers spanning many orders of magnitude with no dichotomy structure.
+
+The asymmetry between Arc M's H1-dominant verdict and Arc R's strong positive closure is genuine and informative. The framework's primitive structure produces classifications, dichotomies, and structural type-content cleanly --- this is the strength demonstrated by R.2 (and earlier by Born rule, Schr\"odinger equation, Klein-Gordon, Dirac with $g = 2$). It does not produce continuous numerical relationships between rule-types --- this is the limit demonstrated by Arc M. Different mathematical territories support different kinds of structural derivation.
+
+For the spin-statistics result specifically, the framework's contribution is to show the result follows from substrate primitives plus spatial topology plus the algebraic uniqueness of $\mathrm{Cl}(3,1)$, without requiring the QFT machinery that standard derivations need. This grounds spin-statistics in the same substrate ontology that produced the Born rule, Schr\"odinger equation, Bell-Tsirelson bound, Heisenberg uncertainty, kernel arrow of time, gravitational dynamics, black hole architecture, Klein-Gordon equation, Dirac equation, and the structural mass content. Eleven walkthroughs covering the framework's foundational quantum, gravitational, and statistical content. The framework's primitive stack delivers the structural skeleton of the relevant physics, with numerical content inherited at the empirical layer.
+
+The empirical exposure of this result is essentially total. Every confirmation of Pauli exclusion in atomic structure, every superconductor, every superfluid, every neutron star equation-of-state observation, every electron-degenerate white dwarf, every blackbody photon distribution, every Bose-Einstein condensate confirms $\eta = (-1)^{2s}$. The relationship is empirically the most thoroughly tested in particle physics. The framework's derivation reproduces it without QFT, providing a substrate-level grounding rather than a field-theoretic derivation.
+
+The structural content is also substantial. The framework predicts no anyons in 3+1D. It predicts that exchange and rotation are two faces of the same topological structure (the geometric theorem). It predicts that the spinor frame is forced to be $\mathrm{Cl}(3,1)$ from algebraic uniqueness. It predicts that $2\pi$-rotation acts as $-\mathbb{1}$ on half-integer-spin representations automatically from the algebraic structure rather than as a separate postulate.
+
+Whether the substrate commitments are right is the load-bearing question, as in every walkthrough. The framework stands or falls on whether discreteness, finite participation bandwidth, commitment irreversibility, individuation, the four-band bandwidth decomposition, the rule-type taxonomy, plus the 3+1D spatial commitment, plus Lorentz invariance, are the correct foundational concepts. The empirical exposure of this particular walkthrough's content is total --- every test of spin-statistics in the empirical literature is a test of the framework's derivation. Structurally, this is one of the framework's cleanest closures: two $\mathbb{Z}_2$ dichotomies plus a topological theorem plus an algebraic uniqueness argument plus a primitive-level bilinear pairing combine into one forced equality.
+
+The next steps, structurally, are the broader QFT extension (Arc Q) which builds on R.2's spin-statistics framework to derive canonical commutation and anticommutation relations for second-quantized fields, Yang-Mills foundations, and the connection to the Standard Model gauge structure. The framework's primitive stack delivers spin-statistics at primitive level; Arc Q's job is to extend this to the full multi-particle field-theoretic content that empirical particle physics requires.
+
+\section{References}
+
+\begin{itemize}[noitemsep]
+\item Pauli, W. ``The Connection Between Spin and Statistics.'' \textit{Physical Review} 58, 716--722 (1940).
+\item Streater, R. F. and Wightman, A. S. \textit{PCT, Spin and Statistics, and All That.} Princeton University Press, 1964.
+\item Burgoyne, N. ``On the Connection of Spin with Statistics.'' \textit{Il Nuovo Cimento} 8, 607--609 (1958).
+\item L\"uders, G. and Zumino, B. ``Connection between Spin and Statistics.'' \textit{Physical Review} 110, 1450--1453 (1958).
+\item Weinberg, S. \textit{The Quantum Theory of Fields, Vol. I.} Cambridge University Press, 1995.
+\item Leinaas, J. M. and Myrheim, J. ``On the theory of identical particles.'' \textit{Il Nuovo Cimento B} 37, 1--23 (1977).
+\item Wilczek, F. ``Quantum Mechanics of Fractional-Spin Particles.'' \textit{Physical Review Letters} 49, 957--959 (1982).
+\item Hatcher, A. \textit{Algebraic Topology.} Cambridge University Press, 2002.
+\item Proxmire, A. \textit{Relativistic Quantum Mechanics as a Forced Structural Consequence of Event-Density Primitives (Arc R paper).} April 2026.
+\item Proxmire, A. \textit{Lorentz Representations from Primitives (Arc R, Stage R.2.2).} April 2026.
+\item Proxmire, A. \textit{Rotational Double-Cover Scoping (Arc R, Stage R.2.3).} April 2026.
+\item Proxmire, A. \textit{Clifford Algebra from Spinor Structure (Arc R, Stage R.2.4).} April 2026.
+\item Proxmire, A. \textit{Dirac Emergence (Arc R, Stage R.3).} April 2026.
+\item Proxmire, A. \textit{Arc R Stage R.1 Synthesis --- Scalar Relativistic Quantum Mechanics.} April 2026.
+\item Proxmire, A. \textit{Event Density Foundations: A Unified Substrate Architecture for Quantum, Fluid, Gauge, and Gravitational Dynamics.} April 2026.
+\item The full Event Density corpus, including all forced theorems and supporting memos, is available at \url{https://github.com/allen-proxmire/event-density}.
+\end{itemize}
+
+\end{document}

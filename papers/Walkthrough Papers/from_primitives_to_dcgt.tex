@@ -1,0 +1,385 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to the Diffusion Coarse-Graining Theorem},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to the Diffusion Coarse-Graining Theorem\\[6pt]
+\large\mdseries A Walkthrough of the Event Density Substrate-to-Continuum Bridge}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+When physics writes down a continuum equation --- Newton's law of viscosity, Maxwell's equations, the Schr\"odinger equation, the Yang--Mills equation, the Lorentz force law --- it writes about smooth fields on smooth spacetime. Velocity fields, electromagnetic potentials, wavefunctions, gauge connections. The equations differentiate these fields, integrate them, perform spectral decompositions on them. None of this language has any obvious connection to discrete events on a substrate of micro-events linked by relational structure. The continuum theory and the substrate ontology are two different kinds of language, applied to two different kinds of object.
+
+Standard physics rarely faces this gap, because standard physics does not commit to a substrate ontology. Quantum mechanics treats wavefunctions as fundamental. Classical electromagnetism treats fields as fundamental. Fluid dynamics treats velocity fields as fundamental. General relativity treats the spacetime metric as fundamental. Each framework starts at the continuum level and asks downward whether some deeper structure produces what is observed. The continuum is taken as given, and the question of what underlies it is set aside as separate from the formal content of the theory.
+
+The Event Density framework reverses the direction. It commits to a substrate ontology --- discrete micro-events on chains, with bandwidth, polarity, locality, finite-width kernels --- and asks upward whether the continuum equations of standard physics emerge as coarse-grained consequences of substrate dynamics. This requires a coarse-graining theorem that bridges the levels: a controlled, audited derivation that takes substrate primitives and produces continuum equations as their leading-order content.
+
+This is what the Diffusion Coarse-Graining Theorem (DCGT) provides.
+
+The question this document addresses is: how does the substrate's discrete event-and-chain structure become the continuum equations physics writes down, and how do we know that the bridge produces the correct equations rather than something close-but-different?
+
+DCGT is the framework's answer. Its structure is a multi-scale expansion in a small parameter $\ell_P/R_{\mathrm{cg}}$, controlled by a hydrodynamic window of length scales between the substrate's irreducible length and the continuum theory's flow scale. Within that window, substrate dynamics admit a clean averaging that produces five leading-order continuum consequences --- scalar diffusion, directional viscosity, substrate-cutoff regularization, viscoelastic memory, and minimal-coupling Lorentz force --- plus a non-Abelian generalization that produces the Yang--Mills equation. Every continuum theory in the framework's closed-arc inventory passes through DCGT or its generalization. Without DCGT, the framework would have substrate primitives on one side of a derivational gap and standard continuum physics on the other, with no chain connecting them.
+
+Like Theorem 17 (gauge fields), DCGT is not a derivation of new continuum content. It is the substrate-level explanation for \emph{why} the standard continuum content has the form it does. The Navier--Stokes viscous term, Maxwell's viscoelastic relaxation, the Lorentz force --- these are not new predictions. They are the leading-order outputs of an audited multi-scale expansion that begins at substrate primitives and produces the textbook equations as inevitable consequences. What's new is the chain of derivation, plus the substrate-cutoff corrections at first subleading order that distinguish ED's coarse-graining from a purely phenomenological one.
+
+The chain has six structural moves:
+
+\begin{enumerate}[noitemsep]
+  \item The substrate has a structural length scale $\ell_P$ set by primitive event discreteness (P01) plus T19's Newton-recovery identification.
+  \item The continuum theory under derivation has its own structural length scale $L_{\mathrm{flow}}$ --- fluid-flow scale, qubit-system extent, galactic radius, horizon scale, depending on the sector.
+  \item A coarse-graining length $R_{\mathrm{cg}}$ chosen within the hydrodynamic window $\ell_P \ll R_{\mathrm{cg}} \ll L_{\mathrm{flow}}$ defines the averaging scale at which substrate dynamics are aggregated into continuum-level fields.
+  \item Substrate quantities expanded in powers of the small parameter $\ell_P/R_{\mathrm{cg}}$ produce, at leading order, standard continuum equations; at first subleading order, substrate-cutoff regularization terms; at higher orders, increasingly small corrections.
+  \item The substrate's cross-bandwidth structure $\Gamma_{\mathrm{cross}}(\mathbf{x}_1, \mathbf{x}_2) \sim \exp\bigl[-\alpha \int_{\mathrm{path}} \sigma\, d\ell\bigr]$ between separated regions emerges as a primary DCGT output, recurring in quantum-computation architecture, black-hole horizon formation, and Josephson tunneling at scales separated by 50 orders of magnitude.
+  \item Five leading-order continuum consequences are produced --- scalar diffusion, directional viscosity, V1$\to$R1 cutoff regularization, V5$\to$Maxwell viscoelasticity, T17 minimal-coupling Lorentz force --- covering the structural content of every classical continuum field theory in the program's closed-arc inventory.
+\end{enumerate}
+
+The structural payoff: DCGT is the bridge. The substrate-to-continuum gap is not closed by hand-waving or by analogy or by stipulation. It is closed by a multi-scale expansion in a controlled small parameter, with leading-order consequences that match standard physics and subleading corrections that supply the substrate-level content needed for Clay-relevance results in NS and Yang--Mills, the area-law structure of black-hole horizons, the cross-domain unification of quantum computation and BH physics, and the substrate-mechanism reading of viscoelastic soft-matter rheology.
+
+\section{The Primitives That Matter}
+
+The framework rests on substrate-level ontological commitments. The DCGT walkthrough uses a working subset of these primitives plus three forced theorems and one substrate constant that load-bear specifically here.
+
+\textbf{Micro-events (P01).} Discrete acts of becoming, vertices in a graph spanning the event manifold. Their discreteness is what supplies the lower bound of the hydrodynamic window.
+
+\textbf{Chains (P02).} Stable sequences of micro-events connected by participation. Continuum-level ``particles'' and ``fields'' are coarse-grained chain populations.
+
+\textbf{Bandwidth (P04).} Non-negative real edge weight, with a four-band orthogonal decomposition. Bandwidth is additive for independent contributions --- this load-bears for the multi-scale expansion's averaging step.
+
+\textbf{Polarity / $U(1)$ phase (P09).} $U(1)$-valued phase relation between a chain's update rule and the local ED-flow direction.
+
+\textbf{Substrate locality.} Participation contributions at one substrate region combine with those at another only via the substrate's mediating structure (chains, V1 kernel, channels). No instantaneous non-local action.
+
+\textbf{Proper-time ordering (P13).} Substrate events are ordered along chains by proper-time-like parameters.
+
+\textbf{Commitment irreversibility (P11).} Once a chain selects one channel from those available, the commitment is irreversible.
+
+\textbf{V1 finite-width kernel.} The substrate's vacuum kernel that mediates cross-chain correlations. Forward-cone-only (T18). Finite width supplied at the substrate level.
+
+\textbf{V5 finite-width memory kernel.} A second substrate kernel governing cross-chain memory and viscoelastic behavior.
+
+Three forced theorems load-bear specifically for DCGT:
+
+\textbf{T19 (Newton's $G = c^3 \ell_P^2 / \hbar$).} Identifies the substrate's irreducible length scale $\ell_P$ as the Planck length via Newton-recovery. Without this identification, the lower bound of the hydrodynamic window would be ambiguous.
+
+\textbf{T18 (V1 forward-cone-only retardation).} Establishes V1 as a forward-cone kernel. DCGT's multi-scale expansion preserves this property under coarse-graining.
+
+\textbf{T17 (Gauge field as rule-type connection).} Forces the gauge-covariant derivative $D_\mu = \partial_\mu + igA_\mu^a T^a$. DCGT applied to charged-chain populations produces the Lorentz force as the leading-order continuum consequence.
+
+One substrate quantity, introduced primarily in the quantum-computing arc, recurs as DCGT's central output:
+
+\textbf{Gradient sparsity $\sigma(\mathbf{x}) = |\nabla\rho|\ell_P^2/\rho_{\mathrm{local}}$.} The substrate-scale steepness of participation density. The cross-bandwidth structure $\Gamma_{\mathrm{cross}} \sim \exp\bigl[-\alpha \int \sigma\, d\ell\bigr]$ is the central DCGT output.
+
+That's the structural setup. The DCGT argument runs on this.
+
+\section{The Substrate/Continuum Gap and Why It Must Be Bridged}
+
+A reader at the end of the framework's primitive-level inventory has a substrate ontology and a vocabulary of substrate-state quantities --- micro-events, chains, bandwidth, polarity, kernels --- but the Schr\"odinger equation, Maxwell's equations, the Navier--Stokes equation, and Newton's law of gravitation are all continuum-level statements about smooth fields on smooth spacetime. They are not statements about substrate events. The gap is structural.
+
+\subsection{What the gap looks like}
+
+A continuum equation contains derivatives, integrals, and field values. A substrate-level statement contains event counts, chain transitions, and discrete commitment events. The two languages cannot be matched by inspection. There is no obvious mapping that takes a chain transition rate and produces $\partial_t \mathbf{v} + (\mathbf{v} \cdot \nabla)\mathbf{v} = -\nabla p / \rho + \nu \nabla^2 \mathbf{v}$.
+
+A \emph{na\"ive} mapping would identify continuum quantities with averages of substrate quantities at some scale. Velocity field $\mathbf{v}(\mathbf{x})$ is the average chain-transition direction over a cell centered at $\mathbf{x}$. Pressure $p(\mathbf{x})$ is the local rate of substrate participation density. Kinematic viscosity $\nu$ comes from substrate-channel statistics. This is roughly what DCGT does --- but the na\"ive form does not work without a controlled scale separation, because substrate noise dominates fluctuations at small averaging scales and the averaging itself becomes ill-defined at large averaging scales.
+
+\subsection{What the bridge must establish}
+
+For the substrate-to-continuum derivation to produce trustworthy continuum equations, the bridge must establish four things.
+
+First, a \emph{controlled} scale separation under which substrate dynamics admit a multi-scale expansion. Without it, the averaging step has no small parameter to expand in, and the produced continuum content is not bound to be the leading-order behavior --- it could be a phenomenological approximation that misses substrate-level corrections.
+
+Second, the substrate-level structures that recur across multiple closed sectors. The cross-bandwidth structure $\Gamma_{\mathrm{cross}}$ is the most prominent example: it appears in quantum-computation architecture, black-hole horizon formation, and engineered tunneling, with the same form in each. The bridge must produce this structure once, not five times.
+
+Third, leading-order coarse-grained continuum content covering, at minimum, the canonical equations of physics in the sectors the framework derives --- diffusion, viscosity, electromagnetism, viscoelasticity, gauge interactions.
+
+Fourth, generalizations to non-Abelian content (Yang--Mills) and to gradient-source content (substrate gravity) that share the same multi-scale machinery. Without this, the bridge would close some sectors but leave others requiring their own bespoke derivations.
+
+DCGT delivers all four. The remainder of this walkthrough establishes each.
+
+\section{The Hydrodynamic Window}
+
+DCGT operates within a \emph{hydrodynamic window} --- a range of length scales between the substrate scale and the continuum-flow scale where substrate dynamics admit a controlled multi-scale expansion. The window is the structural prerequisite for the bridge to work.
+
+\subsection{The scale separation}
+
+The window is bounded below by the substrate's irreducible length scale $\ell_P$ (the Planck length, identified through T19's Newton-recovery) and above by the characteristic length scale $L_{\mathrm{flow}}$ of the continuum theory being derived. Within the window, the coarse-graining length scale $R_{\mathrm{cg}}$ provides a controlled intermediate scale at which substrate dynamics can be averaged without losing structural content:
+\[
+\ell_P \ll R_{\mathrm{cg}} \ll L_{\mathrm{flow}}
+\]
+The lower bound $\ell_P \ll R_{\mathrm{cg}}$ ensures that the coarse-graining cell at scale $R_{\mathrm{cg}}$ contains many substrate events, so averaging is statistically meaningful. The upper bound $R_{\mathrm{cg}} \ll L_{\mathrm{flow}}$ ensures that the coarse-grained cell is much smaller than the continuum flow scale, so the coarse-graining is local with respect to the continuum theory.
+
+\subsection{Why both bounds are needed}
+
+Without the lower bound, the coarse-graining cell would be too small to average meaningfully --- substrate events would dominate fluctuations, and the multi-scale expansion would have no controlled small parameter. The averaged quantities would themselves be noisy at the substrate scale, and the produced ``continuum'' content would inherit that noise rather than smooth out into a deterministic field theory.
+
+Without the upper bound, the coarse-graining cell would be comparable to or larger than the continuum flow scale, and the resulting ``continuum'' content would be a global averaging rather than a local field theory. The continuum equations physics writes down --- Navier--Stokes, Maxwell, and so on --- are \emph{local} field theories: their values at one point depend on values at nearby points, not on the global state. This locality requires that the coarse-graining cell be small compared to the continuum flow scale.
+
+The hydrodynamic window is therefore the structural prerequisite for DCGT to produce \emph{local} continuum equations rather than global averages or substrate-noise-dominated content.
+
+\subsection{When the window exists, and when it doesn't}
+
+The window exists when (a) the substrate has a well-defined irreducible length (P01 + T19 supply this in ED) and (b) the system being analyzed has a sufficiently large continuum-flow scale that scale separation actually exists. For ordinary physical systems --- fluids in laboratory beakers, atoms in optical lattices, galaxies in clusters --- the continuum-flow scale exceeds the Planck length by enormous factors (typically $10^{20}$ to $10^{60}$), so scale separation is overwhelming.
+
+The window does \emph{not} exist for systems near the substrate scale itself. Two cases in the framework's closed-arc inventory illustrate this. The matter-wave Q-C boundary at 140--250 kDa molecular mass is precisely the regime where DCGT's coarse-graining-invariance condition begins to fail --- the system is still macroscopically larger than $\ell_P$, but substrate-level effects in commitment-injection rates begin to compete with the continuum-level descriptions. The black-hole interior beyond the horizon is the second case: at saturation densities, the substrate is in a regime where the multi-scale expansion's small parameter ceases to be small.
+
+These breakdowns of the hydrodynamic window are \emph{structurally informative}, not failures. They identify the scales at which substrate-level analysis must replace continuum approximation. The framework's prediction that quantum-classical boundaries occur at specific molecular masses, and that black-hole horizons form at specific gravitational-collapse thresholds, both rely on identifying where the window closes.
+
+\section{The Multi-Scale Expansion}
+
+Within the hydrodynamic window, DCGT performs a multi-scale expansion in the small parameter $\ell_P/R_{\mathrm{cg}}$ (or equivalently $R_{\mathrm{cg}}/L_{\mathrm{flow}}$, depending on which limit is being analyzed). The expansion is the technical heart of the substrate-to-continuum bridge.
+
+\subsection{Structure of the expansion}
+
+A substrate quantity $Q(\mathbf{x})$ --- say, the local participation-event density, or the local chain-transition rate --- is averaged over a cell of size $R_{\mathrm{cg}}$ centered at $\mathbf{x}$:
+\[
+\bar Q(\mathbf{x}) = \frac{1}{V_{\mathrm{cg}}} \int_{\text{cell at }\mathbf{x}} Q(\mathbf{y})\, d^{3}y
+\]
+The averaged quantity $\bar Q(\mathbf{x})$ is a smooth function of $\mathbf{x}$ at scales much larger than $R_{\mathrm{cg}}$, and admits a series expansion in powers of the small parameter $\ell_P/R_{\mathrm{cg}}$:
+\[
+\bar Q(\mathbf{x}) = \bar Q^{(0)}(\mathbf{x}) + (\ell_P/R_{\mathrm{cg}})^{2}\, \bar Q^{(2)}(\mathbf{x}) + (\ell_P/R_{\mathrm{cg}})^{4}\, \bar Q^{(4)}(\mathbf{x}) + \cdots
+\]
+The leading-order term $\bar Q^{(0)}$ contains the standard continuum content --- what physics writes down without reference to a substrate. The first subleading correction $(\ell_P/R_{\mathrm{cg}})^2 \bar Q^{(2)}$ contains substrate-cutoff terms whose structure is forced by the substrate's finite kernels. Higher-order corrections are increasingly small.
+
+The absence of odd-power terms in the expansion (no $(\ell_P/R_{\mathrm{cg}})^1$ correction, no $(\ell_P/R_{\mathrm{cg}})^3$ correction, and so on) is forced by parity arguments: substrate processes that survive averaging are even in $\ell_P/R_{\mathrm{cg}}$ because odd-parity contributions cancel under the cell-symmetric averaging.
+
+\subsection{What each order produces}
+
+The leading-order outputs are the canonical continuum equations of standard physics. The kinematic viscosity coefficient in Navier--Stokes, the electromagnetic permittivity in Maxwell, the diffusion constant in Fick's law --- all are leading-order DCGT outputs determined by substrate-channel statistics at order $(\ell_P/R_{\mathrm{cg}})^0$.
+
+The first subleading outputs are substrate-cutoff corrections that are absent from standard physics but FORCED by the substrate ontology. The canonical example is the R1 hyperviscous term $-\kappa \mu_{V1} \ell_P^2 \nabla^4 \mathbf{v}$ in the Navier--Stokes equation, which is the substrate-cutoff regularization that supplies the Clay-NS-relevant smoothness mechanism. The mass-gap term in Yang--Mills and the cross-patch correlation in BH area-law entropy are the same V1-to-subleading-correction mechanism applied to different content channels.
+
+\begin{itemize}[noitemsep]
+  \item Order $(\ell_P/R_{\mathrm{cg}})^{0}$: Standard continuum equations
+  \item Order $(\ell_P/R_{\mathrm{cg}})^{2}$: Substrate-cutoff regularization (R1, mass-gap, etc.)
+  \item Order $(\ell_P/R_{\mathrm{cg}})^{4}$: Increasingly small corrections
+\end{itemize}
+
+This ordering is what makes DCGT both a derivation of standard physics (at leading order) and a source of substrate-level corrections (at first subleading order). The substrate-cutoff corrections are not optional. They are inevitable consequences of the substrate's finite-width kernels operating at the lower bound of the hydrodynamic window.
+
+\subsection{The coarse-graining-invariance condition}
+
+DCGT's outputs at leading order must be insensitive to the specific choice of $R_{\mathrm{cg}}$ within the hydrodynamic window. The intermediate scale is an artificial parameter: the physicist chooses some $R_{\mathrm{cg}}$ in the window, and the resulting continuum content should not depend on the choice. This is the \emph{coarse-graining-invariance condition}, and it is the structural counterpart of renormalization-group invariance in standard QFT.
+
+When the substrate-level dynamics admit a clean separation of scales, the coarse-graining-invariance condition is satisfied automatically. The leading-order content depends only on the substrate's intrinsic properties (kernel widths, primitive parameters) and on the system's intrinsic properties ($L_{\mathrm{flow}}$, density profile), not on the artificial $R_{\mathrm{cg}}$.
+
+When scale separation is marginal, the multi-scale expansion's small parameter is no longer small, and the coarse-graining-invariance condition can fail. At that point, DCGT no longer applies, and the system must be analyzed without the continuum approximation. This is the substrate-level reason the matter-wave Q-C boundary and the BH horizon are structural boundaries rather than continuous extensions of the hydrodynamic-window regime.
+
+\section{The Cross-Bandwidth Structure $\Gamma_{\mathrm{cross}}$}
+
+DCGT's most heavily-used output across the framework is the substrate-level cross-bandwidth structure between two regions $\mathbf{x}_1$ and $\mathbf{x}_2$:
+\[
+\Gamma_{\mathrm{cross}}(\mathbf{x}_1, \mathbf{x}_2) \sim \exp\!\left[-\alpha \int_{\mathrm{path}} \sigma(\mathbf{x})\, d\ell\right]
+\]
+where the integral runs along the substrate-locality-permitted pathway between the two regions, $\sigma(\mathbf{x})$ is the substrate-scale gradient sparsity, and $\alpha$ is a substrate-determined dimensionless prefactor.
+
+\subsection{What the structure says}
+
+$\Gamma_{\mathrm{cross}}(\mathbf{x}_1, \mathbf{x}_2)$ measures how strongly two substrate regions are coupled through cross-chain participation. When the integrated gradient sparsity along the connecting path is small, $\Gamma_{\mathrm{cross}}$ is order one and the regions are well-coupled. When the integrated sparsity is large, $\Gamma_{\mathrm{cross}}$ is exponentially suppressed and the regions become effectively decoupled.
+
+The form is FORCED by the multi-scale expansion. Large $\sigma$ along the path between two regions creates a steep substrate-scale barrier that suppresses cross-region participation exchange exponentially. The exponential structure follows from the small-parameter behavior of the multi-scale expansion; the integration along the path follows from substrate locality (which restricts cross-region coupling to substrate-permitted pathways rather than global state-of-the-universe couplings).
+
+\subsection{Why the form is structural rather than coincidental}
+
+The exponential structure is not a fitting choice. It is what the multi-scale expansion produces when applied to substrate dynamics with finite-width kernels and bounded bandwidth. The integrand $\sigma(\mathbf{x})$ along the path is the substrate's only path-local invariant of the right dimensional class; the prefactor $\alpha$ is the substrate's only path-local dimensionless coefficient that can multiply it.
+
+Any other functional form would require the multi-scale expansion to produce different leading-order behavior, which would in turn require different substrate primitives or different load-bearing invariants. The exponential-in-integrated-$\sigma$ form is therefore as inevitable as the substrate ontology from which it is derived.
+
+\subsection{The cross-domain echo}
+
+The same $\Gamma_{\mathrm{cross}}$ structure governs phenomena across enormously different scales:
+
+\textbf{Black-hole horizon formation.} A horizon is the surface where $\Gamma_{\mathrm{cross}}$ across it falls below hydrodynamic-window resolution. Substrate gradients at gravitational-collapse scales (of order $10^{38}\, \ell_P$ for stellar-mass black holes) are integrated along radial paths through the horizon region. The horizon is the surface where the integrated $\sigma$ exceeds a threshold; outside the threshold, cross-region coupling is exponentially suppressed.
+
+\textbf{Quantum-computing decoherence.} Cross-chain bandwidth between rule-spanning pathways in a qubit-system architecture is given by the same $\Gamma_{\mathrm{cross}}$ structure evaluated at the engineered substrate $\sigma$-profile. When the cross-bandwidth falls below a threshold $\Gamma_{\min}$, qubit coherence breaks down. The architectural classification of qubit systems into engineered-low-multiplicity, geometric, and redundancy classes corresponds to different strategies for keeping $\sigma$ low along rule-spanning pathways.
+
+\textbf{Josephson-junction macroscopic quantum tunneling.} The MQT rate has the WKB-form exponential structure $\tau_{\mathrm{MQT}}^{-1} \sim \omega_0 \exp\bigl[-\alpha \int_{\mathrm{barrier}} \sigma\, d\ell\bigr]$, which is precisely the DCGT $\Gamma_{\mathrm{cross}}$ structure evaluated at the engineered-barrier $\sigma$-profile.
+
+The same DCGT-derived exponential structure produces all three phenomena, at scales separated by approximately fifty orders of magnitude. The substrate does not distinguish between ``gravitational'' and ``engineered'' gradient regions when computing $\Gamma_{\mathrm{cross}}$; it applies the same DCGT machinery, and the empirical phenomena differ only in the platform-specific values of $\sigma$ along the relevant path. This is the framework's strongest cross-platform mechanism identity, and it is delivered by DCGT.
+
+\section{The Five Leading-Order Consequences}
+
+DCGT's leading-order multi-scale expansion delivers five canonical consequences that recur across the framework's closed-arc inventory. Each is the substrate-to-continuum bridge for a specific continuum-physical content.
+
+\subsection{Scalar diffusion}
+
+The substrate's participation density $\rho$, coarse-grained over the hydrodynamic window, satisfies a diffusion equation at leading order:
+\[
+\partial_t \rho = D\, \nabla^{2} \rho
+\]
+The diffusion coefficient $D$ is set by the participation-channel statistics of the underlying substrate. As participation density approaches the substrate's maximum sustainable value $\rho_{\max}$, packing-class saturation modifies the leading-order behavior. The Universal Mobility Law $M(\rho) = M_0 (1 - \rho/\rho_{\max})^\beta$ is the form-FORCED packing-saturation behavior of substrate diffusion's leading-order coefficient. The form is FORCED by DCGT applied to scalar density transport; the specific exponent $\beta$ is INHERITED from substrate-channel statistics.
+
+This diffusion content is the substrate-to-continuum bridge for soft-matter mobility. Where standard physics treats Fick's law as phenomenological, the framework derives it as DCGT's leading-order output for scalar substrate transport.
+
+\subsection{Directional viscosity (the Navier--Stokes viscous sector)}
+
+When the scalar-diffusion content is extended from a scalar density to a vector velocity field, the DCGT multi-scale expansion produces Newton's law of viscosity at leading order. The viscous-diffusion term $\mu \nabla^2 \mathbf{v}$ in the Navier--Stokes equation is FORCED at leading order by DCGT applied to vector-valued participation transport.
+
+This is the substrate-to-continuum bridge for the viscous sector of Navier--Stokes. The advective sector $(\mathbf{v} \cdot \nabla) \mathbf{v}$ is \emph{not} DCGT-derived; it is a frame-kinematic artifact of writing fluid dynamics in laboratory-frame coordinates. The pressure and incompressibility terms are continuum-imposed constraints. Of the four kinds of structure in Navier--Stokes, two (viscous diffusion and the substrate-cutoff R1 below) are DCGT-derived; the other two are not. The framework's NS-Smoothness walkthrough identifies the advection term as the unique structural obstruction to ED-grounded Clay-relevance, and the cause traces back to the fact that advection is not a DCGT output.
+
+\subsection{V1 $\to$ R1 substrate-cutoff regularization}
+
+The V1 finite-width vacuum kernel produces, at first subleading order in the DCGT expansion, the hyperviscous correction term:
+\[
+-\kappa\, \mu_{V1}\, \ell_P^{2}\, \nabla^{4} \mathbf{v}
+\]
+This is the \textbf{R1 substrate-cutoff term} that supplies the Clay-NS-relevant regularizing mechanism. The term is small at ordinary flow scales --- suppressed by the factor $\ell_P^2 \nabla^2 / R_{\mathrm{cg}}^2$ --- but it is structurally inevitable. V1's finite width is a primitive-level commitment, and DCGT's first subleading order produces R1 as a direct consequence.
+
+R1 is the canonical example of a substrate-cutoff correction. Its mass-gap analogue in Yang--Mills and its cross-patch correlation analogue in BH area-law entropy are produced by the same V1-to-subleading-correction mechanism applied to different content channels. The mass-gap mechanism in Yang--Mills theory is DCGT's $(\ell_P/R_{\mathrm{cg}})^2$ correction applied to non-Abelian gauge fields. The black-hole entropy area-law follows from DCGT's V1-substrate-motif counting at the horizon.
+
+\subsection{V5 $\to$ Maxwell viscoelastic memory}
+
+The V5 cross-chain memory kernel, coarse-grained under DCGT, produces Maxwell-class viscoelastic dynamics:
+\[
+\tau_R\, \dot\sigma + \sigma = 2\, \mu\, S
+\]
+where $\tau_R$ is the relaxation time identified as the V5 kernel's first temporal moment, $\sigma$ is the stress tensor (here distinct from the substrate sparsity that uses the same letter), $S$ is the strain-rate tensor, and $\mu$ is the viscosity. The form is FORCED by DCGT applied to V5's finite-width memory structure; the relaxation time $\tau_R$ is INHERITED from molecular physics in a soft-matter context.
+
+This is the substrate-to-continuum bridge for soft-matter viscoelasticity. Maxwell's spring-dashpot model, used phenomenologically in soft-matter rheology since the late nineteenth century, is reproduced from the substrate without phenomenological postulation. The relaxation time inherits its specific value from the substrate kernel V5's first temporal moment, which depends on the molecular constituents of the soft-matter system being analyzed.
+
+\subsection{T17 minimal coupling (Lorentz force)}
+
+T17 establishes gauge fields as participation-measure connections of structural rule-types. The substrate-to-continuum bridge for the Lorentz force on charged particles is DCGT applied to charged-chain populations using T17's minimal-coupling structure. The Lorentz force:
+\[
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\]
+emerges as the leading-order DCGT output for charged participation transport. The electric and magnetic fields $\mathbf{E}$ and $\mathbf{B}$ are coarse-grained $A_\mu$ field strengths from T17; the velocity $\mathbf{v}$ is the coarse-grained chain-transition direction; the charge $q$ is the chain's gauge coupling.
+
+This is the substrate-to-continuum bridge for the electromagnetic content of magnetohydrodynamics and for Maxwell's equations more generally. The same machinery generalizes to non-Abelian gauge theory in \S8.
+
+\subsection{The five together}
+
+The five leading-order consequences cover the structural content of every classical continuum field theory in the framework's closed-arc inventory. Scalar diffusion produces soft-matter mobility and the substrate-level analogue of heat conduction. Directional viscosity produces the viscous sector of Navier--Stokes. V1$\to$R1 produces substrate-cutoff regularization in NS, the YM mass-gap mechanism, and the BH area-law motif alphabet. V5$\to$Maxwell produces soft-matter viscoelasticity. T17 minimal coupling produces electromagnetism and (with non-Abelian generalization) Yang--Mills.
+
+Together, these five consequences span the entire continuum-classical-physics content the framework derives. There is no continuum theory in the closed-arc inventory that does not pass through at least one of them.
+
+\section{The Non-Abelian Generalization}
+
+T17 minimal coupling covers Abelian gauge structure ($U(1)$ electromagnetism). The Yang--Mills content of the framework's strong-and-weak-interactions arc requires the same DCGT machinery applied to non-Abelian compact-simple-group gauge structures. The generalization is structural: the multi-scale expansion remains the same; the cross-bandwidth structure remains the same; the difference is that the participation rule-types being coarse-grained carry non-Abelian internal labels rather than Abelian (charge-only) labels.
+
+\subsection{What changes}
+
+For a chain carrying a non-Abelian internal index, the participation measure $\Psi(x^\mu)$ is replaced by a multi-component $\Psi_i(x^\mu)$, and the gauge connection becomes Lie-algebra-valued $A_\mu = A_\mu^a T^a$. The DCGT multi-scale expansion proceeds exactly as in the Abelian case, with the additional bookkeeping required to track the internal index.
+
+The output of the non-Abelian DCGT generalization is the continuum Yang--Mills equation:
+\[
+D_\mu F^{\mu\nu} = J^\nu
+\]
+at leading order, plus a substrate-level mass-gap mechanism at first subleading order from V1's second-moment expansion. The same hydrodynamic-window scale separation applies; the same multi-scale expansion applies; the same five-consequence structure applies, generalized to non-Abelian content.
+
+\subsection{Why the generalization works}
+
+The structural reason DCGT generalizes cleanly to non-Abelian content is that the substrate ontology does not commit to which gauge group nature realizes. T17 establishes gauge fields as participation-measure connections of structural rule-types. The \emph{form} of gauge field content is FORCED by the substrate, but the specific gauge group (Abelian $U(1)$ vs non-Abelian $SU(2)$, $SU(3)$, etc.) is empirical input determined by the rule-type taxonomy of the universe being studied.
+
+DCGT's machinery is therefore agnostic about gauge-group choice: it produces the appropriate continuum Yang--Mills equation for whichever compact-simple-group structure the rule-type carries. The Standard Model gauge group $U(1) \times SU(2) \times SU(3)$ is empirical input; the form of Yang--Mills equations is FORCED.
+
+\subsection{The mass-gap consequence}
+
+One of the most striking consequences of the non-Abelian DCGT generalization is the appearance of a substrate-level mass-gap mechanism for gauge bosons. V1's second-moment expansion, applied to non-Abelian gauge fields under DCGT's first subleading order, produces a quartic-in-$A_\mu$ stabilization that gives gauge-boson excitations a finite minimum mass. The form of the mass-gap mechanism is FORCED by DCGT plus T17; the specific gap value is INHERITED from V1's kernel parameters and the gauge group's structural data.
+
+This is the framework's contribution to the Yang--Mills mass-gap question. It does not deliver a Clay-Millennium-Prize-level constructive proof, but it identifies a substrate-level mechanism that produces the mass gap as a structural consequence of substrate dynamics rather than as a postulated feature.
+
+\section{What's Forced, What's Inherited, What's Open}
+
+It is worth being precise about what changes when DCGT is in place versus when it isn't.
+
+\subsection{What's forced}
+
+The hydrodynamic-window scale separation $\ell_P \ll R_{\mathrm{cg}} \ll L_{\mathrm{flow}}$ is forced by the substrate's primitive event discreteness (lower bound) plus the system-specific continuum-flow scale (upper bound).
+
+The multi-scale expansion in the small parameter $\ell_P/R_{\mathrm{cg}}$ is forced by the dimensional structure of substrate primitives --- there is no other small parameter available, and the expansion must be in even powers by parity.
+
+The coarse-graining-invariance condition at leading order is forced by the requirement that physical content be independent of the artificial intermediate scale.
+
+The cross-bandwidth structure $\Gamma_{\mathrm{cross}} \sim \exp\bigl[-\alpha \int \sigma\, d\ell\bigr]$ is form-FORCED by the multi-scale expansion plus substrate locality. The exponential-in-integrated-sparsity form is the only path-local invariant of the right dimensional class.
+
+The five leading-order consequences (scalar diffusion, directional viscosity, V1$\to$R1 cutoff, V5$\to$Maxwell memory, T17 Lorentz force) are FORCED at their respective continuum scales by the multi-scale expansion applied to specific substrate content channels.
+
+The non-Abelian generalization producing the Yang--Mills equation is FORCED for any compact-simple-group rule-type structure.
+
+\subsection{What's inherited}
+
+The substrate scale $\ell_P$ as the Planck length is identified through T19 Newton-recovery, which itself inherits from substrate constants $c$, $\hbar$, $G$.
+
+The continuum-flow scale $L_{\mathrm{flow}}$ is system-specific and inherited from the system being analyzed (fluid-flow scale, qubit-system extent, galactic radius, horizon scale).
+
+The dimensionless prefactor $\alpha$ in $\Gamma_{\mathrm{cross}}$ is INHERITED from V1-kernel + DCGT closed-form details that the framework's structural-foundations program has not yet pinned to a specific numerical value.
+
+The diffusion coefficient $D$ in scalar diffusion, the viscosity $\mu$ in directional viscosity, the relaxation time $\tau_R$ in Maxwell viscoelastic memory, and the gauge couplings $q, g, g_s$ in T17 minimal coupling are all INHERITED from substrate-channel statistics, V1-kernel parameters, V5-kernel parameters, and the rule-type taxonomy of the universe respectively. The framework derives the \emph{forms} of the equations; the \emph{values} of the coefficients come from outside the structural-foundations work.
+
+The Universal Mobility Law's exponent $\beta$ is form-FORCED by packing-saturation at the substrate scale, with the specific numerical value INHERITED from substrate-channel statistics.
+
+The R1 hyperviscous prefactor $\kappa \mu_{V1} \ell_P^2$ has the form FORCED by DCGT's first-subleading order; the prefactor $\kappa$ is INHERITED.
+
+\subsection{What's open}
+
+The specific functional shapes of UR-1 condition coefficients ($\mu(x)$, $\kappa(x)$ --- the multiplicity-headroom and rule-spanning connectivity factors in the quantum-computing arc) are INHERITED from V1-kernel + DCGT closed-form details that have not been derived to closed numerical values. The framework establishes that these factors are monotone with specific limits; the specific functional shapes (Boltzmann, rational, sigmoid, etc.) remain open.
+
+The closed-form derivation of the cross-bandwidth prefactor $\alpha$ from substrate primitives is open. The framework establishes the form of $\Gamma_{\mathrm{cross}}$ but has not derived the numerical value of $\alpha$ from first principles.
+
+The boundary of DCGT's applicability --- the regimes where the coarse-graining-invariance condition fails --- has been identified at the matter-wave Q-C boundary and at black-hole horizons, but the precise functional shape of the breakdown has not been derived in closed form. The framework knows that the breakdown happens; the framework does not yet know the exact functional shape of how it happens.
+
+The substrate-to-continuum bridge for Einstein equations of general relativity is open. DCGT covers Newton's law of gravitation through cumulative-strain coarse-graining, and substrate-gravity Phase-1 work delivers the modified Poisson equation in flat space. The promotion to genuine dynamical curvature (Einstein equations) remains a structural question that the framework has not closed; it may require new substrate primitives or new derivation strategies that DCGT alone does not supply.
+
+\section{What This Argument Establishes}
+
+The chain runs:
+
+Substrate primitives (micro-events, chains, bandwidth, polarity, locality, finite-width V1 and V5 kernels) $\to$ T19 (Newton-recovery identifies $\ell_P$ as the Planck length, giving a well-defined substrate scale) $\to$ hydrodynamic window $\ell_P \ll R_{\mathrm{cg}} \ll L_{\mathrm{flow}}$ (controlled scale separation forced by primitive event discreteness plus system-specific continuum-flow scale) $\to$ multi-scale expansion in $\ell_P/R_{\mathrm{cg}}$ (forced by dimensional structure plus parity) $\to$ cross-bandwidth structure $\Gamma_{\mathrm{cross}} \sim \exp\bigl[-\alpha \int \sigma\, d\ell\bigr]$ (FORCED form, INHERITED prefactor) $\to$ five leading-order continuum consequences (scalar diffusion, directional viscosity, V1$\to$R1 cutoff, V5$\to$Maxwell memory, T17 Lorentz force) $\to$ non-Abelian generalization producing the Yang--Mills equation $D_\mu F^{\mu\nu} = J^\nu$.
+
+Continuum equations of standard physics are now derived consequences of the substrate-to-continuum bridge rather than separately postulated structures. The mathematical content of the standard continuum derivations --- Newton's law of viscosity, Maxwell's equations, Maxwell viscoelastic models, the Lorentz force --- is unchanged. What changes is the foundational status: each continuum equation is no longer an independent commitment; it is the leading-order output of an audited multi-scale expansion that begins at substrate primitives.
+
+The framework reproduces standard continuum physics exactly where standard physics has been tested. Newton's law of viscosity holds. Maxwell viscoelasticity holds. The Lorentz force is correct. The Yang--Mills equation has the form of the equation that drives the strong and weak interactions of the Standard Model. DCGT delivers all of these as forced consequences without modifying any of their predictions in the regimes where they have been tested.
+
+What's new is the chain of derivation, plus the substrate-cutoff corrections at first subleading order. The R1 hyperviscous regularization in Navier--Stokes, the mass-gap mechanism in Yang--Mills, and the area-law motif counting in black-hole entropy are all DCGT outputs that go beyond the leading-order standard physics. Each is small in regimes where standard physics has been tested --- suppressed by powers of $\ell_P^2/L^2$ --- but each is structurally inevitable, and each produces measurable Clay-relevance results in its sector.
+
+The cross-domain unification is the substantively new content. The same $\Gamma_{\mathrm{cross}}$ structure governs quantum-computing decoherence, black-hole horizon formation, and Josephson tunneling at scales separated by 50 orders of magnitude. Standard physics treats these as unrelated phenomena requiring separate derivations. DCGT identifies them as the same substrate mechanism applied at vastly different scales. This is what cross-domain unification looks like when it works: not an analogy, not a metaphor, but the same multi-scale expansion machinery producing the same exponential-in-integrated-sparsity form across enormously different physical contexts.
+
+The factor that's worth emphasizing: DCGT introduces no new substrate primitive. The micro-events, chains, bandwidth, polarity, kernels, and locality were already in the framework's inventory, doing other work. DCGT reads off the substrate-to-continuum bridge from the same primitives that produce the QM postulates and the substrate-gravity content. The substrate inventory is unchanged; the structural-foundations theorem inventory grows by one --- and that one does the bridging work for the rest of the inventory.
+
+Whether the substrate primitives themselves are right is the load-bearing empirical question, as in every walkthrough. The framework stands or falls on whether participation, bandwidth, channels, polarity, locality, V1, and V5 are the correct foundational concepts. The empirical exposure of the framework lives in its predictions across closed sectors --- soft-matter mobility predictions, substrate-derived gravity transitions, quantum-computational ceilings, Clay-relevance results --- not in DCGT itself, where the framework reproduces the empirically validated standard-continuum results without modification.
+
+For the substrate-to-continuum bridge specifically, the structural case is closed. The hydrodynamic-window scale separation provides a controlled small parameter. The multi-scale expansion produces leading-order standard physics and first-subleading-order substrate-cutoff corrections. The cross-bandwidth structure $\Gamma_{\mathrm{cross}}$ unifies phenomena across 50 orders of magnitude. The five leading-order consequences cover the classical continuum physics of every closed sector. The non-Abelian generalization extends to Yang--Mills.
+
+DCGT is the bridge. Without it, the framework would be substrate primitives on one side and standard continuum physics on the other, with no chain connecting them. With it, the chain is explicit, audited, and produces the correct equations at every order of the multi-scale expansion. The substrate-to-continuum gap is closed.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Chapman, S., Cowling, T. G. \emph{The Mathematical Theory of Non-Uniform Gases.} Cambridge University Press, 3rd edition, 1970.
+  \item Bender, C. M., Orszag, S. A. \emph{Advanced Mathematical Methods for Scientists and Engineers I: Asymptotic Methods and Perturbation Theory.} Springer, 1999.
+  \item Goldenfeld, N. \emph{Lectures on Phase Transitions and the Renormalization Group.} Westview Press, 1992.
+  \item Forster, D. \emph{Hydrodynamic Fluctuations, Broken Symmetry, and Correlation Functions.} Westview Press, 1995.
+  \item Kadanoff, L. P. \emph{Statistical Physics: Statics, Dynamics and Renormalization.} World Scientific, 2000.
+  \item Maxwell, J. C. ``On the Dynamical Theory of Gases.'' \emph{Philosophical Transactions of the Royal Society} 157, 49--88 (1867).
+  \item Wilson, K. G. ``The Renormalization Group: Critical Phenomena and the Kondo Problem.'' \emph{Reviews of Modern Physics} 47, 773--840 (1975).
+  \item Proxmire, A. \emph{The Diffusion Coarse-Graining Theorem: Substrate-to-Continuum Bridge for Canonical-ED Dynamical Content.} April 2026.
+  \item Proxmire, A. \emph{Theorem 19: Newton's Law from Substrate Holographic Counting and the Identification of $\ell_P$.} April 2026.
+  \item Proxmire, A. \emph{Navier--Stokes Synthesis Paper, with Appendix D on the Diffusion Coarse-Graining Theorem.} April 2026.
+  \item Proxmire, A. \emph{Theorem 17: Gauge-Field-as-Rule-Type --- The Substrate Origin of Gauge Fields and Minimal Coupling.} April 2026.
+  \item Proxmire, A. \emph{The Born Rule as a Forced Theorem of Event Density: A Gleason--Busch Reconstruction from First Principles.} April 2026.
+  \item Proxmire, A. \emph{Event Density: One Substrate, Three Domains.} April 2026.
+  \item Reed, M., Simon, B. \emph{Methods of Modern Mathematical Physics, Volume IV: Analysis of Operators.} Academic Press, 1978.
+\end{itemize}
+
+\end{document}

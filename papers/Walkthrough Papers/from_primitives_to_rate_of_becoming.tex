@@ -1,0 +1,449 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to the Rate of Becoming},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to the Rate of Becoming\\[6pt]
+\large\mdseries Slow Light, Stopped Light, Optical Lattice Clocks, and Gravitational Redshift from Substrate Primitives}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+\subsection*{What this walkthrough derives}
+
+Three experimental programs sit at the frontier of atomic, molecular, and optical (AMO) physics:
+
+\begin{enumerate}[noitemsep]
+  \item \textbf{Hau (1999)}: light propagating through an ultracold atomic cloud under electromagnetically-induced-transparency (EIT) conditions has its group velocity reduced from $c \approx 3\times 10^8$ m/s to $\sim 17$ m/s --- a reduction by factor $\sim 10^7$.
+  \item \textbf{Hau (2001)}: in the same EIT system, adiabatic ramp of the control field to zero stores the optical pulse coherently in atomic ground-state coherence; subsequent reactivation retrieves the pulse with phase information preserved. Light is stopped, then released.
+  \item \textbf{Katori (2003) and Ye (et seq.)}: optical lattice clocks based on the ${}^1S_0 \leftrightarrow {}^3P_0$ transition in alkaline-earth atoms (Sr, Yb) reach fractional frequency stabilities of $\sim 10^{-19}$, well past cesium-fountain microwave clocks. Networked clocks at millimeter-scale separation resolve gravitational redshift directly.
+\end{enumerate}
+
+The walkthrough derives, from substrate primitives:
+
+\begin{itemize}[noitemsep]
+  \item The \textbf{substrate-level definition of local rate of becoming} as rate of phase accumulation in pre-individuation amplitudes.
+  \item The \textbf{speed of light} $c$ as the coarse-grained expression of this rate; substrate $c$ is a fundamental constant.
+  \item \textbf{Slow light} as group-velocity reduction of a dressed polariton, with substrate $c$ unchanged.
+  \item \textbf{Stopped light} as adiabatic identity transfer between channel types.
+  \item \textbf{Optical lattice clocks} as direct probes of local becoming rate via phase accumulation.
+  \item \textbf{Gravitational redshift} as ED-gradient curvature in the becoming rate.
+  \item \textbf{Clock networks} as differential ED-gradient sensors.
+\end{itemize}
+
+The walkthrough is fully self-contained: every required EIT algebra, dark-state-polariton derivation, adiabatic-rotation step, magic-wavelength condition, and gravitational-redshift identity is derived inline.
+
+\subsection*{What Event Density claims}
+
+All three results --- slow light, stopped light, optical lattice clocks --- are FORCED at the substrate level by a single foundational primitive: \textbf{the local rate of becoming}, defined precisely as the rate of phase accumulation in pre-individuation amplitudes. The mechanism is:
+
+\begin{itemize}[noitemsep]
+  \item Substrate $c$ is the fundamental rate at which the rule-type structure propagates. It is a constant.
+  \item A medium dresses the photon's participation rule with atomic-coherence rule structure, producing a polariton --- a mixed-channel-type rule structure whose group velocity is the coarse-grained becoming rate of the dressed object, generally less than $c$.
+  \item Adiabatic switching of the medium's coupling rotates the polariton's identity continuously between photonic and atomic-spin-coherence components.
+  \item Atomic clock transitions are direct probes of the local becoming rate.
+  \item Gravitational redshift is the ED-gradient curvature in the local becoming rate.
+  \item Clock networks measure differential ED-gradient curvature with millimeter-scale resolution.
+\end{itemize}
+
+The substrate-level mechanism, in one sentence: \textbf{all three Hau--Katori--Ye phenomena manipulate or measure the local rate of becoming, which is the substrate-level rate of phase accumulation that coarse-grains to both the speed of light and the tick rate of atomic clocks}.
+
+\section{The Primitives}
+
+\subsection{P-RB-1. Local rate of becoming}
+
+The \emph{local rate of becoming} at a substrate-level point $x$ is the rate at which a chain's pre-individuation amplitude at $x$ accumulates phase per unit substrate-tick. Operationally, for a chain whose pre-individuation amplitude is $\psi(x, t) = \sum_n c_n(t) e^{-i\theta_n(t)}|r_n(x)\rangle$ aligned with eigen-rule $|r_n(x)\rangle$ of eigen-energy $E_n(x)$, the becoming rate is
+\[
+\omega_{\mathrm{becoming}}(x) \equiv d\theta_n/dt = E_n(x)/\hbar.
+\]
+
+\textbf{Substrate-level meaning.} The pre-individuation amplitude is the substrate-level superposition of consistent rule continuations weighted by complex amplitudes. Phase accumulation in this amplitude is the substrate-level analog of ``passage of time'' for the chain's identity: each phase increment corresponds to one substrate-tick of becoming.
+
+\textbf{Two coarse-grained quantities.} When coarse-grained to standard observables:
+\begin{itemize}[noitemsep]
+  \item For massless chains (light), the rate of becoming sets the propagation speed: $c$ is the coarse-grained becoming rate of the substrate's rule-type structure propagating freely.
+  \item For massive chains, the rate of becoming is the standard QM angular frequency $\omega = E/\hbar$.
+\end{itemize}
+
+\textbf{This is the load-bearing primitive of the walkthrough.}
+
+\subsection{P-RB-2. Light-like chain}
+
+A \emph{light-like chain} is a minimal ED-channel (multiplicity $M = 1$) whose participation rule has zero rest energy: $E = \hbar\omega = \hbar c|\mathbf{k}|$.
+
+\textbf{Substrate $c$ is a constant.} This is non-negotiable. Slow light, refractive index, gravitational time dilation, and other apparent modifications of light's propagation rate are all \emph{coarse-grained dressed-object} effects. The substrate-level photon always propagates at $c$.
+
+\subsection{P-RB-3. ED-gradient}
+
+An \emph{ED-gradient} is a spatial variation in the local rate of becoming: $\nabla_x\omega_{\mathrm{becoming}}(x) \neq 0$.
+
+Sources include coupling to a medium, gravitational potential gradients, and spatially-varying field configurations. Higher-order spatial variation produces ED-gradient curvature.
+
+\subsection{P-RB-4. Identity alignment}
+
+The \emph{identity alignment} of a chain at substrate-level position $x$ is its commitment to one specific participation rule from the local alignment set $\mathcal{R}(x) = \{r_n(x)\}$. Smooth changes in the substrate's rule structure can preserve a chain's identity alignment if the change is slow enough (adiabatic).
+
+\subsection{P-RB-5. Medium-induced rule coupling}
+
+A \emph{medium} is a substrate region containing additional chains whose rule-type structure couples to a propagating chain's rule structure. When a photonic chain $\hat a$ at frequency $\omega$ couples to atomic chains in a 3-level $\Lambda$ configuration with control field $\hat\Omega_c$, the effective interaction is
+\[
+H_{\mathrm{coupling}} = g(\hat a^\dagger\sigma_{eg} + \hat a\sigma_{ge}) + \Omega_c(\sigma_{em} + \sigma_{me}) + \mathrm{h.c.}
+\]
+This produces \emph{polaritons} --- mixed-channel-type rule structures, derived inline in \S4.
+
+\subsection{P-RB-6. Coherence storage}
+
+\emph{Coherence storage} is the substrate-level transfer of a chain's identity alignment from one channel type (photonic) to another (atomic spin coherence) via adiabatic rotation of the participation-rule structure. The adiabatic condition: $|d/dt(\Omega_c, g)| \ll \Delta_{\mathrm{gap}}$.
+
+\subsection{P-RB-7. Local becoming measurement}
+
+\emph{Local becoming measurement} is any operational protocol that probes the local rate of becoming directly. The atomic-clock transition is the canonical example: a chain in superposition between two long-lived eigen-rules accumulates relative phase at rate $(E_2 - E_1)/\hbar$, which is the local becoming-rate difference between the two rules.
+
+\textbf{No additional substrate primitives are introduced beyond P-RB-1 through P-RB-7.}
+
+\section{Deriving the Speed of Light from the Rate of Becoming}
+
+\subsection{Substrate $c$ as V1-kernel propagation rate}
+
+The substrate's V1 kernel encodes how rule-type structure propagates between adjacent substrate points per substrate-tick. The propagation rate is a substrate-level constant: in the coarse-grained limit, the V1 kernel reduces to a $\delta(x - ct)$ propagation pattern.
+
+Standard physics identifies this propagation rate with the speed of light $c \approx 3\times 10^8$ m/s. The substrate-level statement is: $c$ is the V1-kernel propagation rate, and it is invariant under all coordinate, gauge, and material transformations.
+
+\subsection{Group velocity vs phase velocity}
+
+For a chain propagating freely in vacuum, both phase velocity ($v_\phi = \omega/|\mathbf{k}|$) and group velocity ($v_g = d\omega/d|\mathbf{k}|$) equal $c$. For a chain propagating in a medium, the dispersion relation is modified. The chain's coarse-grained becoming rate becomes a non-linear function $\omega(|\mathbf{k}|)$, and the group velocity $v_g = d\omega/d|\mathbf{k}|$ can be much less than $c$. \textbf{The substrate $c$ is unchanged}; the modification lives entirely in the dispersion relation of the dressed object.
+
+\subsection{Refractive index from ED-gradient slope}
+
+The refractive index $n$ is defined operationally by $n(\omega) = c/v_{\mathrm{phase}}(\omega)$. In the substrate-level picture, $n$ is the coarse-grained image of an ED-gradient slope.
+
+\textbf{Substrate-level statement.} Refractive index is not a property of an underlying medium that ``slows'' light. It is the coarse-grained image of how the dressed-object's rule structure couples the photonic channel to the medium's atomic-coherence channel.
+
+\subsection{Why substrate $c$ must be invariant}
+
+If $c$ varied with environment, the substrate's V1-kernel propagation would not be a single rule-type primitive --- it would be a family of rules. This would violate the substrate's primitive economy: the kernel would no longer be one primitive.
+
+\section{Slow Light as Mixed-Channel Rule Structure (Hau 1999)}
+
+\subsection{Setup: the 3-level $\Lambda$ system}
+
+Hau's slow-light experiment uses ultracold Na atoms with three relevant atomic levels. A weak probe field at frequency $\omega_p$ couples $|g\rangle \leftrightarrow |e\rangle$. A strong control field at frequency $\omega_c$ couples $|m\rangle \leftrightarrow |e\rangle$. Two-photon resonance: $\omega_p - \omega_c$ matches the $|g\rangle \to |m\rangle$ ground-state splitting.
+
+\subsection{Three-level Hamiltonian}
+
+In the rotating-wave approximation:
+\[
+H_{\mathrm{atom}} = -\Delta_p|e\rangle\langle e| + g\hat a|e\rangle\langle g| + \Omega_c|e\rangle\langle m| + \mathrm{h.c.}
+\]
+For $N$ atoms, the collective coupling to the photon mode is $g\sqrt N$.
+
+\subsection{Dark state and EIT}
+
+The atomic Hamiltonian admits a \emph{dark state} --- an eigenstate that does not couple to the excited level:
+\[
+|D\rangle = \cos\theta|g\rangle - \sin\theta|m\rangle, \quad \tan\theta = g\sqrt N\hat a/\Omega_c.
+\]
+Verification: the matrix element of $H_{\mathrm{atom}}$ between $|D\rangle$ and $|e\rangle$ is
+\[
+\langle e|H_{\mathrm{atom}}|D\rangle = g\sqrt N\hat a\cos\theta - \Omega_c\sin\theta = 0
+\]
+for the given $\tan\theta$. The dark state is transparent to the resonant absorption process. This is the EIT condition.
+
+\subsection{Dark-state polariton (mixed-channel rule structure)}
+
+The full system admits an eigenstate that is a coherent superposition of photonic and atomic-coherence components:
+\[
+|\Psi_{\mathrm{polariton}}\rangle = \cos\theta|1_{\mathrm{photon}}, g\rangle - \sin\theta|0_{\mathrm{photon}}, m\text{-coherence}\rangle,
+\]
+with mixing angle $\tan\theta = g\sqrt N/\Omega_c$.
+
+\textbf{Substrate-level meaning.} The polariton is one substrate object whose rule structure is composite. It is not a photon traveling alongside an atomic excitation; it is one chain whose identity alignment spans two channel types.
+
+\subsection{Group velocity of the polariton}
+
+The polariton's effective Hamiltonian at two-photon resonance is
+\[
+H_{\mathrm{polariton}} = c k\cos^2\theta.
+\]
+The group velocity is
+\[
+v_g = dE_{\mathrm{polariton}}/d(\hbar k) = c\cos^2\theta = c\cdot\frac{\Omega_c^2}{\Omega_c^2 + g^2 N}.
+\]
+For weak control field ($\Omega_c \ll g\sqrt N$): $v_g \to c\cdot\Omega_c^2/(g^2 N) \ll c$.
+
+For typical Hau-experiment values ($g\sqrt N \sim 10$ GHz, $\Omega_c \sim 10$ MHz): $v_g \sim 10$--30 m/s. \textbf{Hau measured $\sim 17$ m/s.}
+
+\subsection{Substrate-level reading}
+
+\begin{itemize}[noitemsep]
+  \item The propagating object is a polariton, not a substrate-level photon.
+  \item The polariton's group velocity is the coarse-grained becoming rate of the dressed mode.
+  \item When the photonic component dominates ($\cos^2\theta \approx 1$), the polariton becomes light-like.
+  \item When the atomic component dominates ($\sin^2\theta \approx 1$), the polariton becomes essentially stationary.
+  \item \textbf{Substrate $c$ is unchanged.}
+\end{itemize}
+
+\section{Stopped Light as Identity Transfer (Hau 2001)}
+
+\subsection{Adiabatic ramp of the control field}
+
+Slowly reduce the control-field Rabi frequency: $\Omega_c(t) \to 0$ over a timescale long compared to the gap between the dark-state polariton and the excited atomic states. The mixing angle evolves: $\tan\theta(t) = g\sqrt N/\Omega_c(t) \to \infty$, so $\theta(t) \to \pi/2$. The polariton rotates from photonic-dominated to atomic-dominated:
+\[
+|\Psi_{\mathrm{polariton}}\rangle \to -|0_{\mathrm{photon}}, m\text{-coherence}\rangle \text{ as } \Omega_c \to 0.
+\]
+
+\subsection{Adiabatic identity preservation}
+
+Provided the ramp is slow enough, the chain's identity alignment is preserved. \textbf{The chain's identity is now stored entirely in the medium's rule structure.} No photon is propagating; the chain's identity exists as ground-state atomic coherence.
+
+\subsection{Storage time and decoherence}
+
+The storage time is limited by the lifetime of the atomic ground-state coherence --- typically much longer than the excited-state lifetime. In Hau's experiment, storage times of $\sim 1$ ms were demonstrated.
+
+\subsection{Retrieval via reversed ramp}
+
+Re-applying the control field reverses the polariton rotation. The chain's identity returns to a photonic-dominated polariton, which propagates out of the medium with the original frequency, polarization, and phase information preserved.
+
+\textbf{Substrate-level reading.} Stopped light is adiabatic identity transfer between channel types. No state is ``frozen''; no photon is ``captured.'' The substrate-level mechanism is continuous identity transfer, parameterized by the control-field strength.
+
+\section{Optical Lattice Clocks as Becoming-Rate Probes (Katori, Ye)}
+
+\subsection{The clock transition}
+
+Strontium-87 has a metastable ${}^3P_0$ state above the ${}^1S_0$ ground state. The transition ${}^1S_0 \leftrightarrow {}^3P_0$ at 698 nm has natural linewidth $\sim 1$ mHz.
+
+The chain's pre-individuation amplitude in the clock's superposition is
+\[
+\psi_{\mathrm{clock}}(t) = \frac{1}{\sqrt 2}\bigl[|{}^1S_0\rangle + e^{-i\omega_{\mathrm{clock}} t}|{}^3P_0\rangle\bigr],
+\]
+where $\omega_{\mathrm{clock}} = (E_{{}^3P_0} - E_{{}^1S_0})/\hbar \approx 2\pi\cdot 4.3\times 10^{14}$ Hz.
+
+\subsection{Clock observable as becoming-rate measurement}
+
+The clock's operational observable is the rate at which the relative phase between the two state components accumulates:
+\[
+d\theta_{\mathrm{relative}}/dt = \omega_{\mathrm{clock}} = (E_{{}^3P_0} - E_{{}^1S_0})/\hbar.
+\]
+By P-RB-1, the clock observable \emph{is} the local becoming rate of the clock-state participation rule, made operationally accessible via interferometry between the two state components.
+
+\textbf{The clock measures local rate of becoming directly.}
+
+\subsection{Magic wavelength as substrate-level Stark cancellation}
+
+When the clock atoms are trapped in an optical lattice, the lattice light induces AC Stark shifts on both clock states:
+\[
+\Delta\omega_{\mathrm{clock}}(\lambda) = -\frac{I}{2\hbar}\bigl[\alpha_{{}^3P_0}(\lambda) - \alpha_{{}^1S_0}(\lambda)\bigr].
+\]
+At the \emph{magic wavelength} $\lambda_m \approx 813$ nm for Sr, $\alpha_{{}^3P_0}(\lambda_m) = \alpha_{{}^1S_0}(\lambda_m)$, so $\Delta\omega_{\mathrm{clock}}(\lambda_m) = 0$.
+
+\textbf{Substrate-level statement.} At $\lambda_m$, the substrate-level photon-atom rule-type coupling produces \emph{no net rule-type-energy shift} on the clock-transition rule structure.
+
+\subsection{Lamb-Dicke regime as motional-sideband suppression}
+
+When the trapping potential is strong enough that $\eta \equiv k_{\mathrm{clock}}\cdot a_{\mathrm{vib}} \ll 1$ (Lamb-Dicke parameter), the atomic motion does not modulate the clock-transition phase accumulation. Doppler shifts and motional sidebands are suppressed.
+
+\subsection{Clock precision as substrate-level isolation}
+
+The optical lattice clock's fractional frequency stability is
+\[
+\sigma_y(\tau) \sim 1/(\omega_{\mathrm{clock}}\sqrt{N\cdot T_{\mathrm{coh}}\cdot\tau}).
+\]
+The current frontier is $\sigma_y \sim 10^{-19}$ over hour-scale integration.
+
+\subsection{Why clocks measure geometry of becoming, not ``time''}
+
+In the standard reading, an atomic clock measures time. In the substrate-level reading, the clock measures \emph{the local rate of becoming} --- the rate of phase accumulation in the chain's pre-individuation amplitude at the clock's spatial position. \textbf{The substrate-level claim:} what optical lattice clocks measure with $10^{-19}$ precision is not a universal ``time'' but a \emph{local geometric quantity}.
+
+\section{Gravitational Redshift as ED-Gradient Curvature}
+
+\subsection{Gravitational potential as ED-gradient}
+
+In the weak-field limit, the gravitational potential $\Phi(\mathbf{x})$ is the coarse-grained image of an ED-gradient in the local rate of becoming:
+\[
+\omega_{\mathrm{becoming}}(\mathbf{x}) = \omega_0[1 + \Phi(\mathbf{x})/c^2],
+\]
+where $\omega_0$ is the becoming rate at infinite distance from any mass.
+
+\subsection{Local becoming rate $d\tau$}
+
+A clock at position $\mathbf{x}$ measures
+\[
+\omega_{\mathrm{becoming}}(\mathbf{x})\cdot dt = (E/\hbar)(1 + \Phi/c^2)\, dt = (E/\hbar)\, d\tau,
+\]
+where $d\tau = (1 + \Phi/c^2)\, dt$ is the \emph{proper-time interval}. In the weak-field limit:
+\[
+d\tau \approx \sqrt{1 + 2\Phi/c^2}\, dt = \sqrt{g_{00}}\, dt,
+\]
+matching the standard general-relativistic identity.
+
+\subsection{Redshift between two heights}
+
+Two clocks at heights $h_1$ and $h_2$ have local potentials $\Phi_i = g h_i$. Their becoming-rate ratio is
+\[
+\omega_1/\omega_2 \approx 1 + g(h_1 - h_2)/c^2.
+\]
+For $h_1 > h_2$: $\omega_1 > \omega_2$, so the upper clock ticks faster:
+\[
+\Delta\omega/\omega = -g\Delta h/c^2 \quad \text{(gravitational redshift formula)}.
+\]
+
+\subsection{Substrate-level reading}
+
+Gravitational redshift is not a property of light; it is a property of the substrate's becoming-rate gradient. The redshift is FORCED by the ED-gradient in $\omega_{\mathrm{becoming}}(\mathbf{x})$.
+
+\textbf{Optical lattice clocks detect ED-curvature directly.} For $\Delta h = 1$ mm and Earth's $g \approx 10$ m/s$^2$: $\Delta\omega/\omega \approx 10^{-19}$. This is the precision frontier of current clocks.
+
+\subsection{Why GR identifies $g_{00}$ with becoming-rate ratio}
+
+The ED-substrate-gravity reading: $g_{00}$ is the coarse-grained image of $\omega_{\mathrm{becoming}}/\omega_0$, the ratio of local becoming rate to the reference becoming rate at infinite distance.
+
+\section{Clock Networks as ED-Gradient Sensors}
+
+\subsection{Differential clock measurements}
+
+A network of optical lattice clocks at different spatial positions can be compared via fiber-optic frequency dissemination. The differential measurement
+\[
+\Delta\nu_{ij} = \nu_i - \nu_j
+\]
+cancels common-mode noise and isolates the \emph{position-dependent} becoming-rate difference.
+
+\subsection{Sensitivity to ED-gradients}
+
+For sufficiently isolated clocks, the differential signal becomes dominated by the gravitational potential difference $\Delta\Phi/c^2$. Current state-of-the-art Sr clock networks can resolve potential differences corresponding to $\sim 1$ mm altitude differences over hour-scale integration.
+
+\subsection{Substrate-level mapping}
+
+Each clock measures its local becoming rate. A network of clocks samples $\omega_{\mathrm{becoming}}$ at many points; differential measurements reveal the spatial structure --- the substrate's ED-gradient geometry. Clock networks are \emph{ED-geometry sensors}.
+
+\subsection{Why this is more than gravimetry}
+
+Standard gravimeters measure $g(\mathbf{x})$. Clock networks measure gravitational \emph{potential} $\Phi(\mathbf{x})$ directly via the becoming-rate gradient. Clock networks have access to the more fundamental substrate-level field.
+
+\subsection{Future tests}
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Variations of fundamental constants.}
+  \item \textbf{Dark-matter searches} via oscillations in fundamental constants.
+  \item \textbf{Gravitational-wave detection} as transient signals in differential measurements.
+\end{itemize}
+
+\section{Substrate-Level Reading}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}p{5.5cm}p{9cm}@{}}
+\toprule
+Standard AMO/GR object & Substrate-level meaning \\
+\midrule
+Speed of light $c$ & Coarse-grained becoming rate of free-photon rule structure \\
+Refractive index $n(\omega)$ & ED-gradient slope of dressed becoming-rate function \\
+Group velocity $v_g$ & Coarse-grained becoming rate of the dressed (polariton) chain \\
+Slow light & Polariton becoming-rate reduction via mixing with atomic-coherence \\
+Stopped light & Identity adiabatically transferred from photonic to atomic-coherence channel \\
+Atomic transition frequency & Local becoming rate; coarse-grains to $E/\hbar$ \\
+Magic wavelength & Substrate-level Stark cancellation on clock-transition rule structure \\
+Lamb-Dicke regime & Decoupling of internal-state from external-motion rule structure \\
+Optical lattice clock & Direct probe of local rate of becoming \\
+Gravitational potential $\Phi(\mathbf{x})$ & Coarse-grained ED-gradient in local becoming rate \\
+Gravitational redshift & Ratio of becoming rates at two points \\
+Time dilation $d\tau = \sqrt{g_{00}}\, dt$ & Local becoming-rate ratio relative to reference \\
+Clock network & Spatially-distributed sensor of ED-geometry \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The unified phenomenon}
+
+The Hau, Katori, and Ye experimental programs are a single substrate-level enterprise: they manipulate or measure the local rate of becoming. The substrate-level mechanism is the same in all three: the local rate of becoming is the foundational substrate primitive; light propagation, atomic clock ticking, and gravitational time dilation are different coarse-grained expressions of the same underlying becoming-rate field.
+
+\section{What's Forced, What's Inherited, What's Open}
+
+\subsection*{What is FORCED by the substrate ontology}
+
+\begin{itemize}[noitemsep]
+  \item \textbf{Local rate of becoming as rate of phase accumulation in pre-individuation amplitudes} (P-RB-1).
+  \item \textbf{Speed of light $c$ as constant V1-kernel propagation rate}.
+  \item \textbf{Group velocity reduction in slow light} via mixed-channel rule structure.
+  \item \textbf{Stopped light as adiabatic identity transfer}.
+  \item \textbf{Optical-clock observable as local rate of becoming} via P-RB-1.
+  \item \textbf{Magic-wavelength condition} as substrate-level Stark cancellation.
+  \item \textbf{Gravitational redshift as ED-gradient curvature}.
+  \item \textbf{Identity of GR's $g_{00}$ with becoming-rate ratio}.
+\end{itemize}
+
+\subsection*{What is FORM-FORCED-INHERITED (and re-derived inside this document)}
+
+Three-level $\Lambda$-system Hamiltonian in rotating-wave approximation; dark-state structure in EIT; dark-state polariton composition; group velocity formula; AC Stark shift formula; Lamb-Dicke parameter; adiabatic-evolution identity preservation; weak-field metric expansion; Lindblad master-equation framework.
+
+\subsection*{What remains OPEN}
+
+\begin{itemize}[noitemsep]
+  \item Many-body ED-flow beyond mean-field treatment.
+  \item Nonlinear becoming gradients (hyperpolarizability shifts).
+  \item Relativistic corrections to becoming rate in strong-field regimes.
+  \item Quantum-coherence-enhanced clocks reaching Heisenberg-limited precision.
+  \item Frequency-comb-based clock comparisons.
+  \item Drift of fundamental constants.
+  \item Tests of Lorentz/CPT invariance.
+\end{itemize}
+
+\section{What This Argument Establishes}
+
+\textbf{Claim 1.} The local rate of becoming, defined as the rate of phase accumulation in pre-individuation amplitudes, is a foundational substrate primitive (P-RB-1). It coarse-grains to standard QM angular frequency $E/\hbar$ for atomic-state superpositions and to substrate $c$ for free-photon propagation.
+
+\textbf{Claim 2.} The substrate-level $c$ is a constant --- the V1-kernel propagation rate. Slow light, refractive index, and other apparent modifications are coarse-grained dressed-object effects; substrate $c$ is invariant.
+
+\textbf{Claim 3.} Slow light (Hau 1999) is FORCED as group-velocity reduction of the dark-state polariton, with photon-component weight $\cos^2\theta = \Omega_c^2/(\Omega_c^2 + g^2 N)$. Group velocity $v_g = c\cos^2\theta$.
+
+\textbf{Claim 4.} Stopped light (Hau 2001) is FORCED as adiabatic identity transfer from photonic to atomic-coherence channel as $\Omega_c \to 0$. Retrieval is the reverse rotation; no information is lost.
+
+\textbf{Claim 5.} Optical lattice clocks (Katori, Ye) measure the local rate of becoming directly via interferometry. Magic wavelength is the substrate-level condition for zero net rule-type-energy shift; Lamb-Dicke regime decouples internal-state from motional rule structure.
+
+\textbf{Claim 6.} Gravitational redshift is FORCED by the ED-gradient in local becoming rate: $\omega_{\mathrm{becoming}}(\mathbf{x}) = \omega_0(1 + \Phi(\mathbf{x})/c^2)$. The GR identity $d\tau = \sqrt{g_{00}}\, dt$ is the standard-physics statement of the substrate-level becoming-rate ratio.
+
+\textbf{Claim 7.} Clock networks are ED-geometry sensors. Differential measurements at $10^{-19}$ precision resolve millimeter-scale ED-gradient features on Earth.
+
+\textbf{Claim 8 (negative).} No new substrate primitives are required beyond the seven listed in \S2.
+
+\textbf{Claim 9 (scope-limit).} This walkthrough does not derive: many-body ED-flow beyond mean-field; nonlinear becoming gradients; strong-field relativistic corrections; quantum-coherence-enhanced clock precision; frequency-comb-based comparison; fundamental-constant drift; Lorentz/CPT-violation tests.
+
+\textbf{The unified statement.} The Hau--Katori--Ye cluster is one substrate-level enterprise: manipulate or measure the local rate of becoming. The local rate of becoming is the rate of phase accumulation in pre-individuation amplitudes --- the substrate's foundational rate primitive. Speed of light, atomic-clock tick rate, refractive index, gravitational time dilation, and clock-network gradient sensing are all coarse-grained expressions of this same becoming-rate field. The substrate-level mechanism unifies AMO physics with general relativity at the level of the becoming-rate field.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Hau, L. V., Harris, S. E., Dutton, Z., Behroozi, C. H. \emph{Light speed reduction to 17 metres per second in an ultracold atomic gas.} Nature \textbf{397}, 594 (1999).
+  \item Liu, C., Dutton, Z., Behroozi, C. H., Hau, L. V. \emph{Observation of coherent optical information storage in an atomic medium using halted light pulses.} Nature \textbf{409}, 490 (2001).
+  \item Katori, H. \emph{Spectroscopy of Strontium Atoms in the Lamb-Dicke Confinement.} Phys. Rev. Lett. \textbf{91}, 173005 (2003).
+  \item Ye, J., Kimble, H. J., Katori, H. \emph{Quantum state engineering and precision metrology using state-insensitive light traps.} Science \textbf{320}, 1734 (2008).
+  \item Bloom, B. J. et al. \emph{An optical lattice clock with accuracy and stability at the $10^{-18}$ level.} Nature \textbf{506}, 71 (2014).
+  \item Bothwell, T. et al. \emph{Resolving the gravitational redshift across a millimetre-scale atomic sample.} Nature \textbf{602}, 420 (2022).
+  \item Fleischhauer, M., Imamoglu, A., Marangos, J. P. \emph{Electromagnetically induced transparency: Optics in coherent media.} Rev. Mod. Phys. \textbf{77}, 633 (2005).
+  \item Lukin, M. D. \emph{Trapping and manipulating photon states in atomic ensembles.} Rev. Mod. Phys. \textbf{75}, 457 (2003).
+  \item Ludlow, A. D., Boyd, M. M., Ye, J., Peik, E., Schmidt, P. O. \emph{Optical atomic clocks.} Rev. Mod. Phys. \textbf{87}, 637 (2015).
+  \item Misner, C. W., Thorne, K. S., Wheeler, J. A. \emph{Gravitation.} W. H. Freeman (1973).
+\end{itemize}
+
+\end{document}

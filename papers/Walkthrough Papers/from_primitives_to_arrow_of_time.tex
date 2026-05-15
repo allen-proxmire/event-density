@@ -1,0 +1,414 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to the Kernel-Level Arrow of Time},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to the Kernel-Level Arrow of Time\\[6pt]
+\large\mdseries A Walkthrough of the Event Density Derivation}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+Why does time have a direction?
+
+The question is older than physics. The universe we observe runs forward: eggs break but don't unbreak, stars burn out but don't reignite from their ashes, memories form of the past but never of the future. We move through time in one direction and call that direction the future, and the asymmetry feels so fundamental that it's hard to articulate what it would even mean for it to fail.
+
+But the fundamental laws of physics are time-symmetric. Newton's equations look the same running forward or backward. Maxwell's equations have no preferred time direction. The Schr\"odinger equation, the Klein--Gordon equation, the Dirac equation, general relativity, the Standard Model --- all of them admit time-reversal as a symmetry of their dynamics. If you filmed a quantum system evolving according to the Schr\"odinger equation and ran the film backward, the backward evolution would also be a valid quantum system evolving according to the Schr\"odinger equation.
+
+So where does the arrow come from?
+
+The standard answer routes through thermodynamics. The Second Law of thermodynamics --- entropy increases --- is the statistical asymmetry that makes the macroscopic world time-asymmetric. Boltzmann showed in the 1870s that the apparent arrow of time is a consequence of the universe starting in a low-entropy state and evolving toward higher entropy. This is sometimes called the ``past hypothesis'': the asymmetry isn't in the dynamics; it's in the boundary conditions. The dynamics are time-symmetric, but the universe has a low-entropy past and a high-entropy future, and that asymmetry of boundary conditions is what we experience as time's arrow.
+
+This explanation has been refined for over a century. It works, in the sense that it accounts for the macroscopic asymmetries we observe. But it has always felt incomplete. Why was the early universe in a low-entropy state in the first place? Why is ``the past'' the direction of low entropy rather than the other way around? Why is there a single time direction shared by all observers and all systems, rather than each system having its own arrow? The thermodynamic explanation gestures at these questions but doesn't settle them.
+
+The Event Density framework takes a different approach. Its claim is that the arrow of time is forced at the \emph{kernel level}, before thermodynamics enters the picture. The argument runs through the substrate ontology: a primitive structural fact about commitment events being irreversible, plus the structure of how response kernels are sourced, jointly forces the vacuum-response kernel to have forward-cone-only support. The arrow of time is not a thermodynamic emergent; it is a structural feature of the substrate, present already at the level of how vacuum responds to chain perturbations.
+
+This is a strong claim. It deserves careful unpacking, both in what it asserts and in what it does not assert.
+
+What the framework asserts: at the substrate level, the response kernel that propagates chain perturbations into vacuum response has support only on the forward causal cone. Backward-cone support is structurally impossible. Symmetric support (forward and backward both) cannot be constructed from substrate primitives. The kernel-level arrow of time is forced by primitive structure.
+
+What the framework does not assert: a complete explanation of all temporal asymmetries. The Second Law is not derived. The thermodynamic arrow is not replaced. The psychological experience of time, the cosmological arrow tied to expansion, the radiation arrow that distinguishes retarded from advanced solutions of Maxwell's equations --- these are not the same thing as the kernel-level arrow, and the framework's contribution is specifically at the kernel level. Whether the kernel-level arrow then propagates into thermodynamic, cosmological, or psychological asymmetries through downstream physics is a separate question that this walkthrough does not address.
+
+That said, the kernel-level result is significant on its own terms. The standard view --- that the dynamics are time-symmetric and the arrow comes from boundary conditions --- is partly displaced if the framework's argument holds. The dynamics, properly understood at the substrate level, are \emph{not} time-symmetric. The vacuum response to chain perturbations is forward-cone-only by structural necessity. The time-symmetry of standard QFT is an emergent feature of the continuum approximation, not a fundamental property of the substrate.
+
+The chain has four steps:
+
+\begin{enumerate}[noitemsep]
+  \item The primitive of commitment irreversibility (P11) plus a few supporting primitives jointly force chain bandwidth dynamics to be forward-only along proper time.
+  \item The vacuum response kernel V1 is forced to have finite-width structure by independent arguments (UV-FIN plus event-discreteness primitives). V1 exists as a finite-width object before the question of directionality is asked.
+  \item V1 is a response kernel --- not a correlator. As a response kernel, V1 is sourced by chain bandwidth content via vacuum-coupling structure. The chain-contribution construction makes this explicit.
+  \item Forward-only chain bandwidth dynamics plus response-kernel structure jointly force V1 to have forward-cone-only support. Symmetric and advanced alternatives are refuted: symmetric V1 cannot be constructed from forward-only chain dynamics; advanced V1 directly contradicts P11.
+\end{enumerate}
+
+The structural payoff: the kernel-level arrow of time is what falls out when commitment irreversibility at the substrate level propagates through the response-kernel structure of V1. The arrow is forced, not chosen. The standard time-symmetry of dynamics is an emergent feature of the continuum approximation rather than a fundamental fact about the substrate.
+
+\section{The Primitives That Matter}
+
+The framework rests on substrate-level ontological commitments. The arrow-of-time walkthrough uses a particular subset that's worth surfacing because the structural argument routes specifically through these primitives.
+
+\textbf{Micro-events.} Reality consists of discrete acts of becoming. Each micro-event is a vertex in a graph spanning the event manifold. Events are discrete at the substrate level; there is a primitive-level event-resolution scale $\ell_{\mathrm{ED}}$ below which the manifold structure is not continuum-like.
+
+\textbf{Participation.} Micro-events don't exist in isolation; they participate in one another's becoming. The participation relation is the edge structure of the graph.
+
+\textbf{Bandwidth.} The graded measure of participation, supplied as a non-negative real edge weight. Bandwidth admits a four-band orthogonal decomposition (internal-rule, adjacency, environmental, commitment-reserve) with conservation along chains.
+
+\textbf{Chains.} Stable sequences of commitment events along which a chain's update rule is repeatedly instantiated. Chains are the substrate-level objects the framework calls ``particles.'' Each chain has a worldline $\gamma_K$ parameterized by proper time $\tau_K$.
+
+\textbf{Commitment.} The discrete event in which a chain selects one channel from those available at a vertex. This is where the load-bearing primitive enters.
+
+\textbf{P11 --- Commitment irreversibility.} Every commitment event is irreversible. Once a commitment is made, it is never unmade. There is no ``un-commitment'' operation in the substrate; commitment events along $\gamma_K$ are ordered forward along proper time, and the ordering admits no reversal.
+
+P11 is the single direction-bearing primitive in the framework. All other primitives are direction-neutral or direction-inheriting from P11. Every kernel-arrow argument in the framework routes through P11.
+
+\textbf{Relational timing.} Supplies the time axis along which chain proper time $\tau_K$ is parameterized. Combined with P11, this gives chain commitment events a forward-ordered structure: $\tau_K$ increases monotonically along $\gamma_K$, with later commitment events having larger $\tau_K$ than earlier ones.
+
+\textbf{ED gradient.} Supplies the spatial axis structure. Combined with relational timing, gives the $(3,1)$ signature of the substrate's emergent geometry.
+
+That's the working set. The argument runs through P11 (irreversibility), bandwidth (the graded measure that vacuum response acts on), chains (the carriers of forward-only dynamics), and relational timing (the parameterization that makes ``forward-only'' precise).
+
+A note on what's not directly used: the polarity primitive (the $U(1)$ phase content), the channel primitive (channels as primitive ontological objects), the inner product structure of U2, the full machinery of QM emergence. The arrow-of-time argument operates at a different layer than the QM-emergence walkthroughs. It concerns the structure of vacuum response, which is QFT-adjacent territory. The substrate primitives that matter are the ones that determine how chain dynamics propagate forward in time and how vacuum responds to chain perturbations.
+
+\section{Forcing Forward-Only Chain Dynamics}
+
+The first step is to establish that chain bandwidth dynamics are forward-only along proper time. This is the substrate-level forcing that the rest of the argument builds on.
+
+\subsection{P11 alone is not enough}
+
+P11 says every commitment event is irreversible. By itself, this is a fact about chain commitment structure: commitments are not undone. But P11 alone does not specify how bandwidth dynamics evolve along a chain. A priori, one could imagine commitment events being irreversible while bandwidth content at each commitment event is determined by some bidirectional rule --- bandwidth could in principle be a function of past \emph{and} future commitment events, even with the commitments themselves being irreversible.
+
+The argument must show that P11 plus other primitives jointly force bandwidth to be forward-only --- that the bandwidth content at commitment event $\tau_K^{(n)}$ is determined by the chain's past history (commitment events with $\tau_K^{(m)} \leq \tau_K^{(n)}$) and not by its future (commitment events with $\tau_K^{(m)} > \tau_K^{(n)}$).
+
+\subsection{The carry-through chain}
+
+The argument proceeds in three steps, combining P11 with relational timing, the ED gradient, and bandwidth additivity.
+
+\textbf{Step (i): Commitment events are ordered forward along $\gamma_K$.}
+
+P11 establishes irreversibility of commitments. Combined with relational timing's continuous time axis, this gives commitment events along chain $\gamma_K$ an ordered structure: each commitment event has a proper-time index $n$ that increases monotonically. Later commitment events have larger $\tau_K^{(n)}$ than earlier ones. There is no ``anti-chain'' running backward --- no chain whose commitment events have decreasing $\tau_K$, because such a chain would require un-commitment, which P11 forbids.
+
+This ordering is universal across the chain ensemble. P11 applies to every chain in the substrate; there are no chains that propagate backward in time. The substrate's time orientation is supplied by P11 and is the same for every chain.
+
+\textbf{Step (ii): Chain proper time supplies an oriented parameterization.}
+
+P11 combined with relational timing and the ED gradient (which together give the substrate's emergent $(3,1)$ signature) supplies an oriented proper-time parameter $\tau_K$ for each chain. The orientation is forward in the sense that increasing $\tau_K$ corresponds to later commitment events.
+
+Different chains have different worldlines and therefore different proper-time parameterizations, but the orientation is shared: every chain's proper time increases in the same direction relative to the substrate's emergent time axis. This is what it means for time orientation to be universal --- it's not a feature of any particular chain, it's a feature of the substrate that every chain inherits.
+
+\textbf{Step (iii): Bandwidth content is updated forward-only.}
+
+P11 combined with bandwidth supplies a forward-only bandwidth-update rule. The bandwidth content $b_K(\tau_K^{(n)})$ at commitment event $n$ is determined by the chain's history through commitment event $n$ --- specifically by the bandwidth content at earlier commitment events $\tau_K^{(m)}$ for $m \leq n$ --- but not by future commitment events with $m > n$.
+
+This is the load-bearing structural fact. Why does it hold?
+
+Because bandwidth is updated \emph{at} commitment events. The bandwidth-update rule that determines $b_K(\tau_K^{(n)})$ takes as input the bandwidth content existing at the moment the commitment event occurs, plus whatever participation-graph structure is present at that vertex. Future commitment events have not yet occurred at the moment of event $n$; their bandwidth content does not exist yet to be input into the update rule. The update is structurally forward-only because the rule operates on existing bandwidth content, and only past commitments have produced existing bandwidth at the moment of any present commitment.
+
+Combined: the chain's bandwidth content evolves forward along proper time, with each commitment event taking past bandwidth as input and producing updated bandwidth as output. There is no mechanism by which future bandwidth could feed backward into past commitment events.
+
+\subsection{The forward-propagator structure}
+
+The result of the carry-through is that each chain has a forward propagator $U_K(n, m)$ describing how bandwidth at commitment event $m$ evolves to bandwidth at commitment event $n$:
+\[
+\delta b_K(\tau_K^{(n)}) = \sum_{m \leq n} U_K(n, m) \cdot \delta b_K^{\mathrm{source}}(\tau_K^{(m)})
+\]
+where $\delta b_K^{\mathrm{source}}$ is a perturbation injected at commitment event $m$. The propagator vanishes for backward propagation:
+\[
+U_K(n, m) = 0 \quad \text{for } n < m
+\]
+This is a structural consequence of P11 plus the carry-through arguments above. Forward propagation: the propagator can be non-zero for $n \geq m$. Backward propagation: the propagator is identically zero.
+
+\subsection{What this delivers}
+
+Chain bandwidth dynamics are forward-only along proper time. This is the substrate-level forcing. P11 plus relational timing plus the ED gradient plus bandwidth jointly produce a forward-only update rule with a forward-only propagator. Every chain in the substrate inherits this structure.
+
+This is enough to start the V1 argument. The substrate has an arrow at the level of chain dynamics. The remaining question is whether this arrow propagates into the structure of vacuum response.
+
+\section{The V1 Vacuum Kernel}
+
+Before the directionality argument can run, V1 needs to exist and have a definite form. This is established by a separate structural argument --- the N1 result --- that operates independently of P11.
+
+\subsection{Why V1 has finite width}
+
+The vacuum-response kernel V1 describes the linear response of the effective vacuum at spacetime point $x$ to a chain perturbation at point $x'$:
+\[
+\delta \langle b^{\mathrm{env}}\rangle_{\mathrm{vac}}(x) = K_{\mathrm{vac}}(x - x') \cdot \delta P_{\mathrm{chain}}(x')
+\]
+In the Markovian limit, this kernel would be a Dirac delta:
+\[
+K_{\mathrm{vac}}(x - x') = c_0 \cdot \delta^{4}(x - x')
+\]
+A delta-function kernel means the vacuum responds instantaneously and at every spatial scale to chain perturbations. In Fourier space, the delta function is a constant:
+\[
+\tilde K_{\mathrm{vac}}(\omega, k) = c_0 \quad \text{for all } \omega, k
+\]
+The vacuum response carries equal weight at all frequencies, including the deep ultraviolet.
+
+This creates a problem. In any subsequent loop integral or correlation function involving the vacuum response, the constant frequency-weighting amplifies high-frequency contributions without bound. Naive continuum integrals with delta-function vacuum response produce divergent contributions when integrated over momentum. This is exactly the UV divergence that standard QFT addresses through renormalization.
+
+The framework's UV-FIN result (Theorem Q.8) establishes that primitive-level event-discreteness imposes a natural cutoff that's absent in continuum approximations. The framework is UV-finite without renormalization because the substrate has a discreteness scale $\ell_{\mathrm{ED}}$ below which it is not continuum-like.
+
+Applied to vacuum response: a delta-function kernel is incompatible with primitive-level event-discreteness. The vacuum cannot respond at resolutions finer than $\ell_{\mathrm{ED}}$ because the substrate itself does not admit such resolutions. The vacuum-response kernel must therefore be smoothed at the $\ell_{\mathrm{ED}}$ scale:
+\[
+K_{\mathrm{vac}}(x - x') = K_{\mathrm{vac}}^{\mathrm{prim}}\!\left((x - x') / \ell_{\mathrm{ED}}\right)
+\]
+with $K_{\mathrm{vac}}^{\mathrm{prim}}$ a bounded function that converges to the delta function only in the formal continuum limit $\ell_{\mathrm{ED}} \to 0$. At any finite primitive-discreteness scale, the kernel has finite width.
+
+This is the V1 result. The vacuum-response kernel V1 has finite-width structure forced by event-discreteness plus UV-finiteness. The class of finite-width kernels is forced; the specific functional form (exponential decay, power-law, multi-scale) is inherited from continuum-level physics.
+
+\subsection{V1 as a response kernel}
+
+The structure of V1 worth noting: V1 is a \emph{response kernel}. It describes how the vacuum responds to perturbations, not how the vacuum correlates with itself in the absence of perturbation. This distinction matters for the directionality argument.
+
+Standard quantum field theory has multiple two-point functions associated with the vacuum:
+
+The Wightman function $W(x, x') = \langle 0|\hat\phi(x)\hat\phi(x')|0\rangle$ is the unperturbed correlator. It measures intrinsic vacuum correlations between points $x$ and $x'$, symmetric under exchange in the standard quantum field theory.
+
+The Feynman propagator $G_F(x, x')$ is the time-ordered two-point function, related to $W$ by time ordering.
+
+The retarded Green's function $G_R(x, x')$ is the response Green's function for sources, with support only on the forward causal cone.
+
+These are different objects. They are mathematically related through standard QFT identities --- for example, $G_R(x, y) = i \theta(t_x - t_y) [W(x, y) - W(y, x)]$ --- but they are distinct as physical quantities measuring different things.
+
+V1 in the framework is the response kernel. It is structurally analogous to $G_R$, not to $W$. The framework's claim about V1 directionality is a claim about the response kernel, not about the unperturbed correlator. A symmetric Wightman function is fully consistent with a retarded V1; the framework predicts both.
+
+\subsection{V1 is sourced by chain bandwidth content}
+
+The crucial structural fact about V1 as a response kernel: it is sourced by chain bandwidth content. This is established by the framework's effective-vacuum factorization (Theorem Q.8) and the vacuum-commitment structure.
+
+The effective vacuum at any spacetime point is determined by the bandwidth content of all chains in its support. Chain perturbations $\delta P_{\mathrm{chain}}(x')$ are bandwidth-coupled to the effective vacuum at the chain's commitment events, and the kernel V1 propagates the perturbation across the substrate to produce vacuum response at point $x$.
+
+Formally: V1 acts on chain perturbations and propagates them to the vacuum. Non-chain-sourced contributions to V1 would not be ``response'' in the technical sense --- they would be intrinsic vacuum correlations, captured by the Wightman function $W$ rather than by V1.
+
+This is the load-bearing structural claim. V1 has no non-chain-sourced contribution as a response kernel. Whatever directionality structure the chain bandwidth dynamics have, V1 inherits.
+
+The case was made explicit in \S4.2: the Wightman function and the response kernel are distinct objects. The Wightman function can be symmetric while the response kernel is retarded; standard QFT has both, and they don't conflict. The framework's claim is at the response-kernel level: V1 is sourced by chain dynamics, and chain dynamics are forward-only by Section 3, so V1 inherits forward-only structure.
+
+\section{The Chain-Contribution Construction}
+
+The central argument of the walkthrough. With chain dynamics forward-only (Section 3) and V1 sourced by chain bandwidth content (Section 4), the chain-contribution construction shows that V1 has forward-cone-only support.
+
+\subsection{The chain-contribution sum}
+
+Let $\{\gamma_K\}_{K=1}^N$ index the chains in the support of the effective vacuum at spacetime point $x$. Each chain $\gamma_K$ is a worldline parameterized by its proper time $\tau_K$, with commitment events at indices $n = 1, 2, \ldots$ and proper-time values $\tau_K^{(n)}$.
+
+A chain perturbation $\delta b_K(\tau_K^{(m)})$ at commitment index $m$ on chain $K$ produces a perturbation in the chain's bandwidth content at later commitment events $n \geq m$ via the chain's forward propagator (Section 3):
+\[
+\delta b_K(\tau_K^{(n)}) = \sum_{m \leq n} U_K(n, m) \cdot \delta b_K^{\mathrm{source}}(\tau_K^{(m)})
+\]
+with $U_K(n, m) = 0$ for $n < m$.
+
+The chain's contribution to the effective vacuum at spacetime point $x$ is given by the bandwidth content at commitment events whose vacuum-coupling support reaches $x$:
+\[
+\delta V_{\mathrm{vac}}^{(K)}(x) = \sum_n F_K(x; \tau_K^{(n)}) \cdot \delta b_K(\tau_K^{(n)})
+\]
+where $F_K(x; \tau)$ is the vacuum-coupling form-factor describing how bandwidth content at commitment event $\tau$ couples to the effective vacuum at point $x$. The specific functional form of $F_K$ is inherited from continuum-level physics; the directionality argument doesn't depend on it.
+
+\subsection{Composition: forward-cone-only support}
+
+Combining the chain-update rule with the vacuum-coupling rule, the kernel relating a perturbation at $x'$ to a vacuum response at $x$ is:
+\[
+K_{\mathrm{vac}}(x, x') = \sum_K \sum_{n \geq m} F_K(x; \tau_K^{(n)}) \cdot U_K(n, m) \cdot F_K^\dagger(x'; \tau_K^{(m)})
+\]
+with the $n \geq m$ constraint enforced by $U_K(n, m) = 0$ for $n < m$.
+
+The question: when does $\tau_K^{(n)} \geq \tau_K^{(m)}$ correspond to $(x - x')$ being in the forward causal cone?
+
+For chain $K$ with timelike worldline $\gamma_K$, the proper-time parameter $\tau_K$ is monotone increasing along the forward time orientation of the chain. P11 supplies this orientation: increasing $\tau_K$ corresponds to later commitment events, decreasing $\tau_K$ to earlier. All chains share this orientation --- there is no anti-chain running backward in time, because P11 forbids un-commitment for every chain in the inventory.
+
+P11 is universal across the chain ensemble. Every chain has the same forward time orientation in its proper-time parameterization. When chain $K$ contributes to V1 with $\tau_K^{(n)} \geq \tau_K^{(m)}$, the spacetime points $(x_n^K, x_m^K)$ on the chain's worldline satisfy $(x_n^K - x_m^K)$ is in the forward causal cone of $\gamma_K$. Since $\gamma_K$ is timelike with universal forward orientation, this maps to $(x - x')$ being in the forward causal cone in any frame where $\gamma_K$'s velocity is forward-pointing --- i.e., in every Lorentz frame consistent with the universal P11-supplied time orientation.
+
+Conclusion:
+\[
+K_{\mathrm{vac}}(x, x') \neq 0 \implies (x - x') \text{ is in the forward causal cone}
+\]
+V1 has forward-cone-only support. V1 is retarded.
+
+\subsection{Symmetric V1 cannot be constructed}
+
+The alternative to retarded V1 that satisfies all consistency constraints in isolation is symmetric V1 --- a kernel with both forward and backward causal-cone support, of the form:
+\[
+K_{\mathrm{vac}}^{\mathrm{sym}}(x, x') = G\!\left(\sigma(x, x') / \ell_{\mathrm{ED}}^{2}\right)
+\]
+without the forward-cone restriction $\theta(t - t')$.
+
+This kernel is Lorentz-scalar by construction, finite-width by choice of $G$, and consistent with all the framework's explicit fixes for V1's form-class. If symmetric V1 had a primitive-level construction, it would be admissible.
+
+But symmetric V1 cannot be constructed from the chain-contribution sum. For a symmetric V1 to arise from chain contributions, the kernel sum would need to admit terms with $\tau_K^{(n)} < \tau_K^{(m)}$ --- that is, backward chain propagation. By P11, $U_K(n, m) = 0$ for $n < m$. There is no such term.
+
+A symmetric V1 cannot be sourced by forward-only chain dynamics. To achieve symmetric structure, V1 would need a non-chain-sourced component --- a kernel-level contribution that bypasses chain dynamics. But \S4.2 established that V1 has no non-chain-sourced contribution as a response kernel; non-chain contributions are intrinsic vacuum correlations (Wightman-type), not response.
+
+Symmetric V1 satisfies all the framework's explicit constraints in isolation but has no primitive-level construction admitting it. It is constraint-compliant as a hypothetical kernel but not constructible from the substrate. This is the structural meaning of ``refuted by non-construction'': the kernel form is internally consistent but cannot be sourced from substrate primitives.
+
+\subsection{Advanced V1 is directly inconsistent}
+
+The other alternative, advanced V1, has backward-cone-only support:
+\[
+K_{\mathrm{vac}}^{\mathrm{adv}}(x, x') = \theta(t' - t) \cdot G(\sigma / \ell_{\mathrm{ED}}^{2})
+\]
+Advanced V1 is form-level consistent with the V1 finite-width structure. But it is structurally inconsistent with P11.
+
+Advanced V1 would require chain dynamics propagating from later commitment events to earlier ones --- backward chain propagation along proper time. This directly contradicts P11 commitment irreversibility. Backward-only chain bandwidth dynamics would mean bandwidth content at past commitment events is determined by future commitment events, which is exactly the un-commitment that P11 forbids.
+
+Advanced V1 fails consistency at the substrate level. It is refuted at the consistency stage, not just at the construction stage.
+
+\subsection{Robustness: the R1-bypass redundancy}
+
+The argument has a structural redundancy worth noting. The directionality of V1 was established through the vacuum-coupling cascade: chain dynamics $\to$ chain bandwidth content $\to$ vacuum-coupled bandwidth memory. But the framework's vacuum-coupled bandwidth memory (called N1-E in the framework's catalogue) has a second route to forward-only directionality, independent of the V1-cascade argument.
+
+The independent route runs directly from the chain's bandwidth-update rule. The chain's environmental bandwidth band is updated forward-only by the chain's own bandwidth-update rule, by exactly the same P11 + bandwidth + relational-timing arguments of Section 3. This forces forward-only kernel structure on N1-E directly from chain dynamics, even before vacuum coupling enters the picture.
+
+The two routes converge: V1-cascade gives forward-only N1-E via the vacuum-response chain; R1-bypass gives forward-only N1-E directly from chain dynamics. Even if the V1-cascade argument failed (counter to Section 5.2), R1-bypass would close the directionality of vacuum-induced bandwidth memory independently.
+
+This redundancy is structurally important. The arrow of time at the substrate level is forced through two independent paths. The forcing is over-determined.
+
+\subsection{What this delivers}
+
+V1 has forward-cone-only support. The vacuum-response kernel is retarded at the substrate level. The kernel-level arrow of time is forced.
+
+The argument required:
+\begin{itemize}[noitemsep]
+  \item P11 commitment irreversibility (the seed direction-bearing primitive).
+  \item Chain dynamics forced to be forward-only by P11 plus relational timing plus the ED gradient plus bandwidth (Section 3).
+  \item V1's existence with finite-width structure forced by event-discreteness plus UV-finiteness (Section 4).
+  \item V1 as a response kernel sourced by chain bandwidth content via vacuum coupling (Section 4).
+  \item The chain-contribution sum admitting only forward-cone contributions (Section 5).
+  \item The non-existence of non-chain-sourced contributions to V1 as a response kernel (Section 4).
+  \item The refutation of symmetric V1 by non-construction (Section 5.3).
+  \item The refutation of advanced V1 by direct inconsistency with P11 (Section 5.4).
+\end{itemize}
+
+Each piece traces to substrate primitives. The kernel-level arrow of time is a forced structural consequence of the substrate ontology.
+
+\section{The Continuum-Approximation Picture}
+
+A natural concern: standard quantum field theory operates with time-symmetric correlators and time-symmetric dynamics. The Wightman function is symmetric. The Feynman propagator is symmetric in a specific time-ordered sense. The dynamical equations of QFT (Klein--Gordon, Dirac, Yang--Mills) admit time-reversal as a symmetry. If V1 is forced retarded at the substrate level, doesn't this contradict the time-symmetric structure of standard QFT?
+
+It does not. The framework's claim is at the substrate level; standard QFT operates at the continuum approximation. The two coexist.
+
+\subsection{The response-kernel / correlator distinction}
+
+Standard QFT distinguishes between several two-point functions associated with vacuum:
+
+The retarded Green's function $G_R$ is the response Green's function --- what describes vacuum response to sources. $G_R$ has support only on the forward causal cone.
+
+The Wightman function $W$ is the unperturbed correlator. It measures intrinsic vacuum correlations and is symmetric (more precisely, has the standard $W(x, x') = W^*(x', x)$ Hermitian-conjugate symmetry).
+
+The Feynman propagator $G_F$ is the time-ordered two-point function. It mixes retarded and advanced contributions in a specific way that's symmetric under time reversal in a restricted sense.
+
+These are distinct objects. They are related through standard QFT identities --- for example:
+\[
+G_R(x, y) = i \theta(t_x - t_y) [W(x, y) - W(y, x)]
+\]
+--- but they measure different physical quantities.
+
+The framework's claim about V1 is specifically a claim about the response kernel. V1 is the substrate-level analog of $G_R$, not of $W$ or $G_F$. V1's forward-cone-only support is the substrate-level analog of $G_R$'s forward-cone-only support in standard QFT.
+
+The Wightman function and the Feynman propagator remain symmetric or time-ordered as standard QFT prescribes. The framework does not predict that intrinsic vacuum correlations are asymmetric. It predicts that the response kernel is asymmetric --- which is exactly what standard QFT also says about $G_R$.
+
+\subsection{Where the difference lies}
+
+If standard QFT already has a retarded Green's function with forward-cone-only support, what does the framework add?
+
+Two things.
+
+First, the framework derives the retardation from substrate structure rather than imposing it as a boundary condition. In standard QFT, the choice of retarded versus advanced Green's function is made by hand based on physical considerations --- we choose retarded because we want causes to precede effects, but the formalism itself admits both as mathematical solutions of the same dynamical equations. The framework forces retardation at the substrate level, before continuum dynamics enter the picture. The choice is no longer a choice; it's a structural consequence of P11 plus chain-contribution structure.
+
+Second, the framework places the arrow of time at the substrate level rather than at the level of boundary conditions. Standard physics treats time-symmetry as a property of the dynamics and time-asymmetry as a feature of boundary conditions or thermodynamic statistics. The framework treats time-asymmetry as a property of the substrate itself --- the dynamics are not time-symmetric at the substrate level, and the time-symmetry of standard QFT emerges only at the continuum approximation.
+
+This is structurally analogous to how UV-finiteness works in the framework. Standard QFT is UV-divergent and requires renormalization to extract finite predictions. The framework is UV-finite at the substrate level because the substrate has a discreteness scale $\ell_{\mathrm{ED}}$. The continuum approximation, taken naively, recovers the UV-divergent structure of standard QFT, but the substrate underlying the continuum is finite by structural necessity. UV-finiteness is forced at the substrate level; the apparent UV-divergence of standard QFT is an artifact of the continuum approximation taken too far.
+
+The arrow of time follows the same pattern. The continuum approximation, taken naively, gives time-symmetric dynamics. The substrate underlying the continuum is forward-arrowed by structural necessity. Time-asymmetry is forced at the substrate level; the apparent time-symmetry of standard QFT is an artifact of the continuum approximation.
+
+This is the framework's distinctive contribution to the arrow-of-time question. The arrow is not a thermodynamic emergent. It is not a feature of boundary conditions. It is not an artifact of low-entropy initial conditions. It is forced at the structural level by the irreversibility of commitment events in the substrate.
+
+\section{What the Framework Does Not Claim}
+
+It is worth being careful about what the framework asserts and what it does not.
+
+\subsection{The Second Law is not derived}
+
+The framework's argument is at the kernel level, not the thermodynamic level. The Second Law of thermodynamics --- entropy increases over time --- concerns macroscopic statistical asymmetries that are downstream of the kernel-level arrow. The framework's V1 retardation does not by itself entail entropy increase. Whether the kernel-level arrow propagates into thermodynamic asymmetry through downstream physics is a separate question that the framework does not settle.
+
+This is honest framing. A reader who comes to the framework expecting a complete derivation of the Second Law will be disappointed. The framework's claim is more focused: at the substrate level, vacuum response is forward-cone-only, and the time-symmetry of standard physics is an emergent feature of the continuum approximation rather than a fundamental fact.
+
+\subsection{The radiation arrow is not addressed}
+
+The radiation arrow --- the empirical fact that radiation diverges from sources rather than converging to sinks --- is closely related to but distinct from the kernel-level arrow. The retarded Green's function of Maxwell's equations is what describes radiation propagating outward from sources; the advanced Green's function would describe radiation converging to sinks. Standard physics chooses retarded over advanced based on the empirical asymmetry, but the choice is not forced by the dynamics themselves.
+
+The framework's V1 retardation is at the level of vacuum response to chain perturbations. Whether this propagates into the standard radiation arrow at the macroscopic level is not addressed in this walkthrough. The kernel-level arrow is necessary for the radiation arrow, but it may not be sufficient --- the radiation arrow involves additional structure about how electromagnetic perturbations propagate through space, which is downstream of the framework's kernel-level claim.
+
+\subsection{The cosmological arrow is not addressed}
+
+The cosmological arrow --- the asymmetry associated with cosmological expansion --- is yet another distinct asymmetry. The universe expands in one temporal direction; this defines a cosmological time arrow that may or may not coincide with the thermodynamic and radiation arrows. The framework's substrate-gravity content gestures at cosmological structure (Hubble's constant appears in the MOND transition acceleration via $a_0 = c \cdot H_0/(2\pi)$), but the cosmological arrow specifically is not derived from V1 retardation in this walkthrough.
+
+\subsection{Psychological time is not addressed}
+
+The experience of time as flowing --- the felt sense of moving from past to future --- is a distinct phenomenon from any of the physical arrows. Whether the framework's substrate ontology, with its primitive commitment irreversibility, has anything to say about psychological time is far outside the scope of this walkthrough. The kernel-level arrow is a structural fact about vacuum response; whether it grounds the felt experience of time's passage is a question for a different conversation.
+
+\subsection{What the framework does claim, plainly}
+
+The framework's claim, stated cleanly: at the substrate level, the vacuum-response kernel V1 has forward-cone-only support. This is forced by the joint action of commitment irreversibility (P11) plus the response-kernel structure of V1 (V1 is sourced by chain bandwidth content) plus the forward-only nature of chain bandwidth dynamics.
+
+That's the structural content. The kernel-level arrow of time is forced. Symmetric and advanced alternatives are refuted.
+
+What follows from this for thermodynamics, radiation, cosmology, or psychological time is a further question that requires additional structural arguments. The walkthrough establishes the substrate-level fact; what propagates from it is downstream physics.
+
+\section{What This Argument Establishes}
+
+The chain runs:
+
+Primitives (micro-events, participation, bandwidth, chains, commitment with P11 irreversibility, relational timing, ED gradient) $\to$ forward-only chain bandwidth dynamics (P11 plus carry-through) $\to$ V1 exists with finite-width structure (event-discreteness plus UV-finiteness) $\to$ V1 is a response kernel sourced by chain bandwidth content (effective-vacuum factorization) $\to$ chain-contribution sum admits only forward-cone contributions $\to$ V1 has forward-cone-only support $\to$ kernel-level arrow of time forced.
+
+Each step has its load-bearing arguments worked out. The forward-only chain dynamics come from P11 plus the carry-through to bandwidth update rules. V1's existence and form-class come from independent UV-finiteness and event-discreteness arguments. V1's response-kernel status, sourced by chain bandwidth content, comes from the effective-vacuum factorization. The chain-contribution sum admits only forward-cone support because the chain propagator vanishes for backward propagation. Symmetric V1 is refuted by non-construction; advanced V1 is refuted by direct inconsistency with P11.
+
+The arrow of time at the kernel level is a structural consequence of substrate ontology, not a thermodynamic emergent or a boundary-condition artifact. The dynamics of the substrate are not time-symmetric. The time-symmetry of standard quantum field theory is an emergent feature of the continuum approximation.
+
+This is a substantive structural claim. It places the framework in conversation with one of physics' deepest puzzles and offers a different kind of answer than the standard thermodynamic explanation. Whether the answer is right depends on whether the substrate commitments are right --- whether commitment events at the substrate level actually have the irreversibility structure that P11 asserts, whether V1 actually has the response-kernel structure the framework claims, whether chain bandwidth dynamics actually evolve forward-only as Section 3 establishes.
+
+These are empirical questions, in the sense that they depend on whether the framework's substrate ontology corresponds to reality. The framework's empirical exposure for the arrow-of-time content lives downstream --- in dispersion relations sensitive to vacuum-response structure, in optomechanical envelope predictions referenced in the framework's falsifier list, in any experimental setup where finite-width vacuum kernels would produce observable effects beyond what naive delta-function vacuum response predicts.
+
+For the kernel-level arrow specifically, the structural case is closed. V1 retardation is forced. Symmetric and advanced V1 are refuted. The microscopic arrow of time exists at the substrate level, before thermodynamics enters the picture.
+
+Whether the substrate commitments are right remains the load-bearing question. The framework stands or falls on whether commitment, bandwidth, chains, and the rest of the primitive stack are the correct foundational concepts. The empirical exposure of the framework lives in the soft-matter mobility law, in the substrate-gravity predictions, in the kernel-level structure of vacuum response, in the predictions about matter-wave interferometry at the quantum-classical boundary. These are where reality gets to weigh in on whether the substrate ontology is right.
+
+For the arrow of time specifically, the framework offers something that thermodynamic explanations do not: a structural derivation of the arrow at the substrate level, independent of boundary conditions, statistical mechanics, or the past hypothesis. Time has a direction because commitments at the substrate level are irreversible, and that irreversibility propagates through the response-kernel structure of vacuum coupling to produce forward-cone-only V1. Whether that's the full story of time's arrow is an open question; whether it's a real piece of the story depends on whether the substrate ontology holds up to empirical test.
+
+The walkthrough establishes the structural piece. The empirical case is built elsewhere.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Boltzmann, L. \emph{Vorlesungen \"uber Gastheorie.} Leipzig: J. A. Barth, 1896--1898.
+  \item Albert, D. Z. \emph{Time and Chance.} Cambridge: Harvard University Press, 2000.
+  \item Price, H. \emph{Time's Arrow and Archimedes' Point: New Directions for the Physics of Time.} Oxford University Press, 1996.
+  \item Zeh, H. D. \emph{The Physical Basis of the Direction of Time.} Berlin: Springer, 5th ed., 2007.
+  \item Proxmire, A. \emph{Structurally FORCED Non-Markovian Structures.} Arc N Stage N.2 evaluation memo. April 2026.
+  \item Proxmire, A. \emph{FORCED Evaluation of the Microscopic Arrow of Time.} Arc B Stage B.2 evaluation memo. April 2026.
+  \item Proxmire, A. \emph{Q.8 Memo 02 --- Vacuum-Level Commitment and Gauge-Quotient Audit.} Arc Q substage memo. April 2026.
+  \item Proxmire, A. \emph{Event Density: One Substrate, Three Domains.} April 2026.
+  \item Proxmire, A. \emph{Event Density Foundations: A Unified Substrate Architecture for Quantum, Fluid, Gauge, and Gravitational Dynamics.} April 2026.
+\end{itemize}
+
+The full Event Density corpus is available at \url{https://github.com/allen-proxmire/event-density}.
+
+\end{document}

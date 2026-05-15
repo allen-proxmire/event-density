@@ -1,0 +1,593 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to Mass --- Form Forced, Values Inherited},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to Mass --- Form Forced, Values Inherited\\[6pt]
+\large\mdseries A Walkthrough of the Event Density Arc M Closure}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+The Standard Model has nineteen free parameters that are mass-related. Six quark masses, three charged-lepton masses, three neutrino masses, three gauge-boson masses, the Higgs mass, plus three CKM mixing angles and one CP-violating phase that combine with the masses to produce the observed flavor structure. None of these is derived from anything more fundamental within the Standard Model itself. They are fitted from experiment.
+
+Two structural puzzles persist within this picture. The hierarchy problem asks why the Higgs mass $m_H \approx 125$ GeV is so much smaller than the Planck scale $M_{\mathrm{Planck}} \approx 10^{19}$ GeV without fine-tuning --- quantum corrections naively pull $m_H$ toward $M_{\mathrm{Planck}}$ unless something stabilizes it. The flavor puzzle asks why three generations of quarks and leptons exist with mass ratios spanning ten orders of magnitude or more --- the top quark is roughly $3 \times 10^{11}$ times heavier than the lightest known neutrino, with no evident pattern in the intermediate values.
+
+These are real puzzles. Forty years of theoretical work on grand unified theories, supersymmetry, technicolor, extra dimensions, anthropic landscape arguments, and various flavor-symmetry-breaking schemes have not produced a consensus resolution. Mass values, mass ratios, and mass hierarchies remain among the most empirically constrained and theoretically opaque territories in fundamental physics.
+
+The Event Density framework's contribution to the mass problem is structurally different from the standard derivation programs. The framework does not predict specific mass values. It does not derive the mass hierarchy. It does not solve the flavor puzzle. It does not produce a Higgs mechanism or a Yukawa matrix. What the framework does is something most theoretical treatments of mass do not: it carefully demarcates what is structural and what is inherited, with explicit forcing arguments and explicit refutation arguments. The verdict is honest. Most numerical mass content is inherited at the empirical level. The framework's primitive stack does not contain enough structural content to force mass values, mass ratios, mass hierarchies, generation count, or specific massless-class occupancy.
+
+What the framework does forcefully establish:
+
+The bandwidth signature $\sigma_\tau$ exists at primitive level as a Lorentz-scalar amplitude-invariant energy-dimensional functional of rule-type bandwidth content. The form is forced by six structural selection criteria.
+
+At least one massless Case-P gauge rule-type exists. This is the framework's first ``particle-class must exist'' prediction, forced by gauge-field-as-rule-type identification combined with the structural mechanism (MR-P) that gauge invariance forbids the mass term.
+
+Six candidate mechanisms for deriving mass ratios from taxonomy features (representation dimension, spin, statistics class, Fierz class, band-weight pattern, individuation geometry) are systematically refuted. The framework explicitly cannot produce equality constraints on $\sigma_{\tau_1}/\sigma_{\tau_2}$.
+
+The structural reason for the asymmetry between R.2 closure (which produced the spin-statistics theorem $\eta = (-1)^{2s}$ as a primitive-forced equality) and Arc M closure (which produced no such equality) is informative. The substrate's primitive structure produces classifications and dichotomies cleanly --- $\eta = \pm 1$, integer/half-integer $s$, Case P/R, Fierz class. It does not produce continuous numerical relationships between rule-types. Mass ratios are continuous numerical quantities. They are inherently outside the kind of content the primitive stack delivers.
+
+This is honest territory. Most theoretical frameworks that touch the mass problem either produce specific predictions that fail empirically or introduce new free parameters and pretend they are not free. The framework does neither. It derives what is structurally forced --- the $\sigma_\tau$ form, the massless slot existence, the type classification by Fierz structure --- and is explicit about what is inherited. The clean separation between structural prediction and empirical inheritance is preserved at every layer.
+
+The walkthrough has six structural moves. Three theorems (M1 form, M2 massless slot, M3 no ratios), a verdict on the three candidate mass-origin hypotheses, the structural reason for the verdict, and an honest accounting of what is forced, inherited, and open. The chain runs through the framework's primitives plus the Arc R foundation (Cl(3,1) frame, Dirac equation, KG mass term) plus four sub-stages of analysis to reach an H1-dominant closure.
+
+The structural payoff: the framework establishes that ED fixes the structure of mass, not its values. This is one of the cleaner expressions of the framework's ``form-FORCED, value-INHERITED'' methodological discipline. Mass content is sorted into types and existence claims; numerical content lives at the inheritance layer.
+
+\section{The Substrate Ontology}
+
+The framework rests on substrate-level ontological commitments --- the same primitives that gave the Born rule, the Schr\"odinger equation, the Klein--Gordon equation, the Dirac equation. The mass walkthrough adds the rule-type taxonomy (Lever L1 bandwidth partition, Lever L3 Fierz class) as the structural source of mass-relevant classifications.
+
+\textbf{Micro-events, chains as worldlines, channels, bandwidth.} Reality consists of discrete acts of becoming. Chains hold these together via persistent rules. Channels are the substrate's adjacency-mediated communication structure. Bandwidth measures local participation density. (Same as in previous walkthroughs.)
+
+\textbf{The four-band decomposition.} Bandwidth partitions into four bands:
+\[
+b_K = b_K^{\mathrm{int}} + b_K^{\mathrm{adj}} + b_K^{\mathrm{env}} + b_K^{\mathrm{com}}
+\]
+where $b^{\mathrm{int}}$ is internal rule-bandwidth (sustaining the chain's rule), $b^{\mathrm{adj}}$ is adjacency bandwidth (with neighbors via Primitive 10 individuation pairing), $b^{\mathrm{env}}$ is environmental bandwidth (with broader environment), and $b^{\mathrm{com}}$ is commitment-reserve bandwidth (allocated to commitment events along the worldline). Each band is a non-negative scalar field on the event manifold.
+
+This four-band structure is load-bearing for the mass walkthrough. The $\sigma_\tau$ master formula is built from band-weighted spectral content; different rule-types have different band-weight patterns; the massless mechanisms are formulated in terms of vanishing band content.
+
+\textbf{Rule-type taxonomy.} A rule-type $\tau$ is specified by four levers (Primitive 07):
+
+L1 --- bandwidth partition: a rule-type-specific weighting $w_\tau^X$ over the four bands. Specifies how the rule-type's bandwidth content distributes across $\{\mathrm{int}, \mathrm{adj}, \mathrm{env}, \mathrm{com}\}$.
+
+L2 --- internal index content: a finite-dimensional Lorentz representation $(j_L, j_R)_\tau$. Specifies the spinor / vector / scalar content from the $(j_L, j_R)$ ladder.
+
+L3 --- interface content: a Fierz-class element $\Gamma_\tau \in \mathrm{Cl}(3,1)$ for Case R. Specifies the bilinear that couples at the rule-type interface (Dirac scalar, pseudoscalar, etc.).
+
+L4 --- double-cover sector: Case P ($\eta = +1$, integer spin, bosonic) or Case R ($\eta = -1$, half-integer spin, fermionic).
+
+These are inherited from the R.2 taxonomy closure. The mass walkthrough uses L1 (band weights) and L3 (Fierz class) most directly. L2 and L4 enter through their effect on which scalar bilinear ($|\Psi|^2$ for Case P, $|\bar\Psi\Gamma\Psi|$ for Case R) carries the mass content.
+
+\textbf{Three candidate definitions of mass.} At primitive level, three operationally distinct candidates:
+
+\textbf{Rest mass $m_{\mathrm{rest}}$.} The Casimir eigenvalue of the Poincar\'e algebra acting on the rule-type's participation-measure module: $P_\mu P^\mu = m_{\mathrm{rest}}^2 c^2$. This is the notion most directly used in Klein--Gordon and Dirac equations, Lorentz-invariant by construction.
+
+\textbf{Inertial mass $m_{\mathrm{inert}}$.} The coefficient controlling the rule-type's resistance to four-acceleration in response to applied four-force. Visible as the coefficient in commitment-dynamics update laws.
+
+\textbf{Bandwidth signature $\sigma_\tau$.} A rule-type-specific structural invariant built from the chain's bandwidth content --- the rule-type's characteristic energy scale extractable from its four-band structure.
+
+The first two are dynamical-equation-level objects; $\sigma_\tau$ is a primitive-level object. The framework's central question becomes how $\sigma_\tau$ connects to the dynamical mass parameters. The candidate identity:
+\[
+m_\tau = \sigma_\tau/c^2
+\]
+is the ED analogue of $E = mc^2$ at the rule-type level. The walkthrough's job is to evaluate whether this identity can be promoted to forced or must remain candidate.
+
+\textbf{Three candidate origin hypotheses.} Following the M.0 scoping memo, the framework identifies three candidate hypotheses for where mass content comes from:
+
+\textbf{H1 (mass fully inherited).} Mass values $m_\tau$ are empirical per-rule-type inputs. ED primitives fix the form of the Dirac/KG mass term but not its numerical value. Prior plausibility: high. Mass content sits at the inheritance layer, like $\hbar$ and $c$.
+
+\textbf{H2 (mass = bandwidth signature / $c^2$).} $m_\tau = \sigma_\tau/c^2$ with $\sigma_\tau$ structurally derivable from primitive bandwidth content. Prior plausibility: moderate. Structurally attractive but requires $\sigma_\tau$ to be concretely computable.
+
+\textbf{H3 (ratios from taxonomy).} ED structure predicts mass ratios between rule-types via taxonomy features. Prior plausibility: low-moderate. Would require a structural mechanism producing specific ratios matching empirical data.
+
+The framework's null hypothesis going in was H1: mass is probably mostly inherited. Arc M's job is to find out how much, if anything, can be structurally constrained on top of the inheritance. The expected verdict distribution recorded honestly in M.0 was approximately 50\% mixed / 30\% H1-dominant / 15\% H2 partial / 5\% H3-surprise.
+
+That's the working set. From here, the walkthrough runs through three theorems plus the verdict.
+
+\section{Theorem M1 --- The $\sigma_\tau$ Form Forced}
+
+The first structural move identifies the bandwidth signature $\sigma_\tau$ as a Lorentz-scalar functional of rule-type bandwidth content, with form forced by six selection criteria.
+
+\subsection{Six selection criteria}
+
+The framework seeks a Lorentz-scalar, energy-dimensional, amplitude-invariant functional of bandwidth content suitable as a candidate primitive-level mass structure. Six selection criteria constrain the form:
+
+\textbf{SC1 --- Lorentz scalar.} The functional must be Lorentz-invariant so that the candidate identity $m_\tau = \sigma_\tau/c^2$ has a chance of holding covariantly across reference frames.
+
+\textbf{SC2 --- Amplitude-invariant.} Uniform rescaling $b \to \alpha b$ (with $\alpha > 0$ constant) should leave $\sigma_\tau$ unchanged. Amplitude is chain-specific initial-condition data; it is not rule-type-structural. The functional should isolate the structural content.
+
+\textbf{SC3 --- Dimensionally correct.} $\sigma_\tau$ must have units of energy via $\hbar \times$ frequency.
+
+\textbf{SC4 --- Band-additive.} The four-band decomposition's additive structure must be respected. Different bands contribute additively, weighted by the rule-type-specific band-partition pattern.
+
+\textbf{SC5 --- Massless-permitting.} $\sigma_\tau = 0$ should be a structurally accessible solution, allowing massless rule-types to exist within the framework.
+
+\textbf{SC6 --- Statistics-agnostic structurally.} The functional form should be identical for Case P (bosonic) and Case R (fermionic) chains, distinguished only by which scalar bilinear plays the role of $b$ ($|\Psi|^2$ for Case P, $|\bar\Psi\Gamma\Psi|$ for Case R).
+
+These criteria are structurally motivated but not uniquely forced by primitives. Alternative criteria could in principle produce alternative forms. The framework records this as a CANDIDATE specific form sitting on top of a FORCED form-class.
+
+\subsection{The master formula}
+
+The candidate functional satisfying SC1--SC6 is:
+\[
+\sigma_\tau = \hbar \cdot \sqrt{\sum_X w_\tau^X \cdot \langle(\partial_\mu \ln b_\tau^X)(\partial^\mu \ln b_\tau^X)\rangle_\tau}
+\]
+where:
+
+The sum runs over the four bands $X \in \{\mathrm{int}, \mathrm{adj}, \mathrm{env}, \mathrm{com}\}$.
+
+The weights $w_\tau^X$ are rule-type-specific (Lever L1 data) with non-negativity and $\sum_X w_\tau^X = 1$.
+
+The bilinear $b_\tau^X$ is interpreted as $|\Psi|^2$ in Case P or $|\bar\Psi\Gamma_\tau\Psi|$ in Case R.
+
+The angled brackets $\langle\cdot\rangle_\tau$ denote the rule-type-canonical proper-time average along the chain's worldline.
+
+The factor $\hbar$ provides the energy-scale anchoring via $\hbar \times$ frequency.
+
+\subsection{Why the logarithmic derivative}
+
+The choice of $\partial_\mu \ln b$ rather than $\partial_\mu b$ is the key structural move. The logarithmic derivative implements amplitude-invariance (SC2): for a uniform rescaling $b \to \alpha b$ with constant $\alpha > 0$:
+\[
+\partial_\mu \ln(\alpha b) = \partial_\mu(\ln\alpha + \ln b) = \partial_\mu \ln b
+\]
+The constant $\ln\alpha$ has zero gradient. The functional is unchanged.
+
+This isolates the spectral rate of variation of $b$ --- its structural content --- from the amplitude of $b$ --- which is chain-specific initial-condition data, not rule-type-structural. The amplitude is set by how much participation bandwidth the chain happens to carry; the spectral rate is set by how that bandwidth varies along the worldline, which is the rule-type's structural fingerprint.
+
+The dimensional analysis works: $\partial_\mu \ln b$ has units of $[\text{length}]^{-1}$ (since $\ln b$ is dimensionless and $\partial_\mu$ has units of $[\text{length}]^{-1}$). The Lorentz contraction $(\partial_\mu \ln b)(\partial^\mu \ln b)$ has units of $[\text{length}]^{-2}$. The square root gives $[\text{length}]^{-1}$. Multiplying by $\hbar c$ (with $c$ absorbed in the metric signature) gives $[\text{energy}]$.
+
+\subsection{Three alternative forms rejected}
+
+Alternative functional forms are explicitly rejected:
+
+\textbf{R1.} $\sigma_\tau = \hbar\cdot\langle\Box\ln b^X\rangle_\tau$ --- second-order Laplacian. This is dimensionally wrong: $\Box$ has units of $[\text{length}]^{-2}$, giving the wrong dimension for energy.
+
+\textbf{R2.} $\sigma_\tau = \hbar\cdot\sum w^X\langle(\partial_t \ln b^X)\rangle_\tau$ --- first-order time-derivative only. This is not Lorentz-invariant: it privileges the time component of $\partial_\mu$ over the spatial components, breaking the SC1 covariance requirement.
+
+\textbf{R3.} $\sigma_\tau = \hbar\cdot\sum w^X\cdot|\Psi|^2\cdot(\text{rate})$ --- explicit amplitude dependence. This violates SC2: rescaling $b \to \alpha b$ would multiply $\sigma_\tau$ by a non-trivial factor.
+
+Each alternative fails one of the six selection criteria. The master formula is the unique form satisfying all six.
+
+\subsection{What $\sigma_\tau$ does and does not capture}
+
+The master formula captures:
+
+\begin{itemize}[noitemsep]
+  \item Dimensional correctness via the $\hbar \times$ frequency anchoring.
+  \item Lorentz-scalar form via the contraction of four-gradients.
+  \item Amplitude-invariance via the logarithmic derivative.
+  \item Rule-type-specific weighting via $w_\tau^X$.
+  \item Additivity across the four bands.
+\end{itemize}
+
+The master formula does not capture:
+
+\begin{itemize}[noitemsep]
+  \item Specific values of $w_\tau^X$ for any specific rule-type. These are inherited (Lever L1 data).
+  \item Specific values of the spectral-rate averages $\langle(\partial\ln b^X)^2\rangle_\tau$. These depend on chain-initial-condition data on the event manifold and are inherited.
+  \item Specific Fierz-class assignment $\Gamma_\tau$ for Case-R rule-types. This is inherited (Lever L3 data).
+\end{itemize}
+
+The $(j_L, j_R)$ representation does not modify the master formula directly --- the Lorentz-rep content has been ``consumed'' in forming the scalar bilinear. Spin enters $\sigma_\tau$ only indirectly via Case-P / Case-R selection of the relevant bilinear and via whether the rule-type permits a chiral / massless structure.
+
+This is structurally informative. The empirical observation that spin alone does not determine mass --- charged leptons all have $s = 1/2$ yet span $3500\times$ in mass --- is consistent with $\sigma_\tau$ being independent of spin within a fixed statistics class.
+
+\subsection{Status}
+
+\textbf{Theorem M1 ($\sigma_\tau$ Form).} The bandwidth signature $\sigma_\tau$ exists at primitive level as a Lorentz-scalar, amplitude-invariant, energy-dimensional functional of rule-type bandwidth content. The specific log-derivative form satisfies six structural selection criteria (SC1--SC6) and is structurally motivated. Pure amplitude rescaling $b \to \alpha b$ leaves $\sigma_\tau$ unchanged.
+
+The form is FORCED via SC1--SC6 satisfaction (modulo the criteria themselves being structurally motivated rather than uniquely forced). The specific functional form is CANDIDATE pending alternative-criterion analysis. The numerical value of $\sigma_\tau$ for any specific rule-type is INHERITED from rule-type data plus chain-initial-condition data.
+
+This is the framework's structural contribution to mass content at the form level: a candidate primitive-level mass invariant exists with the right shape to play the $m = \sigma/c^2$ role.
+
+\section{Theorem M2 --- The Massless Slot Forced}
+
+The second structural move identifies two distinct primitive-level mechanisms for $\sigma_\tau = 0$ and shows that under the gauge-field-as-rule-type hypothesis, the existence of at least one massless Case-P rule-type is structurally forced.
+
+\subsection{The $\sigma_\tau = 0$ condition}
+
+From the master formula, $\sigma_\tau = 0$ if and only if for every band $X$ with $w_\tau^X > 0$:
+\[
+\langle(\partial_\mu \ln b^X)(\partial^\mu \ln b^X)\rangle_\tau = 0
+\]
+That is: the bandwidth content has vanishing spectral rate of variation in the rest frame, where one exists. This is the structurally massless condition.
+
+Each $\langle(\partial\ln b^X)^2\rangle_\tau \geq 0$ (Lorentz-square of a four-vector with rest-frame reduction giving non-negative time-derivative-square plus spatial-gradient-square). The sum vanishes if and only if each non-zero-weighted term vanishes individually.
+
+\subsection{Mechanism MR-R --- chiral masslessness for Case R}
+
+For a Case-R rule-type with internal Lorentz representation containing both $(1/2, 0)$ and $(0, 1/2)$ --- the standard Dirac spinor --- the mass-relevant scalar bilinear is:
+\[
+\bar\Psi\Psi = \Psi_L^\dagger \Psi_R + \Psi_R^\dagger \Psi_L
+\]
+where $\Psi_L$ and $\Psi_R$ are the left- and right-chirality projections. The bilinear requires both chiralities to be present.
+
+If a rule-type's internal-index structure (Lever L2) restricts $\Psi$ to $(1/2, 0)$ only --- that is, $\Psi_R = 0$ by structural assignment --- then:
+\[
+\bar\Psi\Psi \equiv 0
+\]
+identically. The Dirac mass term cannot exist for this rule-type structurally. The bandwidth signature $\sigma_\tau$ via the master formula with $\Gamma_\tau = \mathbf{1}$ is identically zero.
+
+This is the Weyl-fermion / chiral-massless mechanism at primitive level. A Case-R rule-type with single-chirality L2 assignment is structurally massless in the Dirac-mass sense.
+
+The L2 assignment is rule-type data, not primitive-forced. ED admits both single-chirality assignments (massless via MR-R) and full Dirac-module assignments (potentially massive). Whether any specific empirical rule-type makes the single-chirality assignment is empirical.
+
+\subsection{Mechanism MR-P --- gauge masslessness for Case P}
+
+For a Case-P rule-type with a vector representation $(j_L, j_R) = (1/2, 1/2)$, the mass term in the Klein--Gordon-type equation has the form $m^2 A_\mu A^\mu$ (Proca-like). Such a term breaks local gauge invariance of the form $A_\mu \to A_\mu + \partial_\mu\alpha$, because $A_\mu A^\mu$ is not gauge-invariant.
+
+A rule-type whose interface dynamics (Lever L3) requires local gauge invariance therefore cannot carry a mass term. Its bandwidth signature $\sigma_\tau$ is forced to zero by the gauge constraint. This is the gauge-massless mechanism --- the structural reason why photons and gluons are massless.
+
+\subsection{The gauge-field-as-rule-type hypothesis}
+
+The Klein--Gordon walkthrough established that local-phase invariance of the participation measure forces the existence of a gauge connection $A_\mu$. In that walkthrough, $A_\mu$ entered as the connection making $\partial_\mu \to D_\mu$ covariant. It was treated as an external field whose existence is forced by local invariance.
+
+For MR-P to apply at primitive level to $A_\mu$ itself, the gauge connection must be the participation measure of some specific Case-P rule-type $\tau_g$ with internal Lorentz representation $(1/2, 1/2)$ and gauge-invariant L3 interface content. This is the gauge-field-as-rule-type hypothesis (GRH):
+
+\textbf{GRH.} The minimal-coupling $A_\mu$ that appears in the gauge-covariant derivative is the participation measure of a Case-P rule-type $\tau_g$ with $(1/2, 1/2)$ internal Lorentz representation and L3 interface content requiring local gauge invariance.
+
+Under GRH:
+
+\begin{itemize}[noitemsep]
+  \item The gauge invariance is a structural property of $\tau_g$'s L3 interface.
+  \item A mass term $m^2 A_\mu A^\mu$ violates the L3 gauge constraint.
+  \item $\sigma_{\tau_g} = 0$ is structurally forced for $\tau_g$ via MR-P.
+\end{itemize}
+
+\textbf{Status of GRH at Arc M closure.} GRH is a CANDIDATE within Arc M. Within Arc Q (the framework's QFT extension), all five GRH refinements are closed: lightlike-worldline reformulation, gauge-quotient individuation, vertex-anchored commitment, non-Abelian extension, vacuum/particle status. With all five refinements closed, GRH is promoted from CANDIDATE-STRONG to unconditional FORCED.
+
+\subsection{Distinctness and exhaustiveness of the two mechanisms}
+
+MR-R and MR-P operate on different statistics classes:
+
+\begin{itemize}[noitemsep]
+  \item MR-R applies to Case R only ($\eta = -1$, half-integer spin).
+  \item MR-P applies to Case P only ($\eta = +1$, integer spin).
+\end{itemize}
+
+A given rule-type belongs to either Case P or Case R, not both. The two mechanisms are mutually exclusive per rule-type.
+
+A third candidate, MR-$\Lambda$ (lightlike-only worldline structure), follows from MR-R or MR-P rather than functioning as an independent route. Worldline lightlike-ness is a consequence of $\sigma_\tau = 0$ via the Stage R.1 Casimir $P_\mu P^\mu = m^2 c^2 = 0$. For photons, MR-P (gauge invariance) implies MR-$\Lambda$ (lightlike propagation). For chiral fermions in flat spacetime, MR-R (single chirality) implies MR-$\Lambda$. The three conditions are not independent.
+
+The framework records as CANDIDATE that MR-R and MR-P are exhaustive primitive-level massless mechanisms in 3+1D. Tentative but plausible --- no third primitive-level mechanism has been identified.
+
+\subsection{The structural prediction}
+
+\textbf{Theorem M2 (Massless Slot).} The existence of at least one massless Case-P rule-type is structurally FORCED at primitive level, conditional on the gauge-field-as-rule-type hypothesis GRH. Specifically, the gauge connection forced by Stage R.1 minimal coupling is identified with a participation rule-type $\tau_g$ whose gauge-invariant L3 interface produces $\sigma_{\tau_g} = 0$ via MR-P.
+
+The four GRH clauses (Case P statistics, $(1/2,1/2)$ Lorentz rep, gauge-invariant L3, $\sigma = 0$ via MR-P) are mutually consistent. Under Arc Q's closure of all five GRH refinements, the hypothesis becomes unconditional FORCED, and Theorem M2 promotes from FORCED-conditional to unconditional FORCED.
+
+This is the framework's first ``particle-class must exist'' prediction --- its first unconditional structural assertion that a specific rule-type class is occupied. The structural content: at least one massless gauge-class participation rule-type must exist in any framework that has local $U(1)$ phase invariance plus the GRH identification.
+
+Empirically: the photon is the obvious candidate occupant. The framework does not predict that the photon specifically (rather than some other gauge boson) occupies the slot --- that identification is empirical / Arc Q content. But the slot existence is forced.
+
+\subsection{What's not forced about masslessness}
+
+\textbf{No specific Case-R rule-type forced massless.} The L2 assignment (full Dirac module versus single-chirality module) is rule-type data, not primitive-forced. ED admits both. Whether any specific empirical rule-type --- neutrinos, hypothetical Weyl fermions --- actually makes the single-chirality assignment is empirical.
+
+\textbf{No canonical choice between MR-R and MR-P.} The two mechanisms apply to different statistics classes; neither is ED's ``preferred'' route. Statistics-class membership determines which applies once a rule-type is massless.
+
+\textbf{No prediction of massless-slot count.} The framework forces at least one massless Case-P rule-type. It does not force exactly one. Multiple massless gauge rule-types are admissible (the photon plus the gluon octet plus possibly others), with the count being empirical.
+
+\textbf{No identification of the massless rule-type with a specific empirical species.} The framework forces existence; it does not force ``the photon specifically occupies the slot.'' That mapping is empirical / Arc Q content.
+
+\subsection{Status}
+
+The existence of a massless Case-P gauge rule-type is FORCED conditional on GRH, promoted to unconditional FORCED via Arc Q closure of the GRH refinements. This is the framework's first structural existence prediction in the QM-emergence territory. The mechanism is MR-P (gauge invariance forbidding the mass term). The chiral mechanism MR-R is structurally available for Case R but does not force any specific Case-R rule-type to occupy the massless class.
+
+\section{Theorem M3 --- Six Refutations of Ratio Mechanisms}
+
+The third structural move evaluates whether ED primitives plus the R.2 taxonomy can constrain mass ratios between rule-types. The framework systematically tests six candidate mechanisms and refutes them. The refutation is the single most empirically engaged piece of analysis in the Arc M closure.
+
+\subsection{The ratio question}
+
+From the master formula, the ratio of two rule-type signatures is:
+\[
+\frac{\sigma_{\tau_1}}{\sigma_{\tau_2}} = \frac{\sqrt{\sum_X w_{\tau_1}^X \langle(\partial\ln b^X)^2\rangle_{\tau_1}}}{\sqrt{\sum_X w_{\tau_2}^X \langle(\partial\ln b^X)^2\rangle_{\tau_2}}}
+\]
+For this ratio to be structurally constrained, the rule-type-data inputs ($w_\tau^X$ and $\langle(\partial\ln b^X)^2\rangle_\tau$) must have primitive-level relationships across rule-types. The framework enumerates six candidate structural levers that could plausibly carry such relationships.
+
+\subsection{Lever R3-A --- Representation dimension}
+
+\textbf{Candidate mechanism.} A higher-dimensional internal index space might carry more bandwidth content per chain, leading to $\sigma_\tau \propto \dim_\tau$ where $\dim_\tau = (2j_L + 1)(2j_R + 1)$.
+
+\textbf{Structural evaluation.} The master formula's band weights $w_\tau^X$ are normalized ($\sum w = 1$). The representation dimension does not enter the band-weighting; it indexes the Lorentz-rep content of the participation-measure module. The bandwidth content $b_K$ is scalar-valued by construction --- the rep dimension has been consumed in forming the scalar bilinear. Therefore $\dim(j_L, j_R)$ does not appear in $\sigma_\tau$.
+
+\textbf{Empirical disconfirmation.} Standard Model data: spin-1/2 fermions have $\dim = 4$ (Dirac); spin-1 $W$ boson has $\dim = 4$ ($(1/2,1/2)$); same dimension, vastly different masses. Spin-0 Higgs has $\dim = 1$ with $m_H \approx 125$ GeV; spin-1/2 electron has $\dim = 4$ with $m_e \approx 0.511$ MeV. No correlation between representation dimension and mass.
+
+\textbf{Verdict.} REFUTED. Representation dimension does not constrain $\sigma_\tau$ structurally or empirically.
+
+\subsection{Lever R3-B --- Spin}
+
+\textbf{Candidate mechanism.} Spin enters the Lorentz-Casimir labelling via the Pauli--Lubanski Casimir $W^2 = -m^2 s(s+1)\hbar^2$. This suggests a possible $\sigma_\tau \propto s(s+1)$ or $\sigma_\tau \propto s$ relationship.
+
+\textbf{Structural evaluation.} The Pauli--Lubanski Casimir is an identity, not a constraint. Given $m$ and $s$ independently, $W^2$ is determined; given $m$ alone, $s$ is unconstrained; given $s$ alone, $m$ is unconstrained. There is no structural constraint linking $s$ and $m$.
+
+The $\sigma_\tau$ master formula does not contain $s$ explicitly. Spin enters only via Case-P / Case-R selection of the relevant bilinear and via whether the rule-type permits a chiral / massless structure. Within a given statistics class, $\sigma_\tau$ is independent of spin.
+
+\textbf{Empirical disconfirmation.} All charged leptons have $s = 1/2$ with $m_e \approx 0.511$ MeV, $m_\mu \approx 106$ MeV, $m_\tau \approx 1.78$ GeV --- same spin, mass spread of $\sim 3500\times$. The spin-0 Higgs $\approx 125$ GeV; the spin-1 $W \approx 80$ GeV; the spin-1/2 top $\approx 173$ GeV --- different spins, comparable masses. No $s$-mass relationship.
+
+\textbf{Verdict.} REFUTED. Spin does not constrain $\sigma_\tau$ structurally or empirically. The $3500\times$ mass spread among same-spin charged leptons is the empirical death-blow to any spin-as-ratio mechanism.
+
+\subsection{Lever R3-C --- Statistics class}
+
+\textbf{Candidate mechanism.} Different bilinears ($|\Psi|^2$ for Case P versus $|\bar\Psi\Gamma\Psi|$ for Case R) might produce systematically different mass scales, with one statistics class systematically heavier or lighter than the other.
+
+\textbf{Structural evaluation.} The bilinears differ in sign structure (positive-definite for Case P; sign-indefinite for Case R) but not in magnitude scale. Both are scalar fields whose log-derivatives are extracted by the master formula; the scaling is set by chain-specific bandwidth amplitudes, not by the bilinear class.
+
+\textbf{Empirical disconfirmation.} The mass spectrum is interleaved with no clean P-versus-R separation. Heaviest known fermion (top, Case R) $\approx 173$ GeV; heaviest known boson (Higgs, Case P) $\approx 125$ GeV; lightest charged fermion (electron, Case R) $\approx 0.511$ MeV; massless boson (photon, Case P) $= 0$. Both classes contain massless examples (Weyl-neutrino candidates for Case R, photon and gluon for Case P) and massive examples spanning many orders of magnitude.
+
+\textbf{Verdict.} REFUTED. Statistics class does not order $\sigma_\tau$ magnitudes structurally or empirically.
+
+\subsection{Lever R3-D --- Fierz class}
+
+\textbf{Candidate mechanism.} Different $\Gamma_\tau \in \{\mathbf{1}, \gamma^\mu, \sigma^{\mu\nu}, \gamma^\mu\gamma^5, \gamma^5\}$ couple to different sectors of the Cl(3,1) algebra. Different Fierz channels are genuinely distinct structural objects, suggesting they might carry mass-ratio content.
+
+\textbf{Structural evaluation.} The Fierz class determines mass-term TYPE:
+
+\begin{itemize}[noitemsep]
+  \item $\Gamma = \mathbf{1}$ --- Dirac mass term $\bar\Psi\Psi$; relevant to standard massive fermions.
+  \item $\Gamma = \gamma^5$ --- pseudoscalar $\bar\Psi\gamma^5\Psi$; chirality-flipping; relevant to axion-like or pseudoscalar masses.
+  \item Other $\Gamma$ --- tensorial / vectorial bilinears; not pure rest-frame mass-term-like structure.
+\end{itemize}
+
+Different $\Gamma_\tau$ produce structurally different mass mechanisms (Dirac vs Majorana vs pseudoscalar). But within any given $\Gamma$-class, the magnitude $\sigma_\tau$ is set by $\langle(\partial\ln|\bar\Psi\Gamma_\tau\Psi|)^2\rangle_\tau$ --- which depends on chain-specific bandwidth dynamics, not on $\Gamma_\tau$ itself.
+
+\textbf{Verdict.} PARTIALLY SUPPORTED as TYPE classifier; REFUTED as RATIO predictor. Fierz class distinguishes mass-term structures (Dirac vs Majorana vs pseudoscalar) but does not constrain ratios between massive rule-types of different Fierz classes. The framework records this as a structural type-classification result (CANDIDATE M-Fierz-1) --- a real structural distinction but not a ratio mechanism.
+
+\subsection{Lever R3-E --- Band-weight pattern}
+
+\textbf{Candidate mechanism.} Different rule-types have different $w_\tau^X$ partitions across the four bands. If $w_\tau$ patterns cluster systematically (quark-like rule-types having high $w^{\mathrm{adj}}$; lepton-like having low $w^{\mathrm{adj}}$), $\sigma_\tau$ ratios could reflect this.
+
+\textbf{Structural evaluation.} $w_\tau^X$ is rule-type data (Lever L1), not primitive-derived. ED primitives admit any $(w^{\mathrm{int}}, w^{\mathrm{adj}}, w^{\mathrm{env}}, w^{\mathrm{com}})$ with non-negativity and $\sum w = 1$, plus $w^{\mathrm{adj}} > 0$ for Case R (required by R.2.5 individuation pairing). Within those constraints, no specific pattern is forced.
+
+If empirical data revealed a systematic $w$-pattern correlating with mass, that would be empirical content, not structural. ED's primitives do not provide the correlation.
+
+A weak inequality candidate (M-Order-2): rule-types with $w_\tau^{\mathrm{com}} = 0$ might have systematically smaller $\sigma_\tau$ than those with $w_\tau^{\mathrm{com}} > 0$, if commitment-band content dominates the spectral rate variation. This is conditional on a band-dominance hypothesis that is not itself derived from primitives. It produces an inequality, not a ratio.
+
+\textbf{Verdict.} REFUTED as ratio predictor. Weak inequality M-Order-2 survives as CANDIDATE only.
+
+\subsection{Lever R3-F --- Individuation geometry}
+
+\textbf{Candidate mechanism.} Primitive 10's individuation threshold sets a spatial scale $\ell_{\mathrm{ind}}$ which, by Compton-wavelength inversion, corresponds to a mass scale $m \sim \hbar/(c\cdot\ell_{\mathrm{ind}})$. If different rule-types have different $\ell_{\mathrm{ind}}$ values, structural ratios could emerge.
+
+\textbf{Structural evaluation.} The individuation threshold is rule-type-specific: Primitive 10 provides the structure of individuation (a threshold exists, applied per rule-type) but not the value of the threshold per rule-type. $\ell_{\mathrm{ind},\tau}$ is rule-type data, not primitive-derived.
+
+The Compton-wavelength inversion $m \sim \hbar/(c\cdot\ell_{\mathrm{ind}})$ is a dimensional analogy, not a derived identity. The $\sigma_\tau$ master formula does not directly contain $\ell_{\mathrm{ind}}$.
+
+A weak ordering candidate (M-Order-3): within a fixed rule-type-class, smaller individuation thresholds correlate with larger mass scales by dimensional analogy. Structurally weak; produces orderings, not ratios.
+
+\textbf{Verdict.} REFUTED as ratio predictor. Weak inequality M-Order-3 survives as CANDIDATE (dimensional analogy only).
+
+\subsection{Summary table}
+
+\begin{center}
+\small
+\begin{tabular}{@{}llp{8cm}@{}}
+\toprule
+Claim & Mechanism & Verdict \\
+\midrule
+R3-A & $\sigma_\tau \propto \dim(j_L, j_R)$ & REFUTED --- rep dim consumed in scalar bilinear; empirical counterexamples \\
+R3-B & $\sigma_\tau \propto s$ or $s(s+1)$ & REFUTED --- Casimir is identity not constraint; $3500\times$ same-spin spread \\
+R3-C & $\sigma_\tau$ ordered by P/R class & REFUTED --- P/R differs in sign not magnitude; empirical interleaving \\
+R3-D & $\sigma_\tau$ by Fierz class & PARTIALLY SUPPORTED as TYPE; REFUTED as ratio \\
+R3-E & $\sigma_\tau$ by $w$-pattern & REFUTED as ratio; weak inequality M-Order-2 CANDIDATE \\
+R3-F & $\sigma_\tau$ by $\ell_{\mathrm{ind}}$ & REFUTED as ratio; weak inequality M-Order-3 CANDIDATE \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Why ED structurally cannot produce ratios}
+
+The framework's structural argument for why no equality constraint on $\sigma_{\tau_1}/\sigma_{\tau_2}$ exists:
+
+The master formula factors into rule-type data ($w_\tau^X$) and chain-initial-condition data ($\langle(\partial\ln b^X)^2\rangle_\tau$). Both are inherited, not primitive-derived. For ED to constrain $\sigma_\tau$ ratios structurally, it would need to constrain at least one of: cross-rule-type relationships among $\{w_\tau^X\}_\tau$; cross-rule-type relationships among $\{\langle(\partial\ln b^X)^2\rangle_\tau\}_\tau$; or cross-rule-type relationships among the chain-initial bandwidth content. No such relationships exist at primitive level.
+
+The R.2 taxonomy provides classification (Case P/R, spin classes, Fierz classes) but does not constrain numerical content within or across classes.
+
+The deeper structural point --- and this is what makes Arc M's negative result informative rather than disappointing --- is the comparison with R.2 closure. The R.2.5 spin-statistics theorem $\eta = (-1)^{2s}$ closed as a primitive-FORCED equality because it ties two $\mathbb{Z}_2$ dichotomies together: the exchange-phase dichotomy ($\eta = \pm 1$) and the integer/half-integer dichotomy. Both are primitive-level structural classifications, and the equality between them is forced.
+
+Mass ratios are different. They are continuous numerical quantities, not dichotomies. The framework's primitive structure produces classifications and dichotomies cleanly --- the strength of R.2 --- but does not produce continuous numerical relationships between rule-types --- the limit demonstrated by Arc M. This is not a defect; it is a clear-eyed map of what the primitive stack can and cannot deliver.
+
+\subsection{Status}
+
+\textbf{Theorem M3 (No Ratio Mechanism).} ED primitives plus the Stage R.2 taxonomy produce no equality constraints on the ratio $\sigma_{\tau_1}/\sigma_{\tau_2}$ between two massive rule-types. Six strong-form ratio claims (R3-A through R3-F) are systematically REFUTED. Three weak-form orderings (M-Order-2, M-Order-3, M-Fierz-1) survive as CANDIDATE producing inequalities or type-classifications, not numerical ratios. Hypothesis H3 in equality form is rejected.
+
+This is an honest negative result. Mass ratios live at the inheritance layer.
+
+\section{The H1-Dominant Verdict}
+
+With the three theorems established, the framework's verdict on the three candidate hypotheses is determined.
+
+\subsection{Verdict on H1 (mass fully inherited)}
+
+\textbf{Status: substantially supported.} The framework's structural analysis confirms that:
+
+\begin{itemize}[noitemsep]
+  \item The numerical value of $\sigma_\tau$ for any specific rule-type depends on chain-initial-condition data via $\langle(\partial\ln b^X)^2\rangle_\tau$ (Theorem M1).
+  \item ED primitives plus R.2 taxonomy do not constrain $\sigma_\tau$ ratios (Theorem M3).
+  \item ED primitives do not identify which rule-types occupy the massless slot beyond class membership (Theorem M2).
+\end{itemize}
+
+H1 is the dominant outcome. The framework does not refute H1; it constrains H1 only at the level of structure (form, type, statistics-class mechanism), not at the level of values.
+
+\subsection{Verdict on H2 ($m_\tau = \sigma_\tau/c^2$)}
+
+\textbf{Status: provisional CANDIDATE.} The $\sigma_\tau$ functional is constructed with the right form to play this role, but:
+
+\begin{itemize}[noitemsep]
+  \item The specific functional choice (logarithmic-derivative spectral rate) is CANDIDATE not FORCED.
+  \item Promotion of $m_\tau = \sigma_\tau/c^2$ to FORCED would require deriving the identity from primitives, which has not been achieved.
+\end{itemize}
+
+The optional Stage M.1.4 evaluating this identity is deferred indefinitely. Given M.1.3's refutation of ratio constraints, the per-rule-type identity carries no comparative predictive power even if it holds. The framework records the identity as CANDIDATE without promotion.
+
+\subsection{Verdict on H3 (ratios from taxonomy)}
+
+\textbf{Status: substantially refuted.} Six strong-form ratio claims systematically REFUTED. Three weak-form orderings survive as CANDIDATE only, producing inequalities or type classifications rather than numerical ratios. H3 in equality form is rejected.
+
+\subsection{Match to the prior distribution}
+
+The M.0 honest prior was approximately 50\% mixed / 30\% H1-dominant / 15\% H2 partial / 5\% H3-surprise.
+
+Arc M closes closer to H1-dominant with H2-partial flavor and H3 refuted. This sits between the ``mixed'' and ``H1-dominant'' scenarios --- slightly more skeptical than the M.0 prior median. The closure is consistent with M.0's honest framing that primitive inputs may be too thin to force much mass content.
+
+The framework calibrated its priors honestly and reached a result more skeptical than the median prior. That's structural discipline.
+
+\subsection{The closure statement}
+
+\textbf{Arc M shows that ED fixes the structure of mass but not its values.}
+
+Specifically:
+
+\begin{itemize}[noitemsep]
+  \item The framework fixes the form of mass terms via the $\sigma_\tau$ master formula and the KG/Dirac mass-term shape.
+  \item The framework fixes the type classification of mass terms via Fierz class (Dirac / Majorana / pseudoscalar).
+  \item The framework fixes the mechanism for masslessness via statistics class (chirality MR-R for Case R, gauge MR-P for Case P).
+  \item The framework forces the existence of at least one massless Case-P $(1/2, 1/2)$ gauge rule-type via GRH, promoted to unconditional via Arc Q.
+  \item The framework does not fix mass values, mass ratios, mass hierarchies, generation count, or massless-slot occupancy.
+\end{itemize}
+
+This is the cleanest expression of the framework's ``form-FORCED, value-INHERITED'' methodological discipline.
+
+\section{Forced, Inherited, Open}
+
+The framework is honest about what its current machinery delivers and what remains future work.
+
+\textbf{Forced at substrate level:}
+
+\begin{itemize}[noitemsep]
+  \item The $\sigma_\tau$ master formula as a Lorentz-scalar amplitude-invariant energy-dimensional functional of rule-type bandwidth content (Theorem M1).
+  \item The statistics-class distinction (Case P uses $|\Psi|^2$, Case R uses $|\bar\Psi\Gamma\Psi|$).
+  \item $\sigma_\tau = 0$ as a structurally accessible solution.
+  \item The two distinct massless mechanisms MR-R (chiral, Case R) and MR-P (gauge, Case P), mutually exclusive per rule-type.
+  \item The existence of at least one massless Case-P $(1/2, 1/2)$ gauge rule-type, conditional on GRH and promoted to unconditional via Arc Q closure (Theorem M2).
+  \item The Fierz-class type classification (Dirac / Majorana / pseudoscalar) for Case R mass terms.
+  \item The statistics-class determination of which massless mechanism applies (Case P $\to$ MR-P, Case R $\to$ MR-R).
+  \item The form of the mass term in Klein--Gordon and Dirac equations (carryover from R.1 and R.3).
+\end{itemize}
+
+\textbf{Refuted (forced negative results):}
+
+\begin{itemize}[noitemsep]
+  \item $\sigma_\tau \propto$ representation dimension $\dim(j_L, j_R)$ (R-M1).
+  \item $\sigma_\tau \propto$ spin $s$ or $s(s+1)$ (R-M2).
+  \item $\sigma_\tau$ ordered by Case-P / Case-R class (R-M3).
+  \item $\sigma_\tau$ determined by Fierz class as a ratio (R-M4).
+  \item $\sigma_\tau$ determined by band-weight pattern as a ratio (R-M5).
+  \item $\sigma_\tau$ constrained by individuation geometry as a ratio (R-M6).
+  \item No specific rule-type forced massless without GRH (R-M7).
+  \item No canonical choice between MR-R and MR-P (R-M8).
+  \item No structural prediction of massless-slot count (R-M9).
+  \item No structural mass-hierarchy mechanism (R-M10).
+  \item No generation-count derivation (R-M11).
+  \item No primitive-level Higgs analogue identified in Arc M (R-M12).
+\end{itemize}
+
+\textbf{Inherited at value layer:}
+
+\begin{itemize}[noitemsep]
+  \item Numerical values of $m_\tau$ for any specific rule-type.
+  \item Band-weight values $w_\tau^X$ for any specific rule-type (Lever L1 data).
+  \item Fierz-class assignment $\Gamma_\tau$ for Case-R rule-types (Lever L3 data).
+  \item Spectral-rate values $\langle(\partial\ln b^X)^2\rangle_\tau$ for any specific chain.
+  \item Numerical values of $\hbar$, $c$ (Dimensional Atlas / Stage R.1 metric normalization).
+  \item Charge $q$ per rule-type.
+  \item Mass ratios $m_{\tau_1}/m_{\tau_2}$ (per Theorem M3).
+  \item Generation count.
+  \item Specific rule-type $\leftrightarrow$ Standard-Model species map.
+\end{itemize}
+
+\textbf{Open (CANDIDATE pending future work):}
+
+\begin{itemize}[noitemsep]
+  \item The specific $\sigma_\tau$ functional form. Selection criteria SC1--SC6 motivate but do not uniquely force the log-derivative form.
+  \item The hypothesis M$\lambda$ that $\sigma_\tau = 0 \iff$ no rest-frame commitment AND no rest-frame internal evolution.
+  \item Exhaustiveness of $\{$MR-R, MR-P$\}$ as primitive-level massless mechanisms in 3+1D.
+  \item The mass-signature identity $m_\tau = \sigma_\tau/c^2$ (deferred Stage M.1.4).
+  \item The three weak orderings (M-Order-2, M-Order-3, M-Fierz-1).
+\end{itemize}
+
+\textbf{Open (SPECULATIVE):}
+
+\begin{itemize}[noitemsep]
+  \item Generation count (3) having a hidden primitive-level origin.
+  \item Fermion mass hierarchy structurally derivable from a yet-unidentified mechanism.
+  \item Higgs mechanism having an ED-primitive analogue (Arc Q evaluation).
+  \item Neutrino mass smallness reflecting a near-MR-R structure with small Majorana sector.
+  \item A modified $\sigma_\tau$ functional carrying ratio content.
+  \item Mass ratios derivable from boundary conditions on bandwidth fields at cosmological scales.
+  \item Graviton-like rule-type existing and being massless in extended ED structure.
+  \item Supersymmetric pairing structure relating Case-P and Case-R rule-type masses.
+\end{itemize}
+
+These items are not refuted; they are listed honestly as speculative because no structural mechanism is currently in hand. Future arcs may discharge or refute any of them.
+
+\section{What This Argument Establishes}
+
+The chain runs:
+
+Primitives (micro-events, participation, chains, channels, four-band bandwidth, rule-type taxonomy with levers L1--L4, individuation, commitment irreversibility, relational timing) $\to$ Arc R foundation (Cl(3,1) frame, Klein--Gordon equation, Dirac equation) $\to$ six selection criteria for $\sigma_\tau$ $\to$ master formula via log-derivative spectral content (Theorem M1) $\to$ two distinct massless mechanisms MR-R and MR-P $\to$ GRH identification of gauge connection as participation rule-type $\to$ existence of massless Case-P gauge slot (Theorem M2) $\to$ systematic test of six ratio mechanisms $\to$ all six refuted (Theorem M3) $\to$ H1-dominant verdict.
+
+Each move has its load-bearing argument worked out. The $\sigma_\tau$ form is forced by six selection criteria with explicit alternatives R1-R3 rejected. The massless slot existence is forced via GRH plus the mechanism that gauge invariance forbids the mass term. The ratio mechanisms are refuted with both structural arguments (the master formula's factorization into rule-type data plus initial-condition data, neither primitive-derived) and empirical arguments (the $3500\times$ same-spin charged-lepton mass spread, the interleaved P/R mass spectrum).
+
+The framework reproduces the structural skeleton of mass content in particle physics. It does not predict mass values. It does not derive the mass hierarchy. It does not produce a Higgs mechanism. It explicitly refutes a category of taxonomy-based ratio-deriving mechanisms. These are honestly named limitations, with explicit pointers to the inheritance layer where mass values live and to the Arc Q + empirical territory where mass ratios remain open.
+
+What the framework does that standard treatments do not: it carefully demarcates structural content from inherited content with explicit forcing arguments and explicit refutation arguments. The standard treatment of mass in the Standard Model takes the nineteen mass-related parameters as fitted inputs without saying which of them might be structurally derivable or why ratio-deriving programs (technicolor, GUT-relations, flavor symmetries, etc.) keep failing. The framework says, structurally: mass ratios are continuous numerical quantities, primitive-level dichotomies and classifications can't produce continuous numerical relationships between rule-types, so any framework whose structural content is dichotomy-and-classification-based is not going to predict mass ratios. This is a methodological contribution to the mass-problem literature even when it doesn't produce numerical predictions.
+
+Compare with the R.2 spin-statistics closure. There, two $\mathbb{Z}_2$ dichotomies (the exchange-phase $\eta = \pm 1$ and the integer/half-integer $s$) closed into a primitive-FORCED equality $\eta = (-1)^{2s}$ --- a strong positive-content result. Here, the framework attempts the same kind of structural closure for mass and finds the inputs aren't of the right kind. Mass ratios live in a different mathematical territory (continuous reals spanning many orders of magnitude) than spin-statistics relationships (discrete $\mathbb{Z}_2 \times \mathbb{Z}_2$ with a forced map between the two $\mathbb{Z}_2$ factors). The framework's primitive stack handles the latter cleanly and is honest about the former being outside its current reach.
+
+This is a useful kind of contribution. Most theoretical frameworks that touch the mass problem either produce specific predictions that fail empirically (Koide-relation extensions, GUT mass relations that miss measured values), introduce new free parameters and pretend they're not free (the Yukawa matrix in the Standard Model), or hand-wave at hierarchy problems without engaging structurally (much of the supersymmetric and extra-dimensional landscape). The framework does (d) --- derives what's structurally forced (the $\sigma_\tau$ form, the massless slot existence, the type classification by Fierz structure), refutes what isn't (six ratio-deriving mechanisms with explicit empirical disconfirmations), and names what's inherited (numerical values, ratios, hierarchies, generation count). The clean separation between structural prediction and empirical inheritance is preserved at every layer.
+
+This is also rare in physics. Frameworks that engage the mass problem honestly enough to refuse overclaiming when their structural content can't deliver are rare. The framework's H1-dominant verdict --- ``ED fixes the structure of mass but not its values'' --- is one of the cleaner expressions of methodological discipline in the foundational-physics literature on mass.
+
+Whether the substrate commitments are right is the load-bearing question, as in every walkthrough. The framework stands or falls on whether discreteness, finite participation bandwidth, commitment irreversibility, the rule-type taxonomy, and the four-band bandwidth decomposition are the correct foundational concepts. The empirical exposure of the mass content lives downstream --- in any future test of substrate-level mass physics that distinguishes the framework from standard treatments. The most empirically substantive open territory is the framework's first existence prediction (Theorem M2): at least one massless Case-P gauge rule-type must exist. The photon and gluons are the obvious candidate occupants. Empirically, this prediction is consistent with established physics. Structurally, it's one of the framework's clearest claims about what the universe must contain.
+
+For mass content specifically, the structural case is closed at the form level. The $\sigma_\tau$ master formula is forced. The two massless mechanisms are identified. The Fierz-class type classification is forced. The massless-slot existence is forced. The six ratio mechanisms are refuted. The verdict is H1-dominant: form forced, values inherited.
+
+The next steps, structurally, are Arc Q (QFT extension) for gauge group specification, Higgs mechanism evaluation, radiative corrections including $g - 2 \approx \alpha/\pi$ at next-to-leading order, multi-particle content, and cosmological boundary conditions that might constrain mass content at the universe-as-a-whole scale.
+
+The walkthrough collection now stands as a comprehensive presentation of the framework's QM-emergence territory: Born rule, Schr\"odinger equation, Bell--Tsirelson bound, Heisenberg uncertainty, kernel-level arrow of time, galactic dynamics, black-hole architecture, Klein--Gordon equation, Dirac equation with $g = 2$, and mass form forced with values inherited. Each derivation is structurally honest about what it forces and what remains open. The framework's discipline is its methodological signature --- it derives what the substrate primitives can deliver, refuses to overclaim, and names the inheritance layer where empirical content lives.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Higgs, P. W. ``Broken symmetries, massless particles and gauge fields.'' \emph{Physics Letters} 12, 132--133 (1964).
+  \item Koide, Y. ``A fitting number for the lepton mass formula.'' \emph{Lettere al Nuovo Cimento} 34, 201 (1982).
+  \item Weinberg, S. \emph{The Quantum Theory of Fields, Vol. II.} Cambridge University Press, 1996.
+  \item Pauli, W. ``The Connection Between Spin and Statistics.'' \emph{Physical Review} 58, 716--722 (1940).
+  \item Particle Data Group. ``Review of Particle Physics.'' \emph{Physical Review D} 110, 030001 (2024).
+  \item Proxmire, A. \emph{Mass and Masslessness as Structural Features of Event-Density Theory (Arc M paper).} April 2026.
+  \item Proxmire, A. \emph{Chain-Mass Scoping (Arc M, Stage M.0).} April 2026.
+  \item Proxmire, A. \emph{Bandwidth Signature Construction (Arc M, Stage M.1.1).} April 2026.
+  \item Proxmire, A. \emph{Massless Rule-Types (Arc M, Stage M.1.2).} April 2026.
+  \item Proxmire, A. \emph{Mass Ratio Constraints (Arc M, Stage M.1.3).} April 2026.
+  \item Proxmire, A. \emph{Chain-Mass Synthesis --- Arc M Closure (Arc M, Stage M.2).} April 2026.
+  \item Proxmire, A. \emph{Event Density Foundations.} April 2026.
+\end{itemize}
+
+\end{document}

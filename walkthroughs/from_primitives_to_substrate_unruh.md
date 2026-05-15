@@ -1,0 +1,458 @@
+# From Primitives to the Substrate-Unruh Effect
+
+## A Walkthrough of the Event Density Substrate-Level Derivation
+
+**Allen Proxmire** · May 2026
+
+---
+
+## 1. The Question
+
+In 1976, William Unruh published a result that connected accelerated observers to thermal radiation in a way that had no classical analog. A uniformly accelerated observer in flat Minkowski spacetime, moving with proper acceleration $a$, perceives the Minkowski vacuum as a thermal bath at temperature
+
+$$
+T_U = a / (2\pi)
+$$
+
+(in natural units; with explicit factors, $T_U = \hbar a / (2\pi c k_B)$). At everyday accelerations the temperature is absurdly low — $a = 9.8$ m/s² gives $T_U \sim 10^{-19}$ K — but the structural fact is striking. Vacuum modes that look empty to an inertial observer look thermal to an accelerating observer. The thermalisation has no source: it is not radiation from any external system, it is not noise, it is not a Doppler shift. It is what the vacuum *is* from the accelerated frame's perspective.
+
+The Unruh effect was rapidly recognised as a structurally clean cousin of Hawking radiation. The derivations are formally parallel: in both cases, a Bogoliubov transformation between two natural mode bases (inertial vs. accelerated for Unruh, past-vs-future for Hawking) produces a thermal-mixing parameter set by the local acceleration scale (proper acceleration for Unruh, surface gravity for Hawking). The Unruh effect is what the Hawking calculation reduces to in the flat-space limit. The two phenomena share a common structural origin.
+
+The standard derivation runs through QFT in flat spacetime: take the Minkowski vacuum, expand it in modes appropriate to the accelerated observer's frame (Rindler modes), find that the inertial vacuum looks like a thermal state in the accelerated frame at temperature $T_U = a/(2\pi)$. The result is mathematically clean and has been validated indirectly through analog systems (BEC analog accelerating mirrors, accelerating photon detectors) where the thermalisation signature appears at the predicted scale.
+
+But the standard derivation has structural questions that parallel those of standard semiclassical Hawking. The trans-Planckian problem: accelerated modes in the Rindler wedge trace back to arbitrarily-blueshifted near-horizon modes, where standard QFT becomes structurally questionable. The vacuum-state-choice issue: which vacuum (Minkowski, Rindler, Boulware analog) is "the" vacuum, and why? The pair-creation interpretation: virtual pairs near the Rindler horizon, with one captured and one observed — the same ontological heaviness that Hawking derivations carry.
+
+The question this document addresses is: where does the Unruh thermalisation come from at the substrate level, and why does it take exactly the form $T_U = a/(2\pi)$?
+
+The Event Density framework provides a substrate-level account that mirrors the H-arc Hawking derivation. The substrate's V5 vacuum, viewed from a substrate observer accelerated relative to the asymptotic substrate frame at proper substrate-acceleration $a$, exhibits a thermal-correlation structure at temperature $T = a/(2\pi)$. The mechanism is a substrate-level analog of the Euclidean periodicity argument: under analytic continuation of substrate-time, the accelerated substrate frame's geometry has a conical-point-avoidance condition that forces imaginary-time periodicity at $\beta= 2\pi/a$. The KMS condition then identifies this periodicity with thermality at $T = a/(2\pi)$. DCGT identification at leading order maps the substrate calculation to the standard Unruh result; first-subleading corrections from V5 finite-memory cut off the spectrum at the Planck scale.
+
+The chain has six structural moves:
+
+1. The substrate has a primitive temporal structure (P13 continuous time, T18 forward-cone-only V1 kernel) and a substrate-level vacuum (the V5 kernel's groundstate).
+
+2. A substrate observer accelerated relative to the asymptotic substrate frame at proper substrate-acceleration $a$ has a substrate-time worldline that traces a hyperbolic trajectory in the substrate's relational structure.
+
+3. The accelerated substrate frame's local geometry, in $(\rho, t)$-like substrate coordinates with $\rho= 1/a$, has a Rindler-like form. Substrate observers at fixed $\rho$ experience proper substrate-acceleration $1/\rho$.
+
+4. Under analytic continuation $t \to -i\tau$, the substrate's local geometry becomes a 2D Euclidean space in polar coordinates, with $a\tau$ as the angular coordinate. Avoiding a substrate-level conical singularity at $\rho= 0$ (the Rindler-like horizon) forces the angular coordinate to have period $2\pi$, giving $\beta= 2\pi/a$.
+
+5. By the KMS condition, V5 correlations periodic in imaginary substrate-time with period $\beta$ are thermal at temperature $T = 1/\beta= a/(2\pi)$.
+
+6. DCGT identification at leading order maps the substrate-level temperature to the standard Unruh temperature exactly. First-subleading corrections from V5 finite-memory at $\tau_{V5} = \ell_P/c$ cut off the high-frequency tail at the Planck scale, providing a substrate-level resolution of the trans-Unruh problem.
+
+The structural payoff: the Unruh effect is what the substrate's V5 vacuum looks like from any accelerated frame. The thermalisation is not a calculational artifact, not a Bogoliubov-mixing technicality, and not a vacuum-state convention. It is the substrate's natural structure expressed through the analytic-continuation periodicity that any accelerated frame imposes on substrate-level correlations.
+
+This walkthrough is the standalone substrate-Unruh derivation. It is structurally identical to the H-1 piece of the Hawking arc, but separable: the substrate-Unruh effect is a substrate-level result on its own, applicable wherever an accelerated frame appears in the substrate (including cosmological horizons, BEC analog systems, and laboratory-accelerated detectors). The Hawking-arc derivation specialises this argument to the saturated-decoupling-surface case; future arcs on de Sitter thermality or other accelerated-frame phenomena will inherit this walkthrough's substrate-Unruh content directly.
+
+---
+
+## 2. The Primitives That Matter
+
+The framework rests on substrate-level ontological commitments. The substrate-Unruh walkthrough uses the same working subset that the Hawking and Born walkthroughs used.
+
+**Micro-events (P01).** Discrete acts of becoming.
+
+**Chains (P02).** Stable subgraphs along which a chain repeatedly instantiates its update rule.
+
+**Bandwidth (P04).** Non-negative real edge weight with bandwidth-additivity for independent contributions.
+
+**Polarity / U(1) phase (P09).** $U(1)$-valued phase relation between a chain's update rule and the local ED-flow direction.
+
+**Continuous time (P13).** The substrate's temporal evolution is continuous between commitment events.
+
+**Substrate locality.** Cross-chain interactions occur via mediating substrate structure (V1, V5, channels), not via instantaneous non-local action.
+
+**V1 forward-cone-only kernel (T18).** The substrate's vacuum kernel mediating cross-chain correlations. Forward-cone-only by closed-arc inheritance from the kernel-arrow / arrow-of-time program.
+
+**V5 finite-memory kernel.** The substrate's cross-chain memory kernel. Has finite memory time $\tau_{V5}$ — a primitive substrate parameter. V5 supplies the substrate-level vacuum on which the Unruh argument operates.
+
+**Commitment irreversibility (P11).** Substrate participation events are irreversible.
+
+Two forced theorems load-bear here:
+
+**T18 (V1 forward-cone-only).** Establishes the substrate's causal structure. Cross-chain correlations propagate forward in substrate-time only.
+
+**T19 (Newton-recovery $\ell_P$).** Identifies the substrate's irreducible length scale as the Planck length. Load-bears for the V5 timescale identification at the gravitational scale: $\tau_{V5} = \ell_P/c$.
+
+The Diffusion Coarse-Graining Theorem (DCGT) is a structural prerequisite: the substrate-to-continuum bridge that allows the substrate-level temperature to be identified with the standard Unruh temperature at leading order.
+
+That's the structural setup. The substrate-Unruh argument runs on this.
+
+---
+
+## 3. The Substrate Reading of Acceleration
+
+Standard physics treats acceleration as a kinematical concept: the rate of change of velocity, measured by an inertial observer or experienced by an accelerating one. In ED, acceleration has a substrate-level reading.
+
+### 3.1 Substrate-level proper acceleration
+
+A chain at substrate-time $t$ propagates along a sequence of micro-events with specific spatial and temporal increments. The chain's local *propagation rate* is the substrate quantity governing how rapidly its participation rule advances per unit substrate-time.
+
+When the propagation rate is constant in substrate-time, the chain's worldline traces a straight line in the substrate's emergent spacetime (geodesic at the substrate level). The chain is *inertial*.
+
+When the propagation rate changes with substrate-time, the chain's worldline curves. The chain is *accelerated*. The substrate-level proper acceleration $a$ is the rate of change of the propagation rate per unit substrate-time, evaluated in the chain's instantaneous rest frame.
+
+### 3.2 Substrate observers and their accessible regions
+
+A *substrate observer* is a chain (or chain-aggregate) whose participation rule is sufficiently coherent to integrate substrate events from surrounding regions. The observer's *accessible region* is the substrate region from which V1-mediated cross-chain correlations can reach the observer in finite substrate-time.
+
+For an inertial substrate observer, the accessible region is isotropic — the V1 forward-cone extends symmetrically around the observer's worldline. The observer integrates substrate events from all directions equally.
+
+For an accelerated substrate observer, the accessible region is *anisotropic*. The observer's V1 forward-cone is tilted along the acceleration direction. Substrate regions in the "backward" direction (opposite the acceleration) are progressively excluded; at proper distance $1/a$ behind the observer, the substrate region becomes formally inaccessible — V1-mediated correlations from that region cannot reach the observer in any finite substrate-time.
+
+### 3.3 The Rindler-like horizon
+
+The proper-distance-$1/a$ surface behind the observer is the substrate analog of the Rindler horizon. It is not a feature of underlying spacetime geometry; it is a feature of the accelerated observer's *accessibility structure*. Different observers in different motion states have different Rindler-like horizons; the surface is observer-dependent.
+
+In the substrate ontology, the Rindler-like horizon is a *participation-bandwidth boundary*: substrate events on the far side cannot integrate into the observer's participation history because the V1 forward-cone, tilted by the observer's acceleration, excludes them.
+
+This is structurally similar to (but distinct from) the saturated decoupling surface of a black-hole horizon. The BH horizon is observer-independent (the gradient is what it is regardless of observer); the Rindler-like horizon is observer-dependent (it appears only in the accelerated frame). Both are participation-bandwidth boundaries; they differ in whether the boundary is set by absolute substrate gradient (BH) or by relative observer-frame structure (Rindler-like).
+
+### 3.4 What this delivers
+
+The substrate-level reading of acceleration produces a Rindler-like substrate frame near the accelerated observer's accessibility horizon. The frame has its own substrate-time direction (the observer's proper substrate-time) and its own substrate-distance coordinate (the proper distance from the horizon).
+
+This Rindler-like substrate frame is the structure on which the substrate-Unruh argument operates. The next sections build the argument on this frame.
+
+---
+
+## 4. The Substrate-Level Vacuum and the Rindler-like Coordinate System
+
+### 4.1 The V5 vacuum
+
+The framework's V5 cross-chain memory kernel mediates substrate-level correlations between chain regions. The kernel's *vacuum state* is the substrate configuration in which V5 correlations are at their primitive structural level — the substrate analog of the Wightman vacuum in standard QFT.
+
+Per T18 (forward-cone-only V1), the V5 vacuum has a specific causal structure: cross-chain correlations propagate causally forward in substrate-time. Per the V5 finite-memory primitive, the kernel has characteristic correlation time $\tau_{V5}$ at the gravitational scale (identified as the Planck time $\ell_P/c$ via T19 + dimensional analysis).
+
+The V5 vacuum is not a "no-particle" state in the standard QFT sense; it is the substrate's primitive cross-chain correlational structure on which all chain dynamics operate. Substrate observers see this vacuum as the background in which their participation rules unfold.
+
+### 4.2 The Rindler-like substrate coordinates
+
+For a substrate observer accelerated with proper acceleration $a$, introduce substrate coordinates $(\rho, t)$ adapted to the observer's frame:
+
+- $\rho$: proper substrate-distance from the observer's Rindler-like horizon at $\rho= 0$.
+- $t$: the observer's proper substrate-time, parameterising the observer's worldline.
+
+Substrate observers at fixed $\rho$ experience proper substrate-acceleration $1/\rho$. The originally-considered observer at proper acceleration $a$ sits at $\rho= 1/a$.
+
+### 4.3 The local substrate geometry
+
+Near the Rindler-like horizon at $\rho= 0$, the substrate's local geometry in $(\rho, t)$ coordinates has the form
+
+$$
+ds^{2}_{\mathrm{substrate}} \approx −\rho^{2} a^{2} \cdot dt^{2} + d\rho^{2} + (transverse pieces)
+$$
+
+This is the substrate analog of the standard Rindler metric. Substrate observers at fixed $\rho$ experience proper substrate-time elapsed at rate $\rho a$ relative to the asymptotic substrate frame. As $\rho \to 0$, the proper-time rate approaches zero — the substrate's "redshift" effect at the Rindler-like horizon.
+
+### 4.4 The asymptotic substrate frame
+
+The asymptotic substrate frame is the inertial substrate frame at $\rho \to \infty$. In this frame, substrate evolution proceeds at the substrate's natural rate, with no acceleration-induced anisotropy. The V5 vacuum in this frame is the substrate's primitive structural vacuum.
+
+The asymmetry between accelerated and asymptotic frames is structural: the Rindler-like substrate coordinates only cover a wedge of the full substrate (the "Rindler wedge"), not the entire substrate. Substrate regions outside this wedge are inaccessible to the accelerated observer.
+
+This is the substrate-level analog of the standard Rindler-wedge restriction in QFT. The accelerated observer perceives a *restricted* version of the substrate's V5 vacuum — restricted to the wedge accessible from the observer's frame.
+
+---
+
+## 5. Imaginary-Time Periodicity (the Load-Bearing Step)
+
+The substrate-Unruh argument's load-bearing step parallels the standard Euclidean derivation of the Unruh temperature.
+
+### 5.1 The Euclidean continuation in substrate-time
+
+Consider the V5 correlation function across the Rindler-like substrate frame:
+
+$$
+G_V5(t_1, \rho_1; t_2, \rho_2) \equiv \langle V_5(t_1, \rho_1) V_5†(t_2, \rho_2)\rangle_{\mathrm{substrate}}
+$$
+
+evaluated in the substrate's V5 vacuum. Under analytic continuation $t \to -i\tau$, the correlation function becomes:
+
+$$
+G_V5^E(\tau_1, \rho_1; \tau_2, \rho_2) \equiv G_V5(-i\tau_1, \rho_1; -i\tau_2, \rho_2)
+$$
+
+For substrate-states with the appropriate analytic structure (positive-frequency vacuum states, by the substrate analog of the standard QFT positivity-of-spectrum condition), the Euclidean correlation function is well-defined in some strip in the complex plane.
+
+### 5.2 The Euclidean substrate geometry
+
+Under $t \to -i\tau$, the substrate's local geometry near the Rindler-like horizon becomes:
+
+$$
+ds^{2}_{\mathrm{substrate}} \approx \rho^{2} a^{2} \cdot d\tau^{2} + d\rho^{2} + (transverse pieces)
+$$
+
+This is the substrate analog of flat 2D Euclidean space in polar coordinates, with $\rho$ as the radial coordinate and $a\tau$ as the angular coordinate.
+
+### 5.3 The conical-singularity-avoidance argument
+
+In standard 2D Euclidean polar coordinates, the metric $ds^2 = dr^2 + r^2 d\theta^2$ is regular at $r = 0$ if and only if $\theta$ has period $2\pi$. Otherwise the origin has a conical singularity.
+
+The substrate analog: the substrate's local geometry near $\rho= 0$ is regular only if the angular coordinate $a\tau$ has period $2\pi$. Substrate-time, analytically continued to imaginary substrate-time, must have period
+
+$$
+\beta= 2\pi / a
+$$
+
+to avoid a substrate-level conical singularity at the Rindler-like horizon.
+
+### 5.4 What "no substrate-level conical singularity" means
+
+In standard QFT, the no-conical-singularity argument is geometric: the Euclidean continuation of the Rindler metric must be smooth at the bifurcation surface, which constrains the periodicity of the imaginary time.
+
+The substrate-level statement: V5 cross-chain correlations near the Rindler-like horizon must form a self-consistent substrate object. A conical singularity in the analytically continued substrate would correspond to a discontinuity in V5 correlations as the imaginary substrate-time circle is traversed. Such a discontinuity would mean the substrate's V5 vacuum is not a single coherent substrate object but rather two separate substrate states glued together inconsistently. Substrate locality (P02) and continuity-under-DCGT-coarse-graining forbid such discontinuities at the substrate-vacuum level.
+
+The periodicity $\beta= 2\pi/a$ is therefore *forced* by substrate-vacuum self-consistency at the Rindler-like horizon, in parallel with the standard no-conical-singularity argument in QFT.
+
+### 5.5 Status of the periodicity
+
+The imaginary-time periodicity is FORCED at the substrate level by:
+- V5 vacuum self-consistency near the Rindler-like horizon
+- Substrate locality and continuity-under-DCGT preventing discontinuities at the substrate-vacuum level
+- The substrate-time invariance of the accelerated frame (the observer's proper time is well-defined and continuous)
+
+The argument is structurally parallel to the standard Euclidean-trick derivation of the Unruh temperature, with the substrate's V5 vacuum playing the role of the Wightman vacuum in standard QFT.
+
+---
+
+## 6. The KMS Condition and the Thermal Spectrum
+
+### 6.1 The KMS condition
+
+A correlation function periodic in imaginary time with period $\beta$ satisfies the *Kubo-Martin-Schwinger* (KMS) condition:
+
+$$
+G(-i\beta + \Delta t) = G(\Delta t)* (with appropriate hermitian conjugation)
+$$
+
+The KMS condition is mathematically equivalent to the correlation function being thermal at temperature $T = 1/\beta$. This is a theorem of standard mathematical physics (Kubo 1957; Martin-Schwinger 1959), inherited as identification target.
+
+The substrate's V5 correlation function across the Rindler-like horizon, satisfying the imaginary-time periodicity at $\beta= 2\pi/a$ from §5, therefore satisfies the KMS condition at temperature
+
+$$
+T = a / (2\pi)
+$$
+
+This is the substrate-level Unruh temperature.
+
+### 6.2 Spectral content
+
+The KMS condition at temperature $T$ implies that the spectral function of the V5 correlations has a Bose-Einstein structure:
+
+$$
+n(\omega) = 1 / (e^{\omega /T} − 1) for \omega > 0
+$$
+
+For substrate modes accessible to the accelerated observer in the Rindler-like wedge, the V5 vacuum looks like a *thermal bath* at temperature $T = a/(2\pi)$. Each accessible mode has an occupation number given by the Planck distribution.
+
+### 6.3 What this delivers
+
+The substrate-level Unruh effect: a substrate observer accelerated relative to the asymptotic substrate frame at proper substrate-acceleration $a$ perceives the substrate's V5 vacuum as a thermal state at temperature $T = a/(2\pi)$. The thermalisation is not an artifact of the Bogoliubov calculation; it is the substrate-level structure that the analytic continuation of substrate-time imposes on V5 correlations in the accelerated frame.
+
+The substrate observer is not in a thermal *state*; the substrate is not heated. The thermalisation is *frame-relative*: the asymptotic inertial substrate frame sees the V5 vacuum as the substrate-vacuum (no thermalisation), while the accelerated frame sees the same V5 vacuum as a thermal bath. The two views describe the same substrate-level reality through different observer-frame structures.
+
+---
+
+## 7. DCGT Identification with the Standard Unruh Temperature
+
+The substrate calculation produces $T = a/(2\pi)$ where $a$ is the substrate-level proper acceleration. To recover the standard Unruh result $T_U = a/(2\pi)$, the substrate-level proper acceleration must identify with the standard proper acceleration.
+
+### 7.1 The DCGT identification
+
+DCGT (Diffusion Coarse-Graining Theorem) supplies the substrate-to-continuum bridge for substrate-state quantities. At leading-order coarse-graining:
+
+- Substrate-level proper substrate-acceleration $a_{\mathrm{substrate}} \to a$ (standard proper acceleration in the inertial frame).
+- Substrate-level proper substrate-time $t \to t$ (standard proper time).
+- V5 correlation function $\to$ standard Wightman correlation function in the appropriate limits.
+
+The identification is FORCED at leading order via DCGT's substrate-to-continuum bridge applied to accelerated frames.
+
+### 7.2 The recovered Unruh temperature
+
+Combining the substrate calculation $T = a_{\mathrm{substrate}}/(2\pi)$ with the DCGT identification $a_{\mathrm{substrate}} = a$:
+
+$$
+T_U = a / (2\pi)
+$$
+
+This is the standard Unruh temperature. With explicit factors:
+
+$$
+T_U = \hbar a / (2\pi c k_B)
+$$
+
+For a hypothetical observer accelerated at $a = c^{2}/L$ (where $L$ is the proper distance to the Rindler horizon), the Unruh temperature is $T_U = \hbar c/(2\pi L k_B)$ — inversely proportional to the proper distance to the horizon.
+
+### 7.3 Numerical scales
+
+For everyday accelerations the Unruh temperature is absurdly low:
+
+| Acceleration $a$ | Unruh temperature $T_U$ |
+|---|---|
+| 9.8 m/s² (Earth surface gravity) | $\sim 4 \times 10^{-20}$ K |
+| $10^{20}$ m/s² (large-particle accelerator) | $\sim 0.4$ K |
+| $10^{26}$ m/s² (extreme laser fields) | $\sim 4 \times 10^{6}$ K |
+| $a \sim c/\ell_P$ (Planck-scale acceleration) | $\sim 10^{32}$ K (Planck temperature) |
+
+Direct detection of Unruh radiation has not been achieved; analog systems (BEC accelerating mirrors, accelerating photon detectors) have observed Unruh-analog signatures matching the predicted scaling.
+
+---
+
+## 8. Substrate-Cutoff Corrections at High Frequencies
+
+The framework reproduces standard Unruh exactly at leading order. First-subleading-order corrections come from V5 finite-memory at the substrate-cutoff scale.
+
+### 8.1 The V5 cutoff
+
+The V5 kernel has finite memory time $\tau_{V5} = \ell_P/c$ at the gravitational scale (substrate-built timescale at the Planck scale). The kernel's frequency-domain magnitude:
+
+$$
+|Ṽ_5(\omega)|^{2} = (𝒱_0 \tau_V5)^{2} / (1 + (\omega \tau_V5)^{2})
+$$
+
+For $\omega \ll 1/\tau_{V5} = c/\ell_P$ (Planck frequency), V5 correlations are coherent. For $\omega \gtrsim c/\ell_P$, V5 coherence breaks down — the substrate cannot mediate cross-chain correlations at frequencies approaching the Planck scale.
+
+### 8.2 The corrected Unruh spectrum
+
+The V5 cutoff modulates the Unruh spectrum at first subleading order:
+
+$$
+n_ED(\omega) = n_U(\omega) / (1 + (\omega \tau_V5)^{2})
+$$
+
+For Unruh frequencies $\omega \sim T_U \sim a$ (with $a$ in natural units): $\omega\tau_{V5} \sim a\ell_P/c$. For ordinary laboratory accelerations, $a\ell_P/c$ is many orders of magnitude smaller than unity, and the correction is invisible. Only at accelerations approaching $a \sim c^2/\ell_P$ — Planck-scale accelerations — does the V5 cutoff become significant.
+
+### 8.3 The trans-Unruh problem and its resolution
+
+The standard Unruh derivation has a structural problem analogous to the trans-Planckian problem of Hawking: modes observed at moderate frequencies in the accelerated frame trace back to arbitrarily-blueshifted modes near the Rindler-like horizon. At accelerations approaching the Planck scale, the standard derivation runs into structural difficulties.
+
+The framework resolves this at the substrate level. V5 finite-memory cuts off mode coherence at $\omega \sim c/\ell_P$. The substrate cannot support arbitrarily-blueshifted modes near the Rindler-like horizon. The trans-Unruh problem is regulated naturally by V5's substrate-cutoff structure.
+
+This is structurally identical to the V5 trans-Planckian resolution in the H-arc Hawking derivation. Both problems arise from the same Euclidean-periodicity argument applied at different horizon types; both are resolved by the same V5 substrate-cutoff mechanism.
+
+---
+
+## 9. Cross-Domain Echoes
+
+The substrate-Unruh argument has structural echoes across multiple framework sectors.
+
+### 9.1 The Hawking echo
+
+The H-arc Hawking derivation runs the substrate-Unruh argument at the saturated decoupling surface (the substrate-level analog of a black-hole horizon). The substrate-level surface gravity $\kappa_{\mathrm{ED}} = \alpha(\nabla\sigma)|_{\mathrm{surf}}$ plays the role of the substrate-level proper acceleration. The same imaginary-time periodicity argument forces $\beta= 2\pi/\kappa_{\mathrm{ED}}$, giving $T_H = \kappa/(2\pi)$ via DCGT identification.
+
+The two derivations are structurally identical — same V5 vacuum, same imaginary-time periodicity argument, same KMS-condition equivalent. They differ only in *which substrate horizon* the argument is applied to: the BH saturated decoupling surface (Hawking) or the accelerated-observer Rindler-like horizon (Unruh). The Hawking-Unruh equivalence in standard physics — $T_H = \kappa/(2\pi)$ exactly parallels $T_U = a/(2\pi)$ — emerges from this shared substrate-level mechanism.
+
+### 9.2 The de Sitter echo
+
+A static observer in de Sitter spacetime — the spacetime of an accelerating universe with positive cosmological constant — experiences a *cosmological horizon* at proper distance $1/H$, where $H$ is the Hubble rate. The standard result (Gibbons-Hawking 1977) gives a thermal temperature
+
+$$
+T_dS = H / (2\pi)
+$$
+
+at the cosmological horizon.
+
+The substrate-Unruh argument extends to this case directly. A substrate observer at fixed proper distance from the cosmological horizon experiences proper substrate-acceleration $H$, and the Rindler-like substrate frame near the horizon has the same structure as the BH and accelerated-observer cases. The imaginary-time periodicity argument forces $\beta= 2\pi/H$, giving $T_{dS} = H/(2\pi)$ via DCGT identification.
+
+The substrate-Unruh walkthrough is therefore a structural prerequisite for any future ED arc on cosmological horizons / de Sitter thermality. The substrate mechanism is established here once and reused there.
+
+### 9.3 Analog Unruh experiments
+
+Analog-gravity experiments using BEC accelerating mirrors, accelerated photon detectors, and similar systems have been designed to probe Unruh-like thermalisation in laboratory-accessible regimes. The framework predicts:
+
+- Analog systems with proper acceleration $a_{\mathrm{analog}}$ and substrate-cutoff scale $\tau_{V5}^{\mathrm{analog}}$ (set by the analog system's microscopic correlation time) exhibit thermal spectra at $T = a_{\mathrm{analog}}/(2\pi)$.
+- The high-frequency tail is cut off at $\omega \sim 1/\tau_{V5}^{\mathrm{analog}}$ via the V5-form modulation $1/(1+(\omega\tau_{V5})^2)$.
+- Cross-platform consistency: different analog systems should reproduce the same scaling structure with platform-specific cutoff scales.
+
+These predictions parallel the analog-Hawking predictions of the H-arc and provide a falsifiable structural test of the framework's substrate-cutoff mechanism.
+
+### 9.4 The cross-domain unification
+
+V5 finite-memory does the substrate work in three apparently different contexts: Maxwell viscoelastic memory in soft matter (DCGT consequence), Hawking spectrum cutoff at black-hole horizons, and now Unruh radiation at accelerated-observer Rindler-like horizons. One substrate primitive, three physical phenomena. The cross-domain unification noted in the H-arc synthesis extends to include the substrate-Unruh effect as a fourth application.
+
+---
+
+## 10. What's Forced, What's Inherited, What's Open
+
+It is worth being precise about what the framework's substrate-Unruh content delivers and what remains.
+
+### 10.1 What's forced
+
+The substrate-level Unruh temperature $T = a/(2\pi)$ at leading order is FORCED via the substrate-Unruh argument plus DCGT identification. The argument runs through:
+- Rindler-like substrate frame for accelerated observers (FORCED by substrate-level reading of acceleration plus T18 V1 forward-cone).
+- Imaginary-time periodicity at $\beta= 2\pi/a$ (FORCED by substrate-vacuum self-consistency at the Rindler-like horizon, parallel to no-conical-singularity argument).
+- KMS-condition equivalent (FORCED mathematical identity).
+- DCGT identification of substrate-level proper acceleration with standard proper acceleration (FORCED at leading order via DCGT).
+
+The first-subleading-order corrections from V5 cutoff are FORM-FORCED via V5 finite-memory structure. The cutoff scale $\tau_{V5} = \ell_P/c$ at the gravitational scale is FORCED via T19 + dimensional analysis.
+
+The structural identification of the Hawking and de Sitter cases as instances of the same substrate-Unruh argument is FORCED — the three derivations share the same V5 substrate vacuum, the same imaginary-time periodicity argument, and the same KMS-condition equivalent. They differ only in which substrate horizon the argument applies to.
+
+### 10.2 What's inherited
+
+The numerical value of $\hbar$ in the explicit-units Unruh temperature ($T_U = \hbar a/(2\pi c k_B)$) is INHERITED from the dimensional atlas / Madelung anchoring.
+
+The numerical value of $c$ is INHERITED from substrate constants.
+
+The proper acceleration $a$ in any specific physical setup is INHERITED from the experimental context.
+
+The cutoff scale $\tau_{V5}$ in non-gravitational contexts (analog systems) is INHERITED from the analog system's microscopic correlation time.
+
+### 10.3 What's open
+
+The closed-form derivation of $\tau_{V5}$ at the gravitational scale from substrate-microscopic V1 + V5 details is open. The framework identifies $\tau_{V5} = \ell_P/c$ via dimensional analysis on substrate primitives, but a closed-form derivation from more fundamental substrate timescales would tighten the cutoff identification.
+
+The substrate-Unruh argument's extension to non-stationary accelerated frames (where the proper acceleration changes with proper time) is not yet developed in the framework. This is a downstream extension if needed for specific applications.
+
+The empirical falsification of substrate-Unruh predictions awaits direct or analog Unruh detection. Current analog experiments are at the level of confirming the spectral form; precision tests of the substrate-cutoff modification require improved sensitivity.
+
+The relationship between the substrate-Unruh argument and other thermalisation phenomena in the framework (entanglement entropy in Arc E, Hawking spectrum in Arc Hawking) is structurally clean but the detailed cross-arc unification has not been articulated as a publication-grade result yet.
+
+---
+
+## 11. What This Argument Establishes
+
+The chain runs:
+
+Substrate primitives (micro-events, chains, bandwidth, polarity, continuous time, locality) → V5 finite-memory kernel + V1 forward-cone-only (T18) supply substrate-level vacuum and causal structure → substrate-level reading of acceleration produces Rindler-like substrate frame for accelerated observer → analytic continuation $t \to -i\tau$ produces Euclidean substrate geometry with conical-point at Rindler-like horizon → no-substrate-conical-singularity argument forces $\beta= 2\pi/a$ → KMS condition gives V5 correlations thermal at $T = a/(2\pi)$ → DCGT identification recovers standard Unruh temperature $T_U = a/(2\pi)$ → first-subleading V5 cutoff at $\tau_{V5} = \ell_P/c$ regulates trans-Unruh problem.
+
+The Unruh effect is now a derived consequence of substrate ontology rather than a postulate-level statement about quantum-field-theoretic Bogoliubov mixing. The mathematical content of the standard Unruh derivation — the Rindler-frame analysis, the analytic continuation, the KMS condition, the thermal spectrum — is unchanged. What changes is the foundational status: the Unruh temperature emerges from substrate-vacuum self-consistency at the Rindler-like horizon, not from a vacuum-state convention.
+
+The framework reproduces standard Unruh exactly at observable scales. Laboratory acceleration regimes ($a \ll c^2/\ell_P$) match the standard Unruh prediction with V5 cutoff corrections invisible. Analog Unruh experiments confirm the spectral form. The substrate-cutoff resolution of the trans-Unruh problem is structurally analogous to the trans-Planckian resolution of standard Hawking: both are regulated naturally by V5's finite-memory substrate structure.
+
+What's new is the substrate-level account of *why* the Unruh thermalisation has the form it has. In standard physics, this is a Bogoliubov-transformation calculation with no underlying ontological account of why the Minkowski vacuum looks thermal to accelerated observers. In ED, it is the substrate-level statement that V5 cross-chain correlations near a Rindler-like horizon must be self-consistent under analytic continuation, and self-consistency forces imaginary-time periodicity at the inverse Unruh temperature.
+
+The walkthrough is structurally identical to the H-1 piece of the Hawking arc. They are the same argument applied to different substrate horizons:
+- H-1 applies the substrate-Unruh argument at the saturated decoupling surface (BH horizon).
+- This walkthrough applies it at the accelerated-observer Rindler-like horizon (Unruh).
+
+The substrate-Unruh argument is therefore a *separable substrate-level result* that can be applied to any context with a participation-bandwidth boundary. Future arcs on cosmological horizons (de Sitter thermality), mesoscopic accelerated systems, or other accelerated-frame contexts inherit this walkthrough's substrate-Unruh content directly.
+
+The factor that's worth emphasising: this walkthrough introduces no new substrate primitive. Every primitive used — micro-events, chains, bandwidth, polarity, continuous time, locality, V1 forward-cone, V5 finite-memory — was already in the framework's inventory from the QM-emergence and BH walkthroughs. The substrate-Unruh effect is what falls out when these primitives are applied to an accelerated frame. The substrate inventory is unchanged; the structural-foundations theorem inventory does not grow — the Unruh effect is a downstream consequence of T18 + V5 + DCGT applied to the Rindler-like substrate frame, rather than a new theorem at the same structural level.
+
+Whether the substrate primitives themselves are right is the load-bearing empirical question, as in every walkthrough. The framework stands or falls on whether participation, bandwidth, channels, polarity, locality, V1, V5, and the substrate-level structural commitments are the correct foundational concepts. The empirical exposure of the framework lives across closed sectors — soft-matter mobility, substrate-derived gravity transitions, quantum-computational ceilings, Hawking radiation predictions — not exclusively in the Unruh effect, where the framework reproduces standard QFT-in-flat-spacetime predictions plus FORM-FORCED first-subleading-order content.
+
+For the Unruh effect specifically, the substrate-level case is closed at leading + first-subleading order. The framework reproduces standard Unruh at leading order via DCGT identification, supplies substrate-level UV regulation that resolves the trans-Unruh problem via V5 finite-memory, and produces FORM-FORCED first-subleading-order corrections distinguishing ED from strict semiclassical Unruh at extreme acceleration scales. Standard Unruh has been correct since 1976; ED supplies the substrate-level account of why.
+
+---
+
+## 12. References
+
+- Unruh, W. G. "Notes on Black-Hole Evaporation." *Physical Review D* **14**, 870–892 (1976).
+- Davies, P. C. W. "Scalar Production in Schwarzschild and Rindler Metrics." *Journal of Physics A* **8**, 609–616 (1975).
+- Fulling, S. A. "Nonuniqueness of Canonical Field Quantization in Riemannian Space-Time." *Physical Review D* **7**, 2850–2862 (1973).
+- Bisognano, J. J., Wichmann, E. H. "On the Duality Condition for a Hermitian Scalar Field." *Journal of Mathematical Physics* **16**, 985–1007 (1975).
+- Gibbons, G. W., Hawking, S. W. "Cosmological Event Horizons, Thermodynamics, and Particle Creation." *Physical Review D* **15**, 2738–2751 (1977).
+- Crispino, L. C. B., Higuchi, A., Matsas, G. E. A. "The Unruh Effect and Its Applications." *Reviews of Modern Physics* **80**, 787–838 (2008).
+- Kubo, R. "Statistical-Mechanical Theory of Irreversible Processes I." *Journal of the Physical Society of Japan* **12**, 570–586 (1957).
+- Martin, P. C., Schwinger, J. "Theory of Many-Particle Systems I." *Physical Review* **115**, 1342–1373 (1959).
+- Steinhauer, J. "Observation of Quantum Hawking Radiation and Its Entanglement in an Analogue Black Hole." *Nature Physics* **12**, 959–965 (2016). [Analog system relevant to both Hawking and Unruh signatures.]
+- Proxmire, A. *Theorem 18: V1 Kernel Retardation and the Kernel-Level Arrow of Time.* April 2026.
+- Proxmire, A. *Theorem 19: Newton's Law from Substrate Holographic Counting and the Identification of $\ell_P$.* April 2026.
+- Proxmire, A. *The Diffusion Coarse-Graining Theorem: Substrate-to-Continuum Bridge for Canonical-ED Dynamical Content.* April 2026.
+- Proxmire, A. *Arc Hawking H-1: Spectral Form and Temperature from V5 Cross-Chain Correlations.* May 2026.
+- Proxmire, A. *Arc Hawking H-7: Synthesis and Cross-Domain Unification.* May 2026.
+- Proxmire, A. *Walkthrough: From Primitives to Hawking Radiation.* May 2026.
+- Proxmire, A. *Event Density: One Substrate, Three Domains.* April 2026.
+- The full Event Density corpus, including all forced theorems and supporting memos, is available at https://github.com/allen-proxmire/event-density.

@@ -1,0 +1,334 @@
+# From Nothing to the Event Density Primitives
+
+## A Walkthrough of the Substrate Ontology
+
+**Allen Proxmire** · May 2026
+
+---
+
+## 1. The Question
+
+Most physical theories begin in medias res. Quantum mechanics begins with a Hilbert space and a Hamiltonian. General relativity begins with a smooth manifold and a metric. Quantum field theory begins with field operators on a Minkowski background. Each of these starting points is a *postulate set* — a list of mathematical structures asserted at the outset and validated downstream by their empirical reach.
+
+The starting points work. They also leave a structural residue. *Why* this Hilbert space? *Why* this manifold? *Why* the Born rule, the kinetic-plus-potential form of the Hamiltonian, the integer-or-half-integer spin ladder, the factor of $1/(2m)$, the $g = 2$ Dirac gyromagnetic ratio, the area law for black-hole entropy, the slope-4 baryonic Tully-Fisher relation? Each of these features can be calculated from the standard postulates, but the postulates themselves are not derived from anything more basic.
+
+Event Density (ED) takes a different approach. It asks: what is the smallest set of ontological commitments — pre-mathematical, pre-physical, pre-empirical — sufficient to underwrite, as forced theorems, the structural content of modern physics?
+
+The framework's answer is **13 primitives**. They are not equations. They do not refer to spacetime, fields, particles, observers, or measurements. They are choices about what kinds of things exist at the substrate level. From those 13 choices, every closed walkthrough in the program — Born rule, Schrödinger equation, Heisenberg uncertainty, Bell-Tsirelson bound, Klein-Gordon equation, Dirac equation with $g = 2$, spin-statistics theorem, Lindblad master equation, entanglement structure, kernel-level arrow of time, Newtonian gravity with $G = c^3 \ell_P^2 / \hbar$, MOND transition acceleration $a_0 = c H_0 / (2\pi)$, slope-4 baryonic Tully-Fisher, black-hole architecture and area law, Hawking radiation with substrate-cutoff resolution of the trans-Planckian problem, Navier-Stokes Intermediate Path C, Yang-Mills mass-gap mechanism, gauge-fields-as-rule-type, photonic Chern channels, Berry and Bloch theorems, Aharonov-Bohm phase, the rate of becoming — emerges as a downstream consequence.
+
+This walkthrough is the constitution of the program. It states the 13 primitives, explains what work each one does, names what they jointly forbid, and identifies the downstream theorems each one enables.
+
+The question this document addresses is: what does the substrate of the Event Density framework actually consist of?
+
+The answer has three structural moves:
+
+1. The framework's substrate is a participation graph: discrete acts of becoming (micro-events), bound into rule-governed sequences (chains), connected by a relational fabric (participation), endowed with a graded measure (bandwidth), a count-measure (event density), a directional structure (gradient), and a channel infrastructure (channels) that supports rule-instantiation.
+
+2. The substrate's dynamics are governed by discrete selection events (commitment) operating on the channel multiplicity available to a chain (multiplicity), under a rule-vs-flow phase relation (tension polarity), with a threshold condition for distinct-identity emergence (individuation), an accumulation rule that produces classicality (thickening), and a phase-coupling structure that produces what classical physics calls time (relational timing).
+
+3. The 13 primitives are jointly necessary and sufficient for the downstream theorem program. No primitive can be derived from others; no other primitive needs to be added to close the structural results that the program has reached. Removing any one collapses an identifiable downstream sector.
+
+The structural payoff: the substrate ontology is small, structural, and stable. The Event Density framework is built on these 13 choices, and on no others.
+
+This walkthrough is the natural entry point to the program. Every other walkthrough cites a working subset of these primitives in its opening section; the present document supplies the full inventory, in order, with the role and structural implications of each one made explicit.
+
+---
+
+## 2. What Counts as a Primitive
+
+Before stating the primitives, it is worth being precise about what a primitive in ED is and is not.
+
+A primitive in ED is:
+
+- **Irreducible.** A primitive cannot be defined in terms of other ED concepts. If concept $X$ can be defined using primitives $P_1, P_2, \ldots$, then $X$ is a derived structure, not a primitive.
+
+- **Structural, not behavioral.** Primitives define what exists, not how it behaves. Behavioral content (dynamics, equations of motion, conservation laws) belongs to the theorem program built atop the primitives.
+
+- **Non-numerical.** Primitives carry no equations and no parameters. Numerical content (specific masses, coupling constants, kernel widths) is INHERITED at value layer; the structural form is FORCED by the primitives plus the theorems built atop them.
+
+- **Non-physical at definition.** Primitives do not refer to experiments, platforms, particles, fields, or observers. Physical content emerges from primitives plus the substrate-to-continuum bridge (the Diffusion Coarse-Graining Theorem).
+
+- **Compositional.** Primitives participate in building higher-level structures. A primitive that did no compositional work would be dead weight.
+
+- **Stable.** Primitives change only after a deliberate tightening pass. The 13 primitives below are first-pass canonical drafts (2026-04-24) that have survived every closed arc of the program to date.
+
+The framework's discipline at the primitives layer mirrors its discipline elsewhere: FORM-FORCED at the definition level, VALUE-INHERITED at any numerical specification, OPEN where the structural content has not yet been articulated to closure.
+
+The 13 primitives are numbered 01–13. The numbering is stable, non-hierarchical, and organizational — lower numbers are not "more fundamental" in any ontological sense. The recommended reading order is sequential: P01 establishes the atoms; P02–P03 establish how atoms relate; P04–P09 enrich the relational structure with measure, direction, infrastructure, polarity; P10–P12 introduce the dynamical primitives (individuation, commitment, thickening); P13 supplies the rhythm.
+
+---
+
+## 3. P01 — Micro-event
+
+**Definition.** A micro-event is a discrete act of becoming. It is the smallest possible event — the atomic unit from which all structure in ED is composed.
+
+A micro-event is defined entirely by (i) its participation relations with other micro-events, (ii) its position in the irreversible commitment ordering, and (iii) its integration into composite structures.
+
+**What a micro-event is not.** A micro-event has no position, no extension, no duration, no trajectory, no persistent identity. It is not a point-particle, not a field excitation, not a spacetime event in the GR sense, not a collapse event in the QM sense. It is prior to all of those.
+
+**Role.** P01 is the seed of the ontology. Everything in ED is either a micro-event or a relation among micro-events. The participation graph (the framework's foundational mathematical object) is the directed graph whose vertices are micro-events and whose edges are participation relations.
+
+**Structural implications.** Space, time, particles, and fields are not part of the substrate. Each emerges as a coarse-grained, thick-regime summary of structure built from micro-events. The substrate is pre-spatial, pre-temporal, and pre-material.
+
+**Downstream reach.** Every walkthrough begins here. Born and Schrödinger build on micro-events plus chains plus bandwidth. Klein-Gordon and Dirac extend to the relativistic regime by adding Lorentz-covariant participation structure. Hawking radiation runs through V5 cross-chain correlations among micro-events at a saturated decoupling surface.
+
+---
+
+## 4. P02 — Chain
+
+**Definition.** A chain is a sequence of micro-events bound together by a consistent update rule. The chain is the pair: the ordered sequence of micro-events plus the rule that generates the next member given the previous. The identity of a chain is its update rule.
+
+**What a chain is not.** A chain is not a world-line (world-lines presuppose a background manifold; chains are prior to manifolds). A chain is not a sequence of particles (particles are what stable chains look like when coarse-grained). A chain is not a continuous trajectory through space (space emerges from participation adjacency; the chain's propagation is the sequential commitment of new micro-events along participation pathways).
+
+**Role.** P02 is the first composite structure built from micro-events. Persistence enters the framework at the chain level: an electron does not persist because its "electron-particle" persists, it persists because its update rule keeps producing new micro-events in the same relational pattern.
+
+**Structural implications.** Everything that persists, propagates, or maintains identity in ED — particles, photons, atoms, Cooper pairs, neutrinos, macroscopic bodies — is a chain or a system of chains. The framework's account of identity is rule-identity, not constituent-identity.
+
+**Downstream reach.** The mass walkthrough identifies mass with chain stable-core density. The spin-statistics walkthrough identifies the exchange phase with the structural type of the chain's update rule (Case P bosonic / Case R fermionic). The Dirac walkthrough identifies spinor structure with rule-type internal indices.
+
+---
+
+## 5. P03 — Participation
+
+**Definition.** Participation is the relation that holds between micro-events when they integrate one another's becoming. It is not a force, not a field, not an information exchange — it is the relational structure itself, the fact that becoming can be *shared*.
+
+**What participation is not.** Not a force (forces push or pull; participation holds). Not a field (fields presuppose a manifold; participation is prior). Not information transfer (information presupposes stable committed states). Not bandwidth (bandwidth is the measure of participation; participation is the relation itself).
+
+**Role.** Where P01 establishes the atoms and P02 establishes the first composite, P03 establishes the fabric between them. Participation is what makes chains possible (no rule can be instantiated without participation), what space and time emerge from (the thick-regime shadow of participation adjacency), and what entanglement, interference, and measurement are all consequences of.
+
+**Structural implications.** Standard physics talks about particles "interacting." ED replaces "interaction" with "participation." There are no pre-existing particles to interact, no pre-existing space across which interaction propagates. There is participation, and everything else (particles, space, interactions) is a coarse-grained summary of what participation is doing.
+
+**Downstream reach.** The entanglement walkthrough builds on P03 plus P10 (individuation): bipartite entanglement is pre-individuated participation shared across endpoints. The substrate-gravity walkthroughs identify gravity as a bias on participation flow sourced by stable participation structures.
+
+---
+
+## 6. P04 — Participation Bandwidth
+
+**Definition.** Participation bandwidth is the graded scalar measure of how richly micro-events, chains, or regions integrate one another's becoming. P03 establishes *that* micro-events participate; P04 establishes *how much*.
+
+**What bandwidth is not.** Not energy (energy is a thick-regime accounting quantity that emerges from bandwidth gradients). Not information (information presupposes committed states; bandwidth exists before commitment). Not probability (Born-rule probabilities are channel-specific participation weights at commitment; bandwidth is the pre-commitment distribution).
+
+**Role.** Bandwidth is the substance of coherence (maintained internally without bleed into environment), the substance of entanglement strength (the bandwidth of shared participation), and the substance of decoherence (transfer of bandwidth from system-internal to environmental channels).
+
+**Structural implications.** Quantum behavior exhibits a four-band bandwidth structure (internal rule-bandwidth, adjacency bandwidth, environmental bandwidth, commitment-reserve bandwidth) that sets the scale of the uncertainty relations. Heisenberg's $\Delta x \cdot \Delta p \geq \hbar/2$ is a lower bound on the product of two bandwidth allocations against a finite adjacency budget.
+
+**Downstream reach.** The Heisenberg uncertainty walkthrough derives the inequality from bandwidth-budget structure plus Fourier-conjugate adjacency-band partition. The Born rule walkthrough uses bandwidth as the substance of the participation measure $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$. Arc E's monogamy result uses bandwidth-budget min-bound across the bipartite system.
+
+---
+
+## 7. P05 — Event Density
+
+**Definition.** Event density (ED, the namesake of the framework) is the local scalar count-measure of accumulated micro-events per region. Discrete: $\mathrm{ED}(R) = |V \cap R|$. Continuum: $\rho(x) = d\mathrm{ED}/dV$.
+
+**What ED is not.** Not energy density (energy is thick-regime accounting; $\rho \neq T_{00}$). Not probability density (probability is pre-commitment; ED counts already-committed events). Not mass density (mass is a specific derived quantity tied to stable-core density of chains with particle-like rules; $\rho$ counts all events).
+
+**Role.** P05 is the vertex measure of the participation graph; P04 is the edge weight. Together $(\rho, b)$ is the full graph state. ED is the substrate for gradient dynamics — without $\rho$ there is nothing for $\nabla\rho$ to be the gradient of.
+
+**Structural implications.** All other scalars in ED (energy, mass, charge, temperature) are derived combinations of $\rho$, $b$, and their gradients. ED does not postulate these scalars; it predicts them as coarse-grainings.
+
+**Downstream reach.** The canonical ED PDE that underwrites Born/Schrödinger/Klein-Gordon/Dirac/NS/YM operates on $\rho$ and $b$ fields at continuum scale. The substrate-gravity walkthroughs identify the metric scalar $\sigma$ (acoustic-metric class) with $\log \rho$ at leading order.
+
+---
+
+## 8. P06 — ED Gradient
+
+**Definition.** The ED gradient is the local vector field describing the direction and magnitude of event-density variation across participation adjacency: $\nabla\rho(x)$.
+
+**What $\nabla\rho$ is not.** Not a force (forces don't exist at the ED base; $\nabla\rho$ is structural). Not a QFT field (QFT fields are operator-valued distributions on a pre-existing manifold). Not a gauge potential ($\nabla\rho$ is the raw gradient of a scalar; gauge-like bookkeeping enters separately via P09 plus T17).
+
+**Role.** P06 is the first geometric ED object — P01 through P05 are count-like or edge-like. $\nabla\rho$ introduces direction. Everything in ED that *moves*, *flows*, *bends*, or *curves* in the thick-regime descriptions does so because $\nabla\rho$ is non-zero.
+
+**Structural implications.** Chains propagate through participation structure by following gradient-directed bandwidth-preferential paths. The apparent "force" of gravity on a chain is the thick-regime accounting of why bandwidth-preference along $\nabla\rho$ makes the chain's trajectory curve.
+
+**Downstream reach.** The galactic-dynamics walkthrough derives Newton's law $G = c^3 \ell_P^2 / \hbar$ from substrate-level $\nabla\rho$ counting at a holographic boundary. The MOND transition acceleration $a_0 = c H_0 / (2\pi)$ emerges from substrate-level $\nabla\rho$ saturation. The ED Combination Rule $a = \sqrt{a_N \cdot a_0}$ closes the gravity-line arc.
+
+---
+
+## 9. P07 — Channel
+
+**Definition.** A channel is a stable, bandwidth-preserving sub-structure of the participation graph along which a chain's update rule can be instantiated repeatedly. Channels are the *tracks* that chains ride on.
+
+**What a channel is not.** Not a chain (chains use channels; channels are pre-existing infrastructure). Not a field mode (modes presuppose a manifold; channels are structural features of the participation graph itself). Not a wavefunction (a wavefunction distributes participation weight across channels). Not a world-line (a world-line is the trajectory a chain *did* take; a channel is a trajectory a chain *could* take).
+
+**Role.** Channels are the operational object connecting the ontological primitives (P01–P06) to the phenomenological apparatus of quantum mechanics — amplitudes, branches, modes, transitions. Every superposition is a chain distributing bandwidth across multiple channels; every emission-absorption process is a chain transitioning between channels.
+
+**Structural implications.** The chain / channel / commitment triangle: P02 chain (the rule), P07 channel (the infrastructure), P11 commitment (the selection). All three are needed to recover QM phenomenology.
+
+**Downstream reach.** The photonic Chern channels walkthrough identifies topologically protected one-way edge channels with substrate-level channel structure under T17 gauge content. The Berry-phase walkthrough identifies the geometric phase with adiabatic transport along a closed channel loop in parameter space.
+
+---
+
+## 10. P08 — Multiplicity
+
+**Definition.** Multiplicity $M(R, \tau)$ is the integer count of distinct channels of rule-type $\tau$ available to a chain in region $R$.
+
+**What multiplicity is not.** Not Hilbert-space dimension (related but not identical). Not degeneracy (degeneracy is channels of equal weight; multiplicity is the raw count). Not probability (Born weights are bandwidth distributions; multiplicity is the count over which weights are distributed).
+
+**Role.** Multiplicity is the regime-identifier variable. $M = 1$: committed, classical, single-track. $M$ small (2–a few): interference regime (double-slit, Mach-Zehnder, neutrino-oscillation). $M$ large: thin/ensemble regime (thermal, diffusive, path-integral-like).
+
+**Structural implications.** Wavefunction "collapse" in standard QM is the structural event of multiplicity reducing from $M > 1$ to $M = 1$ at a commitment event. The quantum-classical transition is multiplicity contracting from many to one. The Q-COMPUTE walkthrough identifies the multiplicity-cap function as the load-bearing object across all three quantum-computing-platform architectural classes.
+
+**Downstream reach.** The Q-COMPUTE walkthrough's three architectural classes (engineered-low-multiplicity, global-geometric-rigidity, high-multiplicity-redundancy) are three substrate strategies for managing $M$. The matter-wave Q-C boundary at 140–250 kDa is where $M$ contracts across the threshold for chain individuation.
+
+---
+
+## 11. P09 — Tension Polarity
+
+**Definition.** Tension polarity is the phase relation between a chain's update rule and the local ED-flow direction. Two limiting cases: aligned-tension chains (matter) advance in phase-compatibility with local $\nabla\rho$; anti-aligned-tension chains (antimatter) advance in phase-opposition.
+
+**What polarity is not.** Not charge (charge is a separate rule-type attribute; polarity is rule-vs-flow alignment). Not handedness or helicity (those are spatial-orientation attributes of internal structure). Not CP violation (CP violation is a higher-order effect on how polarity-dependent rules compose).
+
+**Role.** P09 supplies the matter / antimatter structural distinction at the rule level — present in rule structure, relative to ambient flow, selectable under saturation dynamics. Under saturated ED, only aligned-tension rules can instantiate without violating saturation constraints; anti-aligned rules decohere. This is the ED account of why the universe is matter-dominated.
+
+**Structural implications.** Polarity also supplies the $U(1)$-valued phase content $e^{i\pi_K}$ in the participation measure $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$. The $U(1)$ structure of QM phases traces to substrate-level polarity.
+
+**Downstream reach.** The Born rule walkthrough uses polarity-supplied phase for the $e^{i\pi_K}$ component. The gauge-fields walkthrough (T17) generalizes polarity's $U(1)$ structure to non-Abelian rule-type bracket structure for compact simple gauge groups.
+
+---
+
+## 12. P10 — Individuation
+
+**Definition.** Individuation is the threshold condition under which a sub-structure of the participation graph constitutes a *distinct* identity — a bounded, internally-coherent, externally-distinguishable chain-complex. Operationally: $b_{\mathrm{int}}/b_{\mathrm{bdry}} > \theta_{\mathrm{ind}}$ for some structural threshold.
+
+**What individuation is not.** Not locality (locality is a thick-regime regularity; two spatially-distant systems can be non-individuated, e.g., entangled). Not discreteness. Not spatial boundary (a spatial boundary is the thick-regime shadow of an individuation surface). Not definite (individuation can be partial, regime-dependent, or failing — decoherence is ongoing individuation).
+
+**Role.** P10 is the ED account of where one thing ends and another begins. It defines system/environment cuts in decoherence analyses, supplies the bilinear-pairing structure that closes spin-statistics, and resolves entanglement as pre-individuated participation shared across endpoints.
+
+**Structural implications.** Entanglement = pre-individuated participation shared across endpoints that would otherwise be individuated. Measurement forces individuation onto the shared structure; Bell correlations are the signature of the pre-individuated state.
+
+**Downstream reach.** The spin-statistics walkthrough uses P10 individuation to construct the minimal bilinear pairing $B = \bar P^A \Gamma P^B$ that closes $\eta = (-1)^{2s}$. The entanglement walkthrough uses P10 to characterize the pre-individuated state and the bandwidth-budget min-bound.
+
+---
+
+## 13. P11 — Commitment
+
+**Definition.** A commitment event is the discrete selection of a single channel from those available to a chain, together with the addition of a new micro-event at the selected channel's next-vertex position. Before: $M > 1$ with bandwidth distributed across channels. After: $M = 1$ locally with bandwidth concentrated in the selected channel.
+
+**What commitment is not.** Not measurement specifically (every chain step is a commitment; measurement is a special case where environmental bandwidth forces immediate commitment). Not wavefunction collapse in the von Neumann sense (collapse is the thick-regime shadow of commitment). Not unique to conscious observation (no observer required; commitment is triggered by bandwidth conditions).
+
+**Role.** Commitment is how *anything new* happens in ED. It is the atomic step of dynamics. Chain propagation is a sequence of commitment events. Measurement outcome is a single forced commitment. Decoherence is a rapid sequence of environmental-forced commitments.
+
+**Structural implications.** Commitment is irreversible at the event scale. Once committed, the pre-commitment multiplicity is gone for that chain at that vertex. Reversibility re-appears only at ensemble / statistical scales. The polarity-asymmetric forward-only commitment update is the structural origin of the substrate-level arrow of time.
+
+**Downstream reach.** The Born rule walkthrough identifies commitment-event selection probabilities with Born weights $P(K^*) = b_{K^*}/\sum b_K$ (with the squared-amplitude form FORCED through the Cauchy step in T14). The Lindblad walkthrough builds master-equation jump operators from commitment-event statistics. The arrow-of-time walkthrough (T18) identifies V1 kernel forward-cone support with commitment irreversibility at substrate level.
+
+---
+
+## 14. P12 — Thickening
+
+**Definition.** Thickening is the accumulation of committed micro-events and their associated structure (channels, chains, individuation surfaces) into a stable, persistent, locally classical regime.
+
+**What thickening is not.** Not energy. Not entropy (entropy is a specific multiplicity-based quantity; thickening is accumulation). Not matter density ($\rho$ counts all events; thickening is about stabilized persistent structure). Not strictly irreversible (at cosmological scale thickening is effectively monotone; locally, partial un-thickening via evaporation or decoherence is possible).
+
+**Role.** Thickening is what turns discrete commitment events into the thick-regime continuum where space, time, matter, and gravity behave classically. A thickened region supports a smooth emergent manifold, classical field descriptions, persistent individuated objects, and thermodynamic regularity.
+
+**Structural implications.** The universe at large is thick today; at very early times it was thin; deep-vacuum regions remain thin. The DCGT (Diffusion Coarse-Graining Theorem) bridge from substrate to continuum operates within the thick regime.
+
+**Downstream reach.** The DCGT walkthrough is the substrate-to-continuum bridge that converts thick-regime accumulated structure into the canonical ED PDE. The black-hole architecture walkthrough identifies the saturated decoupling surface as the boundary where thickening saturates against substrate cutoff. The trans-Planckian resolution and V5 cross-domain unification both run through thickening + DCGT to produce continuum-level observables.
+
+---
+
+## 15. P13 — Relational Timing
+
+**Definition.** Relational timing is the phase-coupling structure between participation channels and chains — the rhythm at which commitments on one channel synchronize with or precess against commitments on another. There is no absolute clock; time in ED is always a relational quantity, a phase relationship between two or more participating channels.
+
+**What relational timing is not.** Not an absolute time coordinate (absolute time is a thick-regime statistical regularity). Not a clock rate (a clock is a specific structure that measures relational timing; the timing is what the clock measures). Not dynamical evolution (evolution is the sequence of commitments; timing is the phase structure on that sequence). Not bandwidth (bandwidth is richness; timing is phase).
+
+**Role.** P13 is what classical physics packages as phase, frequency, oscillation, coherence, and (in the thick-regime coarse-graining) time itself. Primitives 01–12 supply the substance and structure of ED; P13 supplies the rhythm.
+
+**Structural implications.** Time as a coordinate emerges from relational timing in the thick regime. Before thick-regime coarse-graining, there is no absolute $t$; there are only phase relationships between participating channels.
+
+**Downstream reach.** The Schrödinger walkthrough uses P13 as the relational time axis on which Stone's theorem produces the time-translation generator $\hat H$. The rate-of-becoming walkthrough (P-RB-1) identifies the local rate of becoming with the rate of phase accumulation in pre-individuation amplitudes, coarse-graining to $E/\hbar$ for atomic states and to substrate $c$ for free-photon propagation.
+
+---
+
+## 16. The Composition Map
+
+The 13 primitives compose into the framework's downstream theorems as follows. Each downstream walkthrough cites a working subset; the full composition map is:
+
+\begin{center}
+
+\textbf{Foundational triad:} P01 (micro-event), P02 (chain), P03 (participation) — every walkthrough cites these.
+
+\textbf{Substrate measure:} P04 (bandwidth), P05 (event density) — Born, Schrödinger, Heisenberg, Bell, all PDE-based walkthroughs.
+
+\textbf{Geometric structure:} P06 (gradient), P07 (channel), P08 (multiplicity) — gauge fields, Berry, Bloch, photonic Chern, gravitational dynamics, Q-COMPUTE.
+
+\textbf{Symmetry & dynamics:} P09 (polarity), P10 (individuation), P11 (commitment) — Born phase, spin-statistics, entanglement, Lindblad, arrow of time.
+
+\textbf{Continuum bridge:} P12 (thickening), P13 (relational timing) — DCGT, Schrödinger, Klein-Gordon, Dirac, all thick-regime continuum walkthroughs.
+
+\end{center}
+
+The framework's signature pattern is that downstream theorems compose multiple primitives. The Born rule is not P01 alone; it is P01 + P02 + P03 + P04 + P09 + P10 + P11 plus the Cauchy step in T14 plus the Gleason-Busch closure. The Schrödinger equation is the same set plus P13 plus Stone's theorem on time translation plus Galilean Lie algebra closure. Substrate gravity is P01 + P02 + P03 + P04 + P05 + P06 + P10 + P11 plus the substrate-holographic-counting argument that produces $G = c^3 \ell_P^2 / \hbar$.
+
+No downstream theorem uses fewer than seven primitives. The substrate is structurally interlocking: removing any one primitive collapses an identifiable sector.
+
+---
+
+## 17. What's Forced, What's Inherited, What's Open
+
+At the primitives layer itself, the framework's form-FORCED / value-INHERITED / OPEN discipline applies recursively.
+
+### 17.1 What's forced
+
+The 13 primitives are FORCED at the structural-definitional level in the following sense: each primitive's definition is the minimal structural commitment that does the work the downstream program requires. P01 (micro-event) is FORCED as the atomic unit because no smaller unit of becoming can support the participation-graph structure. P02 (chain) is FORCED because persistence in ED has no other locus — it is not the micro-event that persists (each commits and is done); it is the rule that persists. P03 (participation) is FORCED because chain rule-instantiation requires a relational substrate; without participation, no rule can be applied. Similar forcing arguments apply for each subsequent primitive: each is the minimal structural commitment that does work the previous primitives cannot do alone.
+
+The framework's primitive count being 13 is FORCED in the negative sense that removing any one collapses a downstream sector. It is not FORCED in the positive sense of a derivation from a smaller set — the 13 primitives are constitutional, not derived.
+
+### 17.2 What's inherited
+
+The numerical content of every theorem built atop the primitives is INHERITED. The framework's discipline is to FORCE the structural form and INHERIT the values. The specific mass of an electron, the value of the gauge coupling, the spatial dimension being 3+1, the specific compact gauge group of the Standard Model, the kernel widths of V1 and V5, the numerical value of $\hbar$ in physical units, the cosmological Hubble rate $H_0$ — all of these are INHERITED at value layer.
+
+The framework deliberately makes no claim to derive any of these from the primitives. It claims only that the structural forms within which these values live are FORCED by the primitives plus the downstream theorems.
+
+### 17.3 What's open
+
+Several questions at the primitives layer remain open.
+
+The 3+1D spatial commitment is not derived from the primitives. The framework's spatial dimension is a substrate-level commitment that enters the spin-statistics derivation (where $\pi_1(Q_2) = \mathbb{Z}_2$ requires 3+1D), the substrate-gravity derivation (where holographic counting on a 2D surface produces 3D gravity), and the canonical ED PDE structure. Whether the spatial dimension can be derived from a smaller set of primitive-level commitments is open.
+
+The closed-form derivation of substrate constants from primitives is open. T19 identifies $\ell_P$ as the substrate length scale via Newton-recovery, and $\tau_{V5} = \ell_P/c$ at the gravitational scale via dimensional analysis. But the deeper question — why these scales and not others — remains at the primitives' constitutional layer.
+
+The minimum primitive count is open. Whether 13 is the smallest sufficient primitive set, or whether some primitives could in principle be combined or refined, is a continuing question. The first-pass canonical draft (2026-04-24) has survived every closed arc; whether a tightening pass might reduce or refine the set is open.
+
+The relationship between the primitives and the broader category of substrate ontologies is open. The framework does not claim that ED's specific 13 primitives are the unique substrate that could support modern physics' structural content. Other substrate ontologies might in principle produce analogous results from different primitive sets. The framework's claim is more modest: ED's specific 13 primitives are sufficient for the downstream program reached so far.
+
+---
+
+## 18. What This Argument Establishes
+
+The chain runs:
+
+Question (what is the substrate of physics?) → choice of 13 primitives (P01 micro-event, P02 chain, P03 participation, P04 bandwidth, P05 event density, P06 gradient, P07 channel, P08 multiplicity, P09 polarity, P10 individuation, P11 commitment, P12 thickening, P13 relational timing) → forced theorems built atop primitives (T1–T21 plus ED Combination Rule plus DCGT plus the structural-foundations theorem inventory) → 30+ closed walkthroughs across QM emergence, relativistic QM, gauge fields, topological phenomena, statistical mechanics, fluid dynamics, gravity, black holes, Hawking radiation, Clay-problem-relevance work, quantum-computing-platform unification, AMO precision metrology.
+
+Each primitive has its load-bearing role articulated. Each is irreducible at the framework's structural-definitional level. Each enables identifiable downstream content. Removing any one collapses an identifiable downstream sector.
+
+The framework's claim at the primitives layer is structural and modest: this is the minimal substrate ontology sufficient for the downstream theorem program. It is not the unique substrate that could in principle support modern physics; it is the specific substrate Event Density has committed to and that the downstream program has validated through closure of ~30 walkthroughs to date.
+
+What's distinctive about the primitives layer methodologically is its discipline. Standard physics begins with a postulate set (Hilbert space, manifold, field operators) and treats the postulates as basic. ED begins with a substrate ontology (13 primitives) and treats the standard postulates as derived theorems. The methodological distinction is not which approach is "more correct" — both are coherent — but which approach makes the *structural content* of physics derivable from a smaller set of commitments.
+
+The framework's bet is that pushing the question one layer deeper, from postulates to primitives, makes the structural content of modern physics emerge with fewer independent choices and with more cross-domain reach. The closed walkthroughs are the evidence: each downstream theorem closes from a working subset of the 13 primitives plus the standard mathematical infrastructure (Stone's theorem, Cauchy functional equation, Lie algebra integration, Wilsonian RG, OS positivity). The substrate ontology is structurally rich enough to underwrite all of it without introducing new primitives at any walkthrough.
+
+For the primitives specifically, the structural case is closed at the constitutional level. Each primitive is named, defined, role-articulated, and embedded in the downstream composition map. The 13 primitives are stable across every closed arc to date. The framework's substrate ontology is on the table; whether it is the correct substrate ontology for physics is the load-bearing empirical question the program's downstream walkthroughs jointly address.
+
+Whether the substrate commitments are right is the load-bearing question, as in every walkthrough. The framework stands or falls on whether discreteness, finite participation bandwidth, irreversible commitment, finite-width substrate kernels, the rule-type taxonomy, and the rest of the primitive stack are the correct foundational concepts. The empirical exposure of the framework lives across all closed sectors — soft-matter mobility, substrate-gravity transitions, BTFR slope-4, quantum-computational ceilings, Hawking-radiation predictions, AMO precision-metrology routing through P-RB-1. Each closed walkthrough is an empirical exposure of the underlying primitives.
+
+For the primitives themselves, the structural case is constitutional. The 13 commitments are stated, role-articulated, and composed into the downstream theorem program. The framework's substrate ontology is what it is. Every other walkthrough in the series operates on this constitution.
+
+This walkthrough is the natural entry point. Every other walkthrough in the series begins with "The Primitives That Matter" and recapitulates a working subset of these 13. The present document supplies the full inventory in one place, in order, with the role and structural implications of each made explicit. It is the framework's constitution.
+
+---
+
+## 19. References
+
+- Proxmire, A. *Event Density Primitives Repository.* 13 primitives canonical drafts (2026-04-24), in `ED Primitives/primitives/`.
+- Proxmire, A. *Event Density: One Substrate, Three Domains.* April 2026.
+- Proxmire, A. *Event Density Foundations: A Unified Substrate Architecture for Quantum, Fluid, Gauge, and Gravitational Dynamics.* April 2026.
+- Proxmire, A. *The Diffusion Coarse-Graining Theorem: Substrate-to-Continuum Bridge for Canonical-ED Dynamical Content.* April 2026.
+- Proxmire, A. *Theorem 14: The Participation Measure Form.* April 2026.
+- Proxmire, A. *Theorem 17: Gauge Fields as Rule-Type Structure.* April 2026.
+- Proxmire, A. *Theorem 18: V1 Kernel Retardation and the Kernel-Level Arrow of Time.* April 2026.
+- Proxmire, A. *Theorem 19: Newton's Law from Substrate Holographic Counting.* April 2026.
+- Proxmire, A. *Walkthrough series (~30 walkthroughs covering QM emergence, relativistic QM, gauge fields, topological phenomena, statistical mechanics, fluid dynamics, gravity, black holes, Hawking radiation, Clay-problem-relevance work).* April–May 2026.
+- The full Event Density corpus, including all 13 primitives, all forced theorems, and supporting memos, is available at https://github.com/allen-proxmire/event-density.

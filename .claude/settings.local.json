@@ -35,7 +35,15 @@
       "Bash(where.exe gh *)",
       "Bash(git tag *)",
       "Read(//tmp/**)",
-      "Bash(pdflatex -interaction=nonstopmode ED_One_Substrate_Three_Domains.tex)"
+      "Bash(pdflatex -interaction=nonstopmode ED_One_Substrate_Three_Domains.tex)",
+      "Bash(pandoc \"C:\\\\Users\\\\allen\\\\GitHub\\\\event-density\\\\walkthroughs\\\\from_primitives_to_aharonov_bohm_phase.md\" -s -o \"from_primitives_to_aharonov_bohm_phase.tex\" --pdf-engine=xelatex -V geometry:margin=1in -V fontsize=11pt -V documentclass=article -V papersize=a4paper)",
+      "Bash(xelatex -interaction=nonstopmode \"from_primitives_to_aharonov_bohm_phase.tex\")",
+      "Bash(pandoc \"C:\\\\Users\\\\allen\\\\GitHub\\\\event-density\\\\walkthroughs\\\\from_primitives_to_arrow_of_time.md\" -s -o \"from_primitives_to_arrow_of_time.tex\" --pdf-engine=xelatex -V geometry:margin=1in -V fontsize=11pt -V documentclass=article -V papersize=a4paper)",
+      "Bash(xelatex -interaction=nonstopmode \"from_primitives_to_arrow_of_time.tex\")",
+      "Bash(cd \"C:\\\\Users\\\\allen\\\\GitHub\\\\event-density\\\\papers\\\\Walkthrough Papers\" && xelatex -interaction=nonstopmode \"from_primitives_to_arrow_of_time.tex\" 2>&1 | tail -5 && rm -f *.aux *.log *.out && ls from_primitives_to_arrow_of_time.*)",
+      "Bash(grep -c \"iint_{\\\\\\\\\\\\\\\\mathcal\" from_primitives_to_bloch_theorem.tex)",
+      "Bash(xelatex -interaction=nonstopmode \"from_primitives_to_bloch_theorem.tex\")",
+      "Bash(python fix_unicode_math.py from_primitives_to_bloch_theorem.tex)"
     ]
   }
 }

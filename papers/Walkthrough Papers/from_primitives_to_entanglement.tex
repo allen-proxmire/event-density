@@ -1,0 +1,486 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+  pdftitle={From Primitives to Bipartite Entanglement},
+  pdfauthor={Allen Proxmire}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\title{\vspace{-1cm}\Large\bfseries From Primitives to Bipartite Entanglement\\[6pt]
+\large\mdseries A Walkthrough of the Event Density Derivation}
+\author{Allen Proxmire}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section{The Question}
+
+In 1935, Einstein, Podolsky, and Rosen published the paper that introduced what would become quantum mechanics' most studied phenomenon. Two systems prepared together and then separated remain correlated --- perfectly correlated, in some cases --- across arbitrary distances. Measurement on one system fixes the outcome of measurement on the other instantaneously, regardless of the spatial separation. The correlations exceed anything classical physics permits, are tested today across hundreds of kilometers via satellite-mediated photon pairs, and form the resource that quantum cryptography, quantum teleportation, and quantum computation rely on.
+
+The standard quantum-mechanical account of entanglement is mathematically clean. Two systems with Hilbert spaces $\mathcal{H}_A$ and $\mathcal{H}_B$ are described jointly on the tensor product $\mathcal{H}_A \otimes \mathcal{H}_B$. States that cannot be written as $|\psi_A\rangle \otimes |\psi_B\rangle$ are entangled. Bell's theorem and Tsirelson's bound show that quantum entangled states violate the Clauser--Horne--Shimony--Holt inequality up to $2\sqrt{2}$. The Schmidt decomposition writes any pure bipartite state as $\sum_i \sqrt{\lambda_i}\, |i\rangle_A \otimes |i\rangle_B$ with biorthogonal bases. Monogamy, codified by Coffman--Kundu--Wootters, says no single subsystem can be simultaneously maximally entangled with two others. No-signaling says the marginal distribution on one side is independent of measurement-basis choices on the other. The von Neumann entanglement entropy $S(\rho_A) = -\mathrm{Tr}(\rho_A \log \rho_A)$ measures the strength of entanglement and ranges from zero on product states to $\log r$ on maximally-entangled rank-$r$ states.
+
+Each piece is a theorem of the postulated formalism. Each piece is also empirically tested to high precision, across many platforms and decades.
+
+The question this document addresses is: where does the structure come from, and why does it take exactly the form it does?
+
+In standard quantum mechanics, the answer is: the joint Hilbert space is postulated to be the tensor product, the inner product is postulated to be the bilinear extension, the Born rule is postulated, and the rest follows from these postulates plus standard linear algebra. The Schmidt decomposition is the singular-value decomposition of the coefficient matrix. Monogamy follows from concurrence properties on three-qubit states. No-signaling follows from the linearity of partial trace. Entropy follows from Shannon--Khinchin axioms applied to the Schmidt eigenvalues.
+
+But the postulates themselves are not derived. The tensor product is asserted as the joint-system rule. The Hilbert-space structure is asserted at the single-system level. The probability rule is asserted. Each subsequent theorem rests on these assertions; remove any of them and the chain breaks.
+
+The Event Density framework derives the structural commitments themselves. The single-endpoint Hilbert space comes from U2. The Born rule comes from T10 (Born-Gleason via Busch). The tensor-product composition is forced from substrate primitives once the bilocal-participation structure is articulated. The Schmidt decomposition follows from the spectral theorem on the substrate-derived inner product. Monogamy emerges as a substrate bandwidth-budget conservation law, not as a downstream theorem of concurrence properties. No-signaling is over-determined by three independent substrate locks. The entanglement-entropy form is uniquely picked by Shannon--Khinchin axioms each independently substrate-derived from named primitives.
+
+This walkthrough has more substrate content than the Bell--Tsirelson or Heisenberg walkthroughs did. Bell--Tsirelson and Heisenberg both ran on the standard mathematical-physics arguments once the framework supplied the Hilbert space and momentum operator; the framework's contribution there was upstream. The entanglement walkthrough is upstream for tensor-product composition (E-1), Schmidt decomposition (E-3), and the existence-and-density of entangled states (E-2). It is \emph{substantively new} for monogamy (E-4), no-signaling (E-5), and entanglement entropy (E-6) --- each of which receives a substrate-mechanism account that the standard QM derivation does not provide.
+
+The chain has six structural results, derived from the same substrate primitives:
+
+\begin{enumerate}[noitemsep]
+  \item \textbf{Tensor-product composition.} The joint participation measure of two endpoints sharing one rule is carried on $\mathcal{H}_A \otimes \mathcal{H}_B$ with the bilinearly-induced inner product. Form forced; no auxiliary assumption.
+  \item \textbf{Generic non-factorizability.} Entangled states are dense and full-measure in the joint state space. Product states are the measure-zero exception. The substrate predicts this at the ontological level; the mathematical density theorem is its formal statement.
+  \item \textbf{Schmidt decomposition.} Every pure bipartite state has a biorthogonal decomposition with non-negative coefficients summing to one. Form forced; coefficient values inherited from the specific state.
+  \item \textbf{Monogamy.} Each substrate endpoint has a finite local cross-chain bandwidth budget; full bipartite entanglement saturates that budget; no remaining capacity is available for additional entanglement with a third endpoint. The Coffman--Kundu--Wootters squared inequality is the substrate bandwidth-conservation law expressed in concurrence units.
+  \item \textbf{No-signaling.} Bob's marginal distribution is independent of Alice's measurement-basis choice. Three independent substrate locks each separately forbid signaling: the kernel-level forward-cone-only correlation structure (T18), commitment irreversibility (P11), and the no-fundamental-fields guardrail (ED-I-06).
+  \item \textbf{von Neumann entanglement entropy.} The form $S = -k \sum_i \lambda_i \log \lambda_i$ is uniquely picked by Shannon--Khinchin axioms each independently derived from named substrate primitives. The constant $k$ is inherited from unit conventions or substrate thermodynamic constants.
+\end{enumerate}
+
+The structural payoff: bipartite entanglement is what the substrate produces when two endpoints share one undeveloped participation rule. The continuum-Hilbert-space mathematical structure that physics calls ``entanglement'' is the formal articulation of that substrate object after coarse-graining. Tensor product, Schmidt structure, monogamy, no-signaling, and entropy form are six different projections of one substrate phenomenon.
+
+\section{The Primitives That Matter}
+
+The framework rests on substrate-level ontological commitments. The entanglement walkthrough uses the same working subset that Born, Schr\"odinger, Bell--Tsirelson, and Heisenberg used, plus a few additional commitments specific to the bipartite-entanglement program.
+
+\textbf{Micro-events.} Discrete acts of becoming, vertices in a graph spanning the event manifold. Each micro-event is the elementary unit of substrate participation.
+
+\textbf{Participation.} The relation connecting micro-events. Participation is homogeneous --- no vertex is privileged at the primitive level.
+
+\textbf{Channels.} Stable subgraphs along which a chain can repeatedly instantiate its update rule. Channels are primitive ontological objects. Two endpoints sharing one undeveloped rule means they share substrate channels rather than possessing distinct ones.
+
+\textbf{Bandwidth (P04).} The graded measure of participation, supplied as a non-negative real edge weight. Bandwidth has a four-band orthogonal decomposition. \textbf{Bandwidth is additive for independent contributions.} This additivity is load-bearing for the entanglement walkthrough: it is what makes the substrate's outgoing-bandwidth budget at any endpoint a finite sum of independent channel contributions.
+
+\textbf{Polarity / $U(1)$ phase (P09).} The $U(1)$-valued phase relation between a chain's update rule and the local ED-flow direction. Supplies the $e^{i\pi_K}$ phase in the participation measure. The $U(1)$ structure --- abelian, associative, commutative --- is what selects the standard tensor product over non-associative or twisted alternatives.
+
+\textbf{ED gradient.} The participation graph carries a continuous spatial axis with no preferred origin. Translations along this axis are well-defined.
+
+\textbf{Commitment irreversibility (P11).} Once a chain selects one channel from those available, the commitment is irreversible. This load-bears for both the no-signaling argument (Bob's already-committed substrate state cannot be retroactively rewritten by Alice's later choice) and the entanglement-entropy strong-additivity axiom (staged measurements decompose additively because each commitment is a definite substrate fact).
+
+\textbf{Continuous time (P13).} The substrate's temporal evolution is continuous, with well-defined translation generators. Load-bears for the standard QM postulate-emergence chain that supplies the U-arcs.
+
+\textbf{Forward-cone-only V1 kernel (T18).} The substrate's vacuum kernel that mediates cross-chain correlations is finite-width and forward-cone-only. Cross-chain correlations propagate causally; backward-cone influence is structurally forbidden. T18 is itself a forced theorem from the kernel-arrow arc and is taken as given here.
+
+\textbf{No fundamental fields (ED-I-06).} The substrate has no ontologically primary field. Field-like behavior emerges as participation-flow patterns; it is not foundational. This guardrail forbids field-sourced superselection rules and field-mediated non-local signaling channels.
+
+\textbf{Single undeveloped participation rule (ED-I-02).} A high-ED parent system that splits into low-ED fragments produces fragments that share one undeveloped rule rather than possessing two distinct rules. This is the substrate ontology of entanglement. The fragments are not coordinated across distance; they have not yet developed enough internal structure to behave independently.
+
+Three forced theorems carry over from prior walkthroughs and load-bear here:
+
+\textbf{T10 (Born rule).} Probability of measurement outcome equals $|\langle\phi|\psi\rangle|^2$. Forced by Gleason--Busch on the U2-derived Hilbert space.
+
+\textbf{T14 (Participation measure form).} $P_K = \sqrt{b_K} \cdot e^{i\pi_K}$ with the square root forced by Cauchy's functional equation on bandwidth additivity and the complex phase forced by Frobenius's theorem on real division algebras.
+
+\textbf{U2 (single-endpoint inner product).} The participation-measure space carries a sesquilinear inner product, forced by primitive-level aggregation arguments. Single-endpoint Hilbert spaces $\mathcal{H}_A$ and $\mathcal{H}_B$ exist as derived structures.
+
+Three additional substrate quantities --- multiplicity $\mathcal{M}$, unresolvedness $\mathcal{U}$, gradient sparsity $\sigma$ --- operate at the substrate level and are load-bearing for monogamy and entropy. They are introduced and used in \S5 and \S7.
+
+That's the structural setup. The entanglement argument runs on this.
+
+\section{Tensor-Product Composition: The Joint Hilbert Space}
+
+The first structural step is to derive the joint participation-measure space when two endpoints share one undeveloped rule.
+
+\subsection{Two configurations of two-endpoint substrate}
+
+Two endpoints $A$ and $B$ that have not yet been individuated may be in either of two configurations.
+
+\textbf{Independent-preparation (IP).} Each endpoint expresses its own developed participation rule, causally and structurally independent. Alice prepares $|\psi_A\rangle$ in spatial isolation from Bob, who prepares $|\psi_B\rangle$. The two endpoints have separate substrate histories. This is the substrate analogue of two independently-prepared systems.
+
+\textbf{Single-rule shared (SP).} Both endpoints express one undeveloped participation rule. The fragments inherit the rule structure of their parent and have not yet differentiated. This is the substrate analogue of an entangled state.
+
+(IP) and (SP) are both substrate-permitted; (SP) is what ED-I-02 emphasizes as the entanglement case. (IP) is the \emph{non-entangled} case and is the substrate-level definition of a product state.
+
+\subsection{The joint-participation map and bilinearity}
+
+Define the joint-participation map $f$ on (IP) configurations: $f$ sends an independently-prepared pair $(|\psi_A\rangle, |\psi_B\rangle)$ to its substrate joint representation $|\psi_A \otimes \psi_B\rangle$.
+
+\textbf{Question:} when Alice prepares $\alpha|\psi_1\rangle + \beta|\psi_2\rangle$ --- an admissible single-endpoint superposition by U2 --- and Bob holds $|\chi\rangle_B$, does $f$ respect Alice's superposition?
+
+That is, is $f(\alpha|\psi_1\rangle + \beta|\psi_2\rangle, |\chi\rangle_B) = \alpha f(|\psi_1\rangle, |\chi\rangle_B) + \beta f(|\psi_2\rangle, |\chi\rangle_B)$?
+
+This is the \emph{bilinearity} claim. It is what selects the tensor product over alternative joint constructions. The substrate-level argument has three steps.
+
+\textbf{Step 1 (P04).} Alice's preparation is a superposition of two substrate channels $|\psi_1\rangle$ and $|\psi_2\rangle$. By bandwidth additivity for independent contributions, the substrate participation contributions of the two channels add. In an (IP) configuration, Alice's channels are causally and structurally independent of Bob's, so Bob's preparation $|\chi\rangle_B$ couples \emph{separately} to each of Alice's channels. There is no substrate coupling between $|\psi_1\rangle$ and $|\psi_2\rangle$ that depends on Bob's preparation. The joint contribution decomposes channel-by-channel.
+
+\textbf{Step 2 (P09).} The complex weights $\alpha, \beta$ live in $U(1) \subset \mathbb{C}$ per the polarity primitive. They modulate Alice's channel amplitudes without affecting Bob's. (IP)'s causal-structural independence ensures Alice's substrate phase structure propagates through to the joint amplitude unchanged.
+
+\textbf{Step 3 (U2).} Single-endpoint inner-product structure says that the formal $\mathbb{C}$-linear combination on Alice's side is the same substrate object whether Alice is considered in isolation or as one half of a joint preparation. There is no structural distinction between ``Alice's superposition alone'' and ``Alice's contribution to a joint preparation.''
+
+Combining the three steps gives bilinearity in Alice's argument. By substrate symmetry in endpoint labels, bilinearity in Bob's argument follows.
+
+The joint-participation map $f$ is bilinear, forced by P04 + P09 + U2 + ED-I-02.
+
+\subsection{Tensor product as the universal bilinear extension}
+
+The tensor product $\mathcal{H}_A \otimes \mathcal{H}_B$ is, by its standard mathematical definition, the universal complex vector space equipped with a bilinear map $\otimes: \mathcal{H}_A \times \mathcal{H}_B \to \mathcal{H}_A \otimes \mathcal{H}_B$. Any other complex vector space carrying a bilinear map admits a unique linear factorization through it.
+
+The substrate reading: the joint Hilbert space $\mathcal{H}_{AB}$ contains the bilinear $f$, is closed under linear combination (because U2 closes Alice's and Bob's spaces under linear combination, and (SP) configurations are non-product superpositions of (IP)-class states), contains nothing more than what $f$ + linear closure produce (by no-new-primitives discipline), and contains nothing less (ED-I-02 forbids restricting to a sub-manifold that excludes (SP)).
+
+The universal property uniquely identifies $\mathcal{H}_{AB}$ as $\mathcal{H}_A \otimes \mathcal{H}_B$. The induced inner product is bilinear-extended:
+\[
+\langle \psi_A \otimes \psi_B | \varphi_A \otimes \varphi_B\rangle = \langle \psi_A|\varphi_A\rangle \cdot \langle \psi_B|\varphi_B\rangle
+\]
+This factorization is forced by the operational requirement that independent-preparation joint Born-rule probabilities factor multiplicatively: $|\langle\psi_A \otimes \psi_B | \phi_A \otimes \phi_B\rangle|^2 = |\langle\psi_A|\phi_A\rangle|^2 \cdot |\langle\psi_B|\phi_B\rangle|^2$.
+
+\subsection{Audit of alternatives}
+
+Five plausible alternatives to tensor product can be considered. Each is refuted on substrate-primitive grounds.
+
+\textbf{Direct sum} $\mathcal{H}_A \oplus \mathcal{H}_B$ has dimension $d_A + d_B$. Vectors are pairs that don't compose multiplicatively. P04's multiplicative factorization of joint contributions has no representation here. ED-I-02's ``single rule, two endpoints'' cannot be expressed in a structure that represents ``either A or B'' rather than ``A and B jointly.'' Refuted.
+
+\textbf{Cartesian / classical product.} Pairs without superposition. Forbids non-product joint states. Cannot represent (SP) configurations at all. The CHSH bound on this structure is 2, not $2\sqrt{2}$ --- consistent with classical local hidden variables, not with quantum entanglement. Refuted.
+
+\textbf{Non-associative / exotic bilinear products} (e.g., octonionic). P09 establishes $U(1)$ as the substrate phase group --- abelian, associative, commutative. Non-associative bilinear products require non-associative phase structure. Refuted by P09.
+
+\textbf{Twisted tensor product with cocycle} $\omega$. The cocycle would have to be a substrate object. ED's substrate inventory contains no source for it. Introducing one violates the no-new-primitives discipline. Refuted.
+
+\textbf{Hybrid superselection-sector decomposition.} Would require a-priori partition of the joint space into non-communicating sectors, sourced by ontologically primary structure. ED-I-06's no-fundamental-fields guardrail forbids field-sourced superselection. ED-I-02's substrate-connectedness reading forbids a-priori partition. Refuted.
+
+No substrate-consistent alternative survives. Tensor product is uniquely picked.
+
+\subsection{What this delivers}
+
+The joint Hilbert space of two ED endpoints sharing one undeveloped participation rule is $\mathcal{H}_A \otimes \mathcal{H}_B$ with the bilinearly-induced inner product. The structure is forced by P04 + P09 + U2 + ED-I-02 plus the no-new-primitives discipline. Every alternative is refuted by named primitives.
+
+In standard quantum mechanics, tensor-product composition is the joint-system postulate. Here it is a derived theorem of the substrate ontology.
+
+\section{Generic Non-Factorizability and Schmidt Decomposition}
+
+With the joint Hilbert space in hand, two structural facts about its states fall out of standard linear algebra applied to the substrate-derived inner product. The substrate-side audit confirms each.
+
+\subsection{Density of entangled states}
+
+The set of product (factorizable, separable pure) states in $\mathbb{P}(\mathcal{H}_A \otimes \mathcal{H}_B)$ is the image of the \emph{Segre embedding}
+\[
+\mathrm{Seg}: \mathbb{P}(\mathcal{H}_A) \times \mathbb{P}(\mathcal{H}_B) \to \mathbb{P}(\mathcal{H}_A \otimes \mathcal{H}_B), \qquad ([\psi_A], [\psi_B]) \mapsto [\psi_A \otimes \psi_B].
+\]
+The Segre variety $\Sigma$ has complex dimension $(d_A - 1) + (d_B - 1) = d_A + d_B - 2$, while the joint projective space has complex dimension $d_A d_B - 1$. The codimension is
+\[
+\mathrm{codim}_\mathbb{C}\, \Sigma = (d_A - 1)(d_B - 1)
+\]
+which is $\geq 1$ for $d_A, d_B \geq 2$, with strict inequality whenever both factors are non-trivial.
+
+A proper algebraic subvariety of strictly positive codimension has Fubini--Study measure zero and is nowhere dense. Equivalently: the set of \emph{entangled} pure states is open, dense, and full-measure. A generic pure bipartite state is entangled; product states are the measure-zero exception.
+
+\subsection{Substrate reading}
+
+ED-I-02's substrate ontology actually predicts this result at the ontological level. (IP) configurations require deliberate causal and structural independence of the two endpoints --- separated origins, no shared substrate history, no V1-mediated cross-chain correlation since fragment formation. (SP) configurations are the substrate's \emph{default} whenever two endpoints share even partial substrate history.
+
+The mathematical density theorem is the formal statement of what the substrate ontology says: most substrate configurations of two endpoints are non-individuated; deliberate independence is the exceptional case.
+
+This formalizes a qualitative ED-I-02 claim into substrate-mathematical structure. Entanglement is not an exotic resource; it is the substrate's default state of two-endpoint bipartite systems. Product states are the achievement of separation, not the natural starting point.
+
+\subsection{Schmidt decomposition}
+
+Every pure bipartite state $|\Psi\rangle \in \mathcal{H}_A \otimes \mathcal{H}_B$ admits a Schmidt decomposition
+\[
+|\Psi\rangle = \sum_i \sqrt{\lambda_i} \cdot |i\rangle_A \otimes |i\rangle_B
+\]
+with $\{|i\rangle_A\}$ and $\{|i\rangle_B\}$ orthonormal in their respective spaces, $\lambda_i > 0$, and $\sum_i \lambda_i = 1$. The number of nonzero terms is the \emph{Schmidt rank} $r$.
+
+This is a theorem of standard linear algebra applied to the U2-derived inner product. The construction is direct: expand $|\Psi\rangle$ in any product basis, form the coefficient matrix $C$, compute the reduced density operator $\rho_A = C C^\dagger$, diagonalize it via the spectral theorem (which applies to U2's Hermitian-positive-trace-one operator), define $|i\rangle_A$ as eigenvectors of $\rho_A$ and $|i\rangle_B$ as the appropriately-normalized images of $C^\dagger|i\rangle_A$. The orthonormality on $B$ side and the recovery of $|\Psi\rangle$ are verified by direct computation. The Schmidt coefficients $\sqrt{\lambda_i}$ are the singular values of $C$.
+
+The Schmidt rank is the rank of $\rho_A$, which equals the rank of $\rho_B = C^\dagger C$ because $CC^\dagger$ and $C^\dagger C$ share their nonzero spectrum. The decomposition exists for every state and is unique up to permutation of indices, phases on biorthogonal pairs, and unitary mixing within degenerate eigenspaces.
+
+\subsection{The substrate reading of Schmidt rank}
+
+The Schmidt rank measures the \emph{degree of undevelopment} of the shared participation rule. Schmidt rank 1 corresponds to a (IP) configuration --- one product channel, no shared structure. Schmidt rank greater than 1 corresponds to multiple substrate-shared participation channels between A and B. Maximum Schmidt rank with all $\lambda_i$ equal is the maximally-entangled state --- the rule is \emph{maximally undeveloped}, with no preferential channel and uniform amplitude across all available joint dimensions.
+
+The Schmidt coefficients $\sqrt{\lambda_i}$ are amplitude weights of the substrate-shared channels. By T10, $\lambda_i$ is the probability that a measurement on $A$ in the Schmidt basis individuates the joint rule along channel $i$.
+
+This is the formal articulation of ED-I-02's qualitative ``single undeveloped participation rule expressed at multiple endpoints.'' The number of shared channels and the weight on each are the Schmidt structure.
+
+\subsection{What this delivers}
+
+Generic pure bipartite states are entangled. Every bipartite pure state has a unique-up-to-phase Schmidt decomposition with non-negative coefficients summing to one. The Schmidt rank counts substrate-shared participation channels; the coefficients weight them by amplitude.
+
+The form of the decomposition is forced; the values of the coefficients and the choice of bases are inherited from the specific state. This is the canonical form-forced-values-inherited pattern that the framework uses across many results.
+
+\section{Monogamy of Entanglement}
+
+Monogamy is the first place where the framework delivers substantive new substrate content beyond standard QM derivations. The result that a single subsystem cannot be simultaneously maximally entangled with two others --- codified by Coffman, Kundu, and Wootters in 2000 as the squared inequality $C_{AB}^2 + C_{AC}^2 \leq C_{A(BC)}^2$ --- emerges in the framework not as a downstream theorem of concurrence properties, but as a substrate bandwidth-conservation law.
+
+\subsection{Substrate quantities for the bandwidth account}
+
+Three substrate quantities, originally introduced in the quantum-computing arc of the framework, are load-bearing here.
+
+\textbf{Multiplicity $\mathcal{M}(A)$.} The count of substrate-resolvable participation channels at substrate region $A$. For a region of finite participation density and finite spatial extent, $\mathcal{M}(A)$ is finite. This is the substrate analogue of entropy.
+
+\textbf{Unresolvedness $\mathcal{U}$.} The dynamical state of a participation rule: $\mathcal{U} \to 1$ when the rule remains coherently un-individuated, $\mathcal{U} \to 0$ when it has individuated.
+
+\textbf{Gradient sparsity $\sigma$.} The substrate-scale steepness of participation density, $\sigma = |\nabla\rho|\,\ell_P^2 / \rho_{\mathrm{local}}$. Substrate cross-bandwidth between regions takes the form $\Gamma_{\mathrm{cross}} \sim \exp[-\alpha\sigma]$.
+
+\subsection{The bandwidth budget at A}
+
+The total cross-chain bandwidth that endpoint $A$ can source --- summed over all external regions $A$ couples to --- is bounded by $A$'s capacity to support cross-chain correlations, which is in turn bounded by $\mathcal{M}(A)$. Each substrate-resolvable channel at $A$ can be engaged in cross-chain correlations with at most one external region at full strength, or distributed across multiple at partial strength.
+
+Define
+\[
+\Gamma_{\max}(A) := \sup_{\text{partitionings}} \left(\sum_k \Gamma_{A \to X_k}\right)
+\]
+By the substrate-finiteness of $\mathcal{M}(A)$ and bounded V1-kernel coupling per channel,
+\[
+\Gamma_{\max}(A) < \infty, \qquad \Gamma_{\max}(A) \propto \mathcal{M}(A).
+\]
+The proportionality constant is inherited from the V1-kernel functional form. The \emph{form} of the bound --- finite, proportional to local multiplicity --- is forced.
+
+By P04 (bandwidth additivity for independent contributions), independent substrate channels' cross-bandwidths add:
+\[
+\Gamma_{A \to B} + \Gamma_{A \to C} \leq \Gamma_{\max}(A).
+\]
+
+\subsection{Bandwidth-entanglement linkage}
+
+The Schmidt rank between A and B counts substrate-shared participation channels. Each shared channel contributes to $\Gamma_{AB}$. Therefore:
+\[
+\text{Schmidt rank } r_{AB} > 0 \iff \Gamma_{AB} > 0.
+\]
+Schmidt rank 1 with $\lambda_1 = 1$ corresponds to (IP), $\Gamma_{AB} = 0$.
+
+The \emph{strength} of entanglement is monotone in bandwidth. If only one shared channel is active with weight near unity, A and B are weakly entangled and $\Gamma_{AB}$ is small. If multiple channels are active with comparable weights, Schmidt rank is higher and $\Gamma_{AB}$ is larger. Maximal Schmidt rank with uniform $\lambda_i$ is maximally entangled, and saturates $\Gamma$ at the smaller endpoint's local maximum.
+
+Specifically, for a maximally-entangled bipartite state on $\mathcal{H}_A \otimes \mathcal{H}_B$ with $d_A \leq d_B$, Schmidt rank is $d_A$ and all coefficients are $\sqrt{1/d_A}$. Every $A$-side channel is engaged with one $B$-side channel at full bandwidth: $\Gamma_{AB}^{\max} = \Gamma_{\max}(A)$. A's entire outgoing budget is consumed.
+
+The exact functional form of the monotone --- concurrence vs. entanglement of formation vs. negativity vs. von Neumann entropy --- is inherited from continuum mathematical conventions for entanglement measures. The monotonicity itself is forced.
+
+\subsection{Qualitative monogamy}
+
+If $A$ and $B$ are maximally entangled, $\Gamma_{A \to B} = \Gamma_{\max}(A)$. By the bandwidth budget, $\Gamma_{A \to C} = 0$. By the bandwidth-entanglement monotone, $\Gamma_{A \to C} = 0$ implies zero entanglement strength between $A$ and $C$.
+
+\textbf{Therefore: full A--B entanglement implies zero A--C entanglement.}
+
+For non-maximal A--B entanglement, residual budget remains for A--C, but bounded:
+\[
+\Gamma_{A \to C} \leq \Gamma_{\max}(A) - \Gamma_{A \to B}.
+\]
+Through the bandwidth-entanglement monotone, this becomes a bound on A--C entanglement strength as a function of A--B entanglement strength. Stronger A--B entanglement strictly leaves less budget for A--C.
+
+\subsection{Substrate-channel audit}
+
+Each conceivable substrate channel that could bypass the bandwidth budget is checked.
+
+V1 kernel duplication is impossible: forward-cone-only propagation plus finite per-channel bandwidth at A constrain the V1-mediated coupling to bandwidth-budget-respecting configurations.
+
+ED-I-02's ``single undeveloped participation rule'' framework is consistent with monogamy and indeed predicts it: A cannot support two distinct full-strength shared-rule structures simultaneously without exceeding its substrate capacity.
+
+GHZ-class three-body states $\frac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$ have nonzero Schmidt rank across any bipartition $A|BC$, but bipartite reduced states are separable. A's bandwidth in GHZ flows to a \emph{joint} three-body channel rather than to independent A-B and A-C channels. Bandwidth budget respected.
+
+W-class states $\frac{1}{\sqrt{3}}(|001\rangle + |010\rangle + |100\rangle)$ have nonzero bipartite A-B and A-C entanglement, but neither saturates $\Gamma_{\max}(A)$. The squared sum is bounded by $C_{A(BC)}^2$ --- the CKW inequality.
+
+\subsection{The CKW squared structure}
+
+The Coffman--Kundu--Wootters inequality is the substrate bandwidth-conservation law expressed in concurrence units. Concurrence $C_{XY}$ is amplitude-like (proportional to $\sqrt{\lambda_i \lambda_j}$ for two qubits). Concurrence-squared $C_{XY}^2$ is probability-like and identifies with the substrate bandwidth fraction $\Gamma_{XY}/\Gamma_{\mathrm{ref}}$. The inequality
+\[
+C_{AB}^{2} + C_{AC}^{2} \leq C_{A(BC)}^{2}
+\]
+is the bandwidth additivity (P04) at the probability level:
+\[
+\Gamma_{AB}/\Gamma_{\max}(A) + \Gamma_{AC}/\Gamma_{\max}(A) \leq 1,
+\]
+with $C_{A(BC)}^2 \leq 1$ identifying with the total $\Gamma_{A \to (BC)}/\Gamma_{\max}(A)$.
+
+The form is forced by the bandwidth-budget conservation law plus the amplitude-vs-probability squaring relationship that the Born rule produces. The specific coefficient --- concurrence-with-Wootters-normalization, two-qubit reduction --- is inherited from the choice of entanglement measure.
+
+\subsection{What this delivers}
+
+Monogamy of entanglement is a substrate bandwidth-conservation law. Each endpoint has finite local multiplicity, and finite multiplicity bounds total outgoing cross-chain bandwidth. Independent contributions add by P04. The bipartite-bandwidth-monotone link to entanglement strength turns the bandwidth budget into a constraint on simultaneous bipartite entanglement strengths. CKW's squared structure is the bandwidth budget at the probability level.
+
+This is \emph{new substrate content} beyond the standard QM derivation. In standard QM, monogamy is a downstream theorem of concurrence properties on three-qubit states. The framework reframes it as a primitive bandwidth-conservation law, with the standard concurrence inequality identified as the continuum-mathematical projection of the substrate fact.
+
+\section{No-Signaling}
+
+The standard quantum-mechanical no-signaling theorem says: for any bipartite state $|\Psi\rangle$ and any Alice-side measurement basis, Bob's marginal probability distribution is independent of Alice's basis choice. The argument uses the linearity of partial trace and the completeness of orthonormal bases on Alice's side.
+
+\subsection{The standard argument}
+
+Let $\{|a_i\rangle_A\}$ be Alice's measurement basis with projectors $E_i^A = |a_i\rangle_A\langle a_i|_A$, and $\{|b_j\rangle_B\}$ be Bob's basis with projectors $F_j^B$. By T10 the joint outcome probability is
+\[
+p(a_i, b_j) = \langle\Psi|(E_i^A \otimes F_j^B)|\Psi\rangle.
+\]
+Bob's marginal, summed over Alice's outcomes, is
+\[
+p_B(b_j) = \sum_i p(a_i, b_j) = \langle\Psi|(\textstyle\sum_i E_i^A \otimes F_j^B)|\Psi\rangle = \langle\Psi|(I_A \otimes F_j^B)|\Psi\rangle = \mathrm{Tr}_B(F_j^B \cdot \rho_B)
+\]
+where $\rho_B = \mathrm{Tr}_A(|\Psi\rangle\langle\Psi|)$. Since $\sum_i E_i^A = I_A$ holds for any orthonormal Alice-basis (or any complete POVM on $A$), the right side is independent of Alice's basis. Bob's marginal is the same regardless of what Alice measures.
+
+\subsection{The substrate causal-justification}
+
+The mathematical argument produces the basis-invariance result. The substrate-side question is: \emph{why does the substrate respect the algebraic argument?} What forbids a substrate channel that would let Alice's basis choice modify Bob's marginal in violation of partial-trace independence?
+
+The substrate forbids it via three independent locks. Each lock independently closes a distinct violation class.
+
+\textbf{Lock 1: Forward-cone-only V1 kernel (T18).} The substrate's V1 vacuum kernel --- the substrate object that mediates cross-chain correlations between separated endpoints --- is forward-cone-only. Any substrate-level influence from Alice's region to Bob's region propagates strictly forward-in-time within the light cone. For spacelike-separated Alice and Bob measurements, no V1-mediated channel from Alice's basis-choice event to Bob's measurement event exists. T18 is itself a forced theorem from the kernel-arrow arc.
+
+\textbf{Lock 2: Commitment irreversibility (P11).} Once a participation rule commits --- once Bob has measured and individuated --- the commitment is irreversible. Alice's later choice cannot retroactively update Bob's already-committed individuation. Even if some non-T18 channel somehow existed (it doesn't, per Lock 3), Bob's commitment record could not be retroactively rewritten.
+
+\textbf{Lock 3: No fundamental fields (ED-I-06).} The no-fundamental-fields guardrail forbids the existence of an ontologically primary field that could carry Alice's basis information non-locally. Any candidate ``instantaneous influence field'' is structurally absent from ED's substrate. The substrate has chains, V1 kernel, decoupling surfaces, gradient sparsity, multiplicity, commitment events, participation-measure structure. None of these has the type-signature of an instantaneous non-local information channel.
+
+The three locks are independent. T18 addresses propagation: cross-chain influence is forward-cone-only. P11 addresses retroactive update: commitments cannot be rewritten. ED-I-06 addresses ontological source: no fundamental field exists to host non-local signaling. Removing any one lock would re-open a specific class of violation; together they cover every conceivable substrate channel.
+
+\subsection{Substrate-channel audit}
+
+Each conceivable substrate channel is checked.
+
+The V1 kernel cross-chain correlation: forward-cone-only by T18. Locked.
+
+Direct chain coupling at separated endpoints: no field-sourced non-locality by ED-I-06. Locked.
+
+Retroactive update of Bob's prior commitment: forbidden by P11. Locked.
+
+The pre-existing shared participation rule (the (SP) structure of entanglement): the rule was set before Alice's choice and Alice's choice does not modify the rule's structure, only forces Alice's endpoint to individuate along it. Bob sees the pre-existing shared-rule structure regardless of which basis Alice chose. This is what produces correlations that require classical communication to extract; it is not what produces signaling.
+
+ED-I-02's substrate reading explicitly endorses this: \S9 of the entanglement-interpretation paper says \emph{no information travels; no influence crosses space; no hidden variables are exchanged; no state is transmitted}. The mechanism is reassignment / completion of a pre-existing undeveloped rule, not signal propagation.
+
+\subsection{What this delivers}
+
+No-signaling in ED is over-determined by three independent substrate locks. The mathematical no-signaling theorem follows from partial-trace algebra applied to the tensor-product joint Hilbert space of \S3; the substrate-causal-justification follows from T18 + P11 + ED-I-06. Each lock independently forbids a violation class; the conjunction covers every conceivable substrate channel.
+
+This is a structurally robust feature. If any one of the three locks were amended in a future framework revision, the other two would still enforce no-signaling for most violation classes. Over-determination is the structural cost of substrate-grounding: results are derived more robustly than necessary, which is what makes the framework resilient to single-primitive amendment.
+
+The standard QM no-signaling derivation runs on the linearity of partial trace alone. The framework reproduces that argument and adds the substrate-causal account that explains \emph{why} the substrate respects partial-trace independence in the first place. Standard QM gets the right answer because the substrate underwrites it; the substrate underwrites it because three independent locks each forbid violation.
+
+\section{von Neumann Entanglement Entropy}
+
+The von Neumann entanglement entropy of a bipartite pure state is
+\[
+S(\rho_A) = -k \cdot \sum_i \lambda_i \log \lambda_i = -k \cdot \mathrm{Tr}(\rho_A \log \rho_A)
+\]
+where the $\lambda_i$ are Schmidt eigenvalues and $k$ is a multiplicative constant. The form is the same Shannon entropy that appears throughout information theory and statistical mechanics; the substrate-derivation establishes that ED's primitives uniquely select it from the family of plausible entropy functionals.
+
+\subsection{Schmidt eigenvalues as a probability distribution}
+
+By \S4, the reduced density operator $\rho_A = \mathrm{Tr}_B(|\Psi\rangle\langle\Psi|)$ has spectrum $\{\lambda_i\}$ with $\lambda_i > 0$ and $\sum_i \lambda_i = 1$. By T10, $\lambda_i$ is the Born-rule probability that a measurement on $A$ in the Schmidt basis individuates along channel $i$.
+
+Any substrate-derived entanglement-entropy functional $S$ on a bipartite pure state must therefore be a function of this probability distribution: $S(\rho_A) = S(\{\lambda_i\})$.
+
+\subsection{Substrate-derived Shannon--Khinchin axioms}
+
+The Shannon--Khinchin theorem says: any functional satisfying continuity, maximality at uniform, expansibility, additivity for independent distributions, and strong additivity (branching / recursivity) is uniquely the Shannon entropy $-k\sum p_i \log p_i$ up to a multiplicative constant.
+
+The substrate-derivation establishes each axiom from named primitives.
+
+\textbf{S1 (Continuity).} $S$ is continuous in the $\lambda_i$. Substrate justification: substrate fluctuations are continuous (the Schmidt eigenvalues depend continuously on $|\Psi\rangle$ via U2 + spectral theorem), and any substrate-derived macroscopic functional must be continuous in the substrate state, otherwise small substrate fluctuations would produce discontinuous macroscopic jumps. Forced by U2 + the substrate-to-continuum bridge.
+
+\textbf{S2 (Maximality at uniform distribution).} For fixed Schmidt rank $r$, $S$ is maximized when all $\lambda_i = 1/r$. Substrate justification: by ED-I-01's multiplicity-as-entropy reading, substrate entropy \emph{is} the count of viable participation pathways. For fixed rank, the configuration with maximum substrate entropy is the one with no preferred channel --- uniform $\lambda_i = 1/r$. Forced by ED-I-01.
+
+\textbf{S3 (Expansibility).} Adding a zero-probability outcome does not change $S$. Substrate justification: a zero-Schmidt-coefficient term corresponds to an unused substrate channel. Substrate multiplicity counts resolvable pathways with nonzero contribution; unused channels contribute zero multiplicity. Forced by ED-I-01 + the Schmidt structure.
+
+\textbf{S4 (Additivity for independent distributions).} For independent $\{p_i\}$ on $A_1$ and $\{q_j\}$ on $A_2$, $S(\{p_i q_j\}) = S(\{p_i\}) + S(\{q_j\})$. Substrate justification: independent substrate channels' bandwidths add by P04, independent substrate multiplicities multiply by ED-I-01, and entropy as $\log$ multiplicity converts multiplication to addition via the standard Boltzmann mapping. Forced by P04 + ED-I-01.
+
+\textbf{S5 (Strong additivity / branching).} A staged measurement (coarse, then conditional fine) has total entropy equal to the entropy of the coarse stage plus the probability-weighted conditional entropy of the fine stage. Substrate justification: P11 commitment irreversibility makes each stage a definite substrate fact; ED-I-01 multiplicity decomposes additively over commitment events. Without P11, staged measurements would not be substrate-equivalent to single combined measurements. Forced by P11 + ED-I-01.
+
+The Shannon--Khinchin uniqueness theorem then identifies $S$ as $-k \sum_i \lambda_i \log \lambda_i$ for some positive constant $k$.
+
+\subsection{Audit of non-Shannon alternatives}
+
+Tsallis entropy $S_q = (q-1)^{-1}(1 - \sum_i \lambda_i^q)$ violates S4: $S_q(P \otimes Q) = S_q(P) + S_q(Q) + (1-q) S_q(P) S_q(Q)$, which has a non-vanishing cross-term unless $q = 1$. Refuted by P04 + ED-I-01.
+
+R\'enyi entropy $S_\alpha = (1-\alpha)^{-1} \log \sum_i \lambda_i^\alpha$ is additive but violates S5: the conditional-decomposition equation does not hold for $\alpha \neq 1$. Refuted by P11.
+
+Hartley entropy $S_0 = \log r$ counts only support size and is discontinuous at boundary. Refuted by S1 violation under DCGT + amplitude-weighting.
+
+Min-entropy $S_\infty = -\log \max_i \lambda_i$ violates S2 and S5. Refuted by ED-I-01 + P11.
+
+Shannon is the unique substrate-forced entropy form.
+
+\subsection{The coefficient $k$ is inherited}
+
+The Shannon--Khinchin theorem leaves $k$ unconstrained. The choice is fixed by unit conventions: $k = 1/\ln 2$ for bits, $k = 1$ for nats, $k = k_B$ for thermodynamic units. None of these is substrate-forced; the substrate counts pathway multiplicities, and the conversion to bits or Joules-per-Kelvin is convention.
+
+This is the same form-forced-coefficient-inherited pattern that appears throughout the framework. The mass in the kinetic-energy operator is inherited; Newton's $G = c^3 \ell_P^2 / \hbar$ has form forced and values inherited; the Bekenstein--Hawking horizon entropy coefficient is inherited; the Schmidt coefficients are inherited; the entropy coefficient $k$ is inherited.
+
+\subsection{What this delivers}
+
+The von Neumann entanglement entropy form is uniquely picked at the substrate level. Five Shannon--Khinchin axioms are each independently derived from named substrate primitives. The Shannon--Khinchin uniqueness theorem closes the form. Tsallis, R\'enyi, Hartley, and min-entropy are each refuted by named primitives.
+
+This is \emph{substantively new} substrate content. Standard QM derivations of entanglement entropy invoke Shannon--Khinchin as a pure mathematical-physics result. The framework asks where the axioms themselves come from and answers: each is forced by ED's substrate primitives. The Shannon entropy form is what falls out when ED's substrate counts substrate-shared participation channels through commitment-decomposable measurement structure.
+
+\section{What the Framework Adds}
+
+It is worth being precise about what changes when the framework is in place versus when it isn't.
+
+In standard quantum mechanics, the structure of bipartite entanglement is a theorem of postulated formalism. The single-system Hilbert space is postulated. The tensor-product joint structure is postulated (this is the joint-system rule). The Born rule is postulated. The Schmidt decomposition follows from the spectral theorem. Monogamy follows from concurrence properties. No-signaling follows from partial-trace linearity. Entanglement entropy follows from Shannon--Khinchin applied to Schmidt eigenvalues. Each step is a valid mathematical-physics derivation given the postulates upstream.
+
+In the framework, the derivation chain is the same at the mathematical level --- but the postulates are now derived theorems of substrate ontology rather than independent axiomatic commitments.
+
+Tensor-product composition is forced from substrate primitives (P04 + P09 + U2 + ED-I-02), with five plausible alternatives explicitly refuted on substrate-primitive grounds. The standard QM joint-system postulate is replaced by a substrate-derived theorem.
+
+The Schmidt decomposition is the spectral theorem applied to the U2-derived inner product on the joint Hilbert space; once tensor product is forced, the Schmidt structure follows automatically.
+
+Generic non-factorizability is the Segre-variety dimensional argument applied to the joint Hilbert space; ED-I-02's substrate ontology actually predicts this result at the qualitative level, and the mathematical density theorem is its formal statement.
+
+Monogamy is \emph{not} a downstream theorem of concurrence properties. It is a substrate bandwidth-conservation law: each endpoint has finite local multiplicity, finite multiplicity bounds total outgoing cross-chain bandwidth, P04 makes contributions additive, and the bandwidth budget propagates through to entanglement strength. The CKW squared inequality is the substrate fact expressed in concurrence units.
+
+No-signaling is over-determined by three independent substrate locks (T18 + P11 + ED-I-06). The standard QM partial-trace argument runs on the substrate-derived joint Hilbert space, but the substrate-causal account explains \emph{why} the substrate respects partial-trace independence in the first place.
+
+Entanglement entropy form is uniquely picked by Shannon--Khinchin axioms each independently derived from named substrate primitives. Tsallis, R\'enyi, Hartley, and min-entropy are each refuted by named primitives. The form is forced; the constant $k$ is inherited.
+
+What this changes:
+
+The entanglement structure is no longer suspended above an axiomatic gap. Every piece --- joint Hilbert space, Schmidt decomposition, monogamy, no-signaling, entropy form --- traces back to substrate primitives without invoking the joint-system postulate, the Born postulate, or the no-signaling assumption as independent commitments.
+
+The framework also delivers cross-domain unifications that standard QM cannot articulate. Bipartite entanglement and black-hole horizon physics operate on the same substrate decoupling-surface mechanism: the bandwidth-budget conservation law that produces monogamy at the qubit-pair scale (E-4) produces information-blocking-and-straddling at the horizon scale (the BH-arc closure mechanism). The Shannon-counting pipeline that produces entanglement entropy at the bipartite scale produces the area-law form at the horizon scale. These are not analogies --- they are the same substrate object expressed at different resolutions, unified through the diffusion coarse-graining theorem.
+
+The substrate quantities that govern quantum-computation feasibility (multiplicity, unresolvedness, sparsity, cross-chain bandwidth) are the same substrate quantities that govern bipartite-entanglement structure. Entanglement and quantum computation are not analogous phenomena; they are the same phenomenon used for different purposes. Quantum computation holds the unresolved rule long enough to perform substrate manipulations. Entanglement maintains the unresolved rule across spatially-separated endpoints.
+
+This is a more substantial payload than the Heisenberg or Bell--Tsirelson walkthroughs delivered. Heisenberg's and Bell--Tsirelson's contributions were upstream --- the framework supplied the structures that the standard arguments require. The entanglement walkthrough is upstream for tensor product, Schmidt, and density-of-entangled-states (E-1, E-3, E-2). It is \emph{substantively new} for monogamy (E-4), no-signaling (E-5), and entropy (E-6). Each receives a substrate-mechanism account that goes beyond importing the standard QM derivation.
+
+The bound that the framework derives is identical to what standard QM produces. CHSH $\leq 2\sqrt{2}$ holds. Schmidt rank is the rank of the reduced density operator. CKW squared monogamy holds. No-signaling holds. The von Neumann entropy form is correct. The framework reproduces standard QM exactly --- which it must, given the strength of the empirical record. What changes is the foundational status of the structures and the substrate-mechanism explanations of monogamy and entropy.
+
+\section{The Place of This Result}
+
+The entanglement walkthrough completes the framework's coverage of bipartite quantum-information structure. The four-walkthrough series --- Born, Schr\"odinger, Bell--Tsirelson, Heisenberg --- covered all four foundational postulates of non-relativistic single-particle quantum mechanics. The entanglement walkthrough extends the coverage to bipartite-system structure: tensor-product joint Hilbert space, generic non-factorizability, Schmidt decomposition, monogamy, no-signaling, and entanglement-entropy form.
+
+A structural triangle that is now visible: the framework derives three independent corners of the \emph{quantum} correlation polytope. The Bell--Tsirelson walkthrough derives the Tsirelson $2\sqrt{2}$ ceiling on CHSH violation. The entanglement walkthrough derives tensor-product composition (which excludes classical correlation structures) and no-signaling (which excludes hidden faster-than-light channels). Together, these three corners jointly characterize quantum correlations versus classical local hidden variables (which violate tensor product) and post-quantum Popescu--Rohrlich correlations (which respect no-signaling but exceed Tsirelson). ED's substrate produces \emph{exactly} the quantum correlation polytope --- neither classical nor PR-box.
+
+A second cross-arc structural feature that is now visible: ED's substrate produces results that are over-determined by multiple independent locks. No-signaling has three locks (T18 + P11 + ED-I-06). Monogamy has four substrate constraints (multiplicity finiteness + P04 additivity + V1 forward-cone + ED-I-02 single-rule capacity). Entropy form has five axioms each independently substrate-derived. Tensor product refutes five distinct alternative joint-space structures. Time's arrow has cascade-from-V1 plus R1-bypass redundancy. Over-determination is not coincidence; it is a structural feature of substrate-grounding. Every result is ``more derived than necessary,'' which is what makes the framework robust against single-primitive amendment.
+
+The bipartite-entanglement structure is therefore not the end of the framework's coverage --- it is the conclusion of one program component (single-system + bipartite-system QM structure) and the beginning of another (cross-domain unification with horizon physics, quantum-computation architecture, and substrate decoupling-surface mechanics). What has been derived here is the substrate account of what entanglement is. What remains to be developed: extensions to mixed states, multipartite GHZ-class and W-class structure, QFT-level Reeh--Schlieder vacuum entanglement, and the experimental program that tests whether the substrate primitives are themselves correct.
+
+The entanglement structure is forced by the same substrate primitives that force Born, Schr\"odinger, Heisenberg, Bell--Tsirelson, Newton's gravity, the substrate transition-acceleration scale, and the structural mechanisms of black-hole horizons. The unification is at the substrate level. Quantum mechanics, at root, is what the participation-graph ontology produces when you ask about probability, dynamics, single-system uncertainty, bipartite correlations, joint Hilbert spaces, Schmidt structure, monogamy, no-signaling, and entropy. Each foundational postulate is a derived theorem of the substrate, with no independent axiomatic content beyond what the primitives supply.
+
+\section*{References}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+  \item Einstein, A., Podolsky, B., Rosen, N. ``Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?'' \emph{Physical Review} 47, 777--780 (1935).
+  \item Schr\"odinger, E. ``Discussion of Probability Relations between Separated Systems.'' \emph{Mathematical Proceedings of the Cambridge Philosophical Society} 31, 555--563 (1935).
+  \item Bell, J. S. ``On the Einstein Podolsky Rosen Paradox.'' \emph{Physics} 1, 195--200 (1964).
+  \item Cirel'son, B. S. (Tsirelson) ``Quantum Generalizations of Bell's Inequality.'' \emph{Letters in Mathematical Physics} 4, 93--100 (1980).
+  \item Coffman, V., Kundu, J., Wootters, W. K. ``Distributed Entanglement.'' \emph{Physical Review A} 61, 052306 (2000).
+  \item Wootters, W. K. ``Entanglement of Formation of an Arbitrary State of Two Qubits.'' \emph{Physical Review Letters} 80, 2245 (1998).
+  \item Khinchin, A. I. \emph{Mathematical Foundations of Information Theory.} Dover, 1957.
+  \item Faddeev, D. K. ``On the Concept of Entropy of a Finite Probabilistic Scheme.'' \emph{Uspekhi Matematicheskikh Nauk} 11, 227--231 (1956).
+  \item \.Zyczkowski, K., Horodecki, P., Sanpera, A., Lewenstein, M. ``Volume of the Set of Separable States.'' \emph{Physical Review A} 58, 883 (1998).
+  \item Schmidt, E. ``Zur Theorie der linearen und nichtlinearen Integralgleichungen.'' \emph{Mathematische Annalen} 63, 433--476 (1907).
+  \item Maldacena, J., Susskind, L. ``Cool horizons for entangled black holes.'' \emph{Fortschritte der Physik} 61, 781--811 (2013).
+  \item Proxmire, A. \emph{The Born Rule as a Forced Theorem of Event Density: A Gleason--Busch Reconstruction from First Principles.} April 2026.
+  \item Proxmire, A. \emph{The Inner Product as Forced Structure in Event Density: Discrete Derivation, Continuum Lift, and Gauge-Invariant Completion.} April 2026.
+  \item Proxmire, A. \emph{U5: The Forced Structure of Translation Symmetry and the Momentum Operator.} April 2026.
+  \item Proxmire, A. \emph{Theorem 14: The Participation Measure Form.} April 2026.
+  \item Proxmire, A. \emph{ED-I-02: ED-Entanglement: Non-Individuation, Gradient Sparsity, and the Preservation of a Single Participation Rule.} February 2026.
+  \item Proxmire, A. \emph{ED-I-01: ED-Superconductivity 3.} February 2026.
+  \item Proxmire, A. \emph{Event Density: One Substrate, Three Domains.} April 2026.
+\end{itemize}
+
+\end{document}
