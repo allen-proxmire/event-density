@@ -1,3 +1,7 @@
+This is the work-repo for ED.  All papers and more are here.... somewhere, moderately organized, in .md.
+
+This repo: https://github.com/allen-proxmire/ED-generative conatains the standalone papers for generating various physics rules, postulates, equations, relations, etc. 
+
 # event-density
 
 Theory repository for the Event Density (ED) framework.
