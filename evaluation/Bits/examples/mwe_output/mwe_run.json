@@ -1,0 +1,161 @@
+{
+  "boundary_map": {
+    "7": [
+      8
+    ],
+    "8": [
+      7
+    ]
+  },
+  "boundary_nodes": [
+    7,
+    8
+  ],
+  "decoupled_edges": [
+    [
+      7,
+      8
+    ]
+  ],
+  "edges": [
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 0,
+      "v": 1
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 1,
+      "v": 2
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 2,
+      "v": 3
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 3,
+      "v": 4
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 4,
+      "v": 5
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 5,
+      "v": 6
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 6,
+      "v": 7
+    },
+    {
+      "bw": 0.5,
+      "decoupled": true,
+      "u": 7,
+      "v": 8
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 8,
+      "v": 9
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 9,
+      "v": 10
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 10,
+      "v": 11
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 11,
+      "v": 12
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 12,
+      "v": 13
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 13,
+      "v": 14
+    },
+    {
+      "bw": 0.5,
+      "decoupled": false,
+      "u": 14,
+      "v": 15
+    }
+  ],
+  "n_commits": 11,
+  "n_steps": 9,
+  "nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "params": {
+    "extinction_threshold": -2.0,
+    "kc": 1.0,
+    "kg": 1.0,
+    "ks": 1.0,
+    "max_steps": 200,
+    "rho_star": 0.5,
+    "seed_A": 1,
+    "seed_B": 2
+  },
+  "seed": 1,
+  "strata": {
+    "0": 0,
+    "1": 0,
+    "10": 1,
+    "11": 1,
+    "12": 1,
+    "13": 1,
+    "14": 1,
+    "15": 1,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 1,
+    "9": 1
+  }
+}

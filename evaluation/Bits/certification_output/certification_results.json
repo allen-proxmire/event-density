@@ -1,0 +1,57 @@
+{
+  "certified": true,
+  "factorization": {
+    "A_independent_of_B_exact": true,
+    "B_independent_of_A_exact": true,
+    "ensemble_N": 200,
+    "mi_AB_nats": -0.001699786530016567,
+    "mi_A_shuffledB_nats": -0.0006989184417940386,
+    "mi_tolerance_nats": 0.005
+  },
+  "final_rho_A": [
+    0.2559,
+    1.4743,
+    1.4139,
+    1.0138,
+    1.1649,
+    1.2267,
+    2.1017,
+    1.1402
+  ],
+  "final_rho_B": [
+    1.1308,
+    2.046,
+    0.094,
+    0.3287,
+    0.2163,
+    0.3166,
+    0.1958,
+    0.2555
+  ],
+  "gates": {
+    "gate1_monotonicity": true,
+    "gate2_acyclicity": true,
+    "gate3_factorization": true,
+    "gate4_tiebreak": true
+  },
+  "mwe_integrity": {
+    "decoupled_bridge": [
+      7,
+      8
+    ],
+    "max_steps": 200,
+    "steps_run": 9,
+    "terminated_naturally": true,
+    "total_commits": 11,
+    "two_strata": true
+  },
+  "seeds": {
+    "A": 1,
+    "B": 2
+  },
+  "suite": {
+    "failed": 0,
+    "passed": 20,
+    "pytest_returncode": 0
+  }
+}

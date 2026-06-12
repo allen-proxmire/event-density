@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.npz
+.pytest_cache/
+certification_output/certification_log.txt
+examples/sweep_output/
