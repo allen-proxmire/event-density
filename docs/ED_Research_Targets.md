@@ -16,7 +16,7 @@
 
 ## B. Open consequences of the big targets (mostly numbers waiting on #1)
 
-4. **ED-10 horizons + ED-Information.** Structure and scalings are done **EFE-free**; the actual numbers (e.g. `S = A/4`, Hawking `T`) wait on the Phase-3 GR keystone. Unitary completeness is open (Page-curve *structure* reproduced; full unitarity not).
+4. **ED-10 horizons + ED-Information.** Structure and scalings done **EFE-free**; numbers waited on the Phase-3 keystone. **PARTIAL DELIVERY 2026-06-13** (`foundations/Phase3_GR_BColumn_HorizonThermodynamics.md`, on the dynamically-emergent horizon from the #1/#8 build): **area-law `S ∝ A` CONFIRMED** — the severed adjacency-channel count (A1: exact capacity-zero across the frozen `b→0` cut) scales as the horizon perimeter (`r_h^0.96`), NOT the enclosed bulk (`r_h^2.01`): holographic, on a horizon the keystone formed dynamically (not posited). **Hawking `T∝κ∝1/r_h` NOT reproduced** by the minimal elliptic model (`κ≈const`, `r_h^0.07`): horizon transition width set by the fixed sharing length `D`, not `r_h` — located limitation (needs full/3D/hyperbolic strong-field rule), not a block, not retrofitted. Coefficients (1/4, exact T) value-inherited. Unitary completeness still open (Page-curve *structure* reproduced; full unitarity not).
 5. **SCBU.** M3-closed; what's left is **tightening only**. The one live EFE-free derivation is the per-projection exponents (the ED-10 R3 scaling method is the tool). No sim/rerun needed.
 
 ## C. Smaller open threads / sweeps designed but not run
