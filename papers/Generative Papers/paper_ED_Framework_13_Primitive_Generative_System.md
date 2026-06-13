@@ -225,7 +225,7 @@ ED does not derive the specific numerical values of particle masses (electron ma
 
 ### 7.2 Coupling constants
 
-ED does not derive the specific values of fundamental coupling constants ($\alpha$, $\alpha_s$, $g_w$, etc.). The structural existence of $U(1) \times SU(2) \times SU(3)$ admissible-class gauge groups is supported by T17; specific group choice and coupling magnitudes are inherited.
+Coupling magnitudes in ED are FORCED-INHERITED at all scales, with three independent structural blockages (P09 continuity, V1 spectral-shape inheritance, and marginal-sector Landau-pole flow). However, ED's substrate-RG produces universal IR-attractive fixed points for Tier-5 ratio operators via Perron–Frobenius on the irreducible P04 band-allocation transition matrix. These ratio-level universals join the Arc RG 0.6 ratio and V5 cross-scale invariance in the closed-arc universal inventory.
 
 ### 7.3 Three-generation structure
 
