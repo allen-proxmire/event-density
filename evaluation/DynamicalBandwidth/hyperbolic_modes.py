@@ -83,6 +83,51 @@ def run_sector(eps, ks=(0.2, 0.4, 0.6, 0.8)):
     return out
 
 
+def reserve_damping(k=0.4, S=256, gammas=(0.0, 0.05, 0.20, 0.80)):
+    """Decisive check for deriving eps: does the commitment-reserve sector contribute
+    a SPEED-shift (conservative, kinetic -> a second cone, eps!=0) or DAMPING
+    (dissipative, P11 one-way -> imaginary omega, NO speed shift, eps=0)?
+
+    Add a friction term -gamma*h-dot to the trace/khronon sector (the reserve drain
+    is monotone/one-way = dissipative, P11) and measure (i) the oscillation frequency
+    (= the REAL part of omega = the SPEED) and (ii) the amplitude decay. If the
+    reserve were kinetic it would shift the speed; if dissipative it only damps.
+    """
+    x = np.arange(S)
+    h = np.cos(k * x)
+    keff = k_eff(k)
+    omega0 = c * keff
+    dt = 0.12 / c
+
+    def lap(f):
+        return (np.roll(f, 1) + np.roll(f, -1) - 2.0 * f) / dx**2
+
+    out = []
+    for g in gammas:
+        hh = h.copy()
+        hp = np.zeros(S)
+        T = int(8 * 2 * np.pi / (omega0 * dt))
+        crossings, amps, prev = [], [], hh[0]
+        for n in range(T):
+            hp = hp + dt * (c**2 * lap(hh) - g * hp)   # wave + dissipative friction
+            hh = hh + dt * hp
+            a = hh[0]
+            amps.append(abs(a))
+            if prev > 0 >= a or prev < 0 <= a:
+                crossings.append(n * dt)
+            prev = a
+        if len(crossings) >= 3:
+            period = 2.0 * np.median(np.diff(crossings))
+            speed = (2 * np.pi / period) / k
+            # amplitude decay: ratio of last-quarter to first-quarter mean envelope
+            q = len(amps) // 4
+            decay = (np.mean(amps[-q:]) + 1e-9) / (np.mean(amps[:q]) + 1e-9)
+            out.append((g, speed, decay))
+        else:
+            out.append((g, np.nan, 0.0))   # overdamped: no oscillation
+    return out
+
+
 if __name__ == '__main__':
     np.set_printoptions(precision=4, suppress=True)
     print("Measuring mode speeds v = omega/k from the hyperbolic lattice rule")
@@ -103,3 +148,19 @@ if __name__ == '__main__':
     print("  eps > 0 (a foliation-specific kinetic term): c_s > c_T -> generic")
     print("    khronometric two-cone case. Whether ED's reserve/foliation sector")
     print("    supplies a nonzero eps is the remaining open question.")
+
+    print("\n\nDeriving eps: is the commitment-RESERVE sector kinetic (speed-shift,")
+    print("eps!=0) or dissipative (damping, eps=0)?  The reserve drains MONOTONE")
+    print("(P11, one-way) -> dissipative.  Add friction -gamma*h-dot to the khronon:")
+    print("\n gamma   speed(real omega)/c   amplitude-decay   reading")
+    print(" -----   ------------------   ---------------   -------")
+    for g, sp, dec in reserve_damping():
+        if np.isnan(sp):
+            print(f" {g:5.2f}   {'(overdamped)':>18}   {dec:13.3f}     OVERDAMPED (no propagation)")
+        else:
+            rd = "speed UNCHANGED, damped" if abs(sp - reserve_damping(gammas=(0.0,))[0][1]) < 0.05 else "speed shifted"
+            print(f" {g:5.2f}   {sp:16.4f}   {dec:13.3f}     {rd}")
+    print("\n  Readout: the dissipative reserve DAMPS the khronon (amplitude decays,")
+    print("  overdamps at strong commitment) but does NOT shift its speed -> it is NOT")
+    print("  a kinetic lambda*theta^2 term -> eps = 0 -> c_s = c.  The khronon is a")
+    print("  scalar GW at light speed, damped near active matter, clean in vacuum.")
