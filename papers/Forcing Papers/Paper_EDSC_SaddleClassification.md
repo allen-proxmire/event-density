@@ -14,6 +14,7 @@
 4. It does **not** claim substrate-FORCED exhaustiveness of S1/S2/S3 — the trichotomy is partition-by-construction on the axes {invariant, ensemble-conditioned, motif-conditioned}, not a substrate-derived theorem. Substrate-level proof that no fourth class is structurally relevant is **OPEN**.
 5. **INHERITED vs FORCED breakdown:** The classification form is D-via-I composition (Hessian/Morse machinery + P-S1-Invariant + motif-conditioning); exhaustiveness in the substrate sense is OPEN.
 6. **Route A OPEN status:** This paper consumes $\xi_{canonical} = 1.7575$ lu (Paper_092). Substrate derivation of $\ell_{V5}(H_0)$ — and hence of $\xi_{canonical}$ from substrate parameters — is OPEN. All quantitative claims downstream inherit this OPEN status.
+7. **(Correction, 2026-06-23.)** Where §6 / the companion references list $r^*$ (Paper_EDSC_rstar) as an **S1 (cross-scale invariant)** example, that is **superseded**: the 2026-04-23 falsifier audit (ED-SC 2.0 r\* Final Verdict) retired $r^*$ from invariant status and reclassified it as a *filter-conditioned* GRF statistic. Being filter/motif-dependent, $r^*$ is therefore **not S1**; its correct landing class (S2 ensemble-only vs S3 motif-specific) is **unsettled** by the source language, which calls $r^*$ both *motif-conditioned* and *filter-conditioned*. The S1/S2/S3 *classification scheme* — this paper's actual result — is **unaffected**; only the mislabeled example is corrected.
 
 ---
 
@@ -172,7 +173,7 @@ This paper formalizes the ED-SC 3.x saddle-geometry classification (S1 / S2 / S3
 **Relationship to other papers:**
 - **Paper_096:** supplies P-S1-Invariant principle.
 - **Paper_EDSC_Motif:** supplies motif-conditioning framework.
-- **Paper_EDSC_rstar:** $r^*$ is an S1 statistic — example of S1 class.
+- **Paper_EDSC_rstar:** $r^*$ was *originally* offered as an S1 example — **superseded** (see Preamble item 7). Following the 2026-04-23 falsifier audit $r^*$ is retired from invariant status, filter/motif-dependent, hence **not cross-scale invariant (not S1)**; landing class S2-vs-S3 unsettled. What is forced for $r^*$ is its *structural form* (a filtered-GRF statistic), not its invariance.
 - **Paper_053 / 055 Q-Compute:** analogous three-class exhaustiveness (different sector).
 
 **Numerical content INHERITED.** Specific saddle parameters, 5×3 verdict-grid contents. **Form IDENTIFIED.** Three-class S1 / S2 / S3 exhaustive classification (no D rows in audit table; downgraded from FORM-FORCED per Paper_095 §2.3).
