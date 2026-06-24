@@ -6,6 +6,8 @@ Route A (`Phase3_GR_PPN_RouteA_Mapping.md`) reduced the open number to one coupl
 
 **Crank rail (load-bearing):** derive forward from the rule; keep the metric-assembly normalization, the reserve rate, and the band-fractions **symbolic**; do **not** fabricate the standard-PPN prefactors (cite Will/TEGP) or the final `α₁, α₂`. A framework that correctly *locates* the preferred-frame terms is the deliverable; the numbers are later steps.
 
+> **⚠ CORRECTION (2026-06-23) — §7's α₁/α₂ matching is SUPERSEDED.** §5–§7 below source `g_{0i}` from the *scalar* bandwidth current and obtain `α₁=4η(𝒮₁+𝒮₂)`, `α₂=2η𝒮₂` (conservative `α₁=−8c₁₄`, `α₂=−2c₁₄`). Both are **wrong**: `DirectedFlux` test [1] shows the scalar current is **curl-free → pure gauge → no physical `g_{0i}`**; the physical cross-term is the **vector sector** `g_{0i}=λ_J w_iU` (`w_iU` only). With the verified Will form + luminal khronometric values (`α₁=−4c₁₄`, `α₂=0`), the correct result is **`α₁=−4c₁₄𝒮(Γ)`, `α₂=0`** (the §7 `w^jU_{ij}`/α₂ term was a pure-gauge artifact). See `Phase3_GR_Alpha2_Vanishes_Alpha1_Reconciled.md §9`. The framework/order-counting of §1–§6 stands; only the §7 numeric matching is replaced.
+
 ---
 
 ## 1. Expansion strategy and PPN order counting

@@ -4,6 +4,8 @@
 
 The `η` note (`Phase3_GR_PPN_RouteB_EtaCrossCheck.md`) showed the scalar rule's current is curl-free (pure gauge), so the preferred-frame cross-term lives in ED's *directed-flux (vector)* sector — declared by the primitives, built by no round. This note builds it and runs it.
 
+> **UPDATE (2026-06-23) — `λ_J` is not a free O(1) band-fraction.** §4–§5 below frame `λ_J=c₁₄` as possibly O(1), with safety then resting on the dissipative screening `𝒮(Γ)`. That framing is **superseded**: the derived `c_s=c` relation ties `λ_J=c₁₄` to the khronometric `c₂` by `c₁₄=c₂/(1+2c₂)`, and `LambdaOfRho` derives `c₂=sparsity` — so `λ_J=c₁₄≈sparsity` is **forced intrinsically tiny**, and `𝒮(Γ)` is redundant extra margin (not load-bearing). Also: the verified Will PPN form + luminal khronometric values give `α₂=0` exactly (no physical `w^jU_{ij}`), confirming the vector-sector `g_{0i}=λ_J w_iU` (only) here. See `Phase3_GR_Alpha2_Vanishes_Alpha1_Reconciled.md §8–§9`. (Residual bookkeeping: the `λ_J=c₁₄` vs Will-form `2c₁₄` factor-of-2 normalization.)
+
 **Crank rail:** the vector sector's *structure* is forced by the primitives; its one coupling `λ_J` and the reserve-drain profile `Γ(x)` are **band-fractions, not yet pinned** — kept symbolic. The simulation measures the machinery and the suppression; it does **not** fabricate the final `α₁, α₂` (which need `λ_J` and `Γ` pinned). Numbers shown are the *relations and the suppression functional*, not the verdict.
 
 ---
