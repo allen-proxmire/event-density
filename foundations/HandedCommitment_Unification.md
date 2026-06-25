@@ -2,6 +2,8 @@
 
 **Foundations note (hypothesis, tier M-conjectural). Proposes that two of the Standard Model's deepest unexplained handedness facts — the weak force's *maximal parity violation* and the universe's *matter/antimatter asymmetry* — are a single phenomenon in ED: one global *handed-commitment lock-in* selected at first arrival, showing two faces. Consolidates the #2b chiral-gauge thread (`ChiralGauge_SQ1c`–`SQ1f`) with the baryogenesis arc (`Memo_ED_BinaryChirality`, `P-BinaryAdmission`). This is a structural unification with a named open core, not a derivation: the lock-in is currently an undischarged postulate, and the phase-screw → γ⁵ realization is unproven.**
 
+> **Correction (SQ1h, same session — see `ChiralGauge_SQ1h_R4_BaryogenesisBridge.md`).** Two claims below were corrected after grounding in the actual baryogenesis R4 memos (on disk, 2026-05-17): **(a) the lock-in is NOT open** — it is *built* via R4 (continuous P09 χ_C ∈ S¹ broken at first arrival; Outcome-C / M3-conditional). §4 piece 1 below ("undischarged postulate, M2") is **stale** — read it as discharged-at-M3-conditional. **(b) "One lock-in, two faces" overclaims.** Baryogenesis χ_C is matter/antimatter (C-type, "orthogonal to motion"); the gauge screw is parity (P-type, "along motion") — *different* symmetries. The honest claim is **two structurally-analogous first-arrival P09 locks (a C-lock, built; a P-lock, open)**, possibly the same first-arrival event (CP) — open. The cleaner thread: **V5 is the chirality-bearing kernel for both; V1 is blind to both.** The §5 correlation prediction is conditional on the C-lock and P-lock sharing the first-arrival event.
+
 ---
 
 ## 1. The claim
