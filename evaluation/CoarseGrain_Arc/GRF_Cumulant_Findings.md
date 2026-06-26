@@ -2,6 +2,8 @@
 
 **Evaluation result — the cheap could-say-no test from research-map #5c. Sim: `grf_cumulant_test.py` (reuses the certified Σ-rule substrate via `coarsegrain_test.ensemble_run`). Tests the S1-motif arc's GRF *regime hypothesis* (the coarse-grained participation field is Gaussian — assumed, not measured) by reading skewness, excess kurtosis, and a spatial Wick-factorization residual off the certified dynamical event-density field, swept across the coarse-graining scale R_cg. Result: a *qualified, mild* support — the field is weakly non-Gaussian at fine scale and the one-point cumulants Gaussianize under coarse-graining, but a small (~5–9%) spatial Wick residual persists. "Assumed → measured as an approximate, coarse-graining-window property," which is the todo's best-realistic outcome, and slightly more favorable than the committal/trapping prior expected. Not a clean "Gaussian"; not a refutation. Honest scope caveats below.**
 
+> **CORRECTION (firming test, `grf_cumulant_deposit_test.py`, same day).** The "qualified mild support" below is **overturned.** Pressure-testing the surprise (deposit-density sweep) shows the base test's config (seedfrac = 0.04) sits **near a skew zero-crossing** — at sparse seeding (0.01) the field is **strongly skewed (+0.95)**, and at dense seeding (0.25) the excess kurtosis **grows under coarse-graining (0.12 → 0.77, anti-CLT)**. So the field is **non-Gaussian across deposit densities**, and coarse-graining does **not** Gaussianize it — **vindicating the committal/trapping prior**. The GRF regime hypothesis is **NOT robustly supported**; the base test's mildness was a config artifact. See §Firming below; read the §Result and §Verdict beneath it as the *superseded* base run. This is the **"honesty result"** the map (#5c) flagged as the more interesting outcome — it bounds the S1 motif sub-arc.
+
 ---
 
 ## What was tested
@@ -40,6 +42,29 @@ Diagnostics (all 0 for a Gaussian field): skewness; excess kurtosis (= normalize
 ## Tier
 
 **Assumed → measured-as-approximate-window-property (qualified, mild support), one config, with a small persistent spatial residual and a flagged surprise vs the committal prior.** A real first measurement that upgrades the GRF hypothesis from pure assumption to "approximately holds in the coarse window, measured" — not a clean confirmation, not a refutation. Could-say-no honored: it could have shown heavy tails (it didn't), and it could have shown clean Gaussian (it didn't either).
+
+---
+
+## Firming (the correcting run) — `grf_cumulant_deposit_test.py`
+
+Pressure-test of the base surprise: sweep the **deposit density** (seed fraction) and also read the **deposited-increment** field (late − initial, isolating the committal structure from the static background). 5 seeds, uniform IC, fine (R=1) and coarse (R=4).
+
+| seedfrac | tot R1 skew/exk | tot R4 skew/exk | inc R1 skew/exk | inc R4 skew/exk |
+|---|---|---|---|---|
+| 0.01 | **+0.95** / −0.33 | **+0.86** / +0.32 | **+1.08** / +0.15 | **+0.87** / +0.36 |
+| 0.04 | −0.27 / −0.19 | −0.16 / −0.21 | −0.08 / −0.38 | −0.14 / −0.22 |
+| 0.10 | −0.10 / +0.11 | −0.18 / +0.25 | −0.07 / 0.00 | −0.17 / +0.22 |
+| 0.25 | −0.07 / +0.12 | −0.19 / **+0.77** | −0.06 / +0.06 | −0.19 / **+0.74** |
+
+**What it shows:**
+1. **Sparse (0.01) is strongly skewed** (+0.95 to +1.08) — isolated high-ρ filament deposits on a low background. Clearly non-Gaussian.
+2. **seedfrac = 0.04 (the base test's exact config) sits near a skew zero-crossing** (+0.95 → −0.27 as density rises). The base test's "mild" cumulants were an artifact of landing there, not a generic property.
+3. **Dense (0.25) is heavy-tailed, and the kurtosis GROWS under coarse-graining** (R1 +0.12 → R4 +0.77; same at 0.10: +0.11 → +0.25). This is **anti-CLT** — coarse-graining makes it *more* non-Gaussian, the signature of spatially-correlated filaments (block-averaging concentrates the tails rather than washing them out). Exactly the committal/trapping behaviour the CoarseGrain/Shadow arc measured ("locks configs, doesn't decorrelate").
+4. **Increment ≈ total** — at developed times the field *is* mostly deposits, so isolating the increment doesn't change the picture.
+
+## Corrected verdict
+
+**The GRF regime hypothesis is NOT robustly supported.** ED's coarse field is **non-Gaussian across deposit densities** — strongly skewed when deposits are sparse (filaments), heavy-tailed when dense — and **coarse-graining does not Gaussianize it; the kurtosis grows (anti-CLT)**. The base test's "approximately Gaussian" was a config artifact (seedfrac = 0.04 near a skew zero-crossing). This **vindicates the committal/trapping prior** (ED doesn't mix/decorrelate, so the CLT route to Gaussianity is blocked — the *same wall* as PDE-emergence). It is the **"honesty result"** outcome #5c flagged: Gaussianity false as a robust property ⇒ **the S1 motif sub-arc's GRF assumption holds at best in a narrow accidental window and should be treated as a bounded, regime-conditional approximation, not a generic property.** Lesson logged: pressure-testing the surprise was load-bearing — the first run's favorable reading did not survive it.
 
 ---
 
