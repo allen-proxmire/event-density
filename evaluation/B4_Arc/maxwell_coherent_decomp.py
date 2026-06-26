@@ -34,15 +34,15 @@ def coherent_decomp(L, w, c, Nens, seed0=2000):
 
 
 def main():
-    L, w, c = 61, 1, 30
-    radii = [3, 6, 12, 24]
-    print("=" * 78)
-    print(f"B4 / #2 — coherent/incoherent decomposition  L={L}, w={w}")
-    print("  (does the COHERENT part of the CG'd field = Coulomb, with incoherence = entropy?)")
-    print("=" * 78)
+    L, w, c = 121, 1, 60          # bigger box (was 61) -> more far-field room for clean Coulomb
+    radii = [4, 8, 16, 32, 48]
+    print("=" * 90)
+    print(f"B4 / #2 — coherent/incoherent decomposition, BIGGER BOX  L={L}, w={w}")
+    print("  (does the COHERENT part of the CG'd field tighten to Coulomb 0.126, incoherence = entropy?)")
+    print("=" * 90)
 
-    # Maxwell reference
-    bM = mod_B_relax(L, w, c, iters=4000, seed=1)
+    # Maxwell reference (more iters for the larger box)
+    bM = mod_B_relax(L, w, c, iters=12000, seed=1)
     raM = radial(deficit_field(bM), c, radii)
     print("\n[Maxwell ref]  Mod-B XY relaxation deficit*r^2 = [" +
           " ".join(f"{t[3]:.3f}" for t in raM) + "]  (Coulomb ~ const 0.126)")
@@ -50,8 +50,8 @@ def main():
     ys, xs = np.mgrid[0:L, 0:L]
     r = np.sqrt((xs - c) ** 2 + (ys - c) ** 2)
 
-    print("\n  N    coherent-field deficit*r^2          mean|coherence|   incoherence(1-|Z|) by r")
-    for Nens in (8, 32, 128):
+    print("\n  N    coherent-field deficit*r^2 (by r)        mean|coh|   incoherence(1-|Z|) by r")
+    for Nens in (32, 128, 384):
         Phi, coh = coherent_decomp(L, w, c, Nens)
         # coherent-field deficit (Maxwell candidate)
         dC = deficit_field(Phi)
