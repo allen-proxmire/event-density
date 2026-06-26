@@ -26,6 +26,22 @@ Two clear, opposite movements as the ensemble grows:
 1. **Isotropy emerges (the gauge part of §7 confirmed).** The angular spread of ⟨deficit⟩ at fixed r collapses (cv 1.87 → 0.28). The per-config *seam location* is gauge-redundant — different commit orders put the seam in different places — and it washes out under ensemble-averaging, exactly as the lattice-gauge reframe predicts. So the "per-edge config is gauge freedom" claim is borne out.
 2. **The radial profile is NOT Coulomb (Maxwell selection fails).** For 1/r², deficit·r² is *constant* (the Mod-B target, flat ≈ 0.126). The ED ensemble's deficit·r² instead **grows with r** (0.22 → 6.72) and is **10–50× above** the Maxwell minimizer. The ensemble is dominated not by the winding's Coulomb field but by **residual trapped incoherence** — the committal seam energy that P11's commit-once locks in and never relaxes.
 
+## MAJOR CORRECTION (AP's reframe) — the "no" was a field-vs-entropy measurement error; the coherent part IS Coulomb
+
+`maxwell_coherent_decomp.py`. The test above averaged the **deficit** (energy ~ (∇φ)²) = coherent-field energy **+** incoherent trapped disorder, and reported the *sum* as non-Coulomb. AP's reframe: coarse-graining *is* losing the arrow, which should **relocate to entropy** — the trapped incoherence is the thermodynamic content, and the *coherent* part may be clean Maxwell. Tested by separating them (average the **field** ⟨e^{iφ}⟩, not the energy):
+
+| | r=3 | r=6 | r=12 | r=24 |
+|---|---|---|---|---|
+| Maxwell ref (Mod-B) | 0.18 | 0.14 | 0.13 | **0.126** |
+| total deficit (the old "no") | 0.22 | 0.95 | 2.97 | **6.72** |
+| **coherent field only (N=128)** | 0.25 | 0.23 | 0.19 | **0.165** |
+| incoherence 1−|⟨e^{iφ}⟩| (N=128) | 0.88 | 0.76 | 0.50 | **0.135** |
+
+- The **coherent field deficit·r² → ~0.17**, trending to the 0.126 Maxwell value as N grows (vs 6.7 for the un-separated total) — **the coherent part is approximately Coulomb.**
+- The **incoherence is concentrated near the source (0.88) and falls toward 0 far away (0.135)** — clean Coulomb far field, disorder/heat near the core = **the entropy.**
+
+**So CGing ED gives Maxwell (coherent) + entropy (incoherent) — the inverted stack working correctly, not a wall. The earlier "no" summed the field and the entropy and called the sum non-Maxwell — a measurement error.** Honest tier: strongly supported, trending right, **not yet tight** (N=128, ~70% coherent, coherent deficit·r²~0.17 not exactly 0.126 — needs more configs / bigger box). And **#3 (diffusion) and #5c (Gaussianity) are not yet re-checked this way** — the strong hypothesis is they flip the same way (signal+disorder summed). Read the rest of this doc (the §Result "no" and the committal-wall framing) as **superseded by this decomposition**, kept for the record.
+
 ## Refinement (AP's catch): the blocker is *advance-vs-relax*, not *commit-once-vs-re-commit*
 
 A sharper framing, prompted by the question "isn't a re-adjustment just another commitment?" — and checked against the certified rule (`Bits/simulator/update.py`):
