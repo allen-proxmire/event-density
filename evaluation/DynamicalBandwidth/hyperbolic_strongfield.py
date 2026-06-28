@@ -162,17 +162,22 @@ def sweep(rule_fn, label, S, kappa_c, amps, sigma, steps):
 
 
 def main():
-    S = 80
+    # NR-GRADE CONFIG (dedicated compute): S=144 + strong sources resolves the sharp
+    # hyperbolic horizons, but it is a ~2-hour run on a laptop -- not a background task.
+    # The documented S=80 result (Hyperbolic_StrongField_Finding.md) shows: rule built,
+    # measurement sound (elliptic control scales -0.34), hyperbolic horizons sub-resolution.
+    # Run THIS config on real compute to get the decisive direct kappa~1/r_h (or an honest no).
+    S = 144
     sigma = 2.5            # near-point source so the horizon forms in clean vacuum
     print("=" * 78, flush=True)
-    print("HYPERBOLIC strong-field rule, v2 -- DIRECT kappa ~ 1/r_h, fixed measurement", flush=True)
+    print("HYPERBOLIC strong-field rule, v3 -- finer grid to RESOLVE the sharp horizons", flush=True)
     print(f"  (3D, S={S}, near-point source sigma={sigma}, light damping; inner-transition kappa)", flush=True)
     print("=" * 78, flush=True)
-    amps = [10.0, 18.0, 30.0, 48.0, 75.0]
+    amps = [40.0, 80.0, 160.0, 320.0, 600.0]
     pe = sweep(run_elliptic, "ELLIPTIC  b_dot = D grad^2 b - kappa rho   (control)",
-               S, 6e-3, amps, sigma, steps=3000)
+               S, 6e-3, amps, sigma, steps=3200)
     ph = sweep(run_hyperbolic, "HYPERBOLIC b'' = c^2 grad^2 b - kappa rho - gamma b'  (gamma=0.04)",
-               S, 6e-3, amps, sigma, steps=4500)
+               S, 6e-3, amps, sigma, steps=4800)
     print("\n" + "=" * 78, flush=True)
     print(f"  elliptic   kappa_w ~ r_h^{pe if pe is None else round(pe,2)}   (expect flat ~0)", flush=True)
     print(f"  hyperbolic kappa_w ~ r_h^{ph if ph is None else round(ph,2)}   (Hawking = -1)", flush=True)
