@@ -1,0 +1,27 @@
+==============================================================================
+HYPERBOLIC strong-field rule, v3 -- finer grid to RESOLVE the sharp horizons
+  (3D, S=144, near-point source sigma=2.5, light damping; inner-transition kappa)
+==============================================================================
+
+  ELLIPTIC  b_dot = D grad^2 b - kappa rho   (control)
+    amp= 40.0:  r_h= 6.11  kappa_w=0.0936  kappa_dir=0.0544  r_s(fit)= 5.22  1/2r_s=0.0959
+    amp= 80.0:  r_h= 6.85  kappa_w=0.0885  kappa_dir=0.0527  r_s(fit)= 5.65  1/2r_s=0.0885
+    amp=160.0:  r_h= 7.52  kappa_w=0.0849  kappa_dir=0.0493  r_s(fit)= 6.03  1/2r_s=0.0829
+    amp=320.0:  r_h= 8.11  kappa_w=0.0815  kappa_dir=0.0481  r_s(fit)= 6.42  1/2r_s=0.0779
+    amp=600.0:  r_h= 8.61  kappa_w=0.0786  kappa_dir=0.0480  r_s(fit)= 6.76  1/2r_s=0.0739
+    --> kappa_w ~ r_h^-0.50    kappa_dir ~ r_h^-0.41   (Hawking -1.00; flat 0.00)
+
+  HYPERBOLIC b'' = c^2 grad^2 b - kappa rho - gamma b'  (gamma=0.04)
+    amp= 40.0:  r_h= 2.97  kappa_w=0.1020  kappa_dir=0.0546  r_s(fit)= 3.61  1/2r_s=0.1384
+    amp= 80.0:  r_h= 4.45  kappa_w=0.0930  kappa_dir=0.0546  r_s(fit)= 4.51  1/2r_s=0.1108
+    amp=160.0:  r_h= 5.55  kappa_w=0.0872  kappa_dir=0.0527  r_s(fit)= 5.21  1/2r_s=0.0959
+    amp=320.0:  r_h= 6.38  kappa_w=0.0805  kappa_dir=0.0504  r_s(fit)= 5.80  1/2r_s=0.0861
+    amp=600.0:  r_h= 7.03  kappa_w=0.0762  kappa_dir=0.0464  r_s(fit)= 6.25  1/2r_s=0.0800
+    --> kappa_w ~ r_h^-0.33    kappa_dir ~ r_h^-0.16   (Hawking -1.00; flat 0.00)
+
+==============================================================================
+  elliptic   kappa_w ~ r_h^-0.5   (expect flat ~0)
+  hyperbolic kappa_w ~ r_h^-0.33   (Hawking = -1)
+  READ: hyperbolic near -1 while elliptic flat => wave rule carries Hawking
+        scaling directly. Both flat => no (or still resolution-limited).
+==============================================================================

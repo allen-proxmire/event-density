@@ -53,3 +53,40 @@ are too sharp/small to measure at S=80.
   direct dynamical confirmation is the open, compute-bound residual.
 
 No win faked on a sub-resolution horizon. The rule exists; the decisive measurement awaits a finer grid.
+
+## The finer run (S=144, resolved) — the decisive result: the premise was a measurement artifact
+
+Ran the NR-grade config to completion (S=144, strong sources, both horizons now resolved):
+
+| rule | κ_w ~ r_h^p | r_h (cells) | κ_w vs 1/(2r_s) |
+|---|---|---|---|
+| **elliptic (control)** | **−0.50** | 6.1 – 8.6 | tracks closely (0.094→0.079 vs 0.096→0.074) |
+| **hyperbolic (new)** | **−0.33** | 3.0 – 7.0 | tracks (0.102→0.076 vs 0.138→0.080); ~−0.57 over its larger horizons |
+
+**The decisive answer is NO, and it dissolves the original premise.** The target item assumed the
+elliptic rule gives *flat* κ and a *hyperbolic* rule is needed to recover κ∝1/r_h. With a sound
+measurement that assumption is false:
+
+1. **The elliptic "flat" was a measurement artifact.** Properly measured (inner-transition-width
+   κ_w, near-point source), the elliptic rule already **scales** — κ_w ~ r_h^−0.50, and κ_w tracks
+   the analytic 1/(2r_s) in value. The old "flat r_h^0.09" (`dynamical_bandwidth_3d.py`) was the
+   fixed-window artifact, not the rule.
+2. **The hyperbolic rule does not beat it** — −0.33 over the full range (dragged shallow by its
+   smaller, less-resolved horizons), ~−0.57 over its larger horizons, i.e. *comparable to, not
+   better than,* the elliptic −0.50. The wave rule adds nothing to the Hawking-scaling story.
+3. **Neither reaches the clean −1**, because at accessible horizon sizes (3–9 cells, finite source)
+   r_h ≠ r_s — the surface-gravity *value* is captured (κ_w ≈ 1/(2r_s) for both rules) but the clean
+   −1 *power law* vs r_h is a finite-resolution / finite-source limit, not a rule-type effect.
+
+## Net conclusion
+
+- The **hyperbolic strong-field rule is built** (real, runs, forms sharp horizons) — but it is **NOT
+  needed** for the Hawking scaling. The gravity sector does not require it for κ∝1/r_h.
+- The target's **"fully-direct κ∝1/r_h sim" residual is resolved at the level of the *premise*:** the
+  elliptic "flat κ" was a measurement artifact; with a sound measurement the elliptic rule already
+  gives partial inverse scaling tracking κ ≈ 1/(2r_s). The **analytic** κ = 1/(2r_s) on the harmonic
+  profile + measured r_s∝M **stands and is corroborated in value**; the clean −1 *power law* is
+  finite-resolution-limited, not rule-limited.
+- Honest could-say-no: the hypothesis ("hyperbolic rule carries the scaling the elliptic can't") is
+  **refuted**. More informative than a win — it removes a supposed gap (no special rule needed) and
+  pins the residual to resolution, not physics.
