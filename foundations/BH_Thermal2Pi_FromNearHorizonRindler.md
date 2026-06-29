@@ -34,6 +34,37 @@ The 2π is not borrowed. It is the angle of one full turn around the horizon poi
 - **The tool used:** the Euclidean continuation (Wick rotation) plus the smoothness/no-conical-defect condition. This is the *standard* route every derivation of the Hawking temperature uses, General Relativity included. So **ED is on par with GR here** — both read the 2π off the same near-horizon geometry; ED's addition is that the geometry itself is *derived* from the bandwidth rule rather than postulated.
 - **The genuine open frontier (deeper than GR attempts):** ED's defining primitive is the *irreversible* arrow, and the Euclidean continuation is a *reversible-time* device. A fully substrate-native derivation would get the 2π from the **commitment statistics directly** — how commitments correlate across a b→0 surface in real, one-way time — with no continuation. The standard real-time route (horizon tunneling / detailed balance) gets the 2π from a residue around the b→0 pole, which ED's genuine pole supplies; turning that into a first-principles commitment-statistics derivation is the remaining target. The 2π is *forced* by ED's geometry either way; deriving it from raw becoming, without borrowing the continuation, is the deep version.
 
+## 4b. Attempt at the continuation-free version — honest negative
+
+Tried to get the 2π in real, one-way time with no continuation at all: take ED's
+exponentially-redshifted near-horizon mode φ(u) = exp(i(Ω/κ)e^{−κu}) (the redshift is ED's,
+from b→0 with rate κ) and read the thermal ratio off an ordinary real-time FFT,
+|φ̃(−ω)|²/|φ̃(ω)|² = e^{−2πω/κ}, measuring the slope = −2π. **It failed numerically** (two
+setups, slope came out +0.4 to +1.1, not ±6.28). Brute-FFT Hawking spectra are notoriously
+finicky and the quick implementation did not capture it.
+
+**But the deeper point is the real finding, and it is not a numerics excuse.** Even a *correct*
+real-time derivation gets the 2π from the **gamma function** Γ(iω/κ) — the Fourier transform of
+the log-redshifted mode — and that gamma function is precisely the **analytic structure at the
+horizon** (the branch point, the Kruskal extension across it). That analytic structure *is* the
+Euclidean periodicity in another guise. So the "real-time" route is **not genuinely
+continuation-free**; the 2π is intrinsically the horizon's analytic/periodic structure however
+you slice it.
+
+**The honest reframe this forces:** the 2π is a **continuum / smooth-horizon** quantity. It is a
+feature of the analytic branch structure where outgoing modes connect across the horizon, which
+exists only once the smooth horizon exists. ED's *discrete, irreversible* commitments produce it
+**after** coarse-graining to the smooth b-profile — which is exactly the level §2 works at (the
+Rindler form). So asking for the 2π from *raw discrete commitment counting, below the continuum*
+may be ill-posed: the 2π does not live there, it lives at the smooth-horizon level, and **there
+ED already has it** (§2). The continuation-free-from-raw-commitments target is therefore either a
+genuinely deep open problem *or* a category error (demanding a continuum feature from
+sub-continuum data); this attempt did not settle which, and did not produce the number.
+
+**Verdict on 4b: did not crack it.** The structural derivation (§2–§3) stands and is solid; the
+"derive the 2π from raw becoming with no analytic structure at all" frontier remains open, and
+may dissolve into "the 2π is a continuum feature ED gets at the continuum level."
+
 ## 5. Status
 
 **The 1/4 is structurally derived in ED.** κ = 1/(2r_s) from the b-profile's slope, and the 2π from the b-profile's near-horizon Rindler shape via smoothness, both from the one derived bandwidth profile. The coefficient is no longer "half borrowed"; it is ED's own geometry, on equal footing with GR's derivation. The frontier that remains is the substrate-native, continuation-free derivation of the 2π from commitment statistics, which is the QM-connected piece (ħ and the thermal 2π share the substrate's sparse-commitment structure) and a goal beyond what GR itself reaches for.
