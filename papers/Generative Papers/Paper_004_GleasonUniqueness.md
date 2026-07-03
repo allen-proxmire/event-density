@@ -20,6 +20,18 @@
 
 ---
 
+## Update 2026-07-02 — Partial Closure of P-Gleason-Compatibility
+
+A direct rehabilitation attempt (`event-density/foundations/Gleason_Rehabilitation_Attempt.md`) was run after a reconciliation audit found two independent 2026-04-26 corpus attempts at this same question (`arcs/born_gleason/`, `arcs/U2/`, registered as theorems T10/T11) used a since-retired primitive numbering and, in T11's case, a circular step. Both theorem registrations have been corrected (`event-density/theorems/T10.md`, `T11.md`). This paper was not aware of either arc when originally written; neither arc's argument, taken as-is, actually closed either of this paper's two postulates.
+
+**P-Gleason-Compatibility is now partially DERIVED**, in a bookkeeping sense: the current P04 defines bandwidth as a bare function of $(K,u)$ with no "decomposition" argument anywhere in its definition, so a decomposition choice has nowhere to enter the Born-type probability ratio — for any complete decomposition of the same available-channel set, the ratio is forced identical. This uses only P02+P04, with no dependency on the retired primitive numbering the April arcs used, and no reliance on the definitional-fiat move that undermined the April arcs' version. **Still open:** the physically-loaded, Kochen-Specker-flavored reading of non-contextuality (does coupling to a genuinely different, incompatible measurement context change the probability) — unaddressed.
+
+**P-Channel-Orthogonality remains fully open**, now understood more precisely: three independent derivation routes (P04 additivity, P07 distinctness, P11 phase-randomization) were tried directly and each fails or applies to the wrong layer, confirming this paper's own §3.4 diagnosis independently. The current best account is that channel-orthogonality is a **regime-conditional approximation** — valid where cross-channel coherence vanishes, the same thin-participation regime this paper's own downstream chain already needs — not a primitive-forced universal fact, corroborated by the corpus's own sublinear-composition rule elsewhere (nonzero cross-coherence term in general).
+
+**Net effect on this paper's verdict:** the conditional I → D relabel offered to Paper_007 §3.3 still requires *both* postulates and therefore still does not go through — P-Channel-Orthogonality remains the blocking postulate. See the updated §2.5 row and §3.4 note below. This narrows the obstruction; it does not remove it.
+
+---
+
 ## Abstract
 
 This paper attempts the **substrate-level Gleason-type uniqueness result** for the sesquilinear inner product on Paper_001 pre-individuation amplitudes. The attempt is **partially successful**: under two paper-specific postulates — **P-Channel-Orthogonality** (substrate-level channel basis is orthogonal in the inner-product structure) and **P-Gleason-Compatibility** (a Gleason-analog non-contextuality condition on substrate-level probability assignments) — the inner product $\langle\Psi|\Phi\rangle = \sum_K \overline{\Psi_K}\,\Phi_K$ is determined up to overall normalization. Without these postulates, the standard derivation from P07 + P08 alone does not close. The result is **honest about the obstruction**: closure requires additional substrate-level commitments beyond the canonical 13.
@@ -78,8 +90,9 @@ Standard Gleason **takes the Hilbert-space structure (and the inner product) as 
 | 13 primitives postulated | P | Paper_087 |
 | Pre-individuation amplitudes $P_K^C$ | D | Paper_001 |
 | Channel basis $\{|K\rangle\}$ from P07 | P | Paper_087 §5.7 |
-| Distinct channels orthogonal $\langle K|L\rangle = \delta_{KL}$ | **P (P-Channel-Orthogonality)** | §2 substrate-level commitment beyond P07; orthogonality is added structural content |
-| Substrate probability non-contextuality | **P (P-Gleason-Compatibility)** | §2 Gleason-analog substrate-level commitment |
+| Distinct channels orthogonal $\langle K|L\rangle = \delta_{KL}$ | **P (P-Channel-Orthogonality)** — three routes tried 2026-07-02, all fail; reframed as regime-conditional, not universal | §2 substrate-level commitment beyond P07; orthogonality is added structural content; see Update above |
+| Substrate probability non-contextuality (bookkeeping sense: relabeling can't change the math) | **D, added 2026-07-02** | Derived from P02+P04 alone — bandwidth has no decomposition-argument in its definition; see Update above and `foundations/Gleason_Rehabilitation_Attempt.md` |
+| Substrate probability non-contextuality (physical/measurement-context sense) | **P — still open** | Kochen-Specker-flavored reading; not addressed by the 2026-07-02 partial closure |
 | Inner-product form determined up to normalization | **D conditional on P-Channel-Orthogonality + P-Gleason-Compatibility** | §3.2 — under both postulates, sesquilinear inner product is structurally determined via standard-linear-algebra composition (polarization-identity + Born-rule). Explicit sub-row below for the standard-math step. |
 | Standard-math step (polarization identity / Born-rule composition) | **I (standard linear algebra)** | §3.2 step 3 — the bilinearity + complex-linearity composition producing the sesquilinear form is standard linear algebra, not substrate-derived. The substrate-level content is the two postulates; the construction of the inner-product form is inherited mathematical machinery. *(Round-7 sub-row added.)* |
 | Standard Gleason theorem (closed subspaces, $\dim \geq 3$) | NOT CLAIMED | preamble item 5 |
@@ -144,7 +157,7 @@ The two postulates close these gaps. **The structural question** is whether cano
 
 - **Conjecture 1:** P-Channel-Orthogonality may follow from P07's "structurally distinguishable" requirement applied at the inner-product level. **This is a conjecture, not a partial derivation.** P07 distinguishes channels operationally but does not, by itself, force orthonormality in the inner-product structure. A substrate-level argument linking P07 distinguishability to inner-product orthogonality is **not supplied** in this paper.
 
-- **Conjecture 2:** P-Gleason-Compatibility may follow from P03 spatial-homogeneity + P11 commitment-irreversibility. **Conjecture, not partial derivation.** The substrate-level argument linking spatial-homogeneity + commitment-irreversibility to substrate-probability non-contextuality is **not supplied** in this paper.
+- **Conjecture 2:** P-Gleason-Compatibility may follow from P03 spatial-homogeneity + P11 commitment-irreversibility. **Conjecture, not partial derivation** — at the time of writing. **UPDATE 2026-07-02:** a different route than the one conjectured here succeeded for the bookkeeping half — P02+P04 alone, not P03+P11 (see Update section above). The P11 route conjectured here was not the one that worked; P11's phase-randomization content was independently tried during the rehabilitation and found to apply to the wrong layer (dynamical/post-commitment, not kinematic/pre-commitment). The physical/measurement-context half of this conjecture remains genuinely open.
 
 **Both conjectures are open structural questions, not progress toward closure.** Calling them "tentative analysis" would be too generous — they are **open conjectures**. This paper makes no claim that either is provable from canonical 13 alone; both are explicitly open. Future substrate-level analysis could either close them (converting P-Channel-Orthogonality and P-Gleason-Compatibility to theorems) or refute them (forcing those postulates to remain substrate-level commitments).
 
@@ -174,7 +187,7 @@ The two postulates close these gaps. **The structural question** is whether cano
 
 ## 5. Position Statement
 
-**The substrate-level Gleason-type uniqueness result is partially achieved.** Under P-Channel-Orthogonality + P-Gleason-Compatibility, the sesquilinear inner-product form on Paper_001 pre-individuation amplitudes is structurally determined. Without these two postulates, the derivation from P07 + P08 alone does not close.
+**The substrate-level Gleason-type uniqueness result is partially achieved, and partially achieved further as of 2026-07-02.** Under P-Channel-Orthogonality + P-Gleason-Compatibility, the sesquilinear inner-product form on Paper_001 pre-individuation amplitudes is structurally determined. Without these two postulates, the derivation from P07 + P08 alone does not close. **As of the 2026-07-02 update above, P-Gleason-Compatibility is derived in its bookkeeping sense (from P02+P04 alone); P-Channel-Orthogonality remains open and is now understood as a regime-conditional approximation rather than a universal fact.** The full inner-product derivation still does not close — P-Channel-Orthogonality remains the blocking postulate.
 
 **For Paper_007's inner-product row:** conditional I → D relabel available under the two postulates; otherwise I retained.
 

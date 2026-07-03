@@ -279,12 +279,14 @@ The practical corpus reading is consistent with Paper_027's existing M3 status; 
 
 ### §7.2 Cross-arc consequence (if A4 audit accepts)
 
+> **CORRECTED 2026-05-17** (`Update_ED_SC_4x_Arc_M3.md`, the actual post-audit review, written the day after this memo): the "ED-SC 4.x arc-wide: M3 → M2 upgrade" row below did **not** hold up. Route A4 closed only at the substrate-parameter-*inherited* level described in this memo's own top-line Status (analogous to Paper_027's Newton's-$G$ closure) — that is sufficient for the Cos_01/Cos_05/038_5 rows above it, but the six-projection ED-SC 4.x arc needs *exponent-level* form-derivation per projection, which Route A4 does not supply. **Verdict stays M3 arc-wide**; the exponent work is demoted to non-load-bearing "pending" (see `event-density/docs/ED_Research_Targets.md` item 5 for the further downstream correction this omission caused — the stale forecast below propagated into a research-targets entry that had to be corrected again on 2026-07-02).
+
 | Paper | Pre-A4 | Post-A4 (audit-accepted) |
 |---|---|---|
 | Paper_ED_Cos_01 (Inflation) | M3 + value-INHERITED | **M3 + form-DERIVED $H$ via Route A4** (substrate-parameter-INHERITED at $\Theta_{\mathrm{ED}}$ level) |
 | Paper_ED_Cos_05 (Dark Energy) | M3 conditional on Route A | **M3 unconditional** (Route A4 closure delivers the conditional) |
 | Paper_038_5 (Lambda_V1) | M2 conditional retroactive M3 | **M3 retroactive upgrade** per Paper_038_5 reframing |
-| ED-SC 4.x arc-wide | M3 (six projections) | **M3 → M2 upgrade** (Route A4 closure triggers ED-SC 4.x arc-wide upgrade per ED_MEMORY anchor 7) |
+| ED-SC 4.x arc-wide | M3 (six projections) | ~~**M3 → M2 upgrade** (Route A4 closure triggers ED-SC 4.x arc-wide upgrade per ED_MEMORY anchor 7)~~ **SUPERSEDED — stays M3** (see correction banner above) |
 | Paper_027 (Newton's $G$) | M3 form-DERIVED + value-INHERITED at $\ell_P, \hbar, c$ | unchanged — Route A4 inherits Paper_027's closure pattern; both papers stand at same M3 closure status |
 
 **Λ-smallness 120-OOM problem reframed:** the substantive substrate-research question becomes "what determines $\Theta_{\mathrm{ED}}$ value?" — parallel to the longstanding question "what determines $\ell_P, \hbar, c$ values?" The 120-OOM hierarchy is **substrate-parameter-INHERITED at ED-threshold level**, not a separate "fine-tuning problem" requiring specialized substrate-graph mechanism.
@@ -306,7 +308,7 @@ The practical corpus reading is consistent with Paper_027's existing M3 status; 
 
 **Path-038_5-Update (conditional on A4 audit):** update Paper_038_5 to reflect retroactive M2 → M3 upgrade per the reframing's conditional clause.
 
-**Path-ED-SC-4.x-Arc-Update (conditional on A4 audit):** propagate ED-SC 4.x arc-wide M3 → M2 upgrade across the six projections.
+**Path-ED-SC-4.x-Arc-Update (conditional on A4 audit):** ~~propagate ED-SC 4.x arc-wide M3 → M2 upgrade across the six projections~~ **DO NOT EXECUTE — superseded 2026-05-17, see §7.2 correction banner.** The audit found this does not hold; the arc stays M3.
 
 ### §7.4 My recommendation
 
