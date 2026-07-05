@@ -1,0 +1,222 @@
+# ED Open-Targets Map — Corpus Dive, 2026-07-05
+
+**What this is.** A fresh, piece-by-piece open-items map of the published ED corpus (ED Generative, ~213 papers across 13 arcs) plus the named working-repo scoping docs. Produced by a parallel arc-by-arc sweep, each arc read across eight lenses: OPEN threads (+tier), OVERCLAIM/tier-drift, SUPERSEDED-unmarked, STALE-REF, missing/blanked STANDALONE-PDF, loose PREDICTIONS, cross-arc leverage, and (matter sector) SM-Lagrangian completeness. **Supersedes the stale summary lines of `ED_Research_Targets.md`** (whose summaries lag its own detail). Tiering vocabulary: DERIVED / STRUCTURAL / ACCOUNT / MEASURED, and FORM-FORCED vs VALUE-INHERITED.
+
+Status: **all 13 arcs + SM-completeness pass + framing/meta sweep complete** (gravity, black-hole, qm-kinematics, cosmology, qft, relativistic-qm, soft-matter, q-compute, wedges, substrate-evaluation, entanglement, dynamics, predictions-inventory, position/layers/scale-correspondence, SM-Lagrangian).
+
+---
+
+## A. Top cross-arc open research targets (ranked by leverage)
+
+These are the open items that sit UNDER many others; closing one cascades. Ranked by leverage × how many arcs depend on it.
+
+1. **Θ_ED / Route A from sub-primitives (RA-OPEN-4a) — the master value-gate, AND its closure status is internally contradictory.** Every H₀-, Λ-, a₀-, ξ_canonical-, r_s-bearing number in the corpus bottoms out on Θ_ED ≈ 10⁻¹²². **Two things are true and in tension.** (a) The research target: the τ_V5 → Θ_ED reduction is unproven (axis A-A4-4); H₀ is dimensionally re-hosted, not explained. Closing it would convert the whole "value-inherited" column of cosmology to value-DERIVED (Cos_01 row 13a, Cos_05 row 13, Λ-magnitude 038_5, ξ_canonical). **The single highest-leverage derivation in the program.** (b) The QC problem (surfaced by the meta sweep): `Paper_ED_SC_4_2`'s **body** (§3.4–3.7, §6, audit rows 15–22) says the ξ_canonical(H₀) derivation **did not close** — β(K), K_boundary, ℓ_V5(H₀) all OPEN — but its **header/§1.5 patch (2026-05-17)** and the entire downstream 4.x arc **and the public `ED_WHITEPAPER`** assert Route A **closed at "substrate-parameter-INHERITED level."** The `scale invariance/README` and the 13-primitive position paper §6.1 side with the body (OPEN). **So the program's front door currently over-claims relative to its own derivation.** Resolution is binary: either finish the §1.5 substance (derive ℓ_V5(H₀)/Θ_ED with no new postulate → genuine M1) and update the 4.2 body, or retract the patch + whitepaper language to "M3 structural setup, value-inherited." Highest-leverage BOTH as research and as hygiene.
+
+2. **Characterize what the V5 cross-chain kernel (`Paper_090`) actually forces — the silent corpus keystone.** V5 is INHERITED or postulated *everywhere* and derived *nowhere*. It is the single shared load-bearer under: entanglement's Schmidt-rank>1 / non-factorizability (P-V5-Schmidt-Generic, 063/064), the Tsirelson⊊NS / PR-box exclusion (P-V5-Hilbert-Constraint, 069 — the one place ED claims to explain "why quantum and not super-quantum"), monogamy's budget (065), the dynamics stress-energy/flux form (HM-Q2, RL-Q2), and q-compute's M_cap saturation (053/062). **Tier: OPEN (postulated everywhere).** Closes: a single substrate-graph derivation of the V5 kernel's induced bilocal-matrix structure would simultaneously attack the top-two open targets of the entanglement AND dynamics arcs, and ground the SCBU M_crit anchor. Highest cross-arc reach of any single technical result.
+
+3. **The inner-product / channel-orthogonality derivation (Gleason-analog) — the QM-foundations keystone.** `Paper_004` P-Channel-Orthogonality is a clean structural NEGATIVE (three routes tried 2026-07-02, all fail; a regime rescue was withdrawn). Under it sit: Hilbert space (`Paper_007`, inner product still I via legacy "Paper #3"), Born-rule completeness (`Paper_005`), Heisenberg's four-band orthogonality (`012_6`). **Tier: OPEN (blocking).** Closes: relabels the inner-product I→D and lets the whole QM-kinematics "derived" claim stand un-conditionally instead of resting on a postulate chain.
+
+4. **Chiral SM matter sector — anomaly cancellation (UNTOUCHED) is the single largest hole.** `Paper_MS-II` names anomaly cancellation "the deepest consistency requirement of a chiral gauge theory" and leaves it *entirely absent*. Alongside: weak-force chirality assignment (why SU(2) is the chiral one — ACCOUNT, only a candidate) and the "why 3" chain (internal d=3 + spatial-3, both hanging on the unshown linking premise). **Tier: UNTOUCHED / ACCOUNT / STRUCTURAL-premise-unshown.** Closes: a substrate account of why the fermion content's anomaly coefficients sum to zero (channel-topology constraint). Highest value + highest difficulty in the matter frontier.
+
+5. **The Higgs/Yukawa mass-generation mechanism (the user's flagged vein).** `Paper_113` (mass structural form) and `Paper_114` (P-Gauge) are capped at M2 precisely because the substrate-Higgs (vector-boson mass) and substrate-Yukawa (fermion mass) mechanisms are *named, not derived*; the P-Gauge postulate (114 row 0) is the gate; generation count, mass hierarchy, and CKM/PMNS mixing are all INHERITED. **Tier: DERIVED-claimed-but-unmet → M2.** Closes: a first-principles derivation of why bosonic rule-types get mass via a longitudinal/Higgs mode and fermionic ones via a chiral/Yukawa vertex, plus deriving P-Gauge from P05/P07/P09/P10. *(SM-completeness pass, §C, details this.)*
+
+6. **Nonlinear + background-free curvature emergence.** The static/linear half is closed (`Paper_MetricFromTheGraph`: g~1/b forced, unique to 3D). Open: the nonlinear/dynamical field equations (ED's own, khronometric) and a background-free construction (lattice/topology currently an input). **Tier: OPEN (program).** Sits UNDER: the horizon location borrowed from GR (BH `Paper_039` §3.2), the area-law's assumed geometry, and 3D's second half. Shares its deep piece ("does an ordering/coupling structure emerge from coarse-graining?") with the substrate-evaluation emergent-free-energy question.
+
+7. **Unitary completeness (BH information).** Substrate-level unitarity is preserved, but its tie to standard Hilbert-space unitarity (Page-curve/firewall) is explicitly non-trivial and OPEN (`Paper_039` §8.7, `Paper_050`, `Paper_052`). **Tier: OPEN.** Also gated on curvature emergence (horizon location) and the inner-product keystone (#2).
+
+8. **YM continuum-limit closure.** The whole "structural-positive" Yang-Mills verdict rests on three undischarged postulates: P-YM-Action-Coarse-Graining (019), P-OS-Reflection-Positivity/OS3 (020), P-Profile-Rescaling (021). Program self-declares it does NOT close these (023 §5; Clay explicitly disclaimed — compliant). **Tier: STRUCTURAL/declared-postulates.** Closes (partly): an explicit DCGT→S_YM matching computation would discharge 019 and tighten 021.
+
+---
+
+## B. Per-arc open-items (distilled)
+
+### Gravity (32 papers) — COMPLETE
+- **Curvature-emergence** nonlinear + background-free half OPEN (target A6); static/linear closed.
+- **P14 (Bilocal Strain Coupling, `Paper_030`)** is a NEW POSTULATE, not derived from the 13 — gates the ECR, BTFR slope-4, KM-I unification. Its reduction to the 13 is open.
+- **Deep-IR geometric-mean branch origin (KM-I)** — "why the substrate's response goes geometric-mean below the cosmic rate" is the khronon arc's "deepest declared open question."
+- **KM-II regulator family unfixed** — the cosmological Θ-sector is a family constrained by 5 filters, not uniquely selected; clusters/CMB not discharged.
+- **Λ magnitude (038_5)** — reached not solved; naive V1-cutoff off by ~10⁶⁰ (kept as honest negative); reduces to Route A (target A1).
+- **a₀ (029)** ~10% match within H₀-tension band; the substrate-normalization constant carries O(1) uncertainty.
+- **α₁/α₂ now CLOSED** by GR-IV (α₂=0 exact) — GR-II/GR-III "front open" lines are superseded (mostly self-noted).
+- Predictions all well-mapped in `Predictions_and_Falsifiers.md`; **gap: Route-A closure not listed as a Tier-3 target** (if it fails, 038_5 downgrades M3→M2).
+- STALE-REF: `Paper_029` repo-target path `domain-arcs/gravity/...` ≠ actual `physics-papers/gravity/`.
+
+### Black-hole (19 papers) — COMPLETE
+- **Horizon location r_H borrowed from GR** (`Paper_039` §3.2) — gated on curvature emergence (target A6). Recurs across the arc.
+- **Unitary completeness OPEN** (target A7).
+- **S=A/4: now fully structural** — `BH_Thermal2Pi` derives the 2π; supersedes `Paper_043`'s "coefficient inherited" reading (043 not re-marked). `Paper_HorizonTilingThreeCounts` explicitly notes the supersession.
+- Postulate-heavy: V5-UV-cutoff (040), cutoff-saturation-endpoint (041), horizon-participation + multiplicity-g (043, the log g combinatorics OPEN), OS-type boundaries.
+- **`Paper_052_5_Pred_MergerLag`**: substrate floor τ_V5^min NOT supplied → prediction is NOT refutation-grade yet (self-flagged); a real open to close before it counts.
+- `BH_Thermal2Pi` §4b: continuation-free (raw-commitment) derivation FAILED — honest open frontier (2π may be an intrinsically continuum feature).
+
+### QM-kinematics (24 papers) — COMPLETE
+- **Inner-product / P-Channel-Orthogonality (Paper_004) — target A3**, the arc keystone; blocks Hilbert space, Born completeness, Heisenberg.
+- **P-Norm-Preservation (Paper_006) / V1→unitary coarse-graining "asserted not constructed" (Paper_006_7 row 9)** — the second deep hinge; carries the "Schrödinger emerges" claim.
+- **P-LinRate (Paper_003 Born rule)** — the whole Born result rests on it; alternatives (b², √b) substrate-consistent; non-circularity only layer-shifted (self-admitted).
+- OVERCLAIM watches: `Paper_006` abstract "derives unitary evolution" reads stronger than its postulate-conditional audit; `012_5`/`012_6` (momentum, Heisenberg) carry "FORM-FORCED" in prose but "form-IDENTIFIED / no D rows" in body (per Paper_095 §2.3) — Heisenberg's "distinctive contribution" framing is the sharpest instance (its only ED content is the open P-FourBand).
+- **ℏ / c value-inheritance** — one shared open item (no substrate derivation of ℏ or c) wearing five labels (O-AB-3, O-RB-1/2, U5, Heisenberg).
+- HYGIENE (systemic): naming/numbering debt — "Paper #1/#3" legacy aliases, U-series vs arc-number collisions, a **112 numbering collision** (LightlikeWorldlines vs hbar_Origin), and a **convention bug** (`Paper_004_5` still uses b_K² / ⟨P,P⟩=Σb_K² where U1's corrected convention is |P_K|²=b_K). Recommend a one-pass reconciliation.
+- Predictions: mostly retrodictions of standard QM (double-slit F1 super-threshold interference is the one genuinely killable ED bet) — confirm F1 is inventoried.
+
+### Cosmology (16 papers) — COMPLETE
+- **Θ_ED / Route A — target A1**, the master gate under the whole "value-inherited" column.
+- **ξ_canonical(H₀) — SCBU/CCC status CONFLICT**: SCBU (row 12) says flatly OPEN; CCC (row 16) says closed-at-inherited-level as of 2026-05-17. **SCBU is stale (dated 2026-05-14, not resynced)** — resolve the disagreement (subset of A1).
+- **Cyclic-vs-single-aeon / post-boundary ignition (CCC row 17)** — load-bearing under the arc's ENTIRE "IC-INHERITED" column (Cos_01/05/06 + Baryogenesis lean on it).
+- **CMB/primordial Gaussianity debt** (Cos_01 row 16, Cos_06 F4): substrate is non-Gaussian at layer 1, yet tilt + f_NL are borrowed from standard slow-roll — the arc's sharpest honesty exposure; shares the layer-1→layer-2 decorrelation gap.
+- **IMPORTANT CORRECTION**: the Hubble & S8 tensions are **NOT resolved** by ED — Cos_03 §3.6 and Cos_04 §3.6 both say explicitly "Route A4 does not naturally resolve it"; Route A4 is a *structural link* only. The memory-index phrasing "resolution via the Θ_ED channel" **overstates**; correct the memory note.
+- OVERCLAIM watches: SCBU "joint scaling FORCED" leans on one postulate; CCC abstract "derives the relic dissolution CCC merely assumes" is analytic-only (no simulator confirmation, self-conceded in fine print).
+- SUPERSEDED-unmarked: **`Paper_ED_Baryogenesis_Open.md`** (M2, retracted P-BinaryAdmission) sits next to the live M3 with the same title and no banner.
+- Predictions gaps (absent from master list): DF2/DF4 "knee sharper than MOND" (4 predictions, the cleanest ED-vs-MOND discriminator), Cos_05 strict w=−1, Cos_06 primordial-tensor↔GW (n_T=−r/8).
+
+### QFT (15 papers) — COMPLETE
+- **Anomaly cancellation UNTOUCHED — target A4**, the single largest matter-sector hole.
+- **Weak-chirality assignment (ACCOUNT)** and the **"why 3" / linking premise (STRUCTURAL, unshown)** — both in MS-II; the chains-as-links probe on ED's real simulator would close two results (dimensional + matter).
+- **YM continuum-limit — target A8** (three declared postulates; Clay honestly disclaimed).
+- **T17 (Paper_015) superseded-in-part by MS-II, unmarked** — its non-abelian step is A→analogy but MS-II claims it *derived* from multiplicity; T17 routes readers to superseded/in-queue non-abelian path. Add a forward-pointer / promote the MS-II derivation.
+- `Paper_017` Klein-Gordon: a papered-over tension (V1→diffusion per Paper_073 vs V1→KG here) reconciled only by asserting a regime-split postulate.
+- **WOLFRAM FLAG: `Paper_015_5_Photonic_Chern` cites Wolfram Ruliad / hypergraph-rewriting** — violates the standing no-Wolfram-in-public rule. Scrub.
+- Predictions to route to master list: "no parity-violating abelian force", "no stable SU(N≥4)" (both MS-II, killable/forbidding).
+
+### Relativistic-QM (15 papers) — COMPLETE
+- **Higgs/Yukawa mass mechanism — target A5** (113/114/116; substrate-Higgs + substrate-Yukawa named-not-derived; P-Gauge postulate the gate; exhaustiveness of the two-mechanism massless slot OPEN).
+- **V1→{KG, Dirac} and V5→multi-channel/non-Abelian closed reductions** — every core wave equation is form-INHERITED from Papers 013/017/089/090, not closed at graph level; the V5 multi-channel closure (108) gates non-Abelian gauge structure.
+- OVERCLAIM (mild): `Paper_113` "mass depends on the rule-type's statistics class" reads as derivation; it's empirical identification (audit rows flag OPEN).
+- STALE-REF (real, cheap fix): `Paper_112_Lightlike` and `Paper_115` still cite "Paper_RQM-GRH-D1 (in queue / next paper)" — that paper IS `Paper_114`, already written. Re-cite + re-tier the conditionals. Plus the 112 numbering collision (shared with qm-kinematics finding).
+- Predictions gap: **no relativistic-QM section in the master predictions list** — anyon prohibition (killable 3+1D bet), UV finiteness, spin-statistics/CPT, 114 F-Gauge, 116 F4 exhaustiveness are candidate killable predictions currently unlogged.
+
+### Soft-matter (15 papers) — COMPLETE
+- **NS global-smoothness chain (`Paper_077` + `Paper_084`)** — the Clay-adjacent result bottoms out in FOUR undischarged postulates (P-R1-Sufficient-Strength, P-Obstruction-Sufficient, P-P04-Vorticity-Cap, P-V5-Stretch-Cap); verdict A→position "structural-positive, not constructive." Clay explicitly disclaimed (compliant).
+- **DCGT verdict M3 → quantitative coefficients (`Paper_073` + `076`)** — every continuum coefficient (ν, τ_Maxwell, D) is VALUE-INHERITED; deriving even ONE (e.g. ν from V1 kernel data) would upgrade the whole arc's value-layer. *(The layers/ working repo already flags a runnable ν-measurement.)*
+- **Turbulence beyond leading order (`078`)** — Kolmogorov k^{−5/3} inherited; intermittency/anomalous-scaling explicitly OPEN.
+- **UDM law is the corpus's one PASSED peer-reviewed test** (`085`, β≈2, R²>0.986); FRAP-BSA second-confirmation protocol live.
+- **WOLFRAM FLAG (priority): `Paper_073_DCGT` AND `Paper_086_5_Metamaterials`** both carry the Wolfram-Ruliad lineage line — and **073 has a built PDF**, so the leak is already in a public artifact. 073 is the foundational bridge cited program-wide.
+- Naming drift: filename "Universal Mobility Law" vs evidence-side "Universal Degenerate-Mobility (UDM)"; `082` abstract implies three D-arguments but body concedes T2 is A→analogy.
+
+### Q-compute (10 papers) — COMPLETE
+- **UR-1 independence assumption (`Paper_054`)** — "three substrate rates are independent" is only *distinct-primary-drivers*, not proven; ALL of A/B/C distinctness + exhaustiveness (053/055/056/057/058) inherits it. Closing = a dimension-counting proof the three rates parameterize a genuine 3-manifold. Single highest-leverage internal gap.
+- **Class-C plateau (`058`) + Class-B gap-suppression (`057`)** — two SHARP, near-term, architecture-distinguishing killable predictions (plateau at Γ>0 vs standard monotonic→0; exponential-not-polynomial), and **both ABSENT from the master predictions lists.** Strongest un-banked killable items in the whole sweep.
+- **Cross-platform retroactive-fit risk (056/057/058 §6)** — only the wall *form* is fit-immune; numerical cross-platform unification needs "Strategy-1" substrate-derived platform-scaling, all "in-queue."
+- HYGIENE: systemic stale "in queue" labels (054/055/056/057 call already-written 056/057/058 unwritten); **inverted PDF priority** — the A→position echo (`062`) has a PDF while the killable-prediction papers (056/057/058) do not.
+
+### Wedges (14 papers) — COMPLETE
+- **ξ_canonical = 1.7575 lu (`Paper_096`)** and **the 0.6 transition exponent (`Paper_097`)** — both canon-internal / VALUE-INHERITED, not derived; the whole cross-scale-invariance verdict + F3 falsifier rest on them. Both reduce to Route A (target A1). Deriving 0.6 also strengthens `091`.
+- **P11 → deeper-layer derivation (`Paper_093` T18, self-flagged M2 row 17)** — same gate as P-NoBackwardChain non-constructibility (`089`); closing upgrades T18 M2→M1 and the whole arrow stack (`094`).
+- **P06 derivability + postulate-count reduction (`087`/`088`)** — the minimality question; ~35 commitments never shown to shrink; `088` §3 even contradicts `087` on what P01 IS.
+- OVERCLAIM: **`Paper_095` still carries the retracted M1 "Phase-1 QM FORCED-unconditional" claim that `Paper_098` §3.1 already corrected to M2** — one-line sync closes it.
+- **WOLFRAM FLAG: `087`/`098`/`100`** carry the lineage line; `087` is the anchor every wedges paper cites.
+- Housekeeping left in "publication" drafts: `093` §12 rewrite-note + "postulate registry count: 125" artifact leak.
+
+### Substrate-evaluation (10 papers) — COMPLETE
+- **Does DCGT coarse-graining SUPPLY the determined continuum object? — the deep shared bridge.** The single named crux across `ChargeAsTopology_B4` (§7, Maxwell-action from holonomies — the sharpest instance, standard lattice→continuum dictionary), `AreaLawIsTheEdgeCount` (emergent geometry from graph), `BlindnessInvariant` (does an ordering/stiffness coupling emerge from CG), and `TheArrowSortsTheContinuum` (§7 bridge). This IS the emergent-free-energy / emergent-ordering question — shared with curvature emergence (target A6) and the Bullet order-parameter grounding. Closing charge illuminates all.
+- **Emergent long-range order** — the certified rule has NO ordering coupling in any sector; grounding an order parameter in a *read* sector with a *derived* coupling is the open piece (this session's blindness-invariant work; scoped to crystals, silent on knots).
+- Reconcile the two continuum papers: `CanonicalPDEChannels_BottomUp` carries its own ON-HOLD banner; `TheArrowSortsTheContinuum` embodies the two-layer reframe it's held for — fold or re-issue.
+- Solid: `CommonCauseNotChannel_A1` (house exemplar), `FiniteMemoryCeiling_Primes` (the program's ONE proven negative). `Memo_QM_Amplitude` has cross-repo stale refs (`Twin Bertrand/`) + a Copilot byline unusual for the corpus.
+
+### Entanglement (10 papers) — COMPLETE
+- **P-V5-Hilbert-Constraint (`Paper_069`)** — the single postulate carrying Tsirelson⊊NS + all PR-box exclusion; the one place ED claims to explain "why quantum and not super-quantum." Highest-value lever; reduces to the V5-kernel target (A2).
+- **P-V5-Schmidt-Generic / E-2 irreducibility (`063`→`064`)** — entanglement's very existence (non-factorizability) rests on an un-derived "generically rank>1"; the foundational hole under the whole arc.
+- **P-V5-Budget / W_max (`065`)** — monogamy's finite budget postulated, not derived.
+- SUPERSEDED/DUPLICATE: **`Paper_067` and `Paper_068` are the same result (E-6 von Neumann entropy), neither retired** — 068 self-declares it's the canonical slot and 067 the "equivalent" duplicate. Merge/mark one.
+- STALE-REF: E-index↔paper-number mapping internally inconsistent across 065–068/070; possible dangling `Paper_062` ref.
+
+### Dynamics (8 papers) — COMPLETE
+- **OPEN-HM-Q1 + Q2 (`Dyn_02`)** — the arc's master gate: the chain-class criterion (relativistic vs non-relativistic chains) + per-regime stress-energy form are INHERITED from standard QFT/GR, not substrate-derived; caps Dyn_02/03/05 + GW_02 at M2. Joint closure upgrades four papers M2→M3 at once. **This is the V5-kernel question (target A2) in dynamics clothing.**
+- **GW_00 row-12 status inconsistency** — GW_00 claims full D-via-I closure; `Dyn_03` says form-only/M2, coefficient OPEN, and even instructs the GW_00 update — which was never applied. Affects whether GW_00's M3 is honest.
+- Softened un-derived steps inside M3 verdicts (`Dyn_04` compression-monotonicity; `Dyn_05` saddle-overlap rate) written as prose asides rather than OPEN rows — a consistency pass so the audits don't under-count.
+- **WOLFRAM FLAG: ALL 8 dynamics papers** carry the identical Wolfram-Ruliad Position-Statement boilerplate. One-pass scrub.
+- Predictions to route to master list: Dyn_02 F1 (EoS∉{−1,0,1/3}), Dyn_03 F1 (monopole/dipole GW, scalar/longitudinal EM), GW_00/01 polarization+damping falsifiers, GW_02 slope≠f^{2/3} + the NANOGrav SMBH-inspiral postdiction (model-degenerate — tier carefully).
+
+### Predictions inventory (Master List + 22-Ways) — COMPLETE
+- The two public files are **well-tiered and internally consistent** (22 live + 2 provisional + 3 passed); `Paper_056`'s honesty verified intact (sharp architecture-independent wall = structural; 140–250 kDa = explicit extrapolation).
+- **Staleness holes (killable predictions in papers, ABSENT from both public lists):** Cos_05 strict w=−1; Cos_06 primordial-tensor n_T=−r/8; the DF2/DF4 group-suppression knee family (×4, the cleanest ED-vs-MOND discriminator); rel-qm structural falsifiers (anyon prohibition, UV finiteness, spin-statistics); Class-B/Class-C q-compute predictions; **and the mature, EDG-published Bullet offset-velocity law** — notable omission given it's experiment-ready.
+- One hygiene fix here: `Paper_ED_Postdictions_PassedTests.md` §9 names Wolfram-Ruliad lineage (outreach-facing).
+- North-star ranking (testability × distinctiveness × clean-kill): **BTFR slope-4/zero-scatter** (cleanest number, testable now on SPARC) > **envelope ω_v≈8γ_dec across 10 OOM** (most distinctive, $0/1-week Track-B — fastest path to a NEW result) > **non-thermal Hawking (ω/ωc)²** (open question to analog-gravity labs) > **a₀=cH₀/2π** > **Class-A wall**.
+
+### Position / layers / scale-correspondence (meta) — COMPLETE
+- **Route A closure CONTRADICTION** — the single most consequential inconsistency in the sweep; folded into target A1(b) above. Body of `Paper_ED_SC_4_2` says OPEN; whitepaper + 4.x headers say closed. The whole SCBU/six-projection/M3 arc-wide language hangs off the unreconciled §1.5 patch.
+- **Primitive minimality / irreducibility** — the core meta question, named-open in ≥4 framing docs: 13 not absolutely minimal (P03 bundles three), arrow redundancy (P11+P13+V1), P14 reserved slot (elevate or reduce?), "contrast" as one primitive vs consolidation, Gleason-gate postulates + GRF-Gaussianity + P-H0-Invariant all paper-specific. The honest either/or (reduction proof vs irreducibility proof) is already framed in `ED_Program_Review`.
+- **GRF-Gaussianity may be FALSE** — the motif-conditioned invariant, r*, saddle-classification, and SC-4.11 all assume the coarse participation field is a Gaussian random field, but the layers/CoarseGrain finding is committal/trapping-not-mixing and the layer-1 deposit is *measured* non-Gaussian. A cheap build-and-run higher-cumulant test could retire much of ED-SC 3.x the way the soliton test retired the dispersive-pole claim. **Could-say-no, high value.**
+- **QM-emergence M1-vs-M2 overclaim (`Paper_098`)** — self-flagged in the position paper; the honest per-audit tier is M2; correction not yet applied.
+- CREDIBILITY ASSET: the framing docs are the strongest self-audit in the corpus — dense with self-marked SUPERSEDED/retired items (r*, D_crit 0.5→0.896, soliton dispersive-pole, the 3 early CG papers). The single blemish is the Route A "closed" patch applied without reconciling the bodies it contradicts.
+- WOLFRAM: `ED_WHITEPAPER`, the 13-primitive position paper, and `Contrast_First_Ontology` all carry the lineage line; `ED_Program_Review` is clean (the model to copy).
+
+---
+
+## C. SM-Lagrangian completeness (dedicated pass)
+
+Term-by-term status of the Standard Model Lagrangian in ED. Methodological invariant throughout: **form-FORCED, value-INHERITED** — the substrate fixes a term's *structure/existence/type*, never its numerical value. (Separately, numerical constants α and mass ratios are a *proven* value-wall per the Fine_Structure and Species_Mass scoping memos — distinct from the structural opens below; do not chase values.)
+
+| SM sector | ED tier | Sharp open question |
+|---|---|---|
+| **Gauge kinetic + non-abelian** SU(3)×SU(2)×U(1) | DERIVED (form) for existence + non-abelian structure; group *choice* EMPIRICAL | Why multiplicities {1,2,3} specifically? Non-abelian *dynamics* (YM existence/OS-positivity) conditional (target A8). |
+| **Fermion Dirac kinetic** + reps + 3 generations | DERIVED (Dirac, Cl(3,1), spin-½); generation count EMPIRICAL; **rep spectrum OPEN** | The full representation spectrum (which hypercharges/multiplets) is UNTOUCHED; generation count = 3 not forced. |
+| **Higgs sector** field, V(φ), EWSB, VEV, m_H | **ACCOUNT / OPEN** — multiple SSB routes admissible, none forced; mechanism *asserted, not derived* | **Does an SSB/condensate mechanism EMERGE from the substrate, or is it inserted?** Real ED finding: naive uniform-VEV *fails* structurally (σ_τ uses log-derivatives, blind to uniform amplitude shift) — a concrete ED-native handle. |
+| **Yukawa** mass generation, hierarchy, CKM/PMNS | Mixing-matrix *existence* + CP-phase *count* DERIVED (Jarlskog (n−1)(n−2)/2 forced); **mass mechanism + all ratios OPEN/wall** | Substrate-Yukawa chiral-coupling mechanism asserted, not derived (`113` row 11). Mass ratios are a proven wall (Arc M M3). |
+| **Neutrino mass** Dirac vs Majorana | STRUCTURAL (both admitted, neither selected) | Which rule-types occupy the MR-R slot is EMPIRICAL; seesaw scale inherited. |
+| **Strong-CP / θ-term** θ G G̃ | **UNTOUCHED** | Complete gap — no ED treatment of the θ-term, its smallness, or a PQ analogue. Cheapest first-look (probe the B4 topological-charge machinery for a hook). |
+| **Anomaly cancellation** | **UNTOUCHED (explicitly flagged, target A4)** | No ED account that hypercharges sum anomaly-free. The deepest chiral-consistency requirement; may be derivable as a *structural constraint* (ED's strength) rather than a value. |
+
+**The coherent frontier (the user's flagged vein).** The Higgs/Yukawa/mass cluster is where ED's matter sector is thinnest, and the papers are candid (`113` self-downgrades M3→M2 on exactly the two asserted-not-derived nodes). Ranked SM-completion moves: **(1) substrate-Higgs / EWSB emergence probe** — tractable at probe scope (Arc Q Q.4 already scoped 5 mechanisms to "admissible, not forced"; the open move is the *emergence* question, and the log-derivative amplitude-blindness that kills naive uniform-VEV is a concrete handle). This is the keystone: grounding it cascades into Yukawa mass generation and neutrino mass. **(2) anomaly cancellation** — highest-value *untouched* structural target, pairs naturally with **(3) the fermion representation spectrum**, both newly tractable via MS-II's U(N)-from-multiplicity derivation. **(7) strong-CP** — cheapest probe, currently zero coverage.
+
+---
+
+## D. Hygiene / QC flags (cheap fixes, catalogued while reading)
+
+**Tier-1 — public-facing, do first:**
+- **The Route A "closed" over-claim** (target A1b): reconcile `Paper_ED_SC_4_2` body ↔ §1.5 patch ↔ `ED_WHITEPAPER`. Either finish the derivation or retract the language. The front door currently over-claims.
+- **WOLFRAM / Ruliad program-wide scrub** — this is NOT a one-off; it recurs in: `Paper_015_5` (qft), **all 8 dynamics papers**, `Paper_073_DCGT` (**has a built PDF**) + `Paper_086_5` (soft-matter), `087`/`098`/`100` (wedges), `ED_WHITEPAPER` + 13-primitive position paper + `Contrast_First_Ontology` (position), `Postdictions_PassedTests` (predictions), and every SC-4.x preamble item 2. Priority artifacts: the whitepaper, position paper, and 073's PDF (already public). One sweep replacing the lineage line with the safe 't Hooft/causal-sets comparison. *(The essays already scrubbed this — copy their pattern.)*
+
+**Tier-2 — unmarked supersessions / duplicates:**
+- `Paper_ED_Baryogenesis_Open.md` (M2, retracted postulate) sits unbanner'd next to the live M3.
+- `Paper_067` / `Paper_068` are the same result (E-6), neither retired — merge/mark one.
+- `Paper_095` still carries the retracted M1 "Phase-1 QM FORCED-unconditional" claim that `Paper_098` already corrected to M2 — one-line sync.
+- `T17 (Paper_015)` needs a "superseded-in-part by MS-II" banner + forward-pointer (routes readers to the wrong non-abelian path).
+- `Paper_043` "coefficient inherited" reading superseded by `BH_Thermal2Pi`'s 2π derivation, not re-marked.
+- `CanonicalPDEChannels_BottomUp` (ON-HOLD) vs `TheArrowSortsTheContinuum` (the reframe it's held for) — reconcile the pair.
+
+**Tier-3 — stale refs / naming-numbering debt:**
+- rel-qm: `112_Lightlike` + `115` cite `114` as "in queue" — it exists.
+- q-compute: systemic "in queue" labels for already-written 056/057/058; inverted PDF priority (062 built, 056/057/058 not).
+- qm-kinematics: Paper #1/#3 aliases, U-series↔arc-number collisions, 112 numbering collision, `Paper_004_5` convention bug (b_K² vs corrected b_K).
+- `Paper_029` repo-target path (`domain-arcs/...` vs `physics-papers/gravity/`).
+- Housekeeping left in draft bodies: `093` §12 rewrite-note + "registry count: 125" leak; `090` header revision note.
+
+**Tier-4 — memory / index corrections (already applied where noted):**
+- "Hubble/S8 tension resolution via Θ_ED channel" overstates — Cos_03/04 say ED does NOT resolve them; Route A4 is a structural link only. Correct the memory note.
+
+---
+
+## E. Predictions inventory gaps
+
+The two public files (`ED_Master_Predictions_List`, `22_Ways_to_Kill`) are well-tiered and internally consistent, but **stale** — these killable predictions live in papers and are absent from both:
+
+1. **Class-C error-suppression plateau** (`058`, Γ_plateau>0 vs monotonic→0) and **Class-B exponential gap-suppression** (`057`) — sharp, near-term, architecture-distinguishing. Strongest un-banked items.
+2. **DF2/DF4 group-suppression knee** (×4) — the cleanest ED-vs-MOND discriminator.
+3. **Bullet offset-velocity law** — EDG-published, experiment-ready, and absent from the folder entirely (notable given its maturity).
+4. **Cos_05 strict w=−1** and **Cos_06 primordial-tensor n_T=−r/8** — the cosmology equation-of-state / tensor bets.
+5. **Rel-QM structural falsifiers** — anyon prohibition (killable 3+1D bet), UV finiteness, spin-statistics/CPT.
+6. **Dynamics-arc F1s** — Dyn_02 EoS∉{−1,0,1/3}, Dyn_03 monopole/dipole GW + scalar/longitudinal EM, GW polarization/damping.
+7. **Program-Review's "newer" forbidding pair** — "no stable gauge group > SU(3)", "no parity-violating abelian force" (in 22-Ways prose but verify they're in the master table).
+
+Consolidating these into the master list is low-effort, high-value for the confirmed-prediction north star. *(One Wolfram fix in `Postdictions_PassedTests` §9 belongs to §D.)*
+
+---
+
+## F. Recommended next work
+
+The dive resolves into **three tracks**. They are not mutually exclusive — a hygiene sweep can precede or interleave with the research push.
+
+**Track 1 — the research frontier (pick one, by leverage × the north-star "forbidding prediction" value):**
+- **The V5-kernel characterization (target A2)** is the highest *cross-arc* leverage: one substrate-graph result on what the V5 kernel forces attacks the top-two open targets of BOTH entanglement (Tsirelson/why-quantum-not-superquantum) and dynamics (stress-energy form), and grounds SCBU. Deep, but the payoff is program-wide.
+- **The substrate-Higgs / EWSB emergence probe (target A5, §C-1)** is the user's flagged vein and the most *tractable* frontier move: it's at probe scope, Arc Q already scoped the mechanisms, and the log-derivative amplitude-blindness that kills naive uniform-VEV is a concrete ED-native handle to push on. It's also the keystone that gates Yukawa mass generation and neutrino mass. **Recommended first** if the goal is a fresh result in the flagged vein.
+- **Anomaly cancellation (target A4)** is the highest-value *untouched* structural target (ED's strength is deriving consistency constraints, not values, so anomaly-freedom may be genuinely in-reach), pairing with the fermion-rep spectrum via MS-II's U(N)-from-multiplicity.
+- **The emergent-ordering / DCGT-supplies-the-continuum bridge** (substrate-eval target) is the shared deep piece under curvature emergence (A6), the Bullet order-parameter grounding, and the GRF-Gaussianity question — a single conceptual advance with the widest philosophical reach.
+
+**Track 2 — cheap could-say-no tests (high value, low cost):**
+- **The GRF-Gaussianity higher-cumulant test** — the pipeline exists; a negative would retire much of ED-SC 3.x the way the soliton test retired the dispersive-pole claim. Fast, honest, program-shaping.
+- **The ν-coefficient measurement** (soft-matter) — deriving even one transport coefficient quantitatively upgrades the DCGT value-layer.
+
+**Track 3 — the credibility sweep (protects everything above):**
+- The **Route A closure reconciliation** + the **program-wide Wolfram scrub** are the two that touch *public* artifacts and should be done before any outward push. The rest of §D is bankable cleanup.
+
+**Bottom line.** The corpus is in strong shape: honest tiering, dense self-marked supersessions, walls foregrounded. The open frontier is concentrated in three places — the **V5 kernel** (technical keystone), the **Higgs/mass vein** (the user's flagged, tractable, north-star-relevant target), and the **emergent-continuum bridge** (deepest, widest). The single most urgent non-research item is the **Route A over-claim**, because the whitepaper currently says "closed" where the derivation says "open."
