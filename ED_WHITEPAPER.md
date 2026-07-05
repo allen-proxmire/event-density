@@ -308,7 +308,7 @@ The corpus rewards focused reading. A physicist coming from quantum mechanics ca
 
 Several open lines of work would significantly advance the program:
 
-**Route A closure (highest priority).** A substrate-level derivation of $\ell_{V5}(H_0)$ — the relation between V5 bandwidth and the cosmological rate — would simultaneously upgrade the verdict of all six ED-SC 4.x extension papers from form-forced-only to fully-derived, producing the first cross-arc completely-derived result in the corpus. The substrate-cosmology coupling parameter is the load-bearing missing link.
+**Route A first-principles closure (highest priority).** *(Updated 2026-07-05 to the tiered state.)* The Route A4 audit cascade (`Memo_ED_RouteA_A4_Construct` + `_Audit`) already delivers $\ell_{V5}(H_0) \sim \ell_P\,\Theta_{\mathrm{ED}}^{-1/2}$ and closes Route A at the **substrate-parameter-INHERITED (M3) level — conditional on the unproved $\tau_{V_5}\to\Theta_{\mathrm{ED}}$ reduction (A-A4-4)**, with $\Theta_{\mathrm{ED}} \approx 10^{-122}$ *inherited*. The remaining, highest-priority open work is **first-principles (M2) closure**: deriving $\Theta_{\mathrm{ED}}$ from sub-primitives (Routes B/C) and proving the A-A4-4 reduction. That would upgrade all six ED-SC 4.x extension papers from M3-conditional to fully-derived — the first cross-arc completely-derived result in the corpus. The substrate-cosmology coupling parameter is the load-bearing missing link.
 
 **Routes B and C (alternative closure paths).** Substrate-derived $\beta(K)$ functional form (Route B) and substrate-derived $K_{\mathrm{boundary}}$ at $R_H$ (Route C) supply alternative paths to the same closure. Either or both, combined, would also upgrade the arc.
 
