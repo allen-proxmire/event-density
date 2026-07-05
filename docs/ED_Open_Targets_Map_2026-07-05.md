@@ -189,9 +189,9 @@ Term-by-term status of the Standard Model Lagrangian in ED. Methodological invar
 
 ---
 
-## E. Predictions inventory gaps
+## E. Predictions inventory gaps — **CONSOLIDATED 2026-07-05**
 
-The two public files (`ED_Master_Predictions_List`, `22_Ways_to_Kill`) are well-tiered and internally consistent, but **stale** — these killable predictions live in papers and are absent from both:
+All gaps below were folded into both public files on 2026-07-05: Master List gained rows 1.13–1.14 (Bullet offset-velocity knee, DF2/DF4 knee), 3.5–3.6 (anyon prohibition, spin–statistics), 4.9–4.10 (Class-B exponential, Class-C plateau), and a new §5 (cosmology + GW dynamics: strict w=−1, EoS set, n_T=−r/8 with its own not-ED-distinctive flag, radiation selection rules, ringdown scaling, f^{2/3} with the NANOGrav model-degeneracy caveat); `22_Ways` gained a dated "Eight More, Added July 2026" section (#23–30, public voice, no internal jargon). Every entry carries its source paper's own tier unmodified. One internal tension surfaced and flagged in-list rather than resolved: Dyn_03's "no scalar radiation" vs the khronon's faint scalar GW mode (Master List 5.4 vs 1.11). Original gap list below, kept for provenance:
 
 1. **Class-C error-suppression plateau** (`058`, Γ_plateau>0 vs monotonic→0) and **Class-B exponential gap-suppression** (`057`) — sharp, near-term, architecture-distinguishing. Strongest un-banked items.
 2. **DF2/DF4 group-suppression knee** (×4) — the cleanest ED-vs-MOND discriminator.
