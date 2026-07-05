@@ -1,6 +1,6 @@
 # H1-Leg Scoping — Mass from Amplitude-Coupling, and the Deeper Gate E1 Exposed
 
-**Status:** Scoping memo, 2026-07-05. Follows the E1 negative (`E1_MassFromStructure_Results.md`), which killed the H2 (σ_τ / gradient) route on the certified substrate's native ρ-field. This memo scopes the H1 (inserted scalar τ_H, mass-from-|D_μφ|²) route and finds that H1 and H2 are blocked on the **same single missing substrate ingredient**, which is more fundamental than either mechanism. No probe is run here; the scope reaches a structural obstruction that a probe on the reference substrate cannot get past without becoming a stand-in.
+**Status:** Scoping memo, 2026-07-05. Follows the E1 negative (`E1_MassFromStructure_Results.md`), which killed the H2 (σ_τ / gradient) route on the certified substrate's native ρ-field. **The gate this memo raises (the dwell question) has since been ANSWERED — see `Dwell_Question_Answer.md`: dwell is admissible under P04/P11, ED mass is groundable-in-principle, and the reference substrate's ballistic-or-extinct behavior is a one-band-reduction artifact (it dropped P04's internal band), not a primitive necessity.** This memo scopes the H1 (inserted scalar τ_H, mass-from-|D_μφ|²) route and finds that H1 and H2 are blocked on the **same single missing substrate ingredient**, which is more fundamental than either mechanism. No probe is run here; the scope reaches a structural obstruction that a probe on the reference substrate cannot get past without becoming a stand-in.
 
 ## 1. What H1 is, and why it looked like the escape from E1
 
