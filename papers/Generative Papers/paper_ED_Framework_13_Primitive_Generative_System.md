@@ -225,7 +225,7 @@ ED does not derive the specific numerical values of particle masses (electron ma
 
 ### 7.2 Coupling constants
 
-Coupling magnitudes in ED are FORCED-INHERITED at all scales, with three independent structural blockages (P09 continuity, V1 spectral-shape inheritance, and marginal-sector Landau-pole flow). However, ED's substrate-RG produces universal IR-attractive fixed points for Tier-5 ratio operators via Perron–Frobenius on the irreducible P04 band-allocation transition matrix. These ratio-level universals join the Arc RG 0.6 ratio and V5 cross-scale invariance in the closed-arc universal inventory.
+Coupling magnitudes in ED are FORCED-INHERITED at all scales, with three independent structural blockages identified by Arc FSC (`arcs/arc-FSC/`, closed 2026-05-25): Primitive 09's $U(1)$ polarity is continuous rather than compact under primitive-level dynamics (ruling out a topological winding-number route to charge quantization, FSC-1), the V1 cross-overlap integral is regulator-shape-dependent and hence INHERITED not FORCED (FSC-2), and the marginal-sector one-loop RG flow has no IR-attractive fixed point — standard Landau-pole running (FSC-3). However, ED's substrate-RG produces universal IR-attractive fixed points for Tier-5 ratio operators via Perron–Frobenius on the irreducible P04 band-allocation transition matrix (FSC-3, multi-sector extension). These ratio-level universals join the Arc RG 0.6 ratio and V5 cross-scale invariance in the closed-arc universal inventory; they do not bridge to QED's $\alpha$ itself.
 
 ### 7.3 Three-generation structure
 
