@@ -44,6 +44,9 @@ So the honest, complete statement: **the certified substrate has no spontaneous 
 
 ## 4. The positive payoff: the stiffness is real, local, and in the right sector
 
+> **CORRECTION (see `Paper_ED_MicroStiffness_GRIII_Negative`):** the specific identification below — that the Σ gradient penalty *is* curvature-emergence's stiffness (GR-III's D∇²b) — was too quick and does **not** survive testing. On a kg sweep the gradient penalty produces no macro smoothing at fixed activity (its dominant effect is extinction), and it acts on rho (the *source* density), not the *bandwidth* field b that GR-III's D∇²b is the elasticity of. The general point of this section still holds — the certified rule has a *local* structure in the non-blind density sector and no *ordering* coupling anywhere, which is what separates the two arcs — but "the gradient penalty grounds curvature emergence's dynamical stiffness" is retracted. What stands is §1–3 (the refined invariant) and the arc-distinction *in kind* (order vs local structure); what is retracted is the specific micro→GR-III identification.
+
+
 The gradient penalty |rho_v − rho_u| is not nothing. It is a discrete **(∇b)² elastic term** — an explicit **local stiffness** on the commitment-density/bandwidth field, in the sector the rule reads. It is precisely what produces the strong C(rho, r=1) = +0.12 short-range smoothing: the field resists gradients over an edge. This is the substrate behaving as a **smooth, stiff medium** at short range.
 
 That distinction is exactly what separates the two arcs the invariant has been probing:
