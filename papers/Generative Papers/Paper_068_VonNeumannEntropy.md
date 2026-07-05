@@ -42,7 +42,7 @@ Von Neumann entropy is FORM-FORCED in ED via the Shannon–Khinchin axioms appli
 
 - **P-Continuity:** Substrate-participation-measure entropy is continuous in the probability distribution.
 - **P-Additivity:** For independent substrate subsystems (P04 bandwidth-additive), entropy is additive: $S(\rho_A \otimes \rho_B) = S(\rho_A) + S(\rho_B)$.
-- **P-Maximality:** Entropy maximized on uniform distributions for fixed dimension. Declared as substrate-level analog of second-law-like P11 content; quantitative derivation from P11 is O-vN-2 OPEN.
+- **P-Maximality:** Entropy maximized on uniform distributions for fixed dimension. Declared as substrate-level analog of second-law-like P11 content; quantitative derivation from P11 is O-vN-2 OPEN. **Update (2026-07-05, `primitives/concepts/multiplicity.md` items 4-5):** scoped as a Landauer-bound candidate and found structurally blocked, not just unattempted — ED has no substrate-level temperature, and cannot, since Gibbs/equilibrium symmetry is precisely what the P11 arrow forbids; separately, the channel count P11 collapses is confirmed distinct from the gauge-family multiplicity {1,2,3}, so there is no single fixed `M` to plug in even if a substrate `T` existed. O-vN-2 stays OPEN with a sharper reason why.
 
 ---
 
@@ -82,6 +82,18 @@ Applied to Schmidt eigenvalues: $S(\rho_A) = -k \, \mathrm{Tr}[\rho_A \log \rho_
 ### 3.4 Coefficient inheritance
 
 $k$ inherits: $k = 1$ (information-theory), $k = k_B$ (thermodynamics).
+
+---
+
+## §3.5 Open Structural Questions
+
+*(Backfilled 2026-07-05 from `Paper_067_VonNeumannEntropy.md` at merge — this file's canonical §5 slot did not previously carry the full list.)*
+
+- **O-vN-1:** Substrate derivation of P-Additivity from P04 bandwidth-additivity at quantitative level.
+- **O-vN-2:** Substrate derivation of P-Maximality from P11 commitment-irreversibility. Scoped 2026-07-05 as a Landauer-bound candidate — see §2.3 update above; stays OPEN, now with a sharper reason why (no substrate temperature, no fixed channel count).
+- **O-vN-3:** Rényi-entropy substrate audit (relax P-Additivity to $\alpha$-additivity).
+- **O-vN-4:** Connection to Bekenstein–Hawking entropy (Arc BH, Paper_043 area-law).
+- **O-vN-5:** Substrate derivation of thermodynamic $k_B$ normalization.
 
 ---
 

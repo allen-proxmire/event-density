@@ -1,5 +1,7 @@
 # Paper 067 — Von Neumann Entropy via Shannon–Khinchin (E-6)
 
+> **⚠️ MERGED into Paper_068 (2026-07-05).** This file and `Paper_068_VonNeumannEntropy.md` were the same E-6 result under two numbers, sitting side by side unmarked. Paper_068 occupies the canonical Paper_087 slot and is now the sole canonical reference — its §5 Open Structural Questions was backfilled from this file's fuller list. Kept here for provenance; do not cite this file going forward, cite Paper_068.
+
 **Series:** Wave-2 Generative Papers (Entanglement Arc, E-6)
 **Status:** Conditional structural derivation given the 13 ED primitives (per Paper_087) + paper-specific postulates declared in §2.
 **Companions:** Paper_063 (E-1 tensor product), Paper_064 (E-3 Schmidt), Paper_065 (E-4 monogamy), Paper_066 (E-5 no-signaling).
