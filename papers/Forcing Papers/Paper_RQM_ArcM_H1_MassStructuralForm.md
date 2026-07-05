@@ -4,6 +4,8 @@
 **Status:** Wave-3 generative paper; **M2 with OPEN flags** verdict at write-time (substrate-Higgs §3.3 and substrate-Yukawa §3.5 asserted, not derived)
 **Companions:** Paper_RQM_T5 (KG), Paper_RQM_T7 (Lorentz reps), Paper_RQM_T1 (spin–statistics), Paper_087.
 
+> **Update (2026-07-05).** An earlier (April 2026) scoping arc on this exact question was found uncited at write-time: `arcs/arc-Q/higgs_mechanism_scoping.md` (Q.4) and `arcs/arc-Q/generations_and_mixing.md` (Q.6), consolidated in `papers/Arc_Q/paper_arc_q.md`. That arc evaluates five candidate substrate-Higgs mechanisms and six candidate generation/Yukawa mechanisms in detail and reaches the same verdict this paper reaches by assertion: admissible, not forced. It does not change this paper's OPEN flags or M2 verdict — see the added citations in §2.2, §3.3, §3.5, and §4 below.
+
 ---
 
 ## Preamble — What This Paper Does NOT Claim
@@ -54,6 +56,8 @@ No new postulates.
 - **I-RQM-T7:** Lorentz representations.
 - **I-RQM-T4:** Dirac equation (mass parameter in Dirac operator).
 - **I-Higgs:** Standard Higgs mechanism (standard model).
+- **Arc-Q Q.4 (`higgs_mechanism_scoping.md`):** scoping-level evaluation of five candidate substrate-Higgs mechanisms (H1 scalar-rule-type ADMISSIBLE-CLEAN; H2 bandwidth-shift CANDIDATE; H3 composite condensate ADMISSIBLE-EFFECTIVE; H4 gauge-fixing artefact REFUTED; H5 vacuum-anchored found to reduce to H1/H2). None forced canonically — consistent with, and more detailed than, this paper's §3.3 OPEN flag.
+- **Arc-Q Q.3/Q.6 (`interaction_vertex_classification.md`, `generations_and_mixing.md`):** the Yukawa vertex $\bar\Psi\Gamma\Psi\phi$ is FORCED-admissible (the structural slot opened by the mass-like-vertex refutation under unbroken gauge); generation multiplicity via rule-type duplication is ADMISSIBLE-CLEAN but generation count is REFUTED-as-forced; mixing matrices and CP phases are FORCED-to-exist (linear algebra) once multiple generations and non-diagonal/complex Yukawa couplings exist. Consistent with this paper's §3.5 OPEN flag on mechanism-derivation.
 
 ---
 
@@ -114,10 +118,10 @@ H3 would represent a weaker claim — mass is phenomenological. The ED corpus re
 ### 3.5 Statistics-class-mechanism examples
 
 **Higgs mechanism for vector bosons (W, Z):**
-The standard model's electroweak symmetry breaking introduces a Higgs field whose vacuum expectation value (VEV) supplies mass to W and Z gauge bosons. Substrate-level: the Higgs is a scalar rule-type whose VEV-bandwidth-budget contributes to W/Z gauge-rule-type bandwidth, producing mass.
+The standard model's electroweak symmetry breaking introduces a Higgs field whose vacuum expectation value (VEV) supplies mass to W and Z gauge bosons. Substrate-level: the Higgs is a scalar rule-type whose VEV-bandwidth-budget contributes to W/Z gauge-rule-type bandwidth, producing mass. Arc-Q Q.4 scopes this in more detail: a Case-P scalar rule-type $\tau_H$ with nonzero ground-state bandwidth amplitude is structurally ADMISSIBLE-CLEAN (no primitive obstruction), but ED does not force $\tau_H$ to be occupied — occupancy is empirical, same OPEN status as here.
 
 **Chiral-coupling mass for fermions:**
-The Dirac mass term $m\bar\psi\psi$ couples left-handed and right-handed chiral components. Substrate-level: this mixing is enabled by a Yukawa-like substrate coupling between the fermion rule-type and the Higgs scalar rule-type.
+The Dirac mass term $m\bar\psi\psi$ couples left-handed and right-handed chiral components. Substrate-level: this mixing is enabled by a Yukawa-like substrate coupling between the fermion rule-type and the Higgs scalar rule-type. Arc-Q Q.3/Q.6 scopes the vertex itself: $\bar\Psi\Gamma\Psi\phi$ is FORCED-admissible at the rule-type-interface level, but the coupling matrix values, generation count, and mass hierarchy are not derivable (Arc-M's six ratio-mechanism refutation, carried forward unchanged) — the vertex's existence is admissible, its content is inherited.
 
 **Direct insertion for scalars:**
 Scalar masses (Higgs $m_H \approx 125$ GeV) enter as direct parameters in the KG Lagrangian. Substrate-level: this is the rule-type's intrinsic rest-frame bandwidth-budget.
@@ -153,8 +157,8 @@ What is FORM-FORCED:
 | 7 | Mass is Lorentz scalar | D | From step 6. |
 | 8 | Mass has dimensions of substrate-bandwidth at rest | D-via-I | From P04 + step 7. |
 | 9 | Statistics-class-mechanism dependence | D-via-I | From T1 + T7 + standard QFT. |
-| 10 | Substrate-Higgs mechanism for vector bosons (§3.3) | OPEN | Substrate-level Higgs mechanism asserted, not derived from primitives. |
-| 11 | Substrate-Yukawa / chiral-coupling mass for fermions (§3.5) | OPEN | Substrate-level Yukawa mechanism asserted, not derived from primitives. |
+| 10 | Substrate-Higgs mechanism for vector bosons (§3.3) | OPEN | Substrate-level Higgs mechanism asserted, not derived from primitives. Scoped in more detail (not derived further) by Arc-Q Q.4 `higgs_mechanism_scoping.md`: H1 ADMISSIBLE-CLEAN, occupancy EMPIRICAL. |
+| 11 | Substrate-Yukawa / chiral-coupling mass for fermions (§3.5) | OPEN | Substrate-level Yukawa mechanism asserted, not derived from primitives. Scoped in more detail (not derived further) by Arc-Q Q.3/Q.6: vertex FORCED-admissible, coupling values / generation count / hierarchy INHERITED. |
 | 12 | Direct insertion for scalars | I | Standard QFT. |
 | 13 | Mass numerical values per particle | I | Empirical. |
 | 14 | H1-dominant regime (structural form forced + values inherited) | A→position | Per Paper_095 methodology. |
@@ -187,7 +191,7 @@ This paper supplies the H1-dominant characterization of mass in the ED framework
 
 **Numerical content INHERITED.** All mass values per particle. **Form FORCED.** Three structural features of mass at H1-dominant level.
 
-**Future work.** H2 upgrade (substrate derivation of specific mass values) is the long-horizon goal — would require substrate-level Higgs-mechanism derivation, substrate-level chiral-coupling derivation, and substrate-derivation of Yukawa couplings.
+**Future work.** H2 upgrade (substrate derivation of specific mass values) is the long-horizon goal — would require substrate-level Higgs-mechanism derivation, substrate-level chiral-coupling derivation, and substrate-derivation of Yukawa couplings. A scoping-level (not derivation-level) pass on both already exists — Arc-Q Q.3/Q.4/Q.6 (`higgs_mechanism_scoping.md`, `interaction_vertex_classification.md`, `generations_and_mixing.md`) — and reaches the same admissible-not-forced conclusion by direct primitive evaluation rather than assertion; it identifies H2 (bandwidth-shift Higgs via a spatially-patterned condensate) as the one candidate mechanism still open rather than closed, which is the more promising thread for an eventual H2-upgrade attempt.
 
 Verdict: **M2 with OPEN flags**.
 
