@@ -24,6 +24,15 @@ The four-band structure is a **summation index and a decorative label** across A
 
 **Arc Q Higgs H2:** names a condensate "in one of the four-band components (b^env or b^adj)." The mechanism it needs is a **spatially-patterned bandwidth field**, which the single canonical scalar b already provides. The band label is decorative. (And E1 already showed H2 does not ground on the substrate regardless.)
 
+### The check extended to the inner-product (#3) and Hamiltonian (#4) derivations
+
+The position paper also cites "P04 §1.5 four-band" as load-bearing for the inner product and the Hamiltonian. Both checked, both NOT load-bearing:
+
+- **U2 inner product (`papers/U2_Inner_Product`):** Step C (§5.3) invokes "the four-band orthogonal decomposition and, **more broadly, bandwidth additivity over disjoint channel-subsets**." The load-bearing property is **additivity** (canonical P04, "additive under channel decomposition"), used to force conjugate-linearity (S1). The audit table sources S1 to "P-04 band additivity + P-09 U(1)." Collapse to canonical P04: additivity over disjoint channel-subsets still holds, S1 still forced. The band *count* is not used.
+- **U4 Hamiltonian (`papers/U4_Hamiltonian_Form`):** the kinetic form T(p) ∝ |p|² and the factor 1/2 are FORCED by the Galilean symmetry invariances (translation + rotation + analyticity + non-rel scope) and the Galilean Lie-algebra commutator — not by bands. Momentum enters via Stone's theorem on the participation-graph **adjacency** (the "adjacency-band Fourier-conjugate," U5), which is the canonical graph edge structure wearing the four-band label. No dependence on the band count.
+
+So all four downstream uses (mass σ_τ, mass-budget in Paper_113, inner product, Hamiltonian) are decorative: every load-bearing property is canonical P04 (non-negative additive scalar) plus the participation-graph structure.
+
 ## The one real problem: a presentation over-claim
 
 Arc M §2 states **"Primitive 04 (bandwidth): four-band decomposition b_K = b_K^int + b_K^adj + b_K^env + b_K^com"** — presenting the four bands **as** canonical Primitive 04. That is the archived/non-canonical structure cited as a primitive. The results don't depend on it, but the *framing* does over-claim the primitive basis. The same "P04 §1.5" four-band framing appears in the `position-paper` 13-primitive doc.
