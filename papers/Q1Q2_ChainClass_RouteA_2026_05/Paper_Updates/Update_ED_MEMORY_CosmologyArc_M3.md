@@ -5,6 +5,8 @@
 **Date:** 2026-05-17
 **Anchors:** ED_MEMORY.md + ED_ORIENTATION.md (target files); Update_Paper_ED_Cos_05_M3_Unconditional; Update_Paper_038_5_M3; Update_ED_SC_4x_Arc_M3; Memo_ED_RouteA_MultiRouteConvergence_Audit (option (ii) verdict).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (Θ_ED remains substrate-parameter-INHERITED throughout) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Summary of changes

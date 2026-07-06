@@ -5,6 +5,8 @@
 **Date:** 2026-05-16
 **Anchors:** Memo_ED_RouteA_Scoping_Wave3 (Route A4 scope; canonical $\ell_{V_5}(H_0)$ formulation; DCGT parametric transparency $H_0 \sim c/\ell_{V_5}$); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ + kernel-derivative structure); Paper_027 (Newton's $G$ via dimensional rearrangement — template); Paper_073 (DCGT hydrodynamic-window); Paper_087 (P02 + P04 + **P12 ED-threshold**); Paper_012 (P-RB-1 substrate-c + $\hbar$); Paper_090 (V5 cross-chain finite-memory; ~40 OOM cross-scale); Paper_ED_Cos_01 (M3; Q1A + Q2A + C3 + IC-INHERITED chain); Paper_ED_Cos_05 (M3 conditional on Route A); Paper_038_5 (Λ-smallness reframing — $\rho_\Lambda$ reduces to Route A + Friedmann); Memo_ED_Q1Q2_JointClosure_Construct (Q1A surviving A.1: $T^{\mu\nu}_{\mathrm{sub}} = -g^{\mu\nu}\mathcal{L}_{\mathrm{sub}}^{\mathrm{const}}$ at saturation).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (Θ_ED remains substrate-parameter-INHERITED throughout) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Restated A4 target

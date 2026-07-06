@@ -6,6 +6,8 @@
 **Anchors:** Memo_ED_RouteA_A4_Construct (audit target); Memo_ED_RouteA_Scoping_Wave3 (Route A4 scope); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ structure); Paper_027 (Newton's $G$ template); Paper_073 (DCGT); Paper_ED_Cos_01 (M3); Paper_ED_Cos_05 (M3 conditional on Route A); Paper_038_5 (Λ-smallness reframing); Paper_012 (P-RB-1 $\hbar$); Paper_087 (P12 ED-threshold); Paper_090 (V5 finite-memory).
 **Headline verdict:** **ACCEPTED with five qualifications.** Construction substantively closes Route A at the same M3 status as Paper_027 (form-DERIVED via dimensional rearrangement + substrate-parameter-INHERITED). Four of five audit axes close cleanly; A-A4-4 surfaces a load-bearing qualification (the asserted reduction of $\tau_{V_5}$ to $\Theta_{\mathrm{ED}}$ is not proved; multi-route convergence RA-OPEN-4c becomes load-bearing for full closure). A-A4-1 + A-A4-5 surface coefficient-bookkeeping refinements (the explicit dimensional bridge $\mathcal{L}_{\mathrm{sub}}^{\mathrm{const}} = \hbar \Theta_{\mathrm{ED}}$ should be made explicit).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (Θ_ED remains substrate-parameter-INHERITED throughout) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 What's being audited

@@ -5,6 +5,8 @@
 **Date:** 2026-05-16
 **Anchors:** Memo_ED_Q1Q2_JointClosure_Construct §6.3 (parent finding); Memo_ED_Q1Q2_JointClosure_Scoping (parent project); Paper_ED_Cos_01 (M2; inflation saturation case); Paper_ED_Dyn_02 (M2; RDE/MDE/LDE cases); Paper_ED_Dyn_03 (M2; EM/GW source classes); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ + saddle Hessian); Paper_087 (13 primitives — P02, P04, P09, P10, P11, P12, P13); Paper_073 (DCGT); Paper_089 (V1 + T18); Paper_090 (V5 cross-chain + finite-memory); Paper_012 (P-RB-1 substrate-c); Paper_093 (T18 kernel-arrow); Paper_015 / T17 (gauge bundles); Paper_098_5 / T1 (spin-statistics); Paper_109 (Lorentz reps).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)" (see §2(v) below, in the chain-mass construction discussion). That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (still OPEN/load-bearing as stated) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Restated gap

@@ -5,6 +5,8 @@
 **Date:** 2026-05-16
 **Anchors:** Memo_ED_Q1Q2_JointClosure_Scoping (parent project; Q1A + Q2A scope); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ + Hessian); Paper_073 (DCGT + hydrodynamic-window axioms); Paper_087 (13 primitives — P02, P03, P04, P09, P10, P11, P12, P13); Paper_015 / T17 (gauge-bundle structure); Paper_098_5 / T1 ($D = 3+1$ spin-statistics); Paper_109 (Lorentz reps); Paper_089 (V1 Lorentz-covariance §3); Paper_090 (V5 cross-chain); Paper_012 (P-RB-1 substrate-c); Paper_093 (T18 kernel-arrow); Paper_ED_GW_00 §3.2 (no fundamental substrate metric). **Standard kinetic-theory inheritance:** Bensoussan-Lions-Papanicolaou (1978) two-scale homogenization theorem.
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)" (see the B.5 non-metricity discussion below). That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Setup

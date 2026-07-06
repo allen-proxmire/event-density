@@ -5,6 +5,8 @@
 **Date:** 2026-05-16
 **Anchors:** Memo_ED_HorizonMotion_Scoping (Route 1); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ functional); Paper_073 (DCGT); Paper_087 (P02 participation, P09 polarity, P11 commitment, P12 ED-threshold); Paper_089 (V1 retarded kernel, substrate-c bound); Paper_090 (V5 cross-chain); Paper_012 (P-RB-1 substrate-c); seven exponential-growth memos (M3-chain template); Memo_ED_DCGT_VacuumEnergyMapping + Audit (vacuum-energy Step C reference).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Setup: targeting non-saturation regimes

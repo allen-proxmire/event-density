@@ -5,6 +5,8 @@
 **Date:** 2026-05-17
 **Anchors:** Memo_ED_RouteA_A4_Construct (A4 parametric structure $H_0 \sim \sqrt{\Theta_{\mathrm{ED}}/M_P^2}$); Memo_ED_RouteA_A4_Audit (Q-A4-4 load-bearing); Memo_ED_RouteA_Scoping_Wave3 (Route A2 scope; ED-SC 4.x six-projection framework); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ + Hessian classification); Paper_073 (DCGT effective-metric scaling); Paper_ED_Cos_01 (M3); Paper_ED_Cos_05 (M3 conditional); Paper_027 (Newton's $G$); Paper_087 (P02 + P04 + P12); Paper_012 (P-RB-1); Paper_089 (V1); Paper_090 (V5 finite-memory $\tau_{V_5}$); Papers SC-4.x (scale-collapse + six projections including $\xi_{\mathrm{canonical}}(H_0)$).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (Θ_ED remains substrate-parameter-INHERITED throughout) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Restated A2 target

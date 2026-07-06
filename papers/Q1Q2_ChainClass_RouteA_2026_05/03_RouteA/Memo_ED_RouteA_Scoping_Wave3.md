@@ -5,6 +5,8 @@
 **Date:** 2026-05-16
 **Anchors:** ED_MEMORY anchor 7 (Route A as highest-leverage open derivation); ED_MEMORY anchor 15 (Q1Q2 + Chain-Class Identification Project context); Paper_087 (13 primitives — P02 + P03 + P04 + P11 + P12); Paper_073 (DCGT hydrodynamic-window); Paper_089 (V1 retarded kernel + Lorentz-covariance §3); Paper_090 (V5 cross-chain finite-memory; ~40 OOM cross-scale correlations); Paper_027 (Newton's $G$ via dimensional rearrangement); Paper_038_5 (Λ-smallness reframing — Λ reduces to Route A + Friedmann); Paper_ED_Cos_01 (M3; Q1A + Q2A + C3 + IC-INHERITED chain); Paper_ED_Cos_05 (M3 conditional on Route A); Paper_ED_SC_4_9 ($S_{\mathrm{sub}}$ + Hessian); Papers SC-4.x (scale-collapse + six projections); Paper_ED_CCC §3.6 + §3.7 (late-LDE asymptote + post-BBB ignition); Memo_ED_LoadBearingProgram_Overview (program-level Route A context).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (Θ_ED remains substrate-parameter-INHERITED throughout) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Restated Route A target

@@ -5,6 +5,8 @@
 **Date:** 2026-05-16
 **Anchors:** Memo_ED_ChainClass_C3_Audit (Q-C3-3 origin); Memo_ED_ChainClass_C3_Construct (forward / converse closure; substrate-realizability §3.5 reference); Paper_ED_CCC §3.7 (next-aeon ignition; CCC audit row 13 D-via-I + row 17 OPEN); Paper_ED_Cos_01 (M2; Cos_01 M3-upgrade target); Paper_087 (P09 polarity; P11 commitment; P12 ED-threshold); Paper_089 (V1); Paper_090 (V5); Paper_072 (individuation regime); Paper_028 (cosmic decoupling); Memo_ED_Q1Q2_JointClosure_Construct (Q1A + Q2A composition base).
 
+> ⚠️ **Correction (2026-07-06):** This document cites Θ_ED as "Paper_087 P12 (ED-threshold)." That attribution is incorrect — canonical `Paper_087` P12 is a stability-landscape functional (Σ_C), unrelated to an event-density threshold. Θ_ED's actual (uncritically-inherited) origin is `Paper_ED_CCC_ConformalCyclicCosmology.md` §3.2/§3.7 (ED Generative repo), itself now flagged with the same correction. This does not change this document's tier verdicts (Θ_ED remains substrate-parameter-INHERITED throughout) — it only corrects the primitive citation. See `docs/Scoping_ThetaED_FirstPrinciples_2026-07-06.md`.
+
 ---
 
 ## §1 Restated Q-C3-3
