@@ -1,0 +1,38 @@
+# ED Program — Repo Map
+
+**What this is.** A light, directory-level orientation pass across every ED-adjacent repo under `C:\Users\allen\GitHub\`, done after tonight's GRF-Gaussianity fold-back check surfaced a simulator (`ED_Update_Rule.ed_step_mobility`, driving the S1/scale-correspondence arc) that lives entirely outside the two repos any session normally works in. Not an audit of contents — a map of what exists and where, so the next session doesn't rediscover a whole repo by accident the way tonight did three times. Context from AP: the split is deliberate housekeeping (sims moved out of event-density/EDG to cut clutter over months of work), not disorganization — `ed-lab` and `Emergence Universe` in particular get shared with other sessions specifically when running simulations comes up, so a session not doing sim work has no natural reason to have opened them.
+
+**Two live repos** (what every session should already know): `event-density` (primary working repo, 13-primitive framework) and `ED Generative` (publication/standalone-paper repo, mirrors finished work from event-density). Everything below is what sits *around* those two.
+
+---
+
+## Physics-adjacent repos
+
+| Repo | What it is | Relationship to the live program |
+|---|---|---|
+| **`ED Primitives`** | Self-described "constitutional core of Event Density" — `CONSTITUTION.md`, `architecture/`, `foundations/`, `interpretations/`. Spot-checked: its P04 = "Participation bandwidth," no four-band mention — consistent with the canonical `Paper_087` text verified tonight. | Possibly the more current/authoritative primitives source than the `Paper_087` copies in event-density/EDG — not fully cross-checked, just spot-checked on the one point that mattered tonight. Worth a real side-by-side if a primitive-wording question ever gets load-bearing again. |
+| **`ED walkthroughs`** | "Self-contained derivations from Event Density substrate primitives to foundational results" — narrative, non-audit-table style (no Preamble/tiering-grammar scaffolding). Includes `from_primitives_to_bell_tsirelson_bound.md` (May 2026), `from_primitives_to_aharonov_bohm_phase.md`, `..._arrow_of_time.md`, `..._berry_phase.md`, `..._black_hole_architecture.md`. | **One dated tension worth a banner, not a crisis:** the Bell-Tsirelson walkthrough (May 2026) confidently treats "the inner product is forced by U2" as closed bedrock and derives the bipartite Hilbert space + correct Tsirelson operator algebra on top of it. The live corpus's own later finding (target A3 in the master targets map, "`Paper_004` P-Channel-Orthogonality... three routes tried 2026-07-02, all fail") says that same inner-product-forcing doesn't currently close. Chronology explains it cleanly — May walkthrough predates the July negative — same shape as every other supersession fixed tonight. **Separately, its actual math is more careful than tonight's V5-memo attempt**: it correctly uses ±1-eigenvalue self-adjoint operators and cross-party commutation to get $\hat S^2=4I-[\hat A,\hat A']\otimes[\hat B,\hat B']$, exactly the structure tonight's check found missing elsewhere. If Bell-Tsirelson work resumes, this walkthrough is the better foundation to build from — once its U2 dependency is re-flagged against A3's current status. |
+| **`ed-lab`** | "Execution repository for the Event Density framework" (README is an explicit placeholder). Contains `analysis/scripts/ed_arch_r2/` (the R2 continuous mobility-PDE scripts behind `ξ_canonical`), `data/SPARC`, `experiments/`, and per-run `outputs/` (ED-Cosmo-*, ED-Data-*, ED-Phys-*, ed_sc_3_*). | This is where simulation *runs* live, separate from where physics *claims* live. Tonight's multi-simulator gap (target A9) is the visible edge of this split: the certified `evaluation/Bits/simulator` (in event-density) and the R2/PDE engine (run from here) are different codebases with no documented shared length scale. |
+| **`Emergence Universe`** | Home of **`ED-SIM-Code`** (the actual PDE engine `ED_Update_Rule.py` that `ed-lab`'s R2 scripts import) and **`ED-SIM-Papers`** (a separate numbered series: "00 ED-Arch Foundations," "01-19 ED-Arch Developmental," "20-29 ED-Arch Laws" — the "Law I–XIV" material seen earlier tonight in the ED-Interpretations folder). Its own README states plainly: **"ED-SIM is not a model of our universe."** | A parallel, earlier, self-disclaimed *exploratory* framework with its own numbering and its own simulator — not a claim about physical reality. That disclaimer matters for target A9: results computed on this engine (like `ξ_canonical`) were never meant to be read as direct substrate physics in the first place, which sharpens rather than just restates the fold-back block found tonight. |
+| **`ed-legacy`** | README: "One PDE, derived from **four primitives and seven structural constraints**..." — a materially earlier version of the framework (pre-13-primitive). | Explicitly named legacy. Historical, not live. |
+
+## Non-physics / adjacent-methodology repos
+
+| Repo | What it is |
+|---|---|
+| **`Architectual Distillation`** | "A domain-agnostic methodology for evaluating the structural integrity of mathematical and computational systems" — a general audit methodology, not physics content. Possibly the ancestor of tonight's own tiering/audit-table discipline. |
+| **`X5D EXPDB Framework`** | "An architectural language for describing dynamical systems and analytic pipelines as compositions of channels, envelopes..." — another generalized meta-framework, channel/envelope vocabulary echoing ED's own. |
+| **`Regulated Multiplicity`** | "An architectural account of consciousness and subjectivity" — same methodological family, applied to philosophy of mind, not physics. |
+| **`Factor Skyline`, `Prime Geometry`, `Twin Bertrand`, `expdb-fresh`** | Independent number-theory projects (twin primes, prime geometry, an analytic-number-theory exponent database). Related in spirit to the "primes as substrate-ceiling test" thread but appear to be free-standing math work, not ED physics. |
+| **`Archives`** | Contains "ED Biogenesis," "ED Cognitive Becoming," "ED Scale Correspondense," "Erdos Tao" — further archived exploratory threads, not opened this pass. |
+| **`expdb-env`** | A Python virtualenv. Not content. |
+
+---
+
+## What this changes about tonight's work
+
+Nothing already committed needs reverting — the GRF fold-back finding (target A9) stands, and this map *explains* it rather than contradicting it: `ed-lab`/`Emergence Universe` were never meant to be silently comparable to the certified substrate, per Emergence Universe's own disclaimer. The one live thread this surfaces: if Tsirelson-bound work continues, read `ED walkthroughs`' Bell-Tsirelson piece first — it's a more careful treatment than tonight's V5-memo attempt, gated on the same U2 postulate as target A3, and worth re-flagging together rather than separately.
+
+## Not done in this pass
+
+No deep reads beyond the two flagged items (ED Primitives' P04 spot-check, the Bell-Tsirelson walkthrough). `Archives`, `Factor Skyline`, `Prime Geometry`, `Twin Bertrand`, `X5D EXPDB Framework`, `Regulated Multiplicity`, and `Architectual Distillation` are named and located, not characterized beyond their own README's opening lines. This is an orientation map, not an audit — treat it as "know these exist and roughly what they're for," not "verified."
