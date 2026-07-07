@@ -36,3 +36,13 @@ Tested **one** coupling geometry (ring; shared-rho + exclusion). A negative here
 ## Relationship to prior results
 
 Does not touch route 2's single-chain rhythm result (that stands). Sharpens the "to persist is to pulse" framing: persistence gives each chain its *own* beat (confirmed), but a *shared* beat across chains is not automatic — it needs a synchronizing coupling this substrate doesn't natively have. The pulse is individual, not (yet) collective.
+
+## CRUCIAL REFRAME (AP, 2026-07-06) — the global-sync negative is actually CORRECT physics, not a shortfall
+
+AP's insight: **ED already rejects a universal tick — that is *why* it has time dilation.** Each chain's proper time IS its own commitment sequence; time dilation is the *relative* commitment rate between chains. So a *global* collective pulse (all chains everywhere ticking together) would BE a universal clock — which would destroy time dilation and contradict relativity, which ED reproduces. **The "no global synchronization" negative above is therefore the physically REQUIRED answer, not a failure of the substrate.** Global sync should NOT happen.
+
+This reframes the whole question. The relevant target is not global sync but the **relational** tick structure:
+- **Local binding** — chains that are close/bound should establish a *shared* commitment rate (a local proper time, a rest frame), which is the basis of a composite object with its own clock. This SHOULD happen.
+- **No universal tick** — distant/unbound chains should stay free, ticking independently, preserving time dilation. This SHOULD also happen (and did, above).
+
+So the shared-rho result is half-right by accident (no global sync = correct) but doesn't test the other half (does binding produce *local* shared proper time?). The sharp, physically-correct test — now the target for V5 characterization — is **distance-dependent synchronization**: does a finite-reach coupling sync *nearby* chains (local proper time) while leaving *distant* ones free (no universal tick)? V5's defining feature — finite cross-chain reach — is exactly the ingredient that would produce local-without-global. See `V5_Synchronization_Characterization.md`.
