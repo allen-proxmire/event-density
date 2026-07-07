@@ -33,6 +33,23 @@ And, decisively, dwell rate **as a function of distance to the source**: essenti
 1. **The "source" was a fixed reference point I hand-picked, not another chain's actual, dynamically-computed live position.** The next honest step is replacing the fixed `source_pos` with a *second, genuinely active, moving* chain, so the field bonus reads that chain's real current position each step (not a hardcoded number) — this test stands in for that, but doesn't yet build it.
 2. **The field bonus itself — its existence, its exponential-decay shape, and its magnitude/length-scale — is a new ingredient I inserted to test the hypothesis, not something derived from P02/P04/P05/P07/P08/P11/P12.** It answers "if something like this existed, would it produce the right shape" (yes, cleanly) — not "does ED's substrate actually produce something like this." That's the same category of open question as the `kg > ks` dial from the earlier probe: admissible to test, not yet grounded.
 
+## Update 2026-07-06 — checked whether P05, or the substrate's own natural length scale, could ground this
+
+**P05 (polarity-transport, ED's actual gauge-content primitive) does not help.** Checked directly: `Gauge_02_P05_Transport_Is_a_LatticeGaugeConnection.md` is exhaustively edge-local — one hop at a time, no notion anywhere of influence reaching outward from an active chain. Ruled out cleanly, not just unexplored.
+
+**The best real candidate is V1/V5's kernel machinery** (`Paper_089_V1Kernel.md`, `Paper_090_V5Kernel.md`) — an actual corpus theorem (N1) establishing a bounded, decaying-with-distance envelope at substrate scale `ℓ_ED`, extended cross-chain by V5. This is a genuine, existing precedent for "strong near a source, weaker far away," not something invented for this probe.
+
+**But the theorem only specifies an admissible *class* of shapes (bounded, decaying, excludes both zero-width and infinite-width) — not one specific formula, and not a scale bigger than `ℓ_ED`.** Tested directly: rerunning the probe with the decay length set to the substrate's own actual scale (`xi=1`, one hop, matching `ℓ_ED`) instead of the arbitrary wide values used above (`xi=15-30`) —
+
+| xi (hops) | k_field | overall v_eff | peak dwell rate |
+|---|---|---|---|
+| 1 | 5 | 0.882 | 0.60 |
+| 1 | 15 | 0.865 | 0.71 |
+| 1 | 50 | 0.828 | 0.85 |
+| 4 | 50 | 0.663 | 0.87 |
+
+At `xi=1`, even with a very strong source, the dwelling spike is real but confined to essentially one site — overall velocity barely moves off the control value (0.896). The dramatic, macroscopically-relevant slowing found earlier required a decay length many times wider than the substrate's own natural scale, with nothing in ED explaining why it should be that much larger. **This is the same category of gap as `kg > ks`: the shape of the mechanism is right, but the specific scale needed to make it matter has no primitive-level grounding — it would have to be imported from outside, exactly like every other free coefficient found tonight.**
+
 ## Tier verdict
 
 **CANDIDATE, proof-of-concept confirmed, not yet derived.** This is the first result in the whole Higgs/EWSB probe line that gets the *sign* right — a passing front genuinely gets heavier near an active source and lighter far away, rather than the earlier finding's opposite (repelled by permanent history). The real next question this opens: can a live, distance-decaying influence like this be grounded in ED's own primitives (most plausibly via P05's polarity-transport, since that's ED's actual "gauge content" mechanism, or via some spatial-reach property of P04's bandwidth), or is it, like `kg > ks`, a free assumption with no existing support either way. That check hasn't been run yet.
