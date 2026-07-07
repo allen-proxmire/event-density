@@ -42,8 +42,28 @@ The decisive number is the cross-cluster **rate-gap** (the two bound composites'
 - V5 is **retarded**; this minimal model uses instantaneous coupling (retardation adds a delay, secondary to the reach question). Flagged.
 - This is **reverse-characterization**: it establishes what V5 must look like (finite-reach + attractive phase coupling) to reproduce the required physics (local proper time + time dilation), rather than deriving from primitives that V5 does so. Complementary to the failed forward attempts, and arguably more useful — it gives V5 a concrete functional target and two structural constraints.
 
+## Real-substrate confirmation (same session, 2026-07-06) — the forward step
+
+The above is a phase-oscillator model. Built the genuine cross-chain V5 coupling into the **actual certified substrate simulator** (`v5_substrate_coupling_probe.py`) to check whether the same signature falls out of real substrate dynamics, not just the abstraction. Design: chains on parallel lanes (each a real certified 1D chain, real `compute_sigma`, real memory-driven advance rates — higher memory = slower rate, the route-2 mechanism); two clusters at different mean rates (time-dilation setup) with a **genuine within-cluster rate spread** (chains at genuinely different tempos, ~0.67 / 0.5 / 0.33, that would drift apart uncoupled); V5 as a real cross-chain term with finite transverse reach ℓ_V5 + finite longitudinal window + retarded (uses last step's positions), pulling each front toward the reach-weighted group mean.
+
+**Result: the full signature reproduces from real substrate dynamics.** Uncoupled within-cluster rate spread = 0.084 (real), cross-cluster gap = 0.243 (time dilation).
+
+| ℓ_V5 (transverse reach) | within-cluster spread | cross-cluster gap | reading |
+|---|---|---|---|
+| uncoupled | 0.084 | 0.243 | natural |
+| 0.5 – 2 (**« separation 20**) | **0.0005 (−99%)** | **0.25 (preserved)** | **LOCAL lock + time dilation intact** |
+| 5 | 0.0006 | 0.118 (half-collapsed) | transition |
+| 10 – 100 (**≥ ~separation**) | 0.0006 | **0.002 (collapsed)** | universal tick (wrong) |
+
+So with a genuine cross-chain V5 term in the real substrate: when the reach is finite and smaller than the inter-cluster distance, the genuinely-different-tempo chains within a cluster **lock to a shared rate** (within-spread collapses 99% — real local proper time, not an accident of identical inputs this time) **while the two clusters keep their different rates** (time dilation preserved). When the reach reaches the separation, everything locks and the rate-gap collapses to zero — universal clock, time dilation destroyed. **The phase-model characterization is confirmed by the real substrate dynamics.**
+
+**What this forward step does and does NOT establish (honest):**
+- DOES: shows V5's *known structure* (finite-reach, retarded, attractive cross-chain coupling), implemented as a real term in the certified substrate, produces the local-proper-time-without-universal-tick signature — the physically-required behavior — from genuine substrate dynamics, not a toy abstraction. Confirms finiteness is load-bearing for time dilation in the real sim.
+- Does NOT: derive from the 13 primitives that the substrate *must* have this V5 term. The V5 coupling is an honestly-named structural addition (the certified base has no cross-chain coupling), faithful to V5's corpus-stated form but not forced by the primitives. The forward primitive derivation — why the substrate carries V5 at all — remains the hard open core of target A2. This narrows that target from "uncharacterized" to "here is exactly the coupling structure it must have (finite-reach + attractive + retarded) and exactly the physics it must produce (local proper time + time dilation); derive *that specific structure* from the primitives."
+- The attractive sign and the position-as-phase-proxy are inputs here (consistent with the phase model's derived constraint that V5 must be attractive), not derived. Fronts restricted to forward advance. All flagged.
+
 ## Relationship to prior results
 
-- Resolves the collective-pulse negative (`Collective_Pulse_Results.md`): global sync *should* fail (it would be a universal tick); the real behavior is local sync, which the crude shared-rho coupling couldn't produce but a finite-reach phase coupling does.
+- Resolves the collective-pulse negative (`Collective_Pulse_Results.md`): global sync *should* fail (it would be a universal tick); the real behavior is local sync, which the crude shared-rho coupling couldn't produce but a finite-reach phase coupling does — now confirmed in the real substrate sim, not just the phase model.
 - Advances target A2 (V5 characterization) from a different angle than the failed Tsirelson route: a relational/dynamical characterization tying V5 to time dilation and composite rest frames, with two concrete structural constraints (finite reach + attractive coupling).
 - Ties the mass/memory thread to relativity: local proper time (a bound composite's shared rate) is the rest-frame clock of a massive composite object.
