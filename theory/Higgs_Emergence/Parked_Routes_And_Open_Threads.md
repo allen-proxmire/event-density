@@ -21,8 +21,12 @@
 
 ## Cross-connection under active investigation (this is "#1", in progress 2026-07-06)
 
-6. **Is the mass-memory fade rate the same quantity as the GR sparse-commitment parameter?**
-   For a free chain, the relevant commitment rate is the *sparse* one; the sparseness factor is the same unknown the Phase-3 GR / α₁ safety argument leaves inherited. If they're the same object, pinning either pins both — tying particle mass and gravitational safety to one number. Currently being investigated (research dispatched). Note the honest ceiling: a *shared-simulation* proof is blocked by the multi-simulator gap (target A9 — the mass toy and the GR band-partition sim are different, uncalibrated codebases), so this is checkable at the level of "are these the same defined quantity," not "run one sim showing both."
+6. **Is the mass-memory fade rate the same quantity as the GR sparse-commitment parameter? — INVESTIGATED 2026-07-06, verdict (b) plausible-not-proven** (`Mass_GR_SparseCommitment_CrossConnection.md`).
+   Corroborated: both are built from the same P04 commitment-reserve band, carry the same dimensionless `k₁₁`, and share the same `ρ_event/ρ_Planck` scaling — a genuinely novel, structurally solid link. Ceiling: only `k₁₁` is truly shared; the regime magnitudes (`ρ_event` vacuum-worldline vs Solar-System) stay separately unpinned, so "pin one, pin both" holds only for `k₁₁`. Still open, two concrete next moves below.
+
+6a. **NEW dependency-check gap found while doing #6 (specific, cheap, high-value).** The mass↔GR link runs through P04's commitment-reserve band. `FourBand_Dependency_Check.md` cleared the *mass* sector (bands decorative there) but **never covered the Phase-3 GR band-partition work — where the bands are load-bearing** (the α₁ mechanism IS the adjacency-vs-commitment-reserve split; can't collapse it). First move: check whether the GR two-band split is the archived four-band structure (problem) or a canonical P02-vs-P11 decomposition (fine — very plausibly this, but unverified). Determines whether the GR α₁ safety result rests on canonical primitives.
+
+6b. **Promote #6 from (b) to (a):** show the *same numerical* `k₁₁` governs both mass and GR (they're structurally the same symbol — are they equal in value?). Blocked in practice by the multi-simulator gap (target A9); paper-level check only for now.
 
 ## Hygiene threads noted earlier tonight, still open
 
