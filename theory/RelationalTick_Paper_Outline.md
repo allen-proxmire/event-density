@@ -3,7 +3,12 @@
 **Status:** DRAFT OUTLINE, 2026-07-06. Consolidates the mass / memory / rhythm / V5-characterization arc from the 2026-07-06 session into one cold-reader standalone paper. Fill each section from the cited results files. Follows house conventions: Preamble ("what this does NOT claim") first, honest tiering (DERIVED / STRUCTURAL / CANDIDATE / INHERITED / OPEN), load-bearing step audits, minimal cross-references, no Wolfram, minimal em-dashes.
 
 **Working title:** *The Relational Tick: Mass as Carried Memory, and V5 as the Finite-Reach Binder of Local Proper Time*
-**Spine (the thesis):** ED forbids a universal tick. This single prohibition is load-bearing across time dilation, the quantum Zeno effect, and the very possibility of dynamics: a universal tick would be either continuous universal measurement (Zeno-freeze, no dynamics) or a preferred global clock (no time dilation). Either way, no reality. The constructive result is that V5's finite cross-chain reach is exactly the mechanism that binds chains into LOCAL shared clocks (composite rest frames, the substrate face of mass) WITHOUT ever creating a universal one, and that mass itself emerges as a chain's carried memory of its own commitment history.
+
+**Spine (the thesis), corrected 2026-07-06 to match the corpus's own P13/P11 distinction:** ED forbids universal, uniform **becoming** — not the tick itself. Precisely: P13 (the tick / rate-of-becoming) *is* universal (everywhere, every Planck time); but P11 (commitment, the irreversible determination event that physics actually runs on) cannot fire at every tick. Dense commitment (P11 ≡ P13) is excluded, so physical becoming is **sparse, local, non-uniform**. This single fact is load-bearing across three consequences at once (the corpus's own "one structure, three faces"): (1) **quantum mechanics** — sparse collapse avoids the quantum Zeno freeze that continuous every-tick measurement would impose (no superposition, no dynamics); (2) **gravitational time dilation** — becoming at a position-dependent rate (the lapse), which requires non-uniform becoming ("hard to have time dilation if it ticks the same" — Allen's observation, already in the corpus); (3) **no preferred frame** — the preferred-frame PPN parameter α₁ is driven to ~10⁻⁹³ by sparse commitment (α₁ = −4·sparsity), so no universal frame is detectable.
+
+**What this paper CONSOLIDATES vs what is NEW.** The spine above is *already derived* in the corpus — chiefly `foundations/Phase3_GR_SparseCommitment_Constitutive.md` (§1 the Zeno argument, §3 time dilation, §5 the "three faces" synthesis) and `Phase3_GR_CommitmentIsSparse.md` (§2 Zeno-forces-sparse, §6 α₁≈10⁻⁹³). This paper CITES those as prior results, not as new. **The genuinely new contribution is the constructive mechanism for how LOCAL clocks form within that no-universal-becoming framework:** V5's finite cross-chain reach binds nearby chains into a shared local clock (a composite rest frame, the substrate face of mass) without ever making a universal one, and mass itself emerges as a chain's carried memory of its own commitment history. The corpus had the sparse-commitment → α₁/time-dilation story; it did NOT have the V5-finite-reach → local-clocks/mass mechanism, nor mass-as-memory. This paper adds those and unifies them with the existing spine.
+
+**Three corrections from the corpus that the paper MUST respect** (recent GR-sector self-fixes): (i) α₂ = 0 identically comes from the luminal-cone condition c_s=c, NOT from sparse commitment — only α₁ is the sparse-commitment-suppressed number; (ii) the preferred frame being the CMB rest frame fixes *which* frame is preferred, it does NOT make the couplings small (that is sparse commitment for α₁, c_s=c for α₂); (iii) α₁'s value is derived-in-mechanism and order-of-magnitude (residuals: vacuum event-density magnitude unpinned, O(1) band-fraction inherited, no literal LLR/pulsar test run), NOT a certified first-principles number.
 
 ---
 
@@ -17,15 +22,21 @@
 
 ---
 
-## §1. The problem: reality needs a relational tick, not a universal one
+## §1. The problem: physics runs on sparse local becoming, not universal becoming (CONSOLIDATION — cite prior results)
 
-- ED makes commitment (P11) primitive and irreversible; commitment is the substrate tick. Time is not a global parameter; each chain's proper time is its own commitment sequence.
-- **The load-bearing prohibition:** there can be no universal tick. Three independent reasons it breaks reality:
-  1. **Time dilation** requires *relative* commitment rates between chains; a universal tick makes all rates equal, killing dilation.
-  2. **Quantum Zeno:** commitment is measurement-like; a universal tick = continuous universal measurement = Zeno-freeze = no dynamics. (Ties to the sparse-commitment / "dense commitment = Zeno freeze = no QM" result from the Phase-3 GR work.)
-  3. **Dynamics itself:** lockstep universal commitment leaves no relational structure to evolve.
-- So ED must tick *relationally*. The question this paper answers: what mechanism gives local shared clocks (so bound objects exist) without ever producing a universal one? Answer built across §§2-6: V5's finite reach. And along the way, what *is* mass in this picture? Answer (§2-4): carried memory.
-- Tier: the prohibition is STRUCTURAL (follows from P11-primitive + ED's own reproduction of time dilation and QM). The Zeno framing is an ACCOUNT tying an existing ED theme (sparse commitment) to the universal-tick prohibition.
+- State the P13/P11 distinction carefully: P13 is the universal tick (the maximal rate-of-becoming, a potential, everywhere every Planck time); P11 is commitment (the irreversible determination event, ED's analogue of decoherence/measurement). Physics runs on P11, not P13.
+- **The load-bearing result (already derived in the corpus — cite `SparseCommitment_Constitutive.md`, `CommitmentIsSparse.md`):** commitment CANNOT fire at every tick (dense P11 ≡ P13 is excluded). "One structure, three faces," each a consequence of sparse becoming:
+  1. **Quantum Zeno / QM (the forcing):** if P11 fired every tick, every degree of freedom would be measured every Planck time = the continuous-measurement (Zeno) limit = frozen evolution: no superposition, no interference, no unitary evolution, no dynamics. Since ED has a quantum sector (P09), dense commitment is incompatible with ED's own existence. Sparse commitment is FORCED. (Quote the verbatim passage.)
+  2. **Time dilation:** becoming proceeds at a position-dependent rate (the lapse N²∼b); a uniform, dense, every-tick commitment would tick the same everywhere = no lapse variation = no time dilation. Non-uniform becoming is what makes proper time — hence time dilation — possible. (Allen's observation, already credited in the corpus.)
+  3. **No preferred frame:** the preferred-frame parameter α₁ = −4·sparsity ≈ 10⁻⁹³ — sparse becoming drives the "reference-frame number" super small, so no universal frame is detectable. (Respect corrections: α₂=0 via c_s=c separately; CMB fixes which-frame not smallness; α₁ order-of-magnitude.)
+- Frame the paper's job: the corpus establishes WHY becoming must be sparse/local/relational (this section, cited). This paper answers the constructive next question — **HOW do local shared clocks (bound objects, mass) form within that constraint, without ever producing a universal one?** Answer across §§2-6: mass as carried memory (§2-4) + V5's finite reach (§6).
+- Tier: the sparse-becoming forcing is DERIVED (corpus, non-hedged, forced by ED having QM). The α₁-value is derived-in-mechanism / order-of-magnitude. This section is CONSOLIDATION; cite, don't re-derive.
+
+## §1b. The khronon reconciliation (needed so the paper doesn't appear to contradict the GR sector)
+
+- ED's GR sector has a khronon (a preferred-time-foliation scalar). State clearly why this is NOT an imposed universal clock: the khronon is a LOCAL proper-time direction (u^μ from the local gradient of T); its background is *spontaneously* the cosmological/CMB rest frame (there is no other candidate frame — the substrate is the universe's rest frame), not an absolute time put in by hand. V1 (finite-speed causation) forbids a global "now."
+- Crucial consistency point (cite `MOND_Reconciliation.md` §4): gravitational time dilation (the lapse N, full-strength P02 metric gravity) is DISTINCT from the suppressed khronon stiffness coupling (α₁). The foliation *bends* at full strength (time dilation exists); its *stiffness coupling* λ_local (the α₁ source) is what sparse commitment suppresses. Keep these separate.
+- Note the layer tension to acknowledge (not resolve): `Paper_012` frames gravitational time dilation as a dressed-object acoustic-metric coarse-graining, while the foundations notes frame it as becoming-at-a-position-dependent-rate (lapse N²∼b). Two descriptions at different layers; cite the foundations reading and acknowledge Paper_012's.
 
 ## §2. Mass as carried memory (the intrinsic-inertia mechanism)
 
@@ -52,11 +63,11 @@
 - "To persist is to pulse": a chain persists by continually re-committing, and re-committing with finite memory is a rhythm. This is the single-chain proper-time tick made concrete.
 - Tier: DERIVED-in-model (given the memory channel), noise-robust. Ceiling stated: temporal rhythm, not full phase-wave / de Broglie (phase is Sigma-blind); requires the added channel.
 
-## §5. No universal tick: the collective negative is correct physics
+## §5. No universal becoming: the collective negative is correct physics
 
 - Sources: `Collective_Pulse_Results.md` (and its reframe).
 - Under the substrate's native coupling (shared rho + exclusion), independent chain-rhythms do NOT globally synchronize; the coupling is dispersive (traffic-like), verified by a phase-randomized surrogate test (real collective oscillation slightly below random-phase). Also: irreversible rho-saturation kills even the single-chain rhythm on a closed system.
-- **Reframe (the key move):** this negative is the physically REQUIRED answer. Global synchronization would be a universal tick, which §1 forbids (Zeno-freeze / no dilation / no dynamics). So the substrate correctly refuses a universal clock. The real question is not global sync but the relational one: local binding without a universal tick.
+- **Reframe (the key move):** this negative is the physically REQUIRED answer. Global synchronization would be universal uniform becoming, which §1 forbids (Zeno-freeze / no dilation / no dynamics). So the substrate correctly refuses a universal clock. The real question is not global sync but the relational one: local binding without universal becoming.
 - Tier: the negative is a real MEASURED result; the reframe is the STRUCTURAL interpretation tying it to §1.
 
 ## §6. V5 as the finite-reach binder of local proper time (the constructive result)
@@ -68,9 +79,10 @@
 - **Two derived constraints on V5's structure** (from working backward from the required physics): V5 must be (a) finite-reach (corpus already says this) and (b) attractive/synchronizing (new — else no binding, no composites). This is a forward constraint the failed Tsirelson route never produced.
 - Tier: STRUCTURAL / reverse-characterization, confirmed in the real substrate sim. The V5 coupling is an honestly-named addition (not primitive-forced). Two structural constraints DERIVED; the forward primitive derivation OPEN.
 
-## §7. Synthesis: mass, time, and the relational tick are one story
+## §7. Synthesis: mass, time, and sparse becoming are one story
 
-- The through-line: reality requires relational (not universal) ticking. A chain's own carried memory gives it inertia and a proper-time rhythm (mass, §2-4). V5's finite reach binds nearby chains into a shared local clock (composite rest frames, §6) without ever making a universal one (§5), preserving time dilation and avoiding Zeno-freeze (§1). Mass and time dilation are the same phenomenon viewed from V5: chains acquiring a shared local tick.
+- The through-line: physics requires sparse, local, relational becoming (not universal uniform becoming). The corpus's "three faces" (QM via avoiding Zeno, time dilation via position-dependent rate, no preferred frame via α₁≈10⁻⁹³) already unify at the sparse-commitment level (§1). This paper adds a FOURTH face and the constructive mechanism: a chain's own carried memory gives it inertia and a proper-time rhythm (mass, §2-4); V5's finite reach binds nearby chains into a shared local clock (composite rest frames, §6) without ever making a universal one (§5). So mass, and the composite rest frames that carry time dilation, are the same phenomenon viewed from V5 — chains acquiring a shared local rate of becoming.
+- The unification: sparse becoming (why no universal clock — corpus) + V5 finite reach (how local clocks nonetheless form — this paper) are the two halves of one picture. The first forbids a universal frame; the second builds local ones.
 - This narrows the program's single highest-leverage open target (V5 characterization, target A2) from "uncharacterized" to a precise remaining ask: derive, from the 13 primitives, that the substrate must carry a finite-reach + attractive + retarded cross-chain coupling.
 
 ## §8. Open frontier (honest, foregrounded)
@@ -88,7 +100,8 @@
 
 | # | Step | Tier | Source |
 |---|---|---|---|
-| 1 | No universal tick (time dilation + Zeno + dynamics) | STRUCTURAL | §1 |
+| 1 | Sparse becoming forced (dense P11≡P13 = Zeno freeze = no QM); "three faces" = QM + time dilation + α₁≈10⁻⁹³ | DERIVED (corpus, cite) | §1, `SparseCommitment_Constitutive.md`, `CommitmentIsSparse.md` |
+| 1b | Khronon = local foliation spontaneously = CMB frame (not imposed universal clock); lapse ≠ α₁ coupling | STRUCTURAL (corpus, cite) | §1b, `KhrononMOND_Round1`, `MOND_Reconciliation.md` |
 | 2 | Certified substrate is ballistic-or-extinct (no dispersion mode) | MEASURED | E1 / H1_Leg |
 | 3 | Chain-carried, dynamics-read memory gives bounded sub-ballistic rate | D-conditional-on-added-channel | §2 |
 | 4 | Fade rate = V1's inherited memory time; params reduce to one (product); bottoms out on k₁₁ | STRUCTURAL + INHERITED | §3 |
