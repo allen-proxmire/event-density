@@ -67,3 +67,12 @@ So with a genuine cross-chain V5 term in the real substrate: when the reach is f
 - Resolves the collective-pulse negative (`Collective_Pulse_Results.md`): global sync *should* fail (it would be a universal tick); the real behavior is local sync, which the crude shared-rho coupling couldn't produce but a finite-reach phase coupling does — now confirmed in the real substrate sim, not just the phase model.
 - Advances target A2 (V5 characterization) from a different angle than the failed Tsirelson route: a relational/dynamical characterization tying V5 to time dilation and composite rest frames, with two concrete structural constraints (finite reach + attractive coupling).
 - Ties the mass/memory thread to relativity: local proper time (a bound composite's shared rate) is the rest-frame clock of a massive composite object.
+
+## Update 2026-07-08 — the attractive sign is now DERIVED (forced-conditional), no longer assumed
+
+This doc treated V5's synchronizing/attractive sign as a NECESSITY condition (required to bind composites, but taken as an input; see "Honest scope": "the synchronizing sign is assumed here, motivated by the gauge phase, not derived"). That is now upgraded to derived. See `V5_ForwardDerivation_Scoping.md` (Build 1 + G1), enabled by P12-Coh being operationalized (`P12_Coherence_PhaseAlignment_Scoping.md` Step 4):
+
+- **Build 1** (`v5_coherence_coupling_probe.py`): coupling two clusters of real certified chains by P12's coherence GRADIENT with P12's own `+` sign, with NO hand-put attractive term, reproduces this doc's exact signature (nearby chains lock to a shared rate, the cross-cluster gap is preserved, and the gap collapses to a universal tick only when the reach reaches the separation). A sign-flip control (`−Coh`) destroys binding at every reach, so the attraction is specifically P12's `+` coherence sign, not the coupling machinery.
+- **G1**: Paper_090 §4.3's difference-phase gauge law `e^{i(α_A − α_B)}` forces V5's coupling to be the conjugated amplitude-pair moment `⟨P^A (P^B)^*⟩`, whose gauge-invariant real part is the coherence content `√(b_A b_B) cos Δπ`. So V5's coupling IS P12-Coh, forced-conditional on P-Bipartite-Mapping (bilinear content) plus the like-chain correlation reading.
+
+Net: V5's attractive sign is derived from P12's reward-coherence structure (tier: MEASURED, with the identification gauge-law-forced). This doc's point-2 "assumed here" becomes "derived, forced-conditional." Existence (P10 posit) and ℓ_V5 (inherited) are unchanged.
