@@ -54,6 +54,31 @@ So the interaction between the chiral spectral flow (face 1) and the gauge-charg
 3. **Flag the MS-II §4.2 gap upstream.** The chirality mechanism there asserts a "point-gap winding / spectral-flow" without constructing the non-Hermitian operator it needs and conflates "retarded" with "non-Hermitian." MS-II already tiers chirality as an *account*, so this is not a tiering violation — but the mechanism is shakier than "account" suggests, and it should carry the definitional caveat.
 4. **The fermion content stays out of reach regardless** — downstream of the open representation spectrum. Anomaly cancellation cannot be closed at the content level before that is.
 
+## Definitions check (2026-07-08) — is V5 the non-Hermitian operator? NO (trap avoided), but its role is reallocated
+
+Prompted by this session's V5 characterization (`V5_ForwardDerivation_Scoping.md`: V5's coupling = the cross-chain conjugated-pair moment, retarded, U(1) gauge-covariant), ran the doc's step-2 definitions check against the toy operator that actually produces the winding.
+
+**What the winding requires (read from `evaluation/ChiralGauge/chiral_winding.py` + SQ1c verbatim).** Two ingredients: (1) a genuinely non-Hermitian operator = **asymmetric spatial hopping** `H(k)=t_R e^{ik}+t_L e^{-ik}`, non-Hermitian iff `t_R≠t_L` (Hatano-Nelson); winding 0 in the hermitian case, ±1 for one-way ("arrow") hopping. (2) a **periodic parameter** to wind: Bloch `k` for the point-gap winding, or a **U(1) flux twist 0→2π** for the net spectral flow (the decisive anomaly signature, = net chirality in 1+1D by the index theorem).
+
+**Does V5 map? NO on the operator, and for a precise reason (the same trap, avoided).** V5's non-Hermiticity would have to come from its retardation. But the toy's non-Hermiticity is asymmetric hopping in **space**; V5's `θ(t_A−t_B)` is one-way in **time**. These coincide only under a 1+1D light-cone identification (worldline-time ↔ worldline-space), which is the toy's own setup and requires the open **T4 substrate→Dirac reduction**. V5's cross-chain retardation couples B's past to A's future regardless of A's spatial side, so it does **not** supply asymmetric spatial hopping by itself. **Retarded-in-time ≠ non-Hermitian-operator, now located precisely for V5.** Do NOT declare V5 the winding-carrier; that repeats the retracted V1 error.
+
+**What V5 DOES supply (the reallocation).**
+1. **The periodic parameter, cleanly.** V5 is U(1) gauge-covariant, so it couples naturally to the flux twist 0→2π the spectral flow needs, which the toy inserts by hand. This is the viable route for ED (which has no global Brillouin torus, so the Bloch-`k` route is blocked; the U(1)-flux route only needs the flux to be periodic, which it is).
+2. **The cross-channel SUM, which is where anomaly CANCELLATION actually lives.** Cancellation = the *net* chirality summed over channels preserves conservation. V5 is exactly the cross-chain kernel that sums over channels (a P05 polarity-transport group). So V5's role is not to be the operator, it is the summing structure of the cancellation condition.
+
+**Reallocated ledger (non-trap).**
+
+| ingredient | ED object | status |
+|---|---|---|
+| per-channel non-Hermitian operator (winding-carrier) | arrow on a worldline (P11); genuine version = arc-Q Lindblad `Ĥ_eff = Ĥ − (iℏ/2)Σ Ĵ†_α Ĵ_α` (P04+P08+P11) | toy-done 1+1D (SQ1c); genuine operator's winding UNCOMPUTED |
+| periodic parameter (flux to thread) | V5's U(1) gauge coupling | natural, V5 supplies it |
+| cross-channel sum (cancellation site) | V5 + P05 polarity group | the real anomaly-cancellation locus |
+| conservation target (anomaly-free) | B4 exact integral Gauss law | measured, solid |
+
+**One genuinely runnable next build this exposes (non-trap, unlike a V5/certified-sim build).** The arc-Q Lindblad `Ĥ_eff` is a GENUINE non-Hermitian operator derived from primitives (its `−(i/2)ΣĴ†Ĵ` is anti-Hermitian → complex spectrum), and NOBODY has computed its point-gap winding / spectral flow. Constructing `Ĥ_eff` explicitly (from `arcs/arc-Q/lindblad_extension.md` §5.1–5.2) with a U(1) flux coupling and running the same `chiral_winding.py`-style computation would test whether ED's *real* (non-toy) non-Hermitian operator carries the chirality signature, replacing the SQ1c toy with a primitive-derived operator. Two prerequisites to check first: (a) does `Ĥ_eff` have an explicit lattice form with a threadable U(1) flux; (b) is its non-Hermiticity of the point-gap (winding) type or merely a decaying (real-shifted) spectrum. Both are source-checkable in arc-Q before any build.
+
+**Net for the arc.** The definitions check resolves the "is V5 the operator" question (NO, trap avoided) and reallocates cleanly: per-channel chirality = the arrow/worldline (toy-done, genuine-operator winding uncomputed); cross-channel cancellation = V5 + P05; conservation = B4. The bottleneck for the per-channel side is T4 (substrate→Dirac worldline reduction), the same open chain the chirality result's relativistic bridge needs. The most tractable independent move is computing the Lindblad `Ĥ_eff` winding (a real primitive-derived operator, not a toy, not the Σ-blind certified sim).
+
 ## Bottom line (corrected)
 
 Two things survive the correction and are worth keeping:
