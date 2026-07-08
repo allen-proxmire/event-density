@@ -48,7 +48,8 @@ These are the open items that sit UNDER many others; closing one cascades. Ranke
 
 ### Gravity (32 papers) — COMPLETE
 - **Curvature-emergence** nonlinear + background-free half OPEN (target A6); static/linear closed.
-- **P14 (Bilocal Strain Coupling, `Paper_030`)** is a NEW POSTULATE, not derived from the 13 — gates the ECR, BTFR slope-4, KM-I unification. Its reduction to the 13 is open.
+- **P14 (Bilocal Strain Coupling, `Paper_030`)** — PARTIALLY REDUCED (2026-07-07). Gates ECR, BTFR slope-4, KM-I. The geometric-mean *form* is now derived, not postulated: it is the interference modulus $\sqrt{b_{\mathrm{loc}}\,b_{\mathrm{hor}}}$ of two source-amplitudes superposed on a single-carrier bilocal channel (forced by P07+P04+P09 + amplitude participation; double-slit / V1-bilocal precedent). **Irreducible core reduced to one commitment:** gravitational bilocal strain is *quadratic/interfering* ($|P|^2$, Born-like) rather than *purely linear* (Paper_026 additive potential), plus $\cos\Delta\pi\approx1$ in-regime. Banked in `Paper_030` §8.4.
+- **Quadratic-strain recast (NEW high-stakes target, 2026-07-07):** build gravitational strain as a quadratic form $\sum_{ij}P_i^*P_j$ with Newton = diagonal ($i{=}j$) and MOND transition = off-diagonal ($i{\neq}j$, interference). Would fully discharge P14 and unify Newton + MOND as one strain form; must reproduce Newton + GR-I weak-field metric. A foundational modeling fork (author's call), parallel to the P12-Coh operationalization.
 - **Deep-IR geometric-mean branch origin (KM-I)** — "why the substrate's response goes geometric-mean below the cosmic rate" is the khronon arc's "deepest declared open question."
 - **KM-II regulator family unfixed** — the cosmological Θ-sector is a family constrained by 5 filters, not uniquely selected; clusters/CMB not discharged.
 - **Λ magnitude (038_5)** — reached not solved; naive V1-cutoff off by ~10⁶⁰ (kept as honest negative); reduces to Route A (target A1).

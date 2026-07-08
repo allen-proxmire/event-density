@@ -49,6 +49,10 @@ The xelatex build **blanks bare Unicode symbols** (ρ Σ ℓ ∫ ∝ ∼ ≈ ≥
 
 **The magic words, and it is all it takes:** write every symbol as LaTeX math in the `.md` from the start. Not bare `ρ ℓ ∫ ∼ R₀ α₁ ∂_t`, but `$\rho$`, `$\ell_P$`, `$\int dx$`, `$\sim$`, `$R_0$`, `$\alpha_1$`, `$\partial_t$`. Then the plain build above renders everything with zero tricks. Do NOT force a minimal font, fight `newunicodechar`, or add sed/sentinel wraps as the default; those are the "weird PDF routes" to avoid. Just author in math mode like the rest of the corpus.
 
+## Gotcha 2b — a closing `$` must not be immediately followed by a digit
+
+Pandoc will **not** parse `$\sim$0.25` as math: its Markdown rule is that a closing `$` may not be immediately followed by a digit (nor an opening `$` by a space). When the parse fails, the symbol falls into text mode and blanks under xelatex exactly like Gotcha 2. Fold the number **inside** the span: write `$\sim 0.25$`, not `$\sim$0.25`; `$\approx 10^{-93}$`, not `$\approx$10^{-93}`. This bit the `Paper_RelationalTick_v1` build on three tildes (`$\sim$0.67`, `$\sim$0.25`, `$\sim$0.002`) and cost one rebuild. Quick pre-build check: `grep -o '\$[0-9]' file.md` finds closing-`$`-then-digit candidates to inspect (opening `$10^{-3}$` spans match too and are fine).
+
 ## Verify every build
 
 1. `grep -c 'missing character' Paper_X.log` (or scan the pandoc/xelatex stderr) must be **0**.
