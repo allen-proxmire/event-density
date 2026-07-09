@@ -40,6 +40,21 @@ The gap is defined on the **hermitian, OS-positive** theory — which, by the la
 - **Connects:** Gauge_06's *derived* action to YM-4's *postulated* coercivity — the non-abelian curvature is the candidate for O-MG-1 — and gives the strong-coupling area-law route for O-MG-4.
 - **Does NOT claim:** a constructive proof, the gap's numerical value, asymptotic freedom, or continuum survival. Those remain open / conditional, as YM-4 states. This is the *mechanism* — ED's physical account of why the gap exists — not the Clay proof, which is a different (rigorous) discipline.
 
+## 6.5 Verification of the structural core (2026-07-08, `evaluation/ChiralGauge/ym_gap_flatdirection.py`)
+
+The mechanism's *verifiable* core — the non-abelian `[A,A]` lifts the abelian massless flat direction — is confirmed. For a **spatially-constant** gauge potential (`dA=0`), the cost is `||[A_μ,A_ν]||²`:
+
+| group | `⟨||[A,A]||²⟩` | flat direction |
+|---|---|---|
+| U(1) | **0.0000** (exactly) | YES — massless photon (layer-1 Coulomb) |
+| U(2) | 1.33 | LIFTED (gap-source) |
+| U(3) | 0.75 | LIFTED |
+| U(4) | 0.53 | LIFTED |
+
+So a constant `A` costs *nothing* abelian (the flat/massless direction) but *costs energy* non-abelian (the `[A,A]` self-interaction) — the massless mode is lifted **iff** the channel group is non-abelian. This is the same `[A,A]` in the same coherence-deficit that gives `−¼Tr(F²)` (the YM-action check). **`gap ⟺ non-commuting channels` is verified at the structural/physics level.**
+
+**What remains unverified (the Clay-hard part, as §4 flags):** *continuum survival*. The strong-coupling area law confines both abelian and non-abelian; what keeps the non-abelian gap into the continuum (while U(1) deconfines to massless Coulomb) is **asymptotic freedom** — the non-perturbative RG core of the Clay problem. ED locates the gap's *origin* (`[A,A]` lifting the flat direction) but does **not** prove its continuum survival. **Mechanism: verified. Clay proof: not attempted (a different, rigorous discipline).**
+
 ## 7. Falsifier
 
 If the abelian theory (Maxwell) showed a substrate-generated gap, or the non-abelian self-interaction in the coherence-deficit could be shown *not* to lift the massless flat direction, the mechanism fails. The mechanism stands or falls on: **gap ⟺ non-commuting channels**, traced to the $[A,A]$ term in the same coherence-deficit that gives $F^2$.
