@@ -1,5 +1,7 @@
 # Gauge Program · Step 9 — The Channel-Family Stability Route to {1,2,3} is REFUTED (coherence favors large N)
 
+> **⚠️ PRIMITIVE-FIDELITY CORRECTION (2026-07-09).** Read "bandwidth conservation (P04)" / "total bandwidth conserved (P04)" below as "**preserved by P05 transport as an isometry**; canonical P04 supplies only additivity/non-negativity." And "N indistinguishable channels" = **dynamically** indistinguishable (P07 tokens, no accessible intra-family label). The refutation result itself (symmetric multiplet stable ∀N ⟹ stability does not select {1,2,3}) is unaffected. Full note in `Gauge_01`.
+
 **Foundations — tests the flagged "next concrete target" of `Gauge_03` §5-6 (the channel-family stability calculation) for the SM gauge-group uniqueness {1,2,3}. Result: it FAILS, and points the wrong way. Both candidate routes for {1,2,3} are now down: the spatial-dimension bound (refuted `Gauge_04`, category error) and coherence-stability (refuted here). The gauge-group FORM (SU(N) from multiplicity, `Gauge_01`) stands; the specific SM group {1,2,3} remains a genuine OPEN WALL — as in standard physics, which also does not derive it. Honest tier: form-derived, specific-group-inherited.**
 
 ---
