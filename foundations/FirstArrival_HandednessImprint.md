@@ -4,6 +4,10 @@
 
 ---
 
+> **⚠️ Correction (2026-07-08) — the P-type (parity) half of this account over-reads; the C-type (matter/antimatter) half stands.** §3-4's "new content" (the first commitment imprints a **channel-topology / screw orientation** → a global helicity/parity reference) rests on there being a spatial-handedness attribute (a channel-topology screw) for the commitment to carry. The T4 emergent-spinor attack (`T4_04` Build 1 + Fork (a)/(b), 2026-07-08) shows there is not: (Build 1) the 3+1D emergent fermion has no forced screw (the discriminator = the frame-rotation-about-the-arrow, which the spin-blind U(N) transport does not supply; the SQ1c screw was 1+1D-special); (fork a) **canonical Paper_087 P07 is combinatorial distinguishability with no channel-topology at all**, so there is no handed topology to imprint; (fork b) breaking parity by selection needs a parity-**odd** (pseudoscalar) order parameter, and the first commitment has only the arrow (a time axis) + the P09 phase (a parity-even U(1) circle `S¹`) — no handed spatial 3-frame, so no pseudoscalar. **Net: first-arrival imprints C (the P09-phase χ_C → matter/antimatter, R4, real and untouched) but NOT P (parity/helicity, no substrate carrier).** ED has no handed spatial structure, so the arrow breaks time-symmetry (→ matter/antimatter) but not spatial parity. Read §3-5's C/P unification as C-only; parity violation / weak chirality is **inherited, not ED-derived** (a genuine wall, confirmed from all three angles). The C-side of this keystone (§2, R4) is correct and load-bearing for baryogenesis; only the P-extension is retired.
+
+---
+
 ## 1. The question
 
 The whole arc funnels here. Gauge_05: parity violation can only live in the non-abelian sector, but *whether* the weak force is chiral depends on the matter handedness-assignment + the C/P-link — both reducing to the **first-arrival handedness selection**. The question: what does first-arrival actually fix, and does it deliver the weak force's chirality and the C/P-link?

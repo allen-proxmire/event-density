@@ -78,3 +78,22 @@ Checked canonical **Paper_087 §P07** verbatim (not an elaboration, per the sour
 - Tellingly, even within that elaboration, chirality-selection is routed through a **selection** (the η thread: baryogenesis filters channels by polarity vs ∇ρ, §7.7), NOT an intrinsic helix. The corpus's own channel-level picture points chirality at a selection/breaking mechanism, not a handed topology.
 
 **Net: fork (a) is a NO.** ED's emergent fermion is vector-like by default, confirmed at the primitive level; the chiral topology that would change that is undefined-and-unbuilt, not something the primitives quietly supply. The honest redirect is **fork (b): parity violation, if ED has it, is spontaneous / IC breaking via the baryogenesis first-arrival handedness (the η thread / R4 bridge), not an intrinsic topological screw.** This also confirms, from the primitive side, why the "commitment-coupled weak-chirality" mechanism was refutable: there is no handed topology for the arrow to couple to. **T4's chirality gate now reads: default vector (primitive-confirmed); chiral requires either the unbuilt channel-topology→gauge program to be built AND come out handed, or spontaneous/IC selection (fork b) — the ED-native route.**
+
+---
+
+## Fork (b) RESOLVED (2026-07-08) — first-arrival gives C (matter/antimatter), NOT P (parity); the keystone's C/P unification over-reads the P-side
+
+Read `FirstArrival_HandednessImprint.md` (the first-arrival keystone) + `ChiralGauge_SQ1h`. The account claims the first commitment imprints **two** global references at once: (i) a P09-phase reference → matter/antimatter (C-type), and (ii) a **channel-topology / screw orientation** → parity/helicity (P-type). Its own §2 states R4 covers *only* C; the P-type is the "new content" of §3-4, built entirely on the commitment carrying "a channel-topology orientation (the screw's spatial-twist sense)."
+
+**That ingredient is exactly what Build 1 + fork (a) removed.** Build 1: no forced screw in 3+1D. Fork (a): canonical P07 has no channel-topology. So the P-type imprint borrows the same absent handed structure. The honest split:
+
+- **C-type (matter/antimatter): real, ED-native.** R4's first-arrival selects χ* on the P09 phase circle `S¹`, a genuine U(1) order-parameter (parity-**even**) selection → baryogenesis. Solid; untouched by this correction.
+- **P-type (parity/helicity): no carrier.** Breaking parity by selection requires a parity-**odd** (pseudoscalar) order parameter — three spatial axes with a fixed handedness. The first commitment has the arrow (a *time* axis) + the P09 phase (an internal U(1)); no handed spatial 3-frame, no pseudoscalar. `S¹` is parity-even, so selecting on it gives C, not P. B5 orientation is a *director* (headless, no orientation sense), and director + arrow = 2 axes, insufficient for a pseudoscalar. There is nothing parity-odd for the first commitment to imprint.
+
+**Verdict on fork (b): first-arrival delivers C, not P.** The keystone's "one event imprints both C and P" **over-reads the P-side**: it assumed a channel-topology screw (its §3-4) that fork (a) + Build 1 show is absent. Same root cause as fork (a): **ED has no handed spatial structure**, so the arrow breaks *time*-symmetry (→ the arrow itself, and → matter/antimatter via the P09 phase) but cannot break *spatial parity*.
+
+**Matter-sector chirality verdict (Build 1 + fork a + fork b, triple-confirmed).**
+- **Matter/antimatter asymmetry (C): ED-native** — the arrow's first-arrival P09-phase selection (R4). Real.
+- **Parity violation / weak chirality (P): a genuine WALL** — no native mechanism. Confirmed absent from all three angles: wiring/topology (fork a, no channel-topology), transport/screw (Build 1, no 3+1D screw), and selection/first-arrival (fork b, no pseudoscalar order parameter). Weak chirality is **inherited, not derived**.
+
+This is the honest culmination of the T4 chirality attack: ED reproduces the matter/antimatter asymmetry but does **not** natively produce the weak force's parity violation. The over-read to retire is the first-arrival C/P unification's P-half; the C-half (baryogenesis) stands. Tier: derived-conditional VECTOR fermion + C-native / P-inherited, a clean, falsifiable matter-sector tiering, and a correction (not a fabrication) of the keystone's P-claim.
