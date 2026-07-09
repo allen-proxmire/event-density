@@ -64,3 +64,28 @@ So ED's honest candidate for the weak force's observed chirality: **not a law, b
 4. **Different KIND of parity violation than the SM.** ED gives *spontaneous, per-run, contingent-sign* homochirality (possibly with cosmological parity-domains), whereas the SM's weak chirality is a *fixed universal law*. Whether the SM's universal left-handedness can be ED's single-run spontaneous choice, or is genuinely law-level (which ED cannot produce), is the real open physics question and a potential falsifier.
 
 **Net:** route (b) LIVES as a mechanism-viable account (the κ_h gate passes on a faithful model), NOT a closed result. The tautological core (chiral objects proper-dock better than their enantiomers) is real geometry; the ED-specific load-bearing assumption (V5 coupling uses that geometry) is plausible-but-unverified. Next: (a) verify κ_h on a real V5-coupled composite in the certified/kernel machinery (the decisive substrate test); (b) build an actual chiral V5 cluster; (c) confront the per-run-vs-law-level distinction against the SM's universal handedness.
+
+---
+
+## Probe 2 (DONE 2026-07-08) — κ_h COLLAPSES on the real V5 functional; the Probe-1 positive was a docking artifact. Route (b) does NOT survive.
+
+`evaluation/ChiralGauge/homochirality_v5_verify.py`. Replaced Probe 1's docking/vertex-matching model with the **actual V5 coherence functional**: `E(R) = Σ_{i∈A, j∈B} exp(−|r^A_i − R r^B_j|/ℓ_V5) · cos(φ^A_i − φ^B_j)`, summed over ALL cross-pairs (no hand-matching), composites relaxing orientation (proper rotations) to max coherence. Decomposed into full / phase-only / proximity-only.
+
+**Results.**
+- **phase-only: `κ_h = 0.000` exactly.** Analytic: `Σ_{ij} cos(φ_i−φ_j) = (Σcos φ)² + (Σsin φ)²` depends only on each composite's total phase, not geometry or handedness. V5's phase part is **handedness-blind**, as the caveat feared.
+- **proximity-only: `κ_h ≈ 0`** (mean −0.012), and a reach/separation sweep (ℓ ∈ {0.3,0.5,1.0,2.0}, sep ∈ {0.6,1.3}) gives mean `κ_h` in **[−0.036, +0.037]** with **sign-symmetric** per-template scatter (individual composites go both +0.4 and −0.4, averaging to zero). No systematic same-handedness preference in any regime.
+- **full V5: `κ_h ≈ −0.01`** (chiral) ≈ achiral control — indistinguishable from zero.
+
+**Why the Probe-1 positive was an artifact.** Diastereomeric selectivity (`κ_h > 0`) requires **lock-and-key registration**: a forced one-to-one shape complementarity, so that same-handed shapes fully register and enantiomers can't. Probe 1's docking with vertex-matching **imposed** that registration (Hungarian pairing + full alignment), manufacturing `κ_h`. The **real V5 coupling is a smooth all-pairs proximity+phase sum** (mean-field-like, no registration): an opposite-handed composite simply rotates to bring a *different* subset of channels into good contact, achieving comparable total coherence. So V5 does **not** discriminate handedness. `κ_h ≈ 0`.
+
+**Verdict: route (b) does NOT survive verification.** ED's actual V5 coupling is handedness-blind, so its competitive (Frank) dynamics has **no same-handedness bias to amplify** → stays racemic → **no spontaneous homochirality**. The exciting Probe-1 result was a model artifact, caught by the verification it was flagged as needing.
+
+**FINAL matter-sector chirality verdict (four independent angles, all NO).** Parity violation is a genuine WALL in ED:
+1. **Topology / wiring** (fork a): canonical P07 has no channel-topology → no handed structure.
+2. **Transport / screw** (Build 1): the 3+1D emergent fermion has no forced screw → vector.
+3. **First-arrival selection** (fork b): no pseudoscalar order parameter → imprints C (matter/antimatter), not P.
+4. **Spontaneous homochirality** (Probe 2): V5 coupling is handedness-blind (`κ_h ≈ 0`) → competition stays racemic.
+
+**Weak chirality is INHERITED, not derived by ED — full stop.** The only chirality-adjacent thing ED derives natively is the **matter/antimatter asymmetry** (C, via the arrow's first-arrival P09-phase selection — R4, solid). Parity (P) is inherited. This is a clean, robust, falsifiable tiering, and it stands on four independent confirmations plus a self-caught artifact-retraction (Probe 1 → Probe 2), which is the discipline working.
+
+**Honest residual (small):** a hypothetical *lock-and-key* V5 variant (very short reach + hard-core exclusion enforcing one-to-one channel registration) could in principle recover `κ_h`, but that is not V5's characterized smooth-coherence form, and building it would be adding structure, not reading it. Not pursued.
