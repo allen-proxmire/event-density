@@ -64,4 +64,15 @@ So ED's Yang–Mills action is the **matter-induced effective gauge action**: th
 
 ---
 
+## 7. Verification (2026-07-08, `evaluation/ChiralGauge/ym_action_check.py`)
+
+Both load-bearing MATH steps confirmed numerically, and the physical input tied to grounded structure:
+- **(i) The trace/Wilson form is the P08 fiber-average (derived, not assumed).** Fiber-averaging the per-chain deficit `1 − Re⟨ψ|U|ψ⟩` over Haar-uniform `ψ` matches `1 − (1/N)Re Tr U` (1.1112 vs 1.1115 at N=3), confirming `∫|ψ⟩⟨ψ|dψ = 𝟙/N` forces the trace. §4.5 holds.
+- **(ii) Small-holonomy → F².** `deficit/a⁴` converges to `Tr(F²)/2N` as `a→0` (clean 4-digit convergence), so `1 − (1/N)Re Tr U_□ → (a⁴/2N)Tr(F²)`. §4 holds.
+- **The load-bearing physical input is grounded.** The per-chain cost `1 − Re⟨ψ|U_□|ψ⟩` is exactly the *amplitude-overlap coherence* characterized in the 2026-07-08 V5/P12 work (coherence = overlap of an amplitude with its transported self). So the input is the substrate's coherence structure, not an extra postulate.
+
+**Net verdict: the YM action FORM is derived at structural/analytic tier** (the math checks out; the trace form is P08-forced; the input is the grounded coherence-overlap). Honest residuals unchanged: the non-abelian coherence-cost is a gauge-program-tier lift (the gauge channels are not in the certified Σ-sim; the abelian case is simulator-grounded); `g` and `a` are inherited; the continuum limit leans on DCGT + small-holonomy. So the whole gauge program now reads: **structure (SU(N) form) + gauging (non-abelian, generic) + action (F²) all DERIVED (structural/analytic); the specific group {1,2,3} is a WALL (`Gauge_09`); couplings/scales and electroweak details inherited/open.**
+
+---
+
 *Gauge step 6. Why F²? The substrate coherence-deficit on the U(N) plaquette holonomy, 1 − (1/N)Re Tr U_□, IS the Wilson plaquette action (the non-abelian lift of the abelian B4/Maxwell coherence 1 − cos Φ ≈ ½F², already grounded — the layers #2 coherent recovery). Small-holonomy expansion → (a⁴/2N)Tr(F²) → continuum −¼∫F^aF^a: the Yang–Mills action. Non-abelian quartic from the commutator in F; Lorentz covariance from the acoustic metric. Closes O-YM2-2, upgrades YM-2 step 6 P→D. Load-bearing assumption: the N-channel coherence-deficit is the trace-of-holonomy form (natural lift, abelian case simulator-grounded; non-abelian is analytic, gauge-program tier — not the certified Σ-simulator). g and a inherited; leading order; relational-graph continuum limit = small holonomy. Falsifier: substrate coherence shown not to be the Re Tr U_□ deficit.*
