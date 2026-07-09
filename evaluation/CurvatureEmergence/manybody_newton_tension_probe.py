@@ -1,5 +1,16 @@
 """The many-body Newton tension of the interference-MOND recast: showstopper or resolved?
 
+*** RETRACTED 2026-07-09: the "resolved" conclusion below is WRONG (over-banked save, Claude-B-caught). ***
+The ~70-order headroom is a UNITS ARTIFACT: this probe counts the horizon by AREA (b_hor=(R_H/l_P)^2
+~1e123) but the galaxy by MASS (b_gal=M/m_Pl~1e50). A horizon's area count = (its mass count)^2, so the
+mismatch inflates the headroom by ~1.07e62 (the entire "save"). Counted consistently by MASS (horizon
+M_hor/m_Pl~1e61): sigma^2~b_gal/b_hor~1e-12, sigma~1.6e-6, and a galaxy at star-counting gives
+sigma^2*N~0.27 -> Newton FAILS. Also the paper's own S6 needs sigma~0.09 (=a0_obs/2cH0), the SAME sigma
+36 orders away. The MOND-survival "check" is tautological (sigma is DEFINED as sqrt(b_gal/4b_hor)). The
+many-body Newton tension SURVIVES as a potential showstopper. Kept for the record. Do not cite.
+---
+ORIGINAL (WRONG) DOCSTRING BELOW:
+
 THE TENSION (Claude-B, correctly): the sigma^2-vs-sigma coherence asymmetry is per-PAIR. But coherence
 is transitive -- if mass A is sigma-coherent with the horizon (needed for MOND) and B is too, then A and
 B are sigma^2-coherent WITH EACH OTHER (a two-body probe confirms this below), and summed over N separate
