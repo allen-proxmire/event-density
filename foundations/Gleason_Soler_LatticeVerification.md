@@ -134,3 +134,34 @@ Worked the deepest residual from the primitives.
 | P-Gleason-Compatibility (physical / Kochen-Specker) | **still OPEN** — the one remaining un-touched postulate-half |
 
 **Net:** the keystone that was *fully stuck* (three failed routes for the blocking postulate) is now a coherent reconstruction — orthogonality derived, ℂ selected, covering law grounded, and the deep structure resolved as a **primitive-einselection preferred-basis quantum theory** whose basis-democracy (standard QM) is emergent. The one genuinely untouched piece is the *physical* half of P-Gleason-Compatibility (Kochen-Specker non-contextuality under a genuinely different apparatus). This is publication-worthy as a QM-foundations reconstruction with a distinctive headline (ED derives its quantum logic and complex field, and predicts einselection as primitive).
+
+---
+
+## Physical non-contextuality RESOLVED (2026-07-08) — the last piece; einselection makes it hold. Keystone COMPLETE.
+
+Worked the physical (Kochen-Specker) half of P-Gleason-Compatibility. The worry: a *genuinely different apparatus* physically couples and changes `b_K`, making `P(K)` context-dependent. Three facts from the primitives settle it:
+
+1. **`b_K(u)` is intrinsic.** P04 defines it as a bare function of `(K,u)` — a *state* property, no apparatus argument. For a fixed substrate state, `P(K) = b_K/Σb` is fixed.
+2. **Einselection ⟹ one substrate commitment context.** KS contextuality requires the *same* projector to live in *multiple incompatible* measurement contexts. But ED commits only in the channel basis (the preferred-basis result above), so at the substrate there is exactly *one* commitment context, and `P(K)` is trivially non-contextual — there is no second context to disagree with it.
+3. **Outcomes are stochastically committed (P11), not pre-valued.** ED never assigns non-contextual *definite values* (which KS forbids in dim ≥ 3); it assigns non-contextual *probabilities* (which Gleason permits, = Born). So ED is consistent with *both* theorems: Gleason (non-contextual Born probabilities from the intrinsic `b_K`) and KS (no non-contextual hidden values, because outcomes are stochastic commitments, not pre-existing).
+
+**Reconciliation with QM's rich multi-context structure.** Different apparatus contexts arise at the *emergent* level (an apparatus = a system whose channels couple to a target observable), and they all resolve to the same substrate channel-commitment, reading the same intrinsic `b_K`. So `P(K)` is apparatus-independent. **The multi-context (Gleason/KS) structure is EMERGENT in ED, not fundamental** — the same flavor as einselection-primitive / basis-democracy-emergent.
+
+**Tier:** *grounded* — `b_K` intrinsic (P04), one substrate context (einselection), stochastic commitment (P11); *account* — the emergent multi-context reconciliation (standard measurement theory). Distinctive-ED claim: the Gleason/KS multi-context non-contextuality is emergent, not a fundamental multi-context theorem as in textbook QM.
+
+## KEYSTONE COMPLETE — final scorecard
+
+| piece | status |
+|---|---|
+| Channel orthogonality (`⟨K|L⟩=0`) | **DERIVED** (operational distinguishability, Move 1) |
+| ℂ number field | **SELECTED** (P09 phase, V5/063 composites) → T14 upgraded |
+| Covering law | **candidate-GROUNDED** (arrow enforces repeatability) |
+| Orthocomp / atoms / irreducibility / angle | **grounded** (P11 / P07 / P10 / P03) |
+| Orthomodularity | rides with the representation |
+| Preferred basis | **RESOLVED — primitive einselection** |
+| Gleason-compat (bookkeeping) | **DERIVED** (P02+P04) |
+| Gleason-compat (physical / Kochen-Specker) | **RESOLVED** (intrinsic `b_K` + einselection + stochastic commit) |
+
+**Both of Paper_004's blocking postulates are now handled:** P-Channel-Orthogonality is derived; P-Gleason-Compatibility is derived (bookkeeping) + resolved (physical). The QM-kinematics keystone — fully stuck for three prior attempts — is a **complete, coherent reconstruction**: ED derives its quantum logic, its complex field, and its Born non-contextuality, with two distinctive primitive claims (einselection primitive; multi-context structure emergent), both tied to the arrow (P11).
+
+**Honest overall tier.** This is a *reconstruction with grounded ingredients + honest account-tier steps*, NOT a closed theorem. The load-bearing residuals: (a) the technical Solèr lattice rigor (the exchange-property geometry, infinite-dim subtleties) rides underneath the whole thing; (b) several steps are account-tier (emergent basis-democracy, emergent multi-context); (c) the distinctive predictions (primitive einselection, emergent multi-context) have unclear observability — the real falsifier frontier. What is genuinely new and solid: the *reframe* (orthogonality is operational not kinematic; the form is forced by complementarity; the arrow selects the pointer basis) turned a fully-stuck postulate-chain into a coherent, mostly-grounded reconstruction with a distinctive, ED-native physical picture.
