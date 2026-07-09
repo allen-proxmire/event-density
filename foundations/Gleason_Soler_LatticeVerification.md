@@ -100,3 +100,37 @@ Worked residual (i). Honest verdict: **orthomodularity does not close as a separ
 **This is a real, distinctive fork, not a technicality.** If ED is a preferred-basis quantum theory, that is a *feature* (the arrow fundamentally selects the classical pointer basis — einselection is primitive, not decoherence-emergent) and a **testable deviation from standard QM's basis-democracy**. It is fully consistent with ED's arrow-primitive, exact-as-logic/emergent-as-metric philosophy.
 
 **Honest tier for orthomodularity:** grounded for the channel (pointer) basis (Boolean, trivial); for the full lattice it is not an independent result but rides with the inner-product representation; the genuinely open and physically-deep piece is the **preferred-basis question** (phase-basis first-kind measurements), which ED's arrow plausibly answers in a *distinctive* (einselected) way. This is the deepest remaining residual of the whole keystone, and it is a research question with a real prediction attached, not a lattice-theory formality. Do NOT claim orthomodularity as independently closed.
+
+---
+
+## The preferred-basis question, RESOLVED (2026-07-08) — ED commits only in the channel basis; einselection is PRIMITIVE; basis-democracy is emergent
+
+Worked the deepest residual from the primitives.
+
+**The decisive facts:**
+- **P11 is the ONLY collapse primitive**, and it is a *which-channel* selection — commitment resolves to a channel.
+- **P07 channels are INTRINSIC** ("distinct substrate objects even if bandwidth and polarity coincide") — a fixed structure, not defined relative to a measurement context.
+- A superposition `|+⟩ = (|1⟩+|2⟩)/√2` is **not** an intrinsic channel, and no ED primitive collapses to it. Committing a `|+⟩` state, P11 resolves it to `|1⟩` or `|2⟩` (Born), never `|+⟩`.
+
+**Resolution: ED commits ONLY in the channel basis. The channel basis is the unique pointer basis, selected by the arrow (P11).** Phase stays a *coherence* observable (interference is real — the non-Boolean gate) but is never a *commitment* basis. This is einselection, and in ED it is **primitive** — the arrow fundamentally selects the pointer basis, rather than it emerging from environmental decoherence as in standard QM.
+
+**Reconciliation with observed (basis-free) QM.** An apparatus is a system whose channels couple to a target observable, so at the *apparatus / emergent* level any measurement basis is realizable (von Neumann measurement; the apparatus's pointer channels). Thus:
+- **Substrate level:** a *primitive* preferred basis (intrinsic channels) — einselection fundamental.
+- **Apparatus level:** effective basis-democracy recovered → ordinary basis-free QM emerges.
+
+**Tiering + the falsifier.** *Grounded:* P11 is the sole collapse and is which-channel (substrate preferred basis) — from P07 + P11. *Account:* effective basis-democracy via apparatus coupling (standard measurement theory applied to ED). *Open / potentially falsifiable:* whether emergent basis-democracy *fully* recovers observed basis-independence, or whether a fundamental preferred channel-basis leaves a detectable signature near the substrate scale. **This is the distinctive ED claim — einselection is primitive, not decoherence-emergent — and a genuine prediction, not a formality.**
+
+## Gleason keystone — completed scorecard
+
+| piece | status |
+|---|---|
+| Channel orthogonality (`⟨K|L⟩=0`) | **DERIVED** (operational perfect-distinguishability, Move 1) |
+| ℂ number field | **SELECTED** (P09 phase rules out ℝ; V5/063 composites rule out ℍ) → T14 upgraded |
+| Covering law | **candidate-GROUNDED** (P11 = first-kind orthogonal projection; irreversibility *enforces* repeatability) |
+| Orthocomplementation / atoms / irreducibility / angle-condition | **grounded** in P11 / P07 / P10-sectors / P03 |
+| Orthomodularity | rides with the representation (not independent) |
+| Preferred basis | **RESOLVED: primitive einselection** (channel = unique pointer basis, P07+P11); basis-democracy emergent |
+| P-Gleason-Compatibility (bookkeeping) | derived (P02+P04) |
+| P-Gleason-Compatibility (physical / Kochen-Specker) | **still OPEN** — the one remaining un-touched postulate-half |
+
+**Net:** the keystone that was *fully stuck* (three failed routes for the blocking postulate) is now a coherent reconstruction — orthogonality derived, ℂ selected, covering law grounded, and the deep structure resolved as a **primitive-einselection preferred-basis quantum theory** whose basis-democracy (standard QM) is emergent. The one genuinely untouched piece is the *physical* half of P-Gleason-Compatibility (Kochen-Specker non-contextuality under a genuinely different apparatus). This is publication-worthy as a QM-foundations reconstruction with a distinctive headline (ED derives its quantum logic and complex field, and predicts einselection as primitive).
