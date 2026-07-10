@@ -1,6 +1,6 @@
 # ED Research Targets — Live Open/Closed Map
 
-*The current state of the open and closed work. Snapshot maintained by hand; update as arcs close. Pairs with `NEW_SESSION_ONBOARDING.md`. The one-line read is at the bottom.*
+*The current state of the open and closed work. Snapshot maintained by hand; update as arcs close. Pairs with `NEW_SESSION_ONBOARDING.md`. The one-line read is at the bottom. For the **strategic finish-line overlay** (these targets organized against what unifying physics requires: two structural gates, one goal-weapon, the rest inherited or walled) see **`ED_Road_To_Unification.md`**.*
 
 *Full whole-repo reorientation 2026-06-23 (six parallel arc-audits across `event-density/` + `ED Generative/`). Prior snapshot was 2026-06-14 and had gone stale on the gravity keystone (Route B done; α₁ moved) and SCBU (Route A4 closed). Two genuinely-new open items surfaced: the chiral-gauge/parity gap (#2b) and the α₁ internal tension (#1). Verdict tiers and crank-rail honesty preserved throughout.*
 
