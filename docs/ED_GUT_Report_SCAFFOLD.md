@@ -8,7 +8,7 @@
 
 ## 0. Abstract / thesis *(write last)*
 
-**One-paragraph claim.** ED is a substrate ontology — commitment + participation, with one process (the arrow) doing every job — that is **form-complete across every box a unified theory must check**, and **value-inherited exactly where the Standard Model's free numbers live** (a structural consequence of ED having no intrinsic scalar, not a gap). It reconstructs quantum mechanics, closes gravity (GR + dark matter + dark energy) with the *same* primitive that fixes the quantum pointer basis, derives gauge *structure* and charge quantization, builds the spinor and a native mass mechanism, and hardens parity violation into a theorem. It has two genuine structural opens (the representation spectrum; nontrivial anomaly cancellation) and **no confirmed novel prediction yet** — the one thing that would move it from "coherent unification" to "certified."
+**One-paragraph claim.** ED is a substrate ontology — commitment + participation — whose entire unifying power comes from **one primitive, the arrow of time (P11, the irreversible act of commitment), doing job after job that physics has always treated as unrelated.** The same arrow is the quantum pointer basis *and* gravity's preferred time; it undoubles the spinor, anchors matter/antimatter, and carries parity. On that spine, ED is **form-complete across every box a unified theory must check**, and **value-inherited exactly where the Standard Model's free numbers live** (a structural consequence of ED having no intrinsic scalar, not a gap). It reconstructs quantum mechanics, closes gravity (GR + dark matter + dark energy) with the *same* primitive that fixes the quantum pointer basis, derives gauge *structure* and charge quantization, builds the spinor and a native mass mechanism, and hardens parity violation into a theorem. It has two genuine structural opens (the representation spectrum; nontrivial anomaly cancellation) and **no confirmed novel prediction yet** — the one thing that would move it from "coherent unification" to "certified."
 
 - Tier: **synthesis.** Draw the claim only from what the sections below actually support.
 - Residual: the abstract must name the two opens and the missing confirmation in its own body, not bury them.
@@ -28,17 +28,38 @@
 
 Reproduce the box-check table (updated 2026-07-10 — the version in the session log): Minimal foundation ✅ · QM ✅ reconstructed · Gravity ✅ closed (+λ<1/3 healthy branch) · QM+gravity ✅ distinctive · Gauge ✅ structure / ⚠️ {1,2,3} wall · Charge ✅ topology · EM ✅ emergent shadow · Chirality ✅ theorem / ⚠️ casting inherited · Matter ✅ spinor + binding-mass / ⚠️ values inherited · Constants 📏 inherited-by-design · Anomalies ✅ baseline / ⚠️ gated candidate · Predictions ✅ several / ⚠️ none confirmed.
 
-- **Tier:** synthesis. Every ✅/⚠️/📏 must be back-linked to the section that earns it.
-- **Draw from:** the per-box sections below.
+**Add a second column to the printed table: "the arrow's job here."** The scorecard should not read as twelve independent achievements — it should read as *one primitive showing up twelve times*. Tie each row back to the §3 role inventory (pointer basis, khronon, undoubling, C, γ⁵, hypercharge anchor, continuum-sorting). The boxes are the checklist; the arrow column is the thesis.
+
+- **Tier:** synthesis. Every ✅/⚠️/📏 must be back-linked to the section that earns it, and (where it applies) to the arrow-job that drives it.
+- **Draw from:** the per-box sections below; the §3 role inventory.
 
 ---
 
-## 3. The minimal foundation — commitment + participation, one process
+## 3. The arrow of time — the one primitive that does every job *(THE SPINE)*
 
-- **Thesis:** ED's ontology in two words; the primitives P01–P13 (canonical = Paper_087); the arrow (P11 commitment-irreversibility) as the sole *process* primitive that does every downstream job. The unification lever: **one primitive, many roles.**
-- **Tier:** grounded / synthesis (strong).
-- **Draw from:** `Paper_CommitmentAndParticipation_MinimalOntology`, `Paper_087` (canonical primitives), `philosophy_arrow_as_keystone_primitive` (the arrow's role inventory), `Paper_TheArrowSortsTheContinuum` (the arrow sorts every continuum law).
-- **Residual:** the arrow-as-sole-primitive is a *convergent theme*, not a reduction proof — say so.
+**This is the report's protagonist, not a foundation footnote.** Everything after this section is *another job the same arrow does*. The unification claim is not "ED covers all the boxes"; it is "**one primitive — the arrow of commitment (P11) — is the thing checking box after box, in sectors that every other theory treats as unrelated.**" A reader should leave §3 unable to un-see the arrow, then watch it reappear as the mechanism in QM, in gravity, in matter, in charge, in parity. That recurrence *is* the evidence for unification.
+
+- **Thesis:** ED's ontology is commitment + participation (primitives P01–P13, canonical = Paper_087). Of these, the arrow — **P11 commitment-irreversibility, the sole *process* primitive** — is the load-bearing one: a single directional act of the substrate committing. Introduce it plainly and physically here, before any sector uses it.
+
+- **The role inventory (the backbone table — build the whole report around this):**
+
+  | The arrow's job | Where it reappears | Section |
+  |---|---|---|
+  | **Time itself** (the direction, the "now" that commits) | the primitive's face-value meaning | §3 |
+  | **The quantum pointer basis** (einselection — the arrow *selects* which basis is definite) | QM reconstruction | §4 |
+  | **The covering-law geometry** (irreversibility ⟹ repeatability) | QM reconstruction | §4 |
+  | **Gravity's causal direction / the khronon's foliation** (the arrow *is* the preferred time that sources gravity) | gravity | §5 |
+  | **The one identity** (pointer-basis arrow = khronon arrow) | the unification move | §6 |
+  | **Undoubling the spinor** (the arrow breaks Nielsen–Ninomiya 16→1) | matter / Dirac | §10 |
+  | **Matter/antimatter (C)** (the arrow is the native charge-conjugation reference) | matter | §10 |
+  | **Parity** (γ⁵ = **arrow** × spontaneous orientation) | chirality | §9 |
+  | **Hypercharge U(1) reference** (the arrow anchors the single hypercharge) | gauge | §7 |
+  | **Sorting the continuum** (the arrow classifies every continuum law: structure-making / erasing / preserving) | foundation / layers | §3, §8 |
+  | **Black-hole information preservation** (irreversibility = no erasure = recording) | limits / holography | (appendix / §14 tension) |
+
+- **Tier:** grounded / synthesis (strong). The individual jobs are each at their section's tier; the *claim that it's one arrow* is a **convergent synthesis**, ED's central and most distinctive move.
+- **Draw from:** `philosophy_arrow_as_keystone_primitive` (the full role inventory — this memory note IS the spine), `Paper_CommitmentAndParticipation_MinimalOntology`, `Paper_087` (canonical primitives), `Paper_TheArrowSortsTheContinuum`, `reference_ed_primitive_corrections` (arrow = P11+P13+V1, T18 — state it correctly).
+- **Residual (state it, don't hide it):** the arrow-as-*sole*-primitive is a convergent theme across sectors, **not** a reduction proof — no single theorem derives every job from P11 alone. The honesty is: the arrow does every job we've checked; that it is the *only* irreducible primitive is a live hypothesis, not a closed result. That distinction is what keeps this section credible rather than mystical.
 
 ---
 
@@ -60,12 +81,12 @@ Reproduce the box-check table (updated 2026-07-10 — the version in the session
 
 ---
 
-## 6. The unification move — QM and gravity are the *same* arrow
+## 6. The unification move — QM and gravity are the *same* arrow *(the spine's payoff)*
 
-- **Thesis:** the load-bearing distinctive claim. The arrow that fixes the quantum pointer basis (einselection) **is** the khronon that sources gravity's preferred foliation and causal direction. Not two theories glued — one primitive wearing both hats. This is ED's answer to "quantum gravity."
+- **Thesis:** the load-bearing distinctive claim, and the moment the §3 spine pays off. Two of the arrow's jobs from the role inventory — **the quantum pointer basis (einselection, §4)** and **gravity's preferred foliation / causal direction (the khronon, §5)** — are not two facts about two arrows. They are the **same** arrow doing both. Quantum measurement's "which basis is definite" and gravity's "which time is preferred" are one primitive wearing two hats. This is ED's answer to quantum gravity: the two theories were never separate — they share a spine, and the spine is time's commitment.
 - **Tier:** **distinctive** (structural; the strongest unification claim in the document).
-- **Draw from:** `philosophy_arrow_as_keystone_primitive` (the convergence: arrow = time + pointer basis + gravity's causal direction + C + hypercharge reference), `Paper_GR-II` (khronon), the Gleason keystone (einselection).
-- **Residual:** this is an identification argued across papers, not a single derivation — present it as the report's central synthesis, and be explicit that its force is coherence-across-sectors, not one proof.
+- **Draw from:** `philosophy_arrow_as_keystone_primitive` (the convergence: arrow = time + pointer basis + gravity's causal direction + C + hypercharge reference), `Paper_GR-II` (khronon), the Gleason keystone (einselection, §4).
+- **Residual:** this is an identification argued across papers, not a single derivation — present it as the report's central synthesis, and be explicit that its force is **coherence-across-sectors** (the same primitive keeps working), not one proof. That is exactly the kind of evidence unification is *made* of, and exactly the kind a skeptic will press on — so state both.
 
 ---
 
@@ -163,10 +184,12 @@ List the built-and-run probes cited (measured tier): `mass_from_binding_probe.py
 ---
 
 ### Drafting order (recommended)
-1. §3 foundation → §4 QM → §5 gravity → **§6 the unification move** (the spine: build to the one-arrow claim).
-2. §7–§10 the SM sectors (gauge, charge/EM, chirality, matter/mass).
+1. **§3 the arrow (the spine)** → §4 QM → §5 gravity → **§6 the unification move** (build the arrow, then watch two of its jobs turn out to be one — this is the report's heart).
+2. §7–§10 the SM sectors (gauge, charge/EM, chirality, matter/mass) — **each opens by naming which job of the arrow it is** (hypercharge anchor, continuum-sorting, γ⁵, undoubling + C). Don't let a sector read as a standalone result; it's the arrow, again.
 3. §11–§12 constants + anomalies (the "inherited / gated" honesty pair).
 4. §13–§14 walls + falsifiers (the loud limits).
 5. §15 bottom line, then §0 abstract, then §2 scorecard back-links.
+
+**The through-line rule:** the arrow introduced in §3 must be *named again, by role, in every sector that uses it.* If a reader can finish a sector without noticing the arrow was the mechanism, that sector is mis-drafted. The boxes are the skeleton; the arrow is the blood.
 
 **Provenance rule for the whole draft:** every ✅ cites a paper; every ⚠️ cites the ledger line that keeps it open; no claim is stated at a tier higher than its section's source. The anomaly-paper failure mode (overclaiming "forced") is the thing this document exists to avoid at scale.
