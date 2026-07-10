@@ -17,6 +17,36 @@ Everything else is either already done (form), **inherited by the theory's own l
 
 ---
 
+## The foundation, and the honest "certified GUT?" verdict
+
+*(Added 2026-07-10, reframed around the corrected goal: not visibility — whether ED can be a **certified / finished** unified theory. If it can, the rest follows.)*
+
+**The foundation is minimal, and it is one thing.** ED's 13 primitives reduce (the primitive-reduction program, closed; consolidated in `ED Generative/physics-papers/substrate-evaluation/Paper_CommitmentAndParticipation_MinimalOntology.md`) to a floor of **3 substrate + 4 arena + 1 commitment**, shortest naming **commitment and participation**. Commitment (the arrow, P11) is the sole *process* primitive: time, quantum measurement (the pointer basis), matter/antimatter, gravity's causal direction, information preservation, and the single hypercharge U(1) are *all* commitment acting. **That is ED's unification claim at its deepest — not "one bigger group" (SU(5)-style) but "one process generating every sector."** Honest tier: the reduction is structural/reclassification (not from-nothing); "the arrow does every job" is an *account*, not a theorem, and each job is only as strong as its own paper.
+
+**Score against the boxes a finished unified theory must check:**
+
+| Box | ED status |
+|---|---|
+| Minimal foundation (few primitives, no free structure) | **✓ strong** — commitment + participation + spatial arena |
+| Quantum mechanics derived | **✓** reconstruction tier (Gate 1: Hilbert/Born from the substrate) |
+| Gravity derived | **✓** closed keystone (khronometric GR + dark sector, GR-I..IV / KM-I/II) |
+| QM + gravity unified | **✓ distinctive** — one substrate; the arrow is *both* the khronon (gravity) and the pointer basis (QM) |
+| Gauge forces (SU(3)×SU(2)×U(1)) | **✓ structure** (from channel multiplicity); **wall** on *why* {1,2,3} |
+| Charge quantization | **✓** from topology (B4, integer winding) |
+| Matter content (fermions, generations, masses, mixing) | **partial / open** — spinor from channel-topology (T4); the rest inherited or gated on T4 |
+| The fundamental constants | **inherited by ED's own logic** (A1 + FSC: no intrinsic scalar) — not a fixable gap |
+| Cosmology + baryogenesis | **✓ mostly** (SCBU + inherited sequence; baryogenesis lock ties to T4) |
+| Internal consistency (anomalies, no ghosts) | anomaly-freedom conservation-side ✓ (B4); full anomaly cancellation **T4-gated** |
+| Novel falsifiable predictions | **✓ some** (the inventory, `predictions/Paper_101`) |
+
+**The verdict, straight:** **ED is a *form-complete* candidate unified theory.** It derives the *shape* of QM, gravity, and the gauge forces from one process-primitive, unifies QM and gravity through it, and explains charge quantization — a genuine, distinctive unification, minimally founded. It is **not** "certified/finished," for two reasons of different kinds:
+1. **The value layer is inherited** (constants, masses, mixing). This is ED's *own structural result* (no intrinsic scalar), not a hole — a finished ED still inherits its numbers. So ED can never be a *value*-complete GUT; it is a *form* GUT by design.
+2. **The specific matter content is gated on one open structural arc — T4** (the substrate→Dirac spinor). Chirality, generations, and the {1,2,3} count all funnel to T4, which is hard and only partly-attempted (vector-default).
+
+So: **as a *form* theory, ED is essentially already a unified theory; as a *matter-content* theory it is gated on T4; and it is value-inherited by its own logic, period.** The single most decisive thing for **"finished"** is **T4**. The single most decisive thing for **"undeniable"** is a **confirmed novel prediction** (the inventory). Those two are the whole remaining game.
+
+---
+
 ## The finish line: what "unify physics" requires
 
 A checklist any candidate unified theory must satisfy, with ED's current standing and the *kind* of target each is.
