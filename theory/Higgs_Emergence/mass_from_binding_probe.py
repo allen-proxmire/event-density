@@ -274,6 +274,9 @@ def main():
     F = 0.5
     vf = np.mean([run(1, 0.0, 1.0, STEPS, s, force=F)["v_com_x"] for s in seeds])
     print(f"\n   free front (n=1), force F={F}:  v_x = {vf:.3f}  (~c: massless, unresisted)")
+    vu = np.mean([run(N, 0.0, 15.0, STEPS, s, force=F)["v_com_x"] for s in seeds])
+    print(f"   UNBOUND cluster (A_V5=0), force F={F}:  v_x = {vu:.3f}  (control: no binding => no inertia,")
+    print(f"      COM ~ free front => the bound composite's slower response is from BINDING, not averaging)")
     print(f"   {'N':>4}{'v_x(F)':>10}{'mobility v_x/F':>16}{'rel. mass 1/mobility':>22}")
     base = None
     for NN in (8, 16, 24, 32):
@@ -283,7 +286,10 @@ def main():
         if base is None:
             base = m_rel
         print(f"   {NN:>4}{vx:>10.3f}{mob:>16.3f}{m_rel / base:>22.2f}")
-    print("   (rel. mass normalized to N=8. Rising with N => inertial mass grows with binding.)")
+    print("   (rel. mass ~ N-INDEPENDENT: a uniform force gives a mass-independent velocity")
+    print("    response = mobility-saturated / equivalence-principle-consistent, NOT evidence the")
+    print("    mass magnitude scales with N. Mass magnitude is extensive but a uniform force can't")
+    print("    resolve it; the bound-vs-unbound gap [0.72 vs 0.97] is the inertia signature.)")
 
     print("\n[k11 vs binding] does commitment-MEMORY alone give INERTIA, or just a slow clock?")
     print("   A lone memory front (dwell) under +x force F=0.5. Compare v_x to its path_speed:")
