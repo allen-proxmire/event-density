@@ -21,7 +21,7 @@ A checklist any candidate unified theory must satisfy, with ED's current standin
 
 | # | Requirement | ED status now | Kind | Gating item |
 |---|---|---|---|---|
-| 1 | **QM foundations** (Hilbert space + Born rule from the substrate) | Form closed **except** the inner-product keystone (channel orthogonality) | **Structural gate** | #8b |
+| 1 | **QM foundations** (Hilbert space + Born rule from the substrate) | Keystone **reconstructed** (2026-07-08) + circularity-audited (2026-07-10); residual = Solèr lattice rigor, not orthogonality | Structural gate (**substantially done**) | #8b |
 | 2 | **Gauge structure + chirality** (why `SU(3)×SU(2)×U(1)`, parity violation) | Structurally in place, reduced to the T4 spinor gate; not yet a derivation | **Structural gate** | #2b |
 | 3 | **Matter spectrum** (generations, Yukawa masses, mixing, Higgs / EWSB) | Mostly open; mass sector open; folds into #2b + the value layer | Mixed | #2b, value |
 | 4 | **Gravity** (GR + dark matter + dark energy + the quantum side) | **CLOSED** as khronometric (GR-I..IV) + khronon MOND/DE (KM-I/II) | Done (form) | — |
@@ -45,12 +45,14 @@ A checklist any candidate unified theory must satisfy, with ED's current standin
 
 ## The gate map (the actual roadmap)
 
-### Gate 1 — #8b `P-Channel-Orthogonality` (the QM-foundations keystone)
+### Gate 1 — #8b `P-Channel-Orthogonality` (the QM-foundations keystone) — **substantially DONE; residual re-scoped**
 
-- **What it is.** The single open postulate sitting under three downgraded theorems at once: **T10** (Born rule), **T11** (discrete inner-product / Bell-Tsirelson), **T12** (continuum inner-product). Distinct channels being orthogonal, `⟨K|L⟩ = 0`. Close it and all three re-promote; the QM foundations become forced rather than inherited.
-- **Status.** The sibling half, `P-Gleason-Compatibility`, is partially derived (bookkeeping sense, via P02+P04). Orthogonality is the remaining half. Three derivation routes have failed (P04 additivity, P07 distinctness, P11 phase-randomization); a candidate regime-bound (`c₁₂`) was tried and withdrawn. The sharpened question is not "prove `⟨K|L⟩=0` inside an already-free vector space" (true there by construction) but "is the free/orthogonal representation physically correct at all."
-- **Why first.** Nearest, most self-contained, bounded. A clean structural question, not a program.
-- **Detail:** `ED_Research_Targets.md` #8b · `foundations/Gleason_Rehabilitation_Attempt.md` · `ED Generative/theorems/T11.md` + `T12.md`.
+*(This entry was stale in the first draft of this doc, 2026-07-10; it inherited #8b's 2026-07-02 "three routes fail, blocking" wording. Corrected below after actually working the gate.)*
+
+- **What it was.** The postulate sitting under three downgraded theorems (**T10** Born, **T11** discrete inner-product/Bell-Tsirelson, **T12** continuum): distinct channels orthogonal, `⟨K|L⟩ = 0`. Three routes had failed (P04 additivity, P07 distinctness, P11 phase-randomization); a `c₁₂` regime-bound was withdrawn.
+- **What actually happened (2026-07-08, verified 2026-07-10).** The keystone was **reconstructed** and the blocking postulate **discharged at reconstruction/account tier**. The three routes failed because they sought orthogonality as a kinematic fact inside an assumed metric; ED has no prior metric. **Move 1:** define the inner product *operationally* from P11 commitment/Born statistics → distinct channels are perfectly distinguishable (metric-free) → perfect distinguishability ⟺ orthogonality (`1−c²`), so `⟨K|L⟩=0` is forced by commitment frequencies given the representation. **Move 2:** the form is forced by the P04–P09 complementarity (non-Boolean gate passes) via Piron–Solèr; ℂ selected (T14 upgraded); einselection resolved as primitive. A **2026-07-10 circularity audit** (`foundations/Gleason_CircularityAudit_2026-07-10.md`) confirms Move 1 is **non-circular** (lattice-`⟂` from P11 exclusivity is the metric-free input; metric-`⟂` is the forced output).
+- **The residual (re-scoped).** Not orthogonality (discharged). The open core is **Solèr lattice rigor**: the covering-law exchange property, the *metric-free establishment of the full orthomodular identity* (the tightest screw), infinite-dim/`*`-ring technicalities, plus the observability of the two distinctive predictions (primitive einselection; emergent multi-context). This is a math-physics program + a falsifier question, not a blocking postulate. **T10/T11/T12 are re-promotable to account/reconstruction tier** (conditional on that rigor), not to unconditional.
+- **Detail:** `ED_Research_Targets.md` #8b · `foundations/Gleason_Soler_LatticeVerification.md` · `foundations/Gleason_CircularityAudit_2026-07-10.md` · `ED Generative/theorems/T11.md` + `T12.md`.
 
 ### Gate 2 — #2b chiral gauge / the Standard-Model matter sector
 
@@ -68,8 +70,8 @@ The north star is not *closing the theory*, it is a **confirmed, novel, falsifia
 
 ## Where to point energy (the sequence)
 
-1. **Gate 1 — P-Channel-Orthogonality.** Do now. Bounded; closes T10/T11/T12 in one stroke.
-2. **Gate 2 — T4 / #2b.** The major research front. A real substrate→Dirac derivation, with the whole SM matter sector behind it.
+1. **Gate 1 — P-Channel-Orthogonality: substantially DONE.** Reconstructed 2026-07-08, audited non-circular 2026-07-10. Remaining is the **Solèr lattice rigor** (covering-law exchange property + the metric-free full orthomodular identity + infinite-dim), a bounded math-physics program — do it if you want T10/T11/T12 at full rigor, or accept the account-tier reconstruction and move to Gate 2.
+2. **Gate 2 — T4 / #2b.** Now the primary live research front. A real substrate→Dirac derivation, with the whole SM matter sector behind it.
 3. **Prediction inventory (Paper_101).** Parallel track, the undeniability weapon; distinct from the gates, feeds the program's goal directly.
 4. **Value frontier.** Background only. ED's own logic says the constants are inherited. Do not chase; think.
 5. **Walls.** Never. Primality is proven unreachable; do not re-litigate.
@@ -80,4 +82,4 @@ The north star is not *closing the theory*, it is a **confirmed, novel, falsifia
 
 - `ED_Research_Targets.md` remains the authoritative per-target log (status, dates, the full audit trail). This document is the strategic overlay, not a replacement, and defers to it on any detail.
 - The closed column stays closed. ED has delivered form broadly (the "one-line read" in the targets doc lists it). This overlay is about the open front, and the point is that the front is **small and sharp**: two gates, one weapon.
-- **One-line read:** *Physics-unification for ED = close two structural gates (#8b, then #2b), build the prediction inventory to make it undeniable, and leave the constants (inherited) and primality (walled) alone.*
+- **One-line read:** *Physics-unification for ED = finish Gate #8b's Solèr-rigor tail (the orthogonality postulate itself is already discharged), take on Gate #2b (the live front), build the prediction inventory to make it undeniable, and leave the constants (inherited) and primality (walled) alone.*
