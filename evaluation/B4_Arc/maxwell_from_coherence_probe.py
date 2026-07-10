@@ -63,9 +63,7 @@ def main():
     good = np.isfinite(pav)
     rb, pav = rb[good], pav[good]
 
-    # fit phi(r) = A / r^n  ->  log phi = log A - n log r
-    n, logA = np.polyfit(np.log(rb), np.log(pav - pav.min() + 1e-9), 1)[:2] if False else (None, None)
-    # cleaner: fit phi ~ A/r (Coulomb, n=1 in 3D) vs alternatives, by R^2
+    # fit phi ~ A/r^p (Coulomb = p=1 in 3D) vs alternatives, by R^2
     def r2(model):
         res = pav - model
         return 1 - np.sum(res ** 2) / np.sum((pav - pav.mean()) ** 2)
