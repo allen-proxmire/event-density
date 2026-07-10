@@ -13,6 +13,8 @@ ED has delivered the **form** of nearly all of physics: QM kinematics, gravity p
 
 Everything else is either already done (form), **inherited by the theory's own logic** (the constants), or **proven unreachable** (primality). That is the entire map. The value of this document is that it makes those categories *visibly different*, so a session never pours structural-research effort into a target that ED's own results say is inherited, or into a proven wall.
 
+> **Update 2026-07-10 — both gates have now been worked, and both came back mostly-resolved.** Gate 1 (#8b) was **reconstructed** (2026-07-08) and circularity-audited (non-circular). Gate 2 (#2b) **resolved** (2026-07-08) into *derived gauge structure* + *two walls* (uniqueness {1,2,3}; weak chirality inherited). So ED's structural frontier is even smaller and more wall-shaped than this doc first said — which strengthens the core thesis: form is delivered broadly, and what picks out *our* universe (which gauge groups, which handedness, the constants) is inherited/walled, not derived. The live work is now the two gates' unbuilt tails (Solèr rigor; the full 4-spinor gate), the internal-`d=3` lead, and above all **the prediction inventory**.
+
 ---
 
 ## The finish line: what "unify physics" requires
@@ -22,8 +24,8 @@ A checklist any candidate unified theory must satisfy, with ED's current standin
 | # | Requirement | ED status now | Kind | Gating item |
 |---|---|---|---|---|
 | 1 | **QM foundations** (Hilbert space + Born rule from the substrate) | Keystone **reconstructed** (2026-07-08) + circularity-audited (2026-07-10); residual = Solèr lattice rigor, not orthogonality | Structural gate (**substantially done**) | #8b |
-| 2 | **Gauge structure + chirality** (why `SU(3)×SU(2)×U(1)`, parity violation) | Structurally in place, reduced to the T4 spinor gate; not yet a derivation | **Structural gate** | #2b |
-| 3 | **Matter spectrum** (generations, Yukawa masses, mixing, Higgs / EWSB) | Mostly open; mass sector open; folds into #2b + the value layer | Mixed | #2b, value |
+| 2 | **Gauge structure + chirality** (why `SU(3)×SU(2)×U(1)`, parity violation) | **Structure derived** (structural); **uniqueness {1,2,3} and weak chirality are walls** (inherited) — resolved 2026-07-08 | Structural gate (**resolved: structure + 2 walls**) | #2b |
+| 3 | **Matter spectrum** (generations, Yukawa masses, mixing, Higgs / EWSB) | Mostly open/inherited (value layer); mass sector open; EWSB Higgs-gated | Value frontier | value |
 | 4 | **Gravity** (GR + dark matter + dark energy + the quantum side) | **CLOSED** as khronometric (GR-I..IV) + khronon MOND/DE (KM-I/II) | Done (form) | — |
 | 5 | **Cosmology + baryogenesis + Λ** | SCBU M3-closed; baryogenesis lock folds into #2b; Λ-magnitude = `Θ_ED` substrate constant (inherited) | Mostly done / value | #2b, #10 |
 | 6 | **The constants** (α, mass ratios, mixing angles, the Λ *value*) | **Inherited-in-principle by ED's own result** (no intrinsic scalar; A1 + Facts + FSC) | Value frontier (settled-as-inherited) | #9 |
@@ -54,13 +56,19 @@ A checklist any candidate unified theory must satisfy, with ED's current standin
 - **The residual (re-scoped).** Not orthogonality (discharged). The open core is **Solèr lattice rigor**: the covering-law exchange property, the *metric-free establishment of the full orthomodular identity* (the tightest screw), infinite-dim/`*`-ring technicalities, plus the observability of the two distinctive predictions (primitive einselection; emergent multi-context). This is a math-physics program + a falsifier question, not a blocking postulate. **T10/T11/T12 are re-promotable to account/reconstruction tier** (conditional on that rigor), not to unconditional.
 - **Detail:** `ED_Research_Targets.md` #8b · `foundations/Gleason_Soler_LatticeVerification.md` · `foundations/Gleason_CircularityAudit_2026-07-10.md` · `ED Generative/theorems/T11.md` + `T12.md`.
 
-### Gate 2 — #2b chiral gauge / the Standard-Model matter sector
+### Gate 2 — #2b chiral gauge / the SM matter sector — **RESOLVED into derived-structure + two walls**
 
-- **What it is.** Producing parity-violating chiral gauge couplings and the SM matter content from a parity-symmetric substrate. The sharpest challenge to the discreteness commitment.
-- **Where it now sits.** After a long sprint (SQ1a-j, the gauge program Gauge_01-08, the first-arrival keystone), #2b is **not walled** (Nielsen-Ninomiya does not bind ED: no Brillouin torus, non-hermitian arrow) and is **reduced to the T4 spinor gate** (`Paper_106` §3.7) plus the channel-topology→gauge program. Real positive support: the arrow carries a net chirality that is topological, sparsity-robust, and plausibly maximal; parity violation can only live in the non-abelian (V5 / cross-channel) sector; `SU(N)` comes from channel multiplicity; and the whole thing plausibly unifies with baryogenesis as one first-arrival handed-commitment lock.
-- **Open hard core.** The relativistic `γ⁵` bridge (discrete net chirality → Lorentz-covariant Weyl coupling), why internal `d=3` (the braiding / linking thread), anomaly cancellation (SQ3), and why the weak force specifically is chiral (the η-thread).
-- **Why it is the big front.** The entire SM matter sector (requirement 3: generations, masses, mixing, EWSB) sits behind it. This is a genuine derivation via T4, not a tidy-up.
-- **Detail:** `ED_Research_Targets.md` #2b · the `T4_*`, `Gauge_*`, `ChiralGauge_SQ1*`, `FirstArrival_*` foundations memos · `ED Generative/physics-papers/relativistic-qm/Paper_106_DiracEquation.md`.
+*(This entry was stale in the first draft, 2026-07-10; it carried the optimistic June "arrow → net chirality, promising" framing. Corrected below after working the gate. The June optimism was 1+1D dimension-special and did not survive to 3+1D.)*
+
+- **What it is.** Producing the SM gauge+matter content, including parity-violating chiral couplings, from a parity-symmetric substrate.
+- **Where it actually sits (hardened 2026-07-08, audited 2026-07-10).** Three parts:
+  - **Gauge + spinor STRUCTURE — substantially DERIVED (structural):** `SU(N)` from channel multiplicity, P05 = `U(N)` lattice connection, gauging generically non-abelian, YM action `−¼Tr F²` (numerically verified), gap mechanism, single hypercharge `U(1)_Y` = the one global P09/arrow phase → `SU(3)×SU(2)×U(1)_Y`, spin-½ double cover from tethering. A real, banked result, well past "rewrite by analogy."
+  - **UNIQUENESS {1,2,3} — open WALL:** both routes down (spatial category-error; stability refuted); reduces to "why internal `d=3`"; one unbuilt lead (3D-special linking).
+  - **Weak CHIRALITY — WALL, inherited not derived:** the emergent fermion is vector-like by default (triple-confirmed: no forced screw, no channel-topology in canonical P07, no parity-odd order parameter at first-arrival). C (matter/antimatter) is ED-native; P (weak parity violation) is inherited. The **FirstArrival C/P-unification P-half is retired**.
+- **Corridor audit (`foundations/ChiralGauge_Gate2_StateAudit_2026-07-10.md`).** ParityWall's two open corridors: **corridor 2 (P09 anomaly) collapses** (needs a prior parity-odd input a parity-symmetric substrate can't supply); **corridor 1 (irreducible/full-4-spinor) = the standing §3.7 gate** (the full channel-topology→gauge program, major and unbuilt). So chirality is open only through that one gate.
+- **What's genuinely left.** Not "close the gate" (structure is banked): (i) the full 4-spinor channel-topology→gauge construction, *if* one wants to test whether ED's topology is handed (rated unlikely); (ii) the internal-`d=3` lead for uniqueness; (iii) EWSB/Higgs, generations, Yukawa masses (value layer, inherited). This is now the *form-forced / value-inherited* pattern, not a live derivation front.
+- **Documentation debt:** `Paper_MS-II` (current headline) + `Paper_MS-I` (superseded) still overclaim the retired P-imprint — a correction pass is owed.
+- **Detail:** `ED_Research_Targets.md` #2b · `foundations/ChiralGauge_Gate2_StateAudit_2026-07-10.md` · `T4_04_*`, `Gauge_08/09/10/11` · `ED Generative/physics-papers/substrate-evaluation/Paper_ParityWall_ChiralityVerdict.md`.
 
 ### The goal-weapon (a different axis) — the prediction inventory
 
@@ -71,7 +79,7 @@ The north star is not *closing the theory*, it is a **confirmed, novel, falsifia
 ## Where to point energy (the sequence)
 
 1. **Gate 1 — P-Channel-Orthogonality: substantially DONE.** Reconstructed 2026-07-08, audited non-circular 2026-07-10. Remaining is the **Solèr lattice rigor** (covering-law exchange property + the metric-free full orthomodular identity + infinite-dim), a bounded math-physics program — do it if you want T10/T11/T12 at full rigor, or accept the account-tier reconstruction and move to Gate 2.
-2. **Gate 2 — T4 / #2b.** Now the primary live research front. A real substrate→Dirac derivation, with the whole SM matter sector behind it.
+2. **Gate 2 — T4 / #2b: RESOLVED into derived structure + two walls (2026-07-08).** Gauge structure banked; uniqueness {1,2,3} and weak chirality are inherited (walls). Not a live derivation front. Optional deep work: the full 4-spinor channel-topology→gauge construction (to test whether ED's topology is handed — rated unlikely) or the internal-`d=3` lead. First, though: **fix the stale published matter-sector papers** (MS-I/II overclaim the retired P-imprint).
 3. **Prediction inventory (Paper_101).** Parallel track, the undeniability weapon; distinct from the gates, feeds the program's goal directly.
 4. **Value frontier.** Background only. ED's own logic says the constants are inherited. Do not chase; think.
 5. **Walls.** Never. Primality is proven unreachable; do not re-litigate.
@@ -82,4 +90,4 @@ The north star is not *closing the theory*, it is a **confirmed, novel, falsifia
 
 - `ED_Research_Targets.md` remains the authoritative per-target log (status, dates, the full audit trail). This document is the strategic overlay, not a replacement, and defers to it on any detail.
 - The closed column stays closed. ED has delivered form broadly (the "one-line read" in the targets doc lists it). This overlay is about the open front, and the point is that the front is **small and sharp**: two gates, one weapon.
-- **One-line read:** *Physics-unification for ED = finish Gate #8b's Solèr-rigor tail (the orthogonality postulate itself is already discharged), take on Gate #2b (the live front), build the prediction inventory to make it undeniable, and leave the constants (inherited) and primality (walled) alone.*
+- **One-line read:** *Both structural gates are worked — #8b reconstructed (residual: Solèr rigor), #2b resolved into derived gauge structure + two inherited walls (uniqueness {1,2,3}, weak chirality). The program's structural frontier is essentially closed; the live move is now the **prediction inventory** (undeniability), with the constants inherited, primality walled, and only the two gates' unbuilt tails left for anyone who wants full rigor.*
