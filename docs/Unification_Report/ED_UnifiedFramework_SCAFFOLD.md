@@ -1,8 +1,10 @@
-# The Event Density Unification Report — SCAFFOLD
+# Event Density: A Unified Framework for Physics — REPORT SCAFFOLD
+
+*Working title of the deliverable: **"Event Density: A Unified Framework for Physics."** Public language rule (AP, 2026-07-10): **never** brand this "GUT" or "theory of everything" — both are crank-flags that trigger editorial desk-rejection and misstate the claim (a GUT excludes gravity; ED includes it; "theory of everything" overclaims). "A unified framework for physics" is the ceiling of what we say in public. This is a publish-grade, peer-facing document — not popular science (the pop-sci book is a separate, later artifact).*
 
 *Built 2026-07-10. This is the skeleton of ED's flagship deliverable: a single, cold-reader, verification-grade document that states — box by box, at honest tiers — the case that Event Density is a unified theory, and states with equal clarity what it does not yet have. Each section below carries (a) its thesis, (b) its honesty tier, (c) its residual open, and (d) the authoritative corpus papers to draw from. Drafting is a fill-in job against those papers; **do not re-derive — cite and build (CLAUDE.md HARD RULE).***
 
-**The discipline this document must hold:** extraordinary claims need extraordinary evidence. The report's credibility comes from its walls being as loud as its results. A GUT report that hides #1 and #3 is dismissible; one that carries them openly is verification-grade. Every tier below is set against `ED_Research_Targets.md` and `ED_Open_Derivations_Ledger.md`, **not** each paper's own framing.
+**The discipline this document must hold:** extraordinary claims need extraordinary evidence. The report's credibility comes from its walls being as loud as its results. A report of this kind that hides #1 and #3 is dismissible; one that carries them openly is verification-grade. Every tier below is set against `ED_Research_Targets.md` and `ED_Open_Derivations_Ledger.md`, **not** each paper's own framing.
 
 ---
 
