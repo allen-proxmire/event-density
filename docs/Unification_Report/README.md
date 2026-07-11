@@ -32,7 +32,10 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **4** | **QM from the substrate** | **v1 draft** (arrow's first job: pointer basis) |
 | **5** | **Gravity** | **v1 draft** (khronon = arrow; GR + DM + DE one field; +λ bound) |
 | **6** | **The unification move** | **v1 draft** (one arrow meets QM's + gravity's demands; the problem of time dissolves) |
-| 7–10 | SM sectors (gauge, charge/EM, chirality, matter/mass) | scaffolded |
+| 7 | Gauge structure (SU(N) form; {1,2,3} wall) | scaffolded |
+| **8** | **Charge + EM (native skeleton, shadow field)** | **v1 draft** |
+| 9 | Chirality (the vector theorem) | scaffolded |
+| 10 | Matter + mass (spinor + binding-mass) | scaffolded |
 | 11–12 | Constants + anomalies | scaffolded |
 | 13–14 | Walls + falsifiers | scaffolded |
 | 15 | Honest bottom line | scaffolded |
