@@ -10,7 +10,7 @@ Each box of the report is delivered by one or more corpus papers. The cold-reade
 
 | § | Box | Authoritative paper(s) | Location |
 |---|---|---|---|
-| §3 | The arrow / minimal foundation | *Commitment and Participation (Minimal Ontology)*; *The Arrow Sorts the Continuum*; the position paper (Paper_087) | `physics-papers/substrate-evaluation/` |
+| §3 | The arrow / minimal foundation | *Commitment and Participation (Minimal Ontology)*; *The Arrow Sorts the Continuum*; the position paper (`Paper_087_13Primitives`) | `physics-papers/substrate-evaluation/`; `physics-papers/foundations/` (Paper_087) |
 | §4 | Quantum mechanics | *The Quantum-Logic Keystone (Gleason Reconstruction)*; Paper_004 (the postulated inner product it reconstructs); Paper_001 (ℂ-amplitude) | `physics-papers/substrate-evaluation/`, `physics-papers/qm-kinematics/` |
 | §5 | Gravity (GR + DM + DE) | *GR-I..IV*; *KM-I/II*; *One Field (letter)*; Papers 025–038 (G, a₀, combination rule, BTFR, MOND field eqn, Λ). λ-bound: working note `Khronometric_Lambda_HealthyBranch_FromStandingKeystone` | `physics-papers/gravity/`; `event-density/foundations/` (λ note) |
 | §6 | QM + gravity unified | *Commitment and Participation* §8 (the keystone synthesis + its "account, not theorem" guard) | `physics-papers/substrate-evaluation/` |
@@ -65,7 +65,9 @@ The "measured" tier means a result was produced by a built-and-run simulation of
 | Binding mass + inertia (§10) | `mass_from_binding_probe.py` | free front v=0.98; unbound vs V5-confined (extent 55 vs 1.4–2.3); COM sub-luminal; inertia 0.72 vs unbound-control 0.97; the k₁₁ time-dilation discriminator — `theory/Higgs_Emergence/` |
 | Khronon dynamical rule (§5) | GR-III simulation (`ḃ = D∇²b − κρ`) | Newtonian fixed point; r_s ∝ M; frozen b→0 horizon + area law; khronon speed c_s = c — gravity arc |
 | Channel capacity = 0 (§8, §11, §13) | A1 channel-capacity probe | controlled capacity exactly zero (the internal reading of the finite-reach ceiling) |
-| Finite-memory ceiling (§13) | `primes_test.py` | sieve to N=5×10⁶: template reproduced (1.700-bit invariant, lpf ladder); escape blocked (optimal Möbius correlator → 0; twin density needs 2C₂) — `Primes_Arc/` |
+| Finite-memory ceiling (§13) | `primes_test.py` | sieve to N=5×10⁶: template reproduced (1.700-bit invariant, lpf ladder); escape blocked (optimal Möbius correlator → 0; twin density needs 2C₂) — `evaluation/Primes_Arc/` |
+
+*Verification status (2026-07-10): every script path above was confirmed present. Four were re-run this session and reproduce their cited numbers exactly — `rep_spectrum_casting_winding.py` (clean winding 0 ∀N, broken = N), `chiral_3p1d.py` (16 doublers → 1 survivor at the origin), `maxwell_from_coherence_probe.py` (p=1 3D-Coulomb, R²=0.97), and `mass_from_binding_probe.py` (inertia 0.72 vs unbound-control 0.97). The remainder (the B4 holonomy suite, `move1`/`gleason`, GR-III, A1, `primes_test.py`) are path-verified with numbers as last run in their source papers; re-run before publication for a clean provenance stamp.*
 
 *Honest scope note: the gauge sector's non-abelian action and mass-gap (§7) are analytic (gauge-program tier), not certified-simulator runs — only the abelian/Maxwell case is simulator-grounded. The chirality theorem's winding computation is a control on a proof, not an independent measurement. Both are flagged as such in their sections.*
 
