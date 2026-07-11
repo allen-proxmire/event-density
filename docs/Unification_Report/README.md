@@ -28,8 +28,8 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | 0 | Abstract | scaffolded (write last) |
 | 1 | The claim and the bar | scaffolded |
 | 2 | The scorecard | scaffolded (table current 2026-07-10) |
-| **3** | **The arrow of time (the spine)** | **v1 draft** |
-| 4 | QM from the substrate | scaffolded |
+| **3** | **The arrow of time (the spine)** | **v1 draft** (peer register) |
+| **4** | **QM from the substrate** | **v1 draft** (arrow's first job: pointer basis) |
 | 5 | Gravity | scaffolded |
 | 6 | The unification move | scaffolded |
 | 7–10 | SM sectors (gauge, charge/EM, chirality, matter/mass) | scaffolded |
