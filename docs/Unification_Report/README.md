@@ -41,7 +41,8 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **13** | **The walls** | **v1 draft** (4 kinds: 1 proven [primality] / 2 opens [#1,#3] / inheritances / by-design) |
 | **14** | **Falsifier frontier** | **v1 draft** (ranked weapons; UDM law confirmed floor; no argument-ending weapon confirmed) |
 | **15** | **Honest bottom line** | **v1 draft** (form-complete + not closed; what would close it) |
+| **App A–C** | **Appendices** (paper index / honesty ledger / certified sims) | **v1 draft** (paper paths verified vs repo) |
 
-**Full first-draft complete (§0–§15) 2026-07-10.** Next: cohesion/consistency pass across sections (tier sync, arrow-column sync, cross-refs), then promote to FINAL and build the PDF (Zenodo). Sections in `sections/` named `S00`–`S15`.
+**Full draft complete (§0–§15 + Appendices A–C) 2026-07-10; cohesion pass done.** Sections in `sections/` named `S00`–`S16`. Remaining before publication: AP voice/emphasis review of the spine (§3–§6); finalization checks per each section's draft notes (paper-title exactness, sim-output re-verification); promote `_v1` → `_FINAL`; build the Zenodo PDF.
 
 *Built 2026-07-10.*
