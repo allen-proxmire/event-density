@@ -24,7 +24,7 @@ But that is a statement about the coherence-weighted ensemble, not about the det
 
 ## ED's monist position on electromagnetism
 
-Put the two halves together and the sector has a clean ontology. The charge *skeleton* — winding, quantization, Gauss law — is native substrate structure. The electromagnetic *field* — the smooth `A_μ`, `F_{μν}`, the Coulomb `1/r²` — is not a second fundamental thing sitting beside the substrate; it is what the substrate looks like coarse-grained, exactly as the smooth metric (§5) and the diffusion equation are. ED does not have a fundamental field and a fundamental substrate to reconcile. It has one substrate, and the field is its shadow. That is the same monist move the whole program makes, and electromagnetism is its cleanest instance, because the lattice-to-continuum dictionary here (Wilson's lattice gauge theory) is already standard.
+Put the two halves together and the sector has a clean ontology. The charge *skeleton* — winding, quantization, Gauss law — is native substrate structure. The electromagnetic *field* — the smooth `A_μ`, `F_{μν}`, the Coulomb `1/r²` — is not a second fundamental thing sitting beside the substrate; it is what the substrate looks like coarse-grained, as the smooth metric (§5, emergent and kinematic) and the diffusion equation are — the determined continuum is always the coarse-grained object, never a second primitive. ED does not have a fundamental field and a fundamental substrate to reconcile. It has one substrate, and the field is its shadow. That is the same monist move the whole program makes, and electromagnetism is its cleanest instance, because the lattice-to-continuum dictionary here (Wilson's lattice gauge theory) is already standard.
 
 ## Scope
 

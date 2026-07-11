@@ -4,7 +4,7 @@
 
 ---
 
-**The arrow's job here.** The matter sector uses the arrow three ways, and this section is organized around them. The arrow **undoubles** the lattice spinor, cutting the Nielsen–Ninomiya sixteen species to one. The arrow makes a lone excitation **massless**, moving always at the substrate speed, which is what forces mass to come from binding. And the arrow's commitment rate sets a **clock**, which turns out to be time dilation and not mass, a distinction the substrate had entangled and this section separates.
+**The arrow's job here.** The matter sector uses the arrow four ways, and this section is organized around them. The arrow **undoubles** the lattice spinor, cutting the Nielsen–Ninomiya sixteen species to one. Its first commitment **selects matter over antimatter** (the charge-conjugation reference C), the one chirality-adjacent thing ED fixes natively. The arrow makes a lone excitation **massless**, moving always at the substrate speed, which is what forces mass to come from binding. And the arrow's commitment rate sets a **clock**, which turns out to be time dilation and not mass, a distinction the substrate had entangled and this section separates.
 
 The matter sector splits into two questions: does ED produce the Dirac spinor, and does it produce mass? The spinor is form-complete and structure-inherited, the standard ED shape. Mass is the more interesting result, because ED at first looks unable to make it at all, and then makes it exactly where most of it actually lives.
 
@@ -15,6 +15,10 @@ The Dirac operator's *form* is forced: it is the unique first-order Clifford-lin
 The single 3+1D survivor is a full, vector-like Dirac point (both chiralities), which is exactly right: the Dirac fermion *is* L⊕R, and its handedness is the separate weak-force question settled in §9. So the "vector-like survivor" is a feature of a correct Dirac reduction, not a gap.
 
 What is inherited is the standard ED value/structure layer: the Cl(3,1) spinor structure (via the acoustic-metric signature, the continuum arc), the metric signature, and the mass value. The one route that would make the spinor fully substrate-native, building the 4-spinor from graph degrees of freedom, runs into the same channel-topology wall as the representation spectrum (§7, §13): canonical channels carry no topology to be a spinor's, and the program that would supply one is unbuilt. So the spinor is form-complete and inherited-structured, with its one deepening blocked at the rep-spectrum wall.
+
+## Matter over antimatter
+
+The spinor is vector (L⊕R), so on its own it does not distinguish matter from antimatter. The arrow does. Charge conjugation `C` is a reference that has to be set somewhere, and in ED it is set by the first commitment: first arrival selects one side, and matter is here rather than annihilated because something committed first. This is the one chirality-adjacent thing ED fixes *natively* (parity, the handedness, is inherited — §9), and it is the same object that appears in §9's operator grounding, where `γ⁵ = arrow × orientation` has the arrow as its C-side ingredient and the orientation as its P-side. So C and P are two attributes of one operator, both set at the arrow's early action, and C is the half ED derives. It carries no matter/antimatter *number* (no baryon asymmetry magnitude); it is the reference, native, that the number would be measured against.
 
 ## Mass looks impossible for a single front
 

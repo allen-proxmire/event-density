@@ -49,5 +49,5 @@ Note what did the work in every result above: the *irreversibility* of commitmen
 *Draft notes for finalization:*
 - *Tier discipline: every result stated at the keystone paper's tier (reduced / selected / candidate-grounded / rigor-residual). Do not upgrade "reconstruction" to "derivation" anywhere. But do NOT over-flag either: this box is a ✅ (reconstructed), NOT a ⚠️ structural open — the Solèr residual is a rigor-completion of an inherited theorem + one lattice-identity soft spot, different in kind from #1/#3. The blocking orthogonality postulate is discharged/audited (target doc #8b), not open. The honesty lives in the tier word "reconstructed," not in demoting the box.*
 - *Length ~1150 words (shorter than §3, per the budget). Trim the three-results block first if the report wants it tighter; the arrow-tie and honest-status blocks are load-bearing, keep them.*
-- *Cross-check the einselection framing against §7 (chirality) and §3's role table so "the arrow selects the pointer basis" reads identically in all three.*
+- *Cross-check the einselection framing against §9 (chirality) and §3's role table so "the arrow selects the pointer basis" reads identically in all three.*
 - *Register OK: Piron/Solèr/POVM/Gleason/Kochen–Specker/einselection named flat-out, no popular-science scaffolding.*
