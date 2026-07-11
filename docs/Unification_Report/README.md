@@ -25,9 +25,9 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 ## Status
 | § | Title | State |
 |---|---|---|
-| 0 | Abstract | scaffolded (write last) |
-| 1 | The claim and the bar | scaffolded |
-| 2 | The scorecard | scaffolded (table current 2026-07-10) |
+| **0** | **Abstract** | **v1 draft** (the bottom line compressed onto the spine) |
+| **1** | **The claim and the bar** | **v1 draft** (boxes, evidential standard, honesty tiers) |
+| **2** | **The scorecard** | **v1 draft** (12 boxes × status × arrow's job × tier × §) |
 | **3** | **The arrow of time (the spine)** | **v1 draft** (peer register) |
 | **4** | **QM from the substrate** | **v1 draft** (arrow's first job: pointer basis) |
 | **5** | **Gravity** | **v1 draft** (khronon = arrow; GR + DM + DE one field; +λ bound) |
@@ -41,5 +41,7 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **13** | **The walls** | **v1 draft** (4 kinds: 1 proven [primality] / 2 opens [#1,#3] / inheritances / by-design) |
 | **14** | **Falsifier frontier** | **v1 draft** (ranked weapons; UDM law confirmed floor; no argument-ending weapon confirmed) |
 | **15** | **Honest bottom line** | **v1 draft** (form-complete + not closed; what would close it) |
+
+**Full first-draft complete (§0–§15) 2026-07-10.** Next: cohesion/consistency pass across sections (tier sync, arrow-column sync, cross-refs), then promote to FINAL and build the PDF (Zenodo). Sections in `sections/` named `S00`–`S15`.
 
 *Built 2026-07-10.*
