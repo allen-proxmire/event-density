@@ -40,7 +40,7 @@ Where the selection lives is representation theory: the fundamental of `SU(2)` i
 
 ## The prediction, and the anomaly baseline
 
-Because the clean substrate is provably vector, ED's parity violation is necessarily a spontaneous, per-universe orientation tied to the arrow, and the same arrow sets the matter/antimatter sign. So ED predicts the **gauge handedness and the matter/antimatter sign are correlated** — two faces of one first-commitment choice — against the Standard Model's fixed, uncorrelated, law-level handedness. This is a genuine, falsifiable departure (§14), and it now rests on a theorem rather than a stance.
+Because the clean substrate is provably vector, ED's parity violation is necessarily a spontaneous, per-universe orientation tied to the arrow, and the same arrow sets the matter/antimatter sign. So ED predicts the **gauge handedness and the matter/antimatter sign are correlated** — two faces of one first-commitment choice — against the Standard Model's fixed, uncorrelated, law-level handedness. The claim is theoretically firm (it rests on the vector theorem, not a stance), but its **testability is open**: the corpus register flags it as not testable with current data, so §14 carries it as a distinctive-but-not-yet-testable prediction rather than a live weapon.
 
 The theorem also fixes the anomaly baseline: a vector theory is automatically anomaly-free, so the clean substrate carries no gauge anomaly (at the transport level, contingent on the substrate-to-Dirac descent). The Standard Model's nontrivial chiral cancellation is a property of the inherited chiral content, so it is inherited with that content (§12).
 
@@ -52,7 +52,7 @@ The theorem also fixes the anomaly baseline: a vector theory is automatically an
 
 ## What this buys the report
 
-Chirality is the arrow doing half a job cleanly: it *is* half of `γ⁵`, and its parity-cleanness forces the vector theorem, so parity violation is provably spontaneous rather than law-level. The other half — which force is chiral — is the representation-theoretic inheritance that also drives §7 and §12. And the correlated-handedness prediction is one of the report's live falsifiers. The verdict is a clean division: ED builds the stage of chirality and inherits the one assignment.
+Chirality is the arrow doing half a job cleanly: it *is* half of `γ⁵`, and its parity-cleanness forces the vector theorem, so parity violation is provably spontaneous rather than law-level. The other half — which force is chiral — is the representation-theoretic inheritance that also drives §7 and §12. And the correlated-handedness prediction is a distinctive claim (testability open, §14). The verdict is a clean division: ED builds the stage of chirality and inherits the one assignment.
 
 ---
 

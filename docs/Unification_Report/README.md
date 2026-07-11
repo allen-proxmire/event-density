@@ -39,7 +39,7 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **11** | **Constants (inherited-by-design)** | **v1 draft** (no intrinsic scalar; A1 zero-scalar; SM inherits them too) |
 | **12** | **Anomalies (gated candidate)** | **v1 draft** (split: conservation+baseline solid; chiral cancellation inherited; forcing = retracted→gated) |
 | **13** | **The walls** | **v1 draft** (4 kinds: 1 proven [primality] / 2 opens [#1,#3] / inheritances / by-design) |
-| 14 | Falsifier frontier | scaffolded |
+| **14** | **Falsifier frontier** | **v1 draft** (ranked weapons; UDM law confirmed floor; no argument-ending weapon confirmed) |
 | 15 | Honest bottom line | scaffolded |
 
 *Built 2026-07-10.*
