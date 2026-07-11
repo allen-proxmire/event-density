@@ -36,7 +36,8 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **8** | **Charge + EM (native skeleton, shadow field)** | **v1 draft** |
 | **9** | **Chirality (the vector theorem)** | **v1 draft** (γ⁵ = arrow × orientation; clean substrate vector ∀N; casting inherited) |
 | **10** | **Matter + mass (spinor + binding-mass)** | **v1 draft** (arrow undoubles spinor; mass without mass; mass ≠ time dilation) |
-| 11–12 | Constants + anomalies | scaffolded |
+| **11** | **Constants (inherited-by-design)** | **v1 draft** (no intrinsic scalar; A1 zero-scalar; SM inherits them too) |
+| **12** | **Anomalies (gated candidate)** | **v1 draft** (split: conservation+baseline solid; chiral cancellation inherited; forcing = retracted→gated) |
 | 13–14 | Walls + falsifiers | scaffolded |
 | 15 | Honest bottom line | scaffolded |
 
