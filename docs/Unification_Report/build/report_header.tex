@@ -1,0 +1,19 @@
+% Report-specific header: render the math symbols that Cambria/Consolas lack
+% via LaTeX math mode (font-independent), so they don't blank under xelatex.
+% Only the glyphs the build actually flagged as missing are mapped here; symbols
+% Cambria already has (α γ λ Σ → ≈ ≥ √ ∂ ² ₀ ⁵ …) are left to render as text.
+\usepackage{amssymb}
+\usepackage{newunicodechar}
+\newunicodechar{ℂ}{\ensuremath{\mathbb{C}}}
+\newunicodechar{ℝ}{\ensuremath{\mathbb{R}}}
+\newunicodechar{ℍ}{\ensuremath{\mathbb{H}}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{ℏ}{\ensuremath{\hbar}}
+\newunicodechar{∀}{\ensuremath{\forall}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∓}{\ensuremath{\mp}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}

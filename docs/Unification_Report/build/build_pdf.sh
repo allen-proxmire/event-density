@@ -14,22 +14,29 @@ PDF="$ROOT/ED_UnifiedFramework_Report.pdf"
 echo "[1/3] regenerating assembled markdown..."
 python "$HERE/assemble_report.py"
 
-echo "[2/3] preparing a build copy (emoji -> text markers so xelatex won't choke)..."
-# The scorecard uses ✅/📏/⚠️; most xelatex main fonts lack emoji glyphs.
-# Map them to bracketed text markers for the PDF (meaning preserved; see the "how to read" block in §2).
+echo "[2/3] preparing a build copy (emoji + a few blackboard-bold -> safe markers)..."
+# Unlike the corpus papers (authored in math mode), this report uses bare Unicode +
+# backtick-code + scorecard emoji, so per PDF_Build_Protocol.md ("adjust if needed") we
+# use installed Unicode fonts (Cambria/Consolas) instead of math-mode-ifying everything.
+# The scorecard emoji (✅/📏/⚠️) are in NO text font, so map them to bracket markers
+# (meaning preserved; see the "how to read" block in §2). Math symbols Cambria/Consolas
+# lack (ℂ ℝ ℍ ℤ ℏ ∀ ∇ ∈ ∓ ∝ ⊗ ⟨ ⟩) are handled by build/report_header.tex (math mode),
+# not by sed, so they keep proper typography.
 BUILD_MD="$ROOT/.assembled_for_pdf.md"
-sed -e 's/✅/[OK]/g' -e 's/📏/[inherited]/g' -e 's/⚠️/[open]/g' -e 's/⚠/[open]/g' "$MD" > "$BUILD_MD"
+sed -e 's/✅/[check]/g' -e 's/📏/[inherited]/g' -e 's/⚠️/[open]/g' -e 's/⚠/[open]/g' "$MD" > "$BUILD_MD"
 
-echo "[3/3] pandoc -> PDF (xelatex)..."
-pandoc "$BUILD_MD" \
+echo "[3/3] pandoc -> PDF (xelatex, shared + report headers, installed Unicode fonts)..."
+HDR="/c/Users/allen/GitHub/event-density/papers/_pandoc_header.tex"
+RPTHDR="$HERE/report_header.tex"
+pandoc "$BUILD_MD" -s -H "$HDR" -H "$RPTHDR" \
   -o "$PDF" \
   --pdf-engine=xelatex \
   --toc --toc-depth=2 \
   -V geometry:margin=1in \
   -V fontsize=11pt \
-  -V linkcolor=blue -V urlcolor=blue \
-  -V mainfont="DejaVu Serif" \
-  -V mathfont="DejaVu Serif" \
+  -V colorlinks=true -V linkcolor=blue -V urlcolor=blue \
+  -V mainfont="Cambria" \
+  -V monofont="Consolas" \
   --metadata title="Event Density: A Unified Framework for Physics" \
   --metadata author="Allen Proxmire" \
   --metadata date="2026"
@@ -37,13 +44,12 @@ pandoc "$BUILD_MD" \
 rm -f "$BUILD_MD"
 echo "done -> $PDF"
 
-# NOTES / known considerations to resolve on first real build:
-#  - Fonts: DejaVu covers Greek (α γ λ), arrows (→), ℂ/ℤ, and many symbols. If a glyph
-#    still renders as tofu, either swap mainfont to one with wider coverage or add a
-#    fallback via a small header-includes LaTeX block (\usepackage{newunicodechar}).
-#  - Math: this report uses backtick `inline code` for most symbols and only light $...$
-#    display math. Watch the house gotcha: a closing $ immediately before a digit can
-#    break pandoc math parsing (workflow_paper_pdf_build). Grep the assembled md for '\$[0-9]'
-#    before building if pandoc errors.
-#  - Wide tables (scorecard §2, appendices): if they overflow the text block, add
-#    `| : longtable / smaller font` handling or rotate; check the first PDF.
+# NOTES / considerations:
+#  - Fonts: Cambria (main) covers Greek (α γ λ Σ), arrows (→), operators (≈ ≥ ≤ ≠ √ ∝ ∂ ∇),
+#    sub/superscripts (² ₀ ⁵ ⁻); Consolas (mono) covers the backtick-code Unicode. Emoji and
+#    blackboard-bold (ℂ ℤ) are sed-mapped above (no text font has them). If a glyph still
+#    renders as tofu, add it to the sed map or set a fallback.
+#  - Math gotcha (house): a closing $ immediately before a digit breaks pandoc math. Pre-check
+#    with: grep -o '\$[0-9]' "$MD"  (currently none).
+#  - Wide tables (scorecard §2, appendices): if they overflow, check the first PDF and reduce
+#    font or rotate. The shared header loads booktabs/array for cleaner tables.

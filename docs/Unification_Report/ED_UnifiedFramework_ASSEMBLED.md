@@ -1,4 +1,4 @@
-<!-- ASSEMBLED from sections/S00..S16 by assemble_report.py. STAGED build artifact - regenerate after any section edit; do not hand-edit. -->
+<!-- ASSEMBLED from sections/S00..S16 by build/assemble_report.py. STAGED artifact - regenerate after any section edit; do not hand-edit. -->
 
 # Event Density: A Unified Framework for Physics
 

@@ -50,6 +50,8 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 - `build/assemble_report.py` — regenerates the assembled md from `sections/` (`python docs/Unification_Report/build/assemble_report.py`).
 - `build/build_pdf.sh` — regenerates + runs pandoc→xelatex→PDF (maps scorecard emoji to text markers; notes the known font/math/table considerations to resolve on first real build).
 
-**Remaining before publication:** AP voice/emphasis review of the spine (§3–§6); re-run the path-verified sims for a clean provenance stamp (Appendix C list); first real PDF build (resolve any font/table issues); then this is the Zenodo artifact. Edit sections in `sections/`, then re-run `assemble_report.py`.
+**PDF BUILT (2026-07-10):** `ED_UnifiedFramework_Report.pdf` — 40 pp, **0 missing characters**, tables fit, all math renders (blackboard-bold ℂ/ℝ/ℍ/ℤ, γ⁵, F², ⟨⟩, ∈, ∓, → via `build/report_header.tex`). Built with `build/build_pdf.sh` (pandoc→xelatex, shared header + Cambria/Consolas, scorecard emoji→text markers). Spot-checked pp. 5/6/11/20.
+
+**Remaining before publication:** AP voice/emphasis review of the spine (§3–§6); re-run the path-verified sims for a clean provenance stamp (Appendix C list); optional polish (the scorecard's `[check]`/`[open]`/`[inherited]` text markers could become real symbols). Then copy to the Zenodo location (`Desktop/ED_pdf_files/`) per `docs/PDF_Build_Protocol.md`. **Workflow:** edit `sections/`, then `bash docs/Unification_Report/build/build_pdf.sh` (it re-assembles + rebuilds).
 
 *Built 2026-07-10.*
