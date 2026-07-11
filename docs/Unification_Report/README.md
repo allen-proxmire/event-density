@@ -35,7 +35,7 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | 7 | Gauge structure (SU(N) form; {1,2,3} wall) | scaffolded |
 | **8** | **Charge + EM (native skeleton, shadow field)** | **v1 draft** |
 | **9** | **Chirality (the vector theorem)** | **v1 draft** (γ⁵ = arrow × orientation; clean substrate vector ∀N; casting inherited) |
-| 10 | Matter + mass (spinor + binding-mass) | scaffolded |
+| **10** | **Matter + mass (spinor + binding-mass)** | **v1 draft** (arrow undoubles spinor; mass without mass; mass ≠ time dilation) |
 | 11–12 | Constants + anomalies | scaffolded |
 | 13–14 | Walls + falsifiers | scaffolded |
 | 15 | Honest bottom line | scaffolded |
