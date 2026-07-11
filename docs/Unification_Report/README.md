@@ -43,6 +43,13 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **15** | **Honest bottom line** | **v1 draft** (form-complete + not closed; what would close it) |
 | **App A–C** | **Appendices** (paper index / honesty ledger / certified sims) | **v1 draft** (paper paths verified vs repo) |
 
-**Full draft complete (§0–§15 + Appendices A–C) 2026-07-10; cohesion pass done.** Sections in `sections/` named `S00`–`S16`. Remaining before publication: AP voice/emphasis review of the spine (§3–§6); finalization checks per each section's draft notes (paper-title exactness, sim-output re-verification); promote `_v1` → `_FINAL`; build the Zenodo PDF.
+**Full draft complete (§0–§15 + Appendices A–C) 2026-07-10; cohesion pass + finalization checks done.** Sections in `sections/` named `S00`–`S16`.
+
+**Staged for build:**
+- `ED_UnifiedFramework_ASSEMBLED.md` — the concatenated report (draft-notes + provenance stripped), ~40 pp / ~17.7k words. **Regenerate, don't hand-edit** — it's a build artifact.
+- `build/assemble_report.py` — regenerates the assembled md from `sections/` (`python docs/Unification_Report/build/assemble_report.py`).
+- `build/build_pdf.sh` — regenerates + runs pandoc→xelatex→PDF (maps scorecard emoji to text markers; notes the known font/math/table considerations to resolve on first real build).
+
+**Remaining before publication:** AP voice/emphasis review of the spine (§3–§6); re-run the path-verified sims for a clean provenance stamp (Appendix C list); first real PDF build (resolve any font/table issues); then this is the Zenodo artifact. Edit sections in `sections/`, then re-run `assemble_report.py`.
 
 *Built 2026-07-10.*
