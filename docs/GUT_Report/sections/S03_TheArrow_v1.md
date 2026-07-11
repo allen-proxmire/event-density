@@ -4,13 +4,13 @@
 
 ---
 
-## The one thing you already believe
+## The inversion
 
-You have never seen a broken cup gather itself off the floor and jump back onto the table. You have seen the reverse a thousand times. Nothing in the equations of motion forbids the gathering-up. The molecules would be just as happy running backward. And yet the world only ever runs one way, and you know which way, and you would bet your life on it.
+The microscopic laws are time-reversal invariant; the arrow of time is imposed on them from outside, by a low-entropy boundary condition. That is the standard settlement, and it makes irreversibility a derived, statistical, almost apologetic fact, something the fundamental description does not itself contain.
 
-That one-way-ness is the most familiar fact there is, and it is the strangest. Physics has spent a century treating it as a *consequence*, something to be derived from entropy, or boundary conditions, or the low-entropy start of the universe, an accounting fact laid on top of laws that themselves don't care about direction. Event Density does the opposite. It takes the one-way-ness as the starting move, the single act the substrate is built to perform, and then asks what the rest of physics looks like if you build up from there.
+Event Density inverts it. The arrow is not derived; it is the substrate's single primitive act. The dynamics is a one-way commitment, `P11`, and everything reversible in the continuum limit is what survives coarse-graining, not what was there to begin with. This is the opposite of the usual order of explanation, and it is worth being explicit about the cost: ED's substrate carries *less* symmetry than its own continuum limit, and time-reversal invariance is an emergent artifact rather than a fundamental input.
 
-The answer, and the claim of this whole report, is this: **almost everything physics treats as a separate mystery turns out to be the same one-way act, seen from a different sector.** The arrow of time is not one item on ED's list. It is the thing doing the checking, box after box.
+The payoff of paying that cost is the claim of this report: **sector after sector of physics, worked independently, lands back on that one commitment.** The arrow is not an entry on ED's list of results. It is the mechanism doing the work in most of them.
 
 ## What the arrow *is* in ED
 
@@ -73,5 +73,6 @@ The boxes a unified theory must check are the skeleton of this report. The arrow
 *Draft notes for finalization:*
 - *Verify each [→ §N] job against its home paper before locking (read-first rule); do not let a job read at a higher tier than its section earns. The chirality line (§9) and the "which force is chiral" caveat especially.*
 - *Confirm the "nine jobs" list matches the scorecard's "arrow's job here" column exactly (§2), so the two representations don't drift.*
-- *Voice check: no "verbs not nouns" phrasing (present); em-dashes minimized (present); cold-reader plain (present). One Allen-voice opener (the cup) — keep or swap for a different small-and-specific image at Allen's call.*
-- *Length ~1500 words; trim on final pass if the report wants a tighter spine.*
+- *Register: PEER-FACING (sympathetic physicist, decided 2026-07-10). Opener recalibrated from book-voice (broken cup) to the reversibility-inversion framing. Rest of section assumes fluency — einselection, khronometric foliation, Nielsen-Ninomiya doubling named flat-out. Keep it there; do not re-soften to popular-science on final pass.*
+- *Voice check: no "verbs not nouns" phrasing (present); em-dashes minimized (present); no popular-science scaffolding (present after recalibration).*
+- *Length ~1400 words; §3 is deliberately the longest section (the thesis) — most boxes should be shorter than it, ~2 pp each, per the length budget in the folder README.*

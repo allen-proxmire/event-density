@@ -6,6 +6,14 @@ The flagship deliverable: one cold-reader, verification-grade document making ED
 - **`ED_GUT_Report_SCAFFOLD.md`** — the skeleton. 15 sections + 3 appendices; each carries thesis, tier, residual, and the corpus papers to draw from. **The arrow of time is the spine** (§3); every sector is another job the same arrow does. Start here.
 - **`sections/`** — per-section drafts and finals. Naming: `S03_TheArrow_v1.md` (draft), promoted to `S03_TheArrow_FINAL.md` when locked. One file per §.
 
+## Scope & audience (decided 2026-07-10 — do not drift)
+- **Genre:** a **research-program overview / white paper** — the front door to the corpus. NOT a journal article (a cold TOE submission from an unaffiliated author desk-rejects before referee), NOT a re-derivation. Honest peer-set: causal-set overviews, 't Hooft's cellular-automaton-interpretation writeups (safe peers; NOT Wolfram publicly).
+- **Job (one sentence):** move a skeptical, competent reader from "TOE, ignore" to "organized and honest enough to open the actual papers," and hand the inclined reader a falsification bet clear enough to test. Three functions: **flag-plant** (one citable timestamped DOI for the whole program = credit armor), **map** (150 papers legible as one claim; the scorecard is the centerpiece), **invitation** (the falsification frontier laid out so someone could go kill it — the path to the confirmed-prediction north star).
+- **Audience:** **the sympathetic physicist** (AP's call). Assumes fluency — name einselection, khronometric foliation, Nielsen-Ninomiya doubling, Gleason/Solèr directly, no popular-science scaffolding. Peer-facing register, denser than book voice.
+- **Detail policy:** **point toward, don't re-derive.** State result + one-paragraph intuition + the single key equation/number, then cite the paper for the proof. (Avoids the drift bug, keeps length down, and the proofs are already timestamped.)
+- **Length target:** **~30–35 pp main text** + appendices. Budget: ~2–3 pp front matter (abstract, claim, scorecard); ~3 pp arrow spine (§3, deliberately the longest — it's the thesis); ~2 pp each × twelve boxes; ~3 pp walls + falsifiers; ~2 pp bottom line. Appendices carry the map (paper index, honesty ledger, sim list).
+- **Credibility strategy:** the honesty IS the strategy. Loud walls and "none confirmed yet" disarm the crank-filter that dense over-claiming trips.
+
 ## Rules (inherited from the scaffold + CLAUDE.md)
 1. **Read-first / build-don't-reinvent.** Every claim cites a corpus paper; no re-derivation. Draft is fill-in against papers already written.
 2. **The through-line.** The arrow introduced in §3 must be named again, by role, in every sector that uses it. Boxes = skeleton; arrow = blood.
