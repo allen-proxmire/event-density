@@ -40,6 +40,6 @@ The flagship deliverable: one verification-grade, **peer-facing** (publish-grade
 | **12** | **Anomalies (gated candidate)** | **v1 draft** (split: conservation+baseline solid; chiral cancellation inherited; forcing = retracted→gated) |
 | **13** | **The walls** | **v1 draft** (4 kinds: 1 proven [primality] / 2 opens [#1,#3] / inheritances / by-design) |
 | **14** | **Falsifier frontier** | **v1 draft** (ranked weapons; UDM law confirmed floor; no argument-ending weapon confirmed) |
-| 15 | Honest bottom line | scaffolded |
+| **15** | **Honest bottom line** | **v1 draft** (form-complete + not closed; what would close it) |
 
 *Built 2026-07-10.*
