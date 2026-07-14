@@ -38,7 +38,7 @@ The remaining factor `ρ_loc` is a **structural identity, not a bulk measurement
 
 ## A4 — Candidate fourth face: Quantum Darwinism redundancy (a *measurable* proxy for #4)
 
-**Date:** 2026-07-14. **Touches:** A1–A3; §14 #4; the einselection/QM keystone. **Status:** candidate (scoping, not a result). **Scoping note:** `event-density/theory/V5_Characterization/V5_QuantumDarwinism_FourthFace_Scoping.md`.
+**Date:** 2026-07-14. **Touches:** A1–A3; §14 #4; the einselection/QM keystone. **Status:** candidate (scoping) — **superseded by A5; its content (lit check, Riedel–Zurek constraint, observable) is absorbed into A5's corpus paper** `ED Generative/physics-papers/substrate-evaluation/Paper_QuantumDarwinism_RecordBandwidth.md`. Scoping note: `event-density/theory/V5_Characterization/V5_QuantumDarwinism_FourthFace_Scoping.md`.
 
 AP's idea: a per-locus cap on redundant *classical* encoding is Quantum-Darwinism territory, and it might carry an observable edge, falling out for free. Assessment: **it holds as a candidate fourth projection of `W_max`.** QD redundancy `R_δ` (number of environment fragments each carrying a full classical record of the einselected pointer state) is capped by the same finite budget, `R_δ ≲ W_max/w_record`. The corpus has einselection (QM keystone) + the V5 budget but **no QD treatment** — this is new.
 
