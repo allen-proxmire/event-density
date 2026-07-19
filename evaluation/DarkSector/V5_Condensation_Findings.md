@@ -78,3 +78,14 @@ The decisive test **passed on the one question that mattered** — condensation 
 - **Falls:** the unification. ED reverts to its standing two-part picture — **MOND = the separate khronon** (KM-I, which has the correct non-standard structure by matching) **+ a relic = dark matter**. The double-counting the superfluid picture was meant to dissolve returns un-resolved (a condensed relic gives a Newtonian mode in galaxies, where MOND already works), and the mass tension with it.
 
 **Net of the whole probe sequence:** condensation ✓, mass-independence ✓, thermal boundary ✓ (relic is a viable dark-matter candidate) — but the khronon-mode test ✗ (the condensed mode is Newtonian). The grand unification is falsified by its own decisive test; the honest position is a native dark-matter relic and a separate native MOND khronon, not one unified substance.
+
+---
+
+# RETRACTION of the khronon-mode "falsification" (same day, 2026-07-19) — wrong-variable artifact
+
+The verdict above ("unification FALSIFIED, the condensed mode is Newtonian") is **retracted**. On re-examination the probe cannot test MOND, for two concrete reasons:
+
+1. **No `a₀`.** MOND is *defined* by the scale `a₀ = cH₀/2π`, which in ED comes from the **cosmic horizon** (KM-I), not the local relic gas. The probe had no such scale — reach, coupling, box size, density are all local. A *scale-free* phase theory is analytic at small gradient and is therefore *forced* to return `(∇φ)²` (Newtonian). So the exponent 2.00 was guaranteed by the missing `a₀`, not a property of ED. The probe tested "the V5 phonon with the horizon deleted," which cannot be MOND by construction.
+2. **Wrong sector.** The probe imposed a uniform *phase* gradient at *fixed density*. In a superfluid the MOND structure lives in the **density–phase (chemical-potential) coupling** — exactly the sector held fixed. Only the phase-stiffness was measured.
+
+**Corrected status:** the bare V5 phonon phase-stiffness is standard (narrow, true), but the *force law* is **untested**; the unification is neither confirmed nor refuted. **The correct decisive probe (not yet run):** the relic condensate coupled to the horizon-derived `a₀`, sourced by a localized baryon distribution, with the density responding — then read off the force (`Newtonian` vs `√(g_N a₀)`). `v5_khronon_mode_probe.py` is retained as the (insufficient) phase-stiffness measurement, not a MOND test.
