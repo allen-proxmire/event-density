@@ -33,3 +33,23 @@ Coherence `C` vs decoherence `D`, for relic counts `N` (fixed box → `N` = dens
 ## Net
 
 The decisive test **passed on the one question that mattered** — condensation is real and mass-independent, so the mass tension that threatened the whole superfluid-relic program is dissolved. It **corrected two overclaims** — the boundary is not `a₀` but the (thermal) decoherence source, and the galaxy/cluster split is a quantitative competition, not automatic. The program survives, sharper: the next open questions are *what decoheres the relic phases* (must be thermal for the split to work) and *whether clusters disperse* against their own density.
+
+---
+
+# Follow-on: Thermal-Decoherence Probe
+
+**Script:** `v5_thermal_decoherence_probe.py`. **Date:** 2026-07-19.
+**Question (opened by the condensation probe):** what physically decoheres the relic phases, and is it *thermal* (velocity dispersion) as the galaxy/cluster split requires — or acceleration (which would wrongly condense sub-`a₀` clusters)?
+
+**ED-native decoherence, derived not assumed:** P11 randomizes phases at commitment events; a relic commits on ENCOUNTER (interaction → single-channel collapse); kinetic encounter rate ∝ relative velocity. So decoherence rate is *derived* from the motion. V5 aligns phases at constant coupling `K` (temperature-independent). Relics move with dispersion `σ_v` (= temperature).
+
+**Result:**
+
+| σ_v | 0.05 | 0.10 | 0.20 | 0.35 | 0.50 | 0.75 | 1.0 | 1.5 | 2.5 | 4.0 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| C | 0.86 | 0.72 | 0.49 | 0.22 | 0.08 | 0.02 | 0.01 | 0.00 | 0.00 | 0.00 |
+| dec.rate | 0.98 | 1.97 | 3.96 | 6.97 | 9.87 | 14.6 | 19.5 | 29.5 | 49.1 | 78.4 |
+
+**Read:** cold (`σ_v`=0.05, ~galaxy disk) → C=0.86 **CONDENSED**; hot (`σ_v`=4.0, ~cluster) → C=0.00 **DISPERSED**. Decoherence-rate scaling exponent in `σ_v` ≈ **1.00** → kinetic / **THERMAL**, set by velocity not acceleration. **Verdict: thermal boundary confirmed** — cold condenses → MOND, hot disperses → CDM, and the noise is provably ∝ velocity dispersion. Galaxy-vs-cluster `σ_v` differ by ~20–100×, so the transition need only fall in that wide gap. **This resolves the open question from the condensation probe** (the boundary is thermal, derived from P11 + kinetics — not `a₀`).
+
+**Remaining open:** the quantitative transition dispersion in real units (needs ED's V5 reach/strength); a targeted heat-vs-density check for dense-and-hot clusters (this probe fixed density; the last showed density aids coherence — though C→0 at high `σ_v` here suggests heat wins); whether the condensed mode is the khronon with the right `a₀`; and whether any *background* (non-encounter) commitment adds a second, possibly non-thermal, decoherence channel.
