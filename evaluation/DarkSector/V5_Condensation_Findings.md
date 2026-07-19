@@ -89,3 +89,17 @@ The verdict above ("unification FALSIFIED, the condensed mode is Newtonian") is 
 2. **Wrong sector.** The probe imposed a uniform *phase* gradient at *fixed density*. In a superfluid the MOND structure lives in the **density–phase (chemical-potential) coupling** — exactly the sector held fixed. Only the phase-stiffness was measured.
 
 **Corrected status:** the bare V5 phonon phase-stiffness is standard (narrow, true), but the *force law* is **untested**; the unification is neither confirmed nor refuted. **The correct decisive probe (not yet run):** the relic condensate coupled to the horizon-derived `a₀`, sourced by a localized baryon distribution, with the density responding — then read off the force (`Newtonian` vs `√(g_N a₀)`). `v5_khronon_mode_probe.py` is retained as the (insufficient) phase-stiffness measurement, not a MOND test.
+
+---
+
+# Off-Diagonal Relic Probe — the relic inside ED's interference gravity
+
+**Script:** `v5_offdiagonal_relic_probe.py`. **Date:** 2026-07-19.
+**Question (not a re-derivation):** baryon↔horizon off-diagonal = MOND is already in `Paper_QuadraticStrain_v1`. What does the **relic** do when added as a source to the quadratic strain `|Σ P|²`? Does the interference structure resolve or worsen the galactic double-counting?
+
+**Result (Milky-Way point, `a_N,B ≈ 0.7 a₀`, near-transition):**
+- MOND (galaxies) = baryon↔horizon interference, **relic-free** — established, unchanged.
+- A relic that **clumps** in the galaxy adds `√(a_N,R a₀)` (its own interference with the horizon): **+0.4× to +2.2× the baryon MOND acceleration** for `a_N,R = 0.2–5 × a_N,B`. Even a relic merely tracking the baryons (f=1) **doubles** the pull.
+- Amplification vs a naive Newtonian halo is `√(a₀/a_N,R)`: `>1` for a dilute relic (deeper-MOND dwarfs — "tens of times" only there), `~1` near the transition, `<1` for a dense relic. The *absolute* double-count is significant regardless.
+
+**Read:** the interference mechanism does **not** dissolve the galactic double-counting — if anything it makes the relic's galactic pull larger (via `√`) where the relic is dilute. So the constraint is *sharpened*: the relic must be absent/diffuse in galaxies (warm / free-streaming). **The two-component reality stands** — MOND (matter↔horizon) does galaxies relic-free; the relic is a separate CMB/cluster component that must stay out of galaxies. The interference unifies the *mechanism*, not the substance, and the free-streaming requirement on the relic is real and if anything stricter.
