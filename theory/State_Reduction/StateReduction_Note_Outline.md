@@ -1,4 +1,6 @@
-# Outline — ED's account of gravitational state reduction vs Diósi / Penrose / Hossenfelder
+# Outline — ED's account of gravitational state reduction vs Diósi / Penrose
+
+> **Superseded-in-part (2026-07-21):** this outline predates the finished papers. **Hossenfelder was dropped** from the final note (her "matter = geometry" ontology is contested and ED does not share it; the one fork it offered was just ED agreeing with the established Diósi–Penrose difference-form). The shipped papers position ED against **two** neighbors, Diósi and Penrose. Read the papers in `ED Generative/physics-papers/state-reduction/`, not this outline, for the current structure.
 
 **What this is.** The agreed outline for a standalone positioning note (draft lives in this folder for now, `event-density/theory/State_Reduction/`; may move to EDG later). Positions ED's existing measurement account (report §4 = the arrow selects the pointer basis; §6 = the unification move) against the three nearest published neighbors, who all say *gravity causes collapse*. ED's claim is different and deeper: measurement's definiteness and gravity's time are **one primitive, not cause and effect**, and the collapse variable is **time (the committed arrow), not energy (E_G)**. Same register as the dark-matter note: peer-facing, gifts-then-divergence, honest tiers, one named gap. Confirmed 2026-07-21.
 
