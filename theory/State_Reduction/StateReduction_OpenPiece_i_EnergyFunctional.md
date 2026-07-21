@@ -1,6 +1,6 @@
 # Open piece (i): ED's collapse energy functional — a MOND correction to E_G, gated on the External Field Effect
 
-**2026-07-21. Working note (event-density), behind the EDG state-reduction papers. Status: a genuinely distinctive candidate prediction, with one decisive open gate (the EFE). Not yet a delivered number.** This is the "weapon play" flagged as open piece (i) of `physics-papers/state-reduction/StateReduction_CollapseRate_ED_Derivation.md`: the collapse-rate scaling argument *identified* the branch-clock-difference energy with Penrose's Newtonian `E_G` rather than computing it from ED's own gravity. ED's gravity is not Newtonian — it is the quadratic-strain interference structure (`Paper_QuadraticStrain_v1`, `physics-papers/gravity/`), whose diagonal is Newton and whose off-diagonal is MOND. So the honest question is: **does the ED energy functional give a different `E_G` than Penrose, and where?** The answer is yes, potentially by a large factor, for exactly the mesoscopic masses these experiments use — but whether that survives in a ground laboratory hinges on the External Field Effect, which the corpus has not computed for this regime.
+**2026-07-21 (EFE computed same day — see the resolution section). Status: RESOLVED, and the near-term weapon is closed. ED has a full External Field Effect (derived from the `Paper_029` horizon dipole); Earth's ambient field Newtonizes the collapse, so ED ≈ Penrose–Diósi in any accessible experiment — the naive 5–50× enhancement is an EFE artifact. The distinctive large enhancement exists only in deep-void (`g_ext ≲ a_0`) conditions, inaccessible. ED ≈ Penrose in the lab is a consistency result, not a weapon.** The sections below first build the candidate (the MOND-enhanced `E_G`), then the EFE resolution closes it. This is the "weapon play" flagged as open piece (i) of `physics-papers/state-reduction/StateReduction_CollapseRate_ED_Derivation.md`: the collapse-rate scaling argument *identified* the branch-clock-difference energy with Penrose's Newtonian `E_G` rather than computing it from ED's own gravity. ED's gravity is not Newtonian — it is the quadratic-strain interference structure (`Paper_QuadraticStrain_v1`, `physics-papers/gravity/`), whose diagonal is Newton and whose off-diagonal is MOND. So the honest question is: **does the ED energy functional give a different `E_G` than Penrose, and where?** The answer is yes, potentially by a large factor, for exactly the mesoscopic masses these experiments use — but whether that survives in a ground laboratory hinges on the External Field Effect, which the corpus has not computed for this regime.
 
 ## The energy functional (cited, not re-derived)
 
@@ -61,10 +61,45 @@ Because MOND is nonlinear, `E_G` is **not** literally "Newtonian `E_G` × `√(a
 - The **EFE** (does Earth's field Newtonize the internal dynamics in ED?) — **OPEN, decisive**; not in the corpus for this regime; the next calculation.
 - Net distinctiveness (a MOND + EFE structure in collapse rates, absent from Penrose/Diósi) — **real either way**, magnitude gated.
 
-## Next steps
+## The EFE calculation (2026-07-21) — RESOLVED: ED has a full EFE, and Earth's field Newtonizes the collapse
 
-1. **Compute ED's EFE from the horizon dipole (`Paper_029`).** Does the horizon response to a chain's *total* acceleration Newtonize a lab system in Earth's field? This decides the ground-vs-space fork and is the single highest-leverage move.
-2. **Evaluate the two-branch energy nonlinearly** (`Paper_036` field structure) to replace the `√(a_0/g_N)` scale with the actual enhancement functional, including the branch-difference of the horizon-dipole term.
-3. **Only then** quote a number and a target experiment (freefall/space vs ground), and fold a properly-tiered version into the EDG derivation note's open piece (i).
+Read `Paper_029` for the horizon-dipole structure and computed the EFE. **Result: ED has a full, standard-MOND-like External Field Effect, derived from the horizon dipole, and it suppresses the collapse enhancement to parts-per-million in any ground or near-Earth experiment. ED's collapse ≈ Penrose–Diósi in the lab. The naive 5–50× does not appear anywhere accessible.**
+
+**Where the EFE comes from in ED (derived, not assumed).** `Paper_029` §5.1 makes the horizon term explicit: the cosmic-horizon anisotropy a chain sees is a **dipole sourced by the chain's own acceleration**, `ρ_cosmic(θ) = ρ_0(|\vec a|/c)cosθ`, aligned with the acceleration axis, and *existing only because the chain accelerates* (a non-accelerating chain sees an isotropic horizon, no dipole, no MOND term). The MOND cross-term is then the interference of this horizon amplitude (scale `a_0`) with the local field: `a_cross = √(a_N a_0)`, where `a_N` is **the total Newtonian field the chain sits in**. That is precisely the structure that produces a MOND External Field Effect: the operating regime is set by the *total* ambient field, not by the internal self-field.
+
+**Applying it to the collapse `E_G`.** The object's self-gravity (the field that distinguishes the two branches) is a small perturbation `a_N^self ~ g_N ~ 10⁻¹³ m/s²` on top of the ambient field `g_ext`. The MOND contribution of that perturbation is the response of `√(a_N^total a_0)` to a change in the self-source, evaluated at the operating point `a_N^total ≈ g_ext`:
+
+$$\frac{\partial}{\partial a_N^{\text{self}}}\sqrt{a_N^{\text{total}}\,a_0}\;=\;\tfrac{1}{2}\sqrt{\frac{a_0}{g_{\text{ext}}}}.$$
+
+So the fractional MOND enhancement of the self-gravity — and hence of `E_G` — is `~√(a_0/g_ext)`, set by the **ambient** field, not by `√(a_0/g_N^self)`. This is the EFE, and it is Newtonizing whenever `g_ext ≫ a_0`:
+
+| environment | `g_ext` (m/s²) | `√(a_0/g_ext)` = enhancement |
+|---|---|---|
+| Earth surface | `9.8` | **`3.5×10⁻⁶`** (Newtonized) |
+| Sun at 1 AU (freefall) | `6×10⁻³` | `1.4×10⁻⁴` |
+| outer solar system | `~7×10⁻⁶` | `4×10⁻³` |
+| Galactic floor (everywhere local) | `~1.6 a_0` | `0.79` (~1.8×) |
+| deep intergalactic void | `~10⁻¹²` | `~11×` |
+
+**The gate resolves — against the near-term weapon, correctly.** Earth's ambient field (`9.8 ≫ a_0`) suppresses the collapse enhancement to `~3.5×10⁻⁶`: **ED's collapse energy is Newtonian (= Penrose's `E_G`) to a part in `10⁵` for any Earth-based experiment, freefall or trapped** — because MOND's EFE violates the strong equivalence principle, freefall does *not* remove the ambient field's role, so a drop-tower or orbital experiment near Earth is still Newtonized. Even the outer solar system stays Newtonized; the Galactic field (`~1.6 a_0`) is the floor everywhere in the solar neighborhood, giving only an order-unity (~1.8×) effect, and the large enhancement needs `g_ext ≲ a_0/100` — an intergalactic void, inaccessible to any foreseeable collapse experiment. **The 5–50× was an artifact of ignoring the EFE; the EFE removes it.**
+
+**What this means (honest ledger).**
+1. **The near-term weapon is closed.** ED does *not* predict a measurable departure from Penrose–Diósi collapse in any accessible experiment. Do not claim a faster-collapse signature for ground labs. This is the correct, deflating answer — banked to prevent the over-claim.
+2. **ED ≈ Penrose in the lab is a consistency win, not a loss.** It places ED's collapse exactly where the (null) collapse experiments expect a viable gravitational-collapse theory to sit, alongside the residual-(ii) result that ED does not spontaneously radiate. ED is a coherent, non-excluded gravitational-collapse theory.
+3. **ED derived the MOND EFE.** The horizon-dipole-sourced-by-total-acceleration structure is a clean ED account of *why* MOND has an EFE — useful in the gravity arc independent of collapse.
+4. **Two conceptually-distinctive-but-unmeasurable signatures survive.** (a) ED's collapse rate depends on the *ambient gravitational field* (EFE) — a violation of the pure locality Penrose/Diósi assume; (b) it is *anisotropic* — the horizon dipole aligns with `g_ext` (vertical, in a lab), so a superposition displaced along vs. perpendicular to the ambient field would collapse at slightly different rates. Both scale as `√(a_0/g_ext) ~ 10⁻⁶` on Earth: real in principle, unmeasurable in practice.
+
+## Tiers (updated)
+
+- ED has a full EFE, derived from the `Paper_029` horizon dipole — **structural** (the dipole-sourced-by-acceleration is `Paper_029`'s own content; the EFE follows).
+- Earth's field Newtonizes the collapse (`ED ≈ Penrose`, part in `10⁵`) — **solid** (arithmetic on `√(a_0/g_ext)`).
+- The large enhancement exists only for `g_ext ≲ a_0` (deep void), inaccessible — **solid**.
+- The surviving distinctive signatures (ambient-field dependence, anisotropy) are `~10⁻⁶` on Earth — **real in principle, unmeasurable**.
+- Net: **open piece (i) resolved — the MOND weapon is EFE-suppressed to unobservability near Earth; ED ≈ Penrose in the lab.**
+
+## Residual next steps (low priority now)
+
+1. The nonlinear two-branch evaluation (`Paper_036`) would sharpen the exact functional, but it no longer changes the conclusion (the EFE dominates and Newtonizes it near Earth).
+2. If a genuinely low-field ( `g_ext ≲ a_0` ) collapse experiment ever becomes conceivable, revisit the deep-void enhancement as a real fork; not foreseeable now.
 
 *Working note. Behind `ED Generative/physics-papers/state-reduction/`. The result: ED's gravity generically wants a large MOND enhancement of the gravitational-collapse energy for mesoscopic (sub-`a_0` self-gravity) superpositions — a distinctive, faster-than-Penrose fork — but the External Field Effect (uncomputed in ED for this regime) gates whether it survives in a ground laboratory or shows only in freefall/space. The distinctiveness is real; the number is not yet delivered.*
