@@ -1,8 +1,23 @@
 # Navier-Stokes Existence + Smoothness — ED Roadmap (Scoping)
 
 **Date:** 2026-04-28
-**Status:** Queued long-horizon arc. Not executing. Scoping memo to lock in structure publicly and pre-register ED's relationship to the Clay problem before any execution begins.
+**Status:** ~~Queued long-horizon arc. Not executing.~~ **SUPERSEDED — the arc has since been executed. See the Update below.** (Original scoping text retained unedited as the audit trail.)
 **Subject:** The Clay Navier-Stokes problem: in three space dimensions and time, given an initial velocity field, prove that there exist smooth, globally defined velocity and pressure fields solving the incompressible Navier-Stokes equations.
+
+---
+
+## Update (2026-07-24) — this arc is no longer "queued"; it was executed at structural-positive tier
+
+This 2026-04-28 memo pre-registered the NS arc as *not executing*. That status is stale: the arc was subsequently carried out and now lives in the EDG (`ED Generative`) corpus. Reconciling so this memo stops reading as unstarted:
+
+- **NS-2 (substrate→NS coarse-graining) — DONE.** `physics-papers/soft-matter/Paper_076_NS2_CoarseGraining.md`: the compressible NS form is **form-FORCED**, viscosity **INHERITED** (`ν ~ ℓ_V1²/τ_V1`, scaling forced / prefactor inherited). The two-layer reading is in `layers/layer_2/NavierStokes_LayerTwo.md` (layer-1 convective native; layer-2 viscous stress; **incompressibility `∇·u=0` is the added elliptic edge, not substrate-native**).
+- **NS-3 (smoothness preservation) — EXECUTED to structural-positive, NOT constructive.** `physics-papers/soft-matter/Paper_084_VortexStretching.md` gives the three-cap blow-up obstruction (P04 bandwidth budget, V5 cross-chain budget, P11 monotone irreversibility); `physics-papers/soft-matter/Paper_077_NS_Smoothness_R1.md` composes it to a bounded BKM integral. Both rest on two **declared** postulates (`P-R1-Sufficient-Strength`, `P-Obstruction-Sufficient`) — this is a *structural-positive* verdict, explicitly **not** a constructive Clay proof. The §3/§6 "stall-risk / dissolve-or-relocate" worry resolved to: the obstruction is real at substrate level, the *rate*-bound survives coarse-graining, and the constructive continuum proof is the part left open.
+- **Arc capstone + tiers:** `physics-papers/foundations/Paper_099_NS_Synthesis.md` (verdict register identical to the YM-arc Clay-relevance tier).
+- **Standing honest caveat (unchanged):** the *certified* Σ-simulator is thin/ballistic and does **not** itself relax to a fluid (`physics-papers/substrate-evaluation/Paper_Continuum_KineticLatticeGas.md`); NS lives in a separate postulated hydrodynamic window, at structural/analytic tier, not on the certified simulator.
+- **NS-1 (PDE-level D=3+1 forcing, the B2 close-out) — still the genuinely open piece.** The dimensional-forcing hook in §2 is the part that was *not* discharged by the 076/077/084/099 arc; it remains the attractive standalone target.
+- **Plain-language + cold-reader write-ups:** `physics-papers/substrate-evaluation/Paper_TwoHarderShadows.md` (YM + NS cold-reader chapters) and `Desktop/ED Important/…/ED_plain_pinpoint the coarsegrain.txt` (plain-language NS entry).
+
+Net: NS-2 and NS-3 are executed (structural-positive); NS-1 (B2 dimensional forcing) is the remaining open arc. The original scoping text below is preserved for the audit trail.
 
 ---
 
