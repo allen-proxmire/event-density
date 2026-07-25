@@ -76,6 +76,46 @@ Key facts (Paper_GR-IV_ArrowsAlibi):
 4. **Open (honest):** the single-sparsity ansatz that would unify `α₁` and the aether `d_iS`; and no one has *written out* the full khronometric-Jacobson derivation (a real paper-able target now that the pieces are grounded).
 5. **Fix applied:** GR-IV citation (`1105.5149` → Blas–Lim `1412.4828` + Ramos–Barausse `1811.07786` + Foster–Jacobson `gr-qc/0509083`).
 
+### R5 — the single-sparsity conjecture — CLOSED (adversarially checked): CONDITIONAL-BUT-DEFENSIBLE. Narrow claim survives + verified backbone; strong "fourth face" held to conjecture. (Candidate below; FINAL VERDICT at end.)
+**Question:** are BOTH ED footprints — kinematic (`α₁`) and thermodynamic (aether `d_iS`, R4) — governed by the SINGLE sparse-becoming parameter `s = ρ_event/ρ_Planck`? (If yes: `α₁`-silence and equation-of-state equilibrium are one fact — a "fourth face" for GR-IV's "one structure, three faces.")
+
+**R4's objection (why it looked unproven):** in the *general* khronometric theory `α₁` runs on spin-1 (twist/shear) couplings; the aether entropy runs on `c₁₃` (spin-2) + `c₁₂₃` (universal-horizon T) — different combinations; unifying them needs an unproven single-sparsity ansatz.
+
+**Why the objection DISSOLVES in ED (the upgrade):** ED is not the general theory — it is the *luminal* one, and luminality is DERIVED, which collapses the coupling space to 1D:
+- Khronometric has **3** couplings (`α, β, λ`). Speeds: `c_T² = 1/(1−β)`, `c_s²` a function of `α,β,λ`.
+- ED derives **`c_T=c ⟹ β=0`** (GR-II, single P05 cone) and **`c_s=c ⟹ α=λ/(1+2λ)`** (GR-III, dissipative reserve). Verified algebraically: with `β=0`, `c_s²=1 ⟹ λ(2−α)=α(2+3λ) ⟹ α=λ/(1+2λ)`.
+- 3 couplings − 2 luminality constraints = **1 free coupling, `λ ≡ λ_local`.** So on ED's luminal family *every* khronometric coupling is a function of `λ_local`.
+- Hence the spin-1 combination (→`α₁=−4λ_local`) and the spin-2 combination (→ aether entropy) are BOTH functions of `λ_local`, and both **vanish in the GR limit** (`λ_local→0` = all couplings→0), so both are `O(λ_local)`.
+- GR-IV: `λ_local ~ ρ_event/ρ_Planck = s`.
+- ⟹ **Both footprints are `O(s)` — same ~70-orders sparse-becoming suppression.** (Same leading factor; O(1) coefficients may differ — that is still single-sparsity, since the CLAIM is a shared suppression scale, not numerical equality.)
+
+**Honest weak links (⇒ CONDITIONAL, not banked):**
+1. Rests entirely on **GR-IV's `λ_local ~ ρ_event/ρ_Planck`**, which is GR-IV "model-building" tier (GR-II leaves the `F`-coefficients open). No firmer than that.
+2. **Aether-`d_iS`-is-`O(λ_local)`** on the `β=0, α=λ/(1+2λ)` family is structurally clear (it vanishes in the GR limit) but **not computed** — a subtlety (an O(1) piece, or `Λ`-sourced term with different scaling) could exist.
+3. Coupling-collapse (3−2=1) assumes the 3-coupling khronometric parametrization and that both luminality constraints are independent (they are: one fixes `β`, one relates `α,λ`).
+
+**Tier: PROMOTED conjecture** — from R4's "unproven ansatz" to "plausible; the different-couplings objection is dissolved by ED's *derived* luminality (1D coupling space)." NOT banked. **Adversarial check REQUIRED** — this is the beautiful-unification pattern over-banked 6× this session.
+**Check must attack:** (i) does luminality really collapse the coupling space to 1D, or do I mis-count constraints/couplings? (ii) is the aether `d_iS` genuinely `O(λ_local)` on the luminal family, or is there an O(1) / differently-scaling (e.g. `Λ`-sourced) piece that survives the GR limit? (iii) is GR-IV's `λ_local ~ s` solid enough to carry a headline, or does its `F`-dependence leave the whole thing hanging?
+**Home if it survives:** paper ① (the ED↔Jacobson flagship) as the "fourth face" headline; if it doesn't, ① stands on the grounded two-route material and this stays a conjecture.
+
+**FINAL VERDICT (adversarial check + literature, 2026-07-24) — CONDITIONAL-BUT-DEFENSIBLE.**
+
+*Verified backbone (grounded):*
+- **Coupling-collapse (3→1) is REAL.** Khronometric has exactly 3 physical couplings (hypersurface-orthogonality removes the spin-1/vector mode, so no hidden 4th); the two luminality conditions are independent and each removes one; luminality does NOT force `λ→0` (khronon survives). The check independently re-derived `α₁=−4c₁₄=−4λ` (with `c₁₃=0`) and `α₂=0` (numerator `[c₁₄(1+2c₂)−c₂]` vanishes identically). **The kinematic half is literature-verified.**
+- **The feared O(1)/`Λ`-sourced aether-entropy leak is REFUTED.** The exact paper worried about (Arata–Liberati–Neri arXiv:2603.28851) cuts our way: the irreducible aether-entropy term **vanishes in the GR limit** (`c_i→0`). On ED's family all couplings →0 as `λ→0`, so it →0 there. No surviving O(1) piece.
+- **Shallower-than-`α₁` (e.g. `√λ`) scaling is physically closed:** the aether-flux heat is *linear* in the couplings (aether stress = coupling × quadratic-in-∇u), analytic in `λ`, leading power ≥1. So **the entropy is *at least* as suppressed as `α₁`** — the "70-orders-safe" conclusion for the thermodynamic footprint is robust even worst-case. (Bonus: ED's `Λ` makes this a *genuine non-absorbable* entropy term, not a trivial G-renormalization — real, but still `O(λ)`.)
+
+*The defensible (narrow) claim to put in paper ①:*
+> On ED's *derived* luminal family (1-D coupling space), **both** the kinematic preferred-frame coupling (`α₁`) **and** the thermodynamic non-area horizon-entropy term are functions of the single coupling `λ_local`, each vanishing **at least linearly** in the GR limit — so **neither can leak at `O(1)`, and both carry the same sparse-becoming parameter** (the thermodynamic footprint at least as suppressed as `α₁`'s ~70 orders).
+
+*Held back to conjecture (NOT banked — the over-bank the check caught):*
+- ❌ The **strong "fourth face / one structure / same exact ~70 orders"** framing. Reason: (i) whether the entropy scales *exactly* `λ` (same power) or steeper e.g. `λ²` (**more** suppressed, so *not the same*) needs the closed-form aether-entropy coupling-formula (couldn't render the equations); (ii) a regularity check at the exact `β=0` (`c₁₃=0`) point (delicate universal-horizon limits) is unconfirmed. Once collapsed to 1-D, "both are functions of `λ`" is *automatic/tautological*; the content is only "both `O(λ)`, no O(1) leak" — which holds; the *unified-object* framing is rhetoric until the exact power is shown.
+- **GR-IV `λ_local ~ ρ_event/ρ_Planck` is model-building tier** (F-coefficients un-pinned), so the *absolute* 70-orders is estimate-tier — but the *relative* co-suppression ("one parameter governs both") is **independent** of that (if `λ_local`'s absolute scaling is wrong, both footprints move together).
+
+*Net for ①:* include the **verified backbone** (coupling-collapse; `α₂=0`; O(1)-leak refuted; entropy ≥ as suppressed as `α₁`) + the **narrow co-suppression claim** as an explicit result; flag the **exact-same-power "fourth face"** as the open conjecture needing the closed-form aether entropy + `β=0` regularity. Do NOT write "fourth face" as established.
+
+**Open follow-on (paper-able):** compute the closed-form khronometric aether-entropy on the luminal family, extract the exact leading power in `λ`, and check `c₁₃=0` regularity — this decides whether the co-suppression is "same power" (fourth face real) or "entropy even more suppressed" (still safe, not unified).
+
 ## Write-up scope (when the thread closes)
 Grounded: (b) luminal cones ⇒ Jacobson scaffolding survives; `α₂=0`; Unruh survives; no universal horizon. Open lead: (a) equilibrium-vs-non-equilibrium entropy; the khronon-as-non-equilibrium-arrow connection. Fix: GR-IV citation (1105.5149). Do NOT claim (a) as done.
 
