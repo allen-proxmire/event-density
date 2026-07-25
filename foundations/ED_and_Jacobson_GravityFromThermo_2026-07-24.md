@@ -1,66 +1,67 @@
-# ED and Jacobson's "Einstein Equation of State": ED Grounds the Inputs Jacobson Assumes
+# ED and Jacobson's "Einstein Equation of State": ED Fills the Exact Gap Jacobson Flagged
 
 **Date:** 2026-07-24
-**Status:** Working note (synthesis, step 1 of the thermo-gravity thread). Assembles existing ED results (GR-I/II/III, the horizon-thermo foundations notes, A1 severance) against Jacobson's 1995 derivation of the Einstein equation from thermodynamics. **No new forced derivation** — the content is (a) ED grounds all three of Jacobson's *assumed* inputs, (b) ED reaches the field equation by a second independent route, and (c) a sharpened resolution of the "arrow-less GR from arrow-keeping thermo" paradox. Corpus check: ED currently cites only Jacobson's *1991* trans-Planckian paper; the *1995* thermodynamics-of-spacetime derivation is **not** engaged anywhere — this note fills that gap.
+**Status:** Working note (synthesis, step 1 of the thermo-gravity thread) — **upgraded after reading the actual paper** (Jacobson, *Phys. Rev. Lett.* 75, 1260, 1995; gr-qc/9504004v2, read in full). The first draft worked from memory; the real text is *stronger* for ED and supplies exact quotes. **No new forced derivation** — the content is (a) ED grounds the three things Jacobson *assumes or leaves undetermined*, (b) ED reaches the field equation by a second route, (c) the `G = c³ℓ_P²/ħ` match is exact, (d) a grounded resolution of the arrow paradox. Corpus check: ED had cited only Jacobson's *1991* paper; the 1995 derivation was never engaged.
 
 ---
 
-## 1. What Jacobson 1995 does
+## 1. Jacobson's actual derivation (from the text)
 
-Jacobson ("Thermodynamics of Spacetime: The Einstein Equation of State," PRL 75, 1260) applies the Clausius relation `δQ = T dS` to a **local Rindler horizon at every point and direction** in spacetime, feeding in three inputs:
+Jacobson turns black-hole thermodynamics around: instead of deriving horizon-entropy from GR, he **assumes horizon thermodynamics and derives GR.** His own framing (page 1): *"the Einstein equation is an equation of state. It is born in the thermodynamic limit as a relation between thermodynamic variables, and its validity is seen to depend on the existence of local equilibrium conditions."* He motivates it with the **ideal gas** (his analogy, not just ours, page 2): knowing `S(E,V)` you read the equation of state off `δQ = TdS`; a counting argument `S ∝ ln V + f(E)` gives `pV ∝ T`.
 
-1. **Area-law entropy** `S = η A` (Bekenstein–Hawking),
-2. **Unruh temperature** `T ∝ acceleration` (the thermal bath an accelerated observer sees),
-3. **Heat = energy flux** `δQ = ∫ T_μν χ^μ dΣ^ν` (stress-energy across the horizon).
+The derivation, precisely:
+- **Heat across a causality barrier** (page 2): *"heat is energy that flows between degrees of freedom that are not macroscopically observable"* — here, energy across a local causal horizon, where the hidden system is *"separated from the [outside] not by a diathermic wall, but by a causality barrier."* Flux `δQ = ∫ T_ab χ^a dΣ^b` (eq 1), `= −κ ∫ λ T_ab k^a k^b dλ dA` (eq 2), `χ` the approximate boost Killing field.
+- **Entropy = entanglement entropy, made finite by a cutoff** (pages 2–3): *"the overwhelming majority of the information that is hidden resides in correlations between vacuum fluctuations just inside and outside of the horizon… 'entanglement entropy'… divergent in continuum QFT. If there is a fundamental cutoff length `l_c`, then the entanglement entropy is finite and proportional to the horizon area in units of `l_c²`."* And: *"consistency with thermodynamics requires that `l_c` must be of order the Planck length."* So `dS = η δA` (eq 3).
+- **Unruh temperature** `T = ħκ/2π` (page 4).
+- **Raychaudhuri closes it** (page 5): `dθ/dλ = −½θ² − σ² − R_ab k^a k^b`; at the point `θ=σ=0`, so `δA = −∫ λ R_ab k^a k^b dλ dA` (eq 5). Requiring `δQ = TdS` for **all** null `k^a` forces `(2π/ħη) T_ab = R_ab + f g_ab`; conservation + Bianchi fixes `f = −R/2 + Λ`, giving **the Einstein equation** `R_ab − ½R g_ab + Λ g_ab = (2π/ħη) T_ab` (eq 6).
 
-Demanding `δQ = T dS` hold for *all* local horizons forces the **Einstein field equation** `G_μν = 8πG T_μν`, with `G` fixed by the entropy density η. Conclusion: **gravity is an equation of state** — an equilibrium thermodynamic relation of unknown microscopic DOF, not a fundamental field. All three inputs are *postulated*; the microstates are hypothetical.
+## 2. The three things Jacobson *assumes or leaves open* — ED grounds all three
 
-## 2. ED grounds all three inputs — from the substrate
-
-Where Jacobson assumes, ED derives (from the one bandwidth rule + severance):
-
-| Jacobson's input | His status | ED's status |
+| Jacobson's input | His own words | ED grounds it |
 |---|---|---|
-| **`S ∝ A`** (area law) | assumed (BH) | **Derived (form, measured):** the frozen `b→0` horizon's entropy is the count of **A1-severed** boundary adjacency channels, and it scales as the **perimeter** (`r_h^0.96`), not the bulk (`r_h^2.01`) — GR-III §7.4, `Paper_043`. Holographic, from severance. |
-| **`T` = Unruh** (`T ∝ a`) | assumed (Unruh effect) | **Derived:** ED's own vacuum profile `b = 1 − r_s/r` has **Rindler form** at the horizon (`ds² ≈ −κ²ρ²dt² + dρ²`, confirmed numerically), and smoothness/no-conical-defect forces `T = κ/2π` — `BH_Thermal2Pi_FromNearHorizonRindler.md`. |
-| **`δQ = T dS`** (Clausius) | assumed (equilibrium thermo) | Holds on ED's derived horizon: the first law `dM = T dS` with `κ = ½ b′(r_s) = 1/(2r_s)` (derived) integrates to `S = A/4` — `BH_EntropyCoefficient_FromEventCounting.md` §2. |
-| **OUTPUT: Einstein eqn** | derived (from the three) | **Derived independently:** GR-III's dynamical bandwidth rule `ḃ = D∇²b − κρ` has the field equation as its steady state (Newtonian limit measured; weak-field Einstein GR-I; khronometric class GR-II). |
+| the horizon **hides DOF** (a "causality barrier") | *"separated… by a causality barrier"* (p2) | **A1 severance** — the `b→0` cut is exactly a capacity-zero causality barrier; the hidden DOF are the boundary adjacency channels (GR-III §7.4). |
+| entropy = **entanglement across the cut**, finite via a **fundamental cutoff `l_c ≈ ℓ_P`** | *"correlations between vacuum fluctuations just inside and outside… finite [if] a fundamental cutoff `l_c`… of order the Planck length"* (p2–3) | ED **has** the cutoff natively — the grain `ℓ_ED = ℓ_P` (P08) — and the entanglement across the cut is the **severed cross-chain (V5) correlations**. ED supplies the `l_c` Jacobson must assume. |
+| **`η` (entropy per area) is UNDETERMINED** | *"The dimensional constant `η` is undetermined by anything we have said so far (although given a **microscopic theory of spacetime structure** one may someday be able to compute `η` in terms of a fundamental length scale.)"* (p5) | **ED is that microscopic theory.** `η =` the severed-channel count per grain area `= 1/(4ℓ_P²)`; the area law (`S ∝ A`) is *because* severance is a surface cut (measured holographic, GR-III §7.4). |
 
-So **ED and Jacobson are two routes to the same place that meet:** Jacobson's is *top-down thermodynamic* (assume horizon thermo → get Einstein); ED's is *bottom-up dynamical* (substrate bandwidth rule → get Einstein *and* the horizon thermo as emergent). **ED supplies the substrate `why` for every postulate Jacobson has to assume.** The microstates Jacobson calls hypothetical, ED names: the severed adjacency channels across the `b→0` cut.
+**This is the lever.** Jacobson himself points at *"a microscopic theory of spacetime structure [to] compute `η` in terms of a fundamental length scale"* as the missing piece. **ED is precisely that** — it identifies `η` as a severance density on a grain of size `ℓ_P`. ED does not merely reproduce Jacobson; it fills the exact gap he flagged.
 
-## 3. The paradox resolved — and sharpened by ED
+## 3. Newton's `G` — the match is exact (answers the "stepchild" puzzle)
 
-**The puzzle (AP):** in the coarse-graining ledger (`Paper_HowCoarseGrainReality`), thermodynamics is the *one* continuum theory that **keeps** the arrow (it is the accounting of the discard pile). GR is a theory that **threw the arrow away**. So how does Jacobson derive arrow-less GR *from* arrow-keeping thermo?
+Jacobson (page 6): *"The constant of proportionality `η`… determines Newton's constant as **`G = (4ħη)⁻¹`**, which identifies the length `η^{−1/2}` as twice the Planck length `(ħG)^{1/2}`."* So `η = 1/(4ℓ_P²)`, and substituting:
 
-**The resolution — the gas law makes it click:** `PV = nRT` is time-symmetric (shows no arrow), yet it is the equilibrium equation of state of a gas whose *approach* to equilibrium was violently irreversible. The arrow lives in the *second law* (the approach), not in the *equation of state* (the destination). Gravity is the same: **GR is the arrow-blind equilibrium equation of state; the arrow is upstream, hidden inside the assumption `S ∝ A`.**
+$$ G = \frac{1}{4ħη} = \frac{ℓ_P^2}{ħ} \;\xrightarrow{\text{restore }c}\; \boxed{G = \frac{c^3 ℓ_P^2}{ħ}} $$
 
-**ED sharpens this from "hidden" to explicit.** In ED, the horizon entropy Jacobson feeds in **is the count of A1-severed channels** — and severance is **irreversible** (A1 capacity-zero is a one-way cut; P11). So:
+**— identical to ED's constants-ledger `G = c³ℓ_P²/ħ`** (Essay 13/14, `Paper_027`). So Jacobson's *"`G` from entropy-per-area"* and ED's *"`G` from the grain `ℓ_P`"* are **the same equation**: the entropy-per-area `η` *is* the grain density `1/(4ℓ_P²)`. This resolves the puzzle — `G` is a "stepchild" in *both* pictures because in both it is not independent; it is fixed the moment you have the grain (with `c, ħ`). Jacobson leaves `η` (hence the grain) undetermined and asks for a microscopic theory to supply it; **ED supplies it, and lands on ED's own `G` exactly.** Neither treats `G` as fundamental; both make it the conversion factor tied to the grain/entropy-density — the "first shadow."
 
-> The arrow is not *in* GR. The arrow is what **builds the horizons** — via irreversible severance — whose entropy is the very input Jacobson assumes. GR is the equilibrium balance-sheet of those arrow-built horizons; a balance-sheet at equilibrium is arrow-blind even though the arrow filled it in.
+## 4. The arrow paradox — resolved in Jacobson's own words, sharpened by ED
 
-This is exactly the How-Coarse-Grain thesis (GR = the coarse-grained consistency condition / "law of the seam"; thermo = the receipt) — now realized concretely: **Jacobson shows GR *is* the receipt, balanced at every horizon, and ED shows the receipt is written in irreversibly-severed channels.**
+The puzzle (AP): thermo *keeps* the arrow (it's the discard-pile's accounting); GR *threw the arrow away*; how derive arrow-less GR from arrow-keeping thermo? **Jacobson answers it himself, and the ideal gas is his own analogy:** the Einstein equation is the **equilibrium equation of state** — *"a relation between thermodynamic variables… its validity depends on local equilibrium"* — and equilibrium relations are time-reversal invariant *even though the approach to them is not.* He is explicit that the arrow lives in the *non-equilibrium* regime, not the equation: *"for sufficiently high frequency or large amplitude… the local equilibrium condition would fail… 'non-equilibrium spacetime'."* The Einstein equation is the destination (arrow-blind); the second law is the road (arrow-ful).
 
-**An echo one level down (worth flagging).** Even ED's *temperature* factor exhibits the same pattern: the thermal `2π` is obtained via the **Euclidean continuation** (a reversible-time device), and `BH_Thermal2Pi` §4 flags honestly that a *continuation-free* derivation from raw commitment statistics is open — the `2π` "may be a continuum feature that lives at the smooth-horizon level, not below." So the thermal structure looks arrow-blind (reversible-time trick) even though it is built from irreversible commitments — the arrow-builds-it-but-the-relation-is-blind pattern, recurring at the temperature itself.
+**ED sharpens the "where is the arrow" answer to a primitive.** The entropy Jacobson feeds in is the entanglement of **hidden** DOF, and in ED those are the **A1-severed** channels — and severance is **irreversible (P11)**. So the arrow is not smuggled in vaguely; it is the P11-irreversibility of the severance that *creates* the horizon entropy. **The arrow builds the horizon (irreversible severance); GR is the equilibrium balance-sheet of what the horizon hides.** This is the How-Coarse-Grain thesis made concrete: GR = the law of the seam (the arrow-blind consistency condition); thermo = the receipt; and ED shows the receipt is written in one-way severed channels.
 
-## 4. A genuine potential payoff (flagged, not claimed)
+## 5. Two routes to Einstein — and the one honest obstruction
 
-Jacobson's route reaches the **full** Einstein equation; ED's dynamical-rule route currently reaches only **weak-field + khronometric** (GR-I/II/III; the full nonlinear EFE is open, GR-III preamble 2). So **if ED's grounding of Jacobson's inputs holds, ED may inherit a *route to the full field equation* it does not otherwise have** — run Jacobson's argument on ED's *derived* (not assumed) area law + Unruh temperature.
+- **Route 1 (Jacobson, thermodynamic, top-down):** assume horizon thermo → full Einstein equation. ED grounds its three inputs (§2) → so ED can, in principle, *run Jacobson's route on its own derived inputs.*
+- **Route 2 (ED, dynamical, bottom-up):** the bandwidth rule `ḃ = D∇²b − κρ` steady state → the field equation (Newtonian limit measured; weak-field Einstein GR-I; khronometric GR-II).
 
-**But the honest obstruction is real and interesting:** Jacobson's local-Rindler-horizon argument assumes **Lorentz invariance / no preferred frame**. ED's gravity is **khronometric** — it *has* a preferred foliation (the khronon). So ED cannot simply run Jacobson unchanged; either (a) there is a *khronometric* modification of the equation-of-state derivation, or (b) the place where ED's preferred frame enters Jacobson's argument is exactly ED's known departure from pure GR (the `α₁, α₂` residue, GR-IV). This is an **open question and a good one** — the thermo-gravity route may pinpoint *where* ED's arrow re-enters a derivation that standard Jacobson keeps arrow-blind. Do not claim ED "gets the full EFE via Jacobson" until this is worked.
+Reaching Einstein two independent ways, with ED grounding the assumptions of one of them, is the genuine win. **The honest obstruction (do not gloss):** Jacobson's argument assumes *"an approximately flat region with the usual Poincaré symmetries"* (page 4) — i.e. **local Lorentz invariance / no preferred frame.** ED's gravity is **khronometric** (it has the khronon, a preferred foliation). So ED cannot run Jacobson *unchanged*; either (a) there is a khronometric version of the equation-of-state derivation, or (b) the place ED's preferred frame enters Jacobson's Poincaré assumption is exactly ED's known departure from pure GR (`α₁, α₂`, GR-IV). Open, and a good lead — the thermo route may *localize* where ED's arrow re-enters a derivation Jacobson keeps arrow-blind.
 
-## 5. Honest tiers
+## 6. Jacobson's conclusion *is* ED's stance
 
-- **Derived / measured (solid):** `S ∝ A` form (severance count ~ perimeter, measured); `T = κ/2π` (Rindler near-horizon geometry, derived); `κ = 1/(2r_s)`; weak-field Einstein + khronometric class + Newtonian fixed point.
-- **Synthesis (this note):** ED grounds Jacobson's three postulates; two routes meet; the arrow-in-`S∝A` resolution of the paradox. New as an *arrangement* of existing results, not a new derivation.
-- **Open:** the `1/4` coefficient's cleanest derivation (one decidable sim, `BH_EntropyCoefficient` §4); the continuation-free `2π`; the full nonlinear EFE; **and specifically the khronometric-vs-Lorentz obstruction to running Jacobson's route in ED (§4).**
+Jacobson (page 6): a sound wave *"is only a statistically defined observable on the fundamental phase space of the multiparticle system, it should not be canonically quantized as if it were a fundamental field… it may not be correct to canonically quantize the Einstein equations, even if they describe a phenomenon that is ultimately quantum mechanical."* **This is ED's position verbatim** — don't quantize GR (the acoustic/bandwidth metric is emergent); discretize the substrate underneath. ED and Jacobson agree on the punchline; ED supplies the substrate Jacobson only gestures at ("a microscopic theory of spacetime structure").
 
-## 6. What this sets up (the thread)
+## 7. Honest tiers
+- **Solid:** ED grounds all three of Jacobson's inputs (§2); the `G = c³ℓ_P²/ħ` match is exact (§3); the paradox resolution is Jacobson's own equilibrium framing + ED's severance-irreversibility (§4).
+- **Value-inherited (both):** the numerical grain size / `η`. ED expresses `η` *in terms of* the fundamental length (which is what Jacobson asked for), but does not compute the length's value from something deeper — same status as his `l_c`.
+- **Open:** running Jacobson's route in ED to get the *full* EFE is blocked by the **khronometric-vs-Lorentz** obstruction (§5); ED's own dynamical route reaches only weak-field/khronometric.
 
-- **Step 1 (this note):** ED ↔ Jacobson — grounded. Done.
-- **Step 2:** promote the paradox resolution ("the arrow builds the horizons; GR is their equation of state") to a stated ED result that sharpens `Paper_HowCoarseGrainReality`.
-- **Step 3 (the prize, speculative):** the **pattern** — is each theory recoverable as "the equilibrium equation of state of its own discard pile"? Jacobson did GR; Verlinde did Newton. ED is uniquely equipped because it makes the discard pile *explicit* (committed events, thrown-away correlations). Pick one more ledger theory and honestly test whether the recipe recovers it. Flag as speculation; let it be a real could-say-no.
+## 8. What this sets up
+- **Step 1 (this note):** grounded — ED fills Jacobson's flagged gap; the `G` match is exact.
+- **Step 2 (chip'd):** fold the arrow-builds-horizons resolution + the Jacobson connection into `Paper_HowCoarseGrainReality`.
+- **Step 3 (done, weak-but-standing):** the pattern — `ThermoPattern_EquationOfState_of_the_DiscardPile_2026-07-24.md`.
+- **New lead worth its own look:** the khronometric-vs-Lorentz obstruction (§5) — does ED's preferred frame enter Jacobson's derivation exactly at the `α₁, α₂` residue?
 
 ## Cross-references
-- Jacobson, T., *Phys. Rev. Lett.* **75**, 1260 (1995) — "Thermodynamics of Spacetime: The Einstein Equation of State."
-- ED: `physics-papers/gravity/Paper_GR-III_DynamicalRule.md` (§7.4 area law; §8 Hawking; the `b→0` horizon = A1 cut); `Paper_GR-I` (`g~1/b`, `N²~b`); `Paper_GR-II` (khronometric class); `foundations/BH_Thermal2Pi_FromNearHorizonRindler.md` (`T=κ/2π` from Rindler geometry); `foundations/BH_EntropyCoefficient_FromEventCounting.md` (the `1/4`, first law); A1 (`evaluation/Bits/…` channel-capacity zero = severance).
-- `ED Generative/physics-papers/substrate-evaluation/Paper_HowCoarseGrainReality.md` (the ledger; GR as law-of-the-seam; thermo as the receipt).
+- Jacobson, T., *Phys. Rev. Lett.* **75**, 1260 (1995), gr-qc/9504004 (read in full: eqs 1–6; `G=(4ħη)⁻¹`; "causality barrier"; "non-equilibrium spacetime"; the don't-quantize conclusion).
+- ED: `physics-papers/gravity/Paper_GR-III_DynamicalRule.md` (§7.4 area law from severance; the `b→0` = A1 cut); `Paper_GR-I` (`g~1/b`); `Paper_GR-II` (khronometric); `foundations/BH_Thermal2Pi_FromNearHorizonRindler.md` (`T=κ/2π` from ED's Rindler geometry); `foundations/BH_EntropyCoefficient_FromEventCounting.md` (the `1/4`); `Paper_027` + Essays 13/14 (`G=c³ℓ_P²/ħ`, the constants ledger).
+- `ED Generative/physics-papers/substrate-evaluation/Paper_HowCoarseGrainReality.md` (the ledger).
