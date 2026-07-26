@@ -52,3 +52,14 @@ The honest prior: ED's count plausibly tiles the *full* b→0 surface (giving co
 ## 5. Status
 
 **Not closed, but sharpened.** ED derives the *form* (S∝A, measured) and the *geometric half* of the coefficient (κ = 1/(2r_s), derived). The full 1/4 reduces to **one decidable question**: does the substrate freeze its independent states on the full horizon sphere (coefficient 1, then the 1/4 is the inherited thermal 2π) or on a great-circle cross-section / half-radius sphere (coefficient 1/4, geometric, AP's route)? **Decisive next step:** count frozen states per horizon area in the GR-III sim and read the coefficient off directly. This is the genuine open target AP's event-counting intuition was pointing at, now stated as a one-run could-say-no.
+
+## 6. RESOLVED (2026-07-25): the could-say-no fired for the FULL sphere — the 1/4 is thermal
+
+Ran the §4 test (`evaluation/DynamicalBandwidth/horizon_entropy_coefficient.py`, GR-III elliptic rule, 3D S=96, 5 masses, nothing tuned). Result:
+
+- **Area law confirmed:** N_surface ∝ r_s^2.08, N_frozen ∝ r_s^2.91 (surface vs volume, clean).
+- **Coefficient N_surface/(4πr_s²) = 0.780 ± 0.011.** This is **O(1), ≈ π/4** — the substrate freezes ~one independent state per Planck area on the **full horizon sphere**, with the ~0.78-vs-1 gap a lattice-discretization factor (boundary-voxel count of a ball on a cubic grid ≈ π/4). It is **decisively not 0.25** (off by ~3×).
+
+**Verdict:** the substrate tiles the **full horizon**, not the cross-section. So the great-circle / r_s/2-sphere route (§3) is a geometrically exact *identity* but is **not how the substrate counts** — AP's honest prior in §4 ("plausibly tiles the full b→0 surface, coefficient ~1") is the one that fired. **The 1/4 is therefore the thermal factor (Route A, §2): `κ = 1/(2r_s)` derived × `T = κ/2π` inherited.** Consistent with Arc_BH_3 (physical saturated core is Planck-scale, not a macroscopic r_s/2 ball) and Arc_BH_5 (state-counting `log g`, inherited).
+
+**What this leaves:** deriving the 1/4 now = deriving the **arrow-native 2π** (`BH_Thermal2Pi` §4b), whose honest diagnosis is it may be a category error (the 2π is a continuum/analytic feature ED already has at the smooth-horizon level). The count side is settled (full horizon, `c₁ ≈ 1`, matching Padmanabhan); the 1/4 and equipartition's `½T` both flow through the one thermal 2π (see `Equipartition_And_Temperature_One_KMS_Fact_2026-07-25.md`).
