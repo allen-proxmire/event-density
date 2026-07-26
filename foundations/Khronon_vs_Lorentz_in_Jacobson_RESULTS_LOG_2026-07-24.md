@@ -133,6 +133,9 @@ Key facts (Paper_GR-IV_ArrowsAlibi):
 
 ## THREAD FULLY CLOSED (R1–R6)
 
+## WRITE-UP DONE (2026-07-25)
+`ED Generative/physics-papers/microscopic-completions/Paper_KhronometricEquationOfState.md` — the explicit local-Rindler δQ=TdS derivation, referee-passed. Headline = Determination (C) (pure-area Wald → clean equilibrium → full Einstein, aether among the sources); corollaries = shear exactly GR, and the scalar-sector co-suppression with the **fourth face kept as a conjecture** per R4/R5. Open computation (exact aether-entropy leading power in λ + c₁₃=0 regularity) explicitly flagged, not claimed. Discharges `Paper_GravityAsEquationOfState` §8's "fully written-out δQ=TdS" item.
+
 ## Write-up scope (when the thread closes)
 Grounded: (b) luminal cones ⇒ Jacobson scaffolding survives; `α₂=0`; Unruh survives; no universal horizon. Open lead: (a) equilibrium-vs-non-equilibrium entropy; the khronon-as-non-equilibrium-arrow connection. Fix: GR-IV citation (1105.5149). Do NOT claim (a) as done.
 
