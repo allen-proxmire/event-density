@@ -91,3 +91,19 @@ The **closed column is large, clean, and honestly labeled** (A1, B4-skeleton, Pr
 The **real open work has shifted again (2026-06).** The GR keystone (#1) is now **CLOSED** — α₁/α₂/PPN done by GR-IV (α₂=0 exact, α₁ safe ≥70 orders, sparsity measured); only bookkeeping remains, and #1 no longer gates the B-column it used to (e.g. #4 unitary completeness is unblocked). So the genuine open *research* is now: **#2b the chiral-gauge/parity gap** (the sharpest discreteness challenge; "open and promising," reduced to the T4 spinor gate — a real derivation), the **prediction inventory** (the north-star build — find ED's falsifiable experiment-facing predictions), and finishing **3c** (the layers paper — a voice pass, not research). **Charge→Maxwell (#2)** and **diffusion (#3)** remain Wall-1 probes; SCBU/MOND (#5/#5b) are M3 *tightening*.
 
 **If pointing energy at one thing:** for *research* that peaks the passion, **#2b (chiral gauge)** is the live hard front (a genuine derivation via T4, not a tidy-up). For the *goal* (being undeniable), the **prediction inventory** is the highest-leverage build — it's the weapon, distinct from the targets that feed it. **#1 is no longer where the energy goes — it's done.**
+
+---
+
+## Open thread — Conservation Leaks (Noether symmetries as emergent & scale-dependent) — opened 2026-08-07
+
+**Status: OPEN — core mechanism VERIFIED against P11/P13 (2026-08-07); full NoetherFlux dynamics-arc read pending; Tier-1 grounding paper drafting.**
+
+Origin: AP intuition (time non-uniform → symmetry/conservation breaks). Found a real gap: `Paper_HowTheoryCoarseGrainReality` (the emergent-symmetry ledger) builds symmetries from *order-erasure* (reversibility, unitarity, frame) but has **no conservation-law row** — because conservation comes from a different discard: assuming a *uniform backdrop*. 
+
+Mechanism (verified in `Paper_087`): **P13 = time-homogeneity of the LAW → local conserved current (local conservation exact); P11 = the arrow / irreversible state-growth → no global time-translation symmetry → global conservation leaks.** P13's own definition names P11 as "the only temporal-asymmetry primitive" — the split is verbatim in the corpus. F4 (`Paper_006_5`) is not tripped (scoped to non-conservation *where the symmetry holds*; the leak is where it's absent).
+
+Tiers: **Tier-1 = grounding + ledger-unification** (reproduces GR global non-conservation; substrate-native mechanism; fills the "who pays for redshifted CMB energy" silence; bridges the ledger paper ↔ the NoetherFlux dynamics arc, which never cite each other). **Tier-2 = a novel scale-dependent departure from GR — HELD, not chased** (corpus is committed to standard conservation).
+
+Research + full working: `arcs/arc-conservation-leaks/SCOPING_ConservationLeaks.md`. Final cold-reader paper → EDG, sibling to `Paper_HowTheoryCoarseGrainReality.md`.
+
+**UPDATE 2026-08-07:** Tier-1 paper **LANDED in EDG** — `physics-papers/substrate-evaluation/Paper_ConservationColumn.md` (cold-reader companion to the ledger). Tier-2 investigated → **provisionally negative** (no hidden conserved total — the arrow makes the substrate globally non-stationary too; no reachable departure — only the ~70-OOM-suppressed khronon residue). Arc substantially complete at Tier-1 grounding; only optional remainder = a full survey of substrate conserved quantities to harden the Tier-2 negative from "on current reading" to closed.
