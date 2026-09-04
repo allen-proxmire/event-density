@@ -61,6 +61,14 @@
 
     **Pay-off if the switch can be shown:** `Paper_030` §5.3's regime assumption becomes *derivable*, since "the cross-term dominates in deep-MOND" is exactly "the cosmic boundary binds below `cH₀`" — restoring QuadraticStrain's second discharge by a valid route.
 
+    **μ DERIVATION ATTEMPTED 2026-09-04 — blocked, and the block is the result.** `Paper_030` §6.3 does give a closed-form profile, `a = a_N + a₀ + √(a_N a₀)`, i.e. `μ = s²/(s²+s+1)` with `s = √(a_N/a₀)`. **It saturates as `1-μ ~ x^{-1/2}`**, far slower than the simple (`x^{-1}`) or standard (`x^{-2}`) families, and the `√(a_N a₀)` term is a `1/R` force that is *not* degenerate with a `GM_☉` rescaling: **8.9×10⁻⁸ m/s²** anomalous acceleration at Saturn against a Cassini-class bound near **10⁻¹⁴**, excluded by ~7 orders. `Paper_KM-I` preamble item 5 already states the criterion ("slow-saturating members excluded by ephemerides") and neither paper notices §6.3's profile is such a member.
+
+    **ED is not refuted, because `Paper_030` §7.1 switches P14 inactive in the Newtonian regime.** But that contradicts §7.2's "smooth and parameter-free crossover": the profile is three branches with P14 toggled at the boundaries, and the toggle is the regime assumption. §6.3's "no interpolation function" claim does not hold — a piecewise profile with an assumed switch *is* an interpolation function, minus the smoothness. **Smooth ⇒ Cassini kills it; switched ⇒ the transition is assumed. The two are exclusive, so μ cannot currently be derived, and the obstruction is observational rather than formal.**
+
+    **This is where the horizon-competition mechanism above earns its keep.** It *is* a switch, and it switches the right way: above `cH₀` the chain's own Rindler horizon lies inside the cosmic one, cosmic content is cut off, and the bilocal term has nothing to couple to — **P14 inactive, derived rather than assumed**, which is exactly what Cassini demands. Residual unchanged: the switch sits at `cH₀` not `a₀`, and a sharp switch is not the gradual transition rotation curves show.
+
+    **Recommended corpus edit:** §7.2's "smooth" and §6.3's "no interpolation function" should be reworded. The honest claim is a *derived deep-MOND asymptote plus an assumed regime switch*.
+
     *Current state: `Paper_030` §5.3's regime assumption is restored and load-bearing; QuadraticStrain's P14 discharge is unaffected and remains the strong half of that paper. The arc still reaches `√(a_N a₀)` and BTFR — via the regime assumption, not via a derived threshold.*
 
 ## B. Open consequences of the big targets (mostly numbers waiting on #1)
