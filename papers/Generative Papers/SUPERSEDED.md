@@ -53,11 +53,11 @@ The canonical audit trail for both is `ED Generative/physics-papers/gravity/Grav
 **These are not superseded, because there is nothing to supersede them.** They have no counterpart in the canonical corpus:
 
 ```
-Paper_ED_SC_4_1_BH_CosmicDecoupling
+Paper_ED_SC_4_1_BH_CosmicDecoupling   <-- MIGRATED 2026-09-04
 Paper_ED_SC_4_2_xi_canonical_H0_derivation   <-- MIGRATED 2026-09-04
 Paper_ED_SC_4_3_MOND_SCBU
-Paper_ED_SC_4_4_QCompute_SCBU
-Paper_ED_SC_4_5_SoftMatter_SCBU
+Paper_ED_SC_4_4_QCompute_SCBU   <-- MIGRATED 2026-09-04
+Paper_ED_SC_4_5_SoftMatter_SCBU   <-- MIGRATED 2026-09-04
 Paper_ED_SC_4_6_UnifiedCrossScale
 ```
 
