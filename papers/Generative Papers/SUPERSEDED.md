@@ -61,7 +61,17 @@ Paper_ED_SC_4_5_SoftMatter_SCBU
 Paper_ED_SC_4_6_UnifiedCrossScale
 ```
 
-Whether the ED-SC 4.x series is superseded by `Paper_SCBU` or is still live has **not been decided**. Until it is, treat these as live drafts held outside the canonical corpus.
+**DECIDED 2026-09-04: they are NOT superseded — the relation runs the other way.** Canonical `Paper_SCBU` says *“The corpus is ready for ED-SC 4.x development”* and its falsifier **F4** — does a third or fourth canon-internal anchor (`r_H`, `ℳ_crit`, NS-Q operating point) fail to anchor to `R_H = c/H₀`? — calls itself *“the bridge to ED-SC 4.x”*. **SCBU is upstream; this series is the development it calls for**, and `SC_4_6` reports all six projections (`r_H`, `R_H`, `ξ_canonical`, `a₀`, `ℳ_crit`, `Q ≈ 3.5`) landing in a unified four-regime structure. **So F4's discharge lives here while F4 stands open in the canonical corpus.** These six should be **migrated, not retired.**
+
+**Three conditions on migration** — they were written before the 2026-09-04 corrections and would otherwise reintroduce them:
+
+1. **The `2π`.** All six carry it — 32 occurrences, 14 in `SC_4_3` alone — and none is flagged. The coefficient in `a₀ = cH₀/(2π)` is **Postulated/disputed**; the scale `a₀ ~ cH₀` is not.
+2. **`ξ_canonical = 1.7575`.** Appears in five of the six. The measured value is **1.76 ± 0.30** (`σ = 0.303`, ten seeds) and is processing-dependent (smoothed variant `3.05 ± 0.53`). Five significant figures are unsupported.
+3. **`SC_4_2` does not close.** Its own status line says so. It must migrate as a **banked negative** on deriving `ξ_canonical(H₀)`, not as a derivation.
+
+*Also: they add only **2** postulates the corpus census does not already count — `P-BTFR-Slope-4` and `P-Deep-MOND-Limit`, both in the MOND papers (`SC_4_3`, `SC_4_6`). They are not a hidden assumption reservoir.*
+
+**Not yet audited.** No claim-strength pass has been run on these six.
 
 **One of them is load-bearing and was being missed.** `Paper_ED_SC_4_2` attempts the substrate derivation of `ξ_canonical(H₀)` and reports that it **does not close** — *"value-INHERITED status preserved; structural setup is FORM-FORCED M3"* — naming the missing piece as either a substrate-derived `ℓ_V5(H₀)` relation or a substrate-derived scaling law. It calls itself the highest-leverage paper in the series.
 
@@ -76,12 +86,12 @@ The rest of the 29 need no action:
 - **Theorem entries** `T19`, `T20`, `T21`.
 - **`Paper_093_KernelArrow`** — a rename artifact; canonical is `Paper_093_KernelArrow_of_Time.md`.
 
-## If you are deciding what to do with this folder
+## What is left to do
 
-Three options, in rough order of effort:
+The SC-4.x question is **decided** (above): they are live, upstream-sanctioned, and should be migrated. What remains:
 
-1. **Leave it, with this marker.** Cheapest. The 31 stale files stay readable but signposted.
-2. **Decide the SC-4.x six**, then delete or archive the remaining 102. Removes the contradiction surface entirely.
-3. **Migrate the SC-4.x findings into the canonical corpus** — at minimum `SC_4_2`'s banked negative, which is the one with demonstrated cost.
+1. **Migrate the SC-4.x six** into `ED Generative/physics-papers/`, applying the three conditions above. This is the only task with demonstrated cost — `SC_4_2`'s banked negative was invisible to the canonical corpus until 2026-09-04, and `SC_4_6` answers a falsifier (`Paper_SCBU` F4) that still stands open there.
+2. **Run a claim-strength pass** on the six once migrated. They have never had one, and they were written before the `2π` dispute and the `Σ₀` rewrite.
+3. **Then dispose of the remaining 102** — delete, or archive with this marker retained. Once the six are out, nothing here is irreplaceable and the 31 stale files are pure contradiction surface.
 
-Recorded as gravity ledger Staleness #51.
+Recorded as gravity ledger Staleness #51 (the fork check) and #52 (the SC-4.x decision).
