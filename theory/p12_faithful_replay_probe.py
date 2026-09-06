@@ -79,8 +79,15 @@ def live(seed, k_phase, mode):
         if mode == "grad":
             return a
         if mode == "coh_v3":
-            return a / n
-        return a + 0.5 * (a * a - n)
+            return a / n                      # == grad normalised; the /n arm
+        if mode == "coh_norm":
+            return (a + 0.5 * (a * a - n)) / n   # canonical Coh over n -- NOT intensive
+        if mode == "coh_int":
+            # Coh has two pieces of DIFFERENT degree in n: |acc| ~ n and
+            # |acc|^2 ~ n^2 when aligned.  One factor of /n cannot make both
+            # intensive.  Normalise each by its own degree.
+            return a / n + 0.5 * (a * a - n) / (n * n)
+        return a + 0.5 * (a * a - n)          # canonical Coh, as written
 
     def deposit(v):
         pairs = holo_pairs(v)
