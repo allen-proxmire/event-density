@@ -30,7 +30,17 @@ import p12_phase_in_grad_probe as P
 
 L = 64
 SEEDS = list(range(11, 21))
-BWD, KBW, KRHO = 0.5, 0.5, 0.0          # condition (A)
+
+# CRYSTAL IS THE FAILURE MODE, not the target.  "Knots, Not Crystals" is the
+# companion result: the certified substrate has NO long-range ordering
+# coupling.  Total disorder is also a failure -- V5 has to bind chains into
+# local clocks.  The target is the middle: FINITE REACH, xi finite and nonzero.
+CONDITIONS = {
+    "A": (0.5, 0.5, 0.0),      # bandwidth holonomy only  -- the partial case
+    "C": (0.5, 0.5, 0.5),      # bw + rho holonomy        -- THE PHYSICAL CASE
+}
+COND = sys.argv[1].upper() if len(sys.argv) > 1 else "A"
+BWD, KBW, KRHO = CONDITIONS[COND]
 
 
 def one(seed, kp, mode):
@@ -56,7 +66,8 @@ def block(label, results):
 
 
 def main():
-    print("Condition (A) multi-seed: bandwidth holonomy only, %d seeds, %dx%d." % (len(SEEDS), L, L))
+    print("Condition (%s) multi-seed: %d seeds, %dx%d.  CRYSTAL = FAILURE (Knots, Not Crystals);" % (COND, len(SEEDS), L, L))
+    print("total disorder is also failure. The target is FINITE REACH.")
     print("Each seed re-draws the quenched disorder, start node and deposition noise.\n")
 
     print("CONTROL -- k_phase = 0, no phase feedback (all arms identical):")
