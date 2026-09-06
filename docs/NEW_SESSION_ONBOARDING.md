@@ -10,7 +10,7 @@
 2. **`event-density/docs/ED-Orientation.md`** — the program's orientation/state document in this (working) repo.
 3. **`event-density/docs/ED_Research_Targets.md`** — the live open/closed map: what's done, what's open, what's deliberately not being chased, and the highest-leverage next move. (Companion to this file.)
 4. **`C:\Users\allen\.claude\projects\C--Users-allen-GitHub-ED-Generative\memory\MEMORY.md`** — the persistent memory index (one line per memory, ~27 entries). Recent research state + where the deeper memory files are. *Treat any specific file/flag/commit it names as possibly stale — verify before relying on it.*
-5. **`ED Generative/physics-papers/gravity/Gravity_Line_Readers_Map.md`** — a worked example of the program's current frontier (the gravity line) and the house style: claim-forward but honesty-tiered.
+5. **`ED Generative/physics-papers/gravity/Gravity_TieredClaims_Ledger.md`** — a worked example of the program's current frontier (the gravity line) and the house style: claim-forward but honesty-tiered. It is also the arc's staleness detector, so it doubles as the current state of the flagship. *(Path corrected 2026-09-05: this slot used to name `Gravity_Line_Readers_Map.md`, which was moved out of EDG on 2026-07-09 and now lives at `event-density/foundations/relocated_from_EDG_2026-07-09/Gravity_Line_Readers_Map.md`. The pointer had been dead for ~2 months.)*
 
 That's enough to know *where to look*. Do not read further until asked.
 
